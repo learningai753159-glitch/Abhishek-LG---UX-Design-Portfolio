@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pre-bind · Submission Intake — Case Study · Abhishek LG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Quicksand:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" />
+<link rel="stylesheet" href="submission-diagrams.css" />
+<link rel="stylesheet" href="realistic-ui.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+<style>
+  :root{
+    /* surfaces */
+    --cream:#f3eee3;
+    --panel:#fbf8f1;
+    --panel-2:#f7f2e8;
+    /* ink */
+    --green:#15543b;
+    --green-deep:#0f3f2c;
+    --ink:#2c3733;
+    --ink-soft:#5d6b64;
+    --ink-faint:#9aa49c;
+    --black:#191919;
+    /* pastels */
+    --peach:#f6d6ad;
+    --lavender:#dcd7f3;
+    --sky:#c4e2f4;
+    --pink:#f6c8c3;
+    --mint:#cde6d4;
+    --yellow:#f7d24a;
+    --tag:#e9e3d6;
+    /* misc */
+    --radius-xl:40px;
+    --radius-lg:28px;
+    --radius-md:20px;
+    --shadow-card:0 18px 40px -24px rgba(20,40,30,.35);
+    --shadow-soft:0 10px 30px -20px rgba(20,40,30,.3);
+    --maxw:1240px;
+    --font-display:'Fredoka',system-ui,sans-serif;
+    --font-body:'DM Sans',system-ui,sans-serif;
+    --font-hand:'Caveat',cursive;
+    /* matched homepage type roles */
+    --green-bright:#008953;
+    --font-hero:'Bricolage Grotesque',sans-serif;
+    --font-cursive:'Bricolage Grotesque',sans-serif;
+    --font-proj:'Bricolage Grotesque',sans-serif;
+    --font-quote:'Quicksand',var(--font-body);
+    --font-num:'Libre Baskerville',Georgia,serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:120px;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:18px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;color:var(--green-bright);margin:0;line-height:1.04;letter-spacing:-.01em;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  /* ---------- panels ---------- */
+  .panel{
+    background:var(--panel);
+    border-radius:var(--radius-xl);
+    padding:72px;
+    margin:26px auto;
+    max-width:var(--maxw);
+    box-shadow:var(--shadow-soft);
+  }
+  .section-label{
+    font-family:var(--font-body);
+    font-size:18px;
+    color:var(--ink-soft);
+    font-weight:500;
+    margin-bottom:14px;
+  }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:fixed;top:18px;left:0;right:0;z-index:80;
+    display:flex;justify-content:center;align-items:center;
+    pointer-events:none;
+  }
+  .nav-inner{
+    pointer-events:auto;
+    display:flex;align-items:center;justify-content:space-between;gap:26px;
+    background:rgba(251,248,241,.86);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border:1px solid rgba(20,60,40,.07);
+    padding:8px 8px 8px 18px;border-radius:999px;
+    box-shadow:0 14px 34px -22px rgba(20,40,30,.5);
+  }
+  .nav-brand{display:flex;align-items:center;gap:11px;}
+  .nav-avatar{
+    width:34px;height:34px;border-radius:50%;flex:0 0 auto;
+    background:#15543b url('assets/abhishek-avatar.jpg') center/cover no-repeat;
+    display:flex;align-items:center;justify-content:center;
+    color:#dff0e6;font-family:var(--font-display);font-weight:600;font-size:13px;
+    border:2px solid rgba(255,255,255,.5);
+  }
+  .nav-brand .nm{font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--green-bright);white-space:nowrap;}
+  .nav-back{
+    font-weight:600;font-size:15px;color:#fff;background:var(--green-bright);
+    padding:10px 20px;border-radius:999px;
+    transition:transform .15s ease, box-shadow .2s ease;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .nav-back:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(21,84,59,.7);}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--font-body);font-weight:600;font-size:15.5px;
+    padding:13px 22px;border-radius:999px;border:none;cursor:pointer;
+    transition:transform .15s ease, box-shadow .2s ease, background .2s;
+    white-space:nowrap;
+  }
+  .btn svg{width:17px;height:17px;}
+  .btn-dark{background:var(--black);color:#fff;}
+  .btn-dark:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(0,0,0,.6);}
+  .btn-green{background:var(--green-bright);color:#fff;}
+  .btn-green:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(21,84,59,.7);}
+  .btn-ghost{background:transparent;color:var(--green);border:1.5px solid rgba(21,84,59,.35);}
+  .btn-ghost:hover{background:rgba(21,84,59,.06);}
+
+  /* ---------- case layout ---------- */
+  .case-shell{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  /* main column */
+  .main{min-width:0;}
+  .main .panel{margin:0 0 22px;padding:72px;max-width:none;}
+  .main .panel:first-child{margin-top:0;}
+
+  .eyebrow-num{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--font-body);font-weight:600;font-size:15px;letter-spacing:.01em;
+    color:var(--green-bright);background:rgba(21,84,59,.08);
+    padding:8px 16px;border-radius:999px;margin-bottom:24px;
+  }
+  .sec-title{font-family:var(--font-cursive);font-size:clamp(34px,4.2vw,52px);color:var(--green-bright);margin-bottom:18px;letter-spacing:0;}
+  .lead-line{
+    font-family:var(--font-quote);font-weight:600;
+    font-size:clamp(20px,2vw,26px);line-height:1.3;color:var(--ink);
+    max-width:none;margin:0 0 26px;letter-spacing:-.01em;
+  }
+  }
+  .body-copy{font-size:18px;color:var(--ink-soft);line-height:1.62;max-width:64ch;margin:0 0 18px;}
+  .body-copy strong,.body-copy em{color:var(--ink);font-style:normal;font-weight:600;}
+
+  /* hero */
+  .case-hero{padding-top:56px;}
+  .role-badge{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--font-body);font-weight:600;font-size:16px;
+    color:var(--green-bright);background:rgba(21,84,59,.08);
+    padding:8px 16px;border-radius:999px;margin-bottom:26px;
+  }
+  .role-badge .dot{width:8px;height:8px;border-radius:50%;background:#2fae74;box-shadow:0 0 0 4px rgba(47,174,116,.18);}
+  .crumb{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
+  .crumb-parent{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:var(--ink-soft);transition:color .2s;}
+  .crumb-parent:hover{color:var(--green-bright);}
+  .crumb-parent svg{width:15px;height:15px;flex:0 0 auto;}
+  .crumb-home{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(21,84,59,.08);color:var(--ink-soft);transition:color .2s,background .2s;flex:0 0 auto;}
+  .crumb-home:hover{color:var(--green-bright);background:rgba(21,84,59,.16);}
+  .crumb-home svg{width:18px;height:18px;}
+  .case-hero .proj{font-family:var(--font-hero);font-size:clamp(40px,6vw,72px);font-weight:400;line-height:1;margin-bottom:8px;letter-spacing:0;}
+  .case-hero .headline{font-family:var(--font-quote);font-weight:600;font-size:clamp(26px,3.4vw,44px);color:#1e1f1e;max-width:none;margin:8px 0 22px;line-height:1.15;letter-spacing:-.01em;}
+  .case-hero .subline{font-size:clamp(17px,1.6vw,21px);color:var(--ink-soft);max-width:60ch;line-height:1.6;margin:0 0 40px;}
+
+  /* metric row */
+  .metric-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:28px;}
+  .metric-card{
+    display:inline-flex;align-items:baseline;gap:9px;background:rgba(21,84,59,.09);border-radius:999px;padding:15px 24px;white-space:nowrap;
+  }
+  .metric-card .num{font-family:var(--font-num);font-weight:700;font-size:21px;color:var(--green);line-height:1;white-space:nowrap;}
+  .metric-card .lab{font-size:14.5px;color:var(--ink);line-height:1.3;font-weight:600;white-space:nowrap;}
+
+  /* placeholders — matched to homepage .ph */
+  .ph-drop{
+    position:relative;border-radius:18px;overflow:hidden;
+    background:repeating-linear-gradient(45deg,#e7e0d2 0 12px,#efe9dc 12px 24px);
+    border:1px solid rgba(20,60,40,.08);
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    color:#8a8472;font-family:ui-monospace,'SF Mono',Menlo,monospace;
+    font-size:12.5px;letter-spacing:.04em;padding:14px;
+  }
+  .ph-drop.green{background:repeating-linear-gradient(45deg,#1c5b40 0 12px,#1f6446 12px 24px);color:#bfe0cf;border-color:rgba(255,255,255,.12);}
+  .ph-hero{height:440px;}
+  .screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;}
+  .screen-grid .ph-drop{min-height:300px;}
+
+  /* insight cards */
+  .insight-grid{display:grid;gap:16px;margin-top:8px;}
+  .insight-grid.two{grid-template-columns:1fr 1fr;}
+  .insight-grid.four{grid-template-columns:1fr 1fr;}
+  .insight{
+    background:var(--panel-2);border-radius:var(--radius-md);
+    padding:26px 28px;border:1px solid rgba(20,60,40,.06);
+  }
+  .insight .k{
+    font-family:var(--font-body);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--green-bright);margin-bottom:10px;
+  }
+  .insight p{margin:0;font-size:16px;color:var(--ink-soft);line-height:1.55;}
+
+  /* process blocks */
+  .proc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px;}
+  .proc{
+    border-radius:var(--radius-lg);padding:30px 30px;
+    box-shadow:var(--shadow-card);position:relative;overflow:hidden;
+  }
+  .proc:nth-child(1){background:var(--peach);}
+  .proc:nth-child(2){background:var(--lavender);}
+  .proc:nth-child(3){background:var(--sky);}
+  .proc:nth-child(4){background:var(--mint);}
+  .proc h4{font-family:var(--font-cursive);font-weight:600;font-size:27px;color:#26312c;margin-bottom:12px;letter-spacing:0;line-height:1.1;}
+  .proc p{margin:0;font-size:15.5px;color:#39433d;line-height:1.55;}
+
+  /* decisions table */
+  .dec-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:8px;font-size:15.5px;}
+  .dec-table thead th{
+    font-family:var(--font-body);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--green-bright);text-align:left;padding:0 18px 14px;border-bottom:2px solid rgba(21,84,59,.18);
+  }
+  .dec-table td{
+    padding:20px 18px;vertical-align:top;color:var(--ink-soft);line-height:1.5;
+    border-bottom:1px solid rgba(20,60,40,.09);
+  }
+  .dec-table tbody tr:last-child td{border-bottom:none;}
+  .dec-table td.dec{font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--ink);width:24%;}
+  .dec-table td.out{color:var(--green);font-weight:500;width:28%;}
+  .dec-table tbody tr:hover td{background:rgba(21,84,59,.035);}
+
+  /* impact stats */
+  .impact-grid{display:flex;flex-wrap:wrap;gap:0;margin:8px 0 8px;border-top:1px solid rgba(20,60,40,.12);border-bottom:1px solid rgba(20,60,40,.12);}
+  .impact-stat{
+    flex:1;min-width:200px;padding:30px 26px;border-left:1px solid rgba(20,60,40,.12);
+  }
+  .impact-stat:first-child{border-left:none;}
+  .impact-stat .num{font-family:var(--font-num);font-weight:700;font-size:clamp(32px,4vw,44px);color:var(--green-bright);line-height:1;}
+  .impact-stat .lab{font-size:14.5px;color:var(--ink);margin-top:12px;line-height:1.4;font-weight:600;}
+
+  /* pull quote */
+  .pull{
+    border-left:4px solid var(--yellow);background:var(--panel-2);
+    border-radius:0 22px 22px 0;padding:34px 38px;margin-top:6px;
+  }
+  .pull p{
+    font-family:var(--font-quote);font-weight:600;font-size:clamp(21px,2.3vw,28px);
+    line-height:1.32;color:var(--green-bright);margin:0;max-width:40ch;letter-spacing:-.01em;
+  }
+
+  /* learnings */
+  .learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px;}
+  .learn-grid{display:flex;flex-direction:column;margin-top:8px;}
+  .learn{
+    display:flex;align-items:flex-start;gap:22px;padding:24px 0;border-bottom:1px solid rgba(20,60,40,.1);
+  }
+  .learn:first-child{padding-top:6px;}
+  .learn:last-child{border-bottom:none;}
+  .learn .ln{
+    flex:0 0 auto;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:var(--font-num);font-weight:700;font-size:14px;margin:0;line-height:1;
+  }
+  .learn:nth-child(1) .ln{background:var(--peach);color:#7a4f0a;}
+  .learn:nth-child(2) .ln{background:var(--lavender);color:#4a3f7a;}
+  .learn:nth-child(3) .ln{background:var(--sky);color:#245b7a;}
+  .learn:nth-child(4) .ln{background:var(--mint);color:#1f5c3d;}
+  .learn-body{flex:1;}
+  .learn h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0 0 8px;}
+  .learn p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.5;}
+
+  /* closing */
+  .closing{
+    background:var(--green);border-radius:var(--radius-xl);padding:56px;color:#dff0e6;
+    margin-top:22px;
+  }
+  .closing .cap{font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#8fc4a8;margin-bottom:18px;}
+  .closing p{font-family:var(--font-quote);font-weight:600;font-size:clamp(23px,2.7vw,34px);line-height:1.28;color:#fff;margin:0;max-width:32ch;letter-spacing:-.01em;}
+
+  /* ---------- footer ---------- */
+  footer{padding:30px 28px 60px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+  .foot-grid h4{font-family:var(--font-display);font-size:24px;color:var(--ink);margin-bottom:20px;}
+  .foot-grid ul{list-style:none;padding:0;margin:0;}
+  .foot-grid li{margin-bottom:12px;}
+  .foot-grid a{font-size:16px;color:var(--ink-soft);transition:color .2s;}
+  .foot-grid a:hover{color:var(--green);}
+  .now-card{background:var(--green-bright);border-radius:18px;padding:18px;display:flex;align-items:center;gap:16px;max-width:360px;color:#dff0e6;}
+  .now-card .cover{width:64px;height:64px;border-radius:10px;background:rgba(255,255,255,.08);flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
+  .now-card .cover .desk-dot{transform-box:fill-box;transform-origin:center;animation:deskPulse 2s ease-in-out infinite;}
+  @keyframes deskPulse{0%,100%{transform:scale(.65);opacity:.4}50%{transform:scale(1.15);opacity:1}}
+  @media (prefers-reduced-motion:reduce){.now-card .cover .desk-dot{animation:none;opacity:.9}}
+  .now-card .t{font-weight:700;font-size:15px;color:#fff;}
+  .now-card .s{font-size:13px;color:#aacdb9;}
+
+  /* prev / next */
+  .pn-nav{
+    max-width:var(--maxw);margin:22px auto 0;padding:0 28px;
+    display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+  }
+  .pn-nav .pn-back{font-weight:600;font-size:16px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;transition:color .2s;}
+  .pn-nav .pn-back:hover{color:var(--green);}
+  .pn-next{
+    display:flex;flex-direction:column;align-items:flex-end;text-align:right;
+    background:var(--panel);border-radius:var(--radius-lg);padding:18px 26px;
+    box-shadow:var(--shadow-soft);transition:transform .15s ease,box-shadow .2s ease;
+  }
+  .pn-next:hover{transform:translateY(-2px);box-shadow:var(--shadow-card);}
+  .pn-next .cap{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);}
+  .pn-next .nm{font-family:var(--font-proj);font-weight:700;font-size:22px;color:var(--green-bright);margin-top:4px;}
+
+  .foot-note{max-width:var(--maxw);margin:36px auto 0;padding:0 28px;font-size:14px;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- AI Audit components ---------- */
+  .insight-grid.three{grid-template-columns:repeat(3,1fr);}
+
+  /* severity badges */
+  .sev{
+    display:inline-flex;align-items:center;gap:7px;
+    font-family:var(--font-body);font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+    padding:6px 13px;border-radius:999px;white-space:nowrap;
+  }
+  .sev .d{width:7px;height:7px;border-radius:50%;flex:0 0 auto;}
+  .sev.critical{background:#f6dcd6;color:#a3402c;} .sev.critical .d{background:#cf4f33;}
+  .sev.major{background:#f7e6c5;color:#8a5a12;} .sev.major .d{background:#d99a2b;}
+  .sev.minor{background:#d4e7f2;color:#345d76;} .sev.minor .d{background:#4f86a8;}
+
+  /* severity tiers row */
+  .sev-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px;}
+  .tier{background:var(--panel-2);border-radius:var(--radius-md);padding:22px 24px;border:1px solid rgba(20,60,40,.06);}
+  .tier .sev{margin-bottom:13px;}
+  .tier p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.5;}
+
+  /* finding cards */
+  .finding-grid{display:flex;flex-direction:column;gap:16px;margin-top:8px;}
+  .finding{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:30px;align-items:center;
+    background:var(--panel-2);border-radius:var(--radius-lg);padding:32px;
+    border:1px solid rgba(20,60,40,.06);
+  }
+  .finding .fhead{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+  .finding .fnum{font-family:var(--font-num);font-weight:700;font-size:15px;color:var(--ink-faint);letter-spacing:.02em;}
+  .finding h4{font-family:var(--font-proj);font-weight:700;font-size:21px;color:var(--ink);margin:0 0 11px;line-height:1.22;}
+  .finding p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.58;}
+  .finding .ph-drop{min-height:250px;height:100%;}
+
+  /* systemic issues */
+  .sys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px;}
+  .sys{background:var(--panel-2);border-left:4px solid var(--yellow);border-radius:0 18px 18px 0;padding:24px 26px;}
+  .sys h5{font-family:var(--font-proj);font-weight:700;font-size:16.5px;color:var(--ink);margin:0 0 9px;}
+  .sys p{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55;}
+
+  /* journey map */
+  .journey{display:flex;gap:14px;margin-top:8px;}
+  .stage{
+    flex:1;background:var(--panel-2);border-radius:var(--radius-md);padding:22px 20px;
+    border:1px solid rgba(20,60,40,.06);display:flex;flex-direction:column;gap:13px;
+  }
+  .stage .st-label{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);}
+  .stage .st-emotion{font-family:var(--font-proj);font-weight:700;font-size:16px;color:var(--ink);}
+  .stage .meter{display:flex;gap:4px;}
+  .stage .meter i{flex:1;height:6px;border-radius:3px;background:rgba(20,60,40,.12);}
+  .stage p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.5;}
+
+  /* AI vs human split */
+  .ai-split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px;}
+  .ai-col{border-radius:var(--radius-lg);padding:34px;box-shadow:var(--shadow-card);}
+  .ai-col.ai{background:var(--lavender);}
+  .ai-col.human{background:var(--mint);}
+  .ai-col h4{font-family:var(--font-cursive);font-weight:600;font-size:27px;color:#26312c;margin-bottom:18px;line-height:1.1;}
+  .ai-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px;}
+  .ai-col li{font-size:15.5px;color:#39433d;line-height:1.5;padding-left:28px;position:relative;}
+  .ai-col li::before{content:'';position:absolute;left:0;top:6px;width:13px;height:13px;border-radius:4px;background:rgba(38,49,44,.32);}
+  .ai-col.human li::before{border-radius:50%;}
+
+  /* before / after */
+  .ba-grid{display:flex;flex-direction:column;gap:16px;margin-top:24px;}
+  .ba-pair{display:grid;grid-template-columns:1fr 46px 1fr;gap:10px;align-items:stretch;}
+  .ba-pair .arrow{display:flex;align-items:center;justify-content:center;color:var(--green-bright);}
+  .ba-pair .arrow svg{width:24px;height:24px;}
+  .ba-pair .ph-drop{min-height:210px;}
+
+  /* ---------- Pre-bind components ---------- */
+  /* architecture layers */
+  .arch-layers{display:flex;flex-direction:column;gap:14px;margin-top:8px;}
+  .layer{
+    border-radius:var(--radius-lg);padding:28px 32px;position:relative;overflow:hidden;
+    box-shadow:var(--shadow-card);
+  }
+  .layer:nth-child(1){background:var(--mint);}
+  .layer:nth-child(2){background:var(--sky);}
+  .layer:nth-child(3){background:var(--lavender);}
+  .layer .lhead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:10px;flex-wrap:wrap;}
+  .layer h4{font-family:var(--font-cursive);font-weight:600;font-size:26px;color:#26312c;line-height:1.1;letter-spacing:0;}
+  .layer .lpct{font-family:var(--font-num);font-weight:700;font-size:15px;color:#33433b;background:rgba(255,255,255,.5);padding:5px 13px;border-radius:999px;white-space:nowrap;}
+  .layer p{margin:0;font-size:15.5px;color:#39433d;line-height:1.55;max-width:74ch;}
+
+  /* callout chips */
+  .callout-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;}
+  .callout{
+    display:flex;gap:14px;align-items:flex-start;
+    background:var(--panel-2);border-radius:var(--radius-md);padding:20px 24px;
+    border:1px solid rgba(20,60,40,.06);font-size:15.5px;color:var(--ink-soft);line-height:1.5;
+  }
+  .callout .ck{flex:0 0 auto;width:26px;height:26px;border-radius:8px;background:rgba(21,84,59,.1);color:var(--green-bright);display:flex;align-items:center;justify-content:center;}
+  .callout .ck svg{width:15px;height:15px;}
+  .callout strong{color:var(--ink);font-weight:700;}
+
+  /* scannable bullet list */
+  .bullets{display:grid;gap:11px;margin:8px 0 0;padding:0;list-style:none;}
+  .bullets li{
+    position:relative;padding:16px 20px 16px 46px;
+    background:var(--panel-2);border-radius:14px;border:1px solid rgba(20,60,40,.06);
+    font-size:15.5px;color:var(--ink-soft);line-height:1.5;
+  }
+  .bullets li::before{
+    content:'';position:absolute;left:20px;top:23px;width:9px;height:9px;border-radius:50%;
+    background:var(--green-bright);
+  }
+  .bullets.warn li::before{background:#cf4f33;}
+  .sub-label{font-family:var(--font-proj);font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px;}
+
+  /* end-to-end workflow (section 03) */
+  .stage-block{margin-top:36px;}
+  .stage-block:first-of-type{margin-top:20px;}
+  .stage-head{display:flex;align-items:baseline;gap:16px;margin-bottom:20px;flex-wrap:wrap;}
+  .stage-head h3{font-family:var(--font-proj);font-weight:700;font-size:26px;color:var(--ink);letter-spacing:0;}
+  .stage-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:start;}
+  .stage-text .body-copy{margin-bottom:16px;}
+  .stage-visual .dg{border-radius:16px;border:1px solid rgba(20,60,40,.12);box-shadow:0 12px 30px -18px rgba(20,40,30,.35);}
+  .stage-connector{display:flex;flex-direction:column;align-items:center;gap:10px;margin:38px 0;}
+  .stage-connector .conn-line{width:2px;height:26px;background:repeating-linear-gradient(to bottom,rgba(21,84,59,.4) 0 5px,transparent 5px 10px);}
+  .stage-connector .conn-pill{
+    font-family:var(--font-body);font-weight:600;font-size:14.5px;color:var(--green-bright);
+    background:rgba(21,84,59,.09);border:1px solid rgba(21,84,59,.22);
+    padding:11px 22px;border-radius:999px;text-align:center;
+  }
+  @media (max-width:1000px){
+    .stage-grid{grid-template-columns:1fr;}
+  }
+
+  /* executive summary card */
+  .exec-card{padding:26px 0;margin:22px 0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+  .exec-card .ex-row{display:block;margin-bottom:0;padding-left:24px;border-left:1px solid rgba(20,60,40,.12);}
+  .exec-card .ex-row:first-child{padding-left:0;border-left:none;}
+  .exec-card .ex-tag{display:inline-flex;white-space:nowrap;font-family:var(--font-body);font-weight:700;font-size:14.5px;letter-spacing:.02em;text-transform:uppercase;color:var(--green-bright);margin-bottom:10px;}
+  .exec-card .ex-txt{font-size:14.5px;color:var(--ink);line-height:1.5;margin:0;}
+  .exec-card .ex-txt strong{color:var(--ink);font-weight:700;}
+
+  /* screenshot annotations */
+  .anno-row{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:16px;}
+  .anno-item{display:flex;align-items:center;gap:9px;}
+  .anno-item .an-num{flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:var(--green-bright);color:#fff;font-family:var(--font-body);font-weight:700;font-size:11px;display:flex;align-items:center;justify-content:center;}
+  .anno-item p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.4;}
+
+  /* phase connector */
+  .phase-connector{display:flex;flex-direction:column;align-items:center;gap:10px;margin:6px 0 22px;}
+  .phase-connector .pc-line{width:2px;height:26px;background:repeating-linear-gradient(to bottom,rgba(21,84,59,.4) 0 5px,transparent 5px 10px);}
+  .phase-connector .pc-pill{font-family:var(--font-body);font-weight:600;font-size:14.5px;color:var(--green-bright);background:rgba(21,84,59,.09);border:1px solid rgba(21,84,59,.22);padding:11px 22px;border-radius:999px;text-align:center;}
+
+  /* accordion */
+  .accordion{display:flex;flex-direction:column;gap:16px;margin-top:8px;}
+  .acc-item{background:linear-gradient(155deg,var(--panel-2) 0%, rgba(21,84,59,.07) 100%);border-radius:var(--radius-lg);border:1px solid rgba(20,60,40,.08);overflow:hidden;transition:transform .2s ease, box-shadow .25s ease, border-color .2s ease;}
+  .acc-item:hover{transform:translateY(-4px);border-color:var(--green-bright);box-shadow:var(--shadow-card);}
+  .acc-head{
+    display:flex;align-items:flex-start;gap:20px;padding:30px 32px;cursor:pointer;
+    list-style:none;user-select:none;
+  }
+  .acc-head>div{flex:1 1 auto;min-width:0;}
+  .acc-head::-webkit-details-marker{display:none;}
+  .acc-phase{font-family:var(--font-num);font-weight:700;font-size:13px;letter-spacing:.04em;color:var(--green-bright);text-transform:uppercase;}
+  .acc-head h3{font-family:var(--font-proj);font-weight:700;font-size:22px;color:var(--ink);margin:4px 0 12px;line-height:1.22;}
+  .acc-head .acc-sum{font-size:15.5px;color:var(--ink-soft);line-height:1.55;margin:0 0 16px;max-width:70ch;}
+  .acc-badges{display:flex;flex-wrap:wrap;gap:8px;}
+  .acc-badges span{font-size:12.5px;font-weight:600;color:var(--green-bright);background:rgba(21,84,59,.08);padding:6px 13px;border-radius:999px;}
+  .acc-chev{flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:rgba(21,84,59,.07);color:var(--green-bright);display:flex;align-items:center;justify-content:center;transition:transform .25s ease,background .2s;}
+  .acc-chev svg{width:20px;height:20px;}
+  details[open] .acc-chev{transform:rotate(180deg);background:rgba(21,84,59,.14);}
+  .acc-body{padding:0 32px 34px;}
+  .acc-body .divider{height:1px;background:rgba(20,60,40,.1);margin:0 0 28px;}
+
+  /* steps inside accordion */
+  .step{margin-bottom:30px;}
+  .step:last-child{margin-bottom:0;}
+  .step .stp-num{font-family:var(--font-num);font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:7px;}
+  .step h5{font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--ink);margin:0 0 12px;}
+  .ba-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;}
+  .ba-chip{background:var(--panel);border-radius:14px;padding:18px 20px;border:1px solid rgba(20,60,40,.07);}
+  .ba-chip .t{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:7px;}
+  .ba-chip.before .t{color:#a3402c;}
+  .ba-chip.after .t{color:var(--green-bright);}
+  .ba-chip p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.5;}
+  .step .bullets li{background:var(--panel);}
+  .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+  .shots.two{grid-template-columns:1fr 1fr;}
+  .shots .ph-drop{min-height:200px;}
+  .pull.tight{margin:18px 0;}
+  .pull.tight p{font-size:clamp(18px,1.9vw,23px);max-width:54ch;}
+
+  /* contribution cards */
+  .contrib-grid{display:flex;flex-direction:column;gap:16px;margin-top:8px;}
+  .contrib{
+    display:grid;grid-template-columns:1fr 300px;gap:30px;align-items:stretch;
+    background:var(--panel-2);border-radius:var(--radius-lg);padding:32px;border:1px solid rgba(20,60,40,.06);
+  }
+  .contrib h4{font-family:var(--font-proj);font-weight:700;font-size:20px;color:var(--ink);margin:0 0 16px;}
+  .contrib .pdo{display:flex;flex-direction:column;gap:13px;}
+  .contrib .row{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start;}
+  .contrib .row .lbl{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding-top:2px;}
+  .contrib .row.p .lbl{color:#a3402c;}
+  .contrib .row.d .lbl{color:#345d76;}
+  .contrib .row.o .lbl{color:var(--green-bright);}
+  .contrib .row p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.52;}
+  .contrib .ph-drop{min-height:100%;}
+
+  /* impact rows */
+  .impact-rowlabel{font-family:var(--font-proj);font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px;}
+  .impact-rowlabel.second{margin-top:24px;}
+  .impact-grid .impact-stat .sub{font-size:13px;color:var(--ink-soft);margin-top:9px;line-height:1.45;}
+
+  /* testimonials */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;}
+  .testi{background:var(--panel-2);border-radius:var(--radius-lg);padding:30px;border:1px solid rgba(20,60,40,.06);display:flex;flex-direction:column;}
+  .testi .mark{font-family:var(--font-cursive);font-size:52px;line-height:.6;color:var(--green-bright);opacity:.5;margin-bottom:10px;}
+  .testi p{font-family:var(--font-quote);font-weight:500;font-size:17px;color:var(--ink);line-height:1.5;margin:0 0 20px;flex:1;}
+  .testi .src{font-size:13.5px;font-weight:600;color:var(--ink-soft);line-height:1.4;}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1200px){
+    .exec-card{grid-template-columns:1fr;}
+    .exec-card .ex-row{padding-left:0;border-left:none;border-top:1px solid rgba(20,60,40,.12);padding-top:18px;}
+    .exec-card .ex-row:first-child{border-top:none;padding-top:0;}
+  }
+  @media (max-width:1000px){
+    .main .panel{padding:44px 34px;}
+    .metric-row{gap:12px;}
+    .insight-grid.two,.insight-grid.four,.insight-grid.three,.proc-grid{grid-template-columns:1fr;}
+    .sev-tiers,.sys-grid{grid-template-columns:1fr;}
+    .ai-split{grid-template-columns:1fr;}
+    .finding{grid-template-columns:1fr;gap:22px;}
+    .journey{flex-direction:column;}
+    .callout-grid{grid-template-columns:1fr;}
+    .contrib{grid-template-columns:1fr;gap:22px;}
+    .testi-grid{grid-template-columns:1fr;}
+    .ba-row,.shots,.shots.two{grid-template-columns:1fr;}
+    .acc-head{padding:24px;}
+    .acc-body{padding:0 24px 26px;}
+    .ba-pair{grid-template-columns:1fr;}
+    .ba-pair .arrow{transform:rotate(90deg);}
+    .screen-grid{grid-template-columns:1fr;}
+    .impact-grid{flex-direction:column;}
+    .impact-stat{border-left:none;border-top:1px solid rgba(20,60,40,.12);}
+    .impact-stat:first-child{border-top:none;}
+    .closing{padding:40px 34px;}
+    .dec-table,.dec-table tbody,.dec-table tr,.dec-table td{display:block;width:100%!important;}
+    .dec-table thead{display:none;}
+    .dec-table tr{border:1px solid rgba(20,60,40,.1);border-radius:16px;padding:8px 14px;margin-bottom:14px;}
+    .dec-table td{border:none!important;padding:10px 4px;}
+    .dec-table td.dec{font-size:19px;}
+    .dec-table td::before{content:attr(data-l);display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-bottom:4px;}
+  }
+  @media (max-width:560px){
+    body{font-size:16.5px;}
+    .main .panel{padding:32px 22px;border-radius:30px;}
+    .case-shell{padding:0 16px;}
+    .nav-brand .nm{display:none;}
+    .pn-nav{flex-direction:column;align-items:stretch;}
+    .pn-next{align-items:flex-start;text-align:left;}
+  }
+</style></head>
+<body>
+
+<!-- ============ NAV ============ -->
+<div class="case-shell" style="padding-top:0;">
+
+  <!-- ============ MAIN ============ -->
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="panel case-hero" data-screen-label="Hero">
+      <div class="crumb">
+        <a class="crumb-parent" href="enterprise-platform.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>The System Behind the Underwriter's Day</a>
+        <a class="crumb-home" href="index.html" aria-label="Portfolio home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg></a>
+      </div>
+      <h1 class="proj">Pre-bind · Submission Intake</h1>
+      <p class="headline">I didn't build a feature. I built the foundation every LOB runs on.</p>
+
+      <div class="exec-card" aria-label="Executive summary">
+        <div class="ex-row"><span class="ex-tag">Role &amp; Ownership</span><p class="ex-txt">Lead Product Designer — owned <strong>0→1 flow architecture, AI ingestion &amp; workbench systems</strong> end-to-end.</p></div>
+        <div class="ex-row"><span class="ex-tag">The Challenge</span><p class="ex-txt">Underwriters manually triaged multi-page PDFs across <strong>8+ legacy tools</strong> with zero centralized risk visibility.</p></div>
+        <div class="ex-row"><span class="ex-tag">The Solution</span><p class="ex-txt">Designed a <strong>two-stage automated intake and risk-assessment workbench</strong> for Aviation, Marine, and Construction lines of business.</p></div>
+      </div>
+
+      <div class="metric-row">
+        <div class="metric-card"><div class="num">92%</div><div class="lab">Manual work reduced</div></div>
+        <div class="metric-card"><div class="num">2.5×</div><div class="lab">More submissions / day</div></div>
+        <div class="metric-card"><div class="num">5 LOBs</div><div class="lab">One base system I designed</div></div>
+      </div>
+
+      <div class="ru-window" style="min-height:520px;" aria-hidden="true">
+        <div class="ru-app">
+          <div class="ru-sidebar">
+            <div class="ru-brand"><span class="lg">RL</span><span class="nm">RiskLane</span></div>
+            <div class="ru-nav">
+              <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Dashboard</a>
+              <a class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Submissions</a>
+              <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Clearance</a>
+              <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/></svg>Guidelines</a>
+              <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 0 1-4 0v-.1A1.6 1.6 0 0 0 7 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1A2 2 0 1 1 2.3 17l.1-.1A1.6 1.6 0 0 0 1.3 14H1a2 2 0 0 1 0-4h.1A1.6 1.6 0 0 0 2.7 7a1.6 1.6 0 0 0-.3-1.8l-.1-.1A2 2 0 1 1 5 2.3l.1.1A1.6 1.6 0 0 0 7 2.7h.1A1.6 1.6 0 0 0 8 1.3V1a2 2 0 0 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1 1.6 1.6 0 0 0 1.8.3l.1-.1A2 2 0 1 1 21.7 5l-.1.1a1.6 1.6 0 0 0-.3 2.7V8a1.6 1.6 0 0 0 1.4 1.6H21a2 2 0 0 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg>Settings</a>
+            </div>
+            <div class="ru-side-foot"><span class="av">EU</span><div class="tx"><div>Erin Uy</div><div>Underwriter</div></div></div>
+          </div>
+          <div class="ru-main">
+            <div class="ru-topbar">
+              <div class="ru-crumb">Dashboard <span>/ Submissions</span></div>
+              <div class="ru-tb-right"><div class="ru-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Search submissions</div><button class="ru-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="width:12px;height:12px;"><path d="M12 5v14M5 12h14"/></svg>New submission</button><div class="ru-avatar">EU</div></div>
+            </div>
+            <div class="ru-content">
+              <h3 class="ru-page-h">Submissions</h3>
+              <p class="ru-page-sub">Broker inbox to bound policy, in one unified view.</p>
+              <div class="ru-card-shell">
+                <div class="ru-board">
+                  <div class="ru-col"><div class="ru-col-head"><span class="dot" style="background:#2c2f34;"></span><span class="t">Inbox</span><span class="n">4</span></div>
+                    <div class="ru-card"><div class="nm">Meridian Airways</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c1">JW</span></div></div>
+                    <div class="ru-card"><div class="nm">Pacific Air Co</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c1">JW</span></div></div>
+                  </div>
+                  <div class="ru-col"><div class="ru-col-head"><span class="dot" style="background:var(--amber);"></span><span class="t">UW Review</span><span class="n">3</span></div>
+                    <div class="ru-card"><div class="nm">Atlantic Shippers</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-x"></i><i class="ru-x"></i></span><span class="ru-init c2">JW</span></div></div>
+                    <div class="ru-card"><div class="nm">Meridian Airways</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c2">JW</span></div></div>
+                  </div>
+                  <div class="ru-col"><div class="ru-col-head"><span class="dot" style="background:var(--blue);"></span><span class="t">Quoted</span><span class="n">2</span></div>
+                    <div class="ru-card"><div class="nm">Pacific Air Co</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c3">JW</span></div></div>
+                    <div class="ru-card"><div class="nm">Meridian Airways</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-x"></i></span><span class="ru-init c3">JW</span></div></div>
+                  </div>
+                  <div class="ru-col"><div class="ru-col-head"><span class="dot" style="background:var(--emerald);"></span><span class="t">Bound</span><span class="n">3</span></div>
+                    <div class="ru-card"><div class="nm">Atlantic Shippers</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c4">JW</span></div></div>
+                    <div class="ru-card"><div class="nm">Meridian Airways</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c4">JW</span></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="ru-cap">Submission workflow — from broker inbox to bound policy in one unified view. <b>Three RAG dots per card</b> let an underwriter read risk at a glance.</p>
+
+    </section>
+
+    <!-- 01 THE PROBLEM -->
+    <section class="panel reveal" id="problem" data-screen-label="01 The Problem">
+      <span class="eyebrow-num">01 — The Problem</span>
+      <h2 class="sec-title">Underwriters were doing two jobs. They should only be doing one.</h2>
+      <p class="sub-label">The old reality</p>
+      <ul class="bullets warn">
+        <li>Every submission arrived as 3–5 separate files — Excel for policy details, PDF for schedules, email threads for context.</li>
+        <li>Underwriters manually assembled all documents before they could begin risk assessment.</li>
+        <li>Identifying missing critical data meant opening every document individually — across 10+ files.</li>
+        <li>No single place to see the full picture of a risk.</li>
+        <li>Half a day lost per submission to admin — before any actual underwriting began.</li>
+        <li>High chance of missing crucial information — no system to flag it.</li>
+        <li>Unable to process more than a handful of submissions per day.</li>
+      </ul>
+      <div class="insight-grid two" style="margin-top:24px;">
+        <div class="insight"><div class="k">The Cost</div><p>40% of every underwriter's day was lost to non-value-added administrative work — before a single risk decision was made.</p></div>
+        <div class="insight"><div class="k">The Gap</div><p>No intelligence to flag concerns. No structure to guide decisions. Just documents and an expert trying to make sense of them — manually, every time.</p></div>
+      </div>
+    </section>
+
+    <!-- 02 THE STRATEGY -->
+    <section class="panel reveal" id="strategy" data-screen-label="02 The Strategy">
+      <span class="eyebrow-num">02 — The Strategy</span>
+      <h2 class="sec-title">One system. Every LOB. Every client.</h2>
+      <p class="lead-line">"If we built this for Aviation alone, we'd rebuild it for every new LOB. That's not a product — that's a cost centre."</p>
+      <div class="arch-layers">
+        <div class="layer">
+          <div class="lhead"><h4>Layer 1 — Base horizontal workflow</h4><span class="lpct">75% shared</span></div>
+          <p>One common user journey from submission entry to policy bind. Works identically across Aviation, Marine, Construction, Property, and PVT. Designed once. Deployed everywhere.</p>
+        </div>
+        <div class="layer">
+          <div class="lhead"><h4>Layer 2 — LOB customisation</h4><span class="lpct">Configurable</span></div>
+          <p>Label changes, column headings, sector-specific data fields, additional cards per LOB. No redesign. Configuration only.</p>
+        </div>
+        <div class="layer">
+          <div class="lhead"><h4>Layer 3 — Client customisation</h4><span class="lpct">Configurable</span></div>
+          <p>Feature toggles, naming conventions, email templates, client-specific additions. Layered on top. Still no redesign.</p>
+        </div>
+      </div>
+      <div class="callout-grid">
+        <div class="callout"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>New LOB onboarding:</strong> weeks, not months.</div></div>
+        <div class="callout"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>New client onboarding:</strong> days, not weeks.</div></div>
+        <div class="callout"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span><div>Sales team could demo any LOB from existing prototype — <strong>closing deals before a single line of new code was written.</strong></div></div>
+        <div class="callout"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>Design and dev cost per new LOB:</strong> near zero after base was built.</div></div>
+      </div>
+    </section>
+
+    <!-- 03 THE SOLUTION -->
+    <section class="panel reveal" id="solution" data-screen-label="03 The Solution">
+      <span class="eyebrow-num">03 — The Solution</span>
+      <h2 class="sec-title">From scattered documents to one intelligent workspace.</h2>
+      <div class="accordion">
+
+        <div class="acc-item">
+          <div class="acc-head">
+            <div>
+              <span class="acc-phase">Phase 1</span>
+              <h3>Submission Creation &amp; Clearance</h3>
+              <p class="acc-sum">AI-powered ingestion turns 5 separate documents into one structured workspace. A dedicated clearance stage ensures data quality before any underwriter touches it.</p>
+              <div class="acc-badges"><span>AI document extraction</span><span>Missing data flags</span><span>Guidelines intelligence</span></div>
+            </div>
+          </div>
+          <div class="acc-body">
+            <div class="divider"></div>
+            <div class="step">
+              <div class="stp-num">Step 1 — Submission creation</div>
+              <div class="ba-row">
+                <div class="ba-chip before"><div class="t">Before</div><p>Underwriters manually assembled documents from email.</p></div>
+                <div class="ba-chip after"><div class="t">After</div><p>Upload up to 5 files (PDF, Excel, CSV, email). AI extracts and structures all data automatically into one unified submission.</p></div>
+              </div>
+              <div class="ru-stack">
+                <div>
+                  <p class="ru-eyebrow">Before / after</p>
+                  <div class="ru-panel" style="min-height:380px;" aria-hidden="true">
+                    <div class="ru-ba">
+                      <div class="side before">
+                        <span class="ru-tag-lbl before">Before</span>
+                        <div class="ru-docs"><div class="ru-doc scatter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Policy.xlsx</div><div class="ru-doc scatter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Fleet.pdf</div><div class="ru-doc scatter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Loss.pdf</div><div class="ru-doc scatter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Coverage.pdf</div><div class="ru-doc scatter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Email thread</div></div>
+                        <div class="ru-arrow-down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+                        <div class="ru-flow-ico sad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 15.5s1.5-2 4-2 4 2 4 2"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div>
+                        <div class="ru-mini-cap"><b>5 documents.</b> No structure. Manual assembly, every time.</div>
+                      </div>
+                      <div class="side after">
+                        <span class="ru-tag-lbl after">After</span>
+                        <div class="ru-docs"><div class="ru-doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Policy.xlsx</div><div class="ru-doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Fleet.pdf</div><div class="ru-doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Loss.pdf</div><div class="ru-doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Coverage.pdf</div><div class="ru-doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Email thread</div></div>
+                        <div class="ru-arrows-in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+                        <div class="ru-ws">
+                          <div class="wt"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Unified submission</div>
+                          <div class="ru-frow"><span class="k">Insured name</span><span class="v">Meridian Airways</span></div><div class="ru-frow"><span class="k">Coverage type</span><span class="v">Aviation hull</span></div><div class="ru-frow"><span class="k">Fleet size</span><span class="v">14 aircraft</span></div><div class="ru-frow"><span class="k">Loss ratio</span><span class="v">62%</span></div><div class="ru-frow"><span class="k">Effective date</span><span class="v">19 Aug 2025</span></div>
+                        </div>
+                        <div class="ru-mini-cap"><b>One upload.</b> AI extracts everything. Structured instantly.</div>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="ru-cap">Five scattered documents become one structured workspace — the underwriter never assembles files by hand again.</p>
+                </div>
+                <div>
+                  <p class="ru-eyebrow">Upload &amp; AI processing</p>
+                  <div class="ru-panel" style="min-height:320px;display:flex;align-items:center;justify-content:center;padding:28px;" aria-hidden="true">
+                    <div class="ru-modal">
+                      <h4>Create submission</h4>
+                      <p class="sub">Supports PDF, Excel, CSV, and email formats.</p>
+                      <div class="ru-upzone">
+                        <div class="ru-upcloud"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 13v8M8 17l4-4 4 4"/><path d="M20 16.5A4.5 4.5 0 0 0 17 8.2 6 6 0 0 0 5.2 10 4 4 0 0 0 6 18"/></svg></div>
+                        <div class="big">Drop files or <a>click to browse</a></div>
+                        <div class="small">Up to 5 files, max 30 MB each.</div>
+                      </div>
+                      <div class="ru-chips">
+                        <div class="ru-chip"><span class="ru-doc" style="border:none;background:none;box-shadow:none;padding:0;color:var(--muted)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span><span class="fn">Fleet_Schedule.pdf</span><span class="st ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Extracted</span></div>
+                        <div class="ru-chip"><span class="ru-doc" style="border:none;background:none;box-shadow:none;padding:0;color:var(--muted)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span><span class="fn">Loss_History.pdf</span><span class="st busy"><span class="ru-spin"></span>Processing</span></div>
+                        <div class="ru-chip"><span class="ru-doc" style="border:none;background:none;box-shadow:none;padding:0;color:var(--muted)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span><span class="fn">Coverage.pdf</span><span class="st fail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>Failed</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="ru-cap">AI processes each document independently — success, processing, and failure states are all visible.</p>
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="stp-num">Step 2 — Clearance stage</div>
+              <h5>Data quality before underwriting judgement.</h5>
+              <p class="body-copy" style="margin-bottom:0;">A dedicated team reviews data quality before it reaches underwriters. System automatically surfaces all missing required fields — no manual scanning needed.</p>
+              <div class="pull tight"><p>"Separating data quality from underwriting judgement was a respect-for-expertise decision. Underwriters should spend their time on risk — not admin."</p></div>
+              <div class="ru-2col">
+                <div>
+                  <p class="ru-eyebrow">Clearance form — missing data</p>
+                  <div class="ru-panel" style="min-height:380px;padding:22px;" aria-hidden="true">
+                    <div class="ru-white-card" style="padding:22px;">
+                      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:18px;">
+                        <div><div class="ru-form-h">Submission information</div><div class="ru-form-sub">Pacific Air Co · Clearance review</div></div>
+                        <span class="ru-pct"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>60% complete</span>
+                      </div>
+                      <div class="ru-fields">
+                        <div class="ru-field"><div class="fl">Insured name</div><div class="ru-inp">Meridian Airways</div></div>
+                        <div class="ru-field"><div class="fl">Coverage type</div><div class="ru-inp">Aviation hull</div></div>
+                        <div class="ru-field"><div class="fl">Effective date</div><div class="ru-inp">19 Aug 2025</div></div>
+                        <div class="ru-field miss"><div class="fl">Year of manufacture</div><div class="ru-inp empty">Enter here</div><div class="ru-miss"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>Missing data</div></div>
+                        <div class="ru-field miss"><div class="fl">Total insured value</div><div class="ru-inp empty">Enter here</div><div class="ru-miss"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>Missing data</div></div>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="ru-cap">The system surfaces missing fields automatically — no manual document scanning.</p>
+                </div>
+                <div>
+                  <p class="ru-eyebrow">Guidelines — missing fields</p>
+                  <div class="ru-panel" style="min-height:380px;padding:22px;" aria-hidden="true">
+                    <div class="ru-h" style="font-size:18px;margin-bottom:16px;">Guidelines</div>
+                    <div class="ru-banner"><span class="dia"></span>Missing fields found against active guidelines</div>
+                    <div class="ru-gblock"><div class="top"><span class="ru-sq sq-r"></span>Risk appetite<span class="cat">· Fleet age restriction</span></div><div class="miss">Missing: <b>Year of manufacture</b></div></div>
+                    <div class="ru-gblock"><div class="top"><span class="ru-sq sq-g"></span>Risk appetite<span class="cat">· Coverage threshold</span></div><div class="miss">Missing: <b>Total insured value</b></div></div>
+                    <div class="ru-gblock"><div class="top"><span class="ru-sq sq-o"></span>Advisory<span class="cat">· Route restriction</span></div><div class="miss">Missing: <b>Operating territory</b></div></div>
+                  </div>
+                  <p class="ru-cap">Guideline-linked missing fields are surfaced in the sidebar — not buried in the form.</p>
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="stp-num">Step 3 — Guidelines feature</div>
+              <h5>An independent rule-book system, designed from scratch.</h5>
+              <p class="body-copy">Underwriters create custom rules — when any submission matches a guideline parameter it is automatically flagged.</p>
+              <p class="sub-label">How it works</p>
+              <ul class="bullets">
+                <li>Underwriter sets rule: "flag any aircraft built before 2010".</li>
+                <li>Any submission with matching data is automatically highlighted.</li>
+                <li>RAG dot system on submission cards: 3 dots per card (Risk appetite / Advisory / Restriction).</li>
+                <li>Coloured dot = match found · Grey dot = no match.</li>
+                <li>A glance replaces manual scanning of entire documents.</li>
+              </ul>
+              <div class="ru-stack">
+                <div>
+                  <p class="ru-eyebrow">The underwriter's rule book</p>
+                  <div class="ru-panel" style="min-height:340px;padding:22px;" aria-hidden="true">
+                    <div style="display:flex;align-items:center;gap:18px;margin-bottom:16px;">
+                      <span class="ru-h" style="font-size:18px;">Guidelines</span>
+                      <span style="font-weight:700;color:#0568b3;border-bottom:2.5px solid #0568b3;padding-bottom:5px;font-size:13px;">Active (10)</span>
+                      <span style="color:#6b7280;font-size:13px;">Archived (4)</span>
+                    </div>
+                    <table class="ru-tbl">
+                      <thead><tr><th>Status</th><th>Name</th><th>Rule</th><th>Line of business</th><th>Criteria</th></tr></thead>
+                      <tbody>
+                        <tr class="sel"><td><span class="ru-status-cell"><span class="ru-live">LIVE</span><span class="ru-tog"></span></span></td><td>Fleet age restriction</td><td>Risk appetite</td><td>Aviation</td><td>Criteria A, Criteria B, Criteria C</td></tr>
+                        <tr class=""><td><span class="ru-status-cell"><span class="ru-live">LIVE</span><span class="ru-tog"></span></span></td><td>Coverage threshold</td><td>Risk appetite</td><td>Aviation</td><td>Criteria A, Criteria B, Criteria C</td></tr>
+                        <tr class="off"><td><span class="ru-status-cell"><span class="ru-offb">OFF</span><span class="ru-tog off"></span></span></td><td>Route restriction</td><td>Advisory</td><td>Aviation</td><td>Criteria A, Criteria B</td></tr>
+                        <tr class=""><td><span class="ru-status-cell"><span class="ru-live">LIVE</span><span class="ru-tog"></span></span></td><td>TIV limit</td><td>Risk appetite</td><td>Marine</td><td>Criteria A, Criteria B, Criteria C</td></tr>
+                        <tr class="off"><td><span class="ru-status-cell"><span class="ru-offb">OFF</span><span class="ru-tog off"></span></span></td><td>Loss ratio cap</td><td>Advisory</td><td>Marine</td><td>Criteria A, Criteria B +2 more</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="ru-cap">The underwriter's rule book — <b>live rules auto-apply</b> to every incoming submission, across every line of business.</p>
+                </div>
+                <div>
+                  <p class="ru-eyebrow">Criteria builder</p>
+                  <div class="ru-panel" style="min-height:340px;display:flex;align-items:center;justify-content:center;padding:24px;" aria-hidden="true">
+                    <div class="ru-modal" style="max-width:600px;">
+                      <h4>Create guideline</h4>
+                      <p class="sub">Add criteria</p>
+                      <div class="ru-steps"><span class="st done"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width:11px;height:11px"><path d="M20 6L9 17l-5-5"/></svg></span>Primary details</span><span class="ln"></span><span class="st active"><span class="d"></span>Add criteria</span></div>
+                      <div class="ru-cgrid">
+                        <span class="hd">Criteria</span><span class="hd">Operator</span><span class="hd">Value</span>
+                        <span class="ru-sel">Fleet age<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span><span class="ru-sel">More than<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span><span class="ru-sel">2010<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span>
+                        <span class="ru-sel">Aircraft type<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span><span class="ru-sel">Equals to<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span><span class="ru-sel">Commercial<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span>
+                        <span class="ru-sel">Loss ratio<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span><span class="ru-sel">Between<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span><span class="ru-sel">60% — 80%<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span>
+                      </div>
+                      <div class="ru-addmore">+ Add more</div>
+                      <div style="display:flex;justify-content:flex-end;margin-top:22px;"><span class="ru-btn-dark">Create guideline</span></div>
+                    </div>
+                  </div>
+                  <p class="ru-cap">A simple three-column logic builder — any rule, any parameter, any line of business.</p>
+                </div>
+                <div>
+                  <p class="ru-eyebrow">RAG indicator system</p>
+                  <div class="ru-panel" style="background:transparent;border:none;box-shadow:none;padding:0;">
+                  <div class="ru-rag3" aria-hidden="true">
+                    <div class="ru-ragcard"><div class="nm">Meridian Airways</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="dots"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></div><div class="lab">All 3 guidelines matched</div></div>
+                    <div class="ru-ragcard"><div class="nm">Pacific Air Co</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="dots"><i class="ru-g"></i><i class="ru-x"></i><i class="ru-x"></i></div><div class="lab">1 guideline matched</div></div>
+                    <div class="ru-ragcard"><div class="nm">Atlantic Shippers</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="dots"><i class="ru-x"></i><i class="ru-x"></i><i class="ru-x"></i></div><div class="lab">No guidelines matched</div></div>
+                  </div>
+                  </div>
+                  <p class="ru-cap"><b>Three dots per card. Coloured = match. Grey = no match.</b> A glance replaces manual scanning of entire documents.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase-connector">
+          <span class="pc-line"></span>
+          <span class="pc-pill">Same submission, continuing to the underwriter's desk ↓</span>
+          <span class="pc-line"></span>
+        </div>
+
+        <div class="acc-item" id="phase2-acc">
+          <div class="acc-head">
+            <div>
+              <span class="acc-phase">Phase 2</span>
+              <h3>Underwriter Workbench</h3>
+              <p class="acc-sum">Once clearance is complete, submissions move to the underwriter. Risk signals surface automatically. Every guideline match is visible before the first decision is made.</p>
+              <div class="acc-badges"><span>Auto guideline matching</span><span>Risk signals</span><span>Quote &amp; bind workflow</span></div>
+            </div>
+          </div>
+          <div class="acc-body">
+            <div class="divider"></div>
+            <div class="step">
+              <div class="stp-num">Step 1 — Submission enters UW workbench</div>
+              <h5>All documents, one unified workspace.</h5>
+              <p class="body-copy">Once clearance is approved, submission moves to underwriter. All data from all documents visible in one unified workspace. No switching between files. No manual assembly.</p>
+              <div class="ru-panel" style="min-height:460px;" aria-hidden="true">
+                <div class="ru-wb">
+                  <div class="pane inbox">
+                    <div class="ru-pane-h">Inbox<span class="ct">8</span></div>
+                    <div class="ru-mini sel"><div class="nm">Meridian Airways</div><div class="ru-rag"><i class="ru-g" style="width:13px;height:13px"></i><i class="ru-o" style="width:13px;height:13px"></i><i class="ru-r" style="width:13px;height:13px"></i></div></div>
+                    <div class="ru-mini"><div class="nm">Pacific Air Co</div><div class="ru-rag"><i class="ru-g" style="width:13px;height:13px"></i><i class="ru-o" style="width:13px;height:13px"></i><i class="ru-r" style="width:13px;height:13px"></i></div></div>
+                    <div class="ru-mini"><div class="nm">Atlantic Shippers</div><div class="ru-rag"><i class="ru-g" style="width:13px;height:13px"></i><i class="ru-x" style="width:13px;height:13px"></i><i class="ru-x" style="width:13px;height:13px"></i></div></div>
+                  </div>
+                  <div class="pane center">
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;row-gap:8px;"><span class="ru-h" style="font-size:17px;">Meridian Airways Pvt. Ltd</span><span class="ru-status"><span class="d"></span>UW REVIEW</span></div>
+                    <div class="ru-quote" style="margin-bottom:4px;">Quote 1 — $1,000,000</div>
+                    <div class="ru-tabs"><span class="on">Rater</span><span>Policy Info</span><span>Aircraft Info</span><span>Loss Info</span></div>
+                    <table class="ru-mtbl">
+                      <thead><tr><th>N-Number</th><th>Type</th><th>Year</th><th>Manufacturer</th><th>Status</th></tr></thead>
+                      <tbody>
+                        <tr><td>N-8841</td><td>Large jet</td><td>2014</td><td>Boeing</td><td>Active</td></tr>
+                        <tr><td>N-2207</td><td>Commercial</td><td>2018</td><td>Airbus</td><td>Active</td></tr>
+                        <tr><td>N-5530</td><td>Long-range</td><td>2011</td><td>Gulfstream</td><td>Active</td></tr>
+                        <tr><td>N-9014</td><td>Large jet</td><td>2016</td><td>Bombardier</td><td>Grounded</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="pane summary">
+                    <div class="ru-pane-h">Submission summary</div>
+                    <div class="ru-kv"><div><div class="k">Producer</div><div class="v">Simon Hayward</div></div><div><div class="k">Underwriter</div><div class="v">Darwin Nunez</div></div><div><div class="k">Product</div><div class="v">Commercial hull</div></div></div>
+                    <div class="ru-metrics">
+                      <div class="ru-metric pink"><div class="k">Guidelines applied</div><div class="v">9</div></div>
+                      <div class="ru-metric blue"><div class="k">Data completed</div><div class="v">60%</div></div>
+                      <div class="ru-metric green"><div class="k">Rules met</div><div class="v">5/6</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="ru-cap">All documents, all data, one workspace — inbox, submission detail, and risk summary side by side. <b>No switching between files.</b></p>
+            </div>
+            <div class="step">
+              <div class="stp-num">Step 2 — Automatic guideline matching</div>
+              <h5>Risk signals before raw data.</h5>
+              <p class="body-copy" style="margin-bottom:0;">System automatically surfaces any guideline matches in the right sidebar. Underwriter sees risk signals before diving into raw data.</p>
+              <div class="pull tight"><p>"The side panel solved the visibility problem without creating a noise problem. This single pattern decision — made once — now lives across every section of the product."</p></div>
+              <div class="ru-2col">
+                <div>
+                  <p class="ru-eyebrow">Risk signals — matches found</p>
+                  <div class="ru-panel" style="min-height:400px;padding:22px;" aria-hidden="true">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;"><span class="ru-h" style="font-size:18px;">Guidelines</span><span class="ru-link">Go to guidelines</span></div>
+                    <div class="ru-alert"><span class="b">!</span>6 Guidelines matches found</div>
+                    <div class="ru-gblock"><div class="top"><span class="ru-sq sq-r"></span>Risk appetite<span class="cat">· Fleet age restriction</span></div><table class="ru-ct"><thead><tr><th>Criteria</th><th>Rule value</th><th>Sub. value</th></tr></thead><tbody><tr><td>Criteria 1</td><td>70 hrs</td><td class="bad">80 hrs</td></tr><tr><td>Criteria 2</td><td>30</td><td class="bad">20</td></tr><tr><td>Criteria 3</td><td>20</td><td class="bad">10</td></tr></tbody></table></div>
+                    <div class="ru-gblock"><div class="top"><span class="ru-sq sq-g"></span>Risk appetite<span class="cat">· Coverage threshold</span></div><table class="ru-ct"><thead><tr><th>Criteria</th><th>Rule value</th><th>Sub. value</th></tr></thead><tbody><tr><td>Criteria 1</td><td>70 hrs</td><td class="bad">80 hrs</td></tr><tr><td>Criteria 2</td><td>20-70 hrs</td><td class="bad">80 hrs</td></tr></tbody></table></div>
+                    <div class="ru-gblock"><div class="top"><span class="ru-sq sq-o"></span>Advisory<span class="cat">· Route restriction</span></div><table class="ru-ct"><thead><tr><th>Criteria</th><th>Rule value</th><th>Sub. value</th></tr></thead><tbody><tr><td>Criteria 1</td><td>20</td><td class="bad">30</td></tr></tbody></table></div>
+                    <div style="display:flex;justify-content:flex-end;margin-top:14px;"><span class="ru-btn-dark">See analytics</span></div>
+                  </div>
+                  <p class="ru-cap">Risk signals surface automatically — <b>before the underwriter opens a single data field.</b> Values that exceed a rule show in red.</p>
+                </div>
+                <div>
+                  <p class="ru-eyebrow">Submission overview</p>
+                  <div class="ru-panel" style="min-height:400px;padding:22px;" aria-hidden="true">
+                    <div style="display:flex;align-items:center;gap:11px;margin-bottom:8px;flex-wrap:wrap;"><span class="ru-h" style="font-size:17px;">Meridian Airways Pvt. Ltd</span><span class="ru-status"><span class="d"></span>UW REVIEW</span></div>
+                    <div style="font-size:12.5px;color:#6b7280;margin-bottom:16px;">Effective 19 Aug 2025 → Expiry 19 Aug 2026</div>
+                    <div class="ru-white-card" style="padding:14px;margin-bottom:14px;">
+                      <div style="font-weight:700;font-size:13px;color:#181a20;margin-bottom:8px;">Aircraft schedule</div>
+                      <div class="ru-frow"><span class="k">Large jet</span><span class="v">8</span></div><div class="ru-frow"><span class="k">Commercial jet</span><span class="v">3</span></div><div class="ru-frow"><span class="k">Large long-range jet</span><span class="v">3</span></div><div class="ru-frow"><span class="k">Large long-range jet</span><span class="v">15</span></div>
+                    </div>
+                    <div class="ru-white-card" style="padding:14px;">
+                      <div style="font-weight:700;font-size:13px;color:#181a20;margin-bottom:10px;">Guidelines summary</div>
+                      <div style="display:flex;align-items:center;gap:8px;background:#fcecdf;border-radius:9px;padding:9px 12px;font-size:12px;color:#9a5a1f;margin-bottom:12px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;flex:0 0 auto;"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg><span>Missing data in <b>3 fields</b></span></div>
+                      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:9px;">
+                        <div class="ru-metric pink" style="padding:10px;"><div class="k" style="font-size:10.5px">Applied</div><div class="v" style="font-size:18px">9</div></div>
+                        <div class="ru-metric blue" style="padding:10px;"><div class="k" style="font-size:10.5px">Completed</div><div class="v" style="font-size:18px">60%</div></div>
+                        <div class="ru-metric green" style="padding:10px;"><div class="k" style="font-size:10.5px">Rules met</div><div class="v" style="font-size:18px">5/6</div></div>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="ru-cap">Complete submission overview — status, schedule, and guideline health at a glance.</p>
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="stp-num">Step 3 — Quote &amp; bind</div>
+              <h5>Review, quote, and bind in one place.</h5>
+              <p class="body-copy">Underwriter reviews, quotes, and binds — all within the same workspace. No switching tools. No rekeying data.</p>
+              <div class="ru-panel" style="min-height:380px;padding:26px;" aria-hidden="true">
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap;"><span class="ru-h" style="font-size:18px;">Atlantic Shippers Ltd.</span><span class="ru-status"><span class="d"></span>UW REVIEW</span></div>
+                <div class="ru-h" style="font-size:15px;color:#3a403b;margin-bottom:6px;">Quote versions (4)</div>
+                <div class="ru-qtabs"><span class="ru-qtab on">Quote 1 — $1,000,000</span><span class="ru-qtab">Quote 2 — $850,000</span><span class="ru-qtab">Quote 3 — $1,200,000</span><span class="ru-qtab">Quote 4 — $975,000</span></div>
+                <div class="ru-tabs" style="margin-bottom:0;"><span class="on">Rater</span><span>Policy Info</span><span>Aircraft Info</span><span>Loss Info</span></div>
+                <div class="ru-summary-bar"><div><div class="k">Issuing Company</div><div class="v">Global Insurance Corp</div></div><div><div class="k">Total limit</div><div class="v">$50,000,000</div></div><div><div class="k">UW Premium</div><div class="v">$30,000</div></div></div>
+                <div style="display:flex;justify-content:flex-end;margin-top:18px;"><span class="ru-btn-dark">Generate proposal</span></div>
+              </div>
+              <p class="ru-cap">Multiple quote versions, full policy detail, and bind — all from the same workspace. <b>No rekeying, no switching tools.</b></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 04 MY DESIGN CONTRIBUTIONS -->
+    <section class="panel reveal" id="contributions" data-screen-label="04 My Design Contributions">
+      <span class="eyebrow-num">04 — My Design Contributions</span>
+      <h2 class="sec-title">Three decisions I made that became platform standards.</h2>
+      <div class="contrib-grid">
+        <div class="contrib stacked">
+          <div>
+            <h4>01 · Right Side Panel</h4>
+            <div class="pdo">
+              <div class="row p"><span class="lbl">Problem</span><p>Supporting features (notes, attachments, guidelines, audit logs) needed dedicated space. Tab switching felt like changing pages — breaking workflow.</p></div>
+              <div class="row d"><span class="lbl">Decision</span><p>Introduced a persistent right sidebar to house all supporting features in one accessible place. Eliminated multiple dedicated tabs entirely.</p></div>
+              <div class="row o"><span class="lbl">Outcome</span><p>Adopted across every section of the platform across all 5 LOBs. Still the core navigation pattern today.</p></div>
+            </div>
+          </div>
+          <div>
+            <p class="body-copy" style="margin:0 0 20px;">The sidebar houses four states accessible via the right icon strip — Summary, Notes, Attachments, and Updates. Two key states shown below.</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
+              <div>
+                <p class="ru-eyebrow">Summary</p>
+                <div class="ru-panel" style="min-height:380px;padding:22px;" aria-hidden="true">
+                  <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap;"><span class="ru-h" style="font-size:16px;">Meridian Airways</span><span class="ru-status"><span class="d"></span>UW REVIEW</span></div>
+                  <div style="font-size:12.5px;color:#6b7280;margin-bottom:16px;">19 Aug 2025 → 19 Aug 2026</div>
+                  <div class="ru-white-card" style="padding:15px;margin-bottom:14px;">
+                    <div style="font-weight:700;font-size:13px;color:#181a20;margin-bottom:8px;">Aircraft schedule</div>
+                    <div class="ru-frow"><span class="k">Large jet</span><span class="v">8</span></div><div class="ru-frow"><span class="k">Commercial jet</span><span class="v">3</span></div><div class="ru-frow"><span class="k">Long-range jet</span><span class="v">3</span></div><div class="ru-frow"><span class="k">Long-range jet</span><span class="v">15</span></div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:9px;">
+                    <div class="ru-metric pink" style="padding:11px;"><div class="k" style="font-size:10.5px">Applied</div><div class="v" style="font-size:18px">9</div></div>
+                    <div class="ru-metric blue" style="padding:11px;"><div class="k" style="font-size:10.5px">Completed</div><div class="v" style="font-size:18px">60%</div></div>
+                    <div class="ru-metric green" style="padding:11px;"><div class="k" style="font-size:10.5px">Rules met</div><div class="v" style="font-size:18px">5/6</div></div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p class="ru-eyebrow">Attachments</p>
+                <div class="ru-panel" style="min-height:380px;padding:22px;" aria-hidden="true">
+                  <div class="ru-h" style="font-size:16px;margin-bottom:14px;">Attachments</div>
+                  <div style="border:1.5px dashed #c9ccd3;border-radius:11px;background:#f2f3f5;height:76px;display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:16px;">
+                    <div class="ru-upcloud" style="width:34px;height:34px;margin:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 13v8M8 17l4-4 4 4"/><path d="M20 16.5A4.5 4.5 0 0 0 17 8.2 6 6 0 0 0 5.2 10 4 4 0 0 0 6 18"/></svg></div>
+                    <div style="font-weight:700;font-size:13px;color:#181a20;">Drop to upload</div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:11px;padding:11px 0;border-bottom:1px solid #e8e9ee;font-size:12.5px;"><span style="flex:1;color:#181a20;font-weight:500;white-space:nowrap;">Summary.pdf</span><span style="color:#6b7280;font-size:11px;white-space:nowrap;">12-08-2025</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;color:#9aa0ac"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></div><div style="display:flex;align-items:center;gap:11px;padding:11px 0;border-bottom:1px solid #e8e9ee;font-size:12.5px;"><span style="flex:1;color:#181a20;font-weight:500;white-space:nowrap;">Fleet_Schedule.pdf</span><span style="color:#6b7280;font-size:11px;white-space:nowrap;">12-08-2025</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;color:#9aa0ac"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></div><div style="display:flex;align-items:center;gap:11px;padding:11px 0;border-bottom:1px solid #e8e9ee;font-size:12.5px;"><span style="flex:1;color:#181a20;font-weight:500;white-space:nowrap;">Loss_History.pdf</span><span style="color:#6b7280;font-size:11px;white-space:nowrap;">12-08-2025</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;color:#9aa0ac"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></div><div style="display:flex;align-items:center;gap:11px;padding:11px 0;border-bottom:1px solid #e8e9ee;font-size:12.5px;"><span style="flex:1;color:#181a20;font-weight:500;white-space:nowrap;">Coverage.pdf</span><span style="color:#6b7280;font-size:11px;white-space:nowrap;">12-08-2025</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;color:#9aa0ac"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+                </div>
+              </div>
+            </div>
+            <p class="ru-cap">One persistent sidebar replaces multiple tabs — all supporting features accessible without leaving the page.</p>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:11px;margin-top:18px;">
+              <div style="display:flex;gap:20px;align-items:center;"><span style="width:22px;height:22px;color:#9aa0ac;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><span style="width:22px;height:22px;color:#9aa0ac;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span style="width:22px;height:22px;color:#9aa0ac;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></span><span style="width:22px;height:22px;color:#9aa0ac;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22V4h13l-2 4 2 4H6"/></svg></span><span style="width:22px;height:22px;color:#0568b3;background:#e3f1fc;border-radius:7px;padding:4px;width:30px;height:30px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6.2"/><path d="M16 3l5 5-9 9H7v-5z"/></svg></span><span style="width:22px;height:22px;color:#9aa0ac;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span></div>
+              <div style="font-size:13px;color:#6b7280;font-weight:500;">Right icon strip — switches between states</div>
+            </div>
+          </div>
+        </div>
+        <div class="contrib stacked">
+          <div>
+            <h4>02 · Options Bar</h4>
+            <div class="pdo">
+              <div class="row p"><span class="lbl">Problem</span><p>Page controls (breadcrumbs, layout switch, search, filters) were scattered — no consistent location across pages.</p></div>
+              <div class="row d"><span class="lbl">Decision</span><p>Introduced a dedicated options bar just below the tab navigation. One consistent location for all page-level controls across every screen.</p></div>
+              <div class="row o"><span class="lbl">Outcome</span><p>Standardised across all features and LOBs. Reduced visual noise and improved discoverability of page controls.</p></div>
+            </div>
+          </div>
+          <div>
+            <div class="ru-panel" style="min-height:200px;" aria-hidden="true">
+              <div class="ru-ob-head"><span class="ru-ob-title">Enterprise Submissions</span><span style="display:flex;align-items:center;gap:10px;flex:0 0 auto;"><span style="background:#007ad7;color:#fff;font-weight:600;font-size:12.5px;padding:8px 14px;border-radius:9px;white-space:nowrap;">+ Add new</span><span style="width:30px;height:30px;border-radius:50%;background:var(--accent-soft);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;flex:0 0 auto;">AL</span></span></div>
+              <div class="ru-ob-tabs"><span class="on">All submissions</span><span>Clearance</span><span>Upcoming renewals</span><span>Submission feed</span></div>
+              <div class="ru-ob-bar">
+                <div style="display:flex;flex-direction:column;align-items:center;gap:7px;"><span class="ru-annot">Breadcrumb<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span><span style="font-size:13px;color:#6b7280;font-weight:500;white-space:nowrap;">All submissions</span></div>
+                <span style="flex:1;min-width:20px;"></span>
+                <div style="display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap;">
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:7px;"><span class="ru-annot">Layout<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span><span class="ru-pill-ctl toggle"><b class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></b><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></b></span></div>
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:7px;"><span class="ru-annot">Search<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span><span class="ru-pill-ctl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>Search submissions</span></div>
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:7px;"><span class="ru-annot">Filters<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span><span class="ru-pill-ctl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>7 Filters<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="width:11px;height:11px"><path d="M6 9l6 6 6-6"/></svg></span></div>
+                </div>
+              </div>
+              <div class="ru-ob-cols">
+                <div class="ru-colhead"><span style="width:9px;height:9px;border-radius:50%;background:#2c332e;flex:0 0 auto;"></span>INBOX<span class="ct">(4)</span></div><div class="ru-colhead"><span style="width:9px;height:9px;border-radius:50%;background:#e0218a;flex:0 0 auto;"></span>UW REVIEW<span class="ct">(3)</span></div><div class="ru-colhead"><span style="width:9px;height:9px;border-radius:50%;background:#2f78d6;flex:0 0 auto;"></span>QUOTED<span class="ct">(2)</span></div><div class="ru-colhead"><span style="width:9px;height:9px;border-radius:50%;background:#2f9e63;flex:0 0 auto;"></span>BOUND<span class="ct">(3)</span></div>
+              </div>
+            </div>
+            <p class="ru-cap">One consistent control bar across every page — <b>breadcrumb, layout, search, filters</b> always in the same place.</p>
+          </div>
+        </div>
+        <div class="contrib stacked">
+          <div>
+            <h4>03 · Unified Filter System</h4>
+            <div class="pdo">
+              <div class="row p"><span class="lbl">Problem</span><p>10 filters appeared separately — users opened each one individually, applied them one by one. 4 filters = minimum 8 interactions.</p></div>
+              <div class="row d"><span class="lbl">Decision</span><p>Consolidated all filters into one panel. Left side shows all filters. Right side shows applied filters as tags. Select all at once. Apply once.</p></div>
+              <div class="row o"><span class="lbl">Outcome</span><p>Reduced filter interactions from 8+ to 2. Applied filters visible at a glance without reopening dropdowns. Adopted platform-wide across all LOBs.</p></div>
+            </div>
+          </div>
+          <div>
+            <div class="ru-panel" style="min-height:380px;display:flex;align-items:center;justify-content:center;padding:26px;" aria-hidden="true">
+              <div class="ru-fl">
+                <div>
+                  <div class="ru-h" style="font-size:17px;margin-bottom:18px;">Filters</div>
+                  <div class="ru-fl-field"><div class="fl">Name insured</div><div class="ru-sel">2 Selected<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></div></div>
+                  <div class="ru-fl-field"><div class="fl">Policy number</div><div class="ru-sel" style="color:#aeb3aa">Select<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></div></div>
+                  <div class="ru-fl-field"><div class="fl">Submission number</div><div class="ru-sel">7 Selected<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></div></div>
+                  <div class="ru-fl-field"><div class="fl">Broker</div><div class="ru-sel" style="color:#aeb3aa">Select<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></div></div>
+                  <span class="ru-reset">Reset</span>
+                </div>
+                <div>
+                  <div style="font-style:italic;font-size:14px;color:#6b7280;margin-bottom:18px;">Applied filters</div>
+                  <div class="ru-ap">
+                    <div class="ru-ap-h"><span class="t">Name Insured</span><span class="clr">Clear</span></div>
+                    <div class="ru-tags"><span class="ru-tag">Name 1<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></span><span class="ru-tag">Name 2<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></span></div>
+                  </div>
+                  <div class="ru-ap">
+                    <div class="ru-ap-h"><span class="t">Submission number</span><span class="clr">Clear</span></div>
+                    <div class="ru-tags"><span class="ru-tag">Label<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></span><span class="ru-tag">Label<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></span><span class="ru-tag">Label<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></span><span class="ru-tag">Label<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></span><span class="ru-tag">Label<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></span><span class="ru-tag">Label<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></span><span class="ru-tag">Label<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></span></div>
+                  </div>
+                  <div class="ru-fl-apply" style="margin-top:auto;padding-top:16px;"><span class="ru-btn-dark">Apply</span></div>
+                </div>
+              </div>
+            </div>
+            <p class="ru-cap">All filters in one panel — <b>select all, apply once.</b> Applied selections stay visible as removable tags.</p>
+          </div>
+        </div>
+      </div>
+        </section>
+
+    <!-- 05 IMPACT -->
+    <section class="panel reveal" id="impact" data-screen-label="05 Impact">
+      <span class="eyebrow-num">05 — Impact</span>
+      <h2 class="sec-title">What one design foundation unlocked.</h2>
+      <p class="impact-rowlabel">Row 1 — Business metrics</p>
+      <div class="impact-grid">
+        <div class="impact-stat"><div class="num">92%</div><div class="lab">Reduction in manual work</div><div class="sub">Half a day of admin per submission → minutes.</div></div>
+        <div class="impact-stat"><div class="num">2.5×</div><div class="lab">More submissions per underwriter per day</div><div class="sub">Same headcount. 2.5× the output.</div></div>
+        <div class="impact-stat"><div class="num">4×</div><div class="lab">More high-appetite deals closed</div><div class="sub">Faster triage = faster response = more wins.</div></div>
+        <div class="impact-stat"><div class="num">85%</div><div class="lab">Reduction in manual systems used</div><div class="sub">From 5+ tools to one unified workspace.</div></div>
+      </div>
+      <p class="impact-rowlabel second">Row 2 — Platform metrics</p>
+      <div class="impact-grid">
+        <div class="impact-stat"><div class="num">5</div><div class="lab">LOBs built on one base system</div><div class="sub">Aviation, Marine, Construction, Property, PVT — all on the foundation I designed.</div></div>
+        <div class="impact-stat"><div class="num">0</div><div class="lab">Full redesigns needed for new LOBs</div><div class="sub">Configuration only. Base holds for every sector.</div></div>
+        <div class="impact-stat"><div class="num">3</div><div class="lab">Designers now building on my architecture</div><div class="sub">The foundation scaled beyond me.</div></div>
+        <div class="impact-stat"><div class="num">1</div><div class="lab">Platform shortlisted for AI Implementation in Insurance</div><div class="sub">2025 Insurance Insider US Honors.</div></div>
+      </div>
+    </section>
+
+    <!-- 06 TESTIMONIALS -->
+    <section class="panel reveal" id="testimonials" data-screen-label="06 Testimonials">
+      <span class="eyebrow-num">06 — What stakeholders say</span>
+      <div class="testi-grid">
+        <div class="testi"><div class="mark">"</div><p>This technology is invaluable in enhancing our efficiency and accuracy, allowing us to stay ahead of the competition.</p><div class="src">— CEO, Global Specialty Insurer</div></div>
+        <div class="testi"><div class="mark">"</div><p>We've seen substantial growth through the combination of excellent technology and underwriting talent.</p><div class="src">— President, Aviation Underwriting Practice</div></div>
+        <div class="testi"><div class="mark">"</div><p>In my 33 years in the business, this has been one of the best development teams I've worked with.</p><div class="src">— President, Specialty Underwriters</div></div>
+      </div>
+    </section>
+
+    <!-- 07 LEARNINGS -->
+    <section class="panel reveal" id="learnings" data-screen-label="07 Learnings">
+      <span class="eyebrow-num">07 — What this taught me</span>
+      <div class="learn-grid">
+        <div class="learn"><div class="ln">1</div><div class="learn-body"><h4>Foundation decisions are product strategy decisions</h4><p>Designing one base system that works for five sectors meant making deliberate constraints early. Those constraints felt limiting — they're what made the system scale without chaos.</p></div></div>
+        <div class="learn"><div class="ln">2</div><div class="learn-body"><h4>The user's real job is judgement, not data entry</h4><p>Every design decision came back to one question: does this help the underwriter make a better decision, faster? When that was the north star, the right solutions became obvious.</p></div></div>
+        <div class="learn"><div class="ln">3</div><div class="learn-body"><h4>Design for the designers who come after you</h4><p>When three more designers joined, they needed to extend the system without relearning it. Designing the handoff is part of the work.</p></div></div>
+        <div class="learn"><div class="ln">4</div><div class="learn-body"><h4>A pattern decision made once can live everywhere</h4><p>The right sidebar. The options bar. The unified filter. Each was a single decision that became a platform-wide standard. That's the leverage of systems thinking.</p></div></div>
+      </div>
+      <div class="closing">
+        <div class="cap">Designing at platform scale</div>
+        <p>"I was handed one LOB and no design system. I left behind a foundation that five products and three designers are built on. That is what it means to design at platform scale."</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="panel reveal" style="margin-bottom:0;max-width:var(--maxw);">
+    <div class="foot-grid">
+      <div>
+        <h4>On the desk</h4>
+        <div class="now-card">
+          <div class="cover"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M7 3.5 L7 23 L12 18.4 L15.2 25.6 L18 24.3 L14.9 17.3 L21 16.9 Z" fill="#eaf6ef"/><circle class="desk-dot" cx="24.5" cy="8" r="3" fill="#eaf6ef"/></svg></div>
+          <div>
+            <div class="t">Designing decisions, not screens</div>
+            <div class="s">Always designing for clarity, at scale</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#work">Selected work</a></li>
+          <li><a href="index.html#writing">Writing</a></li>
+          <li><a href="index.html#resume">Experience</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Medium</a></li>
+          <li><a href="index.html#contact">Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="pn-nav">
+    <a class="pn-back" href="enterprise-platform.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to platform overview
+    </a>
+    <a class="pn-back" href="team-management.html" style="flex-direction:row-reverse;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transform:rotate(180deg);"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Team &amp; User Management case study
+    </a>
+  </div>
+
+  <div class="foot-note">
+    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>Designed &amp; built end to end.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* scroll reveal */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.10, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+
+
+  /* sidebar scrollspy */
+  var jumps = {};
+  document.querySelectorAll('.side a').forEach(function(a){ jumps[a.getAttribute('data-jump')] = a; });
+  if(Object.keys(jumps).length){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var id = e.target.getAttribute('data-spy');
+          Object.keys(jumps).forEach(function(k){ jumps[k].classList.remove('active'); });
+          if(jumps[id]) jumps[id].classList.add('active');
+        }
+      });
+    },{rootMargin:'-30% 0px -55% 0px'});
+    document.querySelectorAll('[data-spy]').forEach(function(s){ spy.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>

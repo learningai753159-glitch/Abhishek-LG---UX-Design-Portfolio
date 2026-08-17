@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Great UX is being there when it's not easy — H10 · Abhishek LG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Quicksand:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" />
+<style>
+  :root{
+    --cream:#f3eee3;
+    --panel:#fbf8f1;
+    --panel-2:#f7f2e8;
+    --green:#15543b;
+    --green-deep:#0f3f2c;
+    --ink:#2c3733;
+    --ink-soft:#5d6b64;
+    --ink-faint:#9aa49c;
+    --black:#191919;
+    --peach:#f6d6ad;
+    --lavender:#dcd7f3;
+    --sky:#c4e2f4;
+    --pink:#f6c8c3;
+    --mint:#cde6d4;
+    --yellow:#f7d24a;
+    --gold:#c8861f;
+    --tag:#e9e3d6;
+    --radius-xl:40px;
+    --radius-lg:28px;
+    --radius-md:20px;
+    --shadow-card:0 18px 40px -24px rgba(20,40,30,.35);
+    --shadow-soft:0 10px 30px -20px rgba(20,40,30,.3);
+    --maxw:1240px;
+    --font-display:'Fredoka',system-ui,sans-serif;
+    --font-body:'DM Sans',system-ui,sans-serif;
+    --font-hand:'Caveat',cursive;
+    --green-bright:#008953;
+    --font-hero:'Bricolage Grotesque',sans-serif;
+    --font-cursive:'Bricolage Grotesque',sans-serif;
+    --font-proj:'Trebuchet MS','Segoe UI',sans-serif;
+    --font-quote:'Quicksand',var(--font-body);
+    --font-num:'Libre Baskerville',Georgia,serif;
+    --blue:#3b82c4;
+    --warm-red:#cf4f33;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:120px;}
+  body{
+    margin:0;background:var(--cream);color:var(--ink);
+    font-family:var(--font-body);font-size:18px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  svg{display:block;}
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;color:var(--green-bright);margin:0;line-height:1.04;letter-spacing:-.01em;}
+
+  .panel{background:var(--panel);border-radius:var(--radius-xl);padding:72px;margin:26px auto;max-width:var(--maxw);box-shadow:var(--shadow-soft);}
+
+  /* ---------- nav ---------- */
+  .nav{position:fixed;top:18px;left:0;right:0;z-index:80;display:flex;justify-content:center;align-items:center;pointer-events:none;}
+  .nav-inner{pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:26px;background:rgba(251,248,241,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(20,60,40,.07);padding:8px 8px 8px 18px;border-radius:999px;box-shadow:0 14px 34px -22px rgba(20,40,30,.5);}
+  .nav-brand{display:flex;align-items:center;gap:11px;}
+  .nav-avatar{width:34px;height:34px;border-radius:50%;flex:0 0 auto;background:#15543b url('assets/abhishek-avatar.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:#dff0e6;font-family:var(--font-display);font-weight:600;font-size:13px;border:2px solid rgba(255,255,255,.5);}
+  .nav-brand .nm{font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--green-bright);white-space:nowrap;}
+  .nav-back{font-weight:600;font-size:15px;color:#fff;background:var(--green-bright);padding:10px 20px;border-radius:999px;transition:transform .15s ease, box-shadow .2s ease;display:inline-flex;align-items:center;gap:8px;}
+  .nav-back:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(21,84,59,.7);}
+
+  /* ---------- shell ---------- */
+  .case-shell{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .main{min-width:0;}
+  .main .panel{margin:0 0 22px;padding:72px;max-width:none;}
+  .main .panel:first-child{margin-top:0;}
+  .article-main{min-width:0;}
+
+  /* ---------- type ---------- */
+  .eyebrow-num{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-body);font-weight:600;font-size:15px;letter-spacing:.01em;color:var(--green-bright);background:rgba(21,84,59,.08);padding:8px 16px;border-radius:999px;margin-bottom:24px;}
+  .sec-title{font-family:var(--font-cursive);font-size:clamp(30px,3.4vw,46px);color:var(--green-bright);margin-bottom:22px;letter-spacing:0;line-height:1.08;max-width:26ch;}
+  .body-copy{font-size:18px;color:var(--ink-soft);line-height:1.66;max-width:62ch;margin:0 0 18px;}
+  .body-copy:last-child{margin-bottom:0;}
+  .body-copy strong,.body-copy em{color:var(--ink);font-style:normal;font-weight:600;}
+
+  /* hero */
+  .main .panel.case-hero{padding-top:114px;}
+  .hero-tags{display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px;margin-bottom:26px;}
+  .hero-tags span{font-family:var(--font-body);font-weight:600;font-size:14.5px;color:var(--green-bright);background:rgba(21,84,59,.08);padding:7px 15px;border-radius:999px;}
+  .hero-tags span.read{background:transparent;color:var(--ink-faint);padding-left:4px;}
+  .hero-tags span.fin{background:var(--gold);color:#fff;letter-spacing:.04em;box-shadow:0 8px 18px -10px rgba(200,134,31,.8);}
+  .case-hero .headline{font-family:var(--font-hero);font-size:clamp(32px,4.6vw,60px);font-weight:400;color:#1e1f1e;max-width:18ch;margin:6px 0 24px;line-height:1.06;letter-spacing:0;}
+  .case-hero .subline{font-family:var(--font-quote);font-weight:600;font-size:clamp(19px,2vw,26px);color:var(--green-bright);max-width:42ch;line-height:1.3;margin:0;letter-spacing:-.01em;}
+
+  /* heuristic badge (hero) */
+  .heur-badge{display:inline-flex;align-items:center;gap:18px;background:var(--green);border-radius:var(--radius-md);padding:18px 26px;margin-top:6px;}
+  .heur-badge .hn{font-family:var(--font-num);font-weight:700;font-size:38px;color:#fff;line-height:1;}
+  .heur-badge .hl{display:flex;flex-direction:column;gap:3px;}
+  .heur-badge .hl .k{font-family:var(--font-body);font-weight:600;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#8fc4a8;}
+  .heur-badge .hl .v{font-family:var(--font-proj);font-weight:700;font-size:17px;color:#fff;line-height:1.15;}
+  .heur-desc{font-size:15.5px;color:var(--ink-soft);line-height:1.62;max-width:62ch;margin:18px 0 0;}
+
+  /* illustrations */
+  .ill{margin:34px 0 4px;display:flex;flex-direction:column;align-items:center;}
+  .ill-frame{background:var(--panel-2);border:1px solid rgba(20,60,40,.07);border-radius:var(--radius-lg);padding:34px 30px;width:100%;display:flex;justify-content:center;}
+  .ill svg{max-width:100%;height:auto;}
+  .ill-cap{text-align:center;font-size:13.5px;color:var(--ink-faint);margin-top:14px;max-width:58ch;line-height:1.5;}
+
+  /* pull / callout (left border accent) */
+  .pull{border-left:4px solid var(--yellow);background:var(--panel-2);border-radius:0 22px 22px 0;padding:32px 36px;margin-top:30px;}
+  .pull p{font-family:var(--font-quote);font-weight:600;font-size:clamp(20px,2.2vw,27px);line-height:1.34;color:var(--green-bright);margin:0;max-width:48ch;letter-spacing:-.01em;}
+  .pull .attr{font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink-faint);margin:16px 0 0;}
+
+  /* story block */
+  .story{background:var(--peach);border-radius:var(--radius-xl);padding:44px 46px;margin-top:30px;box-shadow:var(--shadow-card);}
+  .story .seyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#9a6418;margin-bottom:16px;}
+  .story .seyebrow .d{width:8px;height:8px;border-radius:50%;background:#cf4f33;flex:0 0 auto;}
+  .story h3{font-family:var(--font-cursive);font-weight:600;font-size:clamp(26px,3vw,38px);color:#5d3a12;margin:0 0 18px;line-height:1.08;letter-spacing:0;}
+  .story p{font-size:17px;color:#5a4a33;line-height:1.66;margin:0 0 16px;max-width:60ch;}
+  .story p:last-child{margin-bottom:0;}
+  .story p strong{color:#3f2e15;font-weight:700;}
+
+  /* strong dark callout */
+  .callout-strong{background:var(--green);border-radius:var(--radius-xl);padding:50px 54px;margin-top:32px;}
+  .callout-strong .cap{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8fc4a8;margin-bottom:18px;}
+  .callout-strong p{font-family:var(--font-quote);font-weight:600;font-size:clamp(22px,2.5vw,33px);line-height:1.3;color:#fff;margin:0;max-width:32ch;letter-spacing:-.01em;}
+
+  /* dual cards (old / new) */
+  .dual-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;align-items:start;}
+  .dual-card{background:var(--panel-2);border-radius:var(--radius-lg);padding:34px 32px 36px;border:1px solid rgba(20,60,40,.07);border-top:5px solid;display:flex;flex-direction:column;box-shadow:var(--shadow-card);}
+  .dual-card.grey{border-top-color:#b4ab97;}
+  .dual-card.green{border-top-color:#2f9e63;}
+  .dual-card .dlab{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;}
+  .dual-card .dlab .d{width:9px;height:9px;border-radius:50%;flex:0 0 auto;}
+  .dual-card.grey .dlab{color:#7a7567;} .dual-card.grey .dlab .d{background:#9aa49c;}
+  .dual-card.green .dlab{color:#1f6a45;} .dual-card.green .dlab .d{background:#2f9e63;}
+  .dual-card .quote{font-family:var(--font-quote);font-weight:700;font-size:21px;color:var(--ink);margin:0 0 14px;line-height:1.25;letter-spacing:-.01em;}
+  .dual-card.green .quote{color:#1f6a45;}
+  .dual-card p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.62;}
+
+  /* help pattern cards */
+  .help-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px;}
+  .help{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;background:var(--panel-2);border-radius:var(--radius-lg);padding:28px 30px;border:1px solid rgba(20,60,40,.06);}
+  .help .hic{width:52px;height:52px;border-radius:15px;background:rgba(0,137,83,.1);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .help .hic svg{width:27px;height:27px;color:var(--green-bright);}
+  .help h4{font-family:var(--font-proj);font-weight:700;font-size:18.5px;color:var(--ink);margin:0 0 8px;}
+  .help p{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.58;}
+
+  /* feature list (dot + title + body) */
+  .feat-list{display:flex;flex-direction:column;gap:14px;margin-top:30px;}
+  .feat{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;background:var(--panel-2);border-radius:var(--radius-lg);padding:28px 32px;border:1px solid rgba(20,60,40,.06);}
+  .feat .fd{width:14px;height:14px;border-radius:50%;background:var(--green-bright);margin-top:7px;flex:0 0 auto;box-shadow:0 0 0 6px rgba(0,137,83,.12);}
+  .feat h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0 0 8px;}
+  .feat p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.6;}
+
+  /* series complete */
+  .fin-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--gold);padding:8px 16px;border-radius:999px;margin-bottom:22px;}
+  .series{margin-top:30px;border-top:1px solid rgba(20,60,40,.12);}
+  .srow{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;padding:15px 6px;border-bottom:1px solid rgba(20,60,40,.08);}
+  .srow .sn{font-family:var(--font-num);font-weight:700;font-size:18px;color:var(--ink-faint);min-width:30px;}
+  .srow .st{font-family:var(--font-proj);font-weight:600;font-size:16.5px;color:var(--ink-soft);line-height:1.35;}
+  .srow.hl{background:rgba(0,137,83,.05);border-radius:12px;}
+  .srow.hl .sn{color:var(--green-bright);}
+  .srow.hl .st{color:var(--green-bright);font-weight:700;}
+  .whatsnext{display:grid;grid-template-columns:auto 1fr;gap:22px;background:var(--green);border-radius:var(--radius-lg);padding:34px 36px;margin-top:30px;align-items:start;}
+  .whatsnext .arr{font-family:var(--font-display);font-weight:700;font-size:34px;color:#7ee0a8;line-height:.9;}
+  .whatsnext h4{font-family:var(--font-proj);font-weight:700;font-size:20px;color:#fff;margin:0 0 10px;}
+  .whatsnext p{margin:0;font-size:15.5px;color:#cfe7da;line-height:1.6;max-width:60ch;}
+
+  /* ---------- footer ---------- */
+  footer{padding:30px 28px 60px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+  .foot-grid h4{font-family:var(--font-display);font-size:24px;color:var(--ink);margin-bottom:20px;}
+  .foot-grid ul{list-style:none;padding:0;margin:0;}
+  .foot-grid li{margin-bottom:12px;}
+  .foot-grid a{font-size:16px;color:var(--ink-soft);transition:color .2s;}
+  .foot-grid a:hover{color:var(--green);}
+  .now-card{background:var(--green-deep);border-radius:18px;padding:18px;display:flex;align-items:center;gap:16px;max-width:360px;color:#dff0e6;}
+  .now-card .cover{width:64px;height:64px;border-radius:10px;background:rgba(255,255,255,.08);flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
+  .now-card .cover .desk-dot{transform-box:fill-box;transform-origin:center;animation:deskPulse 2s ease-in-out infinite;}
+  @keyframes deskPulse{0%,100%{transform:scale(.65);opacity:.4}50%{transform:scale(1.15);opacity:1}}
+  @media (prefers-reduced-motion:reduce){.now-card .cover .desk-dot{animation:none;opacity:.9}}
+  .now-card .t{font-weight:700;font-size:15px;color:#fff;}
+  .now-card .s{font-size:13px;color:#aacdb9;}
+  .pn-nav{max-width:var(--maxw);margin:22px auto 0;padding:0 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .pn-nav .pn-back{font-weight:600;font-size:16px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;transition:color .2s;max-width:60%;}
+  .pn-nav .pn-back:hover{color:var(--green);}
+  .pn-next{display:flex;flex-direction:column;align-items:flex-end;text-align:right;background:var(--panel);border-radius:var(--radius-lg);padding:18px 26px;box-shadow:var(--shadow-soft);transition:transform .15s ease,box-shadow .2s ease;}
+  .pn-next:hover{transform:translateY(-2px);box-shadow:var(--shadow-card);}
+  .pn-next .cap{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);}
+  .pn-next .nm{font-family:var(--font-proj);font-weight:700;font-size:22px;color:var(--green-bright);margin-top:4px;}
+  .foot-note{max-width:var(--maxw);margin:36px auto 0;padding:0 28px;font-size:14px;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1000px){
+    .main .panel{padding:44px 34px;}
+    .dual-grid{grid-template-columns:1fr;}
+    .help-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    body{font-size:16.5px;}
+    .main .panel{padding:32px 22px;border-radius:30px;}
+    .case-shell{padding:0 16px;}
+    .nav-brand .nm{display:none;}
+    .feat{grid-template-columns:1fr;gap:10px;}
+    .story{padding:32px 26px;}
+    .callout-strong{padding:38px 30px;}
+    .srow{gap:14px;}
+    .pn-nav{flex-direction:column;align-items:stretch;}
+    .pn-nav .pn-back{max-width:none;}
+    .pn-next{align-items:flex-start;text-align:left;}
+  }
+</style></head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+      <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
+      <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
+    </a>
+    <a class="nav-back" href="index.html#writing">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to writing
+    </a>
+  </div>
+</nav>
+
+<div class="case-shell" style="padding-top:0;">
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="panel case-hero" data-screen-label="Hero">
+      <div class="hero-tags">
+        <span>Heuristics</span>
+        <span>H10</span>
+        <span class="read">4 min read</span>
+        <span class="fin">★ Series Finale</span>
+      </div>
+      <h1 class="headline">Great UX is being there when it's not easy.</h1>
+      <div class="heur-badge">
+        <span class="hn">10</span>
+        <span class="hl">
+          <span class="k">Heuristic 10</span>
+          <span class="v">Help and Documentation</span>
+        </span>
+      </div>
+      <p class="heur-desc">Even though it's better if the system can be used without documentation, it may be necessary to provide help. It should be easy to search, focused on the user's task, and list concrete steps.</p>
+      <p class="subline" style="margin-top:24px;">The best products are intuitive. But even the best designs confuse someone at some point. What makes a product truly user-centered isn't the absence of confusion — it's the presence of helpful, human support right when it's needed.</p>
+    </section>
+
+    <div class="article-main">
+
+      <!-- 01 -->
+      <section class="panel reveal" data-screen-label="01 Real-world story">
+        <span class="eyebrow-num">01 — Real-world story</span>
+        <h2 class="sec-title">The IKEA manual nobody reads — until they do.</h2>
+
+        <div class="story">
+          <div class="seyebrow"><span class="d"></span>Real-world analogy — the flatpack wardrobe</div>
+          <h3>You try without it. Then you reach for it. And it saves you.</h3>
+          <p>Most of us have a love-hate relationship with IKEA. You buy a wardrobe, carry it home in a flatpack box, and what do you do first? Try building it without the manual.</p>
+          <p>Then — 45 minutes and a few misplaced wooden dowels later — you reach for the booklet. And it saves you. Not because you're bad at assembling things. But because the manual was designed well enough to be useful exactly when you needed it.</p>
+          <p>The best IKEA manuals use clear visuals showing exactly where each part goes, avoid paragraphs of confusing text, highlight warnings with recognisable icons, and offer troubleshooting steps at the end.</p>
+          <p>Now imagine if IKEA gave you just the parts with no manual at all. <strong>That's exactly how a product without good documentation feels.</strong></p>
+        </div>
+
+        <div class="ill">
+          <div class="ill-frame">
+            <svg viewBox="0 0 560 300" width="560" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <!-- LEFT: no manual -->
+              <g>
+                <text x="150" y="30" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" letter-spacing=".4" fill="#a3402c">NO MANUAL / BAD DOCS</text>
+                <!-- confused figure -->
+                <g stroke="#2c3733" stroke-width="3.5">
+                  <circle cx="150" cy="72" r="15" fill="#f1ece1"/>
+                  <line x1="150" y1="87" x2="150" y2="120"/>
+                  <path d="M150 98 L134 112 M150 98 L166 112"/>
+                </g>
+                <text x="178" y="58" font-family="Fredoka, sans-serif" font-size="30" font-weight="600" fill="#cf4f33">?</text>
+                <!-- scattered parts -->
+                <g stroke="#9a6418" stroke-width="3">
+                  <rect x="74" y="156" width="58" height="13" rx="3" fill="#eccf9e" transform="rotate(-12 103 162)"/>
+                  <rect x="150" y="170" width="64" height="13" rx="3" fill="#eccf9e" transform="rotate(8 182 176)"/>
+                  <rect x="92" y="196" width="50" height="13" rx="3" fill="#eccf9e" transform="rotate(18 117 202)"/>
+                  <line x1="178" y1="150" x2="208" y2="142"/>
+                  <line x1="196" y1="200" x2="224" y2="208"/>
+                </g>
+                <g fill="#9a6418" stroke="none">
+                  <circle cx="120" cy="182" r="5"/>
+                  <circle cx="200" cy="166" r="5"/>
+                  <circle cx="96" cy="222" r="5"/>
+                  <circle cx="168" cy="214" r="5"/>
+                </g>
+                <text x="150" y="262" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#a3402c">Parts exist. Help doesn't.</text>
+              </g>
+
+              <!-- divider -->
+              <line x1="280" y1="30" x2="280" y2="262" stroke="#cfc7b5" stroke-width="2" stroke-dasharray="2 8"/>
+
+              <!-- RIGHT: good docs -->
+              <g>
+                <text x="410" y="30" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" letter-spacing=".4" fill="#1f6a45">GOOD DOCUMENTATION</text>
+                <!-- open booklet -->
+                <path d="M330 70 L410 60 V196 L330 206 Z" fill="#fffdf8" stroke="#15543b" stroke-width="3"/>
+                <path d="M490 70 L410 60 V196 L490 206 Z" fill="#fbf6ec" stroke="#15543b" stroke-width="3"/>
+                <line x1="410" y1="60" x2="410" y2="196" stroke="#15543b" stroke-width="3"/>
+                <!-- step diagrams on right page -->
+                <g stroke="#15543b" stroke-width="2">
+                  <rect x="420" y="78" width="26" height="20" rx="4" fill="#dceaf6"/>
+                  <rect x="454" y="80" width="26" height="20" rx="4" fill="#dceaf6"/>
+                  <path d="M447 88 h6 M450 85 l3 3 -3 3" stroke="#3b82c4"/>
+                </g>
+                <g font-family="DM Sans, sans-serif" font-size="9" font-weight="700" fill="#2c6da3">
+                  <text x="433" y="112" text-anchor="middle">Step 1</text>
+                  <text x="467" y="114" text-anchor="middle">Step 2</text>
+                </g>
+                <!-- warning -->
+                <path d="M428 132 l8 14 h-16 Z" fill="#f6e6c4" stroke="#c8861f" stroke-width="2"/>
+                <line x1="428" y1="137" x2="428" y2="141" stroke="#9a6418" stroke-width="2"/>
+                <circle cx="428" cy="143.5" r="1" fill="#9a6418"/>
+                <!-- step 3 + check -->
+                <rect x="448" y="130" width="26" height="20" rx="4" fill="#dceaf6" stroke="#15543b" stroke-width="2"/>
+                <text x="461" y="143" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="9" font-weight="700" fill="#2c6da3">3</text>
+                <!-- left page lines -->
+                <g stroke="#d8d0bc" stroke-width="5">
+                  <line x1="344" y1="92" x2="392" y2="86"/>
+                  <line x1="344" y1="112" x2="386" y2="107"/>
+                  <line x1="344" y1="132" x2="390" y2="127"/>
+                </g>
+                <!-- final tick -->
+                <circle cx="410" cy="176" r="13" fill="#2f9e63"/>
+                <path d="M404 176 l4 4 8 -9" stroke="#fff" stroke-width="2.6" fill="none"/>
+                <text x="410" y="240" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#1f6a45">Right info. Right moment.</text>
+                <text x="410" y="258" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#1f6a45">User saved.</text>
+              </g>
+            </svg>
+          </div>
+          <p class="ill-cap">Same product. Same parts. The manual isn't the product — but its presence or absence defines the entire experience of building it.</p>
+        </div>
+      </section>
+
+      <!-- 02 -->
+      <section class="panel reveal" data-screen-label="02 Old vs new">
+        <span class="eyebrow-num">02 — The old vs new approach</span>
+        <h2 class="sec-title">From "RTFM" to "We've got you."</h2>
+
+        <div class="dual-grid">
+          <div class="dual-card grey">
+            <span class="dlab"><span class="d"></span>Old approach</span>
+            <p class="quote">"RTFM — Read the Manual."</p>
+            <p>Help was the user's problem. Documentation existed in dense manuals, technical wikis, and PDFs nobody read. If you couldn't figure it out, that was on you. The product didn't need to care.</p>
+          </div>
+          <div class="dual-card green">
+            <span class="dlab"><span class="d"></span>Modern UX standard</span>
+            <p class="quote">"We're here when you need us."</p>
+            <p>Help is designed as part of the experience. Contextual tooltips, inline examples, onboarding flows, searchable FAQs — designed to meet users at the point of confusion, not after they've already given up.</p>
+          </div>
+        </div>
+
+        <div class="pull">
+          <p>"The shift isn't just philosophical — it's practical. Help that's hard to find is help that doesn't exist. The best documentation feels like part of the product, not an afterthought bolted on the side."</p>
+          <p class="attr">— The shift in H10</p>
+        </div>
+      </section>
+
+      <!-- 03 -->
+      <section class="panel reveal" data-screen-label="03 Help patterns">
+        <span class="eyebrow-num">03 — Help patterns in UX</span>
+        <h2 class="sec-title">How good products embed help into the experience.</h2>
+        <p class="body-copy">There are many ways to provide help — and the best ones don't interrupt the user's task. They sit quietly at the point of confusion, ready when needed, invisible when not.</p>
+
+        <div class="help-grid">
+          <div class="help">
+            <div class="hic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1H10l-5 4v-4H4a1 1 0 0 1 -1 -1V6a1 1 0 0 1 1 -1Z"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="13.5" x2="13" y2="13.5"/></svg></div>
+            <div>
+              <h4>Inline tooltips</h4>
+              <p>Small contextual hints that appear when a user hovers or focuses on a field. No page navigation needed — help comes to the user.</p>
+            </div>
+          </div>
+          <div class="help">
+            <div class="hic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg></div>
+            <div>
+              <h4>Searchable FAQs</h4>
+              <p>Help content that users can search by what they're actually trying to do — not by how the product team categorised it. Real questions, real answers.</p>
+            </div>
+          </div>
+          <div class="help">
+            <div class="hic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7 -7.5 7 -13a7 7 0 0 0 -14 0c0 5.5 7 13 7 13Z"/><circle cx="12" cy="9" r="2.6"/></svg></div>
+            <div>
+              <h4>Contextual hints</h4>
+              <p>Hints that appear based on what the user is doing — not randomly. If a user hesitates on a step, the system surfaces relevant guidance automatically.</p>
+            </div>
+          </div>
+          <div class="help">
+            <div class="hic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.4"/><line x1="14.4" y1="9.6" x2="18.4" y2="5.6"/><line x1="9.6" y1="9.6" x2="5.6" y2="5.6"/><line x1="14.4" y1="14.4" x2="18.4" y2="18.4"/><line x1="9.6" y1="14.4" x2="5.6" y2="18.4"/></svg></div>
+            <div>
+              <h4>Always-visible support</h4>
+              <p>A Help or Support option that's always accessible from the menu — not buried five levels deep. Users shouldn't have to work to find help.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 -->
+      <section class="panel reveal" data-screen-label="04 Embedded help">
+        <span class="eyebrow-num">04 — Embedded help</span>
+        <h2 class="sec-title">Help as part of the experience, not separate from it.</h2>
+        <p class="body-copy">The difference between good and bad help isn't the quality of the content — it's the placement. Help buried in a separate documentation portal is rarely found in the moment of need. Help embedded at the point of confusion is exactly what users need, exactly when they need it.</p>
+
+        <div class="ill">
+          <div class="ill-frame">
+            <svg viewBox="0 0 560 306" width="560" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <!-- LEFT: help elsewhere -->
+              <g>
+                <text x="150" y="28" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" letter-spacing=".4" fill="#a3402c">HELP LIVES ELSEWHERE</text>
+                <!-- field 1 -->
+                <text x="44" y="62" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#5d6b64">GSTIN Number</text>
+                <rect x="44" y="70" width="172" height="38" rx="9" fill="#fffdf8" stroke="#d8d0bc" stroke-width="2"/>
+                <text x="238" y="94" font-family="Fredoka, sans-serif" font-size="26" font-weight="600" fill="#cf4f33">?</text>
+                <!-- field 2 -->
+                <text x="44" y="138" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#5d6b64">PAN Number</text>
+                <rect x="44" y="146" width="172" height="38" rx="9" fill="#fffdf8" stroke="#d8d0bc" stroke-width="2"/>
+                <text x="238" y="170" font-family="Fredoka, sans-serif" font-size="26" font-weight="600" fill="#cf4f33">?</text>
+                <!-- far away link -->
+                <text x="44" y="244" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#3b82c4">Read documentation →</text>
+                <text x="150" y="284" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#a3402c">Help is somewhere else.</text>
+              </g>
+
+              <!-- divider -->
+              <line x1="290" y1="28" x2="290" y2="270" stroke="#cfc7b5" stroke-width="2" stroke-dasharray="2 8"/>
+
+              <!-- RIGHT: help here -->
+              <g>
+                <text x="424" y="28" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" letter-spacing=".4" fill="#1f6a45">HELP IS RIGHT HERE</text>
+                <!-- field 1 -->
+                <text x="322" y="62" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#5d6b64">GSTIN Number</text>
+                <circle cx="420" cy="57" r="8" fill="#f6e6c4"/>
+                <text x="420" y="61" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="800" fill="#9a6418">?</text>
+                <rect x="322" y="70" width="172" height="38" rx="9" fill="#fffdf8" stroke="#c8861f" stroke-width="2"/>
+                <!-- tooltip popup -->
+                <rect x="346" y="116" width="168" height="50" rx="10" fill="#15543b"/>
+                <path d="M392 116 l6 -8 6 8 Z" fill="#15543b"/>
+                <text x="360" y="138" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="700" fill="#fff">15-character GST ID</text>
+                <text x="360" y="155" font-family="Courier New, monospace" font-size="11" font-weight="700" fill="#9fd6b8">22AAAAA0000A1Z5</text>
+                <!-- field 2 -->
+                <text x="322" y="200" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#5d6b64">PAN Number</text>
+                <circle cx="409" cy="195" r="8" fill="#f6e6c4"/>
+                <text x="409" y="199" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="800" fill="#9a6418">?</text>
+                <rect x="322" y="208" width="172" height="38" rx="9" fill="#fffdf8" stroke="#d8d0bc" stroke-width="2"/>
+                <text x="332" y="266" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="600" fill="#9aa49c">Example: ABCDE1234F</text>
+                <text x="424" y="294" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#1f6a45">Help is right here.</text>
+              </g>
+            </svg>
+          </div>
+          <p class="ill-cap">Same form. Left: the user is confused and help is a scroll away. Right: a question mark icon reveals the format inline — help appears at the exact point of confusion, without leaving the task.</p>
+        </div>
+      </section>
+
+      <!-- 05 -->
+      <section class="panel reveal" data-screen-label="05 Takeaways">
+        <span class="eyebrow-num">05 — What to design for</span>
+        <h2 class="sec-title">Support users with empathy.</h2>
+
+        <div class="feat-list">
+          <div class="feat">
+            <span class="fd"></span>
+            <div>
+              <h4>Make help easy to find — no one should have to dig for it</h4>
+              <p>Help options should be visible and accessible from anywhere in the product. If users have to search for your Help section, it's already too hard to find.</p>
+            </div>
+          </div>
+          <div class="feat">
+            <span class="fd"></span>
+            <div>
+              <h4>Embed help within the experience</h4>
+              <p>Tooltips, inline hints, onboarding overlays, contextual icons — these meet users at the point of confusion, not after they've already given up.</p>
+            </div>
+          </div>
+          <div class="feat">
+            <span class="fd"></span>
+            <div>
+              <h4>Use visuals, examples, and simple language</h4>
+              <p>Help content should be as carefully designed as the product itself. Clear screenshots, plain language, concrete examples — not technical jargon and dense paragraphs.</p>
+            </div>
+          </div>
+          <div class="feat">
+            <span class="fd"></span>
+            <div>
+              <h4>Don't punish users for needing help</h4>
+              <p>Needing help is human. The tone, accessibility, and design of your help system should make users feel supported — not embarrassed for not knowing.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 -->
+      <section class="panel reveal" data-screen-label="06 Closing thought">
+        <span class="eyebrow-num">06 — Closing thought</span>
+        <h2 class="sec-title">The best products are still there when they're hard.</h2>
+        <p class="body-copy">Even the most intuitive designs can confuse someone at some point. That's not a failure of design — it's a reality of designing for millions of different people with different backgrounds, contexts, and expectations.</p>
+        <p class="body-copy">What makes a product truly user-centered is not the absence of confusion — but the presence of helpful, human support right when it's needed. The IKEA manual nobody reads until they need it — but when they do, it's exactly right. <strong>That's the standard.</strong></p>
+
+        <div class="callout-strong">
+          <div class="cap">The closing thought of the series</div>
+          <p>Great UX is not just about making things easy. It's about being there when they're not.</p>
+        </div>
+      </section>
+
+      <!-- 07 SERIES COMPLETE -->
+      <section class="panel reveal" data-screen-label="07 Series complete">
+        <span class="fin-eyebrow">★ 10-week series — complete</span>
+        <h2 class="sec-title">NN Heuristics as I See It.</h2>
+        <p class="body-copy">Ten weeks. Ten heuristics. Ten real-life stories that connect design principles to the world we actually live in. From dosas to dance classes, from wash basins to WhatsApp — UX really is everywhere.</p>
+
+        <div class="series">
+          <a class="srow hl" href="ux-not-screens.html"><span class="sn">00</span><span class="st">UX — More Than Just Screens</span></a>
+          <a class="srow" href="h1-visibility.html"><span class="sn">01</span><span class="st">A Good Product Works. A Great Product Talks.</span></a>
+          <a class="srow" href="h2-real-world.html"><span class="sn">02</span><span class="st">Design Is Not About Teaching. It's About Feeling at Home.</span></a>
+          <a class="srow" href="h3-control-freedom.html"><span class="sn">03</span><span class="st">Your Users Need a Brake Pedal.</span></a>
+          <a class="srow" href="h4-consistency.html"><span class="sn">04</span><span class="st">Same Dosa, Every Time.</span></a>
+          <a class="srow" href="h5-error-prevention.html"><span class="sn">05</span><span class="st">The Best Error Is the One That Never Happens.</span></a>
+          <a class="srow" href="h6-recognition.html"><span class="sn">06</span><span class="st">You Don't Forget. You Just Need the Right Cue.</span></a>
+          <a class="srow" href="h7-flexibility.html"><span class="sn">07</span><span class="st">Every User Has a Rhythm. Design Should Honor It.</span></a>
+          <a class="srow" href="h8-minimal-design.html"><span class="sn">08</span><span class="st">They Came for the Chocolate Cake. Don't Distract Them.</span></a>
+          <a class="srow" href="h9-error-recovery.html"><span class="sn">09</span><span class="st">Errors Are Inevitable. Confusion Is Not.</span></a>
+          <a class="srow hl" href="h10-help-docs.html"><span class="sn">10</span><span class="st">Great UX Is Being There When It's Not Easy.</span></a>
+        </div>
+
+        <div class="whatsnext">
+          <span class="arr">→</span>
+          <div>
+            <h4>What's next</h4>
+            <p>This series is complete — but the thinking continues. New articles exploring design communication, designer growth, and empathy in practice are coming. The goal remains the same: helping designers see UX everywhere, not just on screens.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="panel reveal" style="margin-bottom:0;max-width:var(--maxw);">
+    <div class="foot-grid">
+      <div>
+        <h4>On the desk</h4>
+        <div class="now-card">
+          <div class="cover"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M7 3.5 L7 23 L12 18.4 L15.2 25.6 L18 24.3 L14.9 17.3 L21 16.9 Z" fill="#eaf6ef"/><circle class="desk-dot" cx="24.5" cy="8" r="3" fill="#eaf6ef"/></svg></div>
+          <div>
+            <div class="t">Designing decisions, not screens</div>
+            <div class="s">Currently · building Galla, phase 1</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#work">Selected work</a></li>
+          <li><a href="index.html#writing">Writing</a></li>
+          <li><a href="index.html#resume">Experience</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/abhishek-lokesh-162800219/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Medium</a></li>
+          <li><a href="mailto:abhisheklokesh.uiux159@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="pn-nav">
+    <a class="pn-back" href="h9-error-recovery.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      H9: Errors Are Inevitable. Confusion Is Not.
+    </a>
+    <a class="pn-next" href="index.html#writing">
+      <span class="cap">The series</span>
+      <span class="nm">Back to Writing →</span>
+    </a>
+  </div>
+
+  <div class="foot-note">
+    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>H10 of 11 — Help and Documentation. Series complete.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.10, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+</body>
+</html>

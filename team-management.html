@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Team &amp; User Management — Case Study · Abhishek LG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Quicksand:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" />
+<link rel="stylesheet" href="submission-diagrams.css" />
+<link rel="stylesheet" href="realistic-ui.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+<style>
+  :root{
+    /* surfaces */
+    --cream:#f3eee3;
+    --panel:#fbf8f1;
+    --panel-2:#f7f2e8;
+    /* ink */
+    --green:#15543b;
+    --green-deep:#0f3f2c;
+    --ink:#2c3733;
+    --ink-soft:#5d6b64;
+    --ink-faint:#9aa49c;
+    --black:#191919;
+    /* pastels */
+    --peach:#f6d6ad;
+    --lavender:#dcd7f3;
+    --sky:#c4e2f4;
+    --pink:#f6c8c3;
+    --mint:#cde6d4;
+    --yellow:#f7d24a;
+    --tag:#e9e3d6;
+    /* misc */
+    --radius-xl:40px;
+    --radius-lg:28px;
+    --radius-md:20px;
+    --shadow-card:0 18px 40px -24px rgba(20,40,30,.35);
+    --shadow-soft:0 10px 30px -20px rgba(20,40,30,.3);
+    --maxw:1240px;
+    --font-display:'Fredoka',system-ui,sans-serif;
+    --font-body:'DM Sans',system-ui,sans-serif;
+    --font-hand:'Caveat',cursive;
+    /* matched homepage type roles */
+    --green-bright:#008953;
+    --font-hero:'Bricolage Grotesque',sans-serif;
+    --font-cursive:'Bricolage Grotesque',sans-serif;
+    --font-proj:'Bricolage Grotesque',sans-serif;
+    --font-quote:'Quicksand',var(--font-body);
+    --font-num:'Libre Baskerville',Georgia,serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:120px;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:18px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;color:var(--green-bright);margin:0;line-height:1.04;letter-spacing:-.01em;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  /* ---------- panels ---------- */
+  .panel{
+    background:var(--panel);
+    border-radius:var(--radius-xl);
+    padding:72px;
+    margin:26px auto;
+    max-width:var(--maxw);
+    box-shadow:var(--shadow-soft);
+  }
+  .section-label{
+    font-family:var(--font-body);
+    font-size:18px;
+    color:var(--ink-soft);
+    font-weight:500;
+    margin-bottom:14px;
+  }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:fixed;top:18px;left:0;right:0;z-index:80;
+    display:flex;justify-content:center;align-items:center;
+    pointer-events:none;
+  }
+  .nav-inner{
+    pointer-events:auto;
+    display:flex;align-items:center;justify-content:space-between;gap:26px;
+    background:rgba(251,248,241,.86);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border:1px solid rgba(20,60,40,.07);
+    padding:8px 8px 8px 18px;border-radius:999px;
+    box-shadow:0 14px 34px -22px rgba(20,40,30,.5);
+  }
+  .nav-brand{display:flex;align-items:center;gap:11px;}
+  .nav-avatar{
+    width:34px;height:34px;border-radius:50%;flex:0 0 auto;
+    background:#15543b url('assets/abhishek-avatar.jpg') center/cover no-repeat;
+    display:flex;align-items:center;justify-content:center;
+    color:#dff0e6;font-family:var(--font-display);font-weight:600;font-size:13px;
+    border:2px solid rgba(255,255,255,.5);
+  }
+  .nav-brand .nm{font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--green-bright);white-space:nowrap;}
+  .nav-back{
+    font-weight:600;font-size:15px;color:#fff;background:var(--green-bright);
+    padding:10px 20px;border-radius:999px;
+    transition:transform .15s ease, box-shadow .2s ease;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .nav-back:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(21,84,59,.7);}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--font-body);font-weight:600;font-size:15.5px;
+    padding:13px 22px;border-radius:999px;border:none;cursor:pointer;
+    transition:transform .15s ease, box-shadow .2s ease, background .2s;
+    white-space:nowrap;
+  }
+  .btn svg{width:17px;height:17px;}
+  .btn-dark{background:var(--black);color:#fff;}
+  .btn-dark:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(0,0,0,.6);}
+  .btn-green{background:var(--green-bright);color:#fff;}
+  .btn-green:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(21,84,59,.7);}
+  .btn-ghost{background:transparent;color:var(--green);border:1.5px solid rgba(21,84,59,.35);}
+  .btn-ghost:hover{background:rgba(21,84,59,.06);}
+
+  /* ---------- case layout ---------- */
+  .case-shell{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .main{min-width:0;}
+  .main .panel{margin:0 0 22px;padding:72px;max-width:none;}
+  .main .panel:first-child{margin-top:0;}
+
+  .eyebrow-num{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--font-body);font-weight:600;font-size:15px;letter-spacing:.01em;
+    color:var(--green-bright);background:rgba(21,84,59,.08);
+    padding:8px 16px;border-radius:999px;margin-bottom:24px;
+  }
+  .sec-title{font-family:var(--font-cursive);font-size:clamp(34px,4.2vw,52px);color:var(--green-bright);margin-bottom:18px;letter-spacing:0;}
+  .lead-line{
+    font-family:var(--font-quote);font-weight:600;
+    font-size:clamp(20px,2vw,26px);line-height:1.3;color:var(--ink);
+    max-width:none;margin:0 0 26px;letter-spacing:-.01em;
+  }
+  .body-copy{font-size:18px;color:var(--ink-soft);line-height:1.62;max-width:64ch;margin:0 0 18px;}
+  .body-copy strong,.body-copy em{color:var(--ink);font-style:normal;font-weight:600;}
+
+  /* hero */
+  .case-hero{padding-top:56px;}
+  .role-badge{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--font-body);font-weight:600;font-size:16px;
+    color:var(--green-bright);background:rgba(21,84,59,.08);
+    padding:8px 16px;border-radius:999px;margin-bottom:26px;
+  }
+  .role-badge .dot{width:8px;height:8px;border-radius:50%;background:#2fae74;box-shadow:0 0 0 4px rgba(47,174,116,.18);}
+  .crumb{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
+  .crumb-parent{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:var(--ink-soft);transition:color .2s;}
+  .crumb-parent:hover{color:var(--green-bright);}
+  .crumb-parent svg{width:15px;height:15px;flex:0 0 auto;}
+  .crumb-home{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(21,84,59,.08);color:var(--ink-soft);transition:color .2s,background .2s;flex:0 0 auto;}
+  .crumb-home:hover{color:var(--green-bright);background:rgba(21,84,59,.16);}
+  .crumb-home svg{width:18px;height:18px;}
+  .case-hero .proj{font-family:var(--font-hero);font-size:clamp(40px,6vw,72px);font-weight:400;line-height:1;margin-bottom:8px;letter-spacing:0;}
+  .case-hero .headline{font-family:var(--font-quote);font-weight:600;font-size:clamp(26px,3.4vw,44px);color:#1e1f1e;max-width:none;margin:8px 0 22px;line-height:1.15;letter-spacing:-.01em;}
+  .case-hero .subline{font-size:clamp(17px,1.6vw,21px);color:var(--ink-soft);max-width:60ch;line-height:1.6;margin:0 0 40px;}
+
+  /* metric row */
+  .metric-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:28px;}
+  .metric-card{
+    display:inline-flex;align-items:baseline;gap:9px;background:rgba(21,84,59,.09);border-radius:999px;padding:15px 24px;white-space:nowrap;
+  }
+  .metric-card .num{font-family:var(--font-num);font-weight:700;font-size:21px;color:var(--green);line-height:1;white-space:nowrap;}
+  .metric-card .lab{font-size:14.5px;color:var(--ink);line-height:1.3;font-weight:600;white-space:nowrap;}
+
+  /* insight cards */
+  .insight-grid{display:grid;gap:16px;margin-top:8px;}
+  .insight-grid.two{grid-template-columns:1fr 1fr;}
+  .insight{
+    background:var(--panel-2);border-radius:var(--radius-md);
+    padding:26px 28px;border:1px solid rgba(20,60,40,.06);
+  }
+  .insight .k{
+    font-family:var(--font-body);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--green-bright);margin-bottom:10px;
+  }
+  .insight p{margin:0;font-size:16px;color:var(--ink-soft);line-height:1.55;}
+
+  /* pull quote */
+  .pull{
+    border-left:4px solid var(--yellow);background:var(--panel-2);
+    border-radius:0 22px 22px 0;padding:34px 38px;margin-top:6px;
+  }
+  .pull p{
+    font-family:var(--font-quote);font-weight:600;font-size:clamp(21px,2.3vw,28px);
+    line-height:1.32;color:var(--green-bright);margin:0;max-width:40ch;letter-spacing:-.01em;
+  }
+  .pull.tight{margin:18px 0;}
+  .pull.tight p{font-size:clamp(18px,1.9vw,23px);max-width:54ch;}
+
+  /* learnings */
+  .learn-grid{display:flex;flex-direction:column;margin-top:8px;}
+  .learn{
+    display:flex;align-items:flex-start;gap:22px;padding:24px 0;border-bottom:1px solid rgba(20,60,40,.1);
+  }
+  .learn:first-child{padding-top:6px;}
+  .learn:last-child{border-bottom:none;}
+  .learn .ln{
+    flex:0 0 auto;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:var(--font-num);font-weight:700;font-size:14px;margin:0;line-height:1;
+  }
+  .learn:nth-child(1) .ln{background:var(--peach);color:#7a4f0a;}
+  .learn:nth-child(2) .ln{background:var(--lavender);color:#4a3f7a;}
+  .learn:nth-child(3) .ln{background:var(--sky);color:#245b7a;}
+  .learn:nth-child(4) .ln{background:var(--mint);color:#1f5c3d;}
+  .learn-body{flex:1;}
+  .learn h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0 0 8px;}
+  .learn p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.5;}
+  }
+  .learn h4{font-family:var(--font-proj);font-weight:700;font-size:22px;color:var(--ink);margin-bottom:10px;}
+  .learn p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.55;}
+
+  /* closing */
+  .closing{
+    background:var(--green);border-radius:var(--radius-xl);padding:56px;color:#dff0e6;
+    margin-top:22px;
+  }
+  .closing .cap{font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#8fc4a8;margin-bottom:18px;}
+  .closing p{font-family:var(--font-quote);font-weight:600;font-size:clamp(23px,2.7vw,34px);line-height:1.28;color:#fff;margin:0;max-width:32ch;letter-spacing:-.01em;}
+
+  /* impact stats */
+  .impact-grid{display:flex;flex-wrap:wrap;gap:0;margin:8px 0 8px;border-top:1px solid rgba(20,60,40,.12);border-bottom:1px solid rgba(20,60,40,.12);}
+  .impact-stat{
+    flex:1;min-width:200px;padding:30px 26px;border-left:1px solid rgba(20,60,40,.12);
+  }
+  .impact-stat:first-child{border-left:none;}
+  .impact-stat .num{font-family:var(--font-num);font-weight:700;font-size:clamp(32px,4vw,44px);color:var(--green-bright);line-height:1;}
+  .impact-stat .lab{font-size:14.5px;color:var(--ink);margin-top:12px;line-height:1.4;font-weight:600;}
+  .impact-stat .sub{font-size:13px;color:var(--ink-soft);margin-top:9px;line-height:1.45;}
+  .impact-rowlabel{font-family:var(--font-proj);font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px;}
+  .impact-rowlabel.second{margin-top:24px;}
+
+  /* architecture layers (03 Solution) */
+  .arch-layers{display:flex;flex-direction:column;gap:14px;margin-top:8px;}
+  .layer{
+    border-radius:var(--radius-lg);padding:28px 32px;position:relative;overflow:hidden;
+    box-shadow:var(--shadow-card);
+  }
+  .layer:nth-child(1){background:var(--mint);}
+  .layer:nth-child(2){background:var(--sky);}
+  .layer:nth-child(3){background:var(--lavender);}
+  .layer .lhead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:10px;flex-wrap:wrap;}
+  .layer h4{font-family:var(--font-cursive);font-weight:600;font-size:26px;color:#26312c;line-height:1.1;letter-spacing:0;}
+  .layer .lpct{font-family:var(--font-num);font-weight:700;font-size:15px;color:#33433b;background:rgba(255,255,255,.5);padding:5px 13px;border-radius:999px;white-space:nowrap;}
+  .layer p{margin:0;font-size:15.5px;color:#39433d;line-height:1.55;max-width:74ch;}
+
+  /* scannable bullet list */
+  .bullets{display:grid;gap:11px;margin:8px 0 0;padding:0;list-style:none;}
+  .bullets li{
+    position:relative;padding:16px 20px 16px 46px;
+    background:var(--panel-2);border-radius:14px;border:1px solid rgba(20,60,40,.06);
+    font-size:15.5px;color:var(--ink-soft);line-height:1.5;
+  }
+  .bullets li::before{
+    content:'';position:absolute;left:20px;top:23px;width:9px;height:9px;border-radius:50%;
+    background:var(--green-bright);
+  }
+  .bullets.warn li::before{background:#cf4f33;}
+  .sub-label{font-family:var(--font-proj);font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px;}
+
+  /* contribution cards */
+  .contrib-grid{display:flex;flex-direction:column;gap:16px;margin-top:8px;}
+  .contrib{
+    background:var(--panel-2);border-radius:var(--radius-lg);padding:32px;border:1px solid rgba(20,60,40,.06);
+  }
+  .contrib h4{font-family:var(--font-proj);font-weight:700;font-size:20px;color:var(--ink);margin:0 0 16px;}
+  .contrib .pdo{display:flex;flex-direction:column;gap:13px;}
+  .contrib .row{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start;}
+  .contrib .row .lbl{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding-top:2px;}
+  .contrib .row.p .lbl{color:#a3402c;}
+  .contrib .row.d .lbl{color:#345d76;}
+  .contrib .row.o .lbl{color:var(--green-bright);}
+  .contrib .row p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.52;}
+  .contrib.stacked > div:nth-child(2){border-top:1px solid rgba(20,60,40,.12);margin-top:30px;padding-top:32px;}
+
+  /* ---------- footer ---------- */
+  footer{padding:30px 28px 60px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+  .foot-grid h4{font-family:var(--font-display);font-size:24px;color:var(--ink);margin-bottom:20px;}
+  .foot-grid ul{list-style:none;padding:0;margin:0;}
+  .foot-grid li{margin-bottom:12px;}
+  .foot-grid a{font-size:16px;color:var(--ink-soft);transition:color .2s;}
+  .foot-grid a:hover{color:var(--green);}
+  .now-card{background:var(--green-bright);border-radius:18px;padding:18px;display:flex;align-items:center;gap:16px;max-width:360px;color:#dff0e6;}
+  .now-card .cover{width:64px;height:64px;border-radius:10px;background:rgba(255,255,255,.08);flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
+  .now-card .cover .desk-dot{transform-box:fill-box;transform-origin:center;animation:deskPulse 2s ease-in-out infinite;}
+  @keyframes deskPulse{0%,100%{transform:scale(.65);opacity:.4}50%{transform:scale(1.15);opacity:1}}
+  @media (prefers-reduced-motion:reduce){.now-card .cover .desk-dot{animation:none;opacity:.9}}
+  .now-card .t{font-weight:700;font-size:15px;color:#fff;}
+  .now-card .s{font-size:13px;color:#aacdb9;}
+
+  .pn-nav{
+    max-width:var(--maxw);margin:22px auto 0;padding:0 28px;
+    display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+  }
+  .pn-nav .pn-back{font-weight:600;font-size:16px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;transition:color .2s;}
+  .pn-nav .pn-back:hover{color:var(--green);}
+  .pn-next{
+    display:flex;flex-direction:column;align-items:flex-end;text-align:right;
+    background:var(--panel);border-radius:var(--radius-lg);padding:18px 26px;
+    box-shadow:var(--shadow-soft);transition:transform .15s ease,box-shadow .2s ease;
+  }
+  .pn-next:hover{transform:translateY(-2px);box-shadow:var(--shadow-card);}
+  .pn-next .cap{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);}
+  .pn-next .nm{font-family:var(--font-proj);font-weight:700;font-size:22px;color:var(--green-bright);margin-top:4px;}
+  .foot-note{max-width:var(--maxw);margin:36px auto 0;padding:0 28px;font-size:14px;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ============================================================
+     Team & User Management — supplementary mockup classes (.dg scope)
+     ============================================================ */
+  .dg-topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:0 0 16px;border-bottom:1px solid var(--line);margin-bottom:18px;}
+  .dg-topbar .ttl{font-family:'Fredoka',sans-serif;font-weight:600;font-size:17px;color:#23282a;}
+  .dg-topbar .meta{font-size:12.5px;color:#8a9189;margin-top:3px;}
+
+  .dg-avatar{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;color:#fff;flex:0 0 auto;}
+  .dg-avatar.lg{width:56px;height:56px;font-size:18px;}
+  .dg-avatar.a1{background:#1d6b4a;} .dg-avatar.a2{background:#2f78d6;} .dg-avatar.a3{background:#d0247f;} .dg-avatar.a4{background:#e2a23a;} .dg-avatar.a5{background:#7b61c4;}
+  .dg-namecell{display:flex;align-items:center;gap:10px;}
+  .dg-namecell .nm{font-weight:700;color:#23282a;font-size:13px;}
+
+  .dg-role{display:inline-flex;align-items:center;font-size:11.5px;font-weight:600;color:#345d76;background:#e3eef5;padding:4px 11px;border-radius:7px;white-space:nowrap;}
+  .dg-region-tag{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:#5d645c;background:#f0ede5;border-radius:7px;padding:4px 11px;white-space:nowrap;}
+  .dg-region-tag svg{width:11px;height:11px;color:#8a9189;}
+
+  .dg-pst{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;padding:4px 11px;border-radius:999px;white-space:nowrap;}
+  .dg-pst::before{content:'';width:7px;height:7px;border-radius:50%;flex:0 0 auto;}
+  .dg-pst.active{color:#1f8a5b;background:#e4f3eb;} .dg-pst.active::before{background:#2f9e63;}
+  .dg-pst.invited{color:#9a6a1f;background:#fcefdc;} .dg-pst.invited::before{background:#e2a23a;}
+  .dg-pst.inactive{color:#8a9189;background:#eef0ec;} .dg-pst.inactive::before{background:#aeb3aa;}
+
+  .dg-stage{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;padding:4px 11px;border-radius:999px;white-space:nowrap;}
+  .dg-stage::before{content:'';width:7px;height:7px;border-radius:50%;flex:0 0 auto;}
+  .dg-stage.uw{color:#9a6a1f;background:#fcefdc;} .dg-stage.uw::before{background:#e2a23a;}
+  .dg-stage.quoted{color:#2f78d6;background:#e8f1fc;} .dg-stage.quoted::before{background:#2f78d6;}
+  .dg-stage.bound{color:#1f8a5b;background:#e4f3eb;} .dg-stage.bound::before{background:#2f9e63;}
+
+  /* overview tri-card (hero) */
+  .dg-ovw{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media (max-width:760px){ .dg-ovw{grid-template-columns:1fr;} }
+  .dg-ovw .col-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+  .dg-ovw .col-h .l{display:flex;align-items:center;gap:9px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:15px;color:#23282a;}
+  .dg-ovw .col-h .l svg{width:17px;height:17px;color:var(--g);}
+  .dg-ovw .col-h .c{font-size:11px;font-weight:700;color:#fff;background:var(--g);border-radius:999px;padding:2px 9px;}
+  .dg-orow{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #f1eee6;font-size:12.5px;}
+  .dg-orow:last-child{border-bottom:none;}
+  .dg-orow .nm{font-weight:600;color:#33403a;}
+  .dg-orow .rl{margin-left:auto;font-size:11px;color:#8a9189;}
+
+  /* role cards grid */
+  .dg-rolegrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  @media (max-width:560px){ .dg-rolegrid{grid-template-columns:1fr;} }
+  .dg-rolecard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:0 2px 6px -4px rgba(20,40,30,.12);}
+  .dg-rolecard .rh{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .dg-rolecard .rn{font-weight:700;font-size:15px;color:#23282a;}
+  .dg-rolecard .rdots{display:flex;gap:3px;color:#aeb3aa;}
+  .dg-rolecard .rdots i{width:4px;height:4px;border-radius:50%;background:currentColor;}
+  .dg-rolecard .rstats{display:flex;gap:26px;margin-top:16px;}
+  .dg-rolecard .rstats .n{font-family:'Libre Baskerville',serif;font-weight:700;font-size:21px;color:#1a5c3a;line-height:1;}
+  .dg-rolecard .rstats .k{font-size:11px;color:#8a9189;margin-top:5px;}
+
+  /* permission groups (role modal) */
+  .dg-permgroup{border:1px solid var(--line);border-radius:11px;padding:14px 16px;margin-bottom:11px;background:#faf8f3;}
+  .dg-permgroup .pg-h{font-weight:700;font-size:12.5px;color:#33403a;margin-bottom:8px;letter-spacing:.02em;}
+  .dg-permrow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid #f1eee6;font-size:13px;color:#4a514a;}
+  .dg-permrow:last-child{border-bottom:none;}
+
+  /* team list rows */
+  .dg-teamrow{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px 18px;margin-bottom:11px;box-shadow:0 2px 6px -4px rgba(20,40,30,.1);}
+  .dg-teamrow .ti{width:38px;height:38px;border-radius:10px;background:var(--g-soft);color:var(--g);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .dg-teamrow .ti svg{width:18px;height:18px;}
+  .dg-teamrow .tx{min-width:0;}
+  .dg-teamrow .tx .nm{font-weight:700;font-size:14px;color:#23282a;}
+  .dg-teamrow .tx .mg{font-size:12px;color:#8a9189;margin-top:2px;}
+  .dg-teamrow .tcount{font-size:12.5px;color:#5d645c;font-weight:600;white-space:nowrap;}
+  .dg-teamrow .tsub{font-size:12.5px;color:#8a9189;white-space:nowrap;}
+
+  /* team detail header */
+  .dg-teamhead{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:6px;}
+  .dg-teamhead .tt{font-family:'Fredoka',sans-serif;font-weight:600;font-size:18px;color:#23282a;}
+  .dg-mgr{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:#33403a;background:#eef4f0;border-radius:999px;padding:5px 12px;}
+  .dg-mgr .dg-avatar{width:20px;height:20px;font-size:9px;}
+
+  /* reassign rows (delete flow) */
+  .dg-rsrow{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:1px solid #f1eee6;}
+  .dg-rsrow:last-child{border-bottom:none;}
+  .dg-rsrow .sn{font-weight:700;font-size:13.5px;color:#23282a;}
+  .dg-rsrow .sm{font-size:11.5px;color:#8a9189;margin-top:2px;}
+  .dg-warnico{width:40px;height:40px;border-radius:50%;background:#f6dcd6;color:#c0392b;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .dg-warnico svg{width:20px;height:20px;}
+  .dg-btn-red{display:inline-flex;align-items:center;gap:8px;background:#c0392b;color:#fff;font-weight:600;font-size:13.5px;padding:11px 20px;border-radius:9px;}
+
+  /* multiselect chips (team modal) */
+  .dg-ms{display:flex;flex-wrap:wrap;gap:8px;align-items:center;border:1px solid var(--line);border-radius:9px;background:#fff;padding:9px 11px;min-height:42px;}
+  .dg-ms .ph{font-size:13px;color:var(--faint);}
+
+  /* generic table action */
+  .dg-remove{font-size:12px;font-weight:600;color:#c0392b;display:inline-flex;align-items:center;gap:5px;}
+  .dg-remove svg{width:13px;height:13px;}
+
+  /* screen group heading */
+  .scr-eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--font-body);font-weight:600;font-size:15px;letter-spacing:.01em;
+    color:var(--green-bright);background:rgba(21,84,59,.08);
+    padding:8px 16px;border-radius:999px;margin-bottom:24px;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1000px){
+    .main .panel{padding:44px 34px;}
+    .metric-row{gap:12px;}
+    .insight-grid.two{grid-template-columns:1fr;}
+    .contrib{padding:26px;}
+    .impact-grid{flex-direction:column;}
+    .impact-stat{border-left:none;border-top:1px solid rgba(20,60,40,.12);}
+    .impact-stat:first-child{border-top:none;}
+    .closing{padding:40px 34px;}
+    .dg-ovw{grid-template-columns:1fr;}
+    .dg-rolegrid{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    body{font-size:16.5px;}
+    .main .panel{padding:32px 22px;border-radius:30px;}
+    .case-shell{padding:0 16px;}
+    .nav-brand .nm{display:none;}
+    .pn-nav{flex-direction:column;align-items:stretch;}
+    .pn-next{align-items:flex-start;text-align:left;}
+  }
+</style></head>
+<body>
+
+<!-- ============ NAV ============ -->
+<div class="case-shell" style="padding-top:0;">
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="panel case-hero" data-screen-label="Hero">
+      <div class="crumb">
+        <a class="crumb-parent" href="enterprise-platform.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>The System Behind the Underwriter's Day</a>
+        <a class="crumb-home" href="index.html" aria-label="Portfolio home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg></a>
+      </div>
+      <h1 class="proj">Team &amp; User Management</h1>
+      <p class="headline">I didn't build a feature. I built the system that runs every client.</p>
+      <p class="subline">One self-serve module — Users, Roles, and Teams — that hands full environment control to every client, across five lines of business, with zero modification.</p>
+
+      <div class="metric-row">
+        <div class="metric-card"><div class="num">5+</div><div class="lab">LOBs, zero modification</div></div>
+        <div class="metric-card"><div class="num">0</div><div class="lab">Interventions after launch</div></div>
+        <div class="metric-card"><div class="num">Top</div><div class="lab">Cited selling feature</div></div>
+      </div>
+
+      <div class="ru-panel" style="min-height:400px;padding:30px;" aria-hidden="true">
+        <div class="ru-pageheader">
+          <div><div class="ttl">User Management</div><div class="meta">One module · full client control</div></div>
+          <span style="display:flex;align-items:center;gap:10px;"><span class="ru-btn-primary">+ Add admin</span><span class="ru-av a1">AL</span></span>
+        </div>
+        <div class="ru-ovw">
+          <div class="ru-white-card">
+            <div class="col-h"><span class="l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Users</span><span class="c">24</span></div>
+            <div class="ru-orow"><span class="ru-av a2" style="width:24px;height:24px;font-size:9px;">AM</span><span class="nm">Alex Morgan</span><span class="rl">Sr UW</span></div>
+            <div class="ru-orow"><span class="ru-av a3" style="width:24px;height:24px;font-size:9px;">PN</span><span class="nm">Priya Nair</span><span class="rl">Head</span></div>
+            <div class="ru-orow"><span class="ru-av a4" style="width:24px;height:24px;font-size:9px;">DC</span><span class="nm">Daniel Cho</span><span class="rl">Jr UW</span></div>
+            <div class="ru-orow"><span class="ru-av a5" style="width:24px;height:24px;font-size:9px;">SR</span><span class="nm">Sofia Rossi</span><span class="rl">Clearance</span></div>
+          </div>
+          <div class="ru-white-card">
+            <div class="col-h"><span class="l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 8 8 8 8s8-3 8-8V6z"/></svg>Roles</span><span class="c">4</span></div>
+            <div class="ru-orow"><span class="nm">Junior Underwriter</span><span class="rl">12 users</span></div>
+            <div class="ru-orow"><span class="nm">Senior Underwriter</span><span class="rl">7 users</span></div>
+            <div class="ru-orow"><span class="nm">Underwriting Head</span><span class="rl">2 users</span></div>
+            <div class="ru-orow"><span class="nm">Clearance Specialist</span><span class="rl">3 users</span></div>
+          </div>
+          <div class="ru-white-card">
+            <div class="col-h"><span class="l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Teams</span><span class="c">3</span></div>
+            <div class="ru-orow"><span class="nm">London Desk</span><span class="rl">EMEA</span></div>
+            <div class="ru-orow"><span class="nm">Singapore Desk</span><span class="rl">APAC</span></div>
+            <div class="ru-orow"><span class="nm">New York Desk</span><span class="rl">Americas</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="ru-cap">One module, three pillars — <b>Users, Roles, and Teams</b> — handing full environment control to the client. No backend access required.</p>
+    </section>
+
+    <!-- 01 WHERE IT STARTED -->
+    <section class="panel reveal" id="start" data-screen-label="01 Where It Started">
+      <span class="eyebrow-num">01 — Where It Started</span>
+      <h2 class="sec-title">A platform for everyone. Configured for no one.</h2>
+      <p class="body-copy">One unified platform. Multiple LOBs, multiple clients — all running on the same base system.</p>
+      <p class="body-copy">But every client had different role structures, different hierarchies, different terminologies. And there was <strong>no way to handle any of it from the client's side.</strong></p>
+    </section>
+
+    <!-- 02 THE PROBLEM -->
+    <section class="panel reveal" id="problem" data-screen-label="02 The Problem">
+      <span class="eyebrow-num">02 — The Problem</span>
+      <h2 class="sec-title">Every change needed us. That was the problem.</h2>
+      <p class="sub-label">The old reality</p>
+      <ul class="bullets warn">
+        <li>All user creation, role setup, and permission configuration handled by our CSI from the backend.</li>
+        <li>Every role change or new user meant a support request to our team.</li>
+        <li>Dev team permanently queued with client-specific customisation tasks.</li>
+        <li>Smart platform. Zero client autonomy.</li>
+      </ul>
+      <div class="insight-grid two" style="margin-top:24px;">
+        <div class="insight"><div class="k">The Pressure</div><p>One CSI managing all client environments — setup, updates, and customisation for every client, on every LOB.</p></div>
+        <div class="insight"><div class="k">The Dependency</div><p>Dev team allocated to permission changes that should never have needed engineering effort.</p></div>
+      </div>
+    </section>
+
+    <!-- 03 THE SOLUTION -->
+    <section class="panel reveal" id="solution" data-screen-label="03 The Solution">
+      <span class="eyebrow-num">03 — The Solution</span>
+      <h2 class="sec-title">Give the platform to the client. All of it.</h2>
+      <p class="body-copy">A self-serve User Management module — three features that hand full environment control to the client. Our CSI's only job at onboarding: <strong>create one admin.</strong></p>
+      <div class="arch-layers">
+        <div class="layer">
+          <div class="lhead"><h4>Users</h4><span class="lpct">Self-served</span></div>
+          <p>Create and manage users individually or in bulk. Assign roles, regions, and teams. No backend needed.</p>
+        </div>
+        <div class="layer">
+          <div class="lhead"><h4>Roles</h4><span class="lpct">Client-configured</span></div>
+          <p>Define role hierarchy, name roles their way, set permissions per role. Fully client-configured.</p>
+        </div>
+        <div class="layer">
+          <div class="lhead"><h4>Teams</h4><span class="lpct">Geography-aware</span></div>
+          <p>For clients across regions and countries. Create teams by location, assign managers, scope submissions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENS — USERS -->
+    <section class="panel reveal" id="users" data-screen-label="Screens — Users">
+      <span class="scr-eyebrow">Users — How it works</span>
+      <h2 class="sec-title">Create, manage, and audit — no backend.</h2>
+
+      <!-- Screen 1: Users landing -->
+      <p class="ru-eyebrow" style="margin-top:26px;">Screen 1 — Users landing page</p>
+      <div class="ru-panel" style="min-height:420px;padding:24px;" aria-hidden="true">
+        <div class="ru-pageheader">
+          <div><div class="ttl">Users</div><div class="meta">24 users · 5 regions · 3 teams</div></div>
+          <span class="ru-btn-primary">+ Add user</span>
+        </div>
+        <div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;">
+          <span class="ru-pill-ctl" style="flex:1;min-width:200px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>Search users</span>
+          <span class="ru-pill-ctl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>Filters<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="width:11px;height:11px"><path d="M6 9l6 6 6-6"/></svg></span>
+        </div>
+        <table class="ru-tbl">
+          <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Region</th><th>Team</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><span class="ru-namecell"><span class="ru-av a2" style="width:26px;height:26px;font-size:10px;">AM</span><span class="nm">Alex Morgan</span></span></td><td>alex.morgan@client.com</td><td><span class="ru-role-tag">Senior Underwriter</span></td><td><span class="ru-region-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>EMEA</span></td><td>London Desk</td><td><span class="ru-pst active">Active</span></td></tr>
+            <tr><td><span class="ru-namecell"><span class="ru-av a3" style="width:26px;height:26px;font-size:10px;">PN</span><span class="nm">Priya Nair</span></span></td><td>priya.nair@client.com</td><td><span class="ru-role-tag">Underwriting Head</span></td><td><span class="ru-region-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>APAC</span></td><td>Singapore Desk</td><td><span class="ru-pst active">Active</span></td></tr>
+            <tr><td><span class="ru-namecell"><span class="ru-av a4" style="width:26px;height:26px;font-size:10px;">DC</span><span class="nm">Daniel Cho</span></span></td><td>daniel.cho@client.com</td><td><span class="ru-role-tag">Junior Underwriter</span></td><td><span class="ru-region-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>Americas</span></td><td>New York Desk</td><td><span class="ru-pst invited">Invited</span></td></tr>
+            <tr><td><span class="ru-namecell"><span class="ru-av a5" style="width:26px;height:26px;font-size:10px;">SR</span><span class="nm">Sofia Rossi</span></span></td><td>sofia.rossi@client.com</td><td><span class="ru-role-tag">Clearance Specialist</span></td><td><span class="ru-region-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>EMEA</span></td><td>London Desk</td><td><span class="ru-pst inactive">Inactive</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="ru-cap">One view of every user — <b>role, region, team, and status at a glance.</b></p>
+
+      <div class="ru-2col">
+        <!-- Screen 2: User creation modal -->
+        <div>
+          <p class="ru-eyebrow">Screen 2 — User creation pop-up</p>
+          <div class="ru-panel" style="min-height:440px;display:flex;align-items:center;justify-content:center;padding:24px;" aria-hidden="true">
+            <div class="ru-modal" style="max-width:none;">
+              <h4>Add user</h4>
+              <p class="sub">Create and assign a user in one step.</p>
+              <div class="ru-fields">
+                <div class="ru-field"><div class="fl">Full name</div><div class="ru-inp">Jordan Avery</div></div>
+                <div class="ru-field"><div class="fl">Email</div><div class="ru-inp">jordan.avery@client.com</div></div>
+                <div class="ru-cgrid" style="margin-top:2px;">
+                  <div><div class="fl" style="font-size:12.5px;color:#5d645c;margin-bottom:7px;">Region</div><div class="ru-sel">EMEA<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></div></div>
+                  <div><div class="fl" style="font-size:12.5px;color:#5d645c;margin-bottom:7px;">Country</div><div class="ru-sel">UK<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></div></div>
+                  <div><div class="fl" style="font-size:12.5px;color:#5d645c;margin-bottom:7px;">Role</div><div class="ru-sel">Sr. UW<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></div></div>
+                  <div><div class="fl" style="font-size:12.5px;color:#5d645c;margin-bottom:7px;">Team</div><div class="ru-sel">London Desk<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></div></div>
+                </div>
+              </div>
+              <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:22px;"><span class="ru-btn-out">Cancel</span><span class="ru-btn-dark">Create user</span></div>
+            </div>
+          </div>
+          <p class="ru-cap">Region and country captured at creation — <b>feeds directly into smart team filtering later.</b></p>
+        </div>
+
+        <!-- Screen 3: User profile -->
+        <div>
+          <p class="ru-eyebrow">Screen 3 — User profile page</p>
+          <div class="ru-panel" style="min-height:440px;padding:24px;" aria-hidden="true">
+            <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+              <span class="ru-av lg a2">AM</span>
+              <div>
+                <div class="ru-h" style="font-size:18px;">Alex Morgan</div>
+                <div style="display:flex;gap:8px;margin-top:7px;flex-wrap:wrap;"><span class="ru-role-tag">Senior Underwriter</span><span class="ru-region-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>EMEA</span></div>
+              </div>
+            </div>
+            <div class="ru-white-card" style="padding:15px;margin-bottom:14px;">
+              <div style="font-weight:700;font-size:13px;color:#181a20;margin-bottom:8px;">Account details</div>
+              <div class="ru-frow"><span class="k">Email</span><span class="v">alex.morgan@client.com</span></div>
+              <div class="ru-frow"><span class="k">Country</span><span class="v">United Kingdom</span></div>
+              <div class="ru-frow"><span class="k">Team</span><span class="v">London Desk</span></div>
+              <div class="ru-frow"><span class="k">Status</span><span class="v">Active</span></div>
+            </div>
+            <div class="ru-white-card" style="padding:15px;">
+              <div style="font-weight:700;font-size:13px;color:#181a20;margin-bottom:6px;">Permissions</div>
+              <div class="ru-permrow">Create submissions<span class="ru-tog"></span></div>
+              <div class="ru-permrow">Edit guidelines<span class="ru-tog off"></span></div>
+              <div class="ru-permrow">Quote &amp; bind<span class="ru-tog"></span></div>
+              <div class="ru-permrow">Manage team<span class="ru-tog off"></span></div>
+              <div class="ru-permrow" style="border-bottom:none;">View analytics<span class="ru-tog"></span></div>
+            </div>
+          </div>
+          <p class="ru-cap">Full profile — <b>permissions visible and auditable</b> without backend access.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENS — ROLES -->
+    <section class="panel reveal" id="roles" data-screen-label="Screens — Roles">
+      <span class="scr-eyebrow">Roles — How it works</span>
+      <h2 class="sec-title">Define the hierarchy. Name it your way.</h2>
+
+      <!-- Screen 4: Roles landing -->
+      <p class="ru-eyebrow" style="margin-top:26px;">Screen 4 — Roles landing page</p>
+      <div class="ru-panel" style="min-height:340px;padding:24px;" aria-hidden="true">
+        <div class="ru-pageheader">
+          <div><div class="ttl">Roles</div><div class="meta">4 roles · client-defined hierarchy</div></div>
+          <span class="ru-btn-primary">+ Create role</span>
+        </div>
+        <div class="ru-rolegrid">
+          <div class="ru-rolecard"><div class="rh"><span class="rn">Junior Underwriter</span><span class="rdots"><i></i><i></i><i></i></span></div><div class="rstats"><div><div class="n">12</div><div class="k">Users</div></div><div><div class="n">8</div><div class="k">Permissions</div></div></div></div>
+          <div class="ru-rolecard"><div class="rh"><span class="rn">Senior Underwriter</span><span class="rdots"><i></i><i></i><i></i></span></div><div class="rstats"><div><div class="n">7</div><div class="k">Users</div></div><div><div class="n">14</div><div class="k">Permissions</div></div></div></div>
+          <div class="ru-rolecard"><div class="rh"><span class="rn">Underwriting Head</span><span class="rdots"><i></i><i></i><i></i></span></div><div class="rstats"><div><div class="n">2</div><div class="k">Users</div></div><div><div class="n">19</div><div class="k">Permissions</div></div></div></div>
+          <div class="ru-rolecard"><div class="rh"><span class="rn">Clearance Specialist</span><span class="rdots"><i></i><i></i><i></i></span></div><div class="rstats"><div><div class="n">3</div><div class="k">Users</div></div><div><div class="n">6</div><div class="k">Permissions</div></div></div></div>
+        </div>
+      </div>
+      <p class="ru-cap">Every role <b>named and structured the client's way.</b></p>
+
+      <!-- Screen 5: Role creation modal -->
+      <p class="ru-eyebrow" style="margin-top:30px;">Screen 5 — Role creation pop-up</p>
+      <div class="ru-panel" style="min-height:420px;display:flex;align-items:center;justify-content:center;padding:26px;" aria-hidden="true">
+        <div class="ru-modal" style="max-width:600px;">
+          <h4>Create role</h4>
+          <p class="sub">Name a role and set its permissions once — every assigned user inherits them.</p>
+          <div class="ru-fields" style="margin-bottom:18px;">
+            <div class="ru-field"><div class="fl">Role name</div><div class="ru-inp">Senior Underwriter</div></div>
+            <div class="ru-field"><div class="fl">Description</div><div class="ru-inp">Full quoting authority across assigned regions.</div></div>
+          </div>
+          <div class="ru-permgroup">
+            <div class="ru-pg-h">Submissions</div>
+            <div class="ru-permrow">Create submissions<span class="ru-tog"></span></div>
+            <div class="ru-permrow">Edit submissions<span class="ru-tog"></span></div>
+            <div class="ru-permrow" style="border-bottom:none;">Delete submissions<span class="ru-tog off"></span></div>
+          </div>
+          <div class="ru-permgroup">
+            <div class="ru-pg-h">Guidelines</div>
+            <div class="ru-permrow">View guidelines<span class="ru-tog"></span></div>
+            <div class="ru-permrow" style="border-bottom:none;">Edit guidelines<span class="ru-tog off"></span></div>
+          </div>
+          <div class="ru-permgroup">
+            <div class="ru-pg-h">Quote &amp; Bind</div>
+            <div class="ru-permrow">Generate quotes<span class="ru-tog"></span></div>
+            <div class="ru-permrow" style="border-bottom:none;">Bind policies<span class="ru-tog"></span></div>
+          </div>
+          <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:6px;"><span class="ru-btn-out">Cancel</span><span class="ru-btn-dark">Create role</span></div>
+        </div>
+      </div>
+      <p class="ru-cap">Permissions set once at role level — <b>all assigned users inherit instantly.</b></p>
+    </section>
+
+    <!-- SCREENS — TEAMS -->
+    <section class="panel reveal" id="teams" data-screen-label="Screens — Teams">
+      <span class="scr-eyebrow">Teams — How it works</span>
+      <h2 class="sec-title">Structure around geography and role.</h2>
+
+      <!-- Screen 6: Teams landing -->
+      <p class="ru-eyebrow" style="margin-top:26px;">Screen 6 — Teams landing page</p>
+      <div class="ru-panel" style="min-height:320px;padding:24px;" aria-hidden="true">
+        <div class="ru-pageheader">
+          <div><div class="ttl">Teams</div><div class="meta">3 teams · 3 regions</div></div>
+          <span class="ru-btn-primary">+ Create team</span>
+        </div>
+        <div class="ru-teamrow">
+          <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></span>
+          <div class="tx" style="flex:1;"><div class="nm">London Desk</div><div class="mg">Manager · Priya Nair</div></div>
+          <span class="tcount">8 members</span><span class="ru-region-tag">EMEA</span><span class="tsub">12 active submissions</span>
+        </div>
+        <div class="ru-teamrow">
+          <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></span>
+          <div class="tx" style="flex:1;"><div class="nm">Singapore Desk</div><div class="mg">Manager · Marcus Tan</div></div>
+          <span class="tcount">6 members</span><span class="ru-region-tag">APAC</span><span class="tsub">9 active submissions</span>
+        </div>
+        <div class="ru-teamrow" style="margin-bottom:0;">
+          <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></span>
+          <div class="tx" style="flex:1;"><div class="nm">New York Desk</div><div class="mg">Manager · Elena Vasquez</div></div>
+          <span class="tcount">10 members</span><span class="ru-region-tag">Americas</span><span class="tsub">15 active submissions</span>
+        </div>
+      </div>
+      <p class="ru-cap">Every team — <b>geography, manager, and workload</b> visible at a glance.</p>
+
+      <!-- Screen 7: Team creation modal -->
+      <p class="ru-eyebrow" style="margin-top:30px;">Screen 7 — Team creation pop-up</p>
+      <div class="ru-panel" style="min-height:380px;display:flex;align-items:center;justify-content:center;padding:26px;" aria-hidden="true">
+        <div class="ru-modal" style="max-width:560px;">
+          <h4>Create team</h4>
+          <p class="sub">Build a team around geography and assign its manager.</p>
+          <div class="ru-fields">
+            <div class="ru-field"><div class="fl">Team name</div><div class="ru-inp">London Desk</div></div>
+            <div class="ru-cgrid" style="grid-template-columns:1fr 1fr;">
+              <div><div class="fl" style="font-size:12.5px;color:#5d645c;margin-bottom:7px;">Region</div><div class="ru-sel">EMEA<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></div></div>
+              <div><div class="fl" style="font-size:12.5px;color:#5d645c;margin-bottom:7px;">Assign manager</div><div class="ru-sel"><span style="display:inline-flex;align-items:center;gap:7px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px;color:#9aa0ac;"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>Priya Nair</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></div></div>
+            </div>
+            <div class="ru-field">
+              <div class="fl">Add members</div>
+              <div class="ru-ms">
+                <span class="ru-tag">Alex Morgan<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
+                <span class="ru-tag">Sofia Rossi<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
+                <span class="ru-tag">Daniel Cho<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
+                <span class="ph">+ Add more</span>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:22px;"><span class="ru-btn-out">Cancel</span><span class="ru-btn-dark">Create team</span></div>
+        </div>
+      </div>
+      <p class="ru-cap">Teams built around <b>geography and role</b> — not tracked in spreadsheets.</p>
+
+      <div class="ru-2col">
+        <!-- Screen 8: Team detail — members -->
+        <div>
+          <p class="ru-eyebrow">Screen 8 — Team detail · Members</p>
+          <div class="ru-panel" style="min-height:420px;padding:24px;" aria-hidden="true">
+            <div class="ru-teamhead">
+              <span class="tt">London Desk</span><span class="ru-region-tag">EMEA</span>
+              <span class="ru-mgr"><span class="ru-av a3">PN</span>Priya Nair · Manager</span>
+            </div>
+            <div class="ru-tabs" style="margin:16px 0;"><span class="on">Members</span><span>Submissions</span></div>
+            <div style="display:flex;justify-content:flex-end;margin-bottom:12px;"><span class="ru-btn-primary" style="padding:8px 15px;">+ Add member</span></div>
+            <table class="ru-tbl">
+              <thead><tr><th>Name</th><th>Role</th><th>Status</th><th></th></tr></thead>
+              <tbody>
+                <tr><td><span class="ru-namecell"><span class="ru-av a2" style="width:26px;height:26px;font-size:10px;">AM</span><span class="nm">Alex Morgan</span></span></td><td><span class="ru-role-tag">Senior Underwriter</span></td><td><span class="ru-pst active">Active</span></td><td><span class="ru-remove"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6L6 18M6 6l12 12"/></svg>Remove</span></td></tr>
+                <tr><td><span class="ru-namecell"><span class="ru-av a5" style="width:26px;height:26px;font-size:10px;">SR</span><span class="nm">Sofia Rossi</span></span></td><td><span class="ru-role-tag">Clearance Specialist</span></td><td><span class="ru-pst active">Active</span></td><td><span class="ru-remove"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6L6 18M6 6l12 12"/></svg>Remove</span></td></tr>
+                <tr><td><span class="ru-namecell"><span class="ru-av a4" style="width:26px;height:26px;font-size:10px;">DC</span><span class="nm">Daniel Cho</span></span></td><td><span class="ru-role-tag">Junior Underwriter</span></td><td><span class="ru-pst invited">Invited</span></td><td><span class="ru-remove"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6L6 18M6 6l12 12"/></svg>Remove</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="ru-cap">Manager owns the roster — <b>no ticket needed</b> to make changes.</p>
+        </div>
+
+        <!-- Screen 9: Team detail — submissions -->
+        <div>
+          <p class="ru-eyebrow">Screen 9 — Team detail · Assigned submissions</p>
+          <div class="ru-panel" style="min-height:420px;padding:24px;" aria-hidden="true">
+            <div class="ru-teamhead">
+              <span class="tt">London Desk</span><span class="ru-region-tag">EMEA</span>
+              <span class="ru-mgr"><span class="ru-av a3">PN</span>Priya Nair · Manager</span>
+            </div>
+            <div class="ru-tabs" style="margin:16px 0;"><span>Members</span><span class="on">Submissions</span></div>
+            <table class="ru-tbl">
+              <thead><tr><th>Submission</th><th>Insured</th><th>Stage</th><th>Assigned to</th></tr></thead>
+              <tbody>
+                <tr><td>SUB-20451</td><td>Meridian Airways</td><td><span class="ru-stage uw">UW Review</span></td><td>Alex Morgan</td></tr>
+                <tr><td>SUB-20448</td><td>Pacific Air Co</td><td><span class="ru-stage quoted">Quoted</span></td><td>Alex Morgan</td></tr>
+                <tr><td>SUB-20439</td><td>Atlantic Shippers</td><td><span class="ru-stage bound">Bound</span></td><td>Sofia Rossi</td></tr>
+                <tr><td>SUB-20431</td><td>Northern Freight</td><td><span class="ru-stage uw">UW Review</span></td><td>Daniel Cho</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="ru-cap">Submissions scoped to the team — <b>no noise from other regions.</b></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 MY CONTRIBUTION -->
+    <section class="panel reveal" id="contribution" data-screen-label="04 My Contribution">
+      <span class="eyebrow-num">04 — My Contribution</span>
+      <h2 class="sec-title">One flow I added that no one asked for.</h2>
+      <div class="contrib-grid">
+        <div class="contrib stacked">
+          <div>
+            <h4>Inline Reassignment on Delete</h4>
+            <div class="pdo">
+              <div class="row p"><span class="lbl">Problem</span><p>Deleting a user blocked until their work was manually reassigned elsewhere. A broken, multi-step dead end.</p></div>
+              <div class="row d"><span class="lbl">Decision</span><p>Brought reassignment inside the delete flow. The system surfaces active submissions and prompts inline reassignment before confirming deletion.</p></div>
+              <div class="row o"><span class="lbl">Outcome</span><p>One guided flow completes both tasks — reassign and delete — without leaving the page.</p></div>
+            </div>
+          </div>
+          <div>
+            <p class="ru-eyebrow">Delete confirmation — inline reassignment</p>
+            <div class="ru-panel" style="min-height:420px;display:flex;align-items:center;justify-content:center;padding:28px;" aria-hidden="true">
+              <div class="ru-modal" style="max-width:560px;">
+                <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;">
+                  <span class="ru-warnico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg></span>
+                  <div><h4 style="margin:0 0 4px;">Delete user — Daniel Cho</h4><p class="sub" style="margin:0;">This user has <b style="color:#b23b30;">3 active submissions.</b> Reassign before deleting.</p></div>
+                </div>
+                <div class="ru-rsrow">
+                  <div><div class="sn">SUB-20431 · Northern Freight</div><div class="sm">UW Review · $1.0M</div></div>
+                  <div class="ru-sel" style="min-width:175px;flex:0 0 auto;">Reassign to<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></div>
+                </div>
+                <div class="ru-rsrow">
+                  <div><div class="sn">SUB-20425 · Coastal Lines</div><div class="sm">Quoted · $850K</div></div>
+                  <div class="ru-sel" style="min-width:175px;flex:0 0 auto;"><span style="display:inline-flex;align-items:center;gap:7px;"><span class="ru-av a2" style="width:18px;height:18px;font-size:8px;">AM</span>Alex Morgan</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></div>
+                </div>
+                <div class="ru-rsrow">
+                  <div><div class="sn">SUB-20419 · Summit Cargo</div><div class="sm">UW Review · $1.2M</div></div>
+                  <div class="ru-sel" style="min-width:175px;flex:0 0 auto;">Reassign to<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></div>
+                </div>
+                <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:22px;"><span class="ru-btn-out">Cancel</span><span class="ru-btn-red">Reassign &amp; Delete</span></div>
+              </div>
+            </div>
+            <p class="ru-cap">Reassignment lives inside the delete flow — <b>one action completes both tasks.</b></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 IMPACT -->
+    <section class="panel reveal" id="impact" data-screen-label="05 Impact">
+      <span class="eyebrow-num">05 — Impact</span>
+      <h2 class="sec-title">One system. Every client. Forever.</h2>
+      <p class="impact-rowlabel">Row 1 — Client impact</p>
+      <div class="impact-grid">
+        <div class="impact-stat"><div class="num">100%</div><div class="lab">Client environments configured without backend access</div></div>
+        <div class="impact-stat"><div class="num">0</div><div class="lab">Support tickets for role or permission changes post-launch</div></div>
+        <div class="impact-stat"><div class="num">5+</div><div class="lab">LOBs on one system, zero modification</div></div>
+        <div class="impact-stat"><div class="num">Top</div><div class="lab">Cited selling feature by new enterprise clients</div></div>
+      </div>
+      <p class="impact-rowlabel second">Row 2 — Design impact</p>
+      <div class="impact-grid">
+        <div class="impact-stat"><div class="num">9</div><div class="lab">Screens across Users, Roles, and Teams</div></div>
+        <div class="impact-stat"><div class="num">4</div><div class="lab">Sub-admins any client admin can create</div></div>
+        <div class="impact-stat"><div class="num">Solo</div><div class="lab">Entire module designed by one designer, still live today</div></div>
+        <div class="impact-stat"><div class="num">8+</div><div class="lab">Years in production across every LOB</div></div>
+      </div>
+    </section>
+
+    <!-- 06 WHAT THIS TAUGHT ME -->
+    <section class="panel reveal" id="learnings" data-screen-label="06 What This Taught Me">
+      <span class="eyebrow-num">06 — What this taught me</span>
+      <h2 class="sec-title">Designing generic systems is the hardest UX work.</h2>
+      <div class="learn-grid">
+        <div class="learn"><div class="ln">1</div><div class="learn-body"><h4>Generic systems need invisible flexibility</h4><p>It has to work for every client without feeling built for someone else. That takes ruthless abstraction and thoughtful defaults.</p></div></div>
+        <div class="learn"><div class="ln">2</div><div class="learn-body"><h4>Requirements don't design themselves</h4><p>The inner details weren't in any brief. They came from understanding what a manager actually needs to do their job.</p></div></div>
+        <div class="learn"><div class="ln">3</div><div class="learn-body"><h4>Critical flows must respect user intent</h4><p>The intent is to delete — not to be blocked. Help them complete it safely instead of standing in the way.</p></div></div>
+        <div class="learn"><div class="ln">4</div><div class="learn-body"><h4>Data collected early pays dividends later</h4><p>Region and country at creation felt minor. They became essential for smart team filtering down the line.</p></div></div>
+      </div>
+      <div class="closing">
+        <div class="cap">Systems design note</div>
+        <p>"This system was designed to never need changing, no matter how many new LOBs or clients join. That's the real measure of system design — not how well it works today, but how gracefully it scales to every scenario you haven't built yet."</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="panel reveal" style="margin-bottom:0;max-width:var(--maxw);">
+    <div class="foot-grid">
+      <div>
+        <h4>On the desk</h4>
+        <div class="now-card">
+          <div class="cover"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M7 3.5 L7 23 L12 18.4 L15.2 25.6 L18 24.3 L14.9 17.3 L21 16.9 Z" fill="#eaf6ef"/><circle class="desk-dot" cx="24.5" cy="8" r="3" fill="#eaf6ef"/></svg></div>
+          <div>
+            <div class="t">Designing decisions, not screens</div>
+            <div class="s">Always designing for clarity, at scale</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#work">Selected work</a></li>
+          <li><a href="index.html#writing">Writing</a></li>
+          <li><a href="index.html#resume">Experience</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Medium</a></li>
+          <li><a href="index.html#contact">Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="pn-nav">
+    <a class="pn-back" href="enterprise-platform.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to platform overview
+    </a>
+    <a class="pn-back" href="pre-bind-intake.html" style="flex-direction:row-reverse;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transform:rotate(180deg);"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Pre-bind · Submission Intake case study
+    </a>
+  </div>
+
+  <div class="foot-note">
+    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>Designed &amp; built end to end.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.10, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+</body>
+</html>

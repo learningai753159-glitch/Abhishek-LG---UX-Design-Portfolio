@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Same dosa, every time — H4 · Abhishek LG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Quicksand:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" />
+<style>
+  :root{
+    --cream:#f3eee3;
+    --panel:#fbf8f1;
+    --panel-2:#f7f2e8;
+    --green:#15543b;
+    --green-deep:#0f3f2c;
+    --ink:#2c3733;
+    --ink-soft:#5d6b64;
+    --ink-faint:#9aa49c;
+    --black:#191919;
+    --peach:#f6d6ad;
+    --lavender:#dcd7f3;
+    --sky:#c4e2f4;
+    --pink:#f6c8c3;
+    --mint:#cde6d4;
+    --yellow:#f7d24a;
+    --tag:#e9e3d6;
+    --radius-xl:40px;
+    --radius-lg:28px;
+    --radius-md:20px;
+    --shadow-card:0 18px 40px -24px rgba(20,40,30,.35);
+    --shadow-soft:0 10px 30px -20px rgba(20,40,30,.3);
+    --maxw:1240px;
+    --font-display:'Fredoka',system-ui,sans-serif;
+    --font-body:'DM Sans',system-ui,sans-serif;
+    --font-hand:'Caveat',cursive;
+    --green-bright:#008953;
+    --font-hero:'Bricolage Grotesque',sans-serif;
+    --font-cursive:'Bricolage Grotesque',sans-serif;
+    --font-proj:'Trebuchet MS','Segoe UI',sans-serif;
+    --font-quote:'Quicksand',var(--font-body);
+    --font-num:'Libre Baskerville',Georgia,serif;
+    --blue:#3b82c4;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:120px;}
+  body{
+    margin:0;background:var(--cream);color:var(--ink);
+    font-family:var(--font-body);font-size:18px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  svg{display:block;}
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;color:var(--green-bright);margin:0;line-height:1.04;letter-spacing:-.01em;}
+
+  .panel{background:var(--panel);border-radius:var(--radius-xl);padding:72px;margin:26px auto;max-width:var(--maxw);box-shadow:var(--shadow-soft);}
+
+  /* ---------- nav ---------- */
+  .nav{position:fixed;top:18px;left:0;right:0;z-index:80;display:flex;justify-content:center;align-items:center;pointer-events:none;}
+  .nav-inner{pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:26px;background:rgba(251,248,241,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(20,60,40,.07);padding:8px 8px 8px 18px;border-radius:999px;box-shadow:0 14px 34px -22px rgba(20,40,30,.5);}
+  .nav-brand{display:flex;align-items:center;gap:11px;}
+  .nav-avatar{width:34px;height:34px;border-radius:50%;flex:0 0 auto;background:#15543b url('assets/abhishek-avatar.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:#dff0e6;font-family:var(--font-display);font-weight:600;font-size:13px;border:2px solid rgba(255,255,255,.5);}
+  .nav-brand .nm{font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--green-bright);white-space:nowrap;}
+  .nav-back{font-weight:600;font-size:15px;color:#fff;background:var(--green-bright);padding:10px 20px;border-radius:999px;transition:transform .15s ease, box-shadow .2s ease;display:inline-flex;align-items:center;gap:8px;}
+  .nav-back:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(21,84,59,.7);}
+
+  /* ---------- shell ---------- */
+  .case-shell{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .main{min-width:0;}
+  .main .panel{margin:0 0 22px;padding:72px;max-width:none;}
+  .main .panel:first-child{margin-top:0;}
+  .article-main{min-width:0;}
+
+  /* ---------- type ---------- */
+  .eyebrow-num{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-body);font-weight:600;font-size:15px;letter-spacing:.01em;color:var(--green-bright);background:rgba(21,84,59,.08);padding:8px 16px;border-radius:999px;margin-bottom:24px;}
+  .sec-title{font-family:var(--font-cursive);font-size:clamp(30px,3.4vw,46px);color:var(--green-bright);margin-bottom:22px;letter-spacing:0;line-height:1.08;max-width:24ch;}
+  .body-copy{font-size:18px;color:var(--ink-soft);line-height:1.66;max-width:62ch;margin:0 0 18px;}
+  .body-copy:last-child{margin-bottom:0;}
+  .body-copy strong,.body-copy em{color:var(--ink);font-style:normal;font-weight:600;}
+
+  /* hero */
+  .case-hero{padding-top:96px;}
+  .hero-tags{display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px;margin-bottom:26px;}
+  .hero-tags span{font-family:var(--font-body);font-weight:600;font-size:14.5px;color:var(--green-bright);background:rgba(21,84,59,.08);padding:7px 15px;border-radius:999px;}
+  .hero-tags span.read{background:transparent;color:var(--ink-faint);padding-left:4px;}
+  .case-hero .headline{font-family:var(--font-hero);font-size:clamp(34px,5vw,64px);font-weight:400;color:#1e1f1e;max-width:18ch;margin:6px 0 24px;line-height:1.04;letter-spacing:0;}
+  .case-hero .subline{font-family:var(--font-quote);font-weight:600;font-size:clamp(19px,2vw,26px);color:var(--green-bright);max-width:40ch;line-height:1.3;margin:0;letter-spacing:-.01em;}
+
+  /* heuristic badge (hero) */
+  .heur-badge{display:inline-flex;align-items:center;gap:18px;background:var(--green);border-radius:var(--radius-md);padding:18px 26px;margin-top:6px;}
+  .heur-badge .hn{font-family:var(--font-num);font-weight:700;font-size:38px;color:#fff;line-height:1;}
+  .heur-badge .hl{display:flex;flex-direction:column;gap:3px;}
+  .heur-badge .hl .k{font-family:var(--font-body);font-weight:600;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#8fc4a8;}
+  .heur-badge .hl .v{font-family:var(--font-proj);font-weight:700;font-size:17px;color:#fff;line-height:1.15;}
+  .heur-desc{font-size:15.5px;color:var(--ink-soft);line-height:1.62;max-width:58ch;margin:18px 0 0;}
+
+  /* illustrations */
+  .ill{margin:34px 0 4px;display:flex;flex-direction:column;align-items:center;}
+  .ill-frame{background:var(--panel-2);border:1px solid rgba(20,60,40,.07);border-radius:var(--radius-lg);padding:34px 30px;width:100%;display:flex;justify-content:center;}
+  .ill svg{max-width:100%;height:auto;}
+  .ill-cap{text-align:center;font-size:13.5px;color:var(--ink-faint);margin-top:14px;max-width:52ch;line-height:1.5;}
+
+  /* pull / callout (left border accent) */
+  .pull{border-left:4px solid var(--yellow);background:var(--panel-2);border-radius:0 22px 22px 0;padding:32px 36px;margin-top:30px;}
+  .pull p{font-family:var(--font-quote);font-weight:600;font-size:clamp(20px,2.2vw,27px);line-height:1.34;color:var(--green-bright);margin:0;max-width:46ch;letter-spacing:-.01em;}
+  .pull .attr{font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink-faint);margin:16px 0 0;}
+
+  /* story block */
+  .story{background:var(--peach);border-radius:var(--radius-xl);padding:44px 46px;margin-top:30px;box-shadow:var(--shadow-card);}
+  .story .seyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#9a6418;margin-bottom:16px;}
+  .story .seyebrow .d{width:8px;height:8px;border-radius:50%;background:#cf4f33;flex:0 0 auto;}
+  .story h3{font-family:var(--font-cursive);font-weight:600;font-size:clamp(26px,3vw,38px);color:#5d3a12;margin:0 0 18px;line-height:1.08;letter-spacing:0;}
+  .story p{font-size:17px;color:#5a4a33;line-height:1.66;margin:0 0 16px;max-width:60ch;}
+  .story p:last-child{margin-bottom:0;}
+  .story p strong{color:#3f2e15;font-weight:700;}
+
+  /* strong dark callout */
+  .callout-strong{background:var(--green);border-radius:var(--radius-xl);padding:50px 54px;margin-top:32px;}
+  .callout-strong .cap{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8fc4a8;margin-bottom:18px;}
+  .callout-strong p{font-family:var(--font-quote);font-weight:600;font-size:clamp(23px,2.7vw,35px);line-height:1.28;color:#fff;margin:0;max-width:28ch;letter-spacing:-.01em;}
+
+  /* dual cards (internal / external) */
+  .dual-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;}
+  .dual-card{background:var(--panel-2);border-radius:var(--radius-lg);padding:34px 32px 36px;border:1px solid rgba(20,60,40,.07);border-top:5px solid;display:flex;flex-direction:column;box-shadow:var(--shadow-card);}
+  .dual-card.blue{border-top-color:var(--blue);}
+  .dual-card.green{border-top-color:#2f9e63;}
+  .dual-card .dlab{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;}
+  .dual-card .dlab .d{width:9px;height:9px;border-radius:50%;flex:0 0 auto;}
+  .dual-card.blue .dlab{color:#2c6da3;} .dual-card.blue .dlab .d{background:var(--blue);}
+  .dual-card.green .dlab{color:#1f6a45;} .dual-card.green .dlab .d{background:#2f9e63;}
+  .dual-card h4{font-family:var(--font-proj);font-weight:700;font-size:21px;color:var(--ink);margin:0 0 14px;line-height:1.25;}
+  .dual-card p{margin:0 0 14px;font-size:15.5px;color:var(--ink-soft);line-height:1.6;}
+  .dual-card p:last-child{margin-bottom:0;}
+
+  /* jakob block */
+  .jakob{display:grid;grid-template-columns:auto 1fr;gap:30px;background:var(--green);border-radius:var(--radius-xl);padding:44px 48px;margin-top:30px;align-items:start;}
+  .jakob .jbig{font-family:var(--font-num);font-weight:700;font-size:150px;color:rgba(255,255,255,.16);line-height:.7;margin-top:6px;}
+  .jakob .jlab{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#8fc4a8;margin-bottom:18px;}
+  .jakob .jlab .d{width:8px;height:8px;border-radius:50%;background:#7ee0a8;flex:0 0 auto;}
+  .jakob .jq{font-family:var(--font-quote);font-weight:600;font-size:clamp(21px,2.4vw,31px);line-height:1.3;color:#fff;margin:0 0 18px;max-width:30ch;letter-spacing:-.01em;}
+  .jakob p{font-size:16px;color:#cfe7da;line-height:1.62;margin:0;max-width:54ch;}
+
+  /* icon pills */
+  .pill-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px;}
+  .pill{display:flex;flex-direction:column;align-items:center;gap:13px;background:var(--panel-2);border:1px solid rgba(20,60,40,.07);border-radius:var(--radius-md);padding:28px 18px;text-align:center;}
+  .pill svg{width:40px;height:40px;color:var(--green-bright);}
+  .pill .pl{font-family:var(--font-proj);font-weight:700;font-size:14.5px;color:var(--ink);line-height:1.2;}
+  .pill .ps{font-size:12.5px;color:var(--ink-faint);line-height:1.4;}
+
+  /* takeaways */
+  .takeaways{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
+  .take{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;background:var(--panel-2);border-radius:var(--radius-lg);padding:30px 32px;border:1px solid rgba(20,60,40,.06);}
+  .take .tk{font-family:var(--font-num);font-weight:700;font-size:17px;color:#fff;background:var(--green-bright);min-width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;}
+  .take h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0 0 9px;}
+  .take p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.6;}
+  .take p .up{font-weight:700;color:var(--green-bright);}
+
+  /* ---------- footer ---------- */
+  footer{padding:30px 28px 60px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+  .foot-grid h4{font-family:var(--font-display);font-size:24px;color:var(--ink);margin-bottom:20px;}
+  .foot-grid ul{list-style:none;padding:0;margin:0;}
+  .foot-grid li{margin-bottom:12px;}
+  .foot-grid a{font-size:16px;color:var(--ink-soft);transition:color .2s;}
+  .foot-grid a:hover{color:var(--green);}
+  .now-card{background:var(--green-deep);border-radius:18px;padding:18px;display:flex;align-items:center;gap:16px;max-width:360px;color:#dff0e6;}
+  .now-card .cover{width:64px;height:64px;border-radius:10px;background:rgba(255,255,255,.08);flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
+  .now-card .cover .desk-dot{transform-box:fill-box;transform-origin:center;animation:deskPulse 2s ease-in-out infinite;}
+  @keyframes deskPulse{0%,100%{transform:scale(.65);opacity:.4}50%{transform:scale(1.15);opacity:1}}
+  @media (prefers-reduced-motion:reduce){.now-card .cover .desk-dot{animation:none;opacity:.9}}
+  .now-card .t{font-weight:700;font-size:15px;color:#fff;}
+  .now-card .s{font-size:13px;color:#aacdb9;}
+  .pn-nav{max-width:var(--maxw);margin:22px auto 0;padding:0 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .pn-nav .pn-back{font-weight:600;font-size:16px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;transition:color .2s;}
+  .pn-nav .pn-back:hover{color:var(--green);}
+  .pn-next{display:flex;flex-direction:column;align-items:flex-end;text-align:right;background:var(--panel);border-radius:var(--radius-lg);padding:18px 26px;box-shadow:var(--shadow-soft);transition:transform .15s ease,box-shadow .2s ease;}
+  .pn-next:hover{transform:translateY(-2px);box-shadow:var(--shadow-card);}
+  .pn-next .cap{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);}
+  .pn-next .nm{font-family:var(--font-proj);font-weight:700;font-size:22px;color:var(--green-bright);margin-top:4px;}
+  .foot-note{max-width:var(--maxw);margin:36px auto 0;padding:0 28px;font-size:14px;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1000px){
+    .main .panel{padding:44px 34px;}
+    .dual-grid{grid-template-columns:1fr;}
+    .pill-row{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){
+    body{font-size:16.5px;}
+    .main .panel{padding:32px 22px;border-radius:30px;}
+    .case-shell{padding:0 16px;}
+    .nav-brand .nm{display:none;}
+    .take{grid-template-columns:1fr;gap:12px;}
+    .jakob{grid-template-columns:1fr;gap:8px;padding:34px 28px;}
+    .jakob .jbig{font-size:96px;}
+    .story{padding:32px 26px;}
+    .callout-strong{padding:38px 30px;}
+    .pn-nav{flex-direction:column;align-items:stretch;}
+    .pn-next{align-items:flex-start;text-align:left;}
+  }
+</style></head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+      <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
+      <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
+    </a>
+    <a class="nav-back" href="index.html#writing">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to writing
+    </a>
+  </div>
+</nav>
+
+<div class="case-shell" style="padding-top:0;">
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="panel case-hero" data-screen-label="Hero">
+      <div class="hero-tags">
+        <span>Heuristics</span>
+        <span>H4</span>
+        <span class="read">5 min read</span>
+      </div>
+      <h1 class="headline">Same dosa, every time.</h1>
+      <div class="heur-badge">
+        <span class="hn">04</span>
+        <span class="hl">
+          <span class="k">Heuristic 4</span>
+          <span class="v">Consistency and Standards</span>
+        </span>
+      </div>
+      <p class="heur-desc">Users shouldn't have to wonder whether different words, situations, or actions mean the same thing. Follow platform conventions.</p>
+      <p class="subline" style="margin-top:24px;">Users arrive with expectations built from every product they've ever used. When your design breaks those expectations — even creatively — they don't complain. They just leave. Consistency is not a constraint. It's how trust is built.</p>
+    </section>
+
+    <div class="article-main">
+
+      <!-- 01 -->
+      <section class="panel reveal" data-screen-label="01 Consistency everywhere">
+        <span class="eyebrow-num">01 — Consistency everywhere</span>
+        <h2 class="sec-title">Consistency is not just a design word.</h2>
+        <p class="body-copy">Want to build muscle? Train consistently. Want to become a better singer? Practice consistently. Want to succeed at anything? Consistency is what gets you there.</p>
+        <p class="body-copy">Design is no different. The problem is when we hear "consistency" in a design context, we limit it to colours, icons, or layout. But it runs much deeper — through process, language, interaction patterns, and the mental models users bring every time they open a product.</p>
+
+        <div class="pull">
+          <p>"Consistency isn't boring. It's how users build trust with a product — one interaction at a time. Every time the product behaves the way they expect, that trust deepens."</p>
+          <p class="attr">— The real meaning of H4</p>
+        </div>
+      </section>
+
+      <!-- 02 -->
+      <section class="panel reveal" data-screen-label="02 The dosa story">
+        <span class="eyebrow-num">02 — The dosa story</span>
+        <h2 class="sec-title">When creativity broke my expectation.</h2>
+
+        <div class="story">
+          <div class="seyebrow"><span class="d"></span>Personal story — South India</div>
+          <h3>A Masala Dosa with beetroot. I left after half.</h3>
+          <p>I'm from South India, and like most people here, I love dosas — especially Masala Dosas. Crispy crepes with spicy potato filling inside. There's a strong mental model for what a Masala Dosa is supposed to taste like.</p>
+          <p>About seven years ago, a new restaurant opened near my area. Curious, I went in and ordered one. The chef had added beetroot to the potato filling. The dosa arrived pinkish, slightly sweet, and completely unexpected.</p>
+          <p>It wasn't terrible. But it wasn't what I came for. I ate half and left. <strong>I never went back</strong> — not because the food was bad, but because my expectation was broken. I couldn't trust what I'd be getting next time.</p>
+        </div>
+
+        <div class="ill">
+          <div class="ill-frame">
+            <svg viewBox="0 0 540 300" width="560" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <!-- LEFT: classic -->
+              <g>
+                <ellipse cx="150" cy="150" rx="104" ry="104" fill="#fffdf8" stroke="#2c3733" stroke-width="3"/>
+                <ellipse cx="150" cy="150" rx="80" ry="80" fill="none" stroke="#e3dccb" stroke-width="2.5"/>
+                <!-- folded dosa -->
+                <path d="M86 196 Q150 56 214 196 Z" fill="#eab64f" stroke="#b9842c" stroke-width="3"/>
+                <path d="M122 196 Q150 120 178 196" fill="none" stroke="#c79433" stroke-width="2.5" opacity=".8"/>
+                <!-- filling dots -->
+                <circle cx="138" cy="176" r="6" fill="#e8d18a"/>
+                <circle cx="160" cy="180" r="5" fill="#dcc06b"/>
+                <circle cx="150" cy="162" r="5" fill="#e8d18a"/>
+                <text x="150" y="270" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="15" font-weight="700" fill="#2c3733">Classic Masala Dosa</text>
+              </g>
+              <!-- tag intact -->
+              <g transform="translate(96,12)">
+                <rect x="0" y="0" width="108" height="28" rx="14" fill="#e3f1e6" stroke="#bcdcc4" stroke-width="1.5"/>
+                <circle cx="18" cy="14" r="6" fill="#2f9e63"/>
+                <path d="M15 14 l2.4 2.4 l4 -4.6" stroke="#fff" stroke-width="2" fill="none"/>
+                <text x="32" y="19" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="700" fill="#1f6a45">Model: intact</text>
+              </g>
+
+              <!-- divider -->
+              <line x1="270" y1="40" x2="270" y2="262" stroke="#cfc7b5" stroke-width="2" stroke-dasharray="2 8"/>
+
+              <!-- RIGHT: beetroot -->
+              <g>
+                <ellipse cx="390" cy="150" rx="104" ry="104" fill="#fffdf8" stroke="#2c3733" stroke-width="3"/>
+                <ellipse cx="390" cy="150" rx="80" ry="80" fill="none" stroke="#e3dccb" stroke-width="2.5"/>
+                <path d="M326 196 Q390 56 454 196 Z" fill="#e79bb4" stroke="#bd5f80" stroke-width="3"/>
+                <path d="M362 196 Q390 120 418 196" fill="none" stroke="#cc7596" stroke-width="2.5" opacity=".8"/>
+                <circle cx="378" cy="176" r="6" fill="#d97aa0"/>
+                <circle cx="400" cy="180" r="5" fill="#c95f8b"/>
+                <circle cx="390" cy="162" r="5" fill="#d97aa0"/>
+                <!-- floating ? -->
+                <text x="390" y="44" text-anchor="middle" font-family="Caveat, cursive" font-size="46" font-weight="700" fill="#c0617f">?</text>
+                <text x="390" y="270" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="15" font-weight="700" fill="#2c3733">Beetroot Masala Dosa</text>
+              </g>
+              <!-- tag broken -->
+              <g transform="translate(336,12)">
+                <rect x="0" y="0" width="108" height="28" rx="14" fill="#f6e7e1" stroke="#e3c4b9" stroke-width="1.5"/>
+                <circle cx="18" cy="14" r="6" fill="#cf4f33"/>
+                <path d="M15 11 l6 6 M21 11 l-6 6" stroke="#fff" stroke-width="2"/>
+                <text x="32" y="19" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="700" fill="#a3402c">Model: broken</text>
+              </g>
+            </svg>
+          </div>
+          <p class="ill-cap">Same name. Same category. Completely different experience. They didn't complain — they just never returned.</p>
+        </div>
+
+        <p class="body-copy">Apply this directly to digital products — if users expect one thing and experience another, they won't complain. They'll just never return. Broken consistency doesn't generate feedback. <strong>It generates quiet churn.</strong></p>
+      </section>
+
+      <!-- 03 -->
+      <section class="panel reveal" data-screen-label="03 Two types of consistency">
+        <span class="eyebrow-num">03 — Two types of consistency</span>
+        <h2 class="sec-title">Internal and external — both matter.</h2>
+        <p class="body-copy">Consistency in design operates at two levels. Most designers focus on one and forget the other.</p>
+
+        <div class="dual-grid">
+          <div class="dual-card blue">
+            <span class="dlab"><span class="d"></span>Internal consistency</span>
+            <h4>Your product speaking one language</h4>
+            <p>If text links are light blue with underline on hover in one section, that same pattern should apply everywhere. Change it on another page — same visual element, different behaviour — and you've broken the user's mental model of your own product.</p>
+            <p>Internal consistency means your product has one clear design language from start to finish. Every screen, every state, every interaction should feel like it came from the same place.</p>
+          </div>
+          <div class="dual-card green">
+            <span class="dlab"><span class="d"></span>External consistency</span>
+            <h4>Your product fitting into the world</h4>
+            <p>Users bring habits from every other product they've used. Blue means clickable. Magnifying glass means search. Cart means checkout. These conventions exist across the web — and users arrive at your product already knowing them.</p>
+            <p>You can break these conventions. But you'll pay for it in confusion, support queries, and drop-off. Creativity is great — but not at the cost of learnability.</p>
+          </div>
+        </div>
+
+        <div class="ill">
+          <div class="ill-frame">
+            <svg viewBox="0 0 560 240" width="560" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <!-- LEFT panel: internal -->
+              <g>
+                <!-- three page frames -->
+                <g stroke="#2c3733" stroke-width="2.5">
+                  <rect x="14" y="56" width="62" height="84" rx="9" fill="#fffdf8"/>
+                  <rect x="104" y="56" width="62" height="84" rx="9" fill="#fffdf8"/>
+                  <rect x="194" y="56" width="62" height="84" rx="9" fill="#fffdf8"/>
+                </g>
+                <!-- same blue link style in each -->
+                <g>
+                  <rect x="26" y="84" width="38" height="9" rx="3" fill="#3b82c4"/>
+                  <line x1="26" y1="100" x2="64" y2="100" stroke="#3b82c4" stroke-width="2"/>
+                  <rect x="116" y="84" width="38" height="9" rx="3" fill="#3b82c4"/>
+                  <line x1="116" y1="100" x2="154" y2="100" stroke="#3b82c4" stroke-width="2"/>
+                  <rect x="206" y="84" width="38" height="9" rx="3" fill="#3b82c4"/>
+                  <line x1="206" y1="100" x2="244" y2="100" stroke="#3b82c4" stroke-width="2"/>
+                </g>
+                <!-- arrows -->
+                <g stroke="#9aa49c" stroke-width="2.5">
+                  <path d="M82 98 H98 M92 92 l6 6 -6 6"/>
+                  <path d="M172 98 H188 M182 92 l6 6 -6 6"/>
+                </g>
+                <text x="135" y="184" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="#5d6b64">Same link style across every page.</text>
+              </g>
+
+              <!-- divider -->
+              <line x1="280" y1="30" x2="280" y2="210" stroke="#cfc7b5" stroke-width="2" stroke-dasharray="2 8"/>
+
+              <!-- RIGHT panel: external icons -->
+              <g stroke="#15543b" stroke-width="3">
+                <!-- search -->
+                <g transform="translate(322,70)">
+                  <circle cx="16" cy="16" r="13"/>
+                  <line x1="26" y1="26" x2="38" y2="38"/>
+                </g>
+                <!-- cart -->
+                <g transform="translate(404,70)">
+                  <path d="M2 4 H10 L16 30 H40 L46 12 H14"/>
+                  <circle cx="20" cy="40" r="4.5"/>
+                  <circle cx="38" cy="40" r="4.5"/>
+                </g>
+                <!-- house -->
+                <g transform="translate(490,70)">
+                  <path d="M4 22 L24 4 L44 22"/>
+                  <path d="M10 20 V42 H38 V20"/>
+                  <rect x="20" y="30" width="10" height="12"/>
+                </g>
+              </g>
+              <g font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="#5d6b64" text-anchor="middle">
+                <text x="340" y="132">Search</text>
+                <text x="426" y="132">Checkout</text>
+                <text x="512" y="132">Home</text>
+              </g>
+              <text x="420" y="184" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="600" fill="#5d6b64">Icons users already know from everywhere.</text>
+            </svg>
+          </div>
+          <p class="ill-cap">Internal consistency keeps your product coherent. External consistency keeps it learnable.</p>
+        </div>
+      </section>
+
+      <!-- 04 -->
+      <section class="panel reveal" data-screen-label="04 Jakob's Law">
+        <span class="eyebrow-num">04 — Jakob's Law</span>
+        <h2 class="sec-title">Users bring the whole internet with them.</h2>
+
+        <div class="jakob">
+          <div class="jbig">J</div>
+          <div>
+            <div class="jlab"><span class="d"></span>Jakob's Law — Jakob Nielsen</div>
+            <p class="jq">"People spend most of their time using digital products other than yours."</p>
+            <p>This means users arrive at your product with expectations already formed — shaped by every other product they've ever used. Your product is not their first. It won't be their last. Design with that in mind.</p>
+          </div>
+        </div>
+
+        <p class="body-copy" style="margin-top:30px;">When a user opens your product for the first time, they already know what a magnifying glass means, what the cart icon means, that blue text is usually clickable. That prior knowledge is an asset — if you honour it.</p>
+        <p class="body-copy">The moment you replace a standard icon with a custom one — or change a convention just to feel different — you're asking users to spend cognitive effort on something they'd already solved in every other product they've used.</p>
+
+        <div class="pull">
+          <p>"Creativity is great. But not at the cost of learnability. When a standard already exists, the best design decision is often to use it."</p>
+          <p class="attr">— Jakob's Law applied</p>
+        </div>
+      </section>
+
+      <!-- 05 -->
+      <section class="panel reveal" data-screen-label="05 Why standards exist">
+        <span class="eyebrow-num">05 — Why standards exist</span>
+        <h2 class="sec-title">The magnifying glass is universal for a reason.</h2>
+        <p class="body-copy">Why is the search icon a magnifying glass everywhere? Why do all e-commerce platforms use a cart? Because across millions of users and decades of usage, these conventions have become universal. Users recognise them instantly — without thinking.</p>
+
+        <div class="pill-row">
+          <div class="pill">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="21" cy="21" r="13"/><line x1="31" y1="31" x2="42" y2="42"/></svg>
+            <span class="pl">Search</span>
+            <span class="ps">magnifying glass</span>
+          </div>
+          <div class="pill">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6 H11 L17 33 H40 L45 14 H14"/><circle cx="20" cy="41" r="4"/><circle cx="38" cy="41" r="4"/></svg>
+            <span class="pl">Checkout</span>
+            <span class="ps">cart icon</span>
+          </div>
+          <div class="pill">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 24 L24 7 L42 24"/><path d="M11 21 V41 H37 V21"/><rect x="20" y="30" width="8" height="11"/></svg>
+            <span class="pl">Home</span>
+            <span class="ps">house icon</span>
+          </div>
+          <div class="pill">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="8" y1="16" x2="40" y2="16"/><line x1="8" y1="24" x2="40" y2="24"/><line x1="8" y1="32" x2="40" y2="32"/></svg>
+            <span class="pl">Menu</span>
+            <span class="ps">hamburger icon</span>
+          </div>
+        </div>
+
+        <p class="body-copy" style="margin-top:30px;">This heuristic connects directly back to <strong>H2 — Match Between System and the Real World.</strong> Consistency and real-world mapping are two sides of the same coin. Standards exist because they work. And they work because everyone already knows them.</p>
+      </section>
+
+      <!-- 06 -->
+      <section class="panel reveal" data-screen-label="06 Closing thought">
+        <span class="eyebrow-num">06 — Closing thought</span>
+        <h2 class="sec-title">One click, one screen, one dosa at a time.</h2>
+        <p class="body-copy">A consistent experience doesn't limit creativity — it amplifies clarity. When users can predict how your product will behave, they stop thinking about the interface and start focusing on their actual goal. That's when a product truly disappears — and becomes effortless.</p>
+        <p class="body-copy">Design for internal consistency so your product feels unified. Design for external consistency so your product feels familiar. That's how trust is built — interaction by interaction, screen by screen.</p>
+
+        <div class="callout-strong">
+          <div class="cap">The lesson from H4</div>
+          <p>Consistency isn't boring. It's smart UX. And the dosa story is proof: when you break the expectation — even with good intentions — users leave quietly. Build the dosa they came for.</p>
+        </div>
+
+        <div class="takeaways">
+          <div class="take">
+            <div class="tk">T1</div>
+            <div>
+              <h4>Apply this to your next design</h4>
+              <p>Do a consistency audit. Pick one interaction pattern in your product — a button style, a link colour, an icon — and trace it across every screen. Does it behave the same everywhere? If not, you've found your first H4 fix.</p>
+            </div>
+          </div>
+          <div class="take">
+            <div class="tk">T2</div>
+            <div>
+              <h4>Up next</h4>
+              <p><span class="up">H5: Don't Fix Mistakes. Prevent Them.</span> Why the best error message is the one that never needs to appear — and how good design stops mistakes before they happen.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="panel reveal" style="margin-bottom:0;max-width:var(--maxw);">
+    <div class="foot-grid">
+      <div>
+        <h4>On the desk</h4>
+        <div class="now-card">
+          <div class="cover"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M7 3.5 L7 23 L12 18.4 L15.2 25.6 L18 24.3 L14.9 17.3 L21 16.9 Z" fill="#eaf6ef"/><circle class="desk-dot" cx="24.5" cy="8" r="3" fill="#eaf6ef"/></svg></div>
+          <div>
+            <div class="t">Designing decisions, not screens</div>
+            <div class="s">Currently · building Galla, phase 1</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#work">Selected work</a></li>
+          <li><a href="index.html#writing">Writing</a></li>
+          <li><a href="index.html#resume">Experience</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/abhishek-lokesh-162800219/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Medium</a></li>
+          <li><a href="mailto:abhisheklokesh.uiux159@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="pn-nav">
+    <a class="pn-back" href="h3-control-freedom.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      H3: Your Users Need a Brake Pedal.
+    </a>
+    <a class="pn-next" href="h5-error-prevention.html">
+      <span class="cap">Next · H5</span>
+      <span class="nm">Don't Fix Mistakes. Prevent Them. →</span>
+    </a>
+  </div>
+
+  <div class="foot-note">
+    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>H4 of 11 — Consistency and Standards.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.10, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+</body>
+</html>

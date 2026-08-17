@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Visibility of System Status — H1 · Abhishek LG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Quicksand:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" />
+<style>
+  :root{
+    --cream:#f3eee3;
+    --panel:#fbf8f1;
+    --panel-2:#f7f2e8;
+    --green:#15543b;
+    --green-deep:#0f3f2c;
+    --ink:#2c3733;
+    --ink-soft:#5d6b64;
+    --ink-faint:#9aa49c;
+    --black:#191919;
+    --peach:#f6d6ad;
+    --lavender:#dcd7f3;
+    --sky:#c4e2f4;
+    --pink:#f6c8c3;
+    --mint:#cde6d4;
+    --yellow:#f7d24a;
+    --tag:#e9e3d6;
+    --radius-xl:40px;
+    --radius-lg:28px;
+    --radius-md:20px;
+    --shadow-card:0 18px 40px -24px rgba(20,40,30,.35);
+    --shadow-soft:0 10px 30px -20px rgba(20,40,30,.3);
+    --maxw:1240px;
+    --font-display:'Fredoka',system-ui,sans-serif;
+    --font-body:'DM Sans',system-ui,sans-serif;
+    --font-hand:'Caveat',cursive;
+    --green-bright:#008953;
+    --font-hero:'Bricolage Grotesque',sans-serif;
+    --font-cursive:'Bricolage Grotesque',sans-serif;
+    --font-proj:'Trebuchet MS','Segoe UI',sans-serif;
+    --font-quote:'Quicksand',var(--font-body);
+    --font-num:'Libre Baskerville',Georgia,serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:120px;}
+  body{
+    margin:0;background:var(--cream);color:var(--ink);
+    font-family:var(--font-body);font-size:18px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  svg{display:block;}
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;color:var(--green-bright);margin:0;line-height:1.04;letter-spacing:-.01em;}
+
+  /* ---------- panels ---------- */
+  .panel{background:var(--panel);border-radius:var(--radius-xl);padding:72px;margin:26px auto;max-width:var(--maxw);box-shadow:var(--shadow-soft);}
+
+  /* ---------- nav ---------- */
+  .nav{position:fixed;top:18px;left:0;right:0;z-index:80;display:flex;justify-content:center;align-items:center;pointer-events:none;}
+  .nav-inner{pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:26px;background:rgba(251,248,241,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(20,60,40,.07);padding:8px 8px 8px 18px;border-radius:999px;box-shadow:0 14px 34px -22px rgba(20,40,30,.5);}
+  .nav-brand{display:flex;align-items:center;gap:11px;}
+  .nav-avatar{width:34px;height:34px;border-radius:50%;flex:0 0 auto;background:#15543b url('assets/abhishek-avatar.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:#dff0e6;font-family:var(--font-display);font-weight:600;font-size:13px;border:2px solid rgba(255,255,255,.5);}
+  .nav-brand .nm{font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--green-bright);white-space:nowrap;}
+  .nav-back{font-weight:600;font-size:15px;color:#fff;background:var(--green-bright);padding:10px 20px;border-radius:999px;transition:transform .15s ease, box-shadow .2s ease;display:inline-flex;align-items:center;gap:8px;}
+  .nav-back:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(21,84,59,.7);}
+
+  /* ---------- shell / layout ---------- */
+  .case-shell{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .main{min-width:0;}
+  .main .panel{margin:0 0 22px;padding:72px;max-width:none;}
+  .main .panel:first-child{margin-top:0;}
+
+  .article-grid{display:block;}
+  .article-main{min-width:0;}
+
+  /* ---------- type ---------- */
+  .eyebrow-num{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-body);font-weight:600;font-size:15px;letter-spacing:.01em;color:var(--green-bright);background:rgba(21,84,59,.08);padding:8px 16px;border-radius:999px;margin-bottom:24px;}
+  .sec-title{font-family:var(--font-cursive);font-size:clamp(30px,3.4vw,46px);color:var(--green-bright);margin-bottom:22px;letter-spacing:0;line-height:1.08;max-width:24ch;}
+  .body-copy{font-size:18px;color:var(--ink-soft);line-height:1.66;max-width:62ch;margin:0 0 18px;}
+  .body-copy:last-child{margin-bottom:0;}
+  .body-copy strong,.body-copy em{color:var(--ink);font-style:normal;font-weight:600;}
+
+  /* hero */
+  .case-hero{padding-top:96px;}
+  .hero-tags{display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px;margin-bottom:26px;}
+  .hero-tags span{font-family:var(--font-body);font-weight:600;font-size:14.5px;color:var(--green-bright);background:rgba(21,84,59,.08);padding:7px 15px;border-radius:999px;}
+  .hero-tags span.read{background:transparent;color:var(--ink-faint);padding-left:4px;}
+  .case-hero .headline{font-family:var(--font-hero);font-size:clamp(34px,5vw,64px);font-weight:400;color:#1e1f1e;max-width:18ch;margin:6px 0 24px;line-height:1.04;letter-spacing:0;}
+  .case-hero .subline{font-family:var(--font-quote);font-weight:600;font-size:clamp(19px,2vw,26px);color:var(--green-bright);max-width:34ch;line-height:1.3;margin:0;letter-spacing:-.01em;}
+
+  /* illustrations */
+  .ill{margin:34px 0 4px;display:flex;flex-direction:column;align-items:center;}
+  .ill-frame{background:var(--panel-2);border:1px solid rgba(20,60,40,.07);border-radius:var(--radius-lg);padding:34px 30px;width:100%;display:flex;justify-content:center;}
+  .ill svg{max-width:100%;height:auto;}
+  .ill-cap{text-align:center;font-size:13.5px;color:var(--ink-faint);margin-top:14px;max-width:46ch;line-height:1.5;}
+
+  /* pull / callout */
+  .pull{border-left:4px solid var(--yellow);background:var(--panel-2);border-radius:0 22px 22px 0;padding:32px 36px;margin-top:30px;}
+  .pull p{font-family:var(--font-quote);font-weight:600;font-size:clamp(20px,2.2vw,27px);line-height:1.34;color:var(--green-bright);margin:0;max-width:42ch;letter-spacing:-.01em;}
+
+  .callout-strong{background:var(--green);border-radius:var(--radius-xl);padding:50px 54px;margin-top:32px;}
+  .callout-strong .cap{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8fc4a8;margin-bottom:18px;}
+  .callout-strong p{font-family:var(--font-quote);font-weight:600;font-size:clamp(23px,2.7vw,35px);line-height:1.28;color:#fff;margin:0;max-width:26ch;letter-spacing:-.01em;}
+
+  /* mini cards row */
+  .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;}
+  .mini{background:var(--panel-2);border-radius:var(--radius-lg);padding:26px 24px;border:1px solid rgba(20,60,40,.06);display:flex;flex-direction:column;gap:13px;}
+  .mini .mic{width:42px;height:42px;color:var(--green-bright);}
+  .mini h5{font-family:var(--font-proj);font-weight:700;font-size:16.5px;color:var(--ink);margin:0;}
+  .mini p{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.5;}
+
+  /* compare cards */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;}
+  .cmp-card{border-radius:var(--radius-lg);padding:36px 30px;box-shadow:var(--shadow-card);display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;}
+  .cmp-card.works{background:var(--mint);}
+  .cmp-card.feel{background:var(--peach);}
+  .cmp-card h4{font-family:var(--font-cursive);font-weight:600;font-size:clamp(22px,2.2vw,28px);color:#26312c;margin:0;line-height:1.1;}
+
+  /* step cards */
+  .steps{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;background:var(--panel-2);border-radius:var(--radius-lg);padding:30px 32px;border:1px solid rgba(20,60,40,.06);}
+  .step .sn{font-family:var(--font-num);font-weight:700;font-size:34px;color:var(--ink-faint);line-height:1;}
+  .step h4{font-family:var(--font-proj);font-weight:700;font-size:20px;color:var(--ink);margin:0 0 9px;}
+  .step p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.6;}
+
+  /* heuristic badge (hero) */
+  .heur-badge{display:inline-flex;align-items:center;gap:18px;background:var(--green);border-radius:var(--radius-md);padding:18px 26px;margin-top:6px;}
+  .heur-badge .hn{font-family:var(--font-num);font-weight:700;font-size:38px;color:#fff;line-height:1;}
+  .heur-badge .hl{display:flex;flex-direction:column;gap:3px;}
+  .heur-badge .hl .k{font-family:var(--font-body);font-weight:600;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#8fc4a8;}
+  .heur-badge .hl .v{font-family:var(--font-proj);font-weight:700;font-size:17px;color:#fff;line-height:1.15;}
+
+  /* example grid (2 col) */
+  .ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;}
+  .ex-card{border-radius:var(--radius-lg);padding:28px 30px;border:1px solid rgba(20,60,40,.06);background:var(--panel-2);display:flex;flex-direction:column;}
+  .ex-card .xlab{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;}
+  .ex-card .xlab .d{width:8px;height:8px;border-radius:50%;flex:0 0 auto;}
+  .ex-card h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0 0 10px;line-height:1.25;}
+  .ex-card p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.58;}
+  .ex-card.bad{background:#f8ece6;border-color:rgba(163,64,44,.12);}
+  .ex-card.bad .xlab{color:#a3402c;} .ex-card.bad .xlab .d{background:#cf4f33;}
+  .ex-card.good{background:#e7f1e6;border-color:rgba(31,138,91,.14);}
+  .ex-card.good .xlab{color:#1f6a45;} .ex-card.good .xlab .d{background:#2f9e63;}
+
+  /* story block (personal anecdote) */
+  .story{background:var(--peach);border-radius:var(--radius-xl);padding:44px 46px;margin-top:30px;box-shadow:var(--shadow-card);}
+  .story .seyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#9a6418;margin-bottom:16px;}
+  .story .seyebrow .d{width:8px;height:8px;border-radius:50%;background:#cf4f33;flex:0 0 auto;}
+  .story h3{font-family:var(--font-cursive);font-weight:600;font-size:clamp(26px,3vw,38px);color:#5d3a12;margin:0 0 18px;line-height:1.08;letter-spacing:0;}
+  .story p{font-size:17px;color:#5a4a33;line-height:1.66;margin:0 0 16px;max-width:60ch;}
+  .story p:last-child{margin-bottom:0;}
+  .story p strong{color:#3f2e15;font-weight:700;}
+
+  /* missing-feedback list */
+  .miss-list{list-style:none;margin:24px 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .miss-list li{display:flex;align-items:center;gap:13px;background:rgba(255,255,255,.5);border:1px solid rgba(163,64,44,.18);border-radius:14px;padding:15px 18px;font-size:15.5px;font-weight:600;color:#7a3322;}
+  .miss-list li .x{width:24px;height:24px;border-radius:50%;background:#cf4f33;color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .miss-list li .x svg{width:13px;height:13px;}
+
+  /* solution block */
+  .solution{background:var(--green);border-radius:var(--radius-lg);padding:34px 38px;margin-top:26px;}
+  .solution .slab{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#8fc4a8;margin-bottom:16px;}
+  .solution .slab .d{width:8px;height:8px;border-radius:50%;background:#7ee0a8;flex:0 0 auto;}
+  .solution p{font-family:var(--font-quote);font-weight:600;font-size:clamp(20px,2.2vw,27px);line-height:1.34;color:#fff;margin:0;max-width:44ch;letter-spacing:-.01em;}
+  .closing-line{font-family:var(--font-quote);font-weight:600;font-size:clamp(19px,2vw,24px);color:var(--green-bright);margin:26px 0 0;letter-spacing:-.01em;line-height:1.3;}
+
+  /* takeaways */
+  .takeaways{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
+  .take{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;background:var(--panel-2);border-radius:var(--radius-lg);padding:30px 32px;border:1px solid rgba(20,60,40,.06);}
+  .take .tk{font-family:var(--font-num);font-weight:700;font-size:17px;color:#fff;background:var(--green-bright);min-width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;}
+  .take h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0 0 9px;}
+  .take p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.6;}
+  .take p .up{font-weight:700;color:var(--green-bright);}
+
+  /* signature */
+  .sig{margin-top:34px;padding-top:28px;border-top:1px solid rgba(20,60,40,.12);}
+  .sig .nm{font-family:var(--font-cursive);font-weight:600;font-size:30px;color:var(--green-bright);}
+  .sig .tag{display:inline-block;margin-top:14px;font-family:var(--font-body);font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);background:var(--tag);padding:8px 15px;border-radius:999px;}
+
+  /* ---------- footer ---------- */
+  footer{padding:30px 28px 60px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+  .foot-grid h4{font-family:var(--font-display);font-size:24px;color:var(--ink);margin-bottom:20px;}
+  .foot-grid ul{list-style:none;padding:0;margin:0;}
+  .foot-grid li{margin-bottom:12px;}
+  .foot-grid a{font-size:16px;color:var(--ink-soft);transition:color .2s;}
+  .foot-grid a:hover{color:var(--green);}
+  .now-card{background:var(--green-deep);border-radius:18px;padding:18px;display:flex;align-items:center;gap:16px;max-width:360px;color:#dff0e6;}
+  .now-card .cover{width:64px;height:64px;border-radius:10px;background:rgba(255,255,255,.08);flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
+  .now-card .cover .desk-dot{transform-box:fill-box;transform-origin:center;animation:deskPulse 2s ease-in-out infinite;}
+  @keyframes deskPulse{0%,100%{transform:scale(.65);opacity:.4}50%{transform:scale(1.15);opacity:1}}
+  @media (prefers-reduced-motion:reduce){.now-card .cover .desk-dot{animation:none;opacity:.9}}
+  .now-card .t{font-weight:700;font-size:15px;color:#fff;}
+  .now-card .s{font-size:13px;color:#aacdb9;}
+  .pn-nav{max-width:var(--maxw);margin:22px auto 0;padding:0 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .pn-nav .pn-back{font-weight:600;font-size:16px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;transition:color .2s;}
+  .pn-nav .pn-back:hover{color:var(--green);}
+  .pn-next{display:flex;flex-direction:column;align-items:flex-end;text-align:right;background:var(--panel);border-radius:var(--radius-lg);padding:18px 26px;box-shadow:var(--shadow-soft);transition:transform .15s ease,box-shadow .2s ease;}
+  .pn-next:hover{transform:translateY(-2px);box-shadow:var(--shadow-card);}
+  .pn-next .cap{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);}
+  .pn-next .nm{font-family:var(--font-proj);font-weight:700;font-size:22px;color:var(--green-bright);margin-top:4px;}
+  .foot-note{max-width:var(--maxw);margin:36px auto 0;padding:0 28px;font-size:14px;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1000px){
+    .main .panel{padding:44px 34px;}
+    .mini-grid{grid-template-columns:1fr;}
+    .compare{grid-template-columns:1fr;}
+    .ex-grid{grid-template-columns:1fr;}
+    .miss-list{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    body{font-size:16.5px;}
+    .main .panel{padding:32px 22px;border-radius:30px;}
+    .case-shell{padding:0 16px;}
+    .nav-brand .nm{display:none;}
+    .step{grid-template-columns:1fr;gap:10px;}
+    .take{grid-template-columns:1fr;gap:12px;}
+    .story{padding:32px 26px;}
+    .callout-strong{padding:38px 30px;}
+    .pn-nav{flex-direction:column;align-items:stretch;}
+    .pn-next{align-items:flex-start;text-align:left;}
+  }
+</style></head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+      <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
+      <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
+    </a>
+    <a class="nav-back" href="index.html#writing">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to writing
+    </a>
+  </div>
+</nav>
+
+<div class="case-shell" style="padding-top:0;">
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="panel case-hero" data-screen-label="Hero">
+      <div class="hero-tags">
+        <span>Heuristics</span>
+        <span>H1</span>
+        <span class="read">7 min read</span>
+      </div>
+      <h1 class="headline">A good product works. A great product talks.</h1>
+      <div class="heur-badge">
+        <span class="hn">01</span>
+        <span class="hl">
+          <span class="k">Heuristic 1</span>
+          <span class="v">Visibility of System Status</span>
+        </span>
+      </div>
+      <p class="subline" style="margin-top:24px;">Keep users informed. Always. Even silence is a message — and usually the wrong one.</p>
+    </section>
+
+    <div class="article-grid">
+
+      <!-- MAIN COLUMN -->
+      <div class="article-main">
+
+        <!-- 01 -->
+        <section class="panel reveal" id="start" data-spy="start" data-screen-label="01 Where it starts">
+          <span class="eyebrow-num">01 — Where it starts</span>
+          <h2 class="sec-title">A lift that doesn't tell you where it's going.</h2>
+          <p class="body-copy">You press the button. The doors close. The lift moves. But there's no floor indicator — no display, no number, no sound. Just movement in a metal box.</p>
+          <p class="body-copy">Do you get out at the next floor and check? Wait and hope? Press every button until something makes sense?</p>
+          <p class="body-copy">That's what it feels like when a digital product goes quiet. You took an action. Something is happening. But the system isn't telling you what — or whether it worked at all.</p>
+
+          <div class="ill">
+            <div class="ill-frame">
+              <svg viewBox="0 0 360 240" width="400" fill="none" stroke="#15543b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <!-- cabin -->
+                <rect x="62" y="44" width="170" height="178" rx="12"/>
+                <!-- blank indicator display -->
+                <rect x="104" y="58" width="86" height="24" rx="6"/>
+                <line x1="120" y1="70" x2="174" y2="70" stroke-dasharray="2 9" opacity=".4"/>
+                <!-- door seam -->
+                <line x1="147" y1="92" x2="147" y2="222"/>
+                <!-- figure looking up -->
+                <circle cx="118" cy="150" r="12"/>
+                <path d="M118 162 L118 196 M118 173 L103 185 M118 173 L133 185 M118 196 L108 218 M118 196 L128 218"/>
+                <path d="M118 132 l8 -9" stroke-width="3" opacity=".55"/>
+                <!-- floor button panel -->
+                <rect x="258" y="92" width="44" height="106" rx="10"/>
+                <circle cx="280" cy="112" r="6.5" fill="#2f9e63" stroke="none"/>
+                <circle cx="280" cy="134" r="6.5"/>
+                <circle cx="280" cy="156" r="6.5"/>
+                <circle cx="280" cy="178" r="6.5"/>
+              </svg>
+            </div>
+            <p class="ill-cap">The doors close. The lift moves. No floor. No number. No idea where it's headed.</p>
+          </div>
+        </section>
+
+        <!-- 02 -->
+        <section class="panel reveal" id="principle" data-spy="principle" data-screen-label="02 The principle">
+          <span class="eyebrow-num">02 — The principle</span>
+          <h2 class="sec-title">Always keep users in the loop.</h2>
+          <p class="body-copy">Nielsen's first heuristic is deceptively simple: keep users informed about what is happening, with appropriate feedback, within a reasonable time.</p>
+          <p class="body-copy">That's it. But <strong>"appropriate"</strong> and <strong>"reasonable"</strong> do a lot of work in that sentence.</p>
+
+          <div class="pull">
+            <p>"Appropriate means relevant to the action. Reasonable means fast enough that the user hasn't already assumed something went wrong."</p>
+          </div>
+
+          <div class="ex-grid">
+            <div class="ex-card bad">
+              <span class="xlab"><span class="d"></span>Without visibility</span>
+              <h4>You type. Nothing appears.</h4>
+              <p>You'd immediately wonder — is my keyboard working? Did I make a mistake? Is the system receiving this? The moment feedback disappears, the interaction breaks.</p>
+            </div>
+            <div class="ex-card good">
+              <span class="xlab"><span class="d"></span>With visibility</span>
+              <h4>You type. Characters appear in real time.</h4>
+              <p>Instant confirmation. The system is listening. You're in control. You don't have to wonder — you can see it working.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 -->
+        <section class="panel reveal" id="example" data-spy="example" data-screen-label="03 A simple example">
+          <span class="eyebrow-num">03 — A simple example</span>
+          <h2 class="sec-title">The most basic feedback loop in digital products.</h2>
+          <p class="body-copy">Think about typing in a text field. Characters appear as you press each key. That's it — that's Heuristic 1 in its most basic form.</p>
+          <p class="body-copy">Now imagine a system where nothing appears until you press Enter. You'd immediately wonder: is my keyboard working? Did I make a mistake? Is the system receiving my input?</p>
+          <p class="body-copy">The moment feedback disappears, the interaction breaks. We depend on constant confirmation that our input is being received.</p>
+
+          <div class="ill">
+            <div class="ill-frame">
+              <svg viewBox="0 0 420 168" width="440" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <!-- left field, empty -->
+                <rect x="18" y="26" width="176" height="58" rx="12" stroke="#15543b" stroke-width="3.5"/>
+                <line x1="40" y1="42" x2="40" y2="68" stroke="#cf4f33" stroke-width="3.5"/>
+                <!-- right field, typed -->
+                <rect x="226" y="26" width="176" height="58" rx="12" stroke="#15543b" stroke-width="3.5"/>
+                <line x1="248" y1="48" x2="330" y2="48" stroke="#15543b" stroke-width="6"/>
+                <line x1="248" y1="63" x2="302" y2="63" stroke="#15543b" stroke-width="6" opacity=".4"/>
+                <line x1="342" y1="42" x2="342" y2="68" stroke="#2f9e63" stroke-width="3.5"/>
+                <!-- labels -->
+                <circle cx="30" cy="124" r="6" fill="#cf4f33" stroke="none"/>
+                <text x="45" y="129" font-family="DM Sans, sans-serif" font-size="15" font-weight="600" fill="#a3402c" stroke="none">Is this working?</text>
+                <circle cx="238" cy="124" r="6" fill="#2f9e63" stroke="none"/>
+                <text x="253" y="129" font-family="DM Sans, sans-serif" font-size="15" font-weight="600" fill="#1f6a45" stroke="none">I can see it working.</text>
+              </svg>
+            </div>
+            <p class="ill-cap">Same field, two experiences. One leaves you guessing. The other shows you it heard every keystroke.</p>
+          </div>
+        </section>
+
+        <!-- 04 -->
+        <section class="panel reveal" id="failure" data-spy="failure" data-screen-label="04 A real failure">
+          <span class="eyebrow-num">04 — A real failure</span>
+          <h2 class="sec-title">My medical insurance experience.</h2>
+
+          <div class="story">
+            <div class="seyebrow"><span class="d"></span>Real failure — personal experience</div>
+            <h3>Payment made. Page loaded. Nothing.</h3>
+            <p>I recently renewed my medical insurance online. Filled the form. Reviewed everything. Made the payment. Got redirected to a page where I was supposed to receive my updated policy document.</p>
+            <p>Instead, the page just<strong>... sat there.</strong></p>
+            <ul class="miss-list">
+              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No loading indicator</li>
+              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No success message</li>
+              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No download button</li>
+              <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>Not even an error</li>
+            </ul>
+            <p>Naturally, my mind started racing. Did my payment go through? Should I try again? Would I be double-charged if I retried?</p>
+            <p>To find out — I had to check my bank statement, call my insurance agent, share a screenshot, wait 30+ minutes, and receive my policy two days later.</p>
+          </div>
+
+          <div class="solution">
+            <div class="slab"><span class="d"></span>What it should have said</div>
+            <p>"Payment successful. We're processing your policy. You will receive it within 24 hours."</p>
+          </div>
+          <p class="closing-line">One sentence. That's all it would have taken.</p>
+        </section>
+
+        <!-- 05 -->
+        <section class="panel reveal" id="stakes" data-spy="stakes" data-screen-label="05 The stakes">
+          <span class="eyebrow-num">05 — The stakes</span>
+          <h2 class="sec-title">Silence is never neutral in a product.</h2>
+          <p class="body-copy">This isn't just about good design — it's about building trust. Especially in high-stakes contexts, users need to feel confident their action has been received and is being handled.</p>
+
+          <div class="ex-grid">
+            <div class="ex-card bad">
+              <span class="xlab"><span class="d"></span>High stakes, no feedback</span>
+              <h4>Financial transactions</h4>
+              <p>Did my payment go through? No confirmation leads to repeat transactions, support calls, and anxious users who have no idea what happened to their money.</p>
+            </div>
+            <div class="ex-card bad">
+              <span class="xlab"><span class="d"></span>High stakes, no feedback</span>
+              <h4>Healthcare &amp; insurance</h4>
+              <p>Is my form submitted? Is my policy active? In healthcare, uncertainty isn't just frustrating — it creates real-world consequences.</p>
+            </div>
+            <div class="ex-card good">
+              <span class="xlab"><span class="d"></span>Good visibility</span>
+              <h4>Progress bars &amp; loading states</h4>
+              <p>A simple spinner transforms waiting from anxiety into patience. It signals: the system is working. You did the right thing. Hang tight.</p>
+            </div>
+            <div class="ex-card good">
+              <span class="xlab"><span class="d"></span>Good visibility</span>
+              <h4>Success confirmations</h4>
+              <p>A tick, a green banner, a "Thank you" — these cost almost nothing to build and deliver enormous psychological relief to the user.</p>
+            </div>
+          </div>
+
+          <p class="body-copy" style="margin-top:24px;">Lack of feedback leads to confusion, repeat actions, and unnecessary support queries — all of which hurt both UX and business performance.</p>
+          <p class="closing-line">Visibility isn't a nice-to-have. It's how a product earns trust.</p>
+        </section>
+
+        <!-- 06 -->
+        <section class="panel reveal" id="takeaway" data-spy="takeaway" data-screen-label="06 The takeaway">
+          <span class="eyebrow-num">06 — The takeaway</span>
+          <h2 class="sec-title">Visibility is a form of respect.</h2>
+          <p class="body-copy">Visibility of System Status isn't just a UX best practice — it's a form of respect. For the user's time. Their attention. Their trust in your product.</p>
+          <p class="body-copy">Whether it's a blinking light, a progress bar, a success tick, or a simple "Thank you" — good products always keep users in the loop. Because the moment a user feels left in the dark, the experience is broken — even if everything technically worked.</p>
+
+          <div class="pull">
+            <p>"A good product doesn't just work. It communicates. And sometimes, one sentence is all it takes."</p>
+            <p style="font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink-faint);margin:16px 0 0;">— The lesson from my insurance renewal</p>
+          </div>
+
+          <div class="takeaways">
+            <div class="take">
+              <div class="tk">T1</div>
+              <div>
+                <h4>Apply this to your next design</h4>
+                <p>Walk through your product's critical actions — form submissions, payments, uploads, deletions. At each step ask: does the user know something happened? If the answer is "they'll figure it out" — you have a visibility problem.</p>
+              </div>
+            </div>
+            <div class="take">
+              <div class="tk">T2</div>
+              <div>
+                <h4>Up next</h4>
+                <p><span class="up">H2: Design in a Language They Already Know.</span> How using the right words, familiar metaphors, and real-world references makes products feel natural — without users needing to think twice.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="panel reveal" style="margin-bottom:0;max-width:var(--maxw);">
+    <div class="foot-grid">
+      <div>
+        <h4>On the desk</h4>
+        <div class="now-card">
+          <div class="cover"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M7 3.5 L7 23 L12 18.4 L15.2 25.6 L18 24.3 L14.9 17.3 L21 16.9 Z" fill="#eaf6ef"/><circle class="desk-dot" cx="24.5" cy="8" r="3" fill="#eaf6ef"/></svg></div>
+          <div>
+            <div class="t">Designing decisions, not screens</div>
+            <div class="s">Currently · building Galla, phase 1</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#work">Selected work</a></li>
+          <li><a href="index.html#writing">Writing</a></li>
+          <li><a href="index.html#resume">Experience</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/abhishek-lokesh-162800219/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Medium</a></li>
+          <li><a href="mailto:abhisheklokesh.uiux159@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="pn-nav">
+    <a class="pn-back" href="ux-not-screens.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Intro: UX is not just screens
+    </a>
+    <a class="pn-next" href="h2-real-world.html">
+      <span class="cap">Next · H2</span>
+      <span class="nm">Design in a Language They Already Know →</span>
+    </a>
+  </div>
+
+  <div class="foot-note">
+    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>H1 of 11 — Visibility of System Status.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.10, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  /* sidebar scrollspy */
+  var jumps = {};
+  document.querySelectorAll('.side a').forEach(function(a){ jumps[a.getAttribute('data-jump')] = a; });
+  if(Object.keys(jumps).length){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var id = e.target.getAttribute('data-spy');
+          Object.keys(jumps).forEach(function(k){ jumps[k].classList.remove('active'); });
+          if(jumps[id]) jumps[id].classList.add('active');
+        }
+      });
+    },{rootMargin:'-30% 0px -55% 0px'});
+    document.querySelectorAll('[data-spy]').forEach(function(s){ spy.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>

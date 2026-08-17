@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>You don't forget. You just need the right cue — H6 · Abhishek LG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Quicksand:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" />
+<style>
+  :root{
+    --cream:#f3eee3;
+    --panel:#fbf8f1;
+    --panel-2:#f7f2e8;
+    --green:#15543b;
+    --green-deep:#0f3f2c;
+    --ink:#2c3733;
+    --ink-soft:#5d6b64;
+    --ink-faint:#9aa49c;
+    --black:#191919;
+    --peach:#f6d6ad;
+    --lavender:#dcd7f3;
+    --sky:#c4e2f4;
+    --pink:#f6c8c3;
+    --mint:#cde6d4;
+    --yellow:#f7d24a;
+    --gold:#c8861f;
+    --tag:#e9e3d6;
+    --radius-xl:40px;
+    --radius-lg:28px;
+    --radius-md:20px;
+    --shadow-card:0 18px 40px -24px rgba(20,40,30,.35);
+    --shadow-soft:0 10px 30px -20px rgba(20,40,30,.3);
+    --maxw:1240px;
+    --font-display:'Fredoka',system-ui,sans-serif;
+    --font-body:'DM Sans',system-ui,sans-serif;
+    --font-hand:'Caveat',cursive;
+    --green-bright:#008953;
+    --font-hero:'Bricolage Grotesque',sans-serif;
+    --font-cursive:'Bricolage Grotesque',sans-serif;
+    --font-proj:'Trebuchet MS','Segoe UI',sans-serif;
+    --font-quote:'Quicksand',var(--font-body);
+    --font-num:'Libre Baskerville',Georgia,serif;
+    --blue:#3b82c4;
+    --warm-red:#cf4f33;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:120px;}
+  body{
+    margin:0;background:var(--cream);color:var(--ink);
+    font-family:var(--font-body);font-size:18px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  svg{display:block;}
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;color:var(--green-bright);margin:0;line-height:1.04;letter-spacing:-.01em;}
+
+  .panel{background:var(--panel);border-radius:var(--radius-xl);padding:72px;margin:26px auto;max-width:var(--maxw);box-shadow:var(--shadow-soft);}
+
+  /* ---------- nav ---------- */
+  .nav{position:fixed;top:18px;left:0;right:0;z-index:80;display:flex;justify-content:center;align-items:center;pointer-events:none;}
+  .nav-inner{pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:26px;background:rgba(251,248,241,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(20,60,40,.07);padding:8px 8px 8px 18px;border-radius:999px;box-shadow:0 14px 34px -22px rgba(20,40,30,.5);}
+  .nav-brand{display:flex;align-items:center;gap:11px;}
+  .nav-avatar{width:34px;height:34px;border-radius:50%;flex:0 0 auto;background:#15543b url('assets/abhishek-avatar.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:#dff0e6;font-family:var(--font-display);font-weight:600;font-size:13px;border:2px solid rgba(255,255,255,.5);}
+  .nav-brand .nm{font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--green-bright);white-space:nowrap;}
+  .nav-back{font-weight:600;font-size:15px;color:#fff;background:var(--green-bright);padding:10px 20px;border-radius:999px;transition:transform .15s ease, box-shadow .2s ease;display:inline-flex;align-items:center;gap:8px;}
+  .nav-back:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(21,84,59,.7);}
+
+  /* ---------- shell ---------- */
+  .case-shell{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .main{min-width:0;}
+  .main .panel{margin:0 0 22px;padding:72px;max-width:none;}
+  .main .panel:first-child{margin-top:0;}
+  .article-main{min-width:0;}
+
+  /* ---------- type ---------- */
+  .eyebrow-num{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-body);font-weight:600;font-size:15px;letter-spacing:.01em;color:var(--green-bright);background:rgba(21,84,59,.08);padding:8px 16px;border-radius:999px;margin-bottom:24px;}
+  .sec-title{font-family:var(--font-cursive);font-size:clamp(30px,3.4vw,46px);color:var(--green-bright);margin-bottom:22px;letter-spacing:0;line-height:1.08;max-width:26ch;}
+  .body-copy{font-size:18px;color:var(--ink-soft);line-height:1.66;max-width:62ch;margin:0 0 18px;}
+  .body-copy:last-child{margin-bottom:0;}
+  .body-copy strong,.body-copy em{color:var(--ink);font-style:normal;font-weight:600;}
+
+  /* hero */
+  .case-hero{padding-top:96px;}
+  .hero-tags{display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px;margin-bottom:26px;}
+  .hero-tags span{font-family:var(--font-body);font-weight:600;font-size:14.5px;color:var(--green-bright);background:rgba(21,84,59,.08);padding:7px 15px;border-radius:999px;}
+  .hero-tags span.read{background:transparent;color:var(--ink-faint);padding-left:4px;}
+  .case-hero .headline{font-family:var(--font-hero);font-size:clamp(32px,4.6vw,60px);font-weight:400;color:#1e1f1e;max-width:18ch;margin:6px 0 24px;line-height:1.06;letter-spacing:0;}
+  .case-hero .subline{font-family:var(--font-quote);font-weight:600;font-size:clamp(19px,2vw,26px);color:var(--green-bright);max-width:42ch;line-height:1.3;margin:0;letter-spacing:-.01em;}
+
+  /* heuristic badge (hero) */
+  .heur-badge{display:inline-flex;align-items:center;gap:18px;background:var(--green);border-radius:var(--radius-md);padding:18px 26px;margin-top:6px;}
+  .heur-badge .hn{font-family:var(--font-num);font-weight:700;font-size:38px;color:#fff;line-height:1;}
+  .heur-badge .hl{display:flex;flex-direction:column;gap:3px;}
+  .heur-badge .hl .k{font-family:var(--font-body);font-weight:600;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#8fc4a8;}
+  .heur-badge .hl .v{font-family:var(--font-proj);font-weight:700;font-size:17px;color:#fff;line-height:1.15;}
+  .heur-desc{font-size:15.5px;color:var(--ink-soft);line-height:1.62;max-width:62ch;margin:18px 0 0;}
+
+  /* illustrations */
+  .ill{margin:34px 0 4px;display:flex;flex-direction:column;align-items:center;}
+  .ill-frame{background:var(--panel-2);border:1px solid rgba(20,60,40,.07);border-radius:var(--radius-lg);padding:34px 30px;width:100%;display:flex;justify-content:center;}
+  .ill svg{max-width:100%;height:auto;}
+  .ill-cap{text-align:center;font-size:13.5px;color:var(--ink-faint);margin-top:14px;max-width:56ch;line-height:1.5;}
+
+  /* pull / callout (left border accent) */
+  .pull{border-left:4px solid var(--yellow);background:var(--panel-2);border-radius:0 22px 22px 0;padding:32px 36px;margin-top:30px;}
+  .pull p{font-family:var(--font-quote);font-weight:600;font-size:clamp(20px,2.2vw,27px);line-height:1.34;color:var(--green-bright);margin:0;max-width:46ch;letter-spacing:-.01em;}
+  .pull .attr{font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink-faint);margin:16px 0 0;}
+
+  /* story block */
+  .story{background:var(--peach);border-radius:var(--radius-xl);padding:44px 46px;margin-top:30px;box-shadow:var(--shadow-card);}
+  .story .seyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#9a6418;margin-bottom:16px;}
+  .story .seyebrow .d{width:8px;height:8px;border-radius:50%;background:#cf4f33;flex:0 0 auto;}
+  .story h3{font-family:var(--font-cursive);font-weight:600;font-size:clamp(26px,3vw,38px);color:#5d3a12;margin:0 0 18px;line-height:1.08;letter-spacing:0;}
+  .story p{font-size:17px;color:#5a4a33;line-height:1.66;margin:0 0 16px;max-width:60ch;}
+  .story p:last-child{margin-bottom:0;}
+  .story p strong{color:#3f2e15;font-weight:700;}
+
+  /* strong dark callout */
+  .callout-strong{background:var(--green);border-radius:var(--radius-xl);padding:50px 54px;margin-top:32px;}
+  .callout-strong .cap{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8fc4a8;margin-bottom:18px;}
+  .callout-strong p{font-family:var(--font-quote);font-weight:600;font-size:clamp(22px,2.5vw,33px);line-height:1.3;color:#fff;margin:0;max-width:32ch;letter-spacing:-.01em;}
+
+  /* dual cards (recall / recognition) */
+  .dual-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;align-items:start;}
+  .dual-card{background:var(--panel-2);border-radius:var(--radius-lg);padding:34px 32px 36px;border:1px solid rgba(20,60,40,.07);border-top:5px solid;display:flex;flex-direction:column;box-shadow:var(--shadow-card);}
+  .dual-card.green{border-top-color:#2f9e63;}
+  .dual-card.red{border-top-color:var(--warm-red);}
+  .dual-card .dlab{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;}
+  .dual-card .dlab .d{width:9px;height:9px;border-radius:50%;flex:0 0 auto;}
+  .dual-card.green .dlab{color:#1f6a45;} .dual-card.green .dlab .d{background:#2f9e63;}
+  .dual-card.red .dlab{color:#a3402c;} .dual-card.red .dlab .d{background:var(--warm-red);}
+  .dual-card h4{font-family:var(--font-proj);font-weight:700;font-size:21px;color:var(--ink);margin:0 0 12px;line-height:1.25;}
+  .dual-card p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.62;}
+
+  /* memory principle blocks */
+  .principles{display:flex;flex-direction:column;gap:14px;margin-top:28px;}
+  .principle{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;background:var(--panel-2);border-radius:var(--radius-lg);padding:28px 32px;border:1px solid rgba(20,60,40,.06);}
+  .principle .pic{width:54px;height:54px;border-radius:15px;background:rgba(0,137,83,.1);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .principle .pic svg{width:28px;height:28px;color:var(--green-bright);}
+  .principle h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0 0 8px;}
+  .principle p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.6;}
+
+  /* feature list (dot + title + body) */
+  .feat-list{display:flex;flex-direction:column;gap:14px;margin-top:30px;}
+  .feat{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;background:var(--panel-2);border-radius:var(--radius-lg);padding:28px 32px;border:1px solid rgba(20,60,40,.06);}
+  .feat .fd{width:14px;height:14px;border-radius:50%;background:var(--green-bright);margin-top:7px;flex:0 0 auto;box-shadow:0 0 0 6px rgba(0,137,83,.12);}
+  .feat h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0 0 8px;}
+  .feat p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.6;}
+
+  /* takeaways */
+  .takeaways{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
+  .take{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;background:var(--panel-2);border-radius:var(--radius-lg);padding:30px 32px;border:1px solid rgba(20,60,40,.06);}
+  .take .tk{font-family:var(--font-num);font-weight:700;font-size:17px;color:#fff;background:var(--green-bright);min-width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;}
+  .take h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0 0 9px;}
+  .take p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.6;}
+  .take p .up{font-weight:700;color:var(--green-bright);}
+
+  /* ---------- footer ---------- */
+  footer{padding:30px 28px 60px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+  .foot-grid h4{font-family:var(--font-display);font-size:24px;color:var(--ink);margin-bottom:20px;}
+  .foot-grid ul{list-style:none;padding:0;margin:0;}
+  .foot-grid li{margin-bottom:12px;}
+  .foot-grid a{font-size:16px;color:var(--ink-soft);transition:color .2s;}
+  .foot-grid a:hover{color:var(--green);}
+  .now-card{background:var(--green-deep);border-radius:18px;padding:18px;display:flex;align-items:center;gap:16px;max-width:360px;color:#dff0e6;}
+  .now-card .cover{width:64px;height:64px;border-radius:10px;background:rgba(255,255,255,.08);flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
+  .now-card .cover .desk-dot{transform-box:fill-box;transform-origin:center;animation:deskPulse 2s ease-in-out infinite;}
+  @keyframes deskPulse{0%,100%{transform:scale(.65);opacity:.4}50%{transform:scale(1.15);opacity:1}}
+  @media (prefers-reduced-motion:reduce){.now-card .cover .desk-dot{animation:none;opacity:.9}}
+  .now-card .t{font-weight:700;font-size:15px;color:#fff;}
+  .now-card .s{font-size:13px;color:#aacdb9;}
+  .pn-nav{max-width:var(--maxw);margin:22px auto 0;padding:0 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .pn-nav .pn-back{font-weight:600;font-size:16px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;transition:color .2s;max-width:60%;}
+  .pn-nav .pn-back:hover{color:var(--green);}
+  .pn-next{display:flex;flex-direction:column;align-items:flex-end;text-align:right;background:var(--panel);border-radius:var(--radius-lg);padding:18px 26px;box-shadow:var(--shadow-soft);transition:transform .15s ease,box-shadow .2s ease;}
+  .pn-next:hover{transform:translateY(-2px);box-shadow:var(--shadow-card);}
+  .pn-next .cap{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);}
+  .pn-next .nm{font-family:var(--font-proj);font-weight:700;font-size:22px;color:var(--green-bright);margin-top:4px;}
+  .foot-note{max-width:var(--maxw);margin:36px auto 0;padding:0 28px;font-size:14px;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1000px){
+    .main .panel{padding:44px 34px;}
+    .dual-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    body{font-size:16.5px;}
+    .main .panel{padding:32px 22px;border-radius:30px;}
+    .case-shell{padding:0 16px;}
+    .nav-brand .nm{display:none;}
+    .take{grid-template-columns:1fr;gap:12px;}
+    .feat,.principle{grid-template-columns:1fr;gap:10px;}
+    .story{padding:32px 26px;}
+    .callout-strong{padding:38px 30px;}
+    .pn-nav{flex-direction:column;align-items:stretch;}
+    .pn-nav .pn-back{max-width:none;}
+    .pn-next{align-items:flex-start;text-align:left;}
+  }
+</style></head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+      <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
+      <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
+    </a>
+    <a class="nav-back" href="index.html#writing">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to writing
+    </a>
+  </div>
+</nav>
+
+<div class="case-shell" style="padding-top:0;">
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="panel case-hero" data-screen-label="Hero">
+      <div class="hero-tags">
+        <span>Heuristics</span>
+        <span>H6</span>
+        <span class="read">4 min read</span>
+      </div>
+      <h1 class="headline">You don't forget. You just need the right cue.</h1>
+      <div class="heur-badge">
+        <span class="hn">06</span>
+        <span class="hl">
+          <span class="k">Heuristic 6</span>
+          <span class="v">Recognition Rather Than Recall</span>
+        </span>
+      </div>
+      <p class="heur-desc">Minimise the user's memory load. Make objects, actions, and options visible. The user should not have to remember information from one part of the interface to another.</p>
+      <p class="subline" style="margin-top:24px;">Memory isn't lost — it's waiting to be activated. The moment you saw the photo, everything came back. That's the difference between recognition and recall. And it's exactly how interfaces should work.</p>
+    </section>
+
+    <div class="article-main">
+
+      <!-- 01 -->
+      <section class="panel reveal" data-screen-label="01 Real-world story">
+        <span class="eyebrow-num">01 — Real-world story</span>
+        <h2 class="sec-title">The face that unlocked everything.</h2>
+
+        <div class="story">
+          <div class="seyebrow"><span class="d"></span>Personal story — a school reunion moment</div>
+          <h3>I couldn't recall her. Until I saw her face.</h3>
+          <p>Recently, I met a very old friend after years apart. As we caught up, she mentioned another schoolmate — someone she'd reconnected with. "You remember her, right? She was in all the debates, came from the next town over…"</p>
+          <p>Honestly? I couldn't recall her at all. The name meant nothing. The description didn't help.</p>
+          <p>Then she opened Instagram and showed me a photo. <strong>Boom. Memory unlocked.</strong> Her face was almost the same — and just like that, all the school-time memories came flooding back. The debates, the classrooms, the shared moments I had completely forgotten existed.</p>
+          <p>That's recognition vs recall in its purest form. It wasn't that I had forgotten her. I just needed the right cue to activate what was already stored.</p>
+        </div>
+
+        <div class="ill">
+          <div class="ill-frame">
+            <svg viewBox="0 0 560 300" width="560" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <!-- LEFT: recall -->
+              <g>
+                <text x="140" y="30" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" letter-spacing=".5" fill="#a3402c">RECALL — NAME ONLY</text>
+                <!-- speech bubble -->
+                <rect x="58" y="48" width="164" height="44" rx="14" fill="#fffdf8" stroke="#cbc3af" stroke-width="2.5"/>
+                <path d="M96 92 l4 16 16 -16 Z" fill="#fffdf8" stroke="#cbc3af" stroke-width="2.5"/>
+                <text x="140" y="76" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="#5d6b64">"You remember her?"</text>
+                <!-- blank circle -->
+                <circle cx="140" cy="170" r="40" fill="none" stroke="#c4baa4" stroke-width="3" stroke-dasharray="5 7"/>
+                <!-- big ? -->
+                <text x="140" y="186" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="52" font-weight="600" fill="#cf4f33">?</text>
+                <text x="140" y="252" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13.5" font-weight="700" fill="#5d6b64">Nothing. Just a name.</text>
+              </g>
+
+              <!-- divider -->
+              <line x1="280" y1="30" x2="280" y2="262" stroke="#cfc7b5" stroke-width="2" stroke-dasharray="2 8"/>
+
+              <!-- RIGHT: recognition -->
+              <g>
+                <text x="420" y="30" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" letter-spacing=".5" fill="#1f6a45">RECOGNITION — WITH PHOTO</text>
+                <rect x="338" y="48" width="164" height="44" rx="14" fill="#fffdf8" stroke="#cbc3af" stroke-width="2.5"/>
+                <path d="M376 92 l4 16 16 -16 Z" fill="#fffdf8" stroke="#cbc3af" stroke-width="2.5"/>
+                <text x="420" y="76" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="#5d6b64">"You remember her?"</text>
+                <!-- sparks -->
+                <g stroke="#c8861f" stroke-width="3">
+                  <line x1="420" y1="118" x2="420" y2="128"/>
+                  <line x1="372" y1="170" x2="362" y2="170"/>
+                  <line x1="468" y1="170" x2="478" y2="170"/>
+                  <line x1="386" y1="136" x2="379" y2="129"/>
+                  <line x1="454" y1="136" x2="461" y2="129"/>
+                  <line x1="386" y1="204" x2="379" y2="211"/>
+                  <line x1="454" y1="204" x2="461" y2="211"/>
+                </g>
+                <!-- face -->
+                <circle cx="420" cy="170" r="40" fill="#fdeccc" stroke="#15543b" stroke-width="3"/>
+                <circle cx="408" cy="163" r="3.4" fill="#15543b"/>
+                <circle cx="432" cy="163" r="3.4" fill="#15543b"/>
+                <path d="M406 182 q14 12 28 0" fill="none" stroke="#15543b" stroke-width="3"/>
+                <!-- memory labels -->
+                <g font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#9a7430">
+                  <text x="334" y="128" text-anchor="middle">debates</text>
+                  <text x="540" y="146" text-anchor="end">classrooms</text>
+                  <text x="540" y="228" text-anchor="end">shared moments</text>
+                </g>
+                <text x="420" y="252" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13.5" font-weight="700" fill="#1f6a45">Everything unlocked instantly.</text>
+              </g>
+            </svg>
+          </div>
+          <p class="ill-cap">Same person. Same memory. The cue was the difference.</p>
+        </div>
+      </section>
+
+      <!-- 02 -->
+      <section class="panel reveal" data-screen-label="02 How memory works">
+        <span class="eyebrow-num">02 — How memory works</span>
+        <h2 class="sec-title">Recognition and recall are not the same thing.</h2>
+
+        <div class="dual-grid">
+          <div class="dual-card red">
+            <span class="dlab"><span class="d"></span>Recall</span>
+            <h4>Retrieve from scratch</h4>
+            <p>Recall requires generating information from memory without external cues. It's harder, slower, and more likely to fail — especially under cognitive load or with unfamiliar interfaces.</p>
+          </div>
+          <div class="dual-card green">
+            <span class="dlab"><span class="d"></span>Recognition</span>
+            <h4>Identify from a cue</h4>
+            <p>Recognition is triggered by seeing something — a face, an icon, a label. It's faster, more reliable, and requires significantly less mental effort. It's how most of human memory actually works.</p>
+          </div>
+        </div>
+
+        <div class="principles">
+          <div class="principle">
+            <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="3"/><circle cx="8" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="13" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="18" cy="12" r="1.4" fill="none"/></svg></div>
+            <div>
+              <h4>Working memory is limited</h4>
+              <p>Humans can hold roughly 4–7 items in working memory at a time. Every time your interface asks users to remember something across screens, steps, or sessions — you're spending from a very small budget.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 S6 5 12 5 S22 12 22 12 S18 19 12 19 S2 12 2 12 Z"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+            <div>
+              <h4>Seeing is easier than remembering</h4>
+              <p>Recognition leverages visual and contextual cues to activate stored memories. When users see something familiar — an icon, a label, a past selection — the brain retrieves the associated knowledge instantly. No active effort required.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 a8 8 0 0 1 13.6 -5.6 L20 8"/><path d="M20 3 V8 H15"/><path d="M20 12 a8 8 0 0 1 -13.6 5.6 L4 16"/><path d="M4 21 V16 H9"/></svg></div>
+            <div>
+              <h4>Context restores memory</h4>
+              <p>The right visual context doesn't just help users find what they need — it restores their mental model of the product. Like seeing a face after years. Everything clicks back into place.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 -->
+      <section class="panel reveal" data-screen-label="03 Icons without labels">
+        <span class="eyebrow-num">03 — Icons without labels</span>
+        <h2 class="sec-title">The bill icon that nobody understood.</h2>
+        <p class="body-copy">I use a digital payment app daily. One of the tabs in the footer bar has an icon — a small illustrated rectangle with lines inside. Possibly a document. Possibly a statement. Possibly a bill.</p>
+        <p class="body-copy">Every time I needed to find my bill history, I had to tap it to find out. Three apps later, I still couldn't remember which icon it was without tapping.</p>
+        <p class="body-copy">That's a recall problem. The icon asked me to remember what it meant — <strong>every single time.</strong></p>
+
+        <div class="ill">
+          <div class="ill-frame">
+            <svg viewBox="0 0 560 320" width="560" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <!-- LEFT phone: no labels -->
+              <g>
+                <rect x="56" y="20" width="172" height="270" rx="26" fill="#fffdf8" stroke="#2c3733" stroke-width="3"/>
+                <rect x="56" y="20" width="172" height="38" rx="26" fill="#15543b"/>
+                <rect x="56" y="42" width="172" height="16" fill="#15543b"/>
+                <!-- ? marks -->
+                <g font-family="Fredoka, sans-serif" font-size="22" font-weight="600" fill="#cf4f33">
+                  <text x="98" y="212" text-anchor="middle">?</text>
+                  <text x="142" y="212" text-anchor="middle">?</text>
+                  <text x="186" y="212" text-anchor="middle">?</text>
+                </g>
+                <!-- nav bar -->
+                <line x1="56" y1="244" x2="228" y2="244" stroke="#e3dccb" stroke-width="2"/>
+                <g stroke="#5d6b64" stroke-width="2.5">
+                  <!-- doc icon -->
+                  <rect x="89" y="254" width="18" height="22" rx="3"/>
+                  <line x1="93" y1="260" x2="103" y2="260"/><line x1="93" y1="266" x2="103" y2="266"/>
+                  <!-- person -->
+                  <circle cx="142" cy="259" r="5"/>
+                  <path d="M133 277 a9 9 0 0 1 18 0"/>
+                  <!-- card -->
+                  <rect x="177" y="256" width="20" height="15" rx="3"/>
+                  <line x1="177" y1="261" x2="197" y2="261"/>
+                </g>
+                <text x="142" y="306" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#5d6b64">Recall — guess and tap</text>
+              </g>
+
+              <!-- RIGHT phone: labels -->
+              <g>
+                <rect x="332" y="20" width="172" height="270" rx="26" fill="#fffdf8" stroke="#2c3733" stroke-width="3"/>
+                <rect x="332" y="20" width="172" height="38" rx="26" fill="#15543b"/>
+                <rect x="332" y="42" width="172" height="16" fill="#15543b"/>
+                <!-- nav bar -->
+                <line x1="332" y1="238" x2="504" y2="238" stroke="#e3dccb" stroke-width="2"/>
+                <!-- highlighted my bills -->
+                <rect x="349" y="246" width="58" height="40" rx="10" fill="#e3f1e6"/>
+                <g stroke="#1f8a4f" stroke-width="2.5">
+                  <rect x="369" y="252" width="18" height="22" rx="3"/>
+                  <line x1="373" y1="258" x2="383" y2="258"/><line x1="373" y1="264" x2="383" y2="264"/>
+                </g>
+                <text x="378" y="300" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="800" fill="#1f6a45">My Bills</text>
+                <g stroke="#9aa49c" stroke-width="2.5">
+                  <circle cx="430" cy="257" r="5"/>
+                  <path d="M421 275 a9 9 0 0 1 18 0"/>
+                  <rect x="465" y="254" width="20" height="15" rx="3"/>
+                  <line x1="465" y1="259" x2="485" y2="259"/>
+                </g>
+                <g font-family="DM Sans, sans-serif" font-size="10.5" font-weight="600" fill="#9aa49c" text-anchor="middle">
+                  <text x="430" y="300">Profile</text>
+                  <text x="475" y="300">Payments</text>
+                </g>
+                <text x="418" y="306" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#5d6b64" opacity="0">.</text>
+              </g>
+              <text x="418" y="306" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1f6a45" opacity="0"></text>
+            </svg>
+          </div>
+          <p class="ill-cap">Same icons. One footer has labels, one doesn't. The difference isn't aesthetic — it's cognitive load. Labels turn a guessing game into instant recognition.</p>
+        </div>
+
+        <p class="body-copy">Adding a label — "My Bills" or "Bill History" — turns the interaction from recall into recognition. No guesswork. The user sees, understands, and acts. The label costs almost nothing. The absence of it costs the user every time.</p>
+      </section>
+
+      <!-- 04 -->
+      <section class="panel reveal" data-screen-label="04 UX example Filters">
+        <span class="eyebrow-num">04 — UX example: Filters</span>
+        <h2 class="sec-title">Smart history is recognition in action.</h2>
+        <p class="body-copy">In e-commerce, users often apply filters — brand, price range, rating. When they return the next day, a product that doesn't remember those preferences forces them to start from scratch. A blank filter panel is a recall problem.</p>
+        <p class="body-copy">A smart product saves previous filter settings, shows recently used filters visually, and highlights options selected last time. The user sees their context and recognises it immediately — "Oh yes, I filtered for Adidas sneakers under ₹4000 last time." No reconstruction needed.</p>
+
+        <div class="ill">
+          <div class="ill-frame">
+            <svg viewBox="0 0 560 326" width="560" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <!-- LEFT: blank filters -->
+              <g>
+                <rect x="20" y="20" width="236" height="286" rx="18" fill="#fffdf8" stroke="#e3dccb" stroke-width="2.5"/>
+                <text x="40" y="50" font-family="DM Sans, sans-serif" font-size="13" font-weight="800" letter-spacing=".5" fill="#a3402c">BLANK FILTERS</text>
+                <!-- brand -->
+                <text x="40" y="82" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#5d6b64">Brand</text>
+                <g stroke="#cbc3af" stroke-width="2">
+                  <rect x="40" y="92" width="15" height="15" rx="3"/><line x1="64" y1="100" x2="150" y2="100" stroke="#ddd5c2" stroke-width="6"/>
+                  <rect x="40" y="116" width="15" height="15" rx="3"/><line x1="64" y1="124" x2="140" y2="124" stroke="#ddd5c2" stroke-width="6"/>
+                  <rect x="40" y="140" width="15" height="15" rx="3"/><line x1="64" y1="148" x2="130" y2="148" stroke="#ddd5c2" stroke-width="6"/>
+                </g>
+                <!-- price -->
+                <text x="40" y="186" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#5d6b64">Price</text>
+                <line x1="40" y1="204" x2="236" y2="204" stroke="#ddd5c2" stroke-width="5"/>
+                <circle cx="48" cy="204" r="8" fill="#fffdf8" stroke="#cbc3af" stroke-width="2.5"/>
+                <!-- rating -->
+                <text x="40" y="244" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#5d6b64">Rating</text>
+                <g fill="none" stroke="#cbc3af" stroke-width="2">
+                  <polygon points="48,256 51,263 59,263 53,268 55,276 48,271 41,276 43,268 37,263 45,263"/>
+                  <polygon points="78,256 81,263 89,263 83,268 85,276 78,271 71,276 73,268 67,263 75,263"/>
+                  <polygon points="108,256 111,263 119,263 113,268 115,276 108,271 101,276 103,268 97,263 105,263"/>
+                  <polygon points="138,256 141,263 149,263 143,268 145,276 138,271 131,276 133,268 127,263 135,263"/>
+                  <polygon points="168,256 171,263 179,263 173,268 175,276 168,271 161,276 163,268 157,263 165,263"/>
+                </g>
+                <text x="138" y="300" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#5d6b64">Start from scratch. Every time.</text>
+              </g>
+
+              <!-- RIGHT: smart filters -->
+              <g>
+                <rect x="304" y="20" width="236" height="286" rx="18" fill="#fffdf8" stroke="#cbe0cf" stroke-width="2.5"/>
+                <text x="324" y="50" font-family="DM Sans, sans-serif" font-size="13" font-weight="800" letter-spacing=".5" fill="#1f6a45">SMART FILTERS</text>
+                <!-- last used -->
+                <text x="324" y="78" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="700" letter-spacing=".4" fill="#9a6418">LAST USED</text>
+                <g font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#9a6418">
+                  <rect x="324" y="86" width="64" height="26" rx="13" fill="#f6e6bd"/><text x="356" y="103" text-anchor="middle">Adidas</text>
+                  <rect x="394" y="86" width="92" height="26" rx="13" fill="#f6e6bd"/><text x="440" y="103" text-anchor="middle">Under ₹4000</text>
+                  <rect x="324" y="118" width="48" height="26" rx="13" fill="#f6e6bd"/><text x="348" y="135" text-anchor="middle">4★+</text>
+                </g>
+                <!-- brand -->
+                <text x="324" y="174" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#5d6b64">Brand</text>
+                <!-- adidas selected -->
+                <rect x="324" y="184" width="18" height="18" rx="4" fill="#1f8a4f"/>
+                <path d="M328 193 l3 3 6 -7" stroke="#fff" stroke-width="2.4" fill="none"/>
+                <text x="352" y="198" font-family="DM Sans, sans-serif" font-size="13.5" font-weight="700" fill="#1f6a45">Adidas</text>
+                <!-- nike -->
+                <rect x="324" y="214" width="18" height="18" rx="4" fill="none" stroke="#cbc3af" stroke-width="2"/>
+                <text x="352" y="228" font-family="DM Sans, sans-serif" font-size="13.5" font-weight="600" fill="#5d6b64">Nike</text>
+                <!-- puma -->
+                <rect x="324" y="244" width="18" height="18" rx="4" fill="none" stroke="#cbc3af" stroke-width="2"/>
+                <text x="352" y="258" font-family="DM Sans, sans-serif" font-size="13.5" font-weight="600" fill="#5d6b64">Puma</text>
+                <text x="422" y="300" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#1f6a45">Context restored. Instant recognition.</text>
+              </g>
+            </svg>
+          </div>
+          <p class="ill-cap">Left: blank filters every session — full recall burden. Right: last-used filters surfaced as chips, previous selection pre-highlighted. The system remembers so the user doesn't have to.</p>
+        </div>
+
+        <p class="body-copy">Apps that don't remember past filters force users to go through the entire thought process again — a friction so subtle users rarely articulate it. They just feel the product is slightly more effort than it should be. The system already had that information. It just didn't use it.</p>
+      </section>
+
+      <!-- 05 -->
+      <section class="panel reveal" data-screen-label="05 Why it matters">
+        <span class="eyebrow-num">05 — Why it matters</span>
+        <h2 class="sec-title">Design is not a memory test.</h2>
+        <p class="body-copy">Humans have limited working memory — and digital interfaces shouldn't test it. Every unnecessary recall moment is a small tax on cognitive load. Individually small. Collectively exhausting.</p>
+
+        <div class="feat-list">
+          <div class="feat">
+            <span class="fd"></span>
+            <div>
+              <h4>Multiple choice is easier than open-ended input</h4>
+              <p>Showing options to select from is always less cognitively demanding than asking users to type from memory. When possible, show — don't ask.</p>
+            </div>
+          </div>
+          <div class="feat">
+            <span class="fd"></span>
+            <div>
+              <h4>Icons with labels work better than standalone icons</h4>
+              <p>Unless an icon is universally recognised (home, search, cart), it needs a label. The label converts recall into recognition — instantly.</p>
+            </div>
+          </div>
+          <div class="feat">
+            <span class="fd"></span>
+            <div>
+              <h4>Recently used items help more than blank screens</h4>
+              <p>Recent searches, previous filters, last-used settings — surfacing history reduces the effort of every return visit. The system already knows. Show it.</p>
+            </div>
+          </div>
+          <div class="feat">
+            <span class="fd"></span>
+            <div>
+              <h4>Your design should recognise the user — not make them prove their memory</h4>
+              <p>Context, history, and visual cues are tools the product has. Using them is not optional — it's the difference between a product that feels effortless and one that feels like work.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 -->
+      <section class="panel reveal" data-screen-label="06 Closing thought">
+        <span class="eyebrow-num">06 — Closing thought</span>
+        <h2 class="sec-title">Make it visible. Make it obvious. Make it easy to recognise.</h2>
+        <p class="body-copy">Your user is already juggling enough. Don't make them dig into their mental archive just to use your product. Recognise their context, their past behaviour, and their expectations.</p>
+        <p class="body-copy">When users see what they need — they don't have to think. And when they don't have to think, the product disappears. <strong>That's the goal.</strong></p>
+
+        <div class="callout-strong">
+          <div class="cap">The lesson from H6</div>
+          <p>Design is not a memory test. The cue was always yours to give. Show it — and let users recognise what they already know.</p>
+        </div>
+
+        <div class="takeaways">
+          <div class="take">
+            <div class="tk">T1</div>
+            <div>
+              <h4>Apply this to your next design</h4>
+              <p>Walk through your product and count the moments where users have to remember something — a code, a previous selection, a label they saw three screens ago. Each one is a recognition opportunity waiting to be designed. Surface it.</p>
+            </div>
+          </div>
+          <div class="take">
+            <div class="tk">T2</div>
+            <div>
+              <h4>Up next</h4>
+              <p><span class="up">H7: Built for Everyone. Fast for Experts.</span> How great products serve both the first-time user and the power user without compromising either experience.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="panel reveal" style="margin-bottom:0;max-width:var(--maxw);">
+    <div class="foot-grid">
+      <div>
+        <h4>On the desk</h4>
+        <div class="now-card">
+          <div class="cover"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M7 3.5 L7 23 L12 18.4 L15.2 25.6 L18 24.3 L14.9 17.3 L21 16.9 Z" fill="#eaf6ef"/><circle class="desk-dot" cx="24.5" cy="8" r="3" fill="#eaf6ef"/></svg></div>
+          <div>
+            <div class="t">Designing decisions, not screens</div>
+            <div class="s">Currently · building Galla, phase 1</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#work">Selected work</a></li>
+          <li><a href="index.html#writing">Writing</a></li>
+          <li><a href="index.html#resume">Experience</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/abhishek-lokesh-162800219/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Medium</a></li>
+          <li><a href="mailto:abhisheklokesh.uiux159@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="pn-nav">
+    <a class="pn-back" href="h5-error-prevention.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      H5: The Best Error Is the One That Never Happens.
+    </a>
+    <a class="pn-next" href="h7-flexibility.html">
+      <span class="cap">Next · H7</span>
+      <span class="nm">Built for Everyone. Fast for Experts. →</span>
+    </a>
+  </div>
+
+  <div class="foot-note">
+    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>H6 of 11 — Recognition Rather Than Recall.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.10, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+</body>
+</html>

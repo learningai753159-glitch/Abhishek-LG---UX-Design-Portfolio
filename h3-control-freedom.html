@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>User Control and Freedom — H3 · Abhishek LG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Quicksand:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" />
+<style>
+  :root{
+    --cream:#f3eee3;
+    --panel:#fbf8f1;
+    --panel-2:#f7f2e8;
+    --green:#15543b;
+    --green-deep:#0f3f2c;
+    --ink:#2c3733;
+    --ink-soft:#5d6b64;
+    --ink-faint:#9aa49c;
+    --black:#191919;
+    --peach:#f6d6ad;
+    --lavender:#dcd7f3;
+    --sky:#c4e2f4;
+    --pink:#f6c8c3;
+    --mint:#cde6d4;
+    --yellow:#f7d24a;
+    --tag:#e9e3d6;
+    --radius-xl:40px;
+    --radius-lg:28px;
+    --radius-md:20px;
+    --shadow-card:0 18px 40px -24px rgba(20,40,30,.35);
+    --shadow-soft:0 10px 30px -20px rgba(20,40,30,.3);
+    --maxw:1240px;
+    --font-display:'Fredoka',system-ui,sans-serif;
+    --font-body:'DM Sans',system-ui,sans-serif;
+    --font-hand:'Caveat',cursive;
+    --green-bright:#008953;
+    --font-hero:'Bricolage Grotesque',sans-serif;
+    --font-cursive:'Bricolage Grotesque',sans-serif;
+    --font-proj:'Trebuchet MS','Segoe UI',sans-serif;
+    --font-quote:'Quicksand',var(--font-body);
+    --font-num:'Libre Baskerville',Georgia,serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:120px;}
+  body{
+    margin:0;background:var(--cream);color:var(--ink);
+    font-family:var(--font-body);font-size:18px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  svg{display:block;}
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;color:var(--green-bright);margin:0;line-height:1.04;letter-spacing:-.01em;}
+
+  /* ---------- panels ---------- */
+  .panel{background:var(--panel);border-radius:var(--radius-xl);padding:72px;margin:26px auto;max-width:var(--maxw);box-shadow:var(--shadow-soft);}
+
+  /* ---------- nav ---------- */
+  .nav{position:fixed;top:18px;left:0;right:0;z-index:80;display:flex;justify-content:center;align-items:center;pointer-events:none;}
+  .nav-inner{pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:26px;background:rgba(251,248,241,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(20,60,40,.07);padding:8px 8px 8px 18px;border-radius:999px;box-shadow:0 14px 34px -22px rgba(20,40,30,.5);}
+  .nav-brand{display:flex;align-items:center;gap:11px;}
+  .nav-avatar{width:34px;height:34px;border-radius:50%;flex:0 0 auto;background:#15543b url('assets/abhishek-avatar.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:#dff0e6;font-family:var(--font-display);font-weight:600;font-size:13px;border:2px solid rgba(255,255,255,.5);}
+  .nav-brand .nm{font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--green-bright);white-space:nowrap;}
+  .nav-back{font-weight:600;font-size:15px;color:#fff;background:var(--green-bright);padding:10px 20px;border-radius:999px;transition:transform .15s ease, box-shadow .2s ease;display:inline-flex;align-items:center;gap:8px;}
+  .nav-back:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(21,84,59,.7);}
+
+  /* ---------- shell / layout ---------- */
+  .case-shell{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .main{min-width:0;}
+  .main .panel{margin:0 0 22px;padding:72px;max-width:none;}
+  .main .panel:first-child{margin-top:0;}
+
+  .article-grid{display:block;}
+  .article-main{min-width:0;}
+
+  /* ---------- type ---------- */
+  .eyebrow-num{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-body);font-weight:600;font-size:15px;letter-spacing:.01em;color:var(--green-bright);background:rgba(21,84,59,.08);padding:8px 16px;border-radius:999px;margin-bottom:24px;}
+  .sec-title{font-family:var(--font-cursive);font-size:clamp(30px,3.4vw,46px);color:var(--green-bright);margin-bottom:22px;letter-spacing:0;line-height:1.08;max-width:24ch;}
+  .body-copy{font-size:18px;color:var(--ink-soft);line-height:1.66;max-width:62ch;margin:0 0 18px;}
+  .body-copy:last-child{margin-bottom:0;}
+  .body-copy strong,.body-copy em{color:var(--ink);font-style:normal;font-weight:600;}
+
+  /* hero */
+  .case-hero{padding-top:96px;}
+  .hero-tags{display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px;margin-bottom:26px;}
+  .hero-tags span{font-family:var(--font-body);font-weight:600;font-size:14.5px;color:var(--green-bright);background:rgba(21,84,59,.08);padding:7px 15px;border-radius:999px;}
+  .hero-tags span.read{background:transparent;color:var(--ink-faint);padding-left:4px;}
+  .case-hero .headline{font-family:var(--font-hero);font-size:clamp(34px,5vw,64px);font-weight:400;color:#1e1f1e;max-width:18ch;margin:6px 0 24px;line-height:1.04;letter-spacing:0;}
+  .case-hero .subline{font-family:var(--font-quote);font-weight:600;font-size:clamp(19px,2vw,26px);color:var(--green-bright);max-width:34ch;line-height:1.3;margin:0;letter-spacing:-.01em;}
+
+  /* illustrations */
+  .ill{margin:34px 0 4px;display:flex;flex-direction:column;align-items:center;}
+  .ill-frame{background:var(--panel-2);border:1px solid rgba(20,60,40,.07);border-radius:var(--radius-lg);padding:34px 30px;width:100%;display:flex;justify-content:center;}
+  .ill svg{max-width:100%;height:auto;}
+  .ill-cap{text-align:center;font-size:13.5px;color:var(--ink-faint);margin-top:14px;max-width:46ch;line-height:1.5;}
+
+  /* pull / callout */
+  .pull{border-left:4px solid var(--yellow);background:var(--panel-2);border-radius:0 22px 22px 0;padding:32px 36px;margin-top:30px;}
+  .pull p{font-family:var(--font-quote);font-weight:600;font-size:clamp(20px,2.2vw,27px);line-height:1.34;color:var(--green-bright);margin:0;max-width:42ch;letter-spacing:-.01em;}
+
+  .callout-strong{background:var(--green);border-radius:var(--radius-xl);padding:50px 54px;margin-top:32px;}
+  .callout-strong .cap{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8fc4a8;margin-bottom:18px;}
+  .callout-strong p{font-family:var(--font-quote);font-weight:600;font-size:clamp(23px,2.7vw,35px);line-height:1.28;color:#fff;margin:0;max-width:26ch;letter-spacing:-.01em;}
+
+  /* mini cards row */
+  .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;}
+  .mini{background:var(--panel-2);border-radius:var(--radius-lg);padding:26px 24px;border:1px solid rgba(20,60,40,.06);display:flex;flex-direction:column;gap:13px;}
+  .mini .mic{width:42px;height:42px;color:var(--green-bright);}
+  .mini h5{font-family:var(--font-proj);font-weight:700;font-size:16.5px;color:var(--ink);margin:0;}
+  .mini p{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.5;}
+
+  /* compare cards */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;}
+  .cmp-card{border-radius:var(--radius-lg);padding:36px 30px;box-shadow:var(--shadow-card);display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;}
+  .cmp-card.works{background:var(--mint);}
+  .cmp-card.feel{background:var(--peach);}
+  .cmp-card h4{font-family:var(--font-cursive);font-weight:600;font-size:clamp(22px,2.2vw,28px);color:#26312c;margin:0;line-height:1.1;}
+
+  /* step cards */
+  .steps{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;background:var(--panel-2);border-radius:var(--radius-lg);padding:30px 32px;border:1px solid rgba(20,60,40,.06);}
+  .step .sn{font-family:var(--font-num);font-weight:700;font-size:34px;color:var(--ink-faint);line-height:1;}
+  .step h4{font-family:var(--font-proj);font-weight:700;font-size:20px;color:var(--ink);margin:0 0 9px;}
+  .step p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.6;}
+
+  /* heuristic badge (hero) */
+  .heur-badge{display:inline-flex;align-items:center;gap:18px;background:var(--green);border-radius:var(--radius-md);padding:18px 26px;margin-top:6px;}
+  .heur-badge .hn{font-family:var(--font-num);font-weight:700;font-size:38px;color:#fff;line-height:1;}
+  .heur-badge .hl{display:flex;flex-direction:column;gap:3px;}
+  .heur-badge .hl .k{font-family:var(--font-body);font-weight:600;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#8fc4a8;}
+  .heur-badge .hl .v{font-family:var(--font-proj);font-weight:700;font-size:17px;color:#fff;line-height:1.15;}
+
+  /* example grid (2 col) */
+  .ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;}
+  .ex-card{border-radius:var(--radius-lg);padding:28px 30px;border:1px solid rgba(20,60,40,.06);background:var(--panel-2);display:flex;flex-direction:column;}
+  .ex-card .xlab{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;}
+  .ex-card .xlab .d{width:8px;height:8px;border-radius:50%;flex:0 0 auto;}
+  .ex-card h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0 0 10px;line-height:1.25;}
+  .ex-card p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.58;}
+  .ex-card.bad{background:#f8ece6;border-color:rgba(163,64,44,.12);}
+  .ex-card.bad .xlab{color:#a3402c;} .ex-card.bad .xlab .d{background:#cf4f33;}
+  .ex-card.good{background:#e7f1e6;border-color:rgba(31,138,91,.14);}
+  .ex-card.good .xlab{color:#1f6a45;} .ex-card.good .xlab .d{background:#2f9e63;}
+
+  /* story block (personal anecdote) */
+  .story{background:var(--peach);border-radius:var(--radius-xl);padding:44px 46px;margin-top:30px;box-shadow:var(--shadow-card);}
+  .story .seyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#9a6418;margin-bottom:16px;}
+  .story .seyebrow .d{width:8px;height:8px;border-radius:50%;background:#cf4f33;flex:0 0 auto;}
+  .story h3{font-family:var(--font-cursive);font-weight:600;font-size:clamp(26px,3vw,38px);color:#5d3a12;margin:0 0 18px;line-height:1.08;letter-spacing:0;}
+  .story p{font-size:17px;color:#5a4a33;line-height:1.66;margin:0 0 16px;max-width:60ch;}
+  .story p:last-child{margin-bottom:0;}
+  .story p strong{color:#3f2e15;font-weight:700;}
+
+  /* missing-feedback list */
+  .miss-list{list-style:none;margin:24px 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .miss-list li{display:flex;align-items:center;gap:13px;background:rgba(255,255,255,.5);border:1px solid rgba(163,64,44,.18);border-radius:14px;padding:15px 18px;font-size:15.5px;font-weight:600;color:#7a3322;}
+  .miss-list li .x{width:24px;height:24px;border-radius:50%;background:#cf4f33;color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .miss-list li .x svg{width:13px;height:13px;}
+
+  /* solution block */
+  .solution{background:var(--green);border-radius:var(--radius-lg);padding:34px 38px;margin-top:26px;}
+  .solution .slab{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#8fc4a8;margin-bottom:16px;}
+  .solution .slab .d{width:8px;height:8px;border-radius:50%;background:#7ee0a8;flex:0 0 auto;}
+  .solution p{font-family:var(--font-quote);font-weight:600;font-size:clamp(20px,2.2vw,27px);line-height:1.34;color:#fff;margin:0;max-width:44ch;letter-spacing:-.01em;}
+  .closing-line{font-family:var(--font-quote);font-weight:600;font-size:clamp(19px,2vw,24px);color:var(--green-bright);margin:26px 0 0;letter-spacing:-.01em;line-height:1.3;}
+
+  /* takeaways */
+  .takeaways{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
+  .take{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;background:var(--panel-2);border-radius:var(--radius-lg);padding:30px 32px;border:1px solid rgba(20,60,40,.06);}
+  .take .tk{font-family:var(--font-num);font-weight:700;font-size:17px;color:#fff;background:var(--green-bright);min-width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;}
+  .take h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0 0 9px;}
+  .take p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.6;}
+  .take p .up{font-weight:700;color:var(--green-bright);}
+
+  /* metaphor cards (2x2) */
+  .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;}
+  .meta-card{background:var(--panel-2);border-radius:var(--radius-lg);padding:28px 30px;border:1px solid rgba(20,60,40,.06);display:flex;flex-direction:column;gap:14px;}
+  .meta-card .mhead{display:flex;align-items:center;gap:15px;}
+  .meta-card .micon{width:44px;height:44px;color:var(--green-bright);flex:0 0 auto;}
+  .meta-card h4{font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--ink);margin:0;line-height:1.2;}
+  .meta-card p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.58;}
+
+  /* icon row illustration */
+  .icon-row{display:grid;grid-template-columns:repeat(4,1fr);width:100%;}
+  .icon-row .ir{display:flex;flex-direction:column;align-items:center;gap:14px;padding:8px 16px;border-right:1px solid rgba(20,60,40,.13);}
+  .icon-row .ir:last-child{border-right:none;}
+  .icon-row .ir svg{width:46px;height:46px;color:var(--green-bright);}
+  .icon-row .ir .irl{font-size:13px;font-weight:600;color:var(--ink-soft);text-align:center;line-height:1.4;}
+
+  /* dustbin -> recycle mapping */
+  .dustbin-map{display:flex;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap;}
+  .dm-obj{display:flex;flex-direction:column;align-items:center;gap:11px;}
+  .dm-obj svg{width:82px;height:82px;color:#15543b;}
+  .dm-obj span{font-family:var(--font-body);font-weight:700;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);}
+  .dm-arrow{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--green-bright);}
+  .dm-arrow svg{width:74px;height:24px;}
+  .dm-arrow span{font-family:var(--font-hand);font-weight:700;font-size:18px;color:var(--green-bright);line-height:1;}
+  .dm-maps{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+  .dm-maps span{background:var(--panel);border:1px solid rgba(20,60,40,.1);border-radius:999px;padding:9px 17px;font-size:13.5px;font-weight:600;color:var(--ink-soft);}
+
+  /* comparison table */
+  .cmp-wrap{margin-top:28px;overflow-x:auto;border-radius:var(--radius-md);}
+  .cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:15.5px;min-width:620px;}
+  .cmp th,.cmp td{padding:16px 22px;text-align:left;vertical-align:top;line-height:1.5;}
+  .cmp thead th{font-family:var(--font-proj);font-weight:700;font-size:15.5px;color:var(--ink);border-bottom:2px solid rgba(20,60,40,.14);}
+  .cmp thead th.dont{color:#a3402c;}
+  .cmp thead th.say{color:#1f6a45;}
+  .cmp tbody td{color:var(--ink-soft);border-bottom:1px solid rgba(20,60,40,.08);}
+  .cmp tbody tr:last-child td{border-bottom:none;}
+  .cmp td.dont{background:#f6e7e1;color:#8a4632;font-weight:600;}
+  .cmp td.say{background:#e3eee2;color:#1f6a45;font-weight:600;}
+  .cmp thead th.dont{border-bottom-color:transparent;}
+  .cmp thead th.say{border-bottom-color:transparent;}
+  .cmp tbody tr:first-child td.dont{border-radius:14px 14px 0 0;}
+  .cmp tbody tr:last-child td.dont{border-radius:0 0 14px 14px;}
+  .cmp tbody tr:first-child td.say{border-radius:14px 14px 0 0;}
+  .cmp tbody tr:last-child td.say{border-radius:0 0 14px 14px;}
+
+  /* heuristic description (hero) */
+  .heur-desc{font-size:15.5px;color:var(--ink-soft);line-height:1.62;max-width:58ch;margin:18px 0 0;}
+
+  /* dashboard tint compare cards */
+  .cmp-card.tintbad{background:#f2ddd5;}
+  .cmp-card.tintgood{background:#dbebdb;}
+  .cmp-card .ind{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.07em;text-transform:uppercase;}
+  .cmp-card .ind .d{width:8px;height:8px;border-radius:50%;flex:0 0 auto;}
+  .cmp-card.tintbad .ind{color:#a3402c;} .cmp-card.tintbad .ind .d{background:#cf4f33;}
+  .cmp-card.tintgood .ind{color:#1f6a45;} .cmp-card.tintgood .ind .d{background:#2f9e63;}
+
+  /* control items reuse .take — icon inside badge */
+  .take .tk svg{width:23px;height:23px;}
+
+  /* legend (floor plan) */
+  .legend{display:flex;gap:26px;flex-wrap:wrap;justify-content:center;margin-top:16px;}
+  .legend .lg{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--ink-soft);}
+  .legend .lg .sw{width:28px;border-top:3px dashed currentColor;display:inline-block;}
+  .legend .lg.forced{color:#9aa49c;}
+  .legend .lg.exit{color:#c8861f;}
+
+  /* signature */
+  .sig{margin-top:34px;padding-top:28px;border-top:1px solid rgba(20,60,40,.12);}
+  .sig .nm{font-family:var(--font-cursive);font-weight:600;font-size:30px;color:var(--green-bright);}
+  .sig .tag{display:inline-block;margin-top:14px;font-family:var(--font-body);font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);background:var(--tag);padding:8px 15px;border-radius:999px;}
+
+  /* ---------- footer ---------- */
+  footer{padding:30px 28px 60px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+  .foot-grid h4{font-family:var(--font-display);font-size:24px;color:var(--ink);margin-bottom:20px;}
+  .foot-grid ul{list-style:none;padding:0;margin:0;}
+  .foot-grid li{margin-bottom:12px;}
+  .foot-grid a{font-size:16px;color:var(--ink-soft);transition:color .2s;}
+  .foot-grid a:hover{color:var(--green);}
+  .now-card{background:var(--green-deep);border-radius:18px;padding:18px;display:flex;align-items:center;gap:16px;max-width:360px;color:#dff0e6;}
+  .now-card .cover{width:64px;height:64px;border-radius:10px;background:rgba(255,255,255,.08);flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
+  .now-card .cover .desk-dot{transform-box:fill-box;transform-origin:center;animation:deskPulse 2s ease-in-out infinite;}
+  @keyframes deskPulse{0%,100%{transform:scale(.65);opacity:.4}50%{transform:scale(1.15);opacity:1}}
+  @media (prefers-reduced-motion:reduce){.now-card .cover .desk-dot{animation:none;opacity:.9}}
+  .now-card .t{font-weight:700;font-size:15px;color:#fff;}
+  .now-card .s{font-size:13px;color:#aacdb9;}
+  .pn-nav{max-width:var(--maxw);margin:22px auto 0;padding:0 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .pn-nav .pn-back{font-weight:600;font-size:16px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;transition:color .2s;}
+  .pn-nav .pn-back:hover{color:var(--green);}
+  .pn-next{display:flex;flex-direction:column;align-items:flex-end;text-align:right;background:var(--panel);border-radius:var(--radius-lg);padding:18px 26px;box-shadow:var(--shadow-soft);transition:transform .15s ease,box-shadow .2s ease;}
+  .pn-next:hover{transform:translateY(-2px);box-shadow:var(--shadow-card);}
+  .pn-next .cap{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);}
+  .pn-next .nm{font-family:var(--font-proj);font-weight:700;font-size:22px;color:var(--green-bright);margin-top:4px;}
+  .foot-note{max-width:var(--maxw);margin:36px auto 0;padding:0 28px;font-size:14px;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1000px){
+    .main .panel{padding:44px 34px;}
+    .mini-grid{grid-template-columns:1fr;}
+    .compare{grid-template-columns:1fr;}
+    .ex-grid{grid-template-columns:1fr;}
+    .miss-list{grid-template-columns:1fr;}
+    .meta-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    body{font-size:16.5px;}
+    .main .panel{padding:32px 22px;border-radius:30px;}
+    .case-shell{padding:0 16px;}
+    .nav-brand .nm{display:none;}
+    .step{grid-template-columns:1fr;gap:10px;}
+    .take{grid-template-columns:1fr;gap:12px;}
+    .story{padding:32px 26px;}
+    .callout-strong{padding:38px 30px;}
+    .pn-nav{flex-direction:column;align-items:stretch;}
+    .pn-next{align-items:flex-start;text-align:left;}
+  }
+</style></head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+      <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
+      <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
+    </a>
+    <a class="nav-back" href="index.html#writing">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to writing
+    </a>
+  </div>
+</nav>
+
+<div class="case-shell" style="padding-top:0;">
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="panel case-hero" data-screen-label="Hero">
+      <div class="hero-tags">
+        <span>Heuristics</span>
+        <span>H3</span>
+        <span class="read">4 min read</span>
+      </div>
+      <h1 class="headline">Your users need a brake pedal.</h1>
+      <div class="heur-badge">
+        <span class="hn">03</span>
+        <span class="hl">
+          <span class="k">Heuristic 3</span>
+          <span class="v">User Control and Freedom</span>
+        </span>
+      </div>
+      <p class="heur-desc">Users need clearly marked emergency exits — the ability to cancel, undo, and back out without going through an extended process.</p>
+      <p class="subline" style="margin-top:24px;">A car without brakes isn't a car — it's a trap. When users can't stop, undo, or exit freely, they don't feel in control. And without control, there's no trust.</p>
+    </section>
+
+    <div class="article-grid">
+
+      <!-- MAIN COLUMN -->
+      <div class="article-main">
+
+        <!-- 01 -->
+        <section class="panel reveal" id="brake" data-spy="brake" data-screen-label="01 The brake pedal">
+          <span class="eyebrow-num">01 — The brake pedal</span>
+          <h2 class="sec-title">Imagine driving without a brake.</h2>
+          <p class="body-copy">Imagine you're driving and you have a steering wheel and an accelerator — but no brake. Would you feel safe? Would you even get in?</p>
+          <p class="body-copy">Probably not. Because without the ability to stop, back out, or change direction, you don't feel in control. And where there's no control, there's no confidence.</p>
+
+          <div class="compare">
+            <div class="cmp-card tintbad">
+              <svg viewBox="0 0 200 156" width="190" fill="none" stroke="#2c3733" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 60 Q100 32 182 60"/>
+                <circle cx="100" cy="72" r="25"/>
+                <circle cx="100" cy="72" r="6.5"/>
+                <path d="M100 65.5 V51 M94.5 77 L80 89 M105.5 77 L120 89"/>
+                <rect x="118" y="120" width="22" height="28" rx="5"/>
+                <rect x="60" y="120" width="22" height="28" rx="5" stroke="#c0392b" stroke-dasharray="4 5" opacity=".45"/>
+              </svg>
+              <h4>Without brake</h4>
+              <span class="ind"><span class="d"></span>Trapped</span>
+            </div>
+            <div class="cmp-card tintgood">
+              <svg viewBox="0 0 200 156" width="190" fill="none" stroke="#2c3733" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 60 Q100 32 182 60"/>
+                <circle cx="100" cy="72" r="25"/>
+                <circle cx="100" cy="72" r="6.5"/>
+                <path d="M100 65.5 V51 M94.5 77 L80 89 M105.5 77 L120 89"/>
+                <rect x="118" y="120" width="22" height="28" rx="5"/>
+                <rect x="60" y="120" width="22" height="28" rx="5"/>
+              </svg>
+              <h4>With brake</h4>
+              <span class="ind"><span class="d"></span>In control</span>
+            </div>
+          </div>
+
+          <p class="body-copy" style="margin-top:30px;">The same logic applies directly to digital experiences. When a product doesn't let users stop, undo, or exit freely — it doesn't feel like a tool. It feels like a trap. And trapped users don't come back.</p>
+        </section>
+
+        <!-- 02 -->
+        <section class="panel reveal" id="showroom" data-spy="showroom" data-screen-label="02 Real-world story">
+          <span class="eyebrow-num">02 — Real-world story</span>
+          <h2 class="sec-title">The furniture showroom with exit shortcuts built in.</h2>
+
+          <div class="story">
+            <div class="seyebrow"><span class="d"></span>Real-world observation</div>
+            <h3>A pre-set path — with an escape hatch built in.</h3>
+            <p>I visited one of the city's largest furniture showrooms. The layout guided you through a pre-set path — living rooms to kitchens to décor to lighting.</p>
+            <p>But here's what I noticed: there were short exit paths built into the layout at intervals. If someone didn't want to continue, they could leave without walking through the entire store.</p>
+            <p>Now imagine those shortcuts weren't there. You'd get halfway through, realise it wasn't for you, and have no choice but to walk every remaining section just to find the exit. Frustrating — and entirely avoidable.</p>
+          </div>
+
+          <div class="ill">
+            <div class="ill-frame" style="flex-direction:column;gap:18px;">
+              <svg viewBox="0 0 420 232" width="440" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <g stroke="#15543b" stroke-width="2.5">
+                  <rect x="150" y="14" width="224" height="38" rx="8"/>
+                  <rect x="150" y="66" width="224" height="38" rx="8"/>
+                  <rect x="150" y="118" width="224" height="38" rx="8"/>
+                  <rect x="150" y="170" width="224" height="38" rx="8"/>
+                </g>
+                <g font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="#2c3733">
+                  <text x="262" y="38" text-anchor="middle">Living Room</text>
+                  <text x="262" y="90" text-anchor="middle">Kitchen</text>
+                  <text x="262" y="142" text-anchor="middle">Décor &amp; Lighting</text>
+                  <text x="262" y="194" text-anchor="middle">Bedroom Display</text>
+                </g>
+                <path d="M398 30 V192" stroke="#9aa49c" stroke-width="3" stroke-dasharray="2 8"/>
+                <g stroke="#9aa49c" stroke-width="3">
+                  <path d="M393 58 l5 6 5 -6"/>
+                  <path d="M393 110 l5 6 5 -6"/>
+                  <path d="M393 162 l5 6 5 -6"/>
+                </g>
+                <g stroke="#c8861f" stroke-width="3">
+                  <path d="M150 33 H58" stroke-dasharray="2 7"/>
+                  <path d="M68 26 l-10 7 10 7"/>
+                  <path d="M150 85 H58" stroke-dasharray="2 7"/>
+                  <path d="M68 78 l-10 7 10 7"/>
+                  <path d="M150 137 H58" stroke-dasharray="2 7"/>
+                  <path d="M68 130 l-10 7 10 7"/>
+                </g>
+                <g font-family="DM Sans, sans-serif" font-size="11" font-weight="700" fill="#c8861f" letter-spacing="1">
+                  <text x="44" y="30" text-anchor="end">EXIT</text>
+                  <text x="44" y="82" text-anchor="end">EXIT</text>
+                  <text x="44" y="134" text-anchor="end">EXIT</text>
+                </g>
+              </svg>
+              <div class="legend">
+                <span class="lg forced"><span class="sw"></span>Forced path</span>
+                <span class="lg exit"><span class="sw"></span>Exit shortcut</span>
+              </div>
+            </div>
+            <p class="ill-cap">Escape hatches at every stage — leave anytime, without walking the whole store.</p>
+          </div>
+
+          <p class="body-copy">This is exactly the principle in digital products — users should always have a quick way to cancel, back out, or exit without being forced to complete a long flow they didn't intend to start. The exit shortcut isn't a failure of design. It's what makes the rest of the design feel safe to explore.</p>
+        </section>
+
+        <!-- 03 -->
+        <section class="panel reveal" id="whatsapp" data-spy="whatsapp" data-screen-label="03 A personal story">
+          <span class="eyebrow-num">03 — A personal story</span>
+          <h2 class="sec-title">The message I really didn't want her to see.</h2>
+
+          <div class="story">
+            <div class="seyebrow"><span class="d"></span>Personal experience — WhatsApp</div>
+            <h3>Accidentally forwarded. No way to undo.</h3>
+            <p>A few years ago, I accidentally forwarded a WhatsApp message — one absolutely meant for someone else. The worst part? Back then, WhatsApp didn't have "Delete for Everyone."</p>
+            <p>So there I was, panic-texting: "Hey! That was sent by mistake… not for you… please ignore it…" Uff. Awkward, exhausting, and entirely avoidable.</p>
+            <p>The product had no brake pedal. No undo, no recall, no exit. Once the message left — it was gone. The user — me — was left scrambling to fix a mistake the product gave me no tools to correct.</p>
+          </div>
+
+          <div class="ex-grid">
+            <div class="ex-card bad">
+              <span class="xlab"><span class="d"></span>WhatsApp — Before</span>
+              <h4>No control after sending</h4>
+              <p>Once a message was sent, it was permanent. No delete, no recall, no edit. The only recovery was to text the other person manually and hope for the best.</p>
+            </div>
+            <div class="ex-card good">
+              <span class="xlab"><span class="d"></span>WhatsApp — After</span>
+              <h4>Delete for Everyone + Edit</h4>
+              <p>Today you can delete a message immediately after sending, or edit it to fix typos. The user is back in control — mistakes are recoverable, and the experience feels safe.</p>
+            </div>
+          </div>
+
+          <div class="ill">
+            <div class="ill-frame">
+              <svg viewBox="0 0 300 316" width="320" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="26" y="12" width="150" height="292" rx="22" fill="#fbf8f1" stroke="#2c3733" stroke-width="3"/>
+                <path d="M26 34 a22 22 0 0 1 22 -22 H154 a22 22 0 0 1 22 22 V52 H26 Z" fill="#15543b" stroke="none"/>
+                <circle cx="48" cy="32" r="9" fill="#cfe7da" stroke="none"/>
+                <rect x="64" y="26" width="54" height="5" rx="2.5" fill="#cfe7da" stroke="none"/>
+                <rect x="64" y="36" width="34" height="4" rx="2" fill="#9ec7b2" stroke="none"/>
+                <rect x="92" y="68" width="74" height="36" rx="11" fill="#dcefe0" stroke="none"/>
+                <rect x="100" y="80" width="52" height="4.5" rx="2.2" fill="#7bbf97" stroke="none"/>
+                <rect x="100" y="90" width="38" height="4.5" rx="2.2" fill="#7bbf97" stroke="none"/>
+                <rect x="52" y="120" width="120" height="78" rx="12" fill="#ffffff" stroke="#2c3733" stroke-width="2.5"/>
+                <rect x="57" y="125" width="110" height="32" rx="8" fill="#e3f1e6" stroke="none"/>
+                <text x="68" y="145" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1f6a45" stroke="none">Delete for Everyone</text>
+                <text x="68" y="182" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#2c3733" stroke="none">Edit message</text>
+                <path d="M252 150 H184" stroke="#c8861f" stroke-width="3" stroke-dasharray="2 6"/>
+                <path d="M194 143 l-10 7 10 7" stroke="#c8861f" stroke-width="3"/>
+                <text x="200" y="146" font-family="Caveat, cursive" font-size="19" font-weight="700" fill="#c8861f" stroke="none">The brake</text>
+                <text x="200" y="166" font-family="Caveat, cursive" font-size="19" font-weight="700" fill="#c8861f" stroke="none">pedal.</text>
+              </svg>
+            </div>
+            <p class="ill-cap">Delete for Everyone — the undo that gives the user back control after the message has left.</p>
+          </div>
+        </section>
+
+        <!-- 04 -->
+        <section class="panel reveal" id="confidence" data-spy="confidence" data-screen-label="04 Control builds confidence">
+          <span class="eyebrow-num">04 — Control builds confidence</span>
+          <h2 class="sec-title">Free users are confident users.</h2>
+          <p class="body-copy">Whether it's a physical product or a digital one, users should always feel in control of their journey. Not trapped in a flow, not locked into a decision, not one wrong tap away from something irreversible.</p>
+
+          <div class="takeaways">
+            <div class="take">
+              <div class="tk"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.5"/><rect x="14" y="5" width="4" height="14" rx="1.5"/></svg></div>
+              <div>
+                <h4>Start or stop whenever they want</h4>
+                <p>A user should be able to abandon a flow at any point — without losing progress or being penalised for changing their mind.</p>
+              </div>
+            </div>
+            <div class="take">
+              <div class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 L4 9 l5 -5"/><path d="M4 9 h11 a5 5 0 0 1 0 10 h-4"/></svg></div>
+              <div>
+                <h4>Undo actions easily</h4>
+                <p>Mistakes are human. A product that provides easy undo builds confidence — users explore more freely when they know they can always step back.</p>
+              </div>
+            </div>
+            <div class="take">
+              <div class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 7 9 4 15 7 21 4 21 17 15 20 9 17 3 20"/><line x1="9" y1="4" x2="9" y2="17"/><line x1="15" y1="7" x2="15" y2="20"/></svg></div>
+              <div>
+                <h4>Navigate freely without feeling trapped</h4>
+                <p>Fixed flows and forced sequences frustrate users. Give them the ability to jump, skip, and exit — even if most won't use it. The option itself creates comfort.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pull">
+            <p>"Control is not a luxury in UX — it's a necessity. When users feel free, they feel confident. And confident users come back."</p>
+            <p style="font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink-faint);margin:16px 0 0;">— The core of H3</p>
+          </div>
+        </section>
+
+        <!-- 05 -->
+        <section class="panel reveal" id="closing" data-spy="closing" data-screen-label="05 Closing thought">
+          <span class="eyebrow-num">05 — Closing thought</span>
+          <h2 class="sec-title">Empower your users — and they'll trust your design.</h2>
+          <p class="body-copy">A good product doesn't just guide users through a journey — it gives them the freedom to back out, change their mind, or fix their mistakes without fear. The exit shortcut, the undo button, the delete option — these are not edge cases. They are core to how safe a product feels.</p>
+          <p class="body-copy">If your product respects the user's right to control their own journey, it will feel safer, friendlier, and ultimately more trustworthy. Not because of the times users use the escape hatch — but because of how it feels knowing it's always there.</p>
+
+          <div class="callout-strong">
+            <div class="cap">The lesson from H3</div>
+            <p>A car without a brake isn't a car — it's a trap. Don't build traps. Build products that let people drive with confidence.</p>
+          </div>
+
+          <div class="takeaways">
+            <div class="take">
+              <div class="tk">T1</div>
+              <div>
+                <h4>Apply this to your next design</h4>
+                <p>Walk through every critical action in your product — form submissions, deletions, purchases, multi-step flows. At each point ask: can the user get out of this? Can they undo it? If not, you're building without a brake pedal.</p>
+              </div>
+            </div>
+            <div class="take">
+              <div class="tk">T2</div>
+              <div>
+                <h4>Up next</h4>
+                <p><span class="up">H4: Same Dosa, Every Time.</span> Why users arrive with expectations built from every product they've ever used — and what quietly happens when your design breaks them, even creatively.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="panel reveal" style="margin-bottom:0;max-width:var(--maxw);">
+    <div class="foot-grid">
+      <div>
+        <h4>On the desk</h4>
+        <div class="now-card">
+          <div class="cover"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M7 3.5 L7 23 L12 18.4 L15.2 25.6 L18 24.3 L14.9 17.3 L21 16.9 Z" fill="#eaf6ef"/><circle class="desk-dot" cx="24.5" cy="8" r="3" fill="#eaf6ef"/></svg></div>
+          <div>
+            <div class="t">Designing decisions, not screens</div>
+            <div class="s">Currently · building Galla, phase 1</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#work">Selected work</a></li>
+          <li><a href="index.html#writing">Writing</a></li>
+          <li><a href="index.html#resume">Experience</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/abhishek-lokesh-162800219/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Medium</a></li>
+          <li><a href="mailto:abhisheklokesh.uiux159@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="pn-nav">
+    <a class="pn-back" href="h2-real-world.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      H2: Design Is Not About Teaching.
+    </a>
+    <a class="pn-next" href="h4-consistency.html">
+      <span class="cap">Next · H4</span>
+      <span class="nm">Same Dosa, Every Time. →</span>
+    </a>
+  </div>
+
+  <div class="foot-note">
+    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>H3 of 11 — User Control and Freedom.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.10, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  /* sidebar scrollspy */
+  var jumps = {};
+  document.querySelectorAll('.side a').forEach(function(a){ jumps[a.getAttribute('data-jump')] = a; });
+  if(Object.keys(jumps).length){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var id = e.target.getAttribute('data-spy');
+          Object.keys(jumps).forEach(function(k){ jumps[k].classList.remove('active'); });
+          if(jumps[id]) jumps[id].classList.add('active');
+        }
+      });
+    },{rootMargin:'-30% 0px -55% 0px'});
+    document.querySelectorAll('[data-spy]').forEach(function(s){ spy.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Match Between System and the Real World — H2 · Abhishek LG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Quicksand:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" />
+<style>
+  :root{
+    --cream:#f3eee3;
+    --panel:#fbf8f1;
+    --panel-2:#f7f2e8;
+    --green:#15543b;
+    --green-deep:#0f3f2c;
+    --ink:#2c3733;
+    --ink-soft:#5d6b64;
+    --ink-faint:#9aa49c;
+    --black:#191919;
+    --peach:#f6d6ad;
+    --lavender:#dcd7f3;
+    --sky:#c4e2f4;
+    --pink:#f6c8c3;
+    --mint:#cde6d4;
+    --yellow:#f7d24a;
+    --tag:#e9e3d6;
+    --radius-xl:40px;
+    --radius-lg:28px;
+    --radius-md:20px;
+    --shadow-card:0 18px 40px -24px rgba(20,40,30,.35);
+    --shadow-soft:0 10px 30px -20px rgba(20,40,30,.3);
+    --maxw:1240px;
+    --font-display:'Fredoka',system-ui,sans-serif;
+    --font-body:'DM Sans',system-ui,sans-serif;
+    --font-hand:'Caveat',cursive;
+    --green-bright:#008953;
+    --font-hero:'Bricolage Grotesque',sans-serif;
+    --font-cursive:'Bricolage Grotesque',sans-serif;
+    --font-proj:'Trebuchet MS','Segoe UI',sans-serif;
+    --font-quote:'Quicksand',var(--font-body);
+    --font-num:'Libre Baskerville',Georgia,serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:120px;}
+  body{
+    margin:0;background:var(--cream);color:var(--ink);
+    font-family:var(--font-body);font-size:18px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  svg{display:block;}
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;color:var(--green-bright);margin:0;line-height:1.04;letter-spacing:-.01em;}
+
+  /* ---------- panels ---------- */
+  .panel{background:var(--panel);border-radius:var(--radius-xl);padding:72px;margin:26px auto;max-width:var(--maxw);box-shadow:var(--shadow-soft);}
+
+  /* ---------- nav ---------- */
+  .nav{position:fixed;top:18px;left:0;right:0;z-index:80;display:flex;justify-content:center;align-items:center;pointer-events:none;}
+  .nav-inner{pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:26px;background:rgba(251,248,241,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(20,60,40,.07);padding:8px 8px 8px 18px;border-radius:999px;box-shadow:0 14px 34px -22px rgba(20,40,30,.5);}
+  .nav-brand{display:flex;align-items:center;gap:11px;}
+  .nav-avatar{width:34px;height:34px;border-radius:50%;flex:0 0 auto;background:#15543b url('assets/abhishek-avatar.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:#dff0e6;font-family:var(--font-display);font-weight:600;font-size:13px;border:2px solid rgba(255,255,255,.5);}
+  .nav-brand .nm{font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--green-bright);white-space:nowrap;}
+  .nav-back{font-weight:600;font-size:15px;color:#fff;background:var(--green-bright);padding:10px 20px;border-radius:999px;transition:transform .15s ease, box-shadow .2s ease;display:inline-flex;align-items:center;gap:8px;}
+  .nav-back:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(21,84,59,.7);}
+
+  /* ---------- shell / layout ---------- */
+  .case-shell{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .main{min-width:0;}
+  .main .panel{margin:0 0 22px;padding:72px;max-width:none;}
+  .main .panel:first-child{margin-top:0;}
+
+  .article-grid{display:block;}
+  .article-main{min-width:0;}
+
+  /* ---------- type ---------- */
+  .eyebrow-num{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-body);font-weight:600;font-size:15px;letter-spacing:.01em;color:var(--green-bright);background:rgba(21,84,59,.08);padding:8px 16px;border-radius:999px;margin-bottom:24px;}
+  .sec-title{font-family:var(--font-cursive);font-size:clamp(30px,3.4vw,46px);color:var(--green-bright);margin-bottom:22px;letter-spacing:0;line-height:1.08;max-width:24ch;}
+  .body-copy{font-size:18px;color:var(--ink-soft);line-height:1.66;max-width:62ch;margin:0 0 18px;}
+  .body-copy:last-child{margin-bottom:0;}
+  .body-copy strong,.body-copy em{color:var(--ink);font-style:normal;font-weight:600;}
+
+  /* hero */
+  .case-hero{padding-top:96px;}
+  .hero-tags{display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px;margin-bottom:26px;}
+  .hero-tags span{font-family:var(--font-body);font-weight:600;font-size:14.5px;color:var(--green-bright);background:rgba(21,84,59,.08);padding:7px 15px;border-radius:999px;}
+  .hero-tags span.read{background:transparent;color:var(--ink-faint);padding-left:4px;}
+  .case-hero .headline{font-family:var(--font-hero);font-size:clamp(34px,5vw,64px);font-weight:400;color:#1e1f1e;max-width:18ch;margin:6px 0 24px;line-height:1.04;letter-spacing:0;}
+  .case-hero .subline{font-family:var(--font-quote);font-weight:600;font-size:clamp(19px,2vw,26px);color:var(--green-bright);max-width:34ch;line-height:1.3;margin:0;letter-spacing:-.01em;}
+
+  /* illustrations */
+  .ill{margin:34px 0 4px;display:flex;flex-direction:column;align-items:center;}
+  .ill-frame{background:var(--panel-2);border:1px solid rgba(20,60,40,.07);border-radius:var(--radius-lg);padding:34px 30px;width:100%;display:flex;justify-content:center;}
+  .ill svg{max-width:100%;height:auto;}
+  .ill-cap{text-align:center;font-size:13.5px;color:var(--ink-faint);margin-top:14px;max-width:46ch;line-height:1.5;}
+
+  /* pull / callout */
+  .pull{border-left:4px solid var(--yellow);background:var(--panel-2);border-radius:0 22px 22px 0;padding:32px 36px;margin-top:30px;}
+  .pull p{font-family:var(--font-quote);font-weight:600;font-size:clamp(20px,2.2vw,27px);line-height:1.34;color:var(--green-bright);margin:0;max-width:42ch;letter-spacing:-.01em;}
+
+  .callout-strong{background:var(--green);border-radius:var(--radius-xl);padding:50px 54px;margin-top:32px;}
+  .callout-strong .cap{font-family:var(--font-body);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8fc4a8;margin-bottom:18px;}
+  .callout-strong p{font-family:var(--font-quote);font-weight:600;font-size:clamp(23px,2.7vw,35px);line-height:1.28;color:#fff;margin:0;max-width:26ch;letter-spacing:-.01em;}
+
+  /* mini cards row */
+  .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;}
+  .mini{background:var(--panel-2);border-radius:var(--radius-lg);padding:26px 24px;border:1px solid rgba(20,60,40,.06);display:flex;flex-direction:column;gap:13px;}
+  .mini .mic{width:42px;height:42px;color:var(--green-bright);}
+  .mini h5{font-family:var(--font-proj);font-weight:700;font-size:16.5px;color:var(--ink);margin:0;}
+  .mini p{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.5;}
+
+  /* compare cards */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;}
+  .cmp-card{border-radius:var(--radius-lg);padding:36px 30px;box-shadow:var(--shadow-card);display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;}
+  .cmp-card.works{background:var(--mint);}
+  .cmp-card.feel{background:var(--peach);}
+  .cmp-card h4{font-family:var(--font-cursive);font-weight:600;font-size:clamp(22px,2.2vw,28px);color:#26312c;margin:0;line-height:1.1;}
+
+  /* step cards */
+  .steps{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;background:var(--panel-2);border-radius:var(--radius-lg);padding:30px 32px;border:1px solid rgba(20,60,40,.06);}
+  .step .sn{font-family:var(--font-num);font-weight:700;font-size:34px;color:var(--ink-faint);line-height:1;}
+  .step h4{font-family:var(--font-proj);font-weight:700;font-size:20px;color:var(--ink);margin:0 0 9px;}
+  .step p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.6;}
+
+  /* heuristic badge (hero) */
+  .heur-badge{display:inline-flex;align-items:center;gap:18px;background:var(--green);border-radius:var(--radius-md);padding:18px 26px;margin-top:6px;}
+  .heur-badge .hn{font-family:var(--font-num);font-weight:700;font-size:38px;color:#fff;line-height:1;}
+  .heur-badge .hl{display:flex;flex-direction:column;gap:3px;}
+  .heur-badge .hl .k{font-family:var(--font-body);font-weight:600;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#8fc4a8;}
+  .heur-badge .hl .v{font-family:var(--font-proj);font-weight:700;font-size:17px;color:#fff;line-height:1.15;}
+
+  /* example grid (2 col) */
+  .ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;}
+  .ex-card{border-radius:var(--radius-lg);padding:28px 30px;border:1px solid rgba(20,60,40,.06);background:var(--panel-2);display:flex;flex-direction:column;}
+  .ex-card .xlab{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;}
+  .ex-card .xlab .d{width:8px;height:8px;border-radius:50%;flex:0 0 auto;}
+  .ex-card h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0 0 10px;line-height:1.25;}
+  .ex-card p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.58;}
+  .ex-card.bad{background:#f8ece6;border-color:rgba(163,64,44,.12);}
+  .ex-card.bad .xlab{color:#a3402c;} .ex-card.bad .xlab .d{background:#cf4f33;}
+  .ex-card.good{background:#e7f1e6;border-color:rgba(31,138,91,.14);}
+  .ex-card.good .xlab{color:#1f6a45;} .ex-card.good .xlab .d{background:#2f9e63;}
+
+  /* story block (personal anecdote) */
+  .story{background:var(--peach);border-radius:var(--radius-xl);padding:44px 46px;margin-top:30px;box-shadow:var(--shadow-card);}
+  .story .seyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#9a6418;margin-bottom:16px;}
+  .story .seyebrow .d{width:8px;height:8px;border-radius:50%;background:#cf4f33;flex:0 0 auto;}
+  .story h3{font-family:var(--font-cursive);font-weight:600;font-size:clamp(26px,3vw,38px);color:#5d3a12;margin:0 0 18px;line-height:1.08;letter-spacing:0;}
+  .story p{font-size:17px;color:#5a4a33;line-height:1.66;margin:0 0 16px;max-width:60ch;}
+  .story p:last-child{margin-bottom:0;}
+  .story p strong{color:#3f2e15;font-weight:700;}
+
+  /* missing-feedback list */
+  .miss-list{list-style:none;margin:24px 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .miss-list li{display:flex;align-items:center;gap:13px;background:rgba(255,255,255,.5);border:1px solid rgba(163,64,44,.18);border-radius:14px;padding:15px 18px;font-size:15.5px;font-weight:600;color:#7a3322;}
+  .miss-list li .x{width:24px;height:24px;border-radius:50%;background:#cf4f33;color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .miss-list li .x svg{width:13px;height:13px;}
+
+  /* solution block */
+  .solution{background:var(--green);border-radius:var(--radius-lg);padding:34px 38px;margin-top:26px;}
+  .solution .slab{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#8fc4a8;margin-bottom:16px;}
+  .solution .slab .d{width:8px;height:8px;border-radius:50%;background:#7ee0a8;flex:0 0 auto;}
+  .solution p{font-family:var(--font-quote);font-weight:600;font-size:clamp(20px,2.2vw,27px);line-height:1.34;color:#fff;margin:0;max-width:44ch;letter-spacing:-.01em;}
+  .closing-line{font-family:var(--font-quote);font-weight:600;font-size:clamp(19px,2vw,24px);color:var(--green-bright);margin:26px 0 0;letter-spacing:-.01em;line-height:1.3;}
+
+  /* takeaways */
+  .takeaways{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
+  .take{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;background:var(--panel-2);border-radius:var(--radius-lg);padding:30px 32px;border:1px solid rgba(20,60,40,.06);}
+  .take .tk{font-family:var(--font-num);font-weight:700;font-size:17px;color:#fff;background:var(--green-bright);min-width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;}
+  .take h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0 0 9px;}
+  .take p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.6;}
+  .take p .up{font-weight:700;color:var(--green-bright);}
+
+  /* metaphor cards (2x2) */
+  .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;}
+  .meta-card{background:var(--panel-2);border-radius:var(--radius-lg);padding:28px 30px;border:1px solid rgba(20,60,40,.06);display:flex;flex-direction:column;gap:14px;}
+  .meta-card .mhead{display:flex;align-items:center;gap:15px;}
+  .meta-card .micon{width:44px;height:44px;color:var(--green-bright);flex:0 0 auto;}
+  .meta-card h4{font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--ink);margin:0;line-height:1.2;}
+  .meta-card p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.58;}
+
+  /* icon row illustration */
+  .icon-row{display:grid;grid-template-columns:repeat(4,1fr);width:100%;}
+  .icon-row .ir{display:flex;flex-direction:column;align-items:center;gap:14px;padding:8px 16px;border-right:1px solid rgba(20,60,40,.13);}
+  .icon-row .ir:last-child{border-right:none;}
+  .icon-row .ir svg{width:46px;height:46px;color:var(--green-bright);}
+  .icon-row .ir .irl{font-size:13px;font-weight:600;color:var(--ink-soft);text-align:center;line-height:1.4;}
+
+  /* dustbin -> recycle mapping */
+  .dustbin-map{display:flex;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap;}
+  .dm-obj{display:flex;flex-direction:column;align-items:center;gap:11px;}
+  .dm-obj svg{width:82px;height:82px;color:#15543b;}
+  .dm-obj span{font-family:var(--font-body);font-weight:700;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);}
+  .dm-arrow{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--green-bright);}
+  .dm-arrow svg{width:74px;height:24px;}
+  .dm-arrow span{font-family:var(--font-hand);font-weight:700;font-size:18px;color:var(--green-bright);line-height:1;}
+  .dm-maps{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+  .dm-maps span{background:var(--panel);border:1px solid rgba(20,60,40,.1);border-radius:999px;padding:9px 17px;font-size:13.5px;font-weight:600;color:var(--ink-soft);}
+
+  /* comparison table */
+  .cmp-wrap{margin-top:28px;overflow-x:auto;border-radius:var(--radius-md);}
+  .cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:15.5px;min-width:620px;}
+  .cmp th,.cmp td{padding:16px 22px;text-align:left;vertical-align:top;line-height:1.5;}
+  .cmp thead th{font-family:var(--font-proj);font-weight:700;font-size:15.5px;color:var(--ink);border-bottom:2px solid rgba(20,60,40,.14);}
+  .cmp thead th.dont{color:#a3402c;}
+  .cmp thead th.say{color:#1f6a45;}
+  .cmp tbody td{color:var(--ink-soft);border-bottom:1px solid rgba(20,60,40,.08);}
+  .cmp tbody tr:last-child td{border-bottom:none;}
+  .cmp td.dont{background:#f6e7e1;color:#8a4632;font-weight:600;}
+  .cmp td.say{background:#e3eee2;color:#1f6a45;font-weight:600;}
+  .cmp thead th.dont{border-bottom-color:transparent;}
+  .cmp thead th.say{border-bottom-color:transparent;}
+  .cmp tbody tr:first-child td.dont{border-radius:14px 14px 0 0;}
+  .cmp tbody tr:last-child td.dont{border-radius:0 0 14px 14px;}
+  .cmp tbody tr:first-child td.say{border-radius:14px 14px 0 0;}
+  .cmp tbody tr:last-child td.say{border-radius:0 0 14px 14px;}
+
+  /* signature */
+  .sig{margin-top:34px;padding-top:28px;border-top:1px solid rgba(20,60,40,.12);}
+  .sig .nm{font-family:var(--font-cursive);font-weight:600;font-size:30px;color:var(--green-bright);}
+  .sig .tag{display:inline-block;margin-top:14px;font-family:var(--font-body);font-weight:600;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);background:var(--tag);padding:8px 15px;border-radius:999px;}
+
+  /* ---------- footer ---------- */
+  footer{padding:30px 28px 60px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+  .foot-grid h4{font-family:var(--font-display);font-size:24px;color:var(--ink);margin-bottom:20px;}
+  .foot-grid ul{list-style:none;padding:0;margin:0;}
+  .foot-grid li{margin-bottom:12px;}
+  .foot-grid a{font-size:16px;color:var(--ink-soft);transition:color .2s;}
+  .foot-grid a:hover{color:var(--green);}
+  .now-card{background:var(--green-deep);border-radius:18px;padding:18px;display:flex;align-items:center;gap:16px;max-width:360px;color:#dff0e6;}
+  .now-card .cover{width:64px;height:64px;border-radius:10px;background:rgba(255,255,255,.08);flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
+  .now-card .cover .desk-dot{transform-box:fill-box;transform-origin:center;animation:deskPulse 2s ease-in-out infinite;}
+  @keyframes deskPulse{0%,100%{transform:scale(.65);opacity:.4}50%{transform:scale(1.15);opacity:1}}
+  @media (prefers-reduced-motion:reduce){.now-card .cover .desk-dot{animation:none;opacity:.9}}
+  .now-card .t{font-weight:700;font-size:15px;color:#fff;}
+  .now-card .s{font-size:13px;color:#aacdb9;}
+  .pn-nav{max-width:var(--maxw);margin:22px auto 0;padding:0 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .pn-nav .pn-back{font-weight:600;font-size:16px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;transition:color .2s;}
+  .pn-nav .pn-back:hover{color:var(--green);}
+  .pn-next{display:flex;flex-direction:column;align-items:flex-end;text-align:right;background:var(--panel);border-radius:var(--radius-lg);padding:18px 26px;box-shadow:var(--shadow-soft);transition:transform .15s ease,box-shadow .2s ease;}
+  .pn-next:hover{transform:translateY(-2px);box-shadow:var(--shadow-card);}
+  .pn-next .cap{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);}
+  .pn-next .nm{font-family:var(--font-proj);font-weight:700;font-size:22px;color:var(--green-bright);margin-top:4px;}
+  .foot-note{max-width:var(--maxw);margin:36px auto 0;padding:0 28px;font-size:14px;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1000px){
+    .main .panel{padding:44px 34px;}
+    .mini-grid{grid-template-columns:1fr;}
+    .compare{grid-template-columns:1fr;}
+    .ex-grid{grid-template-columns:1fr;}
+    .miss-list{grid-template-columns:1fr;}
+    .meta-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    body{font-size:16.5px;}
+    .main .panel{padding:32px 22px;border-radius:30px;}
+    .case-shell{padding:0 16px;}
+    .nav-brand .nm{display:none;}
+    .step{grid-template-columns:1fr;gap:10px;}
+    .take{grid-template-columns:1fr;gap:12px;}
+    .story{padding:32px 26px;}
+    .callout-strong{padding:38px 30px;}
+    .pn-nav{flex-direction:column;align-items:stretch;}
+    .pn-next{align-items:flex-start;text-align:left;}
+  }
+</style></head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+      <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
+      <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
+    </a>
+    <a class="nav-back" href="index.html#writing">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to writing
+    </a>
+  </div>
+</nav>
+
+<div class="case-shell" style="padding-top:0;">
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="panel case-hero" data-screen-label="Hero">
+      <div class="hero-tags">
+        <span>Heuristics</span>
+        <span>H2</span>
+        <span class="read">4 min read</span>
+      </div>
+      <h1 class="headline">Design is not about teaching. It's about feeling at home.</h1>
+      <div class="heur-badge">
+        <span class="hn">02</span>
+        <span class="hl">
+          <span class="k">Heuristic 2</span>
+          <span class="v">Match Between System and the Real World</span>
+        </span>
+      </div>
+      <p class="subline" style="margin-top:24px;">Users arrive with mental models already formed — built from years of dustbins, shopping carts, and landline phones. The designer's job isn't to teach them something new. It's to meet them where they already are.</p>
+    </section>
+
+    <div class="article-grid">
+
+      <!-- MAIN COLUMN -->
+      <div class="article-main">
+
+        <!-- 01 -->
+        <section class="panel reveal" id="meaning" data-spy="meaning" data-screen-label="01 What it means">
+          <span class="eyebrow-num">01 — What it means</span>
+          <h2 class="sec-title">Design for users, not for yourself.</h2>
+          <p class="body-copy">This heuristic is about designing products that speak the user's language — visually, interactively, and in words. It's about aligning design with real-world behaviour, not internal team logic or technical conventions.</p>
+          <p class="body-copy">Our first responsibility is to understand who our users actually are. Not who we assume them to be.</p>
+
+          <div class="pull">
+            <p>"What is their tech comfort level? How do they interact with digital products? What do they expect based on their real-world experience? Assuming users will figure it out is never a good UX strategy."</p>
+            <p style="font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink-faint);margin:16px 0 0;">— The core question this heuristic forces you to ask</p>
+          </div>
+
+          <p class="body-copy" style="margin-top:26px;">Even senior professionals in decision-making roles might not be as comfortable with digital interfaces as we think. Clarity over cleverness — always. When we answer these questions honestly, choosing the right icons, words, and patterns becomes natural.</p>
+        </section>
+
+        <!-- 02 -->
+        <section class="panel reveal" id="dustbin" data-spy="dustbin" data-screen-label="02 The dustbin moment">
+          <span class="eyebrow-num">02 — The dustbin moment</span>
+          <h2 class="sec-title">The recycle bin needed zero explanation.</h2>
+          <p class="body-copy">Let's take the simplest example: the Recycle Bin on a computer desktop. We've all seen it. We all instantly know what it means. But nobody taught us. No manual explained it. We just knew.</p>
+          <p class="body-copy">Because in the real world, we've used dustbins all our lives.</p>
+
+          <div class="ill">
+            <div class="ill-frame" style="flex-direction:column;gap:26px;">
+              <div class="dustbin-map">
+                <div class="dm-obj">
+                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M8 13 H40"/>
+                    <path d="M19 13 V10 a2 2 0 0 1 2 -2 h6 a2 2 0 0 1 2 2 v3"/>
+                    <path d="M11 13 l2.2 26 a3 3 0 0 0 3 2.8 h11.6 a3 3 0 0 0 3 -2.8 L36 13"/>
+                    <path d="M20 20 v15 M28 20 v15"/>
+                  </svg>
+                  <span>Real world</span>
+                </div>
+                <div class="dm-arrow">
+                  <svg viewBox="0 0 74 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 H64 M54 4 l10 8 -10 8"/></svg>
+                  <span>same mental model</span>
+                </div>
+                <div class="dm-obj">
+                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="5" y="6" width="38" height="36" rx="4"/>
+                    <line x1="5" y1="14" x2="43" y2="14"/>
+                    <circle cx="10.5" cy="10" r="1.2" fill="currentColor" stroke="none"/>
+                    <circle cx="15" cy="10" r="1.2" fill="currentColor" stroke="none"/>
+                    <path d="M16 22 H32"/>
+                    <path d="M21.6 22 V20.6 a1.3 1.3 0 0 1 1.3 -1.3 h2.2 a1.3 1.3 0 0 1 1.3 1.3 V22"/>
+                    <path d="M18.6 22 l1.4 14 a2 2 0 0 0 2 1.8 h4 a2 2 0 0 0 2 -1.8 L29.4 22"/>
+                  </svg>
+                  <span>Digital</span>
+                </div>
+              </div>
+              <div class="dm-maps">
+                <span>Throw away → Delete</span>
+                <span>Retrieve → Restore</span>
+                <span>Empty bin → Gone permanently</span>
+              </div>
+            </div>
+            <p class="ill-cap">The digital system borrowed a mental model that already existed in the physical world.</p>
+          </div>
+
+          <p class="body-copy">The behaviour mapped perfectly — throw away what's not needed, retrieve it if you change your mind, lose it forever once the bin is emptied. The digital system borrowed a mental model that already existed.</p>
+          <p class="body-copy">Users didn't need a tutorial. They felt at home instantly — because the design respected what they already knew.</p>
+        </section>
+
+        <!-- 03 -->
+        <section class="panel reveal" id="metaphors" data-spy="metaphors" data-screen-label="03 More metaphors">
+          <span class="eyebrow-num">03 — More metaphors</span>
+          <h2 class="sec-title">Intentional choices, not random icons.</h2>
+          <p class="body-copy">The recycle bin isn't an isolated example. Everywhere in digital design, real-world objects have been borrowed to make digital actions instantly understood.</p>
+
+          <div class="ill">
+            <div class="ill-frame">
+              <div class="icon-row">
+                <div class="ir">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                  <span class="irl">Mirrors the trolley</span>
+                </div>
+                <div class="ir">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <span class="irl">Still looks like a landline</span>
+                </div>
+                <div class="ir">
+                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="27" r="13"/><path d="M24 27 V19 M24 27 l6 4"/><path d="M9 14 a7 7 0 0 1 8 -4"/><path d="M39 14 a7 7 0 0 0 -8 -4"/><path d="M16 38 l-3 4 M32 38 l3 4"/></svg>
+                  <span class="irl">Bridges old and new</span>
+                </div>
+                <div class="ir">
+                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="16"/><circle cx="24" cy="24" r="4.5"/><path d="M24 19.5 V11 M20.2 26 L9 33 M27.8 26 L39 33"/></svg>
+                  <span class="irl">Muscle memory crosses over</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="meta-grid">
+            <div class="meta-card">
+              <div class="mhead">
+                <svg class="micon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                <h4>Cart icon in e-commerce</h4>
+              </div>
+              <p>Mirrors the physical shopping trolley. You pick things up, put them in, and check out when done. The digital flow maps to the physical one without a single word of explanation.</p>
+            </div>
+            <div class="meta-card">
+              <div class="mhead">
+                <svg class="micon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <h4>Phone icon looks like a landline</h4>
+              </div>
+              <p>We've used smartphones for 15+ years, yet the call icon still looks like a 1970s receiver. That's intentional — the mental model is too strong to replace.</p>
+            </div>
+            <div class="meta-card">
+              <div class="mhead">
+                <svg class="micon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="27" r="13"/><path d="M24 27 V19 M24 27 l6 4"/><path d="M9 14 a7 7 0 0 1 8 -4"/><path d="M39 14 a7 7 0 0 0 -8 -4"/><path d="M16 38 l-3 4 M32 38 l3 4"/></svg>
+                <h4>Alarm icon — the analog clock</h4>
+              </div>
+              <p>Even on a purely digital interface, alarm icons still show bells and clock faces. The metaphor bridges old and new — making a digital function feel physically familiar.</p>
+            </div>
+            <div class="meta-card">
+              <div class="mhead">
+                <svg class="micon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="16"/><circle cx="24" cy="24" r="4.5"/><path d="M24 19.5 V11 M20.2 26 L9 33 M27.8 26 L39 33"/></svg>
+                <h4>Steering wheel in racing games</h4>
+              </div>
+              <p>Car racing games feel more natural with a steering wheel UI than tilt controls. The physical action maps to the digital one — muscle memory crosses over seamlessly.</p>
+            </div>
+          </div>
+
+          <p class="closing-line">These metaphors are not random. They are intentional choices that connect digital actions to real-world understanding — letting users recognise what to do instantly, without a tutorial.</p>
+        </section>
+
+        <!-- 04 -->
+        <section class="panel reveal" id="language" data-spy="language" data-screen-label="04 Language clarity">
+          <span class="eyebrow-num">04 — Language clarity</span>
+          <h2 class="sec-title">It's not just icons — it's words too.</h2>
+          <p class="body-copy">This heuristic extends beyond visual metaphors. The language we use in a product matters just as much. When words on a screen match how users actually think and speak, everything feels natural. When they don't, users hesitate — even if the function itself is simple.</p>
+          <p class="body-copy">Clear language is inclusive language. It lowers the barrier for every user who isn't a developer, designer, or power user.</p>
+
+          <div class="cmp-wrap">
+            <table class="cmp">
+              <thead>
+                <tr>
+                  <th class="dont">Don't say</th>
+                  <th class="say">Say instead</th>
+                  <th>Why it matters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="dont">Deploy</td>
+                  <td class="say">Publish</td>
+                  <td>Most users understand "publish" from everyday life. "Deploy" is an engineering term that creates distance.</td>
+                </tr>
+                <tr>
+                  <td class="dont">ETA</td>
+                  <td class="say">Expected by / Arrives in</td>
+                  <td>Acronyms assume familiarity. A plain phrase removes the assumption entirely.</td>
+                </tr>
+                <tr>
+                  <td class="dont">CX / NPS / CSAT</td>
+                  <td class="say">Customer experience / Satisfaction score</td>
+                  <td>Internal business terms mean nothing to most users. Use words they'd actually use themselves.</td>
+                </tr>
+                <tr>
+                  <td class="dont">Invalidate cache</td>
+                  <td class="say">Refresh / Clear saved data</td>
+                  <td>Technical actions need plain-language descriptions. Users care about what happens, not how it works under the hood.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="closing-line">Jargon in the first sentence tells the user: "This wasn't made for you."</p>
+        </section>
+
+        <!-- 05 -->
+        <section class="panel reveal" id="empathy" data-spy="empathy" data-screen-label="05 Know your users">
+          <span class="eyebrow-num">05 — Know your users</span>
+          <h2 class="sec-title">All of this comes from one thing: empathy.</h2>
+          <p class="body-copy">Ultimately, this heuristic is about one thing — knowing your users well enough to design in their language, not yours. The better we understand their habits, mental models, and level of tech comfort, the easier it becomes to meet them where they already are.</p>
+
+          <div class="pull">
+            <p>"This heuristic is not just about making things familiar — it's about building trust through understanding. When a product speaks your language, it feels like it was made for you."</p>
+            <p style="font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink-faint);margin:16px 0 0;">— The real goal of H2</p>
+          </div>
+
+          <p class="body-copy" style="margin-top:26px;">Ask these before every design decision: How do users normally interact with products like this? What references do they already understand? What words do they use for this task? The answers should shape every label, icon, and interaction in your product.</p>
+        </section>
+
+        <!-- 06 -->
+        <section class="panel reveal" id="closing" data-spy="closing" data-screen-label="06 Closing thought">
+          <span class="eyebrow-num">06 — Closing thought</span>
+          <h2 class="sec-title">Let them feel at home.</h2>
+          <p class="body-copy">When systems speak in a language users already understand, the product feels natural — like it was made just for them.</p>
+          <p class="body-copy">The recycle bin didn't need a manual. The shopping cart didn't need a tutorial. The phone icon didn't need an explanation. They all borrowed from a world users already knew — and that's exactly what made them work.</p>
+
+          <div class="callout-strong">
+            <div class="cap">The closing thought of H2</div>
+            <p>Design is not about teaching people something new. It's about letting them feel at home.</p>
+          </div>
+
+          <div class="takeaways">
+            <div class="take">
+              <div class="tk">T1</div>
+              <div>
+                <h4>Apply this to your next design</h4>
+                <p>Go through every label, icon, and CTA in your product. Ask: would a user who has never seen this before understand it immediately? If not — what real-world reference could you borrow to make it click?</p>
+              </div>
+            </div>
+            <div class="take">
+              <div class="tk">T2</div>
+              <div>
+                <h4>Up next</h4>
+                <p><span class="up">H3: Let Them Go Back. Always.</span> Why every product needs a clearly marked emergency exit — and what happens when users feel trapped with no way out.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="panel reveal" style="margin-bottom:0;max-width:var(--maxw);">
+    <div class="foot-grid">
+      <div>
+        <h4>On the desk</h4>
+        <div class="now-card">
+          <div class="cover"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M7 3.5 L7 23 L12 18.4 L15.2 25.6 L18 24.3 L14.9 17.3 L21 16.9 Z" fill="#eaf6ef"/><circle class="desk-dot" cx="24.5" cy="8" r="3" fill="#eaf6ef"/></svg></div>
+          <div>
+            <div class="t">Designing decisions, not screens</div>
+            <div class="s">Currently · building Galla, phase 1</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#work">Selected work</a></li>
+          <li><a href="index.html#writing">Writing</a></li>
+          <li><a href="index.html#resume">Experience</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/abhishek-lokesh-162800219/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Medium</a></li>
+          <li><a href="mailto:abhisheklokesh.uiux159@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="pn-nav">
+    <a class="pn-back" href="h1-visibility.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      H1: A Good Product Works. A Great Product Talks.
+    </a>
+    <a class="pn-next" href="h3-control-freedom.html">
+      <span class="cap">Next · H3</span>
+      <span class="nm">Let Them Go Back. Always. →</span>
+    </a>
+  </div>
+
+  <div class="foot-note">
+    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>H2 of 11 — Match Between System and the Real World.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.10, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  /* sidebar scrollspy */
+  var jumps = {};
+  document.querySelectorAll('.side a').forEach(function(a){ jumps[a.getAttribute('data-jump')] = a; });
+  if(Object.keys(jumps).length){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var id = e.target.getAttribute('data-spy');
+          Object.keys(jumps).forEach(function(k){ jumps[k].classList.remove('active'); });
+          if(jumps[id]) jumps[id].classList.add('active');
+        }
+      });
+    },{rootMargin:'-30% 0px -55% 0px'});
+    document.querySelectorAll('[data-spy]').forEach(function(s){ spy.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>

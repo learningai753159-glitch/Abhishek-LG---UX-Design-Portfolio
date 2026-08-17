@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Spendly — Case Study · Abhishek LG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Quicksand:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" />
+<style>
+  :root{
+    /* surfaces */
+    --cream:#f3eee3;
+    --panel:#fbf8f1;
+    --panel-2:#f7f2e8;
+    /* ink */
+    --green:#15543b;
+    --green-deep:#0f3f2c;
+    --ink:#2c3733;
+    --ink-soft:#5d6b64;
+    --ink-faint:#9aa49c;
+    --black:#191919;
+    /* pastels */
+    --peach:#f6d6ad;
+    --lavender:#dcd7f3;
+    --sky:#c4e2f4;
+    --pink:#f6c8c3;
+    --mint:#cde6d4;
+    --yellow:#f7d24a;
+    --tag:#e9e3d6;
+    /* spendly product accent (its own UI is purple/indigo on dark) */
+    --indigo:#7c6cf0;
+    --indigo-soft:#a99bf7;
+    --indigo-deep:#1a1630;
+    --indigo-panel:#241f3d;
+    /* misc */
+    --radius-xl:40px;
+    --radius-lg:28px;
+    --radius-md:20px;
+    --shadow-card:0 18px 40px -24px rgba(20,40,30,.35);
+    --shadow-soft:0 10px 30px -20px rgba(20,40,30,.3);
+    --maxw:1240px;
+    --font-display:'Fredoka',system-ui,sans-serif;
+    --font-body:'DM Sans',system-ui,sans-serif;
+    --font-hand:'Caveat',cursive;
+    /* matched homepage type roles */
+    --green-bright:#008953;
+    --font-hero:'Bricolage Grotesque',sans-serif;
+    --font-cursive:'Bricolage Grotesque',sans-serif;
+    --font-proj:'Bricolage Grotesque',sans-serif;
+    --font-quote:'Quicksand',var(--font-body);
+    --font-num:'Libre Baskerville',Georgia,serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:120px;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:18px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;color:var(--green-bright);margin:0;line-height:1.04;letter-spacing:-.01em;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  /* ---------- panels ---------- */
+  .panel{
+    background:var(--panel);
+    border-radius:var(--radius-xl);
+    padding:72px;
+    margin:26px auto;
+    max-width:var(--maxw);
+    box-shadow:var(--shadow-soft);
+  }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:fixed;top:18px;left:0;right:0;z-index:80;
+    display:flex;justify-content:center;align-items:center;
+    pointer-events:none;
+  }
+  .nav-inner{
+    pointer-events:auto;
+    display:flex;align-items:center;justify-content:space-between;gap:26px;
+    background:rgba(251,248,241,.86);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border:1px solid rgba(20,60,40,.07);
+    padding:8px 8px 8px 18px;border-radius:999px;
+    box-shadow:0 14px 34px -22px rgba(20,40,30,.5);
+  }
+  .nav-brand{display:flex;align-items:center;gap:11px;}
+  .nav-avatar{
+    width:34px;height:34px;border-radius:50%;flex:0 0 auto;
+    background:#15543b url('assets/abhishek-avatar.jpg') center/cover no-repeat;
+    display:flex;align-items:center;justify-content:center;
+    color:#dff0e6;font-family:var(--font-display);font-weight:600;font-size:13px;
+    border:2px solid rgba(255,255,255,.5);
+  }
+  .nav-brand .nm{font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--green-bright);white-space:nowrap;}
+  .nav-back{
+    font-weight:600;font-size:15px;color:#fff;background:var(--green-bright);
+    padding:10px 20px;border-radius:999px;
+    transition:transform .15s ease, box-shadow .2s ease;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .nav-back:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(21,84,59,.7);}
+
+  /* ---------- case layout ---------- */
+  .case-shell{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .main{min-width:0;}
+  .main .panel{margin:0 0 22px;padding:72px;max-width:none;}
+  .main .panel:first-child{margin-top:0;}
+
+  .eyebrow-num{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--font-body);font-weight:600;font-size:15px;letter-spacing:.01em;
+    color:var(--green-bright);background:rgba(21,84,59,.08);
+    padding:8px 16px;border-radius:999px;margin-bottom:24px;
+  }
+  .sec-title{font-family:var(--font-cursive);font-size:clamp(34px,4.2vw,52px);color:var(--green-bright);margin-bottom:18px;letter-spacing:0;}
+  .lead-line{
+    font-family:var(--font-quote);font-weight:600;
+    font-size:clamp(20px,2vw,26px);line-height:1.3;color:var(--ink);
+    max-width:none;margin:0 0 26px;letter-spacing:-.01em;
+  }
+  .body-copy{font-size:18px;color:var(--ink-soft);line-height:1.62;max-width:64ch;margin:0 0 18px;}
+  .body-copy strong,.body-copy em{color:var(--ink);font-style:normal;font-weight:600;}
+
+  /* hero */
+  .case-hero{padding-top:132px;}
+  .main .panel.case-hero{padding-top:132px;}
+  .role-badge{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--font-body);font-weight:600;font-size:16px;
+    color:var(--green-bright);background:rgba(21,84,59,.08);
+    padding:8px 16px;border-radius:999px;margin-bottom:26px;
+  }
+  .role-badge .dot{width:8px;height:8px;border-radius:50%;background:#2fae74;box-shadow:0 0 0 4px rgba(47,174,116,.18);}
+  .case-hero .proj{font-family:var(--font-hero);font-size:clamp(44px,7vw,88px);font-weight:400;line-height:.98;margin-bottom:8px;letter-spacing:0;}
+  .case-hero .headline{font-family:var(--font-quote);font-weight:600;font-size:clamp(26px,3.4vw,44px);color:#1e1f1e;max-width:none;margin:8px 0 22px;line-height:1.15;letter-spacing:-.01em;}
+  .case-hero .subline{font-size:clamp(17px,1.6vw,21px);color:var(--ink-soft);max-width:60ch;line-height:1.6;margin:0 0 40px;}
+
+  /* metric row */
+  .metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:8px;}
+  .metric-card{
+    background:var(--panel-2);border-radius:var(--radius-md);
+    padding:24px 26px;border:1px solid rgba(20,60,40,.06);
+  }
+  .metric-card .num{font-family:var(--font-num);font-weight:700;font-size:clamp(26px,2.8vw,40px);color:var(--green);line-height:1;}
+  .metric-card .lab{font-size:14.5px;color:var(--ink-soft);margin-top:10px;line-height:1.4;font-weight:500;}
+
+  /* ---------- OPENING STORY (no number) ---------- */
+  .story-panel{
+    background:linear-gradient(180deg,#fbf4e6 0%,#fbf8f1 100%);
+    border:1px solid rgba(214,170,90,.22);
+  }
+  .story-mark{
+    font-family:var(--font-hand);font-weight:700;font-size:clamp(46px,7vw,82px);
+    color:var(--yellow);line-height:.5;display:block;margin-bottom:6px;
+  }
+  .story-quote{
+    font-family:var(--font-quote);font-weight:600;
+    font-size:clamp(24px,3.2vw,42px);line-height:1.32;color:var(--green-bright);
+    margin:0 0 26px;max-width:30ch;letter-spacing:-.01em;
+  }
+  .story-quote em{font-style:normal;color:#1e1f1e;}
+  .story-sign{
+    font-family:var(--font-hand);font-weight:600;font-size:clamp(22px,2.4vw,30px);
+    color:var(--ink-soft);
+  }
+
+  /* ---------- highlight cards (emoji) ---------- */
+  .hl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:10px;}
+  .hl-card{
+    background:var(--panel-2);border-radius:var(--radius-lg);padding:30px 28px;
+    border:1px solid rgba(20,60,40,.06);
+  }
+  .hl-card .ic{font-size:30px;line-height:1;margin-bottom:16px;display:block;}
+  .hl-card h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0 0 10px;}
+  .hl-card p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.56;}
+
+  /* ---------- comparison table ---------- */
+  .cmp-wrap{margin-top:10px;overflow-x:auto;border-radius:var(--radius-md);}
+  .cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:15.5px;min-width:640px;}
+  .cmp th,.cmp td{padding:18px 20px;text-align:left;vertical-align:top;line-height:1.45;}
+  .cmp thead th{
+    font-family:var(--font-proj);font-weight:700;font-size:16px;color:var(--ink);
+    border-bottom:2px solid rgba(20,60,40,.14);
+  }
+  .cmp thead th.col-us{color:#fff;}
+  .cmp .rowlab{font-family:var(--font-body);font-weight:700;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);white-space:nowrap;}
+  .cmp tbody td{color:var(--ink-soft);border-bottom:1px solid rgba(20,60,40,.08);}
+  .cmp tbody tr:last-child td{border-bottom:none;}
+  .cmp col.us-col{}
+  .cmp .col-us{background:var(--green);color:#fff;}
+  .cmp td.col-us{color:#eafff3;font-weight:600;}
+  .cmp thead th.col-us{border-bottom-color:transparent;border-radius:14px 14px 0 0;}
+  .cmp tbody tr:last-child td.col-us{border-radius:0 0 14px 14px;}
+
+  .callout{
+    border-left:4px solid var(--yellow);background:var(--panel-2);
+    border-radius:0 22px 22px 0;padding:28px 34px;margin-top:26px;
+  }
+  .callout p{
+    font-family:var(--font-quote);font-weight:600;font-size:clamp(18px,1.9vw,23px);
+    line-height:1.4;color:var(--green-bright);margin:0;max-width:60ch;letter-spacing:-.01em;
+  }
+
+  /* ---------- label cards (the product idea) ---------- */
+  .label-stack{display:flex;flex-direction:column;gap:14px;margin-top:10px;}
+  .label-card{
+    display:flex;align-items:flex-start;gap:22px;
+    border-radius:var(--radius-lg);padding:28px 32px;box-shadow:var(--shadow-card);
+  }
+  .label-card.necessary{background:var(--mint);}
+  .label-card.good{background:var(--peach);}
+  .label-card.unnecessary{background:var(--pink);}
+  .label-card .badge{
+    flex:0 0 auto;width:54px;height:54px;border-radius:16px;
+    display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;
+    background:rgba(255,255,255,.55);color:#26312c;
+  }
+  .label-card .lc-body{min-width:0;}
+  .label-card .lc-k{font-family:var(--font-proj);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#33433b;margin-bottom:8px;}
+  .label-card .lc-k b{font-size:20px;letter-spacing:.04em;}
+  .label-card h4{font-family:var(--font-cursive);font-weight:600;font-size:26px;color:#26312c;margin:0 0 6px;letter-spacing:0;line-height:1.1;}
+  .label-card p{margin:0;font-size:15.5px;color:#39433d;line-height:1.55;max-width:70ch;}
+
+  /* ---------- phone mockup (spendly own UI — purple/indigo dark) ---------- */
+  .phone-row{display:flex;justify-content:center;margin-top:30px;}
+  .phone{
+    width:300px;border-radius:42px;background:#0e0b1c;padding:12px;
+    box-shadow:0 40px 80px -40px rgba(40,30,90,.6),0 0 0 1px rgba(124,108,240,.18);
+    position:relative;
+  }
+  .phone .notch{position:absolute;top:20px;left:50%;transform:translateX(-50%);width:90px;height:7px;border-radius:99px;background:#2a2545;z-index:2;}
+  .phone .screen{
+    border-radius:32px;background:var(--indigo-deep);overflow:hidden;
+    padding:38px 20px 24px;color:#e9e6fb;min-height:520px;
+    display:flex;flex-direction:column;
+  }
+  .ph-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;}
+  .ph-head .t{font-family:var(--font-display);font-weight:600;font-size:15px;color:#fff;}
+  .ph-head .x{width:26px;height:26px;border-radius:50%;background:var(--indigo-panel);display:flex;align-items:center;justify-content:center;color:var(--indigo-soft);}
+  .ph-head .x svg{width:13px;height:13px;}
+  .ph-amt{text-align:center;margin:8px 0 26px;}
+  .ph-amt .lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8b82c4;}
+  .ph-amt .val{font-family:var(--font-num);font-weight:700;font-size:46px;color:#fff;margin-top:6px;line-height:1;}
+  .ph-amt .val .cur{color:var(--indigo-soft);font-size:30px;}
+  .ph-amt .cursor{display:inline-block;width:2px;height:38px;background:var(--indigo);vertical-align:-6px;margin-left:2px;border-radius:2px;}
+  .ph-sec{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7a72b0;margin:0 0 11px;}
+  .ph-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
+  .ph-chip{font-size:12.5px;font-weight:600;padding:8px 14px;border-radius:999px;background:var(--indigo-panel);color:#c8c1f2;}
+  .ph-chip.on{background:var(--indigo);color:#fff;}
+  .ph-labels{display:flex;flex-direction:column;gap:9px;margin-top:auto;}
+  .ph-pill{
+    display:flex;align-items:center;gap:12px;padding:13px 16px;border-radius:14px;
+    background:var(--indigo-panel);border:1.5px solid transparent;font-size:14px;font-weight:600;color:#d6d1f5;
+  }
+  .ph-pill .pi{width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex:0 0 auto;}
+  .ph-pill.nec{border-color:#3ad690;}.ph-pill.nec .pi{background:rgba(58,214,144,.16);color:#52e3a3;}
+  .ph-pill.good .pi{background:rgba(247,210,74,.16);color:#f4d24a;}
+  .ph-pill.unn .pi{background:rgba(240,108,140,.16);color:#f06c8c;}
+  .ph-pill.nec{background:rgba(58,214,144,.1);}
+  .ph-note{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;letter-spacing:.03em;color:var(--ink-faint);text-align:center;margin-top:18px;}
+
+  /* ---------- placeholders ---------- */
+  .ph-drop{
+    position:relative;border-radius:20px;overflow:hidden;
+    background:repeating-linear-gradient(45deg,#e7e0d2 0 12px,#efe9dc 12px 24px);
+    border:1px solid rgba(20,60,40,.08);
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    color:#8a8472;font-family:ui-monospace,'SF Mono',Menlo,monospace;
+    font-size:12.5px;letter-spacing:.04em;padding:14px;
+  }
+  .ph-video{aspect-ratio:16/9;width:100%;margin-top:30px;}
+  .ph-video .badge{
+    position:absolute;display:inline-flex;align-items:center;gap:10px;
+    background:rgba(16,18,16,.78);color:#eee;padding:12px 20px;border-radius:999px;font-size:13px;letter-spacing:.02em;
+  }
+  .ph-video .badge svg{width:16px;height:16px;}
+  .scr-cap{font-size:14.5px;color:var(--ink-soft);text-align:center;margin:16px auto 0;max-width:54ch;}
+  .scr-cap b{color:var(--ink);font-weight:600;}
+  .video-block{margin-top:32px;padding:0 40px;}
+  .video-frame{border-radius:16px;overflow:hidden;box-shadow:0 22px 50px -22px rgba(20,40,30,.45);}
+  @media (max-width:560px){ .video-block{padding:0;} }
+
+  /* ---------- build cards (horizontal) ---------- */
+  .build-stack{display:flex;flex-direction:column;gap:14px;margin-top:10px;}
+  .build-card{
+    display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:start;
+    background:var(--panel-2);border-radius:var(--radius-lg);padding:30px 34px;
+    border:1px solid rgba(20,60,40,.06);
+  }
+  .build-card .bk{
+    font-family:var(--font-proj);font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--green-bright);padding-top:3px;
+  }
+  .build-card .bk .step{display:block;font-family:var(--font-num);font-size:30px;color:var(--ink-faint);letter-spacing:0;text-transform:none;margin-bottom:6px;line-height:1;}
+  .build-card p{margin:0;font-size:16px;color:var(--ink-soft);line-height:1.58;}
+  .build-card p strong{color:var(--ink);font-weight:600;}
+  .stack-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .stack-tags span{font-size:12.5px;font-weight:600;color:#345d76;background:#e3eef5;border-radius:8px;padding:5px 12px;}
+
+  /* ---------- who-uses 2col ---------- */
+  .who-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px;}
+  .who{
+    background:var(--panel-2);border-radius:var(--radius-lg);padding:32px;
+    border:1px solid rgba(20,60,40,.06);
+  }
+  .who .k{font-family:var(--font-body);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--green-bright);margin-bottom:12px;}
+  .who p{margin:0;font-size:16.5px;color:var(--ink-soft);line-height:1.6;}
+  .who p strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- learnings ---------- */
+  .learn-grid{display:flex;flex-direction:column;margin-top:8px;}
+  .learn{
+    display:flex;align-items:flex-start;gap:22px;padding:24px 0;border-bottom:1px solid rgba(20,60,40,.1);
+  }
+  .learn:first-child{padding-top:6px;}
+  .learn:last-child{border-bottom:none;}
+  .learn .ln{flex:0 0 auto;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-num);font-weight:700;font-size:14px;margin:0;line-height:1;}
+  .learn:nth-child(1) .ln{background:var(--peach);color:#7a4f0a;}
+  .learn:nth-child(2) .ln{background:var(--lavender);color:#4a3f7a;}
+  .learn:nth-child(3) .ln{background:var(--sky);color:#245b7a;}
+  .learn:nth-child(4) .ln{background:var(--mint);color:#1f5c3d;}
+  .learn-body{flex:1;}
+  .learn h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0 0 8px;}
+  .learn p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.5;}
+
+  /* ---------- closing / founder's note ---------- */
+  .closing{
+    background:var(--green);border-radius:var(--radius-xl);padding:56px;color:#dff0e6;
+    margin-top:24px;position:relative;overflow:hidden;
+  }
+  .closing .cap{font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#8fc4a8;margin-bottom:18px;}
+  .closing p{font-family:var(--font-quote);font-weight:600;font-size:clamp(22px,2.6vw,33px);line-height:1.3;color:#fff;margin:0;max-width:34ch;letter-spacing:-.01em;}
+  .closing .sign{font-family:var(--font-hand);font-weight:600;font-size:30px;color:#bfe0cf;margin-top:24px;}
+
+  /* ---------- story panels (recolored illustration cards) ---------- */
+  .story-eyebrow{font-family:var(--font-body);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:24px;}
+  .story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .story-card{border-radius:var(--radius-lg);overflow:hidden;background:var(--panel-2);border:1px solid rgba(20,60,40,.08);box-shadow:var(--shadow-soft);}
+  .story-card img{width:100%;height:auto;display:block;}
+
+  /* ---------- screen carousel ---------- */
+  .carousel{margin-top:10px;}
+  .car-stage{display:flex;align-items:center;gap:18px;}
+  .car-arrow{flex:0 0 auto;width:52px;height:52px;border-radius:50%;background:var(--green-bright);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;transition:transform .15s ease,box-shadow .2s ease,opacity .2s;}
+  .car-arrow svg{width:22px;height:22px;}
+  .car-arrow:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(21,84,59,.7);}
+  .car-arrow:disabled{opacity:.28;cursor:default;}
+  .car-viewport{flex:1 1 auto;overflow:hidden;}
+  .car-track{display:flex;transition:transform .5s cubic-bezier(.2,.7,.3,1);}
+  .car-slide{flex:0 0 100%;min-width:0;}
+  .car-pair{display:flex;justify-content:center;gap:26px;}
+  .car-cap{text-align:center;font-size:15.5px;color:var(--ink-soft);margin-top:22px;}
+  .car-cap b{color:var(--ink);font-weight:600;}
+  .car-dots{display:flex;justify-content:center;gap:10px;margin-top:26px;}
+  .car-dot{width:9px;height:9px;border-radius:50%;background:rgba(20,60,40,.18);border:none;cursor:pointer;padding:0;transition:background .2s,transform .2s;}
+  .car-dot.on{background:var(--green-bright);transform:scale(1.3);}
+  .phone.car{width:min(250px,42vw);box-shadow:0 30px 60px -36px rgba(40,30,90,.55),0 0 0 1px rgba(124,108,240,.16);}
+  .phone.car .screen{min-height:0;aspect-ratio:9/19;display:flex;align-items:center;justify-content:center;text-align:center;padding:22px;}
+  .scr-empty{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;line-height:1.7;letter-spacing:.02em;color:#8b82c4;}
+
+  /* ---------- product screenshots (static row) ---------- */
+  .shots{background:var(--panel-2);border:1px solid rgba(20,60,40,.06);border-radius:var(--radius-lg);padding:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:10px;}
+  .shot{margin:0;display:flex;flex-direction:column;align-items:center;}
+  .shot img{width:100%;height:auto;display:block;border-radius:24px;box-shadow:0 22px 50px -22px rgba(20,40,30,.45);}
+  .shot figcaption{text-align:center;font-size:14.5px;color:var(--ink-soft);margin-top:22px;line-height:1.45;}
+  .shot figcaption b{color:var(--ink);font-weight:700;}
+  @media (max-width:720px){
+    .shots{grid-template-columns:1fr;gap:34px;padding:28px;}
+    .shot img{max-width:330px;}
+  }
+
+  /* ---------- story strip (interactive line-art cards) ---------- */
+  .sstrip{margin-top:10px;}
+  .sstrip-stage{display:flex;align-items:center;gap:18px;}
+  .sstrip-viewport{flex:1 1 auto;overflow:hidden;}
+  .sstrip-track{display:flex;transition:transform .5s cubic-bezier(.2,.7,.3,1);}
+  .sslide{flex:0 0 100%;min-width:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .scard{position:relative;background:var(--panel);border:1px solid rgba(20,60,40,.1);border-radius:var(--radius-lg);padding:26px 26px 22px;min-height:316px;overflow:hidden;box-shadow:var(--shadow-soft);}
+  .scard .snum{width:40px;height:40px;border-radius:50%;background:var(--green-bright);color:#fff;font-family:var(--font-num);font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+  .scard h4{font-family:var(--font-display);font-weight:700;font-size:22px;line-height:1.14;color:#1e1f1e;margin:0 0 13px;letter-spacing:-.01em;}
+  .scard h4 .em{color:var(--green-bright);}
+  .scard p{font-size:13.5px;color:var(--ink-soft);line-height:1.5;margin:0;max-width:60%;}
+  .scard p.q{font-family:var(--font-quote);font-weight:600;font-size:15px;color:var(--green-bright);}
+  .scard .sill{position:absolute;right:16px;bottom:14px;width:126px;height:104px;color:var(--green-bright);pointer-events:none;}
+  .scard .sill svg{width:100%;height:100%;display:block;overflow:visible;}
+
+  @media (max-width:720px){
+    .sstrip-arrow{display:none;}
+    #storyDots{display:none;}
+    .sstrip-viewport{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+    .sstrip-track{transform:none!important;gap:14px;}
+    .sslide{display:contents;}
+    .scard{min-width:82%;scroll-snap-align:center;}
+  }
+  @media (max-width:900px){ .story-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .story-grid{grid-template-columns:1fr;} .car-arrow{width:44px;height:44px;} .car-stage{gap:10px;} }
+
+  /* ---------- footer ---------- */
+  footer{padding:30px 28px 60px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+  .foot-grid h4{font-family:var(--font-display);font-size:24px;color:var(--ink);margin-bottom:20px;}
+  .foot-grid ul{list-style:none;padding:0;margin:0;}
+  .foot-grid li{margin-bottom:12px;}
+  .foot-grid a{font-size:16px;color:var(--ink-soft);transition:color .2s;}
+  .foot-grid a:hover{color:var(--green);}
+  .now-card{background:var(--green-bright);border-radius:18px;padding:18px;display:flex;align-items:center;gap:16px;max-width:360px;color:#dff0e6;}
+  .now-card .cover{width:64px;height:64px;border-radius:10px;background:rgba(255,255,255,.08);flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
+  .now-card .cover .desk-dot{transform-box:fill-box;transform-origin:center;animation:deskPulse 2s ease-in-out infinite;}
+  @keyframes deskPulse{0%,100%{transform:scale(.65);opacity:.4}50%{transform:scale(1.15);opacity:1}}
+  @media (prefers-reduced-motion:reduce){.now-card .cover .desk-dot{animation:none;opacity:.9}}
+  .now-card .t{font-weight:700;font-size:15px;color:#fff;}
+  .now-card .s{font-size:13px;color:#aacdb9;}
+
+  .pn-nav{
+    max-width:var(--maxw);margin:22px auto 0;padding:0 28px;
+    display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+  }
+  .pn-nav .pn-back{font-weight:600;font-size:16px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;transition:color .2s;}
+  .pn-nav .pn-back:hover{color:var(--green);}
+  .pn-next{
+    display:flex;flex-direction:column;align-items:flex-end;text-align:right;
+    background:var(--panel);border-radius:var(--radius-lg);padding:18px 26px;
+    box-shadow:var(--shadow-soft);transition:transform .15s ease,box-shadow .2s ease;
+  }
+  .pn-next:hover{transform:translateY(-2px);box-shadow:var(--shadow-card);}
+  .pn-next .cap{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);}
+  .pn-next .nm{font-family:var(--font-proj);font-weight:700;font-size:22px;color:var(--green-bright);margin-top:4px;}
+  .foot-note{max-width:var(--maxw);margin:36px auto 0;padding:0 28px;font-size:14px;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1000px){
+    .main .panel{padding:44px 34px;}
+    .main .panel.case-hero{padding-top:132px;}
+    .metric-row{grid-template-columns:1fr;}
+    .hl-grid,.who-grid,.learn-grid{grid-template-columns:1fr;}
+    .build-card{grid-template-columns:1fr;gap:14px;}
+    .closing{padding:40px 34px;}
+  }
+  @media (max-width:560px){
+    body{font-size:16.5px;}
+    .main .panel{padding:32px 22px;border-radius:30px;}
+    .main .panel.case-hero{padding-top:132px;}
+    .case-shell{padding:0 16px;}
+    .nav-brand .nm{display:none;}
+    .pn-nav{flex-direction:column;align-items:stretch;}
+    .pn-next{align-items:flex-start;text-align:left;}
+    .label-card{flex-direction:column;gap:14px;}
+  }
+</style></head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+      <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
+      <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
+    </a>
+    <a class="nav-back" href="index.html#work">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to work
+    </a>
+  </div>
+</nav>
+
+<div class="case-shell" style="padding-top:0;">
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="panel case-hero" data-screen-label="Hero">
+      <span class="role-badge"><span class="dot"></span>Solo Founder · Product Designer · Builder</span>
+      <h1 class="proj">Spendly</h1>
+      <p class="headline">I didn't find the app I needed. So I built it.</p>
+      <p class="subline">A personal-finance app built around one honest question — not how much you spent, but whether you should have. Designed, built, and shipped by one person.</p>
+
+      <div class="metric-row">
+        <div class="metric-card"><div class="num">25</div><div class="lab">Real users. Zero marketing. Shared manually.</div></div>
+        <div class="metric-card"><div class="num">12–16</div><div class="lab">Active users engaging exactly as intended</div></div>
+        <div class="metric-card"><div class="num">1</div><div class="lab">Designer who designed, built, and shipped alone</div></div>
+      </div>
+    </section>
+
+    <!-- OPENING STORY (no number, no eyebrow) -->
+    <section class="panel story-panel reveal" data-screen-label="Opening Story">
+      <span class="story-mark" aria-hidden="true">&ldquo;</span>
+      <p class="story-quote">I used to track my expenses in Excel. I'd label each one — <em>Necessary, Good to Have, Unnecessary.</em> It was tedious. Open laptop, enter, calculate, go back and analyse. But that one habit — that one question — was the most honest thing I ever asked myself about money. I just needed a better tool for it.</p>
+      <p class="story-sign">— that tool became Spendly.</p>
+    </section>
+
+    <!-- STORY STRIP (interactive — no number, no eyebrow num) -->
+    <section class="panel reveal" data-screen-label="The Story Behind Spendly">
+      <p class="story-eyebrow">The story behind Spendly</p>
+      <div class="sstrip">
+        <div class="sstrip-stage">
+          <button class="car-arrow sstrip-arrow" id="storyPrev" aria-label="Previous cards"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <div class="sstrip-viewport">
+            <div class="sstrip-track" id="storyTrack">
+
+              <!-- GROUP 1 -->
+              <div class="sslide">
+                <div class="scard">
+                  <div class="snum">1</div>
+                  <h4>Strict questions. <span class="em">Valuable lessons.</span></h4>
+                  <p>My father always took a spending report. It irritated me, but taught me the value of money.</p>
+                  <div class="sill"><svg viewBox="0 0 140 110" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="44" cy="30" r="12"/><path d="M44 42 V74"/><path d="M44 50 L72 60"/>
+                    <circle cx="100" cy="52" r="10"/><path d="M100 62 V86"/>
+                    <rect x="86" y="68" width="24" height="16" rx="2"/><path d="M91 73 h14 M91 78 h10"/>
+                    <path d="M108 16 h26 v18 h-14 l-6 6 v-6 h-6 Z"/><path d="M114 23 h14 M114 28 h10"/>
+                  </svg></div>
+                </div>
+                <div class="scard">
+                  <div class="snum">2</div>
+                  <h4>A habit that <span class="em">stayed.</span></h4>
+                  <p>My mother still records every expense in a notebook. Notebook → Excel sheets.</p>
+                  <div class="sill"><svg viewBox="0 0 140 110" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M28 60 L70 50 V88 L28 80 Z"/><path d="M112 60 L70 50 V88 L112 80 Z"/><path d="M70 50 V88"/>
+                    <path d="M38 64 h24 M38 70 h20 M38 76 h22"/>
+                    <path d="M80 58 l18 -13 5 6 -18 13 Z"/><path d="M98 45 l5 6"/>
+                  </svg></div>
+                </div>
+                <div class="scard">
+                  <div class="snum">3</div>
+                  <h4>My own <span class="em">tracking system.</span></h4>
+                  <p>Not just how much I spent, but how wisely I spent.</p>
+                  <div class="sill"><svg viewBox="0 0 140 110" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="38" y="22" width="64" height="52" rx="3"/><path d="M28 86 H112 L104 74 H36 Z"/>
+                    <rect x="48" y="32" width="36" height="9" rx="4.5"/><rect x="48" y="46" width="30" height="9" rx="4.5"/><rect x="48" y="60" width="40" height="9" rx="4.5"/>
+                  </svg></div>
+                </div>
+              </div>
+
+              <!-- GROUP 2 -->
+              <div class="sslide">
+                <div class="scard">
+                  <div class="snum">4</div>
+                  <h4>The <span class="em">problem.</span></h4>
+                  <p>Open laptop. Open Excel. Enter, label, calculate. Missed entries. Forgot amounts. Too much manual tracking.</p>
+                  <div class="sill"><svg viewBox="0 0 140 110" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="66" y="60" width="44" height="26" rx="2"/><path d="M60 86 H114"/>
+                    <circle cx="46" cy="58" r="11"/><path d="M46 69 C40 76 40 84 46 90"/><path d="M44 90 H62"/>
+                    <path d="M28 24 c8 -8 17 -2 12 6 c9 -1 11 9 2 11 c3 8 -10 11 -15 4 c-8 5 -17 -5 -9 -12 c-5 -8 8 -15 17 -8"/>
+                  </svg></div>
+                </div>
+                <div class="scard">
+                  <div class="snum">5</div>
+                  <h4>One <span class="em">thought.</span></h4>
+                  <p class="q">"What if there was a simple application for this?"</p>
+                  <div class="sill"><svg viewBox="0 0 140 110" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="70" cy="34" r="15"/><path d="M61 49 h18 M63 54 h14 M66 59 h8"/>
+                    <path d="M70 11 V4 M91 23 l6 -6 M49 23 l-6 -6 M96 39 h8 M44 39 h-8"/>
+                    <circle cx="70" cy="82" r="11"/><path d="M56 100 C56 90 84 90 84 100"/>
+                  </svg></div>
+                </div>
+                <div class="scard">
+                  <div class="snum">6</div>
+                  <h4>The <span class="em">limitation.</span></h4>
+                  <p>I'm a designer, not a developer. Frontend, backend, database, deployment — too much for a personal project.</p>
+                  <div class="sill"><svg viewBox="0 0 140 110" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="44" cy="52" r="11"/><path d="M28 90 C28 74 60 74 60 90"/>
+                    <rect x="62" y="62" width="40" height="24" rx="2"/><path d="M58 90 H106"/>
+                    <ellipse cx="92" cy="28" rx="22" ry="14"/><circle cx="70" cy="46" r="2.4"/><circle cx="64" cy="52" r="1.8"/>
+                    <path d="M85 22 l-6 6 6 6 M99 22 l6 6 -6 6 M95 19 l-4 18"/>
+                  </svg></div>
+                </div>
+              </div>
+
+              <!-- GROUP 3 -->
+              <div class="sslide">
+                <div class="scard">
+                  <div class="snum">7</div>
+                  <h4>AI <span class="em">changed things.</span></h4>
+                  <p>Learned. Figured out. Built in a few hours. With Claude, Lovable, Supabase, and Vercel.</p>
+                  <div class="sill"><svg viewBox="0 0 150 110" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="40" cy="52" r="11"/><path d="M24 90 C24 74 56 74 56 90"/>
+                    <rect x="56" y="64" width="36" height="22" rx="2"/><path d="M52 90 H96"/>
+                    <circle cx="106" cy="34" r="3"/><path d="M114 34 h26"/><circle cx="106" cy="48" r="3"/><path d="M114 48 h26"/>
+                    <circle cx="106" cy="62" r="3"/><path d="M114 62 h26"/><circle cx="106" cy="76" r="3"/><path d="M114 76 h20"/>
+                  </svg></div>
+                </div>
+                <div class="scard">
+                  <div class="snum">8</div>
+                  <h4>Spendly <span class="em">went live.</span></h4>
+                  <p>Using it daily on my phone. Replaced mom's notebook. Loved by family &amp; friends.</p>
+                  <div class="sill"><svg viewBox="0 0 140 110" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="46" y="12" width="48" height="86" rx="9"/><path d="M62 19 h16"/>
+                    <circle cx="70" cy="48" r="15"/><circle cx="70" cy="48" r="7"/>
+                    <path d="M54 76 h32 M54 84 h22"/>
+                  </svg></div>
+                </div>
+                <div class="scard">
+                  <div class="snum">9</div>
+                  <h4>Still learning. <span class="em">Just the beginning.</span></h4>
+                  <p>On my way to becoming an AI-UX Designer. More to learn. More to build. More to impact.</p>
+                  <div class="sill"><svg viewBox="0 0 150 110" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="38" cy="48" r="11"/><path d="M22 86 C22 70 54 70 54 86"/>
+                    <path d="M104 16 c11 7 15 22 15 34 l-15 11 -15 -11 c0 -12 4 -27 15 -34 Z"/><circle cx="104" cy="42" r="5"/>
+                    <path d="M89 52 l-9 15 14 -6 M119 52 l9 15 -14 -6"/><path d="M97 74 q7 13 14 0"/><path d="M104 82 v8 M96 84 v6 M112 84 v6"/>
+                  </svg></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <button class="car-arrow sstrip-arrow" id="storyNext" aria-label="Next cards"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+        <div class="car-dots" id="storyDots">
+          <button class="car-dot on" data-i="0" aria-label="Cards 1–3"></button>
+          <button class="car-dot" data-i="1" aria-label="Cards 4–6"></button>
+          <button class="car-dot" data-i="2" aria-label="Cards 7–9"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01 AND -->
+    <section class="panel reveal" id="and" data-screen-label="01 The World As It Was">
+      <span class="eyebrow-num">01 — And</span>
+      <h2 class="sec-title">Everyone tracks. Nobody reflects.</h2>
+      <div class="hl-grid">
+        <div class="hl-card">
+          <span class="ic" aria-hidden="true">📓</span>
+          <h4>The Habit</h4>
+          <p>People around me — my mother, cousins, family — were writing every expense in notebooks. The discipline was real. The tool was limited.</p>
+        </div>
+        <div class="hl-card">
+          <span class="ic" aria-hidden="true">📊</span>
+          <h4>My Own System</h4>
+          <p>I used Excel. Labelled every spend. Worked — but only if I remembered to open the laptop, enter the data, and do the math. I often didn't.</p>
+        </div>
+        <div class="hl-card">
+          <span class="ic" aria-hidden="true">💡</span>
+          <h4>The Real Question</h4>
+          <p>Every app I explored while designing this told you how much you spent. None asked whether you should have.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 BUT -->
+    <section class="panel reveal" id="but" data-screen-label="02 The Gap">
+      <span class="eyebrow-num">02 — But</span>
+      <h2 class="sec-title">Moneyview tracks it. Walnut syncs it. Nobody judges it.</h2>
+      <div class="cmp-wrap">
+        <table class="cmp">
+          <colgroup><col /><col /><col /><col class="us-col" /></colgroup>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Moneyview</th>
+              <th>Walnut (Axio)</th>
+              <th class="col-us">Spendly</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="rowlab">Tracking</td>
+              <td>Auto-SMS</td>
+              <td>Auto-SMS</td>
+              <td class="col-us">Manual, intentional</td>
+            </tr>
+            <tr>
+              <td class="rowlab">Categories</td>
+              <td>System-set</td>
+              <td>System-set</td>
+              <td class="col-us">User-labelled</td>
+            </tr>
+            <tr>
+              <td class="rowlab">Core question</td>
+              <td>Where did it go?</td>
+              <td>Where did it go?</td>
+              <td class="col-us">Was this worth it?</td>
+            </tr>
+            <tr>
+              <td class="rowlab">Insight layer</td>
+              <td>Spend totals</td>
+              <td>Spend totals</td>
+              <td class="col-us">Wise vs unwise split</td>
+            </tr>
+            <tr>
+              <td class="rowlab">Target user</td>
+              <td>Everyone</td>
+              <td>Urban digital natives</td>
+              <td class="col-us">Mindful spenders, homemakers, salaried</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <p>Auto-sync is convenient. But convenience removes the one moment of reflection that changes behaviour — the moment you consciously record a spend.</p>
+      </div>
+    </section>
+
+    <!-- 03 THEREFORE -->
+    <section class="panel reveal" id="therefore" data-screen-label="03 The Core Idea">
+      <span class="eyebrow-num">03 — Therefore</span>
+      <h2 class="sec-title">One label. Three words. That's the whole product.</h2>
+      <div class="label-stack">
+        <div class="label-card necessary">
+          <span class="badge" aria-hidden="true">✅</span>
+          <div class="lc-body">
+            <div class="lc-k"><b>NECESSARY</b></div>
+            <p>Things that keep life running. Rent, bills, medicines, groceries. Record without guilt.</p>
+          </div>
+        </div>
+        <div class="label-card good">
+          <span class="badge" aria-hidden="true">〜</span>
+          <div class="lc-body">
+            <div class="lc-k"><b>GOOD TO HAVE</b></div>
+            <p>Things that add comfort but aren't essential. Worth tracking — these are where habits form.</p>
+          </div>
+        </div>
+        <div class="label-card unnecessary">
+          <span class="badge" aria-hidden="true">✗</span>
+          <div class="lc-body">
+            <div class="lc-k"><b>UNNECESSARY</b></div>
+            <p>Things you didn't need. The app doesn't judge you. But the data will — over time.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-row">
+        <div class="phone" aria-hidden="true">
+          <span class="notch"></span>
+          <div class="screen">
+            <div class="ph-head">
+              <span class="t">Record expense</span>
+              <span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
+            </div>
+            <div class="ph-amt">
+              <div class="lbl">Amount</div>
+              <div class="val"><span class="cur">₹</span>480<span class="cursor"></span></div>
+            </div>
+            <p class="ph-sec">Category</p>
+            <div class="ph-chips">
+              <span class="ph-chip">Food</span>
+              <span class="ph-chip on">Dining out</span>
+              <span class="ph-chip">Travel</span>
+              <span class="ph-chip">Bills</span>
+              <span class="ph-chip">Shopping</span>
+            </div>
+            <p class="ph-sec">Was this worth it?</p>
+            <div class="ph-labels">
+              <span class="ph-pill nec"><span class="pi">✓</span>Necessary</span>
+              <span class="ph-pill good"><span class="pi">〜</span>Good to have</span>
+              <span class="ph-pill unn"><span class="pi">✗</span>Unnecessary</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="ph-note">[ Screen placeholder — Record Expense · Spendly UI (purple/indigo on dark) ]</p>
+      <p class="scr-cap">One question at entry point — <b>was this worth spending on?</b></p>
+    </section>
+
+    <!-- 04 HOW I BUILT IT -->
+    <section class="panel reveal" id="built" data-screen-label="04 How I Built It">
+      <span class="eyebrow-num">04 — How I Built It</span>
+      <h2 class="sec-title">I'm a designer. I don't write code. That was never going to stop me.</h2>
+      <div class="build-stack">
+        <div class="build-card">
+          <div class="bk"><span class="step">01</span>Designed</div>
+          <div>
+            <p>End-to-end UX — flows, the labelling system, all screens, interactions. <strong>Every decision was mine.</strong></p>
+          </div>
+        </div>
+        <div class="build-card">
+          <div class="bk"><span class="step">02</span>Built</div>
+          <div>
+            <p>AI-assisted tools to write and ship real code. A working PWA. <strong>Live on the web.</strong></p>
+            <div class="stack-tags"><span>Claude</span><span>Lovable</span><span>Supabase</span><span>Vercel</span></div>
+          </div>
+        </div>
+        <div class="build-card">
+          <div class="bk"><span class="step">03</span>Shipped</div>
+          <div>
+            <p>No app store. No marketing. Shared manually to real people. <strong>25 users. 12–16 active.</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 THE PRODUCT -->
+    <section class="panel reveal" id="product" data-screen-label="05 The Product">
+      <span class="eyebrow-num">05 — The Product</span>
+      <h2 class="sec-title">Three screens. One flow.</h2>
+      <div class="shots">
+        <figure class="shot"><img src="product/dashboard.jpeg" alt="Spendly dashboard — necessary vs unnecessary spend shown as a donut chart" /><figcaption><b>Dashboard</b> — wise vs unwise at a glance</figcaption></figure>
+        <figure class="shot"><img src="product/record.jpeg" alt="New expense screen — amount, category chips and the necessary / good to have / unnecessary label selector" /><figcaption><b>Record</b> — label your spend in 5 seconds</figcaption></figure>
+        <figure class="shot"><img src="product/saved.jpeg" alt="Expense recorded — confirmation screen with the logged amount and label" /><figcaption><b>Saved</b> — instant confirmation, no guilt</figcaption></figure>
+      </div>
+
+      <div class="video-block">
+        <p class="story-eyebrow" style="margin-bottom:16px;">Spendly — Live Demo</p>
+        <div class="video-frame">
+          <div style="padding:56.25% 0 0 0;position:relative;">
+            <iframe src="https://player.vimeo.com/video/1200654945?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Spendly - Live Demo"></iframe>
+          </div>
+        </div>
+      </div>
+      <script src="https://player.vimeo.com/api/player.js"></script>
+    </section>
+
+    <!-- 06 WHO USES IT -->
+    <section class="panel reveal" id="who" data-screen-label="06 Who Uses It">
+      <span class="eyebrow-num">06 — Who Uses It</span>
+      <h2 class="sec-title">I didn't target a market. I found one.</h2>
+      <div class="who-grid">
+        <div class="who">
+          <div class="k">Who came back</div>
+          <p>Homemakers managing household budgets. Working women balancing personal and household finances. Salaried middle-class users for whom <strong>every rupee has a purpose.</strong></p>
+        </div>
+        <div class="who">
+          <div class="k">What that means</div>
+          <p>Not power users. <strong>Mindful ones.</strong> People who want to spend better — not just track faster. That's exactly who Spendly was built for.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 WHAT THIS TAUGHT ME -->
+    <section class="panel reveal" id="taught" data-screen-label="07 What This Taught Me">
+      <span class="eyebrow-num">07 — What This Taught Me</span>
+      <h2 class="sec-title">Being a founder taught me what being a designer never could.</h2>
+      <div class="learn-grid">
+        <div class="learn"><div class="ln">1</div><div class="learn-body"><h4>Ownership sharpens every decision</h4><p>As a designer I could recommend anything. As a founder every call had a consequence I had to live with. That changed how I think.</p></div></div>
+        <div class="learn"><div class="ln">2</div><div class="learn-body"><h4>Constraints are a design tool</h4><p>Not knowing code didn't stop the product. It forced me to find tools that could execute my thinking. Vision drove the build.</p></div></div>
+        <div class="learn"><div class="ln">3</div><div class="learn-body"><h4>Real validation is behavioural</h4><p>Nobody told me it was good. They just kept using it. That silence was the best feedback I got.</p></div></div>
+        <div class="learn"><div class="ln">4</div><div class="learn-body"><h4>Small and intentional beats large and passive</h4><p>12 active users using it exactly as intended is more meaningful than 10,000 passive downloads. I built for depth. That was the choice.</p></div></div>
+      </div>
+
+      <div class="closing">
+        <div class="cap">Founder's note</div>
+        <p>Any company that hires me gets a designer who has felt the weight of shipping something real — who has made product decisions, not just design decisions. I know what it means to own something end to end.</p>
+        <div class="sign">— Abhishek</div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="panel reveal" style="margin-bottom:0;max-width:var(--maxw);">
+    <div class="foot-grid">
+      <div>
+        <h4>On the desk</h4>
+        <div class="now-card">
+          <div class="cover"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M7 3.5 L7 23 L12 18.4 L15.2 25.6 L18 24.3 L14.9 17.3 L21 16.9 Z" fill="#eaf6ef"/><circle class="desk-dot" cx="24.5" cy="8" r="3" fill="#eaf6ef"/></svg></div>
+          <div>
+            <div class="t">Designing decisions, not screens</div>
+            <div class="s">Always designing for clarity, at scale</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#work">Selected work</a></li>
+          <li><a href="index.html#writing">Writing</a></li>
+          <li><a href="index.html#resume">Experience</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Medium</a></li>
+          <li><a href="index.html#contact">Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="pn-nav">
+    <a class="pn-back" href="index.html#work">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to all work
+    </a>
+    <a class="pn-next" href="ai-audit.html">
+      <span class="cap">Next project</span>
+      <span class="nm">AI-Driven UX Audit →</span>
+    </a>
+  </div>
+
+  <div class="foot-note">
+    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>Designed &amp; built end to end.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.10, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  /* story strip */
+  var st=document.getElementById('storyTrack');
+  if(st){
+    var si=0,smax=2;
+    var sp=document.getElementById('storyPrev'),sn=document.getElementById('storyNext');
+    var sdots=[].slice.call(document.querySelectorAll('#storyDots .car-dot'));
+    function supd(){
+      st.style.transform='translateX(-'+(si*100)+'%)';
+      sdots.forEach(function(dn,k){dn.classList.toggle('on',k===si);});
+      sp.disabled=si===0; sn.disabled=si===smax;
+    }
+    sp.addEventListener('click',function(){if(si>0){si--;supd();}});
+    sn.addEventListener('click',function(){if(si<smax){si++;supd();}});
+    sdots.forEach(function(dn){dn.addEventListener('click',function(){si=+dn.getAttribute('data-i');supd();});});
+    supd();
+  }
+
+  /* screen carousel */
+  var track=document.getElementById('carTrack');
+  if(track){
+    var idx=0,max=2;
+    var prev=document.getElementById('carPrev'),next=document.getElementById('carNext');
+    var dots=[].slice.call(document.querySelectorAll('#carDots .car-dot'));
+    function upd(){
+      track.style.transform='translateX(-'+(idx*100)+'%)';
+      dots.forEach(function(dn,k){dn.classList.toggle('on',k===idx);});
+      prev.disabled=idx===0; next.disabled=idx===max;
+    }
+    prev.addEventListener('click',function(){if(idx>0){idx--;upd();}});
+    next.addEventListener('click',function(){if(idx<max){idx++;upd();}});
+    dots.forEach(function(dn){dn.addEventListener('click',function(){idx=+dn.getAttribute('data-i');upd();});});
+    upd();
+  }
+})();
+</script>
+
+</body>
+</html>

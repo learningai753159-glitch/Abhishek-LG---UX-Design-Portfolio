@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Speed. Human Depth. — Case Study · Abhishek LG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Quicksand:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" />
+<style>
+  :root{
+    --cream:#f3eee3;
+    --panel:#fbf8f1;
+    --panel-2:#f7f2e8;
+    --green:#15543b;
+    --green-deep:#0f3f2c;
+    --ink:#2c3733;
+    --ink-soft:#5d6b64;
+    --ink-faint:#9aa49c;
+    --black:#191919;
+    --peach:#f6d6ad;
+    --lavender:#dcd7f3;
+    --sky:#c4e2f4;
+    --pink:#f6c8c3;
+    --mint:#cde6d4;
+    --yellow:#f7d24a;
+    --tag:#e9e3d6;
+    --radius-xl:40px;
+    --radius-lg:28px;
+    --radius-md:20px;
+    --shadow-card:0 18px 40px -24px rgba(20,40,30,.35);
+    --shadow-soft:0 10px 30px -20px rgba(20,40,30,.3);
+    --maxw:1240px;
+    --font-display:'Fredoka',system-ui,sans-serif;
+    --font-body:'DM Sans',system-ui,sans-serif;
+    --font-hand:'Caveat',cursive;
+    --green-bright:#008953;
+    --font-hero:'Bricolage Grotesque',sans-serif;
+    --font-cursive:'Bricolage Grotesque',sans-serif;
+    --font-proj:'Bricolage Grotesque',sans-serif;
+    --font-quote:'Quicksand',var(--font-body);
+    --font-num:'Libre Baskerville',Georgia,serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:120px;}
+  body{
+    margin:0;background:var(--cream);color:var(--ink);
+    font-family:var(--font-body);font-size:18px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;color:var(--green-bright);margin:0;line-height:1.04;letter-spacing:-.01em;}
+
+  /* ---------- panels ---------- */
+  .panel{background:var(--panel);border-radius:var(--radius-xl);padding:72px;margin:26px auto;max-width:var(--maxw);box-shadow:var(--shadow-soft);}
+
+  /* ---------- nav ---------- */
+  .nav{position:fixed;top:18px;left:0;right:0;z-index:80;display:flex;justify-content:center;align-items:center;pointer-events:none;}
+  .nav-inner{pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:26px;background:rgba(251,248,241,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(20,60,40,.07);padding:8px 8px 8px 18px;border-radius:999px;box-shadow:0 14px 34px -22px rgba(20,40,30,.5);}
+  .nav-brand{display:flex;align-items:center;gap:11px;}
+  .nav-avatar{width:34px;height:34px;border-radius:50%;flex:0 0 auto;background:#15543b url('assets/abhishek-avatar.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:#dff0e6;font-family:var(--font-display);font-weight:600;font-size:13px;border:2px solid rgba(255,255,255,.5);}
+  .nav-brand .nm{font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--green-bright);white-space:nowrap;}
+  .nav-back{font-weight:600;font-size:15px;color:#fff;background:var(--green-bright);padding:10px 20px;border-radius:999px;transition:transform .15s ease, box-shadow .2s ease;display:inline-flex;align-items:center;gap:8px;}
+  .nav-back:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(21,84,59,.7);}
+
+  /* ---------- case layout ---------- */
+  .case-shell{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .main{min-width:0;}
+  .main .panel{margin:0 0 22px;padding:72px;max-width:none;}
+  .main .panel:first-child{margin-top:0;}
+
+  .eyebrow-num{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-body);font-weight:600;font-size:15px;letter-spacing:.01em;color:var(--green-bright);background:rgba(21,84,59,.08);padding:8px 16px;border-radius:999px;margin-bottom:24px;}
+  .sec-title{font-family:var(--font-cursive);font-size:clamp(34px,4.2vw,52px);color:var(--green-bright);margin-bottom:18px;letter-spacing:0;}
+  .lead-line{font-family:var(--font-quote);font-weight:600;font-size:clamp(20px,2vw,26px);line-height:1.3;color:var(--ink);max-width:none;margin:0 0 26px;letter-spacing:-.01em;}
+  .body-copy{font-size:18px;color:var(--ink-soft);line-height:1.62;max-width:64ch;margin:0 0 18px;}
+  .body-copy strong,.body-copy em{color:var(--ink);font-style:normal;font-weight:600;}
+
+  /* hero */
+  .case-hero{padding-top:132px;}
+  .main .panel.case-hero{padding-top:132px;}
+  .role-badge{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-body);font-weight:600;font-size:16px;color:var(--green-bright);background:rgba(21,84,59,.08);padding:8px 16px;border-radius:999px;margin-bottom:26px;}
+  .role-badge .dot{width:8px;height:8px;border-radius:50%;background:#2fae74;box-shadow:0 0 0 4px rgba(47,174,116,.18);}
+  .case-hero .proj{font-family:var(--font-hero);font-size:clamp(40px,6.5vw,82px);font-weight:400;line-height:.98;margin-bottom:10px;letter-spacing:0;}
+  .case-hero .headline{font-family:var(--font-quote);font-weight:600;font-size:clamp(26px,3.4vw,44px);color:#1e1f1e;max-width:none;margin:8px 0 22px;line-height:1.15;letter-spacing:-.01em;}
+  .case-hero .subline{font-size:clamp(17px,1.6vw,21px);color:var(--ink-soft);max-width:62ch;line-height:1.6;margin:0 0 40px;}
+
+  /* metric row */
+  .metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:8px;}
+  .metric-card{background:var(--panel-2);border-radius:var(--radius-md);padding:24px 26px;border:1px solid rgba(20,60,40,.06);}
+  .metric-card .num{font-family:var(--font-num);font-weight:700;font-size:clamp(26px,2.8vw,40px);color:var(--green);line-height:1;}
+  .metric-card .lab{font-size:14.5px;color:var(--ink-soft);margin-top:10px;line-height:1.4;font-weight:500;}
+
+  /* placeholders */
+  .ph-drop{position:relative;border-radius:18px;overflow:hidden;background:repeating-linear-gradient(45deg,#e7e0d2 0 12px,#efe9dc 12px 24px);border:1px solid rgba(20,60,40,.08);display:flex;align-items:center;justify-content:center;text-align:center;color:#8a8472;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12.5px;letter-spacing:.04em;padding:14px;}
+  .ph-drop.green{background:repeating-linear-gradient(45deg,#1c5b40 0 12px,#1f6446 12px 24px);color:#bfe0cf;border-color:rgba(255,255,255,.12);}
+  .ph-video{aspect-ratio:16/9;width:100%;margin-top:30px;}
+  .ph-video .badge{position:absolute;display:inline-flex;align-items:center;gap:10px;background:rgba(16,18,16,.78);color:#eee;padding:12px 20px;border-radius:999px;font-size:13px;letter-spacing:.02em;}
+  .ph-video .badge svg{width:16px;height:16px;}
+  /* prototype walkthrough video embed */
+  .proto-video{margin-top:30px;padding:0 40px;}
+  .proto-video .vlabel{display:block;font-family:var(--font-body);font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px;}
+  .proto-video .vframe{border-radius:16px;overflow:hidden;box-shadow:0 18px 40px -24px rgba(20,40,30,.45),0 4px 16px rgba(0,0,0,.08);}
+
+  /* insight cards */
+  .insight-grid{display:grid;gap:16px;margin-top:8px;}
+  .insight-grid.two{grid-template-columns:1fr 1fr;}
+  .insight-grid.three{grid-template-columns:repeat(3,1fr);}
+  .insight{background:var(--panel-2);border-radius:var(--radius-md);padding:26px 28px;border:1px solid rgba(20,60,40,.06);}
+  .insight .k{font-family:var(--font-body);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--green-bright);margin-bottom:10px;}
+  .insight p{margin:0;font-size:16px;color:var(--ink-soft);line-height:1.55;}
+
+  /* principles — editorial numbered list */
+  .principle-list{display:flex;flex-direction:column;margin-top:8px;}
+  .principle-row{display:flex;align-items:flex-start;gap:22px;padding:22px 0;border-bottom:1px solid rgba(20,60,40,.1);}
+  .principle-row:first-child{padding-top:6px;}
+  .principle-row:last-child{border-bottom:none;}
+  .principle-row .pr-num{flex:0 0 auto;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-num);font-weight:700;font-size:14px;}
+  .principle-row:nth-child(1) .pr-num{background:var(--peach);color:#7a4f0a;}
+  .principle-row:nth-child(2) .pr-num{background:var(--lavender);color:#4a3f7a;}
+  .principle-row:nth-child(3) .pr-num{background:var(--sky);color:#245b7a;}
+  .principle-row:nth-child(4) .pr-num{background:var(--mint);color:#1f5c3d;}
+  .principle-row .pr-body{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 14px;flex:1;}
+  .principle-row h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0;flex:0 0 auto;min-width:190px;}
+  .principle-row p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.5;flex:1;min-width:220px;}
+
+  /* process blocks (principles) */
+  .proc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px;}
+  .proc{border-radius:var(--radius-lg);padding:30px 30px;box-shadow:var(--shadow-card);position:relative;overflow:hidden;}
+  .proc:nth-child(1){background:var(--peach);}
+  .proc:nth-child(2){background:var(--lavender);}
+  .proc:nth-child(3){background:var(--sky);}
+  .proc:nth-child(4){background:var(--mint);}
+  .proc h4{font-family:var(--font-cursive);font-weight:600;font-size:27px;color:#26312c;margin-bottom:12px;letter-spacing:0;line-height:1.1;}
+  .proc p{margin:0;font-size:15.5px;color:#39433d;line-height:1.55;}
+
+  /* impact stats */
+  .impact-grid{display:flex;flex-wrap:wrap;gap:0;margin:8px 0 40px;border-top:1px solid rgba(20,60,40,.12);border-bottom:1px solid rgba(20,60,40,.12);}
+  .impact-stat{flex:1;min-width:180px;padding:30px 26px;border-left:1px solid rgba(20,60,40,.12);}
+  .impact-stat:first-child{border-left:none;}
+  .impact-stat .num{font-family:var(--font-num);font-weight:700;font-size:clamp(32px,4vw,44px);color:var(--green-bright);line-height:1;}
+  .impact-stat .lab{font-size:14.5px;color:var(--ink-soft);margin-top:12px;line-height:1.4;font-weight:500;}
+
+  /* pull quote */
+  .pull{padding:10px 0;margin-top:26px;}
+  .pull p{font-family:var(--font-quote);font-weight:600;font-size:clamp(19px,2vw,24px);line-height:1.35;color:var(--ink);margin:0;max-width:none;letter-spacing:-.01em;}
+
+  /* learnings — editorial numbered list */
+  .learn-grid{display:flex;flex-direction:column;margin-top:8px;}
+  .learn{display:flex;align-items:flex-start;gap:22px;padding:24px 0;border-bottom:1px solid rgba(20,60,40,.1);}
+  .learn:first-child{padding-top:6px;}
+  .learn:last-child{border-bottom:none;}
+  .learn .ln{flex:0 0 auto;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-num);font-weight:700;font-size:14px;margin:0;line-height:1;}
+  .learn:nth-child(1) .ln{background:var(--peach);color:#7a4f0a;}
+  .learn:nth-child(2) .ln{background:var(--lavender);color:#4a3f7a;}
+  .learn:nth-child(3) .ln{background:var(--sky);color:#245b7a;}
+  .learn:nth-child(4) .ln{background:var(--mint);color:#1f5c3d;}
+  .learn-body{flex:1;}
+  .learn h4{font-family:var(--font-proj);font-weight:700;font-size:19px;color:var(--ink);margin:0 0 8px;}
+  .learn p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.5;}
+
+  /* closing */
+  .closing{background:var(--green);border-radius:var(--radius-xl);padding:56px;color:#dff0e6;margin-top:24px;}
+  .closing .cap{font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#8fc4a8;margin-bottom:18px;}
+  .closing p{font-family:var(--font-quote);font-weight:600;font-size:clamp(22px,2.6vw,33px);line-height:1.3;color:#fff;margin:0;max-width:40ch;letter-spacing:-.01em;}
+
+  /* ---------- footer ---------- */
+  footer{padding:30px 28px 60px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+  .foot-grid h4{font-family:var(--font-display);font-size:24px;color:var(--ink);margin-bottom:20px;}
+  .foot-grid ul{list-style:none;padding:0;margin:0;}
+  .foot-grid li{margin-bottom:12px;}
+  .foot-grid a{font-size:16px;color:var(--ink-soft);transition:color .2s;}
+  .foot-grid a:hover{color:var(--green);}
+  .now-card{background:var(--green-bright);border-radius:18px;padding:18px;display:flex;align-items:center;gap:16px;max-width:360px;color:#dff0e6;}
+  .now-card .cover{width:64px;height:64px;border-radius:10px;background:rgba(255,255,255,.08);flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
+  .now-card .cover .desk-dot{transform-box:fill-box;transform-origin:center;animation:deskPulse 2s ease-in-out infinite;}
+  @keyframes deskPulse{0%,100%{transform:scale(.65);opacity:.4}50%{transform:scale(1.15);opacity:1}}
+  @media (prefers-reduced-motion:reduce){.now-card .cover .desk-dot{animation:none;opacity:.9}}
+  .now-card .t{font-weight:700;font-size:15px;color:#fff;}
+  .now-card .s{font-size:13px;color:#aacdb9;}
+  .pn-nav{max-width:var(--maxw);margin:22px auto 0;padding:0 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .pn-nav .pn-back{font-weight:600;font-size:16px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;transition:color .2s;}
+  .pn-nav .pn-back:hover{color:var(--green);}
+  .pn-next{display:flex;flex-direction:column;align-items:flex-end;text-align:right;background:var(--panel);border-radius:var(--radius-lg);padding:18px 26px;box-shadow:var(--shadow-soft);transition:transform .15s ease,box-shadow .2s ease;}
+  .pn-next:hover{transform:translateY(-2px);box-shadow:var(--shadow-card);}
+  .pn-next .cap{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);}
+  .pn-next .nm{font-family:var(--font-proj);font-weight:700;font-size:22px;color:var(--green-bright);margin-top:4px;}
+  .foot-note{max-width:var(--maxw);margin:36px auto 0;padding:0 28px;font-size:14px;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+
+  /* ---------- AI Audit components ---------- */
+  /* severity badges */
+  .sev{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-body);font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;padding:6px 13px;border-radius:999px;white-space:nowrap;}
+  .sev .d{width:7px;height:7px;border-radius:50%;flex:0 0 auto;}
+  .sev.critical{background:#f6dcd6;color:#a3402c;} .sev.critical .d{background:#cf4f33;}
+  .sev.major{background:#f7e6c5;color:#8a5a12;} .sev.major .d{background:#d99a2b;}
+  .sev.minor{background:#d6ecd9;color:#1f6a45;} .sev.minor .d{background:#2f9e63;}
+
+  /* severity pills row */
+  .sev-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px;}
+  .tier{background:var(--panel-2);border-radius:var(--radius-md);padding:22px 24px;border:1px solid rgba(20,60,40,.06);}
+  .tier .sev{margin-bottom:13px;}
+  .tier p{margin:0;font-size:15px;color:var(--ink-soft);line-height:1.5;}
+
+  /* framework hint line */
+  .hint-line{font-size:17px;color:var(--ink-soft);line-height:1.6;max-width:70ch;margin:0 0 24px;}
+  .hint-line strong{color:var(--ink);font-weight:600;}
+
+  /* finding cards */
+  .finding-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;align-items:stretch;}
+  .finding{display:block;background:var(--panel-2);border-radius:var(--radius-lg);padding:22px 24px;border:1px solid rgba(20,60,40,.06);}
+  .finding:not(.fwide){display:flex;flex-direction:column;}
+  .finding:not(.fwide) .ftext{min-height:0;}
+  .finding .fhead{display:flex;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap;}
+  .finding .fnum{font-family:var(--font-num);font-weight:700;font-size:15px;color:var(--ink-faint);letter-spacing:.02em;}
+  .finding h4{font-family:var(--font-proj);font-weight:700;font-size:21px;color:var(--ink);margin:0 0 11px;line-height:1.22;}
+  .finding p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.58;}
+  .finding .fdivider{border:none;border-top:1px solid rgba(20,60,40,.12);margin:22px 0 0;}
+  .fshot{display:flex;align-items:center;justify-content:center;margin-top:20px;}
+  .fshot img{width:100%;max-width:190px;height:auto;border-radius:14px;box-shadow:0 4px 16px rgba(0,0,0,0.12);display:block;margin:0 auto;}
+  .fstack{display:flex;flex-direction:column;align-items:center;gap:8px;}
+  .fstack .fstack-imgs{display:flex;flex-direction:column;align-items:center;gap:8px;}
+  .fstack img{max-height:160px;width:auto;max-width:100%;height:auto;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.10);display:block;}
+  .fstack .fstack-label{font-size:13.5px;font-weight:600;color:var(--ink-soft);text-align:center;margin-top:4px;}
+  /* finding 03 — full-width text + horizontal screen row */
+  .finding.fwide{grid-column:1 / -1;display:block;}
+  .fwide .fdivider{border:none;border-top:1px solid rgba(20,60,40,.12);margin:22px 0 0;}
+  .fwide .frow-wrap{padding:32px;}
+  .fwide .frow{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;}
+  .fwide .frow img{width:100%;height:auto;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.10);display:block;}
+  .fwide .frow-label{text-align:center;font-size:13.5px;font-weight:600;color:var(--ink-soft);margin-top:24px;}
+
+  /* framework cards — colored to stand out from surrounding UI */
+  .insight.fw{border:none;box-shadow:0 2px 10px -4px rgba(20,40,30,.15);}
+  .insight.fw .k{color:#26312c;}
+  .insight.fw p{color:#3c453e;}
+  .insight.fw.peach{background:var(--peach);}
+  .insight.fw.lavender{background:var(--lavender);}
+  .insight.fw.sky{background:var(--sky);}
+  .insight.fw.pink{background:var(--pink);}
+  .insight.fw.mint{background:var(--mint);}
+  .insight.fw.yellow{background:var(--yellow);}
+
+  /* systemic issues */
+  .sys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px;}
+  .sys{background:var(--panel-2);border-left:4px solid var(--yellow);border-radius:0 18px 18px 0;padding:24px 26px;}
+  .sys h5{font-family:var(--font-proj);font-weight:700;font-size:16.5px;color:var(--ink);margin:0 0 9px;}
+  .sys p{margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55;}
+
+  /* journey map */
+  .journey{display:flex;gap:14px;margin-top:8px;}
+  .stage{flex:1;border-radius:var(--radius-md);padding:22px 20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 2px 10px -4px rgba(20,40,30,.12);}
+  .stage:nth-child(1){background:rgba(217,154,43,.14);}
+  .stage:nth-child(2){background:rgba(217,123,43,.16);}
+  .stage:nth-child(3){background:rgba(217,123,43,.22);}
+  .stage:nth-child(4){background:rgba(207,79,51,.18);}
+  .stage:nth-child(5){background:rgba(163,64,44,.2);}
+  .stage .st-label{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;}
+  .stage .st-emotion{font-family:var(--font-proj);font-weight:800;font-size:23px;letter-spacing:-.01em;}
+  .stage:nth-child(1) .st-label,.stage:nth-child(1) .st-emotion,.stage:nth-child(1) p{color:#9c6c0a;}
+  .stage:nth-child(2) .st-label,.stage:nth-child(2) .st-emotion,.stage:nth-child(2) p{color:#b0611b;}
+  .stage:nth-child(3) .st-label,.stage:nth-child(3) .st-emotion,.stage:nth-child(3) p{color:#b0611b;}
+  .stage:nth-child(4) .st-label,.stage:nth-child(4) .st-emotion,.stage:nth-child(4) p{color:#a3402c;}
+  .stage:nth-child(5) .st-label,.stage:nth-child(5) .st-emotion,.stage:nth-child(5) p{color:#7a2f1f;}
+  .stage .meter{display:flex;gap:4px;}
+  .stage .meter i{flex:1;height:7px;border-radius:3px;background:rgba(20,60,40,.12);}
+  .stage p{margin:0;font-size:13.5px;line-height:1.5;opacity:.88;}
+
+  /* comparison table */
+  .cmp-wrap{margin-top:10px;overflow-x:auto;border-radius:var(--radius-md);}
+  .cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:15.5px;min-width:640px;}
+  .cmp th,.cmp td{padding:17px 20px;text-align:left;vertical-align:top;line-height:1.45;}
+  .cmp thead th{font-family:var(--font-proj);font-weight:700;font-size:16px;color:var(--ink);border-bottom:2px solid rgba(20,60,40,.14);}
+  .cmp thead th.col-bad{color:#a3402c;}
+  .cmp .rowlab{font-family:var(--font-body);font-weight:700;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);white-space:nowrap;}
+  .cmp tbody td{color:var(--ink-soft);border-bottom:1px solid rgba(20,60,40,.08);}
+  .cmp tbody tr:last-child td{border-bottom:none;}
+  .cmp .col-bad{background:#f7e7e1;}
+  .cmp td.col-bad{color:#8a4632;font-weight:600;}
+  .cmp thead th.col-bad{border-bottom-color:transparent;border-radius:14px 14px 0 0;}
+  .cmp tbody tr:last-child td.col-bad{border-radius:0 0 14px 14px;}
+
+  /* workflow steps — horizontal ribbon, not cards */
+  .flow-ribbon{display:flex;align-items:flex-start;gap:10px;margin:30px 0 44px;}
+  .flow-step{flex:1;display:flex;flex-direction:column;gap:9px;}
+  .flow-step .fs-num{width:38px;height:38px;border-radius:50%;background:var(--green-bright);color:#fff;font-family:var(--font-num);font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;}
+  .flow-step h4{font-family:var(--font-proj);font-weight:700;font-size:15px;color:var(--ink);margin:0;line-height:1.2;text-transform:uppercase;letter-spacing:.03em;}
+  .flow-step p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5;}
+  .flow-arrow{flex:0 0 auto;align-self:center;margin-top:-6px;color:var(--ink-faint);}
+  .flow-arrow svg{width:20px;height:20px;}
+
+  /* AI vs human — the hero split */
+  .ai-split{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px;}
+  .ai-col{border-radius:var(--radius-xl);padding:44px 40px;box-shadow:var(--shadow-card);}
+  .ai-col h4{font-size:32px;}
+
+  /* AI vs human split */
+  .ai-split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;}
+  .ai-col{border-radius:var(--radius-lg);padding:34px;box-shadow:var(--shadow-card);}
+  .ai-col.ai{background:var(--lavender);}
+  .ai-col.human{background:var(--mint);}
+  .ai-col h4{font-family:var(--font-cursive);font-weight:600;font-size:27px;color:#26312c;margin-bottom:18px;line-height:1.1;}
+  .ai-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px;}
+  .ai-col li{font-size:15.5px;color:#39433d;line-height:1.5;padding-left:28px;position:relative;}
+  .ai-col li::before{content:'';position:absolute;left:0;top:6px;width:13px;height:13px;border-radius:4px;background:rgba(38,49,44,.32);}
+  .ai-col.human li::before{border-radius:50%;}
+
+  /* before / wireframe / after — screen sets */
+  .ba-grid{display:flex;flex-direction:column;gap:64px;margin-top:28px;}
+  .ba-set{display:flex;flex-direction:column;gap:16px;}
+  .ba-set-head{display:flex;flex-direction:column;gap:12px;margin-bottom:6px;}
+  .ba-set-label{font-family:var(--font-body);font-weight:700;font-size:13px;letter-spacing:.11em;text-transform:uppercase;color:var(--green-bright);}
+  .ba-set-title{font-family:var(--font-cursive);font-weight:600;font-size:clamp(23px,2.3vw,32px);color:var(--ink);line-height:1.12;letter-spacing:0;max-width:32ch;margin:0;text-wrap:pretty;}
+  .ba-cols{display:grid;grid-template-columns:repeat(2,minmax(0,280px));gap:28px;align-items:start;justify-content:center;}
+  .ba-col{display:flex;flex-direction:column;gap:12px;}
+  .ba-chead{font-family:var(--font-body);font-weight:700;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding:8px 12px;border-radius:9px;text-align:center;line-height:1.3;}
+  .ba-chead.before{color:#a8341c;background:rgba(184,52,28,.12);}
+  .ba-chead.wire{color:#8f5c0c;background:rgba(190,124,12,.15);}
+  .ba-chead.after{color:#0d6a41;background:rgba(13,106,65,.12);}
+  .ba-screen{aspect-ratio:618/1375;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,.10);overflow:hidden;}
+  .ba-screen img{width:100%;height:100%;object-fit:cover;display:block;}
+  .ba-screen.ph{display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12.5px;letter-spacing:.03em;line-height:1.5;}
+  .ba-screen.wireph{background:repeating-linear-gradient(45deg,#ece8db 0 11px,#f4f1e8 11px 22px);color:#8a8472;border:1px solid rgba(20,60,40,.09);}
+  .ba-screen.afterph{background:repeating-linear-gradient(45deg,#1c5b40 0 12px,#1f6446 12px 24px);color:#cfe7da;border:1px solid rgba(255,255,255,.12);}
+  /* after: real RailGo phone frames — exact same height as the Before screen, natural proportions (phone ratio 494:1071 vs before 618:1375), centered in the column */
+  .ba-after{display:flex;align-items:flex-start;justify-content:center;}
+  .ba-after img{width:102.6%;max-width:none;height:auto;flex:none;display:block;filter:drop-shadow(0 4px 16px rgba(0,0,0,.08));}
+  .ba-cnote{font-size:13px;color:var(--ink-soft);line-height:1.5;margin:0;text-wrap:pretty;}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1000px){
+    .main .panel{padding:44px 34px;}
+    .main .panel.case-hero{padding-top:132px;}
+    .metric-row{grid-template-columns:1fr;}
+    .insight-grid.two,.insight-grid.three,.proc-grid,.learn-grid{grid-template-columns:1fr;}
+    .sev-tiers,.sys-grid{grid-template-columns:1fr;}
+    .ai-split{grid-template-columns:1fr;}
+    .finding-grid{grid-template-columns:1fr;}
+    .journey{flex-direction:column;}
+    .flow-ribbon{flex-direction:column;}
+    .flow-arrow{display:none;}
+    .ba-cols{gap:18px;grid-template-columns:repeat(2,minmax(0,1fr));}
+    .impact-grid{flex-direction:column;}
+    .impact-stat{border-left:none;border-top:1px solid rgba(20,60,40,.12);}
+    .impact-stat:first-child{border-top:none;}
+    .closing{padding:40px 34px;}
+  }
+  @media (max-width:560px){
+    body{font-size:16.5px;}
+    .main .panel{padding:32px 22px;border-radius:30px;}
+    .main .panel.case-hero{padding-top:132px;}
+    .case-shell{padding:0 16px;}
+    .ba-cols{grid-template-columns:1fr;max-width:360px;}
+    .nav-brand .nm{display:none;}
+    .pn-nav{flex-direction:column;align-items:stretch;}
+    .pn-next{align-items:flex-start;text-align:left;}
+  }
+</style></head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+      <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
+      <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
+    </a>
+    <a class="nav-back" href="index.html#work">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to work
+    </a>
+  </div>
+</nav>
+
+<div class="case-shell" style="padding-top:0;">
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="panel case-hero" data-screen-label="Hero">
+      <span class="role-badge"><span class="dot"></span>AI-Augmented UX · Research Systems</span>
+      <h1 class="proj">AI Speed. Human Depth.</h1>
+      <p class="headline">I didn't just audit an app. I engineered an AI system to do it — then designed the fix.</p>
+      <p class="subline">The audit is proof. AI is the point — a force multiplier for faster research, sharper findings, and more intentional redesign.</p>
+
+      <div class="metric-row">
+        <div class="metric-card"><div class="num">&gt;50%</div><div class="lab">Research time compressed</div></div>
+        <div class="metric-card"><div class="num">8</div><div class="lab">Screens fully classified</div></div>
+        <div class="metric-card"><div class="num">6</div><div class="lab">Frameworks applied simultaneously</div></div>
+      </div>
+    </section>
+
+    <!-- 01 THE PROBLEM WITH UX AUDITS -->
+    <section class="panel reveal" id="problem" data-screen-label="01 The Problem With UX Audits">
+      <span class="eyebrow-num">01 — The Problem With UX Audits</span>
+      <h2 class="sec-title">Most UX audits take weeks. That's a resource problem, not a research problem.</h2>
+      <div class="insight-grid two">
+        <div class="insight"><div class="k">The Old Way</div><p>Senior designers spend the majority of audit time on low-level sorting — tagging violations, building severity matrices by hand. Strategic thinking gets whatever time is left.</p></div>
+        <div class="insight"><div class="k">The Reframe</div><p>AI handles classification at velocity. The designer focuses entirely on synthesis, strategy, and design. That is the system I built.</p></div>
+      </div>
+    </section>
+
+    <!-- THE PRODUCT SELECTED (brief — no number, no eyebrow) -->
+    <section class="panel reveal" data-screen-label="The Product Selected">
+      <h2 class="sec-title">Why IRCTC?</h2>
+      <div class="insight-grid three">
+        <div class="insight"><div class="k">The Scale</div><p>13 million daily passengers. The only official platform to book Indian Railways tickets online. No alternative. No competition.</p></div>
+        <div class="insight"><div class="k">The Stakes</div><p>Missing a booking means missing travel. UX failure here has real-world consequences — not just frustration.</p></div>
+        <div class="insight"><div class="k">The Opportunity</div><p>A monopoly product with no incentive to improve is the most interesting UX problem to audit. Every finding matters more when users have nowhere else to go.</p></div>
+      </div>
+      <div class="pull">
+        <p>"I didn't pick IRCTC because it was broken. I picked it because when 13 million people have no alternative, getting the UX right is not a nice-to-have. It is a responsibility."</p>
+      </div>
+    </section>
+
+    <!-- 02 THE AI AUDIT SYSTEM -->
+    <section class="panel reveal" id="system" data-screen-label="02 The AI Audit System">
+      <span class="eyebrow-num">02 — The AI Audit System</span>
+      <h2 class="sec-title">6 frameworks. 8 screens. Minutes — not weeks.</h2>
+      <p class="hint-line">Custom prompt frameworks built on foundational usability principles — <strong>AI clustered the patterns, I architected the findings.</strong></p>
+      <div class="insight-grid three fw-grid">
+        <div class="insight fw peach"><div class="k">Nielsen's 10 Heuristics</div><p>Primary classifier — every observation mapped against all 10 heuristics instantly.</p></div>
+        <div class="insight fw lavender"><div class="k">Fitts's Law</div><p>Interaction geometry — violations flagged when the most-used action requires the most physical effort.</p></div>
+        <div class="insight fw sky"><div class="k">Cognitive Load Theory</div><p>Friction classifier — screens exceeding working-memory thresholds identified at scale.</p></div>
+        <div class="insight fw pink"><div class="k">Jakob's Law</div><p>Convention detector — all departures from established mobile UI conventions flagged.</p></div>
+        <div class="insight fw mint"><div class="k">Visual Hierarchy</div><p>Salience mapping — screens where everything competes and nothing wins.</p></div>
+        <div class="insight fw yellow"><div class="k">WCAG 2.1</div><p>Accessibility — contrast, touch targets, and legibility evaluated across the full flow.</p></div>
+      </div>
+      <div class="sev-tiers">
+        <div class="tier"><span class="sev critical"><span class="d"></span>Critical</span><p>Transaction blocks / search failures.</p></div>
+        <div class="tier"><span class="sev major"><span class="d"></span>Major</span><p>Navigation confusion / cognitive friction.</p></div>
+        <div class="tier"><span class="sev minor"><span class="d"></span>Minor</span><p>Visual hierarchy / label clarity.</p></div>
+      </div>
+    </section>
+
+    <!-- 03 KEY FINDINGS -->
+    <section class="panel reveal" id="findings" data-screen-label="03 Key Findings">
+      <span class="eyebrow-num">03 — Key Findings</span>
+      <h2 class="sec-title">8 screens. Every single one had a classifiable violation.</h2>
+      <div class="finding-grid">
+        <div class="finding">
+          <div class="ftext">
+            <div class="fhead"><span class="fnum">Finding 01</span><span class="sev critical"><span class="d"></span>Critical</span></div>
+            <h4>Login CTA invisible against app icon</h4>
+            <p>The circular red button matches the app icon — so the primary CTA reads as decoration.</p>
+          </div>
+          <div class="fshot"><img src="findings/f01-signin.jpeg" alt="IRCTC Sign In screen — circular red LOGIN button blends into the app icon" /></div>
+        </div>
+        <div class="finding">
+          <div class="ftext">
+            <div class="fhead"><span class="fnum">Finding 02</span><span class="sev critical"><span class="d"></span>Critical</span></div>
+            <h4>Ad CTA competes with recovery flow</h4>
+            <p>A "SIGN UP" ad banner sits above the "Next" button during password recovery — two CTAs when the user is already locked out.</p>
+          </div>
+          <div class="fshot"><img src="findings/f02-forgot.jpeg" alt="Forgot Account Details screen — IDFC First Bank ad banner sits directly above the Next button" /></div>
+        </div>
+        <div class="finding fwide">
+          <div>
+            <div class="fhead"><span class="fnum">Finding 03</span><span class="sev major"><span class="d"></span>Major</span></div>
+            <h4>3 taps to reach core function</h4>
+            <p>Home → Train → Book Ticket → Search. Fitts's Law violated on India's most-used transport app.</p>
+          </div>
+          <div class="frow-wrap">
+            <div class="frow">
+              <img src="findings/f03-1-home.jpeg" alt="IRCTC Rail Connect home screen" />
+              <img src="findings/f03-2-train.jpeg" alt="Train menu screen" />
+              <img src="findings/f03-3-search.jpeg" alt="Train search screen" />
+            </div>
+            <div class="frow-label">Home → Train → Search — 3 taps</div>
+          </div>
+        </div>
+        <div class="finding">
+          <div class="ftext">
+            <div class="fhead"><span class="fnum">Finding 04</span><span class="sev major"><span class="d"></span>Major</span></div>
+            <h4>Ad covers fare and booking CTA</h4>
+            <p>An SBI ad sits between class/availability and the booking CTA. Users scroll past a bank ad to see what they will pay.</p>
+          </div>
+          <div class="fshot"><img src="findings/f04-traindetails.jpeg" alt="Train details screen — large SBI ad covers the fare and the Passenger Details CTA" /></div>
+        </div>
+        <div class="finding">
+          <div class="ftext">
+            <div class="fhead"><span class="fnum">Finding 05</span><span class="sev major"><span class="d"></span>Major</span></div>
+            <h4>Full-screen ad mid passenger form</h4>
+            <p>A furniture ad interrupts the highest-stakes data-entry screen. UPI listed as secondary.</p>
+          </div>
+          <div class="fshot"><img src="findings/f05-passenger.jpeg" alt="Passenger Details screen — full Pepperfry furniture ad interrupts the form" /></div>
+        </div>
+      </div>
+      <div class="sys-grid">
+        <div class="sys"><h5>No progress indicator</h5><p>5-screen flow. Zero indication of steps remaining. H1 violation across the entire funnel.</p></div>
+        <div class="sys"><h5>Typography without hierarchy</h5><p>Titles, labels, body, CTAs — near-identical weights. When everything is important, nothing is.</p></div>
+        <div class="sys"><h5>Colour encodes nothing</h5><p>Orange on app bars, CTAs, status badges, headers simultaneously. One colour, every meaning — carries no meaning.</p></div>
+      </div>
+    </section>
+
+    <!-- 04 CUSTOMER JOURNEY MAP -->
+    <section class="panel reveal" id="journey" data-screen-label="04 Customer Journey Map">
+      <span class="eyebrow-num">04 — Customer Journey Map</span>
+      <h2 class="sec-title">Failed at every commitment peak.</h2>
+      <div class="journey">
+        <div class="stage">
+          <span class="st-label">Stage 01</span><span class="st-emotion">Anxious</span>
+          <div class="meter"><i style="background:#d99a2b"></i><i style="background:#d99a2b"></i><i></i><i></i><i></i></div>
+          <p>Launch — outdated visual language triggers distrust before any interaction.</p>
+        </div>
+        <div class="stage">
+          <span class="st-label">Stage 02</span><span class="st-emotion">Frustrated</span>
+          <div class="meter"><i style="background:#d97b2b"></i><i style="background:#d97b2b"></i><i style="background:#d97b2b"></i><i></i><i></i></div>
+          <p>Login — invisible CTA, cross-promo grid, ad at worst possible moment.</p>
+        </div>
+        <div class="stage">
+          <span class="st-label">Stage 03</span><span class="st-emotion">Impatient</span>
+          <div class="meter"><i style="background:#d97b2b"></i><i style="background:#d97b2b"></i><i style="background:#cf4f33"></i><i style="background:#cf4f33"></i><i></i></div>
+          <p>Finding booking — identical icons, 3 taps minimum, no shortcut for primary task.</p>
+        </div>
+        <div class="stage">
+          <span class="st-label">Stage 04</span><span class="st-emotion">Angry</span>
+          <div class="meter"><i style="background:#cf4f33"></i><i style="background:#cf4f33"></i><i style="background:#cf4f33"></i><i style="background:#cf4f33"></i><i style="background:#cf4f33"></i></div>
+          <p>Train details — ad physically covers the two most important elements.</p>
+        </div>
+        <div class="stage">
+          <span class="st-label">Stage 05</span><span class="st-emotion">Exhausted</span>
+          <div class="meter"><i style="background:#a3402c"></i><i style="background:#a3402c"></i><i style="background:#a3402c"></i><i style="background:#a3402c"></i><i style="background:#a3402c"></i></div>
+          <p>Passenger form — full-screen ad at most critical data-entry moment.</p>
+        </div>
+      </div>
+      <div class="pull">
+        <p>"IRCTC's worst friction hits users at exactly the stages where commitment is highest. The app is failing people who have already said yes."</p>
+      </div>
+    </section>
+
+    <!-- 05 COMPETITOR ANALYSIS -->
+    <section class="panel reveal" id="competitor" data-screen-label="05 Competitor Analysis">
+      <span class="eyebrow-num">05 — Competitor Analysis</span>
+      <h2 class="sec-title">What the market figured out that IRCTC hasn't.</h2>
+      <div class="cmp-wrap">
+        <table class="cmp">
+          <colgroup><col /><col /><col /><col /></colgroup>
+          <thead>
+            <tr><th></th><th class="col-bad">IRCTC</th><th>MakeMyTrip</th><th>Cleartrip</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="rowlab">Primary action</td><td class="col-bad">3 taps</td><td>Home screen</td><td>Home screen</td></tr>
+            <tr><td class="rowlab">Progress indicator</td><td class="col-bad">None</td><td>Throughout</td><td>Throughout</td></tr>
+            <tr><td class="rowlab">Ad placement</td><td class="col-bad">In flows</td><td>Passive only</td><td>Minimal</td></tr>
+            <tr><td class="rowlab">Visual hierarchy</td><td class="col-bad">None</td><td>Clear system</td><td>Clean</td></tr>
+            <tr><td class="rowlab">UPI prominence</td><td class="col-bad">Secondary</td><td>Primary</td><td>Primary</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-grid three" style="margin-top:26px;">
+        <div class="insight fw sky"><div class="k">From MakeMyTrip</div><p>Search-first home eliminates intermediate screens — primary task in one tap.</p></div>
+        <div class="insight fw mint"><div class="k">From Cleartrip</div><p>Progress visibility reduces anxiety — users complete more when they know how close they are to done.</p></div>
+        <div class="insight fw lavender"><div class="k">From Both</div><p>Ads belong in passive browsing. Never inside login, booking, or payment.</p></div>
+      </div>
+    </section>
+
+    <!-- 06 THE AI ORCHESTRATION WORKFLOW -->
+    <section class="panel reveal" id="workflow" data-screen-label="06 The AI Orchestration Workflow">
+      <span class="eyebrow-num">06 — The AI Orchestration Workflow</span>
+      <h2 class="sec-title">This is what AI-augmented UX research actually looks like.</h2>
+      <div class="flow-ribbon">
+        <div class="flow-step"><span class="fs-num">01</span><h4>Framework Engineering</h4><p>6 custom prompt frameworks, each trained on a specific usability principle.</p></div>
+        <span class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="flow-step"><span class="fs-num">02</span><h4>AI Classification</h4><p>8 screens classified simultaneously — clustered by framework, severity, and screen, in minutes.</p></div>
+        <span class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="flow-step"><span class="fs-num">03</span><h4>Human Synthesis</h4><p>3 systemic issues AI cannot see — patterns that require product strategy, not just screens.</p></div>
+        <span class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="flow-step"><span class="fs-num">04</span><h4>Designer-Led Redesign</h4><p>Every screen planned before prompting. AI generated. I refined. Every decision mine.</p></div>
+      </div>
+      <div class="ai-split">
+        <div class="ai-col ai">
+          <h4>What AI did</h4>
+          <ul>
+            <li>Classified all touchpoints against 6 frameworks simultaneously</li>
+            <li>Clustered severity automatically</li>
+            <li>Generated journey emotional intensity maps</li>
+            <li>Identified competitor gaps instantly</li>
+          </ul>
+        </div>
+        <div class="ai-col human">
+          <h4>What I did</h4>
+          <ul>
+            <li>Defined and trained the prompt frameworks</li>
+            <li>Validated AI output against real usage</li>
+            <li>Found the 3 systemic issues AI missed</li>
+            <li>Made every design decision</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pull">
+        <p>"AI is a brilliant synthesizer. It is an incredibly poor architect of human empathy."</p>
+      </div>
+    </section>
+
+    <!-- 07 REDESIGN PRINCIPLES + BEFORE & AFTER -->
+    <section class="panel reveal" id="redesign" data-screen-label="07 Redesign Principles">
+      <span class="eyebrow-num">07 — Redesign Principles + Before &amp; After</span>
+      <h2 class="sec-title">Every finding maps to a principle. Every principle maps to a decision.</h2>
+      <div class="principle-list">
+        <div class="principle-row"><span class="pr-num">01</span><div class="pr-body"><h4>Search first</h4><p>Primary task on home screen. Zero intermediate screens for what 80% of users came to do.</p></div></div>
+        <div class="principle-row"><span class="pr-num">02</span><div class="pr-body"><h4>Zero ads in task flow</h4><p>Ads in passive moments only — never inside login, recovery, booking, or payment.</p></div></div>
+        <div class="principle-row"><span class="pr-num">03</span><div class="pr-body"><h4>Progress visibility</h4><p>A 5-step flow needs a 5-step indicator. Users always know where they are.</p></div></div>
+        <div class="principle-row"><span class="pr-num">04</span><div class="pr-body"><h4>Colour with meaning</h4><p>One colour cannot mean everything. Clear visual hierarchy across actions, status, and decoration.</p></div></div>
+      </div>
+      <div class="ba-grid">
+
+        <!-- SET 1 — LOGIN -->
+        <div class="ba-set">
+          <div class="ba-set-head">
+            <span class="ba-set-label">Screen 01 — Login</span>
+            <h3 class="ba-set-title">From a cluttered orange wall to a clean, single-purpose screen</h3>
+          </div>
+          <div class="ba-cols">
+            <div class="ba-col">
+              <div class="ba-chead before">Before — Original IRCTC</div>
+              <div class="ba-screen"><img src="findings/f01-signin.jpeg" alt="IRCTC Sign In screen — circular red LOGIN button, More Apps of IRCTC cross-promo grid, and ad banner at the bottom" /></div>
+              <p class="ba-cnote">LOGIN button styled as icon. 5-app cross-promo grid. Ad banner at bottom. Maximum cognitive load on the simplest screen.</p>
+            </div>
+            <div class="ba-col">
+              <div class="ba-chead after">After — RailGo Redesign (Hi-fi)</div>
+              <div class="ba-after"><img src="findings/after-login.png" alt="RailGo redesigned login — RailGo logo, Welcome back heading, a single mobile number field and a Send OTP button, no ads" /></div>
+              <p class="ba-cnote">Phone number + OTP. Single prominent CTA. Zero ads, zero cross-promotion. Task completable in under 10 seconds.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SET 2 — HOME -->
+        <div class="ba-set">
+          <div class="ba-set-head">
+            <span class="ba-set-label">Screen 02 — Home</span>
+            <h3 class="ba-set-title">Search on the home screen — eliminating the 3-tap navigation entirely</h3>
+          </div>
+          <div class="ba-cols">
+            <div class="ba-col">
+              <div class="ba-chead before">Before — Original IRCTC</div>
+              <div class="ba-screen"><img src="findings/f03b-trainsearch.jpeg" alt="IRCTC Train Search screen — STN station codes only, reached after three taps, with an ad below the Search Trains CTA" /></div>
+              <p class="ba-cnote">This is what users reach after 3 taps. Station codes only, cluttered layout, ad below the search CTA.</p>
+            </div>
+            <div class="ba-col">
+              <div class="ba-chead after">After — RailGo Redesign (Hi-fi)</div>
+              <div class="ba-after"><img src="findings/after-home.png" alt="RailGo redesigned home — personalised greeting, From and To stations with full names, depart date, travellers and a Search trains button, with recent searches below" /></div>
+              <p class="ba-cnote">Search form on home. Full station names. Recent journeys. 0 taps to start booking. Zero ads.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SET 3 — TRAIN DETAILS & CLASS SELECTION -->
+        <div class="ba-set">
+          <div class="ba-set-head">
+            <span class="ba-set-label">Screen 03 — Train Details &amp; Class Selection</span>
+            <h3 class="ba-set-title">From abbreviations and manual refresh to described classes with progress steps</h3>
+          </div>
+          <div class="ba-cols">
+            <div class="ba-col">
+              <div class="ba-chead before">Before — Original IRCTC</div>
+              <div class="ba-screen"><img src="findings/f04-traindetails.jpeg" alt="Train details screen — abbreviated class names, manual refresh, and a large SBI ad covering the fare and booking CTA" /></div>
+              <p class="ba-cnote">Abbreviations for class names. Manual refresh required. SBI ad covering fare and booking CTA.</p>
+            </div>
+            <div class="ba-col">
+              <div class="ba-chead after">After — RailGo Redesign (Hi-fi)</div>
+              <div class="ba-after"><img src="findings/after-class.png" alt="RailGo redesigned class selection — progress steps, train summary, and described class cards with photos and fares, ad removed" /></div>
+              <p class="ba-cnote">Progress indicator. Described class names with photos. Ad removed. Fare fully visible.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="proto-video">
+        <span class="vlabel">RailGo Redesign — Prototype Walkthrough</span>
+        <div class="vframe">
+          <div style="padding:75% 0 0 0;position:relative;">
+            <iframe src="https://player.vimeo.com/video/1200772618?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;"
+              title="RailGo - Live Demo">
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <script src="https://player.vimeo.com/api/player.js"></script>
+    </section>
+
+    <!-- 08 IMPACT -->
+    <section class="panel reveal" id="impact" data-screen-label="08 Impact">
+      <span class="eyebrow-num">08 — Impact</span>
+      <h2 class="sec-title">What this system delivered.</h2>
+      <div class="impact-grid">
+        <div class="impact-stat"><div class="num">&gt;50%</div><div class="lab">Research time compressed vs manual audit</div></div>
+        <div class="impact-stat"><div class="num">8</div><div class="lab">Screens classified in hours not weeks</div></div>
+        <div class="impact-stat"><div class="num">6</div><div class="lab">Frameworks applied simultaneously</div></div>
+        <div class="impact-stat"><div class="num">3</div><div class="lab">Systemic issues identified beyond individual findings</div></div>
+      </div>
+      <div class="learn-grid">
+        <div class="learn"><div class="ln">1</div><div class="learn-body"><h4>AI multiplies output — not judgment</h4><p>Frameworks are reusable on any product. Strategic synthesis remains entirely human.</p></div></div>
+        <div class="learn"><div class="ln">2</div><div class="learn-body"><h4>Systemic issues only appear when you zoom out</h4><p>Screen findings are fixable. Systemic patterns require a designer who sees the whole product.</p></div></div>
+        <div class="learn"><div class="ln">3</div><div class="learn-body"><h4>The costliest failures hit users who said yes</h4><p>Friction at commitment peaks is the finding that changes product strategy — not screen fixes.</p></div></div>
+        <div class="learn"><div class="ln">4</div><div class="learn-body"><h4>Research velocity is a design skill</h4><p>Compressing weeks into hours without losing depth is a systems design problem. I solved it with prompt engineering.</p></div></div>
+      </div>
+      <div class="closing">
+        <div class="cap">The value I bring</div>
+        <p>"A senior designer who can run a full heuristic audit, build the AI system to accelerate it, synthesize systemic insights, and design the solutions — in the time it takes most teams to finish the research phase. That is the value I bring."</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="panel reveal" style="margin-bottom:0;max-width:var(--maxw);">
+    <div class="foot-grid">
+      <div>
+        <h4>On the desk</h4>
+        <div class="now-card">
+          <div class="cover"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M7 3.5 L7 23 L12 18.4 L15.2 25.6 L18 24.3 L14.9 17.3 L21 16.9 Z" fill="#eaf6ef"/><circle class="desk-dot" cx="24.5" cy="8" r="3" fill="#eaf6ef"/></svg></div>
+          <div>
+            <div class="t">Designing decisions, not screens</div>
+            <div class="s">Always designing for clarity, at scale</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#work">Selected work</a></li>
+          <li><a href="index.html#writing">Writing</a></li>
+          <li><a href="index.html#resume">Experience</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Medium</a></li>
+          <li><a href="index.html#contact">Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="pn-nav">
+    <a class="pn-back" href="spendly.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Spendly
+    </a>
+    <a class="pn-next" href="index.html#work">
+      <span class="cap">Back to</span>
+      <span class="nm">All work →</span>
+    </a>
+  </div>
+
+  <div class="foot-note">
+    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>Designed &amp; built end to end.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.10, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+</body>
+</html>
