@@ -148,7 +148,7 @@
   }
   .role-badge .dot{width:8px;height:8px;border-radius:50%;background:#2fae74;box-shadow:0 0 0 4px rgba(47,174,116,.18);}
   .case-hero .proj{font-family:var(--font-hero);font-size:clamp(44px,7vw,88px);font-weight:400;line-height:.98;margin-bottom:8px;letter-spacing:0;}
-  .case-hero .headline{font-family:var(--font-quote);font-weight:600;font-size:clamp(26px,3.4vw,44px);color:#1e1f1e;max-width:none;margin:8px 0 22px;line-height:1.15;letter-spacing:-.01em;}
+  .case-hero .headline{font-family:var(--font-hero);font-weight:400;font-size:clamp(44px,7vw,88px);color:var(--green-bright);max-width:none;margin:8px 0 22px;line-height:.98;letter-spacing:0;}
   .case-hero .subline{font-size:clamp(17px,1.6vw,21px);color:var(--ink-soft);max-width:60ch;line-height:1.6;margin:0 0 40px;}
 
   /* metric row */
@@ -541,6 +541,21 @@
     .pn-next{align-items:flex-start;text-align:left;}
     .label-card{flex-direction:column;gap:14px;}
   }
+
+  .foot-cta{display:flex;flex-direction:column;gap:26px;}
+  .foot-cta-row1{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+  .foot-cta-text{margin:0;}
+  .foot-cta-h{font-family:var(--font-display);font-size:26px;color:var(--ink);margin:0 0 6px;}
+  .foot-cta-sub{font-size:15px;color:var(--ink-soft);margin:0;}
+  .foot-cta-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .foot-cta-nav{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;padding-top:22px;border-top:1px solid rgba(20,60,40,.1);}
+  .foot-cta-nav-links{display:flex;gap:28px;flex-wrap:wrap;}
+  .foot-top{display:inline-flex;align-items:center;gap:7px;font-size:15px;font-weight:600;color:var(--green);background:none;border:none;cursor:pointer;font-family:var(--font-body);padding:0;}
+  .foot-top svg{width:16px;height:16px;animation:footTopBlink 1.6s ease-in-out infinite;}
+  @keyframes footTopBlink{0%,100%{transform:translateY(0);opacity:1;}50%{transform:translateY(-4px);opacity:.55;}}
+  .foot-cta-nav a{font-size:16px;font-weight:600;color:var(--ink-soft);transition:color .2s;}
+  .foot-cta-nav a:hover{color:var(--green);}
+  @media(max-width:720px){.foot-cta-row1{flex-direction:column;align-items:flex-start;gap:16px;}.foot-cta-actions{width:100%;}}
 </style></head>
 <body>
 
@@ -563,21 +578,20 @@
 
         <!-- HERO -->
     <section class="panel case-hero" data-screen-label="Hero">
-      <span class="role-badge"><span class="dot"></span>Real Client Project · Phase 1 · Product Designer &amp; Builder</span>
-      <h1 class="proj">NutBite</h1>
-      <p class="headline">They needed someone to record their sales. I gave them a business partner that never sleeps.</p>
-      <p class="subline">A small-town cashew business ran on notebooks, memory, and WhatsApp photos that didn't always arrive. I replaced all three — and then went looking for what else was broken.</p>
+      <span class="role-badge"><span class="dot"></span>NutBite · Product Strategy • End-to-End Design &amp; Build</span>
+      <h1 class="headline">They needed a system to record their sales.<br>And I gave a business partner that never sleeps</h1>
+      <p class="subline">A small-town cashew business ran on notebooks, memory, and WhatsApp photos that didn't always arrive. All three were replaced — uncovering and fixing what else was broken along the way.</p>
       <div class="metric-row">
-        <div class="metric-card"><div class="num">60%</div><div class="lab">Fewer missed or forgotten reporting details</div></div>
-        <div class="metric-card"><div class="num">50%</div><div class="lab">Less money wasted on slow-moving stock</div></div>
-        <div class="metric-card"><div class="num">50%</div><div class="lab">More time owners get back for their side hustle</div></div>
+        <div class="metric-card"><div class="num">60%</div><div class="lab">Drop in missed or delayed sales reports</div></div>
+        <div class="metric-card"><div class="num">50%</div><div class="lab">Cut in capital tied up in slow-moving stock</div></div>
+        <div class="metric-card"><div class="num">50%</div><div class="lab">Time saved — operational hours returned to owners</div></div>
       </div>
     </section>
 
     <!-- 01 PROBLEM -->
     <section class="panel reveal" id="problem" data-screen-label="01 Problem">
       <span class="eyebrow-num">01 — The Problem</span>
-      <h2 class="sec-title">Two people, one side hustle, zero visibility.</h2>
+      <h2 class="sec-title">Two people, one side hustle, zero visibility</h2>
       <p class="body-copy">A husband and wife run a cashew manufacturing business and retail store — alongside their full-time jobs. Store staff logged sales by hand and sent WhatsApp photos of notebook pages. When photos arrived late, or not at all, a week's sales simply disappeared.</p>
       <div class="callout"><p>The real problem wasn't data entry. It was that the owners had no way to know what was happening in their own store.</p></div>
     </section>
@@ -585,7 +599,7 @@
     <!-- 02 SOLUTION -->
     <section class="panel reveal" id="solution" data-screen-label="02 Solution">
       <span class="eyebrow-num">02 — The Solution</span>
-      <h2 class="sec-title">One system. Six screens. Everything connected.</h2>
+      <h2 class="sec-title">One system. Six screens. Everything connected</h2>
       <p class="body-copy">I designed and built a business management app — Product Catalogue, Inventory, Sales, Dashboard, and Reports — where every action updates the rest automatically. Record a sale, and inventory, revenue, and reports update themselves in real time.</p>
       <p class="scr-cap" style="text-align:left;margin-left:0;white-space:nowrap;">Built responsive for both web and mobile — a deliberate call, not a default. <span style="white-space:nowrap;">Ask me why.</span></p>
       <div class="shots" style="grid-template-columns:1fr;">
@@ -601,7 +615,7 @@
     <!-- 03 EXECUTION -->
     <section class="panel reveal" id="execution" data-screen-label="03 Execution">
       <span class="eyebrow-num">03 — Execution</span>
-      <h2 class="sec-title">Built the foundation first, not the feature.</h2>
+      <h2 class="sec-title">Built the foundation first, not the feature</h2>
       <p class="body-copy">Before any screen, I built the <strong>Product Catalogue</strong> as the single source of truth — every brand, product, pack size, and price, defined once. Inventory, Sales, and Reports all read from it. Get this layer right, and the storekeeper never types a product name or price again.</p>
       <div class="callout"><p><strong>Design principle I held to:</strong> the end user had never used a business app before. If it wasn't simpler than a notebook, it had already failed. Same card-and-tap pattern across Inventory and Sales meant zero new learning between screens.</p></div>
     </section>
@@ -609,7 +623,7 @@
     <!-- 04 CHALLENGE -->
     <section class="panel reveal" id="challenge" data-screen-label="04 Challenge">
       <span class="eyebrow-num">04 — The Challenge</span>
-      <h2 class="sec-title">Two very different users, one interface.</h2>
+      <h2 class="sec-title">Two very different users, one interface</h2>
       <div class="who-grid">
         <div class="who"><div class="k">The Owners</div><p>Needed something powerful enough to change how the business runs.</p></div>
         <div class="who"><div class="k">The Storekeeper</div><p>Had zero computer experience and needed something she'd trust more than a pen — on day one, with no training.</p></div>
@@ -620,7 +634,7 @@
     <!-- 05 BEYOND THE BRIEF -->
     <section class="panel reveal" id="beyond" data-screen-label="05 Beyond The Brief">
       <span class="eyebrow-num">05 — Beyond the Brief</span>
-      <h2 class="sec-title">They asked for a sales recorder. I gave them a business ecosystem.</h2>
+      <h2 class="sec-title">They asked for a sales recorder. I gave them a business ecosystem</h2>
       <div class="beyond-wrap">
         <div class="beyond-left">
           <p class="body-copy" style="margin-bottom:22px;">Nobody asked for these. Every business like this needs them.</p>
@@ -681,15 +695,15 @@
     <section class="panel reveal" id="learnings" data-screen-label="08 What I Learned">
       <span class="eyebrow-num">08 — What I Learned</span>
       <div class="learn-grid">
-        <div class="learn"><div class="ln">1</div><div class="learn-body"><h4>Real clients carry real weight.</h4><p>This wasn't a portfolio exercise — live business, live money, every decision had a consequence I had to stand behind.</p></div></div>
-        <div class="learn"><div class="ln">2</div><div class="learn-body"><h4>The brief is where you start, not where you stop.</h4><p>They asked for a way to record sales. I gave that back to them — and then Low Inventory, Top Sellers, Reports, and branded billing on top, because a good tool should make the business better than it was before the problem even existed.</p></div></div>
+        <div class="learn"><div class="ln">1</div><div class="learn-body"><h4>Real clients carry real weight</h4><p>This wasn't a portfolio exercise — live business, live money, every decision had a consequence I had to stand behind.</p></div></div>
+        <div class="learn"><div class="ln">2</div><div class="learn-body"><h4>The brief is where you start, not where you stop</h4><p>They asked for a way to record sales. I gave that back to them — and then Low Inventory, Top Sellers, Reports, and branded billing on top, because a good tool should make the business better than it was before the problem even existed.</p></div></div>
       </div>
     </section>
 
     <!-- 09 CLOSING CTA -->
     <section class="panel reveal" id="cta" data-screen-label="09 Closing CTA">
       <span class="eyebrow-num">09 — What's Next</span>
-      <h2 class="sec-title">This is Phase 1 of a live engagement.</h2>
+      <h2 class="sec-title">This is Phase 1 of a live engagement</h2>
       <p class="body-copy">The owners run two more businesses with the same stock problems: a cashew processing unit and a medical store. Phase 2 is underway — one system, three businesses.</p>
       <div class="closing">
         <p>I didn't just ship screens — I solved a problem worth paying to solve again. That's why the same owners brought me their cashew business and their medical store next.</p>
@@ -700,51 +714,31 @@
   </main>
 </div>
 
-<!-- ============ FOOTER ============ -->
 <footer>
-  <div class="panel reveal" style="margin-bottom:0;max-width:var(--maxw);">
-    <div class="foot-grid">
-      <div>
-        <h4>On the desk</h4>
-        <div class="now-card">
-          <div class="cover"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M7 3.5 L7 23 L12 18.4 L15.2 25.6 L18 24.3 L14.9 17.3 L21 16.9 Z" fill="#eaf6ef"/><circle class="desk-dot" cx="24.5" cy="8" r="3" fill="#eaf6ef"/></svg></div>
-          <div>
-            <div class="t">Designing decisions, not screens</div>
-            <div class="s">Always designing for clarity, at scale</div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="index.html#work">Selected work</a></li>
-          <li><a href="index.html#writing">Writing</a></li>
-          <li><a href="index.html#resume">Experience</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Links</h4>
-        <ul>
-          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="#" target="_blank" rel="noopener">Medium</a></li>
-          <li><a href="index.html#contact">Email</a></li>
-        </ul>
+  <div class="panel reveal foot-cta" style="margin-bottom:0;max-width:var(--maxw);">
+    <div class="foot-cta-row1">
+      <div class="foot-cta-text"><h3 class="foot-cta-h">Let's connect</h3><p class="foot-cta-sub">Always open to thoughtful conversations and new opportunities.</p></div>
+      <div class="foot-cta-actions">
+        <a class="btn btn-dark" href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener" style="background-color:#0a66c2;">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.06V21h-4v-6.2c0-1.48-.03-3.38-2.06-3.38s-2.38 1.6-2.38 3.27V21H9z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn btn-dark" href="assets/Abhishek-LG-Resume.pdf" download data-resume style="background-color:#191919;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v5h5M7 3h8l4 4v14H7zM3 7v14h12" opacity=".4"/><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/></svg>
+          Download resume
+        </a>
+        <button class="btn btn-dark" id="copyEmail" data-email="abhisheklokesh.uiux159@gmail.com" style="background-color:#e33b2e;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+          Copy email
+        </button>
       </div>
     </div>
+    <nav class="foot-cta-nav">
+      <div class="foot-cta-nav-links"><a href="index.html#work">Selected work</a>
+      <a href="index.html#resume">Experience</a></div>
+      <button type="button" class="foot-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Go to top">Go to top<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+    </nav>
   </div>
-
-  <div class="pn-nav">
-    <a class="pn-back" href="index.html#work">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-      Back to all work
-    </a>
-    <a class="pn-next" href="spendly.html">
-      <span class="cap">Next project</span>
-      <span class="nm">Spendly →</span>
-    </a>
-  </div>
-
   <div class="foot-note">
     <span>© 2026 Abhishek LG · Senior UX Designer</span>
     <span>Designed &amp; built end to end.</span>

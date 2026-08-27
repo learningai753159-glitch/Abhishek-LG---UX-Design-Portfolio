@@ -363,6 +363,21 @@
     .pn-nav{flex-direction:column;align-items:stretch;}
     .pn-next{align-items:flex-start;text-align:left;}
   }
+
+  .foot-cta{display:flex;flex-direction:column;gap:26px;}
+  .foot-cta-row1{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+  .foot-cta-text{margin:0;}
+  .foot-cta-h{font-family:var(--font-display);font-size:26px;color:var(--ink);margin:0 0 6px;}
+  .foot-cta-sub{font-size:15px;color:var(--ink-soft);margin:0;}
+  .foot-cta-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .foot-cta-nav{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;padding-top:22px;border-top:1px solid rgba(20,60,40,.1);}
+  .foot-cta-nav-links{display:flex;gap:28px;flex-wrap:wrap;}
+  .foot-top{display:inline-flex;align-items:center;gap:7px;font-size:15px;font-weight:600;color:var(--green);background:none;border:none;cursor:pointer;font-family:var(--font-body);padding:0;}
+  .foot-top svg{width:16px;height:16px;animation:footTopBlink 1.6s ease-in-out infinite;}
+  @keyframes footTopBlink{0%,100%{transform:translateY(0);opacity:1;}50%{transform:translateY(-4px);opacity:.55;}}
+  .foot-cta-nav a{font-size:16px;font-weight:600;color:var(--ink-soft);transition:color .2s;}
+  .foot-cta-nav a:hover{color:var(--green);}
+  @media(max-width:720px){.foot-cta-row1{flex-direction:column;align-items:flex-start;gap:16px;}.foot-cta-actions{width:100%;}}
 </style></head>
 <body>
 
@@ -386,8 +401,8 @@
     <!-- HERO -->
     <section class="panel case-hero" data-screen-label="Hero">
       <span class="role-badge"><span class="dot"></span>AI-Augmented UX · Research Systems</span>
-      <h1 class="proj">AI Speed. Human Depth.</h1>
-      <p class="headline">I didn't just audit an app. I engineered an AI system to do it — then designed the fix.</p>
+      <h1 class="proj">Skipping the manual audit: how I engineered AI to run it instead</h1>
+      <p class="headline">Not prompted. Directed</p>
       <p class="subline">The audit is proof. AI is the point — a force multiplier for faster research, sharper findings, and more intentional redesign.</p>
 
       <div class="metric-row">
@@ -400,7 +415,7 @@
     <!-- 01 THE PROBLEM WITH UX AUDITS -->
     <section class="panel reveal" id="problem" data-screen-label="01 The Problem With UX Audits">
       <span class="eyebrow-num">01 — The Problem With UX Audits</span>
-      <h2 class="sec-title">Most UX audits take weeks. That's a resource problem, not a research problem.</h2>
+      <h2 class="sec-title">Most UX audits take weeks. That's a resource problem, not a research problem</h2>
       <div class="insight-grid two">
         <div class="insight"><div class="k">The Old Way</div><p>Senior designers spend the majority of audit time on low-level sorting — tagging violations, building severity matrices by hand. Strategic thinking gets whatever time is left.</p></div>
         <div class="insight"><div class="k">The Reframe</div><p>AI handles classification at velocity. The designer focuses entirely on synthesis, strategy, and design. That is the system I built.</p></div>
@@ -423,7 +438,7 @@
     <!-- 02 THE AI AUDIT SYSTEM -->
     <section class="panel reveal" id="system" data-screen-label="02 The AI Audit System">
       <span class="eyebrow-num">02 — The AI Audit System</span>
-      <h2 class="sec-title">6 frameworks. 8 screens. Minutes — not weeks.</h2>
+      <h2 class="sec-title">6 frameworks. 8 screens. Minutes — not weeks</h2>
       <p class="hint-line">Custom prompt frameworks built on foundational usability principles — <strong>AI clustered the patterns, I architected the findings.</strong></p>
       <div class="insight-grid three fw-grid">
         <div class="insight fw peach"><div class="k">Nielsen's 10 Heuristics</div><p>Primary classifier — every observation mapped against all 10 heuristics instantly.</p></div>
@@ -443,7 +458,7 @@
     <!-- 03 KEY FINDINGS -->
     <section class="panel reveal" id="findings" data-screen-label="03 Key Findings">
       <span class="eyebrow-num">03 — Key Findings</span>
-      <h2 class="sec-title">8 screens. Every single one had a classifiable violation.</h2>
+      <h2 class="sec-title">8 screens. Every single one had a classifiable violation</h2>
       <div class="finding-grid">
         <div class="finding">
           <div class="ftext">
@@ -503,7 +518,7 @@
     <!-- 04 CUSTOMER JOURNEY MAP -->
     <section class="panel reveal" id="journey" data-screen-label="04 Customer Journey Map">
       <span class="eyebrow-num">04 — Customer Journey Map</span>
-      <h2 class="sec-title">Failed at every commitment peak.</h2>
+      <h2 class="sec-title">Failed at every commitment peak</h2>
       <div class="journey">
         <div class="stage">
           <span class="st-label">Stage 01</span><span class="st-emotion">Anxious</span>
@@ -539,7 +554,7 @@
     <!-- 05 COMPETITOR ANALYSIS -->
     <section class="panel reveal" id="competitor" data-screen-label="05 Competitor Analysis">
       <span class="eyebrow-num">05 — Competitor Analysis</span>
-      <h2 class="sec-title">What the market figured out that IRCTC hasn't.</h2>
+      <h2 class="sec-title">What the market figured out that IRCTC hasn't</h2>
       <div class="cmp-wrap">
         <table class="cmp">
           <colgroup><col /><col /><col /><col /></colgroup>
@@ -565,7 +580,7 @@
     <!-- 06 THE AI ORCHESTRATION WORKFLOW -->
     <section class="panel reveal" id="workflow" data-screen-label="06 The AI Orchestration Workflow">
       <span class="eyebrow-num">06 — The AI Orchestration Workflow</span>
-      <h2 class="sec-title">This is what AI-augmented UX research actually looks like.</h2>
+      <h2 class="sec-title">This is what AI-augmented UX research actually looks like</h2>
       <div class="flow-ribbon">
         <div class="flow-step"><span class="fs-num">01</span><h4>Framework Engineering</h4><p>6 custom prompt frameworks, each trained on a specific usability principle.</p></div>
         <span class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
@@ -603,7 +618,7 @@
     <!-- 07 REDESIGN PRINCIPLES + BEFORE & AFTER -->
     <section class="panel reveal" id="redesign" data-screen-label="07 Redesign Principles">
       <span class="eyebrow-num">07 — Redesign Principles + Before &amp; After</span>
-      <h2 class="sec-title">Every finding maps to a principle. Every principle maps to a decision.</h2>
+      <h2 class="sec-title">Every finding maps to a principle. Every principle maps to a decision</h2>
       <div class="principle-list">
         <div class="principle-row"><span class="pr-num">01</span><div class="pr-body"><h4>Search first</h4><p>Primary task on home screen. Zero intermediate screens for what 80% of users came to do.</p></div></div>
         <div class="principle-row"><span class="pr-num">02</span><div class="pr-body"><h4>Zero ads in task flow</h4><p>Ads in passive moments only — never inside login, recovery, booking, or payment.</p></div></div>
@@ -693,7 +708,7 @@
     <!-- 08 IMPACT -->
     <section class="panel reveal" id="impact" data-screen-label="08 Impact">
       <span class="eyebrow-num">08 — Impact</span>
-      <h2 class="sec-title">What this system delivered.</h2>
+      <h2 class="sec-title">What this system delivered</h2>
       <div class="impact-grid">
         <div class="impact-stat"><div class="num">&gt;50%</div><div class="lab">Research time compressed vs manual audit</div></div>
         <div class="impact-stat"><div class="num">8</div><div class="lab">Screens classified in hours not weeks</div></div>
@@ -715,51 +730,31 @@
   </main>
 </div>
 
-<!-- ============ FOOTER ============ -->
 <footer>
-  <div class="panel reveal" style="margin-bottom:0;max-width:var(--maxw);">
-    <div class="foot-grid">
-      <div>
-        <h4>On the desk</h4>
-        <div class="now-card">
-          <div class="cover"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M7 3.5 L7 23 L12 18.4 L15.2 25.6 L18 24.3 L14.9 17.3 L21 16.9 Z" fill="#eaf6ef"/><circle class="desk-dot" cx="24.5" cy="8" r="3" fill="#eaf6ef"/></svg></div>
-          <div>
-            <div class="t">Designing decisions, not screens</div>
-            <div class="s">Always designing for clarity, at scale</div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="index.html#work">Selected work</a></li>
-          <li><a href="index.html#writing">Writing</a></li>
-          <li><a href="index.html#resume">Experience</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Links</h4>
-        <ul>
-          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="#" target="_blank" rel="noopener">Medium</a></li>
-          <li><a href="index.html#contact">Email</a></li>
-        </ul>
+  <div class="panel reveal foot-cta" style="margin-bottom:0;max-width:var(--maxw);">
+    <div class="foot-cta-row1">
+      <div class="foot-cta-text"><h3 class="foot-cta-h">Let's connect</h3><p class="foot-cta-sub">Always open to thoughtful conversations and new opportunities.</p></div>
+      <div class="foot-cta-actions">
+        <a class="btn btn-dark" href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener" style="background-color:#0a66c2;">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.06V21h-4v-6.2c0-1.48-.03-3.38-2.06-3.38s-2.38 1.6-2.38 3.27V21H9z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn btn-dark" href="assets/Abhishek-LG-Resume.pdf" download data-resume style="background-color:#191919;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v5h5M7 3h8l4 4v14H7zM3 7v14h12" opacity=".4"/><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/></svg>
+          Download resume
+        </a>
+        <button class="btn btn-dark" id="copyEmail" data-email="abhisheklokesh.uiux159@gmail.com" style="background-color:#e33b2e;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+          Copy email
+        </button>
       </div>
     </div>
+    <nav class="foot-cta-nav">
+      <div class="foot-cta-nav-links"><a href="index.html#work">Selected work</a>
+      <a href="index.html#resume">Experience</a></div>
+      <button type="button" class="foot-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Go to top">Go to top<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+    </nav>
   </div>
-
-  <div class="pn-nav">
-    <a class="pn-back" href="spendly.html">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-      Spendly
-    </a>
-    <a class="pn-next" href="index.html#work">
-      <span class="cap">Back to</span>
-      <span class="nm">All work →</span>
-    </a>
-  </div>
-
   <div class="foot-note">
     <span>© 2026 Abhishek LG · Senior UX Designer</span>
     <span>Designed &amp; built end to end.</span>

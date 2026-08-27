@@ -176,6 +176,21 @@
     .pn-nav{flex-direction:column;align-items:stretch;}
     .pn-next{align-items:flex-start;text-align:left;}
   }
+
+  .foot-cta{display:flex;flex-direction:column;gap:26px;}
+  .foot-cta-row1{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+  .foot-cta-text{margin:0;}
+  .foot-cta-h{font-family:var(--font-display);font-size:26px;color:var(--ink);margin:0 0 6px;}
+  .foot-cta-sub{font-size:15px;color:var(--ink-soft);margin:0;}
+  .foot-cta-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .foot-cta-nav{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;padding-top:22px;border-top:1px solid rgba(20,60,40,.1);}
+  .foot-cta-nav-links{display:flex;gap:28px;flex-wrap:wrap;}
+  .foot-top{display:inline-flex;align-items:center;gap:7px;font-size:15px;font-weight:600;color:var(--green);background:none;border:none;cursor:pointer;font-family:var(--font-body);padding:0;}
+  .foot-top svg{width:16px;height:16px;animation:footTopBlink 1.6s ease-in-out infinite;}
+  @keyframes footTopBlink{0%,100%{transform:translateY(0);opacity:1;}50%{transform:translateY(-4px);opacity:.55;}}
+  .foot-cta-nav a{font-size:16px;font-weight:600;color:var(--ink-soft);transition:color .2s;}
+  .foot-cta-nav a:hover{color:var(--green);}
+  @media(max-width:720px){.foot-cta-row1{flex-direction:column;align-items:flex-start;gap:16px;}.foot-cta-actions{width:100%;}}
 </style></head>
 <body>
 
@@ -203,7 +218,7 @@
         <span>Mindset</span>
         <span class="read">5 min read</span>
       </div>
-      <h1 class="headline">UX isn't what you design. It's what people feel when they use it.</h1>
+      <h1 class="headline">UX isn't what you design. It's what people feel when they use it</h1>
       <p class="subline">Nobody taught me UX in a classroom. A badly designed tap did.</p>
     </section>
 
@@ -215,7 +230,7 @@
         <!-- 01 -->
         <section class="panel reveal" id="begin" data-spy="begin" data-screen-label="01 Where it begins">
           <span class="eyebrow-num">01 — Where it begins</span>
-          <h2 class="sec-title">You've already experienced bad UX today.</h2>
+          <h2 class="sec-title">You've already experienced bad UX today</h2>
           <p class="body-copy">This morning, before you opened your laptop, you probably touched at least three things someone designed. A tap. A door handle. A switch. And at least one of them made you pause for half a second — which side is hot? Do I push or pull? Why is this so awkward?</p>
           <p class="body-copy">That pause? That's UX failing. Not a screen. Not an app. Just a thing that was designed for a person — and didn't quite get it right.</p>
 
@@ -240,7 +255,7 @@
         <!-- 02 -->
         <section class="panel reveal" id="around" data-spy="around" data-screen-label="02 Look around">
           <span class="eyebrow-num">02 — Look around</span>
-          <h2 class="sec-title">The chair you're sitting on is a UX decision.</h2>
+          <h2 class="sec-title">The chair you're sitting on is a UX decision</h2>
           <p class="body-copy">The height of it. Whether the back supports you or fights you. Whether the armrests are where your arms actually fall. Someone decided all of that. That's UX.</p>
           <p class="body-copy">The road sign that confused you last week? UX. The queue system at the bank that had everyone standing in the wrong place? UX. The restaurant menu where you couldn't find the price? UX.</p>
           <p class="body-copy">None of these are screens. All of them are experiences someone designed — or forgot to design properly.</p>
@@ -283,7 +298,7 @@
         <!-- 03 -->
         <section class="panel reveal" id="clear" data-spy="clear" data-screen-label="03 Let's be clear">
           <span class="eyebrow-num">03 — Let's be clear</span>
-          <h2 class="sec-title">Not screens. Not aesthetics. Not UI.</h2>
+          <h2 class="sec-title">Not screens. Not aesthetics. Not UI</h2>
           <p class="body-copy">UX is the experience of using something. How it makes you feel while you're doing a task. Whether it helped you or got in your way.</p>
           <p class="body-copy">A tap can work perfectly — water comes out, nothing leaks — and still have terrible UX if you burned your hand figuring out which side was hot.</p>
           <p class="body-copy"><strong>Functional is not the same as good.</strong></p>
@@ -299,7 +314,7 @@
                 <circle cx="92" cy="26" r="17" fill="#1f8a5b" stroke="none"/>
                 <path d="M84 26 l6 6 10 -12" stroke="#fff" stroke-width="4"/>
               </svg>
-              <h4>It works.</h4>
+              <h4>It works</h4>
             </div>
             <div class="cmp-card feel">
               <svg viewBox="0 0 120 110" width="118" fill="none" stroke="#26312c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -321,7 +336,7 @@
         <!-- 04 -->
         <section class="panel reveal" id="see" data-spy="see" data-screen-label="04 How to see it">
           <span class="eyebrow-num">04 — How to see it</span>
-          <h2 class="sec-title">Once you see it, you can't unsee it.</h2>
+          <h2 class="sec-title">Once you see it, you can't unsee it</h2>
           <p class="body-copy">This is the most useful thing I've picked up in 6 years of doing this. Not a tool. Not a framework. A way of noticing things.</p>
 
           <div class="steps">
@@ -359,7 +374,7 @@
         <!-- 05 -->
         <section class="panel reveal" id="work" data-spy="work" data-screen-label="05 What it means for my work">
           <span class="eyebrow-num">05 — What this means for my work</span>
-          <h2 class="sec-title">I don't start in Figma. I start by watching people.</h2>
+          <h2 class="sec-title">I don't start in Figma. I start by watching people</h2>
           <p class="body-copy">Before I design a single screen, I try to understand the moment the person is in. What do they already know? What are they trying to do? What would make them feel stupid — and how do I design that feeling out?</p>
           <p class="body-copy">That comes from years of noticing UX outside screens. The bad tap taught me more about feedback and clarity than any design book. The confusing queue taught me about system visibility. The menu with no prices taught me about trust.</p>
 
@@ -372,7 +387,7 @@
         <!-- CLOSING -->
         <section class="panel reveal" id="closing" data-spy="closing" data-screen-label="Closing">
           <span class="eyebrow-num">Closing</span>
-          <h2 class="sec-title">Every bad tap is a teacher.</h2>
+          <h2 class="sec-title">Every bad tap is a teacher</h2>
           <p class="body-copy">The mindset that makes good design good — the empathy, the observation, the insistence on designing for the person rather than the function — that's trained everywhere. Not just in Figma.</p>
           <p class="body-copy">Pay attention to the things that make you pause. They're trying to tell you something.</p>
 
@@ -387,54 +402,34 @@
   </main>
 </div>
 
-<!-- ============ FOOTER ============ -->
 <footer>
-  <div class="panel reveal" style="margin-bottom:0;max-width:var(--maxw);">
-    <div class="foot-grid">
-      <div>
-        <h4>On the desk</h4>
-        <div class="now-card">
-          <div class="cover"><svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M7 3.5 L7 23 L12 18.4 L15.2 25.6 L18 24.3 L14.9 17.3 L21 16.9 Z" fill="#eaf6ef"/><circle class="desk-dot" cx="24.5" cy="8" r="3" fill="#eaf6ef"/></svg></div>
-          <div>
-            <div class="t">Designing decisions, not screens</div>
-            <div class="s">Currently · building Galla, phase 1</div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="index.html#work">Selected work</a></li>
-          <li><a href="index.html#writing">Writing</a></li>
-          <li><a href="index.html#resume">Experience</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Links</h4>
-        <ul>
-          <li><a href="https://www.linkedin.com/in/abhishek-lokesh-162800219/" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="#" target="_blank" rel="noopener">Medium</a></li>
-          <li><a href="mailto:abhisheklokesh.uiux159@gmail.com">Email</a></li>
-        </ul>
+  <div class="panel reveal foot-cta" style="margin-bottom:0;max-width:var(--maxw);">
+    <div class="foot-cta-row1">
+      <div class="foot-cta-text"><h3 class="foot-cta-h">Let's connect</h3><p class="foot-cta-sub">Always open to thoughtful conversations and new opportunities.</p></div>
+      <div class="foot-cta-actions">
+        <a class="btn btn-dark" href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener" style="background-color:#0a66c2;">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.06V21h-4v-6.2c0-1.48-.03-3.38-2.06-3.38s-2.38 1.6-2.38 3.27V21H9z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn btn-dark" href="assets/Abhishek-LG-Resume.pdf" download data-resume style="background-color:#191919;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v5h5M7 3h8l4 4v14H7zM3 7v14h12" opacity=".4"/><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/></svg>
+          Download resume
+        </a>
+        <button class="btn btn-dark" id="copyEmail" data-email="abhisheklokesh.uiux159@gmail.com" style="background-color:#e33b2e;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+          Copy email
+        </button>
       </div>
     </div>
+    <nav class="foot-cta-nav">
+      <div class="foot-cta-nav-links"><a href="index.html#work">Selected work</a>
+      <a href="index.html#resume">Experience</a></div>
+      <button type="button" class="foot-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Go to top">Go to top<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+    </nav>
   </div>
-
-  <div class="pn-nav">
-    <a class="pn-back" href="index.html#writing">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-      Back to writing
-    </a>
-    <a class="pn-next" href="h1-visibility.html">
-      <span class="cap">Next · H1</span>
-      <span class="nm">Visibility of System Status →</span>
-    </a>
-  </div>
-
   <div class="foot-note">
     <span>© 2026 Abhishek LG · Senior UX Designer</span>
-    <span>Part 1 of 11 — UX as I see it.</span>
+    <span>Designed &amp; built end to end.</span>
   </div>
 </footer>
 
