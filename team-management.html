@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Team &amp; User Management — Case Study · Abhishek LG</title>
+<title>Team and user management · Case study · Abhishek LG</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
@@ -177,6 +177,262 @@
   .case-hero .proj{font-family:var(--font-hero);font-size:clamp(40px,6vw,72px);font-weight:400;line-height:1;margin-bottom:8px;letter-spacing:0;}
   .case-hero .headline{font-family:var(--font-quote);font-weight:600;font-size:clamp(26px,3.4vw,44px);color:#1e1f1e;max-width:none;margin:8px 0 22px;line-height:1.15;letter-spacing:-.01em;}
   .case-hero .subline{font-size:clamp(17px,1.6vw,21px);color:var(--ink-soft);max-width:60ch;line-height:1.6;margin:0 0 40px;}
+  .case-hero .proj{font-size:clamp(32px,4.4vw,58px);line-height:1.08;margin-bottom:18px;max-width:40ch;text-wrap:balance;}
+  .case-hero .subline{max-width:none;margin:0 0 14px;text-wrap:pretty;}
+  .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px 20px;margin:22px 0 0;padding:0;list-style:none;}
+  .notes li{position:relative;background:#fbeba4;color:#3a3320;font-size:15px;line-height:1.5;padding:24px 22px 26px;border-radius:2px;box-shadow:0 10px 22px -14px rgba(60,50,20,.5);transition:transform .2s ease, box-shadow .2s ease;}
+  .notes li:nth-child(3n+1){transform:rotate(-1.1deg);background:#fbeba4;}
+  .notes li:nth-child(3n+2){transform:rotate(.8deg);background:#f7e08f;}
+  .notes li:nth-child(3n+3){transform:rotate(-.5deg);background:#fdf0b8;}
+  .notes li:hover{transform:rotate(0deg) translateY(-4px);box-shadow:0 18px 32px -16px rgba(60,50,20,.55);z-index:2;}
+  .notes li::before{content:'';position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:54px;height:16px;background:rgba(255,255,255,.55);border:1px solid rgba(60,50,20,.08);}
+  .conseq-link{display:flex;align-items:center;gap:14px;margin:44px 0 0;font-family:var(--font-hand);font-size:27px;color:var(--ink-soft);}
+  .conseq-link::after{content:'';flex:1;height:1px;border-top:2px dashed rgba(21,84,59,.3);}
+  .conseq{display:grid;grid-template-columns:1fr;gap:20px;margin-top:18px;}
+  .conseq-card{background:var(--green);color:#dff0e6;border-radius:20px;padding:32px 34px;}
+  .conseq-card .k{font-family:var(--font-body);font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#8fc4a8;margin-bottom:14px;}
+  .conseq-card .big{font-family:var(--font-display);font-size:42px;line-height:1.05;color:#fff;margin:0 0 10px;}
+  .conseq-card p{margin:0;font-size:15.5px;line-height:1.6;color:#c3ddcd;}
+  .jobs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin:30px 0 40px;align-items:start;}
+  .job-t{margin:0 0 6px;}
+  .job-notes{grid-template-columns:1fr!important;gap:22px;margin-top:18px;}
+  .appr-intro{max-width:none;font-size:clamp(16px,1.3vw,18px);line-height:1.65;color:var(--ink-soft);margin:0 0 28px;text-wrap:pretty;}
+  .goal-table{margin:8px 0 0;border-top:1px solid rgba(20,60,40,.12);}.goal-table div{display:grid;grid-template-columns:300px minmax(0,1fr);gap:24px;padding:14px 0;border-bottom:1px solid rgba(20,60,40,.12);align-items:baseline;}.goal-table dt{display:flex;align-items:baseline;gap:12px;font-size:15px;font-weight:700;color:var(--ink);}.goal-table .gn{font-family:var(--font-num);font-weight:700;font-size:15px;color:var(--green-bright);min-width:14px;}.goal-table dd{margin:0;font-size:15.5px;line-height:1.5;color:var(--ink-soft);}
+  @media(max-width:720px){.goal-table div{grid-template-columns:1fr;gap:4px;}.goal-table dd{padding-left:26px;}}
+  .pt-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:6px 0 30px;border-bottom:1px solid rgba(20,60,40,.14);}
+  .pt-tabs button{appearance:none;background:none;border:none;border-top:3px solid transparent;text-align:left;padding:16px 20px 16px 0;cursor:pointer;display:flex;flex-direction:column;gap:4px;font-family:var(--font-body);}
+  .pt-tabs button+button{padding-left:20px;border-left:1px solid rgba(20,60,40,.14);}
+  .pt-tabs .nm{font-size:16px;font-weight:700;color:var(--ink-soft);}.pt-tabs .ds{font-size:14px;line-height:1.4;color:var(--ink-faint);}
+  .pt-tabs button[aria-selected="true"]{border-top-color:var(--green-bright);}.pt-tabs button[aria-selected="true"] .nm{color:var(--green);}.pt-tabs button[aria-selected="true"] .ds{color:var(--ink-soft);}.pt-tabs button:hover .nm{color:var(--green);}
+  .pt-mnum{display:none;font-size:13px;font-weight:700;color:var(--green);margin-bottom:6px;}
+  .pt-panel h3{margin:0 0 8px;font-family:var(--font-proj);font-weight:700;font-size:clamp(20px,1.9vw,24px);color:var(--ink);}
+  .pt-txt{margin:0 0 8px;font-size:16px;line-height:1.6;color:var(--ink-soft);text-wrap:pretty;}
+  .pt-link{appearance:none;background:none;border:none;padding:0;cursor:pointer;display:inline-flex;margin-top:34px;font-family:var(--font-body);font-size:15.5px;font-weight:600;color:var(--green);text-decoration:underline;text-underline-offset:3px;}.pt-link:hover{color:var(--green-deep);}
+  .rmap{--dash:rgba(21,84,59,.35);display:grid;grid-template-columns:200px minmax(0,1fr);gap:0 44px;align-items:center;margin-top:30px;}
+  .rm-centre{position:relative;background:var(--panel-2);border:2px solid var(--green-bright);border-radius:16px;padding:22px 20px;font-family:var(--font-proj);font-weight:700;font-size:18px;line-height:1.25;color:var(--green);text-align:center;}
+  .rm-centre::after{content:'';position:absolute;left:100%;top:50%;width:44px;border-top:2px dashed var(--dash);}
+  .rm-branches{display:flex;flex-direction:column;gap:22px;}
+  .rm-b{position:relative;display:grid;grid-template-columns:190px minmax(0,1fr);gap:0 36px;align-items:start;padding-left:40px;}
+  .rm-b::before{content:'';position:absolute;left:0;top:30px;width:40px;border-top:2px dashed var(--dash);}
+  .rm-b::after{content:'';position:absolute;left:0;top:-11px;bottom:-11px;border-left:2px dashed var(--dash);}
+  .rm-b1::after{top:30px;}.rm-b3::after{bottom:auto;height:41px;}
+  .rm-node{position:relative;background:var(--panel-2);border:1px solid rgba(20,60,40,.18);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;}
+  .rm-node::after{content:'';position:absolute;left:100%;top:30px;width:36px;border-top:2px dashed var(--dash);}
+  .rm-t{font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--green);}
+  .rm-tag{align-self:flex-start;font-size:12px;font-weight:600;line-height:1.3;color:var(--ink-soft);background:var(--tag);border-radius:999px;padding:4px 10px;}
+  .rm-tag.hi{background:var(--green-bright);color:#fff;}
+  .rm-leafcol{display:flex;flex-direction:column;gap:14px;min-width:0;}
+  .rm-leaves{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:12px 0 0;list-style:none;}
+  .rm-leaves li{background:#fff;border:1px solid rgba(20,60,40,.14);border-radius:999px;padding:8px 14px;font-size:14.5px;line-height:1.3;color:var(--ink);}
+  .rm-callout{margin:0;border-left:3px solid var(--green-bright);background:var(--panel-2);border-radius:0 12px 12px 0;padding:12px 16px;font-size:14.5px;line-height:1.55;color:var(--ink-soft);text-wrap:pretty;}
+  .rmap.rm-ready .rm-b{opacity:0;transform:translateX(-10px);}
+  .rmap.rm-ready .rm-centre::after{transform:scaleX(0);transform-origin:left;}
+  .rmap.rm-play .rm-centre::after{transform:scaleX(1);transition:transform .25s ease;}
+  .rmap.rm-play .rm-b{opacity:1;transform:none;transition:opacity .35s ease,transform .35s ease;}
+  .rmap.rm-play .rm-b1{transition-delay:.15s;}.rmap.rm-play .rm-b2{transition-delay:.3s;}.rmap.rm-play .rm-b3{transition-delay:.45s;}
+  @media(prefers-reduced-motion:reduce){.rmap.rm-ready .rm-b{opacity:1;transform:none;}.rmap.rm-ready .rm-centre::after{transform:none;}}
+  @media(max-width:1000px){.rm-b{grid-template-columns:160px minmax(0,1fr);gap:0 28px;}.rm-node::after{width:28px;}}
+  @media(max-width:860px){.rmap{grid-template-columns:1fr;gap:18px;}.rm-centre::after,.rm-b::before,.rm-b::after,.rm-node::after{display:none;}.rm-branches{gap:14px;}.rm-b{grid-template-columns:1fr;padding:18px;background:var(--panel-2);border:1px solid rgba(20,60,40,.14);border-radius:16px;}.rm-node{background:none;border:none;padding:0;flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px;}.rm-leaves{flex-direction:column;gap:8px;padding-top:14px;}.rm-leaves li{border-radius:10px;}.rm-callout{background:#fff;}}
+  @media(max-width:720px){.pt-tabs{grid-template-columns:1fr;}}
+  .df-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:26px;}
+  .df-card{background:var(--panel-2);border:1px solid rgba(20,60,40,.12);border-radius:16px;padding:20px 20px 22px;}
+  .df-card:nth-child(1){background:#fdf3d4;border-color:#efd98f;}.df-card:nth-child(2){background:#e3f1e8;border-color:#b5d9c1;}.df-card:nth-child(3){background:#e6eef8;border-color:#bccfe8;}.df-card:nth-child(4){background:#f8e6e2;border-color:#e8c0b6;}
+  .df-card h4{margin:0 0 8px;font-family:var(--font-proj);font-weight:700;font-size:16.5px;line-height:1.3;color:var(--ink);}
+  .df-card p{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-soft);text-wrap:pretty;}
+  .df-lab{margin:40px 0 12px;font-size:13px;font-weight:700;color:var(--green);}
+  .df-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid rgba(20,60,40,.12);border-radius:14px;background:#fff;}
+  .df-table{width:100%;min-width:620px;border-collapse:collapse;font-size:15px;}
+  .df-table th,.df-table td{text-align:left;padding:14px 18px;border-bottom:1px solid rgba(20,60,40,.1);line-height:1.4;}
+  .df-table thead th{background:var(--panel-2);font-size:13px;font-weight:700;color:var(--ink-soft);}
+  .df-table tbody th{font-weight:700;color:var(--ink);}.df-table td{color:var(--ink-soft);}
+  .df-table tbody tr:last-child th,.df-table tbody tr:last-child td{border-bottom:none;}
+  .df-cap{margin:10px 0 0;font-size:13px;color:var(--ink-soft);}
+  .hq-box{margin-top:40px;border-left:3px solid var(--green-bright);background:var(--panel-2);border-radius:0 16px 16px 0;padding:26px 30px;}
+  .hq-k{display:block;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+  .hq-t{margin:0 0 10px;font-family:var(--font-proj);font-weight:700;font-size:clamp(20px,2vw,24px);line-height:1.25;color:var(--ink);}
+  .hq-p{margin:0;font-size:17px;line-height:1.6;color:var(--ink-soft);text-wrap:pretty;}
+  .hq-link{display:inline-flex;margin-top:14px;font-size:14.5px;font-weight:600;color:var(--green);text-decoration:underline;text-underline-offset:3px;}.hq-link:hover{color:var(--green-deep);}
+  @media(max-width:1000px){.df-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+  @media(max-width:620px){.df-grid{grid-template-columns:1fr;}.hq-box{padding:22px 22px;}}
+  .ho-row{margin-top:30px;}
+  .ho-step{align-items:flex-start;text-align:left;flex-direction:column;}
+  .ho-body{display:flex;flex-direction:column;gap:6px;}
+  .ho-k{font-family:var(--font-proj);font-weight:700;font-size:16.5px;color:var(--green);}
+  .ho-p{font-weight:400;font-size:15px;line-height:1.5;color:var(--ink-soft);text-wrap:pretty;}
+  .ho-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+  .ho-chips span{background:#fff;border:1px solid rgba(20,60,40,.14);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600;color:var(--green);}
+  .wd-table td.wd-b{color:#6b746f;}.wd-table td.wd-a{color:var(--green-bright);font-weight:600;}
+  @media(max-width:720px){.ho-step{flex-direction:row;}}
+  .pi-tag{display:inline-flex;margin:0 0 12px;background:var(--green-bright);color:#fff;font-size:12.5px;font-weight:700;border-radius:999px;padding:5px 12px;}
+  .rv-row{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0 18px;}
+  .rv-row>li{grid-row:1;position:relative;display:flex;flex-direction:column;gap:6px;min-width:0;}
+  .rv-n{width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-num);font-weight:700;font-size:16px;margin-bottom:6px;}
+  .rv-row>li:not(.rv-back):not(:last-child)::after{content:'';position:absolute;top:21px;left:52px;right:-10px;border-top:2px solid rgba(0,137,83,.5);}
+  .rv-row>li:not(.rv-back):not(:last-child)::before{content:'';position:absolute;top:16px;right:-12px;border:6px solid transparent;border-left:8px solid var(--green-bright);border-right:none;}
+  .rv-k{font-family:var(--font-proj);font-weight:700;font-size:16px;color:var(--green);}
+  .rv-p{font-size:14px;line-height:1.5;color:var(--ink-soft);text-wrap:pretty;}
+  .rv-row>li.rv-back{grid-row:2;grid-column:2;margin-top:14px;align-items:center;gap:8px;}
+  .rv-arc{position:relative;display:block;align-self:flex-start;margin-left:22px;width:calc(100% + 18px);height:26px;border:2px dashed rgba(21,84,59,.45);border-top:none;border-radius:0 0 22px 22px;}
+  .rv-arc::before{content:'';position:absolute;left:-7px;top:-8px;border:6px solid transparent;border-bottom:9px solid var(--green-bright);border-top:none;}
+  .rv-bl{align-self:flex-start;margin-left:22px;width:calc(100% + 18px);text-align:center;font-family:var(--font-hand);font-size:22px;line-height:1;color:var(--ink-soft);}
+  .mf-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start;}
+  .mf{margin:0;background:#fff;border:1px solid #d9dbdf;border-radius:12px;overflow:hidden;box-shadow:0 12px 26px -20px rgba(20,30,40,.4);font-family:var(--font-body);}
+  .mf-chrome{display:flex;align-items:center;gap:10px;padding:8px 10px;background:#f1f2f4;border-bottom:1px solid #e2e4e8;}
+  .mf-dots{display:flex;gap:4px;}.mf-dots i{width:7px;height:7px;border-radius:50%;background:#c9ccd2;}
+  .mf-url{flex:1;height:14px;border-radius:7px;background:#fff;border:1px solid #e2e4e8;}
+  .mf-tag{font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#4a6a9e;background:#e6ecf5;border-radius:999px;padding:3px 8px;}
+  .mf-body{padding:14px;min-height:260px;display:flex;flex-direction:column;gap:8px;font-size:12px;color:#3d4148;}
+  .mf-name{padding:9px 14px;border-top:1px solid #eceef1;font-size:12.5px;font-weight:600;color:#5c6169;background:#fafafb;}
+  .mf-head{display:flex;align-items:center;justify-content:space-between;gap:8px;}.mf-head b{font-size:14px;color:#2a2d33;}
+  .mf-btn{background:#4a6a9e;color:#fff;font-size:11px;font-weight:600;border-radius:6px;padding:5px 10px;white-space:nowrap;}
+  .mf-ghost{border:1px solid #d3d6db;color:#5c6169;font-size:11px;font-weight:600;border-radius:6px;padding:5px 10px;}
+  .mf-search{height:24px;border:1px solid #e0e2e6;border-radius:6px;background:#fafafb;}
+  .mf-tbl{width:100%;border-collapse:collapse;}.mf-tbl th{text-align:left;font-size:10.5px;font-weight:700;color:#80858d;padding:6px 4px;border-bottom:1px solid #e6e8eb;}.mf-tbl td{padding:8px 4px;border-bottom:1px solid #f0f1f3;white-space:nowrap;}
+  .mf-st{font-size:10.5px;font-weight:600;color:#4a6a9e;background:#e6ecf5;border-radius:999px;padding:2px 7px;}.mf-st.off{color:#6a6f77;background:#eceef1;}
+  .mf-lab{display:block;font-size:10.5px;font-weight:700;color:#80858d;margin-top:4px;}
+  .mf-input{border:1px solid #d3d6db;border-radius:6px;padding:6px 8px;}
+  .mf-grp{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:7px 0;border-bottom:1px solid #f0f1f3;}.mf-gt{flex-basis:100%;font-weight:700;font-size:11.5px;color:#2a2d33;}
+  .mf-grp label{display:inline-flex;align-items:center;gap:5px;}
+  .mf-cb{width:11px;height:11px;border:1.5px solid #b7bbc2;border-radius:3px;}.mf-cb.on{background:#4a6a9e;border-color:#4a6a9e;}
+  .mf-foot{display:flex;justify-content:flex-end;gap:8px;margin-top:auto;padding-top:6px;}
+  .mf-region{font-size:10.5px;font-weight:600;color:#4a6a9e;background:#e6ecf5;border-radius:999px;padding:3px 8px;white-space:nowrap;}
+  .mf-mgr{display:flex;align-items:center;gap:8px;padding:8px;border:1px solid #eceef1;border-radius:8px;background:#fafafb;}.mf-mgr b{font-size:12.5px;}
+  .mf-av{width:26px;height:26px;border-radius:50%;background:#d7dde8;color:#3f5a86;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}.mf-av.sm{width:22px;height:22px;font-size:9px;}
+  .mf-mem{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;}
+  .mf-mem li{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid #f0f1f3;}.mf-mem em{margin-left:auto;font-style:normal;color:#80858d;font-size:11px;}
+  .mf-bar{display:block;height:6px;border-radius:3px;background:#e3e5e9;}
+  @media(max-width:1000px){.mf-grid{grid-template-columns:1fr;max-width:520px;}.rv-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 18px;}.rv-row>li{grid-row:auto;}.rv-row>li:nth-child(3)::after,.rv-row>li:nth-child(3)::before{display:none;}.rv-row>li.rv-back{grid-row:auto;grid-column:1/-1;margin:0;flex-direction:row;}.rv-arc{display:none;}.rv-bl{margin:0;width:auto;text-align:left;}.rv-bl::before{content:'Steps 2 and 3: ';font-family:var(--font-body);font-size:14px;font-weight:600;}}
+  @media(max-width:720px){.rv-row{grid-template-columns:1fr;gap:18px;}.rv-row>li{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:14px;}.rv-n{grid-row:1/3;margin:0;}.rv-row>li::after,.rv-row>li::before{display:none!important;}.rv-row>li.rv-back{display:flex;padding-left:58px;}}
+  .pt-tabs{grid-template-columns:repeat(5,minmax(0,1fr));}
+  @media(max-width:1000px){.pt-tabs{display:flex;overflow-x:auto;scrollbar-width:none;}.pt-tabs::-webkit-scrollbar{display:none;}.pt-tabs button{flex:0 0 auto;padding-right:20px;}}
+  .fc-pol{position:relative;margin:30px 0 0;background:#fff;padding:14px 14px 38px;border-radius:3px;box-shadow:0 12px 26px -14px rgba(30,40,35,.45);}
+  .fc-pol::before{content:'';position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-2deg);width:84px;height:22px;background:rgba(245,238,205,.85);border:1px solid rgba(60,50,20,.1);z-index:1;}
+  .fc-photo{aspect-ratio:16/9;overflow:hidden;background:#f4f4f1;}
+  .fc-photo img{display:block;width:100%;height:100%;object-fit:contain;}
+  .fc-pol.has-img{cursor:zoom-in;}
+  .fc-empty{height:100%;box-sizing:border-box;border:2px dashed rgba(21,84,59,.42);background:#eef5ef;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:20px;}
+  .fc-empty span{font-family:var(--font-num);font-weight:700;font-size:10.5px;letter-spacing:.12em;background:var(--green);color:#fff;padding:4px 10px;border-radius:999px;}
+  .fc-empty p{margin:0;font-size:14.5px;color:var(--ink);}
+  .fc-lb{position:fixed;inset:0;z-index:1000;background:rgba(15,20,18,.9);display:flex;align-items:center;justify-content:center;padding:40px;}
+  .fc-lb[hidden]{display:none;}.fc-lb img{max-width:100%;max-height:100%;object-fit:contain;}
+  .fc-lb button{position:absolute;top:18px;right:18px;background:rgba(255,255,255,.12);color:#fff;border:0;width:48px;height:48px;border-radius:50%;font-size:24px;cursor:pointer;}
+  .fl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:40px;align-items:start;}
+  .fl-col h4{display:flex;align-items:center;gap:10px;margin:0 0 16px;font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--green);}
+  .fl-n{width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-num);font-size:14px;}
+  .fl-steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:26px;}
+  .fl-steps li{position:relative;background:var(--panel-2);border:1px solid rgba(20,60,40,.14);border-radius:12px;padding:11px 14px;font-size:14.5px;line-height:1.4;color:var(--ink);}
+  .fl-steps li:not(:last-child)::after{content:'';position:absolute;left:50%;top:calc(100% + 4px);height:12px;border-left:2px solid rgba(0,137,83,.5);}
+  .fl-steps li:not(:last-child)::before{content:'';position:absolute;left:50%;top:calc(100% + 15px);margin-left:-5px;border:5px solid transparent;border-top:7px solid var(--green-bright);border-bottom:none;}
+  .fl-call{margin-top:22px;}
+  @media(max-width:860px){.fl-grid{grid-template-columns:1fr;gap:34px;}}
+  .pt-tabs{grid-template-columns:repeat(6,minmax(0,1fr));}.pt-tabs .nm{font-size:15px;}
+  .sl-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:28px;}
+  .sl-card{margin:0;border-radius:16px;padding:18px 18px 12px;border:1px solid rgba(20,60,40,.12);}
+  .sl-card figcaption{font-family:var(--font-proj);font-weight:700;font-size:16px;margin-bottom:8px;}
+  .sl-before{background:#f1ede4;}.sl-before figcaption{color:var(--ink-soft);}
+  .sl-after{background:var(--panel-2);}.sl-after figcaption{color:var(--green);}
+  .sl-svg{display:block;width:100%;height:auto;font-family:var(--font-body);}
+  .sl-svg text{font-size:12.5px;font-weight:600;}
+  .sl-ln-m line{stroke:#a9a08c;stroke-width:1.5;}
+  .sl-task rect{fill:#e6e1d6;stroke:#c9c1ae;}.sl-task text{fill:#5b5f5a;}
+  .sl-core rect{fill:#d9d2c2;stroke:#9f9681;stroke-width:1.5;}.sl-core text{fill:#3d423e;font-size:14px;font-weight:700;}
+  .sl-ln-g path{fill:none;stroke:var(--green-bright);stroke-width:1.6;opacity:.7;}
+  .sl-top rect{fill:var(--green);}.sl-top text{fill:#fff;font-weight:700;}
+  .sl-node rect{fill:#fff;stroke:var(--green-bright);stroke-width:1.3;}.sl-node text{fill:var(--green);}
+  .hy-tree{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px;position:relative;}
+  .hy-tree::before{content:'';position:absolute;left:17px;top:18px;bottom:18px;border-left:2px solid rgba(0,137,83,.35);}
+  .hy-tree li{display:grid;grid-template-columns:230px minmax(0,1fr);gap:24px;align-items:center;position:relative;}
+  .hy-node{display:flex;align-items:center;gap:12px;font-family:var(--font-proj);font-weight:700;font-size:16.5px;color:var(--green);}
+  .hy-n{position:relative;z-index:1;width:36px;height:36px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-num);font-size:14px;flex:0 0 auto;box-shadow:0 0 0 4px var(--panel);}
+  .hy-tree li:nth-child(2) .hy-n{background:#1a5f43;}.hy-tree li:nth-child(3) .hy-n{background:#256f50;}.hy-tree li:nth-child(4) .hy-n{background:#2f7d5a;}
+  .hy-tree p{margin:0;font-size:15px;line-height:1.55;color:var(--ink-soft);text-wrap:pretty;border-left:1px solid rgba(20,60,40,.14);padding-left:20px;}
+  .hy-note{margin:18px 0 0;font-size:14.5px;color:var(--ink-soft);}
+  @media(max-width:860px){.sl-grid{grid-template-columns:1fr;}}
+  @media(max-width:720px){.hy-tree li{grid-template-columns:1fr;gap:6px;}.hy-tree p{border-left:none;padding-left:48px;}.hy-tree::before{bottom:40px;}}
+  .pt-tabs .nm{white-space:nowrap;}
+  @media(min-width:1001px){.pt-tabs{grid-template-columns:repeat(6,auto);justify-content:stretch;}.pt-tabs button{padding-right:14px;}.pt-tabs button+button{padding-left:14px;}}
+  .pt-tabs-wrap{position:relative;}
+  @media(max-width:1000px){.pt-tabs-wrap::after{content:'';position:absolute;top:0;right:0;bottom:1px;width:56px;pointer-events:none;background:linear-gradient(to right,rgba(251,248,241,0),var(--panel));transition:opacity .2s;}.pt-tabs-wrap.at-end::after{opacity:0;}}
+  .ec-tl-wrap{margin-top:30px;overflow-x:auto;scrollbar-width:none;}.ec-tl-wrap::-webkit-scrollbar{display:none;}
+  .ec-tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(120px,1fr));position:relative;min-width:620px;}
+  .ec-tl::before{content:'';position:absolute;left:10%;right:10%;top:9px;border-top:2px solid rgba(21,84,59,.2);}
+  .ec-tl a{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;text-decoration:none;padding:0 6px 4px;color:var(--ink-soft);}
+  .ec-dot{position:relative;width:20px;height:20px;border-radius:50%;background:var(--panel);border:2px solid rgba(21,84,59,.35);transition:background .2s,border-color .2s,transform .2s;margin-bottom:4px;}
+  .ec-t{font-size:14px;font-weight:700;color:var(--ink);transition:color .2s;}.ec-l{font-size:13px;color:var(--ink-soft);}
+  .ec-tl a:hover .ec-t{color:var(--green);}
+  .ec-tl a[aria-current] .ec-dot{background:var(--green-bright);border-color:var(--green-bright);transform:scale(1.15);box-shadow:0 0 0 5px rgba(0,137,83,.14);}
+  .ec-tl a[aria-current] .ec-t{color:var(--green-bright);}
+  .ec-list{display:flex;flex-direction:column;gap:22px;margin-top:34px;}
+  .ec-card{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px;background:var(--panel-2);border:1px solid rgba(20,60,40,.12);border-radius:20px;padding:30px 32px;scroll-margin-top:24px;}
+  .ec-time{display:block;font-size:13px;font-weight:700;color:var(--green-bright);margin-bottom:6px;}
+  .ec-card h3{margin:0 0 20px;font-family:var(--font-proj);font-weight:700;font-size:clamp(19px,1.8vw,22px);line-height:1.3;color:var(--ink);text-wrap:balance;}
+  .ec-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;}
+  .ec-cols p,.ec-pr p{margin:0;font-size:15px;line-height:1.6;color:var(--ink);text-wrap:pretty;}
+  .ec-k{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;}
+  .ec-k.bad{color:#a8443a;}.ec-k.good{color:var(--green-bright);}
+  .ec-pr{margin-top:22px;padding-top:16px;border-top:1px dashed rgba(21,84,59,.3);display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;}
+  .ec-pr .ec-k{margin:0;}.ec-pr p{font-family:var(--font-hand);font-size:27px;line-height:1.15;color:var(--green);}
+  .ec-v{align-self:center;display:flex;flex-direction:column;align-items:center;gap:10px;background:#fff;border:1px solid rgba(20,60,40,.12);border-radius:16px;padding:22px 16px;font-size:13px;}
+  .ec-row{display:flex;align-items:center;gap:8px;}
+  .ec-ar{display:flex;color:var(--green-bright);}.ec-ar svg{width:18px;height:18px;}.ec-ar.sm svg{width:14px;height:14px;}
+  .ec-user{display:inline-flex;align-items:center;gap:8px;background:var(--panel-2);border:1px solid rgba(20,60,40,.16);border-radius:999px;padding:4px 12px 4px 4px;font-weight:600;color:var(--ink);}
+  .ec-user i{width:24px;height:24px;border-radius:50%;background:var(--mint);color:var(--green);font-style:normal;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .ec-user.gone{color:var(--ink-soft);text-decoration:line-through;}.ec-user.gone i{background:#eee7da;color:var(--ink-soft);}
+  .ec-tag{display:inline-flex;border:1px solid rgba(20,60,40,.18);background:var(--panel-2);border-radius:8px;padding:5px 10px;font-weight:600;color:var(--ink);}
+  .ec-tag.on{background:var(--green);border-color:var(--green);color:#fff;}
+  .ec-tag.faded{border-style:dashed;background:transparent;color:var(--ink-soft);}
+  .ec-tag.role{border-color:var(--green-bright);color:var(--green);}
+  .ec-steps{display:flex;flex-direction:column;align-items:center;gap:6px;width:100%;}
+  .ec-node{width:100%;max-width:200px;text-align:center;background:var(--panel-2);border:1px solid rgba(20,60,40,.16);border-radius:10px;padding:8px 10px;font-weight:600;color:var(--ink);}
+  .ec-node.on{border-color:var(--green-bright);color:var(--green);}
+  .ec-role{width:100%;max-width:220px;display:flex;flex-direction:column;gap:6px;background:var(--panel-2);border:1px solid rgba(20,60,40,.16);border-radius:10px;padding:8px 10px;}
+  .ec-role b{font-size:12.5px;color:var(--ink);}.ec-role i{display:block;height:5px;border-radius:3px;background:var(--green-bright);opacity:.7;}
+  .ec-dup{display:flex;align-items:center;gap:4px;font-size:11.5px;font-weight:600;color:var(--green);}
+  .ec-branch{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;}
+  .ec-branch>div{display:flex;flex-direction:column;align-items:center;gap:6px;}
+  .ec-cond{font-size:12px;font-weight:600;color:var(--ink-soft);}
+  .ec-pop{width:100%;max-width:200px;display:flex;flex-direction:column;gap:4px;background:#fff;border:1px solid rgba(20,60,40,.18);border-radius:10px;padding:10px 12px;box-shadow:0 10px 22px -14px rgba(20,40,30,.35);color:var(--ink);}
+  .ec-pop-h{font-size:11.5px;font-weight:700;color:var(--ink-soft);margin-bottom:2px;}
+  .ec-close{margin-top:34px;}.ec-ck{display:block;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8fc4a8;margin-bottom:14px;}
+  @media(max-width:1000px){.ec-card{grid-template-columns:1fr;gap:22px;}.ec-v{align-self:stretch;}}
+  @media(max-width:720px){.ec-card{padding:22px 20px;}.ec-cols{grid-template-columns:1fr;gap:18px;}}
+  .grp-lab{display:block;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-bright);margin:0 0 8px;}
+  .grp-h{margin:0 0 6px;font-family:var(--font-proj);font-weight:700;font-size:clamp(24px,2.6vw,32px);line-height:1.2;color:var(--ink);text-wrap:balance;}
+  #roles .grp-lab{margin-top:44px;padding-top:34px;border-top:1px solid rgba(20,60,40,.12);}
+  .rx-tests{list-style:none;margin:30px 0 0;padding:0;border-top:1px solid rgba(20,60,40,.14);}
+  .rx-tests li{display:grid;grid-template-columns:34px minmax(0,.8fr) minmax(0,1.6fr);gap:18px 22px;align-items:start;padding:22px 0;border-bottom:1px solid rgba(20,60,40,.14);}
+  .rx-ck{width:28px;height:28px;border-radius:50%;background:var(--green-bright);color:#fff;display:flex;align-items:center;justify-content:center;}.rx-ck svg{width:15px;height:15px;}
+  .rx-tests h3{margin:2px 0 0;font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--ink);}
+  .rx-tests p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-soft);text-wrap:pretty;}
+  #impact .appr-intro a{color:var(--green)!important;font-weight:600;text-decoration:underline!important;text-underline-offset:3px;}#impact .appr-intro a:hover{color:var(--green-deep)!important;}
+  .rx-lab{margin:40px 0 14px;font-size:13px;font-weight:700;color:var(--green);}
+  .rx-stats{margin:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px 26px;}
+  @media(max-width:1000px){.rx-stats{grid-template-columns:repeat(6,minmax(0,1fr));}.rx-stats div{grid-column:span 2;}.rx-stats div:nth-child(n+4){grid-column:span 3;}}
+  .rx-stats div{display:flex;flex-direction:column;gap:4px;padding-top:12px;border-top:1px solid rgba(20,60,40,.18);}
+  .rx-stats dt{font-family:var(--font-proj);font-weight:700;font-size:22px;color:var(--green);line-height:1.2;}
+  .rx-stats dd{margin:0;font-size:13.5px;line-height:1.45;color:var(--ink-soft);}
+  @media(max-width:720px){.rx-tests li{grid-template-columns:34px minmax(0,1fr);}.rx-tests p{grid-column:2;}.rx-stats{grid-template-columns:repeat(2,minmax(0,1fr));}.rx-stats div,.rx-stats div:nth-child(n+4){grid-column:auto;}}
+  .ph-tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));position:relative;}
+  .ph-tl::before{content:'';position:absolute;left:22px;right:calc(33.33% - 22px);top:21px;border-top:2px solid rgba(0,137,83,.45);}
+  .ph-tl li{position:relative;display:flex;flex-direction:column;gap:4px;padding-right:16px;}
+  .ph-n{width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-num);font-weight:700;font-size:16px;margin-bottom:8px;box-shadow:0 0 0 5px var(--panel);position:relative;z-index:1;}
+  .ph-k{font-size:13px;font-weight:700;color:var(--green-bright);}.ph-t{font-family:var(--font-proj);font-weight:700;font-size:16.5px;color:var(--ink);}
+  @media(max-width:720px){.ph-tl{grid-template-columns:1fr;gap:16px;}.ph-tl::before{left:21px;right:auto;top:22px;bottom:22px;border-top:none;border-left:2px solid rgba(0,137,83,.45);}.ph-tl li{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:14px;align-items:center;}.ph-n{grid-row:1/3;margin:0;}}
+  .loop{margin-top:26px;}
+  .loop-row{display:flex;align-items:flex-start;gap:8px;margin:0;padding:0;list-style:none;}
+  .loop-step{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;font-size:15px;line-height:1.4;color:var(--ink);font-weight:600;}
+  .loop-step .n{width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-num);font-weight:700;font-size:16px;flex:0 0 auto;}
+  .loop-arrow{flex:0 0 auto;color:var(--green-bright);padding-top:12px;display:flex;}
+  .loop-arrow svg{width:20px;height:20px;}
+  .loop-back{position:relative;height:34px;margin:10px 10% 0;border:2px dashed rgba(21,84,59,.4);border-top:none;border-radius:0 0 28px 28px;}
+  .loop-back::before{content:'';position:absolute;left:-7px;top:-6px;border:6px solid transparent;border-bottom:9px solid var(--green-bright);border-top:none;}
+  .loop-note{margin:18px 0 0;font-size:15px;color:var(--ink-soft);text-align:center;}
+  @media(max-width:900px){.jobs{grid-template-columns:1fr;gap:28px;}}
+  @media(max-width:720px){.loop-row{flex-direction:column;align-items:flex-start;gap:6px;}.loop-step{flex-direction:row;text-align:left;}.loop-arrow{transform:rotate(90deg);padding:0 0 0 12px;}.loop-back{display:none;}.loop-note{text-align:left;}.conseq-card .big{font-size:34px;}}
+  .hero-scope{margin:0 0 44px;font-size:14.5px;font-weight:600;color:var(--ink);}
+  .panel.case-hero{background:linear-gradient(180deg,#e9f1ea 0,#f1f5ee 46%,var(--panel) 100%);border:1px solid rgba(21,84,59,.1);}
+  .case-hero .proj{font-size:clamp(36px,5.2vw,68px);letter-spacing:-.02em;line-height:1.04;}
+  .case-hero .hero-scope{display:inline-flex;margin-top:10px;padding:9px 14px;border-radius:10px;background:rgba(255,255,255,.7);border:1px solid rgba(21,84,59,.12);}
 
   /* metric row */
   .metric-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:28px;}
@@ -280,6 +536,105 @@
   }
   .bullets.warn li::before{background:#cf4f33;}
   .sub-label{font-family:var(--font-proj);font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 14px;}
+
+  /* ---------- 03 The Process: project wall ---------- */
+  .proc-bridge{display:flex;flex-direction:column;gap:18px;margin:6px 0 30px;}
+  .proc-bridge .blead{margin:0;font-size:17px;color:var(--ink-soft);line-height:1.6;max-width:66ch;}
+  .trail{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none;}
+  .trail button{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:600;font-size:14px;color:var(--green);background:#e7f0e8;border:1px solid rgba(21,84,59,.16);border-radius:999px;padding:9px 16px;cursor:pointer;transition:background .2s,color .2s;}
+  .trail button .tn{font-family:var(--font-num);font-size:12px;opacity:.6;}
+  .trail button:hover{background:#d8e8db;}
+  .trail button[aria-current="true"]{background:var(--green);color:#fff;border-color:var(--green);}
+  .trail button[aria-current="true"] .tn{opacity:.75;}
+  .ph-toggle{align-self:flex-start;display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:600;font-size:13.5px;color:var(--ink-soft);background:transparent;border:1px dashed rgba(21,84,59,.4);border-radius:999px;padding:8px 15px;cursor:pointer;}
+  .ph-toggle:hover{color:var(--green);border-color:var(--green);}
+  body.ph-hidden .ph{display:none;}
+  body.ph-hidden .rewrite-pill{display:none;}
+  /* thread */
+  .proc-wall{position:relative;}
+  .proc-thread{display:none;}
+  /* chapters as tab panels */
+  .chap{position:relative;padding:0;}
+  .chap[hidden]{display:none;}
+  .chap::before{content:attr(data-n);display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--panel);border:2px solid var(--green);color:var(--green);font-family:var(--font-num);font-weight:700;font-size:11px;align-items:center;justify-content:center;margin-bottom:10px;}
+  .chap h3{font-family:var(--font-cursive);font-weight:600;font-size:27px;color:var(--green);margin:0 0 4px;line-height:1.15;}
+  .chap .cstage{font-family:var(--font-body);font-weight:700;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:12px;}
+  .chap>p{margin:0 0 16px;font-size:15.5px;color:var(--ink-soft);line-height:1.6;max-width:68ch;}
+  .reveal-chap{opacity:0;transform:translateY(10px);transition:opacity .35s ease,transform .35s ease;}
+  .reveal-chap.in{opacity:1;transform:none;}
+  /* placeholders */
+  .ph{position:relative;border:2px dashed rgba(21,84,59,.42);background:#eef5ef;border-radius:16px;padding:22px 20px 18px;}
+  .ph-pill{position:absolute;top:-11px;left:16px;font-family:var(--font-num);font-weight:700;font-size:10.5px;letter-spacing:.12em;background:var(--green);color:#fff;padding:4px 10px;border-radius:999px;}
+  .ph .what{margin:6px 0 4px;font-size:14.5px;color:var(--ink);line-height:1.5;}
+  .ph .fmt{margin:0;font-size:12.5px;color:var(--ink-faint);}
+  .ph-img{min-height:150px;display:flex;flex-direction:column;justify-content:center;}
+  .rewrite-pill{display:inline-block;font-family:var(--font-num);font-weight:700;font-size:10px;letter-spacing:.12em;background:#f7d24a;color:#4a3c05;padding:3px 8px;border-radius:999px;margin-left:8px;vertical-align:2px;}
+  /* artefact framing */
+  .artefacts{display:grid;gap:18px;}
+  .artefacts.two{grid-template-columns:1fr 1fr;}
+  .artefacts.three{grid-template-columns:repeat(3,1fr);}
+  .tapecard{position:relative;background:var(--panel-2);border:1px solid rgba(44,55,51,.1);border-radius:6px;padding:20px 18px;box-shadow:0 10px 24px -18px rgba(40,50,40,.55);}
+  .tapecard::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(-2deg);width:58px;height:17px;background:rgba(247,210,74,.4);border:1px solid rgba(60,50,20,.08);}
+  .tapecard.t1{transform:rotate(-.7deg);} .tapecard.t2{transform:rotate(.6deg);} .tapecard.t3{transform:rotate(-.4deg);}
+  .src-tag{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-body);font-weight:600;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--green);background:#e2eee4;border-radius:999px;padding:5px 11px;margin-top:12px;}
+  .quote-card{background:var(--panel-2);border:1px solid rgba(44,55,51,.1);border-radius:18px;padding:26px 28px;position:relative;}
+  .quote-card .qmark{font-family:var(--font-cursive);font-size:52px;line-height:.6;color:rgba(21,84,59,.3);}
+  .recon{display:inline-block;font-size:11.5px;color:var(--ink-faint);margin-top:10px;font-style:italic;}
+  /* ch2 flow */
+  .flow-card{background:var(--panel-2);border:1px solid rgba(44,55,51,.1);border-radius:20px;padding:24px;}
+  .seg{display:inline-flex;background:#e7f0e8;border-radius:999px;padding:4px;gap:4px;margin-bottom:18px;}
+  .seg button{font-family:var(--font-body);font-weight:700;font-size:13px;color:var(--green);background:transparent;border:none;border-radius:999px;padding:7px 18px;cursor:pointer;}
+  .seg button[aria-selected="true"]{background:var(--green);color:#fff;}
+  .flow-scroll{overflow-x:auto;padding-bottom:6px;}
+  .fx{margin:22px 0 26px;display:flex;flex-direction:column;gap:28px;}.fx-lab{margin:0 0 10px;font-size:14px;font-weight:700;color:var(--green);}.fx-img{position:relative;display:block;background:#f4f4f2;border:1px solid rgba(20,60,40,.12);border-radius:14px;overflow:hidden;}.fx-img img{display:block;width:100%;height:auto;}.fx-img img[hidden]{display:none;}.fx-open{position:absolute;right:12px;bottom:12px;background:rgba(255,255,255,.94);border:1px solid rgba(20,60,40,.14);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700;color:var(--green);}.fx-img:hover .fx-open{background:#fff;color:var(--green-deep);}.fx-cap{margin-top:10px;font-size:14px;color:var(--ink-faint);}
+  .flow{display:flex;align-items:stretch;gap:0;min-width:min-content;}
+  .flow[hidden]{display:none;}
+  .stop{flex:0 0 auto;width:168px;background:var(--panel);border:1px solid rgba(44,55,51,.12);border-radius:14px;padding:14px 15px;position:relative;}
+  .stop+.stop{margin-left:34px;}
+  .stop+.stop::before{content:'';position:absolute;left:-30px;top:50%;width:26px;height:2px;background:rgba(21,84,59,.28);}
+  .stop+.stop::after{content:'';position:absolute;left:-8px;top:50%;transform:translateY(-50%);border:5px solid transparent;border-left-color:rgba(21,84,59,.4);}
+  .stop h5{font-family:var(--font-proj);font-weight:700;font-size:14px;color:var(--ink);margin:0 0 6px;line-height:1.3;}
+  .stop .sink{position:absolute;top:-9px;right:-9px;width:22px;height:22px;border-radius:50%;background:#d9483b;color:#fff;font-family:var(--font-num);font-weight:700;font-size:10px;display:flex;align-items:center;justify-content:center;}
+  .stop .ph{padding:12px 10px 10px;border-radius:10px;}
+  .stop .ph-pill{left:8px;font-size:9.5px;}
+  .stop .what{font-size:12.5px;margin:2px 0 0;}
+  .flow-cap{margin:14px 0 0;font-size:13px;color:var(--ink-faint);}
+  /* ch3 fan */
+  .fan{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .opt{background:var(--panel-2);border:1px solid rgba(44,55,51,.12);border-radius:16px;padding:18px;cursor:pointer;text-align:left;font:inherit;transition:transform .25s ease,opacity .25s ease,box-shadow .25s ease;opacity:.72;}
+  .opt:nth-child(1){transform:rotate(-1.4deg);} .opt:nth-child(2){transform:rotate(.9deg);} .opt:nth-child(3){transform:rotate(-.6deg);}
+  .opt[aria-pressed="true"]{opacity:1;transform:rotate(0) translateY(-6px);box-shadow:0 20px 40px -24px rgba(30,45,35,.55);border-color:rgba(21,84,59,.3);}
+  .opt h5{font-family:var(--font-proj);font-weight:700;font-size:15.5px;color:var(--ink);margin:0 0 10px;display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
+  .chosen-tag{font-family:var(--font-body);font-weight:700;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;background:var(--green);color:#fff;padding:3px 9px;border-radius:999px;}
+  .opt-note{margin-top:12px;display:none;}
+  .opt[aria-pressed="true"] .opt-note{display:block;}
+  .opt-note .hand{font-family:var(--font-hand);font-size:20px;color:var(--ink-soft);margin:0 0 8px;}
+  /* ch4 compare */
+  .cmp{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(44,55,51,.12);background:var(--panel-2);}
+  .cmp-panes{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(44,55,51,.12);}
+  .cmp-pane{background:var(--panel-2);padding:20px;}
+  .cmp-pane .vlabel{font-family:var(--font-num);font-weight:700;font-size:11px;letter-spacing:.12em;color:var(--green);margin-bottom:10px;display:block;}
+  .trigger-card{background:var(--panel-2);border:1px solid rgba(44,55,51,.12);border-radius:16px;padding:20px 22px;margin-top:16px;}
+  .trigger-tags{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 0;}
+  .trigger-tags span{font-size:12px;color:var(--ink-soft);background:#e9e3d6;border-radius:999px;padding:4px 11px;}
+  /* ch5 tug of war */
+  .tug{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;margin-top:14px;}
+  .tug .side{background:#e7f0e8;border-radius:12px;padding:14px;text-align:center;font-size:13.5px;color:var(--green);font-weight:600;}
+  .tug .rope{font-family:var(--font-num);font-size:12px;color:var(--ink-faint);letter-spacing:.1em;}
+  .tug-res{margin-top:12px;}
+  .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px;}
+  /* closing */
+  .proc-close{display:flex;flex-direction:column;gap:14px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(44,55,51,.1);}
+  .proc-close .cline{font-family:var(--font-hand);font-size:27px;color:var(--ink-soft);margin:0;display:flex;align-items:center;gap:12px;}
+  .proc-close .cline::after{content:'↓';font-family:var(--font-body);font-size:20px;color:var(--green);}
+  @media(prefers-reduced-motion:reduce){.reveal-chap{opacity:1;transform:none;transition:none;}.opt{transition:none;}}
+  @media(max-width:860px){
+    .artefacts.two,.artefacts.three,.fan,.thumbs,.cmp-panes{grid-template-columns:1fr;}
+    .proc-wall{padding-left:0;}
+    .chap{border-top:none;padding-top:0;}
+    .opt{opacity:1;transform:none;}
+    .tug{grid-template-columns:1fr;}
+  }
 
   /* contribution cards */
   .contrib-grid{display:flex;flex-direction:column;gap:16px;margin-top:8px;}
@@ -482,18 +837,13 @@
     <!-- HERO -->
     <section class="panel case-hero" data-screen-label="Hero">
       <div class="crumb">
-        <a class="crumb-parent" href="enterprise-platform.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>The System Behind the Underwriter's Day</a>
+        <a class="crumb-parent" href="enterprise-platform.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>The platform overview</a>
         <a class="crumb-home" href="index.html" aria-label="Portfolio home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg></a>
       </div>
-      <h1 class="proj">Team &amp; user management</h1>
-      <p class="headline">I didn't build a feature. I built the system that runs every client.</p>
-      <p class="subline">One self-serve module — Users, Roles, and Teams — that hands full environment control to every client, across five lines of business, with zero modification.</p>
-
-      <div class="metric-row">
-        <div class="metric-card"><div class="num">5+</div><div class="lab">LOBs, zero modification</div></div>
-        <div class="metric-card"><div class="num">0</div><div class="lab">Interventions after launch</div></div>
-        <div class="metric-card"><div class="num">Top</div><div class="lab">Cited selling feature</div></div>
-      </div>
+      <span class="role-badge">Case study 2 of 2 · Team and user management</span>
+      <h1 class="proj">Letting each client run the platform themselves</h1>
+      <p class="subline">Every new user, role or permission change used to go through our support team. I designed a self-serve module where each client's admin sets up users, roles and teams on their own.</p>
+      <p class="hero-scope">My scope: users, roles, teams and the delete flow · About 3 months, in 3 phases</p>
 
       <div class="ru-panel" style="min-height:400px;padding:30px;" aria-hidden="true">
         <div class="ru-pageheader">
@@ -523,62 +873,243 @@
           </div>
         </div>
       </div>
-      <p class="ru-cap">One module, three pillars — <b>Users, Roles, and Teams</b> — handing full environment control to the client. No backend access required.</p>
+      <p class="ru-cap">Users, roles and teams in one module. Interface recreated with sample data.</p>
     </section>
 
     <!-- 01 WHERE IT STARTED -->
     <section class="panel reveal" id="start" data-screen-label="01 Where It Started">
-      <span class="eyebrow-num">01 — Where It Started</span>
-      <h2 class="sec-title">A platform for everyone. Configured for no one</h2>
-      <p class="body-copy">One unified platform. Multiple LOBs, multiple clients — all running on the same base system.</p>
-      <p class="body-copy">But every client had different role structures, different hierarchies, different terminologies. And there was <strong>no way to handle any of it from the client's side.</strong></p>
+      <span class="eyebrow-num">01 · Where it started</span>
+      <h2 class="sec-title">It worked when there was one line</h2>
+      <p class="appr-intro">When the platform was only Marine, most clients worked the same way. Our admin set up each client and created every user from the backend. Any change followed the same loop.</p>
+      <p class="conseq-link">How a change happened</p>
+      <div class="loop">
+        <ol class="loop-row">
+          <li class="loop-step"><span class="n">1</span>Client needs a change</li>
+          <li class="loop-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></li>
+          <li class="loop-step"><span class="n">2</span>Contacts our admin</li>
+          <li class="loop-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></li>
+          <li class="loop-step"><span class="n">3</span>Admin asks the backend team</li>
+          <li class="loop-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></li>
+          <li class="loop-step"><span class="n">4</span>Backend makes the change</li>
+          <li class="loop-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></li>
+          <li class="loop-step"><span class="n">5</span>Back to the client</li>
+        </ol>
+        <div class="loop-back" aria-hidden="true"></div>
+        <p class="loop-note">Even adding one new user followed this loop.</p>
+      </div>
     </section>
 
     <!-- 02 THE PROBLEM -->
     <section class="panel reveal" id="problem" data-screen-label="02 The Problem">
-      <span class="eyebrow-num">02 — The Problem</span>
-      <h2 class="sec-title">Every change needed us. That was the problem</h2>
-      <p class="sub-label">The old reality</p>
-      <ul class="bullets warn">
-        <li>All user creation, role setup, and permission configuration handled by our CSI from the backend.</li>
-        <li>Every role change or new user meant a support request to our team.</li>
-        <li>Dev team permanently queued with client-specific customisation tasks.</li>
-        <li>Smart platform. Zero client autonomy.</li>
-      </ul>
-      <div class="insight-grid two" style="margin-top:24px;">
-        <div class="insight"><div class="k">The Pressure</div><p>One CSI managing all client environments — setup, updates, and customisation for every client, on every LOB.</p></div>
-        <div class="insight"><div class="k">The Dependency</div><p>Dev team allocated to permission changes that should never have needed engineering effort.</p></div>
+      <span class="eyebrow-num">02 · The problem</span>
+      <h2 class="sec-title">Manageable for one line. Not for five.</h2>
+      <p class="appr-intro">As new lines and clients arrived, each with its own roles and permissions, the loop could not keep up. Everyone felt it.</p>
+      <div class="jobs">
+        <div class="job">
+          <p class="conseq-link job-t">Clients</p>
+          <ul class="notes job-notes">
+            <li>Even small changes, like a new user or a role tweak, meant contacting our admin.</li>
+            <li>Every client had its own roles and needed different permissions, but could not set any of them.</li>
+            <li>Waiting on us for minor changes made for a poor experience.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <p class="conseq-link job-t">Our admin</p>
+          <ul class="notes job-notes">
+            <li>Set up every client and created every user by hand.</li>
+            <li>Passed every role or permission request to the backend team, then back to the client.</li>
+            <li>The workload grew with every new line and every new client.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <p class="conseq-link job-t">Backend team</p>
+          <ul class="notes job-notes">
+            <li>Pulled into role and permission changes that should never have needed engineers.</li>
+            <li>Client-specific changes kept piling up in the queue.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="conseq-link">What it added up to</p>
+      <div class="conseq">
+        <div class="conseq-card">
+          <div class="k">The cost</div>
+          <p class="big">Every client change became our work</p>
+          <p>The more lines and clients we added, the more our admin and backend team became a bottleneck, and the longer clients waited for simple changes.</p>
+        </div>
       </div>
     </section>
 
-    <!-- 03 THE SOLUTION -->
-    <section class="panel reveal" id="solution" data-screen-label="03 The Solution">
-      <span class="eyebrow-num">03 — The Solution</span>
-      <h2 class="sec-title">Give the platform to the client. All of it</h2>
-      <p class="body-copy">A self-serve User Management module — three features that hand full environment control to the client. Our CSI's only job at onboarding: <strong>create one admin.</strong></p>
-      <div class="arch-layers">
-        <div class="layer">
-          <div class="lhead"><h4>Users</h4><span class="lpct">Self-served</span></div>
-          <p>Create and manage users individually or in bulk. Assign roles, regions, and teams. No backend needed.</p>
+    <!-- 03 THE GOAL -->
+    <section class="panel reveal" id="goal" data-screen-label="03 The Goal">
+      <span class="eyebrow-num">03 · The goal</span>
+      <h2 class="sec-title">What the new module had to do</h2>
+      <p class="appr-intro">Before designing anything, I set four tests the module had to pass, one for each part of the problem.</p>
+      <dl class="goal-table"><div><dt><span class="gn">1</span>Clients change things themselves</dt><dd>A client's admin should add users and change roles or permissions without contacting us.</dd></div><div><dt><span class="gn">2</span>Every client works their own way</dt><dd>Each client should name its own roles, set its own permissions and organise its own teams.</dd></div><div><dt><span class="gn">3</span>No engineers in the loop</dt><dd>A user, role or permission change should never need backend work.</dd></div><div><dt><span class="gn">4</span>One module for every line</dt><dd>The same module should work for every line of business and every client, without changes.</dd></div></dl>
+    </section>
+
+    <!-- 04 THE PROCESS -->
+    <section class="panel reveal" id="process" data-screen-label="04 The Process">
+      <span class="eyebrow-num">04 · The process</span>
+      <h2 class="sec-title">How I got there</h2>
+      <p class="appr-intro">First we worked out what the module had to contain. Then we made sure it worked for every line and every client.</p>
+      <div class="pt-tabs-wrap"><div class="pt-tabs" role="tablist" aria-label="How I got there" style="margin-top:36px">
+        <button type="button" role="tab" id="pt-t1" aria-controls="pt-p1" aria-selected="true"><span class="nm">01 · What it needed</span></button>
+        <button type="button" role="tab" id="pt-t2" aria-controls="pt-p2" aria-selected="false" tabindex="-1"><span class="nm">02 · Every line</span></button>
+        <button type="button" role="tab" id="pt-t3" aria-controls="pt-p3" aria-selected="false" tabindex="-1"><span class="nm">03 · The plan</span></button>
+        <button type="button" role="tab" id="pt-t4" aria-controls="pt-p4" aria-selected="false" tabindex="-1"><span class="nm">04 · The flow</span></button>
+        <button type="button" role="tab" id="pt-t5" aria-controls="pt-p5" aria-selected="false" tabindex="-1"><span class="nm">05 · Admin levels</span></button>
+        <button type="button" role="tab" id="pt-t6" aria-controls="pt-p6" aria-selected="false" tabindex="-1"><span class="nm">06 · Prototypes</span></button>
+      </div></div>
+      <div class="pt-panel" id="pt-p1" role="tabpanel" aria-labelledby="pt-t1">
+        <span class="pt-mnum">01 · What it needed</span>
+        <h3>Three building blocks</h3>
+        <p class="pt-txt">We spoke with our internal teams and with clients about how they managed users today. It came down to three building blocks.</p>
+        <div class="rmap" id="reqMap">
+          <div class="rm-centre">Team and user module</div>
+          <div class="rm-branches">
+          <div class="rm-b rm-b1"><div class="rm-node"><span class="rm-t">Users</span><span class="rm-tag">From internal teams and clients</span></div><div class="rm-leafcol"><ul class="rm-leaves"><li>Create users</li><li>See every user in one list</li><li>User details</li><li>Assign a role</li></ul></div></div>
+          <div class="rm-b rm-b2"><div class="rm-node"><span class="rm-t">Roles</span><span class="rm-tag">From internal teams and clients</span></div><div class="rm-leafcol"><ul class="rm-leaves"><li>Create roles</li><li>Name them the client's way</li><li>Set permissions for each role</li></ul></div></div>
+          <div class="rm-b rm-b3"><div class="rm-node"><span class="rm-t">Teams</span><span class="rm-tag hi">Client request</span></div><div class="rm-leafcol"><ul class="rm-leaves"><li>Group users into teams</li><li>Assign submissions to a team</li><li>Split teams by region or branch</li></ul><p class="rm-callout">Some clients already worked in teams, but managed them outside the platform. They wanted to assign submissions to a team, and split teams by region or branch.</p></div></div>
+          </div>
         </div>
-        <div class="layer">
-          <div class="lhead"><h4>Roles</h4><span class="lpct">Client-configured</span></div>
-          <p>Define role hierarchy, name roles their way, set permissions per role. Fully client-configured.</p>
-        </div>
-        <div class="layer">
-          <div class="lhead"><h4>Teams</h4><span class="lpct">Geography-aware</span></div>
-          <p>For clients across regions and countries. Create teams by location, assign managers, scope submissions.</p>
-        </div>
+        <button type="button" class="pt-link" data-next-tab="pt-t2">Next: making these work for every line and every client →</button>
+      </div>
+      <div class="pt-panel" id="pt-p2" role="tabpanel" aria-labelledby="pt-t2" hidden>
+        <span class="pt-mnum">02 · Every line, every client</span>
+        <h3>Same job, different names, different rules</h3>
+        <p class="pt-txt">Marine, Aviation, PV&amp;T and other lines each had their own roles and permissions. Inside each line, every client did it differently again.</p>
+        <div class="df-grid"><div class="df-card"><h4>Different roles per line</h4><p>Each line of business had its own set of roles.</p></div><div class="df-card"><h4>Different names for the same role</h4><p>One client's "Senior Underwriter" was another's "Lead Underwriter".</p></div><div class="df-card"><h4>Different team setups</h4><p>Some clients split work between a clearance team and underwriters. Others had underwriters do everything.</p></div><div class="df-card"><h4>Different permissions</h4><p>Clients wanted to decide who could do what, like who could bind a policy.</p></div></div>
+        <p class="df-lab">Same job, three clients</p>
+        <div class="df-scroll"><table class="df-table"><thead><tr><th scope="col">Job</th><th scope="col">Client A</th><th scope="col">Client B</th><th scope="col">Client C</th></tr></thead><tbody><tr><th scope="row">Senior underwriter</th><td>Senior Underwriter</td><td>Lead Underwriter</td><td>Underwriter II</td></tr><tr><th scope="row">Checks incoming data</th><td>Clearance Specialist</td><td>Submissions Analyst</td><td>Done by underwriters</td></tr><tr><th scope="row">Can bind a policy</th><td>Underwriting Head only</td><td>Senior and Head</td><td>All underwriters</td></tr></tbody></table></div>
+        <p class="df-cap">Illustrative examples, not real client data.</p>
+        <div class="hq-box"><span class="hq-k">The hard question</span><p class="hq-t">Could we ship a fixed set of default roles?</p><p class="hq-p">No. Fixed roles would never fit every line and every client. Each exception would send the client back to our admin, the same loop we set out to remove.</p><a class="hq-link" href="#start">See the loop in section 01 ↑</a></div>
+        <button type="button" class="pt-link" data-next-tab="pt-t3">Next: how we solved it →</button>
+      </div>
+      <div class="pt-panel" id="pt-p3" role="tabpanel" aria-labelledby="pt-t3" hidden>
+        <span class="pt-mnum">03 · The plan</span>
+        <h3>One admin, then the client builds the rest</h3>
+        <p class="pt-txt">Instead of fixed roles, we built a flexible module. Each client designs its own setup inside it, and our team steps out after day one.</p>
+        <ol class="loop-row ho-row"><li class="loop-step ho-step"><span class="n">1</span><div class="ho-body"><span class="ho-k">Day one</span><span class="ho-p">Our admin creates one client admin, with every permission.</span></div></li><li class="loop-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></li><li class="loop-step ho-step"><span class="n">2</span><div class="ho-body"><span class="ho-k">Handover</span><span class="ho-p">The client admin takes over.</span></div></li><li class="loop-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></li><li class="loop-step ho-step"><span class="n">3</span><div class="ho-body"><span class="ho-k">Every day after</span><span class="ho-p">The client admin creates roles, sets permissions, builds teams and adds users.</span><span class="ho-chips"><span>Roles</span><span>Permissions</span><span>Teams</span><span>Users</span></span></div></li></ol>
+        <p class="df-lab">Who does what</p>
+        <div class="df-scroll"><table class="df-table wd-table"><thead><tr><th scope="col">Task</th><th scope="col">Before</th><th scope="col">After</th></tr></thead><tbody><tr><th scope="row">Set up a new client</th><td class="wd-b">Our admin, from the backend</td><td class="wd-a">Our admin creates one client admin</td></tr><tr><th scope="row">Add a user</th><td class="wd-b">Our admin</td><td class="wd-a">Client admin</td></tr><tr><th scope="row">Create or rename a role</th><td class="wd-b">Backend team</td><td class="wd-a">Client admin</td></tr><tr><th scope="row">Split a role into sub-roles</th><td class="wd-b">Not possible</td><td class="wd-a">Client admin</td></tr><tr><th scope="row">Change a role's permissions</th><td class="wd-b">Backend team</td><td class="wd-a">Client admin</td></tr><tr><th scope="row">Build teams by branch or region</th><td class="wd-b">Outside the platform</td><td class="wd-a">Client admin</td></tr></tbody></table></div>
+        <div class="hq-box"><p class="hq-p">Each client now designs its own setup, with its own role names, permissions and teams. Our admin's work at onboarding became one step, and the backend team stepped out of role and permission changes.</p></div>
+        <button type="button" class="pt-link" data-next-tab="pt-t4">Next: how it runs →</button>
+      </div>
+      <div class="pt-panel" id="pt-p4" role="tabpanel" aria-labelledby="pt-t4" hidden>
+        <span class="pt-mnum">04 · The flow</span>
+        <h3>Roles first, then users, then teams</h3>
+        <p class="pt-txt">I mapped the whole module as one flow. The order mattered: roles come first because they are assigned when a user is created, and teams are built from existing users.</p>
+        <figure class="fx" id="fcPol"><div class="fx-item"><p class="fx-lab">1 · Roles</p><a class="fx-img" href="assets/tm-flow-roles.png" target="_blank" rel="noopener"><img src="assets/tm-flow-roles.png" alt="Roles flow map: default roles, how roles work, and the role creation flow"><span class="fx-open">Open full size</span></a></div><div class="fx-item"><p class="fx-lab">2 · Users</p><a class="fx-img" href="assets/tm-flow-users.png" target="_blank" rel="noopener"><img src="assets/tm-flow-users.png" alt="User creation flow map: single and bulk creation, invite email, activation, and edit, deactivate and delete"><span class="fx-open">Open full size</span></a></div><div class="fx-item"><p class="fx-lab">3 · Teams</p><a class="fx-img" href="assets/tm-flow-teams.png" target="_blank" rel="noopener"><img src="assets/tm-flow-teams.png" alt="Teams flow map: how teams work by country, location and department, and the team creation flow"><span class="fx-open">Open full size</span></a></div></figure>
+        <button type="button" class="pt-link" data-next-tab="pt-t5">Next: one more problem →</button>
+      </div>
+      <div class="pt-panel" id="pt-p5" role="tabpanel" aria-labelledby="pt-t5" hidden>
+        <span class="pt-mnum">05 · Admin levels</span>
+        <h3>We had moved the bottleneck, not removed it</h3>
+        <p class="pt-txt">The module took the load off our admin and backend team. But it all landed on one client admin, and for clients working across many locations, that was too much for one person.</p>
+        <div class="sl-grid"><figure class="sl-card sl-before"><figcaption>One admin, everything</figcaption><svg viewBox="0 0 400 260" class="sl-svg" role="img" aria-label="Six tasks all pointing at one client admin"><defs><marker id="ahM" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a9a08c"/></marker></defs><g class="sl-ln-m"><line x1="62" y1="49" x2="183.44" y2="109" marker-end="url(#ahM)"/><line x1="200" y1="41" x2="200" y2="109" marker-end="url(#ahM)"/><line x1="338" y1="49" x2="216.56" y2="109" marker-end="url(#ahM)"/><line x1="62" y1="211" x2="183.44" y2="151" marker-end="url(#ahM)"/><line x1="200" y1="219" x2="200" y2="151" marker-end="url(#ahM)"/><line x1="338" y1="211" x2="216.56" y2="151" marker-end="url(#ahM)"/></g><g class="sl-task"><rect x="20" y="19" width="84" height="30" rx="8"/><text x="62" y="38" text-anchor="middle">Users</text></g><g class="sl-task"><rect x="158" y="11" width="84" height="30" rx="8"/><text x="200" y="30" text-anchor="middle">Roles</text></g><g class="sl-task"><rect x="286" y="19" width="104" height="30" rx="8"/><text x="338" y="38" text-anchor="middle">Permissions</text></g><g class="sl-task"><rect x="20" y="211" width="84" height="30" rx="8"/><text x="62" y="230" text-anchor="middle">Teams</text></g><g class="sl-task"><rect x="158" y="219" width="84" height="30" rx="8"/><text x="200" y="238" text-anchor="middle">Branches</text></g><g class="sl-task"><rect x="286" y="211" width="104" height="30" rx="8"/><text x="338" y="230" text-anchor="middle">Every change</text></g><g class="sl-core"><rect x="138" y="112" width="124" height="36" rx="10"/><text x="200" y="135" text-anchor="middle">Client admin</text></g></svg></figure><figure class="sl-card sl-after"><figcaption>Work spread across levels</figcaption><svg viewBox="0 0 400 260" class="sl-svg" role="img" aria-label="Super admin, two branch admins, two team managers"><g class="sl-ln-g"><path d="M200 49V85H110V105M200 85H290V105"/><path d="M110 135V195M290 135V195"/></g><g class="sl-top"><rect x="138" y="19" width="124" height="30" rx="8"/><text x="200" y="38" text-anchor="middle">Super admin</text></g><g class="sl-node"><rect x="51" y="105" width="118" height="30" rx="8"/><text x="110" y="124" text-anchor="middle">Branch admin</text></g><g class="sl-node"><rect x="231" y="105" width="118" height="30" rx="8"/><text x="290" y="124" text-anchor="middle">Branch admin</text></g><g class="sl-node"><rect x="51" y="195" width="118" height="30" rx="8"/><text x="110" y="214" text-anchor="middle">Team manager</text></g><g class="sl-node"><rect x="231" y="195" width="118" height="30" rx="8"/><text x="290" y="214" text-anchor="middle">Team manager</text></g></svg></figure></div>
+        <p class="df-lab">Who does what</p>
+        <ol class="hy-tree"><li><div class="hy-node"><span class="hy-n">1</span>Super admin</div><p>The first client admin, created by our team. Has every permission. Creates other admins and decides what each can do.</p></li><li><div class="hy-node"><span class="hy-n">2</span>Admins</div><p>Created by the super admin, for a branch, a region or any split the client wants. Permissions are set by the super admin, up to full access.</p></li><li><div class="hy-node"><span class="hy-n">3</span>Team managers</div><p>Run their own team with extra permissions, like managing members and assigning submissions.</p></li><li><div class="hy-node"><span class="hy-n">4</span>Team members</div><p>Do the day-to-day work with the permissions their role gives them.</p></li></ol>
+        <p class="hy-note">How the work is split is up to each client. We built the structure, and they decide how to use it.</p>
+        <div class="hq-box"><p class="hq-p">Our admin, our backend team and now the client admin are all out of the bottleneck. Each client has a clear hierarchy, where everyone knows who does what.</p></div>
+        <button type="button" class="pt-link" data-next-tab="pt-t6">Next: testing it with prototypes →</button>
+      </div>
+      <div class="pt-panel" id="pt-p6" role="tabpanel" aria-labelledby="pt-t6" hidden>
+        <span class="pt-mnum">06 · Prototypes</span>
+        <span class="pi-tag">A process I introduced</span>
+        <h3>Working prototypes before final design</h3>
+        <p class="pt-txt">Instead of rough sketches, I built working prototypes with Figma Make and Google AI Studio, connected to our design system so they looked like the real product. People could click through real flows from the first review.</p>
+        <ol class="rv-row"><li><span class="rv-n">1</span><span class="rv-k">Prototype</span><span class="rv-p">Built with Figma Make and Google AI Studio</span></li><li><span class="rv-n">2</span><span class="rv-k">Internal review</span><span class="rv-p">With product managers across different lines and clients</span></li><li><span class="rv-n">3</span><span class="rv-k">Refine</span><span class="rv-p">Changes from every round of feedback</span></li><li class="rv-back" aria-label="Steps 2 and 3 repeat"><span class="rv-arc" aria-hidden="true"></span><span class="rv-bl">Repeat until it holds up</span></li><li><span class="rv-n">4</span><span class="rv-k">Dev walkthrough</span><span class="rv-p">With the development team, to spot technical challenges early</span></li><li><span class="rv-n">5</span><span class="rv-k">Finalise</span><span class="rv-p">The final design</span></li><li><span class="rv-n">6</span><span class="rv-k">Client preview</span><span class="rv-p">Shown to a few clients before launch</span></li></ol>
+        <p class="df-lab">From the prototypes</p>
+        <div class="mf-grid"><figure class="mf"><div class="mf-chrome"><span class="mf-dots"><i></i><i></i><i></i></span><span class="mf-url"></span><span class="mf-tag">Prototype</span></div><div class="mf-body"><div class="mf-head"><b>Users</b><span class="mf-btn">Add user</span></div><div class="mf-search"></div><table class="mf-tbl"><thead><tr><th>Name</th><th>Role</th><th>Team</th><th>Status</th></tr></thead><tbody><tr><td>Alex Morgan</td><td>Sr UW</td><td>North</td><td><span class="mf-st">Active</span></td></tr><tr><td>Priya Nair</td><td>Head</td><td>West</td><td><span class="mf-st">Active</span></td></tr><tr><td>Sam Lee</td><td>Clearance</td><td>North</td><td><span class="mf-st off">Invited</span></td></tr><tr><td>Dana Cole</td><td>UW</td><td>South</td><td><span class="mf-st">Active</span></td></tr></tbody></table></div><figcaption class="mf-name">Users list</figcaption></figure><figure class="mf"><div class="mf-chrome"><span class="mf-dots"><i></i><i></i><i></i></span><span class="mf-url"></span><span class="mf-tag">Prototype</span></div><div class="mf-body"><div class="mf-head"><b>Create role</b></div><span class="mf-lab">Role name</span><div class="mf-input">Senior Underwriter</div><span class="mf-lab">Permissions</span><div class="mf-grp"><span class="mf-gt">Submissions</span><label><i class="mf-cb on"></i>View</label><label><i class="mf-cb on"></i>Create</label><label><i class="mf-cb"></i>Assign</label></div><div class="mf-grp"><span class="mf-gt">Guidelines</span><label><i class="mf-cb on"></i>View</label><label><i class="mf-cb on"></i>Edit</label></div><div class="mf-grp"><span class="mf-gt">Quote and bind</span><label><i class="mf-cb on"></i>Create quote</label><label><i class="mf-cb on"></i>Bind policy</label></div><div class="mf-foot"><span class="mf-ghost">Cancel</span><span class="mf-btn">Save role</span></div></div><figcaption class="mf-name">Create role</figcaption></figure><figure class="mf"><div class="mf-chrome"><span class="mf-dots"><i></i><i></i><i></i></span><span class="mf-url"></span><span class="mf-tag">Prototype</span></div><div class="mf-body"><div class="mf-head"><b>Underwriting North</b><span class="mf-region">UK · North</span></div><div class="mf-mgr"><span class="mf-av">PN</span><div><span class="mf-lab" style="margin:0">Manager</span><b>Priya Nair</b></div></div><span class="mf-lab">Members · 4</span><ul class="mf-mem"><li><span class="mf-av sm">AM</span><span>Alex Morgan</span><i class="mf-bar" style="width:38px"></i><em>Sr UW</em></li><li><span class="mf-av sm">SL</span><span>Sam Lee</span><i class="mf-bar" style="width:38px"></i><em>Clearance</em></li><li><span class="mf-av sm">DC</span><span>Dana Cole</span><i class="mf-bar" style="width:38px"></i><em>UW</em></li><li><span class="mf-av sm">RK</span><span>Ravi Kumar</span><i class="mf-bar" style="width:38px"></i><em>UW</em></li></ul></div><figcaption class="mf-name">Team detail</figcaption></figure></div>
+        <p class="df-cap">Mid-fidelity recreations of the prototype screens.</p>
+        <div class="hq-box"><p class="hq-p">Clickable prototypes meant product managers could test real flows against their own clients, and developers could flag technical limits before any final design work. Problems surfaced in days, not after build.</p></div>
+        <a class="pt-link" href="#edge" data-scroll-to="edge">Next: the edge cases ↓</a>
       </div>
     </section>
 
-    <!-- SCREENS — USERS -->
-    <section class="panel reveal" id="users" data-screen-label="Screens — Users">
-      <span class="scr-eyebrow">Users — How it works</span>
-      <h2 class="sec-title">Create, manage, and audit — no backend</h2>
+    <!-- 05 EDGE CASES -->
+    <section class="panel reveal" id="edge" data-screen-label="05 Edge Cases">
+      <span class="eyebrow-num">05 · Edge cases</span>
+      <h2 class="sec-title">Thinking past the happy path</h2>
+      <p class="appr-intro">Before designing final screens, I walked through the first months of a client admin's life on the platform. At every awkward moment, I asked: what goes wrong here, and what should happen instead?</p>
+      <div class="ec-tl-wrap"><ol class="ec-tl" id="ecTl"><li><a href="#ec-m1" data-i="0" aria-current="step"><span class="ec-dot"></span><span class="ec-t">Day one</span><span class="ec-l">No roles yet</span></a></li><li><a href="#ec-m2" data-i="1"><span class="ec-dot"></span><span class="ec-t">Week one</span><span class="ec-l">200 people</span></a></li><li><a href="#ec-m3" data-i="2"><span class="ec-dot"></span><span class="ec-t">Week two</span><span class="ec-l">Similar roles</span></a></li><li><a href="#ec-m4" data-i="3"><span class="ec-dot"></span><span class="ec-t">Month two</span><span class="ec-l">Someone leaves</span></a></li><li><a href="#ec-m5" data-i="4"><span class="ec-dot"></span><span class="ec-t">Month six</span><span class="ec-l">A restructure</span></a></li></ol></div>
+      <p class="df-cap">An illustrative client admin's first months.</p>
+      <div class="ec-list">
+        <article class="ec-card" id="ec-m1"><div class="ec-main"><span class="ec-time">Day one</span><h3>The admin wants to add people, but no roles exist yet</h3><div class="ec-cols"><div><span class="ec-k bad">Without this</span><p>Nobody could be added until the whole role structure was designed. Onboarding would stall on day one.</p></div><div><span class="ec-k good">What I designed</span><p>Every client starts with two roles, Admin and Member. New users become Members by default, so people can be added straight away and given custom roles later.</p></div></div><div class="ec-pr"><span class="ec-k">Principle</span><p>Never block the first day.</p></div></div><div class="ec-v"><div class="ec-row"><span class="ec-user"><i>AM</i>New user</span><span class="ec-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="ec-tag on">Member</span></div><span class="ec-tag faded">Custom roles, add later</span></div></article>
+        <article class="ec-card" id="ec-m2"><div class="ec-main"><span class="ec-time">Week one</span><h3>There are 200 people to add</h3><div class="ec-cols"><div><span class="ec-k bad">Without this</span><p>Adding them one by one would take days, with a typo waiting in every form.</p></div><div><span class="ec-k good">What I designed</span><p>Add users one by one, or in bulk. For bulk, the admin downloads a spreadsheet template, fills it in and uploads it.</p></div></div><div class="ec-pr"><span class="ec-k">Principle</span><p>Match the tool to the size of the job.</p></div></div><div class="ec-v"><div class="ec-steps"><span class="ec-node">Download template</span><span class="ec-ar ec-down" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span><span class="ec-node">Fill it in</span><span class="ec-ar ec-down" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span><span class="ec-node on">Upload</span></div></div></article>
+        <article class="ec-card" id="ec-m3"><div class="ec-main"><span class="ec-time">Week two</span><h3>A new role is almost the same as an existing one</h3><div class="ec-cols"><div><span class="ec-k bad">Without this</span><p>Every role built from scratch, one permission at a time, with small mistakes creeping in.</p></div><div><span class="ec-k good">What I designed</span><p>Duplicate a role, rename it and remove a few permissions. Head of Underwriting becomes Senior, then Junior, in minutes.</p></div></div><div class="ec-pr"><span class="ec-k">Principle</span><p>Make the second time faster than the first.</p></div></div><div class="ec-v"><div class="ec-steps"><span class="ec-role"><b>Head of Underwriting</b><i style="width:100%"></i></span><span class="ec-dup"><span class="ec-ar ec-down sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>Duplicate</span><span class="ec-role"><b>Senior Underwriter</b><i style="width:72%"></i></span><span class="ec-dup"><span class="ec-ar ec-down sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>Duplicate</span><span class="ec-role"><b>Junior Underwriter</b><i style="width:45%"></i></span></div></div></article>
+        <article class="ec-card" id="ec-m4"><div class="ec-main"><span class="ec-time">Month two</span><h3>Someone leaves the company</h3><div class="ec-cols"><div><span class="ec-k bad">Without this</span><p>Their open submissions would sit with nobody, and a live deal could be missed.</p></div><div><span class="ec-k good">What I designed</span><p>Their open work is never lost. If they were in a team, it goes to the team manager. If not, it goes to the admin, who reassigns it.</p></div></div><div class="ec-pr"><span class="ec-k">Principle</span><p>Nothing a person owned gets lost.</p></div></div><div class="ec-v"><span class="ec-user gone"><i>DC</i>Deleted user</span><div class="ec-branch"><div><span class="ec-cond">In a team</span><span class="ec-ar ec-down" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span><span class="ec-tag on">Team manager</span></div><div><span class="ec-cond">No team</span><span class="ec-ar ec-down" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span><span class="ec-tag on">Admin</span></div></div></div></article>
+        <article class="ec-card" id="ec-m5"><div class="ec-main"><span class="ec-time">Month six</span><h3>The company restructures and a role is removed</h3><div class="ec-cols"><div><span class="ec-k bad">Without this</span><p>People would be left holding a role that no longer exists, with broken access.</p></div><div><span class="ec-k good">What I designed</span><p>A pop-up shows everyone who holds the role. Once they are disconnected, they become Members until the admin gives them a new role.</p></div></div><div class="ec-pr"><span class="ec-k">Principle</span><p>No change happens silently.</p></div></div><div class="ec-v"><span class="ec-tag role">Regional Lead</span><div class="ec-pop"><span class="ec-pop-h">3 people hold this role</span><span>Alex Morgan</span><span>Sam Lee</span><span>Ravi Kumar</span></div><span class="ec-ar ec-down" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span><span class="ec-tag on">Member</span></div></article>
+      </div>
+      <div class="closing ec-close"><span class="ec-ck">What these have in common</span><p>The happy path is the easy part. The design work is in the moments nobody plans for.</p></div>
+    </section>
 
-      <!-- Screen 1: Users landing -->
-      <p class="ru-eyebrow" style="margin-top:26px;">Screen 1 — Users landing page</p>
+    <!-- 06 THE DESIGN · ROLES -->
+    <section class="panel reveal" id="roles" data-screen-label="06 The Design · Roles">
+      <span class="eyebrow-num">06 · The design</span>
+      <h2 class="sec-title">Roles, users and teams, screen by screen</h2>
+      <p class="appr-intro">Shown in the order an admin sets things up: roles first, because they are assigned when a user is created, then users, then teams.</p>
+      <p class="df-lab" style="margin-top:28px">How it shipped</p>
+      <ol class="ph-tl"><li><span class="ph-n">1</span><span class="ph-k">Phase 1</span><span class="ph-t">Users</span></li><li><span class="ph-n">2</span><span class="ph-k">Phase 2</span><span class="ph-t">Roles, with updates to users</span></li><li><span class="ph-n">3</span><span class="ph-k">Phase 3</span><span class="ph-t">Teams</span></li></ol>
+      <p class="df-cap">About 3 months from first phase to last.</p>
+      <span class="grp-lab">Roles</span>
+      <h3 class="grp-h">Named and structured the client's way</h3>
+
+      <!-- Screen 1: Roles list -->
+      <p class="ru-eyebrow" style="margin-top:26px;">Screen 1 · Roles list</p>
+      <div class="ru-panel" style="min-height:340px;padding:24px;" aria-hidden="true">
+        <div class="ru-pageheader">
+          <div><div class="ttl">Roles</div><div class="meta">4 roles · client-defined hierarchy</div></div>
+          <span class="ru-btn-primary">+ Create role</span>
+        </div>
+        <div class="ru-rolegrid">
+          <div class="ru-rolecard"><div class="rh"><span class="rn">Junior Underwriter</span><span class="rdots"><i></i><i></i><i></i></span></div><div class="rstats"><div><div class="n">12</div><div class="k">Users</div></div><div><div class="n">8</div><div class="k">Permissions</div></div></div></div>
+          <div class="ru-rolecard"><div class="rh"><span class="rn">Senior Underwriter</span><span class="rdots"><i></i><i></i><i></i></span></div><div class="rstats"><div><div class="n">7</div><div class="k">Users</div></div><div><div class="n">14</div><div class="k">Permissions</div></div></div></div>
+          <div class="ru-rolecard"><div class="rh"><span class="rn">Underwriting Head</span><span class="rdots"><i></i><i></i><i></i></span></div><div class="rstats"><div><div class="n">2</div><div class="k">Users</div></div><div><div class="n">19</div><div class="k">Permissions</div></div></div></div>
+          <div class="ru-rolecard"><div class="rh"><span class="rn">Clearance Specialist</span><span class="rdots"><i></i><i></i><i></i></span></div><div class="rstats"><div><div class="n">3</div><div class="k">Users</div></div><div><div class="n">6</div><div class="k">Permissions</div></div></div></div>
+        </div>
+      </div>
+      <p class="ru-cap">Each role shows its users and permissions, so the admin can spot gaps before assigning anyone.</p>
+
+      <!-- Screen 2: Create role -->
+      <p class="ru-eyebrow" style="margin-top:30px;">Screen 2 · Create role</p>
+      <div class="ru-panel" style="min-height:420px;display:flex;align-items:center;justify-content:center;padding:26px;" aria-hidden="true">
+        <div class="ru-modal" style="max-width:600px;">
+          <h4>Create role</h4>
+          <p class="sub">Name a role and set its permissions once. Every assigned user inherits them.</p>
+          <div class="ru-fields" style="margin-bottom:18px;">
+            <div class="ru-field"><div class="fl">Role name</div><div class="ru-inp">Senior Underwriter</div></div>
+            <div class="ru-field"><div class="fl">Description</div><div class="ru-inp">Full quoting authority across assigned regions.</div></div>
+          </div>
+          <div class="ru-permgroup">
+            <div class="ru-pg-h">Submissions</div>
+            <div class="ru-permrow">Create submissions<span class="ru-tog"></span></div>
+            <div class="ru-permrow">Edit submissions<span class="ru-tog"></span></div>
+            <div class="ru-permrow" style="border-bottom:none;">Delete submissions<span class="ru-tog off"></span></div>
+          </div>
+          <div class="ru-permgroup">
+            <div class="ru-pg-h">Guidelines</div>
+            <div class="ru-permrow">View guidelines<span class="ru-tog"></span></div>
+            <div class="ru-permrow" style="border-bottom:none;">Edit guidelines<span class="ru-tog off"></span></div>
+          </div>
+          <div class="ru-permgroup">
+            <div class="ru-pg-h">Quote &amp; Bind</div>
+            <div class="ru-permrow">Generate quotes<span class="ru-tog"></span></div>
+            <div class="ru-permrow" style="border-bottom:none;">Bind policies<span class="ru-tog"></span></div>
+          </div>
+          <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:6px;"><span class="ru-btn-out">Cancel</span><span class="ru-btn-dark">Create role</span></div>
+        </div>
+      </div>
+      <p class="ru-cap">Permissions are set once on the role, and every user with that role gets them.</p>
+    </section>
+
+    <!-- 06 THE DESIGN · USERS -->
+    <section class="panel reveal" id="users" data-screen-label="06 The Design · Users">
+      <span class="grp-lab">Users</span>
+      <h3 class="grp-h">Add, manage and check every user, without us</h3>
+
+      <!-- Screen 3: Users list -->
+      <p class="ru-eyebrow" style="margin-top:26px;">Screen 3 · Users list</p>
       <div class="ru-panel" style="min-height:420px;padding:24px;" aria-hidden="true">
         <div class="ru-pageheader">
           <div><div class="ttl">Users</div><div class="meta">24 users · 5 regions · 3 teams</div></div>
@@ -598,12 +1129,12 @@
           </tbody>
         </table>
       </div>
-      <p class="ru-cap">One view of every user — <b>role, region, team, and status at a glance.</b></p>
+      <p class="ru-cap">Role, region, team and status in one table, so the admin can find anyone without opening profiles.</p>
 
       <div class="ru-2col">
-        <!-- Screen 2: User creation modal -->
+        <!-- Screen 4: Add user -->
         <div>
-          <p class="ru-eyebrow">Screen 2 — User creation pop-up</p>
+          <p class="ru-eyebrow">Screen 4 · Add user</p>
           <div class="ru-panel" style="min-height:440px;display:flex;align-items:center;justify-content:center;padding:24px;" aria-hidden="true">
             <div class="ru-modal" style="max-width:none;">
               <h4>Add user</h4>
@@ -621,12 +1152,12 @@
               <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:22px;"><span class="ru-btn-out">Cancel</span><span class="ru-btn-dark">Create user</span></div>
             </div>
           </div>
-          <p class="ru-cap">Region and country captured at creation — <b>feeds directly into smart team filtering later.</b></p>
+          <p class="ru-cap">Region and country are captured here, which later lets teams and submissions be filtered by location.</p>
         </div>
 
-        <!-- Screen 3: User profile -->
+        <!-- Screen 5: User profile -->
         <div>
-          <p class="ru-eyebrow">Screen 3 — User profile page</p>
+          <p class="ru-eyebrow">Screen 5 · User profile</p>
           <div class="ru-panel" style="min-height:440px;padding:24px;" aria-hidden="true">
             <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
               <span class="ru-av lg a2">AM</span>
@@ -651,71 +1182,18 @@
               <div class="ru-permrow" style="border-bottom:none;">View analytics<span class="ru-tog"></span></div>
             </div>
           </div>
-          <p class="ru-cap">Full profile — <b>permissions visible and auditable</b> without backend access.</p>
+          <p class="ru-cap">Every user's access can be checked by the client admin, without asking our team.</p>
         </div>
       </div>
     </section>
 
-    <!-- SCREENS — ROLES -->
-    <section class="panel reveal" id="roles" data-screen-label="Screens — Roles">
-      <span class="scr-eyebrow">Roles — How it works</span>
-      <h2 class="sec-title">Define the hierarchy. Name it your way</h2>
+    <!-- 06 THE DESIGN · TEAMS -->
+    <section class="panel reveal" id="teams" data-screen-label="06 The Design · Teams">
+      <span class="grp-lab">Teams</span>
+      <h3 class="grp-h">Teams built around how each client works</h3>
 
-      <!-- Screen 4: Roles landing -->
-      <p class="ru-eyebrow" style="margin-top:26px;">Screen 4 — Roles landing page</p>
-      <div class="ru-panel" style="min-height:340px;padding:24px;" aria-hidden="true">
-        <div class="ru-pageheader">
-          <div><div class="ttl">Roles</div><div class="meta">4 roles · client-defined hierarchy</div></div>
-          <span class="ru-btn-primary">+ Create role</span>
-        </div>
-        <div class="ru-rolegrid">
-          <div class="ru-rolecard"><div class="rh"><span class="rn">Junior Underwriter</span><span class="rdots"><i></i><i></i><i></i></span></div><div class="rstats"><div><div class="n">12</div><div class="k">Users</div></div><div><div class="n">8</div><div class="k">Permissions</div></div></div></div>
-          <div class="ru-rolecard"><div class="rh"><span class="rn">Senior Underwriter</span><span class="rdots"><i></i><i></i><i></i></span></div><div class="rstats"><div><div class="n">7</div><div class="k">Users</div></div><div><div class="n">14</div><div class="k">Permissions</div></div></div></div>
-          <div class="ru-rolecard"><div class="rh"><span class="rn">Underwriting Head</span><span class="rdots"><i></i><i></i><i></i></span></div><div class="rstats"><div><div class="n">2</div><div class="k">Users</div></div><div><div class="n">19</div><div class="k">Permissions</div></div></div></div>
-          <div class="ru-rolecard"><div class="rh"><span class="rn">Clearance Specialist</span><span class="rdots"><i></i><i></i><i></i></span></div><div class="rstats"><div><div class="n">3</div><div class="k">Users</div></div><div><div class="n">6</div><div class="k">Permissions</div></div></div></div>
-        </div>
-      </div>
-      <p class="ru-cap">Every role <b>named and structured the client's way.</b></p>
-
-      <!-- Screen 5: Role creation modal -->
-      <p class="ru-eyebrow" style="margin-top:30px;">Screen 5 — Role creation pop-up</p>
-      <div class="ru-panel" style="min-height:420px;display:flex;align-items:center;justify-content:center;padding:26px;" aria-hidden="true">
-        <div class="ru-modal" style="max-width:600px;">
-          <h4>Create role</h4>
-          <p class="sub">Name a role and set its permissions once — every assigned user inherits them.</p>
-          <div class="ru-fields" style="margin-bottom:18px;">
-            <div class="ru-field"><div class="fl">Role name</div><div class="ru-inp">Senior Underwriter</div></div>
-            <div class="ru-field"><div class="fl">Description</div><div class="ru-inp">Full quoting authority across assigned regions.</div></div>
-          </div>
-          <div class="ru-permgroup">
-            <div class="ru-pg-h">Submissions</div>
-            <div class="ru-permrow">Create submissions<span class="ru-tog"></span></div>
-            <div class="ru-permrow">Edit submissions<span class="ru-tog"></span></div>
-            <div class="ru-permrow" style="border-bottom:none;">Delete submissions<span class="ru-tog off"></span></div>
-          </div>
-          <div class="ru-permgroup">
-            <div class="ru-pg-h">Guidelines</div>
-            <div class="ru-permrow">View guidelines<span class="ru-tog"></span></div>
-            <div class="ru-permrow" style="border-bottom:none;">Edit guidelines<span class="ru-tog off"></span></div>
-          </div>
-          <div class="ru-permgroup">
-            <div class="ru-pg-h">Quote &amp; Bind</div>
-            <div class="ru-permrow">Generate quotes<span class="ru-tog"></span></div>
-            <div class="ru-permrow" style="border-bottom:none;">Bind policies<span class="ru-tog"></span></div>
-          </div>
-          <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:6px;"><span class="ru-btn-out">Cancel</span><span class="ru-btn-dark">Create role</span></div>
-        </div>
-      </div>
-      <p class="ru-cap">Permissions set once at role level — <b>all assigned users inherit instantly.</b></p>
-    </section>
-
-    <!-- SCREENS — TEAMS -->
-    <section class="panel reveal" id="teams" data-screen-label="Screens — Teams">
-      <span class="scr-eyebrow">Teams — How it works</span>
-      <h2 class="sec-title">Structure around geography and role</h2>
-
-      <!-- Screen 6: Teams landing -->
-      <p class="ru-eyebrow" style="margin-top:26px;">Screen 6 — Teams landing page</p>
+      <!-- Screen 6: Teams list -->
+      <p class="ru-eyebrow" style="margin-top:26px;">Screen 6 · Teams list</p>
       <div class="ru-panel" style="min-height:320px;padding:24px;" aria-hidden="true">
         <div class="ru-pageheader">
           <div><div class="ttl">Teams</div><div class="meta">3 teams · 3 regions</div></div>
@@ -737,10 +1215,10 @@
           <span class="tcount">10 members</span><span class="ru-region-tag">Americas</span><span class="tsub">15 active submissions</span>
         </div>
       </div>
-      <p class="ru-cap">Every team — <b>geography, manager, and workload</b> visible at a glance.</p>
+      <p class="ru-cap">Manager, region and workload per team, so the admin can see where work is piling up.</p>
 
-      <!-- Screen 7: Team creation modal -->
-      <p class="ru-eyebrow" style="margin-top:30px;">Screen 7 — Team creation pop-up</p>
+      <!-- Screen 7: Create team -->
+      <p class="ru-eyebrow" style="margin-top:30px;">Screen 7 · Create team</p>
       <div class="ru-panel" style="min-height:380px;display:flex;align-items:center;justify-content:center;padding:26px;" aria-hidden="true">
         <div class="ru-modal" style="max-width:560px;">
           <h4>Create team</h4>
@@ -764,12 +1242,12 @@
           <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:22px;"><span class="ru-btn-out">Cancel</span><span class="ru-btn-dark">Create team</span></div>
         </div>
       </div>
-      <p class="ru-cap">Teams built around <b>geography and role</b> — not tracked in spreadsheets.</p>
+      <p class="ru-cap">Teams can follow any split the client uses, such as region or branch.</p>
 
       <div class="ru-2col">
-        <!-- Screen 8: Team detail — members -->
+        <!-- Screen 8: Team members -->
         <div>
-          <p class="ru-eyebrow">Screen 8 — Team detail · Members</p>
+          <p class="ru-eyebrow">Screen 8 · Team members</p>
           <div class="ru-panel" style="min-height:420px;padding:24px;" aria-hidden="true">
             <div class="ru-teamhead">
               <span class="tt">London Desk</span><span class="ru-region-tag">EMEA</span>
@@ -786,12 +1264,12 @@
               </tbody>
             </table>
           </div>
-          <p class="ru-cap">Manager owns the roster — <b>no ticket needed</b> to make changes.</p>
+          <p class="ru-cap">The team manager runs the roster, so the admin does not step in for every change.</p>
         </div>
 
-        <!-- Screen 9: Team detail — submissions -->
+        <!-- Screen 9: Team submissions -->
         <div>
-          <p class="ru-eyebrow">Screen 9 — Team detail · Assigned submissions</p>
+          <p class="ru-eyebrow">Screen 9 · Team submissions</p>
           <div class="ru-panel" style="min-height:420px;padding:24px;" aria-hidden="true">
             <div class="ru-teamhead">
               <span class="tt">London Desk</span><span class="ru-region-tag">EMEA</span>
@@ -808,32 +1286,32 @@
               </tbody>
             </table>
           </div>
-          <p class="ru-cap">Submissions scoped to the team — <b>no noise from other regions.</b></p>
+          <p class="ru-cap">Each team only sees its own work, with no noise from other regions.</p>
         </div>
       </div>
     </section>
 
-    <!-- 04 MY CONTRIBUTION -->
-    <section class="panel reveal" id="contribution" data-screen-label="04 My Contribution">
-      <span class="eyebrow-num">04 — My Contribution</span>
+    <!-- 07 MY CONTRIBUTION -->
+    <section class="panel reveal" id="contribution" data-screen-label="07 My Contribution">
+      <span class="eyebrow-num">07 · My contribution</span>
       <h2 class="sec-title">One flow I added that no one asked for</h2>
       <div class="contrib-grid">
         <div class="contrib stacked">
           <div>
-            <h4>Inline Reassignment on Delete</h4>
+            <h4>Inline reassignment on delete</h4>
             <div class="pdo">
               <div class="row p"><span class="lbl">Problem</span><p>Deleting a user blocked until their work was manually reassigned elsewhere. A broken, multi-step dead end.</p></div>
               <div class="row d"><span class="lbl">Decision</span><p>Brought reassignment inside the delete flow. The system surfaces active submissions and prompts inline reassignment before confirming deletion.</p></div>
-              <div class="row o"><span class="lbl">Outcome</span><p>One guided flow completes both tasks — reassign and delete — without leaving the page.</p></div>
+              <div class="row o"><span class="lbl">Outcome</span><p>One guided flow handles both tasks, reassign and delete, without leaving the page.</p></div>
             </div>
           </div>
           <div>
-            <p class="ru-eyebrow">Delete confirmation — inline reassignment</p>
+            <p class="ru-eyebrow">Delete confirmation · inline reassignment</p>
             <div class="ru-panel" style="min-height:420px;display:flex;align-items:center;justify-content:center;padding:28px;" aria-hidden="true">
               <div class="ru-modal" style="max-width:560px;">
                 <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;">
                   <span class="ru-warnico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg></span>
-                  <div><h4 style="margin:0 0 4px;">Delete user — Daniel Cho</h4><p class="sub" style="margin:0;">This user has <b style="color:#b23b30;">3 active submissions.</b> Reassign before deleting.</p></div>
+                  <div><h4 style="margin:0 0 4px;">Delete user · Daniel Cho</h4><p class="sub" style="margin:0;">This user has <b style="color:#b23b30;">3 active submissions.</b> Reassign before deleting.</p></div>
                 </div>
                 <div class="ru-rsrow">
                   <div><div class="sn">SUB-20431 · Northern Freight</div><div class="sm">UW Review · $1.0M</div></div>
@@ -850,45 +1328,35 @@
                 <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:22px;"><span class="ru-btn-out">Cancel</span><span class="ru-btn-red">Reassign &amp; Delete</span></div>
               </div>
             </div>
-            <p class="ru-cap">Reassignment lives inside the delete flow — <b>one action completes both tasks.</b></p>
+            <p class="ru-cap">Reassignment lives inside the delete flow, so one action completes both tasks.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 05 IMPACT -->
-    <section class="panel reveal" id="impact" data-screen-label="05 Impact">
-      <span class="eyebrow-num">05 — Impact</span>
-      <h2 class="sec-title">One system. Every client. Forever</h2>
-      <p class="impact-rowlabel">Row 1 — Client impact</p>
-      <div class="impact-grid">
-        <div class="impact-stat"><div class="num">100%</div><div class="lab">Client environments configured without backend access</div></div>
-        <div class="impact-stat"><div class="num">0</div><div class="lab">Support tickets for role or permission changes post-launch</div></div>
-        <div class="impact-stat"><div class="num">5+</div><div class="lab">LOBs on one system, zero modification</div></div>
-        <div class="impact-stat"><div class="num">Top</div><div class="lab">Cited selling feature by new enterprise clients</div></div>
-      </div>
-      <p class="impact-rowlabel second">Row 2 — Design impact</p>
-      <div class="impact-grid">
-        <div class="impact-stat"><div class="num">9</div><div class="lab">Screens across Users, Roles, and Teams</div></div>
-        <div class="impact-stat"><div class="num">4</div><div class="lab">Sub-admins any client admin can create</div></div>
-        <div class="impact-stat"><div class="num">Solo</div><div class="lab">Entire module designed by one designer, still live today</div></div>
-        <div class="impact-stat"><div class="num">8+</div><div class="lab">Years in production across every LOB</div></div>
-      </div>
+    <!-- 08 RESULTS -->
+    <section class="panel reveal" id="impact" data-screen-label="08 Results">
+      <span class="eyebrow-num">08 · Results</span>
+      <h2 class="sec-title">Did it pass the four tests?</h2>
+      <p class="appr-intro">In <a href="#goal">section 03</a>, I set four tests for the module. Here is how it did.</p>
+      <ol class="rx-tests"><li><span class="rx-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><h3>Clients change things themselves</h3><p>Client admins now create users, roles, permissions and teams on their own. Our admin's job at onboarding shrank to one step: creating the client's first admin.</p></li><li><span class="rx-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><h3>Every client works their own way</h3><p>Clients name their own roles, split them into sub-roles, build teams by branch or region, and add more admins for their locations.</p></li><li><span class="rx-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><h3>No engineers in the loop</h3><p>Creating users, changing roles and permissions, and assigning teams used to be engineering tasks. Now they are settings the client controls. Tickets that still reach engineers are bugs, not setup requests.</p></li><li><span class="rx-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><h3>One module for every line</h3><p>The same module runs across all 5 lines of business, for every client.</p></li></ol>
+      <p class="rx-lab">By the numbers</p>
+      <dl class="rx-stats"><div><dt>A week to minutes</dt><dd>for a role or permission change (estimate)</dd></div><div><dt>1</dt><dd>step for our team when a new client joins</dd></div><div><dt>2</dt><dd>starter roles, so no one is blocked on day one</dd></div><div><dt>4</dt><dd>levels of control, from super admin to team member</dd></div><div><dt>5</dt><dd>lines of business on one module</dd></div></dl>
     </section>
 
-    <!-- 06 WHAT THIS TAUGHT ME -->
-    <section class="panel reveal" id="learnings" data-screen-label="06 What This Taught Me">
-      <span class="eyebrow-num">06 — What this taught me</span>
+    <!-- 07 WHAT THIS TAUGHT ME -->
+    <section class="panel reveal" id="learnings" data-screen-label="09 What This Taught Me">
+      <span class="eyebrow-num">09 · What this taught me</span>
       <h2 class="sec-title">Designing generic systems is the hardest UX work</h2>
       <div class="learn-grid">
         <div class="learn"><div class="ln">1</div><div class="learn-body"><h4>Generic systems need invisible flexibility</h4><p>It has to work for every client without feeling built for someone else. That takes ruthless abstraction and thoughtful defaults.</p></div></div>
         <div class="learn"><div class="ln">2</div><div class="learn-body"><h4>Requirements don't design themselves</h4><p>The inner details weren't in any brief. They came from understanding what a manager actually needs to do their job.</p></div></div>
-        <div class="learn"><div class="ln">3</div><div class="learn-body"><h4>Critical flows must respect user intent</h4><p>The intent is to delete — not to be blocked. Help them complete it safely instead of standing in the way.</p></div></div>
+        <div class="learn"><div class="ln">3</div><div class="learn-body"><h4>Critical flows must respect user intent</h4><p>The admin wants to delete, so the flow helps them do it safely instead of standing in the way.</p></div></div>
         <div class="learn"><div class="ln">4</div><div class="learn-body"><h4>Data collected early pays dividends later</h4><p>Region and country at creation felt minor. They became essential for smart team filtering down the line.</p></div></div>
       </div>
       <div class="closing">
         <div class="cap">Systems design note</div>
-        <p>"This system was designed to never need changing, no matter how many new LOBs or clients join. That's the real measure of system design — not how well it works today, but how gracefully it scales to every scenario you haven't built yet."</p>
+        <p>I designed this system so it would not need changing, however many new lines or clients join. For me, the real test of system design is how well it handles the cases you have not built yet.</p>
       </div>
     </section>
 
@@ -921,7 +1389,7 @@
     </nav>
   </div>
   <div class="foot-note">
-    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>© 2026 Abhishek LG · Staff UX Designer</span>
     <span>Designed &amp; built end to end.</span>
   </div>
 </footer>
@@ -935,5 +1403,64 @@
 })();
 </script>
 
+<script>
+(function(){
+  var toggle=document.getElementById('phToggle');
+  if(toggle){toggle.addEventListener('click',function(){var on=document.body.classList.toggle('ph-hidden');toggle.setAttribute('aria-pressed',String(on));toggle.textContent=on?'Show placeholders':'Hide placeholders';});}
+  document.querySelectorAll('.fx-seg button').forEach(function(b){b.addEventListener('click',function(){var f=b.closest('.fx'),i=b.dataset.fx;f.querySelectorAll('.fx-seg button').forEach(function(x){x.setAttribute('aria-selected',String(x===b));});var a=f.querySelector('.fx-img');a.querySelectorAll('img').forEach(function(im){var on=im.dataset.fxI===i;im.hidden=!on;if(on)a.href=im.getAttribute('src');});});});
+  document.querySelectorAll('.flow-card .seg button').forEach(function(b){b.addEventListener('click',function(){var card=b.closest('.flow-card');card.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-selected',String(x===b));});card.querySelectorAll('.flow').forEach(function(f){f.hidden=f.dataset.view!==b.dataset.flow;});});});
+  document.querySelectorAll('.fan .opt').forEach(function(o){o.addEventListener('click',function(){o.closest('.fan').querySelectorAll('.opt').forEach(function(x){x.setAttribute('aria-pressed',String(x===o));});});});
+  var trail=[].slice.call(document.querySelectorAll('#procTrail button'));
+  var chaps=[].slice.call(document.querySelectorAll('.chap'));
+  function select(i){
+    trail.forEach(function(b,j){b.setAttribute('aria-selected',String(j===i));b.setAttribute('aria-current',String(j===i));});
+    chaps.forEach(function(c,j){c.hidden=j!==i;if(j===i){c.classList.remove('in');void c.offsetWidth;c.classList.add('in');}});
+  }
+  trail.forEach(function(b,i){
+    b.addEventListener('click',function(){select(i);});
+    b.addEventListener('keydown',function(e){
+      var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;
+      if(!d) return; e.preventDefault();
+      var n=(i+d+trail.length)%trail.length; select(n); trail[n].focus();
+    });
+  });
+  select(0);
+})();
+</script>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.pt-tabs [role="tab"]'));
+  var map=document.getElementById('reqMap'),played=false;
+  function play(){if(played||!map)return;played=true;requestAnimationFrame(function(){map.classList.add('rm-play');});}
+  function sel(i){tabs.forEach(function(t,j){var on=j===i;t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1;var p=document.getElementById(t.getAttribute('aria-controls'));if(p)p.hidden=!on;});if(tabs[i]&&tabs[i].id==='pt-t1'&&map&&map.getBoundingClientRect().top<innerHeight)play();}
+  tabs.forEach(function(t,i){t.addEventListener('click',function(){sel(i);});t.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;e.preventDefault();var n=(i+d+tabs.length)%tabs.length;sel(n);tabs[n].focus();});});
+  document.querySelectorAll('[data-next-tab]').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.getAttribute('data-next-tab'));if(t){t.click();t.focus({preventScroll:true});var s=document.getElementById('process');window.scrollTo({top:s.getBoundingClientRect().top+scrollY-20,behavior:'smooth'});}});});
+  var tw=document.querySelector('.pt-tabs-wrap'),tb=tw&&tw.querySelector('.pt-tabs');if(tb){var ck=function(){tw.classList.toggle('at-end',tb.scrollLeft+tb.clientWidth>=tb.scrollWidth-4);};tb.addEventListener('scroll',ck,{passive:true});addEventListener('resize',ck);ck();}
+  document.querySelectorAll('[data-scroll-to]').forEach(function(a){a.addEventListener('click',function(e){var s=document.getElementById(a.getAttribute('data-scroll-to'));if(!s)return;e.preventDefault();window.scrollTo({top:s.getBoundingClientRect().top+scrollY-20,behavior:'smooth'});});});
+  var hl=document.querySelector('.hq-link');if(hl)hl.addEventListener('click',function(e){var s=document.getElementById('start');if(!s)return;e.preventDefault();window.scrollTo({top:s.getBoundingClientRect().top+scrollY-20,behavior:'smooth'});});
+  if(map){map.classList.add('rm-ready');var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting&&!map.closest('[hidden]')){play();io.disconnect();}});},{threshold:.3});io.observe(map);}
+})();
+</script>
+<div class="fc-lb" id="fcLb" hidden><button type="button" aria-label="Close">×</button><img alt="" /></div>
+<script>
+(function(){var f=document.getElementById('fcPol'),lb=document.getElementById('fcLb');if(!f||!lb)return;var big=lb.querySelector('img');
+function chk(){var im=f.querySelector('.fc-photo img');f.classList.toggle('has-img',!!im);return im;}chk();
+f.addEventListener('click',function(){var im=chk();if(!im)return;big.src=im.src;big.alt=im.alt||'';lb.hidden=false;document.body.style.overflow='hidden';});
+function close(){lb.hidden=true;document.body.style.overflow='';}
+lb.addEventListener('click',function(e){if(e.target!==big)close();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)close();});})();
+</script>
+<script>
+(function(){var tl=document.getElementById('ecTl');if(!tl)return;var links=[].slice.call(tl.querySelectorAll('a')),cards=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));}),cur=0;
+function set(i){if(i===cur)return;cur=i;links.forEach(function(a,j){if(j===i)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});var w=tl.parentElement,a=links[i];if(w.scrollWidth>w.clientWidth)w.scrollTo({left:a.offsetLeft-w.clientWidth/2+a.offsetWidth/2,behavior:'smooth'});}
+links.forEach(function(a,i){a.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:cards[i].getBoundingClientRect().top+scrollY-24,behavior:'smooth'});});});
+function onScroll(){var y=innerHeight*.4,i=0;cards.forEach(function(c,j){if(c.getBoundingClientRect().top<y)i=j;});set(i);}
+addEventListener('scroll',onScroll,{passive:true});onScroll();})();
+</script>
+<style id="scroll-fab-css">.sfab{position:fixed;right:20px;bottom:24px;z-index:900;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .25s ease,transform .25s ease;}.sfab.on{opacity:1;transform:none;pointer-events:auto;}.sfab button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,60,40,.14);background:rgba(251,248,241,.94);color:#15543b;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px -12px rgba(20,40,30,.45);backdrop-filter:blur(6px);transition:background .2s,color .2s,transform .15s,opacity .2s;}.sfab button:hover{background:#15543b;color:#fff;transform:translateY(-2px);}.sfab button[disabled]{opacity:.35;pointer-events:none;}.sfab svg{width:18px;height:18px;}@media(max-width:560px){.sfab{right:12px;bottom:14px;}.sfab button{width:44px;height:44px;}}@media print{.sfab{display:none;}}</style>
+<div class="sfab" id="sFab" aria-label="Page scroll"><button type="button" data-dir="up" aria-label="Go to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button><button type="button" data-dir="down" aria-label="Go to bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button></div>
+<script>(function(){var f=document.getElementById('sFab');if(!f)return;var up=f.querySelector('[data-dir=up]'),dn=f.querySelector('[data-dir=down]');var rm=matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+function tick(){var y=window.scrollY,H=document.documentElement.scrollHeight,v=window.innerHeight;var long=H>v*2.5;f.classList.toggle('on',long);dn.disabled=y+v>=H-40;up.disabled=y<40;}
+up.addEventListener('click',function(){window.scrollTo({top:0,behavior:rm});});dn.addEventListener('click',function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:rm});});
+window.addEventListener('scroll',tick,{passive:true});window.addEventListener('resize',tick);tick();})();</script>
 </body>
 </html>

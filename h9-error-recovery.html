@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Errors are inevitable. Confusion is not — H9 · Abhishek LG</title>
+<title>Errors are inevitable. Confusion is not · H9 · Abhishek LG</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
@@ -241,13 +241,22 @@
   .foot-cta-nav a{font-size:16px;font-weight:600;color:var(--ink-soft);transition:color .2s;}
   .foot-cta-nav a:hover{color:var(--green);}
   @media(max-width:720px){.foot-cta-row1{flex-direction:column;align-items:flex-start;gap:16px;}.foot-cta-actions{width:100%;}}
+
+  /* footer buttons (matched to home page) */
+  .foot-cta-actions .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);font-weight:600;font-size:15.5px;line-height:1;padding:13px 22px;border-radius:999px;border:none;cursor:pointer;transition:transform .15s ease,box-shadow .2s ease,background .2s;white-space:nowrap;text-decoration:none;color:#fff;width:auto;height:auto;flex-direction:row;}
+  .foot-cta-actions .btn svg{width:17px;height:17px;flex-shrink:0;display:block;transition:transform .2s ease;}
+  .foot-cta-actions .btn-dark{color:#fff;}
+  .foot-cta-actions .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(0,0,0,.6);}
+  .foot-cta-actions .btn:hover svg{transform:translateX(2px);}
+  .foot-cta-actions .btn:active{transform:translateY(0) scale(.97);}
+  @media(max-width:720px){.foot-cta-actions .btn{white-space:normal;}}
 </style></head>
 <body>
 
 <!-- ============ NAV ============ -->
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG · home">
       <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
       <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
     </a>
@@ -277,21 +286,21 @@
         </span>
       </div>
       <p class="heur-desc">Error messages should be expressed in plain language, precisely indicate the problem, and constructively suggest a solution.</p>
-      <p class="subline" style="margin-top:24px;">Every user will hit an error eventually. What separates a trustworthy product from a frustrating one isn't whether errors happen — it's what the product says when they do. Clarity and kindness in error messages is a design decision.</p>
+      <p class="subline" style="margin-top:24px;">Every user will hit an error eventually. What separates a trustworthy product from a frustrating one isn't whether errors happen. It's what the product says when they do. Clarity and kindness in error messages is a design decision.</p>
     </section>
 
     <div class="article-main">
 
       <!-- 01 -->
       <section class="panel reveal" data-screen-label="01 Real-world story">
-        <span class="eyebrow-num">01 — Real-world story</span>
+        <span class="eyebrow-num">01 · Real-world story</span>
         <h2 class="sec-title">My mom's salt test is the best error message I know</h2>
 
         <div class="story">
-          <div class="seyebrow"><span class="d"></span>Personal story — the kitchen, every time</div>
+          <div class="seyebrow"><span class="d"></span>Personal story, the kitchen, every time</div>
           <h3>Taste early. Correct while you still can</h3>
-          <p>When my mom cooks curry for rice, there's one step she never skips — tasting the salt before the final stage. We all know how important salt is to a dish: too much or too little and the whole thing is off. And let me be honest — every time I cook, my mom ends up taking over the salt department entirely. It's an art.</p>
-          <p>Here's the connection to UX: when she tastes the curry mid-cook, she's running a check. If the salt is right — success, continue. <strong>If it's off — error detected, correct immediately.</strong> The dish still turns out great.</p>
+          <p>When my mom cooks curry for rice, there's one step she never skips, tasting the salt before the final stage. We all know how important salt is to a dish: too much or too little and the whole thing is off. And let me be honest, every time I cook, my mom ends up taking over the salt department entirely. It's an art.</p>
+          <p>Here's the connection to UX: when she tastes the curry mid-cook, she's running a check. If the salt is right, success, continue. <strong>If it's off, error detected, correct immediately.</strong> The dish still turns out great.</p>
           <p>But imagine if you could only taste the curry after it's fully cooked, plated, and served. If the salt was wrong, you'd have to redo the entire dish. Frustrating, wasteful, and entirely avoidable.</p>
         </div>
 
@@ -305,7 +314,7 @@
                 <rect x="96" y="44" width="108" height="28" rx="14" fill="#e3f1e6" stroke="#bcdcc4" stroke-width="1.5"/>
                 <circle cx="114" cy="58" r="6" fill="#2f9e63"/>
                 <path d="M111 58 l2.4 2.4 l4 -4.6" stroke="#fff" stroke-width="2" fill="none"/>
-                <text x="128" y="63" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="700" fill="#1f6a45">Salt — correct</text>
+                <text x="128" y="63" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="700" fill="#1f6a45">Salt, correct</text>
                 <!-- pot -->
                 <path d="M96 138 H204 L196 206 a8 8 0 0 1 -8 7 H112 a8 8 0 0 1 -8 -7 Z" fill="#dfe7e2" stroke="#15543b" stroke-width="3"/>
                 <ellipse cx="150" cy="138" rx="54" ry="11" fill="#caddd2" stroke="#15543b" stroke-width="3"/>
@@ -354,43 +363,43 @@
               </g>
             </svg>
           </div>
-          <p class="ill-cap">The same error. One caught early with a simple correction. One caught at the end requiring full recovery. Timing is everything — in cooking and in UX.</p>
+          <p class="ill-cap">The same error. One caught early with a simple correction. One caught at the end requiring full recovery. Timing is everything, in cooking and in UX.</p>
         </div>
 
         <div class="pull">
-          <p>"Catch errors early, correct them immediately, and make recovery feel effortless. That's the salt test — applied to every digital product."</p>
-          <p class="attr">— The lesson from mom's kitchen</p>
+          <p>"Catch errors early, correct them immediately, and make recovery feel easy. That's the salt test, applied to every digital product."</p>
+          <p class="attr">The lesson from mom's kitchen</p>
         </div>
       </section>
 
       <!-- 02 -->
       <section class="panel reveal" data-screen-label="02 The three-part job">
-        <span class="eyebrow-num">02 — The three-part job</span>
-        <h2 class="sec-title">Recognize. Diagnose. Recover</h2>
-        <p class="body-copy">A good error message doesn't just announce that something went wrong. It does three things — each one building on the last — to get the user back on track as quickly and confidently as possible.</p>
+        <span class="eyebrow-num">02 · The three-part job</span>
+        <h2 class="sec-title">Recognise, diagnose and recover</h2>
+        <p class="body-copy">A good error message doesn't just announce that something went wrong. It does three things, each one building on the last, to get the user back on track as quickly and confidently as possible.</p>
 
         <div class="steps3">
           <div class="step3">
             <span class="sn">01</span>
             <h4>Recognize</h4>
-            <p>Make it unmistakably clear that something went wrong. The user should never have to guess whether an error occurred — the product should tell them directly and visibly.</p>
+            <p>Make it unmistakably clear that something went wrong, the user should never have to guess whether an error occurred. The product should tell them directly and visibly.</p>
           </div>
           <div class="step3">
             <span class="sn">02</span>
             <h4>Diagnose</h4>
-            <p>Tell the user what went wrong and why — in plain, human language. Not "Error 403." Not "Something went wrong." Say what actually happened so they can understand it.</p>
+            <p>Tell the user what went wrong and why, in plain, human language. Not "Error 403." Not "Something went wrong." Say what actually happened so they can understand it.</p>
           </div>
           <div class="step3">
             <span class="sn">03</span>
             <h4>Recover</h4>
-            <p>Offer a clear next step. Try again, choose an alternative, contact support — give the user a path forward. Don't leave them staring at an error with nowhere to go.</p>
+            <p>Offer a clear next step. Try again, choose an alternative, contact support, give the user a path forward. Don't leave them staring at an error with nowhere to go.</p>
           </div>
         </div>
       </section>
 
       <!-- 03 -->
       <section class="panel reveal" data-screen-label="03 Digital example">
-        <span class="eyebrow-num">03 — Digital example</span>
+        <span class="eyebrow-num">03 · Digital example</span>
         <h2 class="sec-title">The difference one good error message makes</h2>
         <p class="body-copy">Failed payments are one of the most anxiety-inducing moments in any digital product. The user doesn't know what happened, whether their money was charged, or what to do next. This is exactly where the three-part framework earns its keep.</p>
 
@@ -398,7 +407,7 @@
           <div class="errcard bad">
             <span class="elab"><span class="d"></span>Bad error message</span>
             <div class="msgblock">"Something went wrong. Try again later."</div>
-            <p>No recognition of what specifically failed. No diagnosis — the user has no idea if their card was charged. No recovery path — "try again later" gives them nothing to act on. The user is left anxious and stranded.</p>
+            <p>No recognition of what specifically failed. No diagnosis, the user has no idea if their card was charged. No recovery path, "try again later" gives them nothing to act on. The user is left anxious and stranded.</p>
           </div>
           <div class="errcard good">
             <span class="elab"><span class="d"></span>Good error message</span>
@@ -442,7 +451,7 @@
                 <circle cx="434" cy="96" r="20" fill="#f6e7e1" stroke="#cf4f33" stroke-width="2.5"/>
                 <line x1="434" y1="87" x2="434" y2="100" stroke="#cf4f33" stroke-width="3"/>
                 <circle cx="434" cy="107" r="2" fill="#cf4f33"/>
-                <text x="434" y="142" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#2c3733">Payment failed —</text>
+                <text x="434" y="142" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#2c3733">Payment failed</text>
                 <text x="434" y="160" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#2c3733">network issue.</text>
                 <!-- gold pill card not charged -->
                 <rect x="372" y="176" width="124" height="28" rx="14" fill="#f6e6c4"/>
@@ -465,35 +474,35 @@
 
       <!-- 04 -->
       <section class="panel reveal" data-screen-label="04 Types of errors">
-        <span class="eyebrow-num">04 — Types of errors</span>
+        <span class="eyebrow-num">04 · Types of errors</span>
         <h2 class="sec-title">Slips and mistakes need different responses</h2>
-        <p class="body-copy">Not all errors are the same — and how a product responds should reflect the nature of the error. A slip and a mistake require different kinds of guidance to recover from.</p>
+        <p class="body-copy">Not all errors are the same, and how a product responds should reflect the nature of the error. A slip and a mistake require different kinds of guidance to recover from.</p>
 
         <div class="dual-grid">
           <div class="dual-card blue">
-            <span class="dlab"><span class="d"></span>Slip — right intention, wrong action</span>
+            <span class="dlab"><span class="d"></span>Slip, right intention, wrong action</span>
             <h4>The action went wrong</h4>
             <div class="dsub">Real-world</div>
-            <p>You reach for toothpaste on autopilot — but someone moved the shaving cream there. Your intention was right. The context changed.</p>
+            <p>You reach for toothpaste on autopilot, but someone moved the shaving cream there. Your intention was right. The context changed.</p>
             <div class="dsub">In UX</div>
             <p>Clicking "Reply All" instead of "Reply" because both buttons sit right next to each other. The recovery message should be immediate and offer a simple undo.</p>
           </div>
           <div class="dual-card red">
-            <span class="dlab"><span class="d"></span>Mistake — wrong intention from the start</span>
+            <span class="dlab"><span class="d"></span>Mistake, wrong intention from the start</span>
             <h4>The understanding was wrong</h4>
             <div class="dsub">Real-world</div>
-            <p>You have body pain and assume it's from the gym — but it's actually a fever. Your mental model was incorrect from the start.</p>
+            <p>You have body pain and assume it's from the gym, but it's actually a fever. Your mental model was incorrect from the start.</p>
             <div class="dsub">In UX</div>
             <p>A user thinks "Archive" means "Delete permanently" and archives an important file. The recovery message should explain what actually happened and offer a clear path to reverse it.</p>
           </div>
         </div>
 
-        <p class="closing-line">Slips need quick, frictionless recovery. Mistakes need clear explanation. In both cases, the product's job is to respond with clarity and kindness — not to lecture, not to blame, just to help.</p>
+        <p class="closing-line">Slips need quick, frictionless recovery. Mistakes need clear explanation. In both cases, the product's job is to respond with clarity and kindness, not to lecture, not to blame, just to help.</p>
       </section>
 
       <!-- 05 -->
       <section class="panel reveal" data-screen-label="05 Takeaways">
-        <span class="eyebrow-num">05 — What to design for</span>
+        <span class="eyebrow-num">05 · What to design for</span>
         <h2 class="sec-title">A product that guides through errors builds trust</h2>
 
         <div class="feat-list">
@@ -508,21 +517,21 @@
             <span class="fd"></span>
             <div>
               <h4>Highlight exactly what went wrong and where</h4>
-              <p>Don't make users hunt for the problem. Point to the field, the step, or the action that failed — clearly and specifically.</p>
+              <p>Don't make users hunt for the problem. Point to the field, the step, or the action that failed, clearly and specifically.</p>
             </div>
           </div>
           <div class="feat">
             <span class="fd"></span>
             <div>
               <h4>Offer guidance and recovery options</h4>
-              <p>Every error message should end with a path forward. Try again, contact support, choose an alternative — give users something to do with the information.</p>
+              <p>Every error message should end with a path forward. Try again, contact support, choose an alternative. Give users something to do with the information.</p>
             </div>
           </div>
           <div class="feat">
             <span class="fd"></span>
             <div>
               <h4>Don't punish users for honest mistakes</h4>
-              <p>Errors are human. The product's tone should be calm and helpful — never condescending, never alarming. Make fixing the error feel easy, not shameful.</p>
+              <p>Errors are human. The product's tone should be calm and helpful, never condescending, never alarming. Make fixing the error feel easy, not shameful.</p>
             </div>
           </div>
         </div>
@@ -530,14 +539,14 @@
 
       <!-- 06 -->
       <section class="panel reveal" data-screen-label="06 Closing thought">
-        <span class="eyebrow-num">06 — Closing thought</span>
+        <span class="eyebrow-num">06 · Closing thought</span>
         <h2 class="sec-title">Don't let an error be the end of the journey</h2>
-        <p class="body-copy">Errors are inevitable. Every user will encounter them at some point. What separates a trustworthy product from a frustrating one isn't the absence of errors — it's how the product responds when they happen.</p>
-        <p class="body-copy">A product that gently guides users out of mistakes — with clarity and kindness — builds trust and keeps users coming back. <strong>Make the error a quick detour, not a dead end.</strong></p>
+        <p class="body-copy">Errors are inevitable. Every user will encounter them at some point. What separates a trustworthy product from a frustrating one isn't the absence of errors. It's how the product responds when they happen.</p>
+        <p class="body-copy">A product that gently guides users out of mistakes, with clarity and kindness, builds trust and keeps users coming back. <strong>Make the error a quick detour, not a dead end.</strong></p>
 
         <div class="callout-strong">
           <div class="cap">The lesson from H9</div>
-          <p>Errors are inevitable. Confusion is not. When something breaks, your product's voice matters most — make it clear, human, and helpful.</p>
+          <p>Errors are inevitable. Confusion is not. When something breaks, your product's voice matters most, make it clear, human, and helpful.</p>
         </div>
 
         <div class="takeaways">
@@ -552,7 +561,7 @@
             <div class="tk">T2</div>
             <div>
               <h4>Up next</h4>
-              <p><span class="up">H10: The Best Manual Is No Manual.</span> The final heuristic — help and documentation. Even when a product is designed well, sometimes users need support. How you provide it says as much about your product as the design itself.</p>
+              <p><span class="up">H10: The Best Manual Is No Manual.</span> The final heuristic, help and documentation. Even when a product is designed well, sometimes users need support. How you provide it says as much about your product as the design itself.</p>
             </div>
           </div>
         </div>
@@ -588,7 +597,7 @@
     </nav>
   </div>
   <div class="foot-note">
-    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>© 2026 Abhishek LG · Staff UX Designer</span>
     <span>Designed &amp; built end to end.</span>
   </div>
 </footer>
@@ -602,5 +611,11 @@
 })();
 </script>
 
+<style id="scroll-fab-css">.sfab{position:fixed;right:20px;bottom:24px;z-index:900;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .25s ease,transform .25s ease;}.sfab.on{opacity:1;transform:none;pointer-events:auto;}.sfab button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,60,40,.14);background:rgba(251,248,241,.94);color:#15543b;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px -12px rgba(20,40,30,.45);backdrop-filter:blur(6px);transition:background .2s,color .2s,transform .15s,opacity .2s;}.sfab button:hover{background:#15543b;color:#fff;transform:translateY(-2px);}.sfab button[disabled]{opacity:.35;pointer-events:none;}.sfab svg{width:18px;height:18px;}@media(max-width:560px){.sfab{right:12px;bottom:14px;}.sfab button{width:44px;height:44px;}}@media print{.sfab{display:none;}}</style>
+<div class="sfab" id="sFab" aria-label="Page scroll"><button type="button" data-dir="up" aria-label="Go to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button><button type="button" data-dir="down" aria-label="Go to bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button></div>
+<script>(function(){var f=document.getElementById('sFab');if(!f)return;var up=f.querySelector('[data-dir=up]'),dn=f.querySelector('[data-dir=down]');var rm=matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+function tick(){var y=window.scrollY,H=document.documentElement.scrollHeight,v=window.innerHeight;var long=H>v*2.5;f.classList.toggle('on',long);dn.disabled=y+v>=H-40;up.disabled=y<40;}
+up.addEventListener('click',function(){window.scrollTo({top:0,behavior:rm});});dn.addEventListener('click',function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:rm});});
+window.addEventListener('scroll',tick,{passive:true});window.addEventListener('resize',tick);tick();})();</script>
 </body>
 </html>

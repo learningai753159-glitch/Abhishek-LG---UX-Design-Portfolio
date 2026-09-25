@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Spendly — Case Study · Abhishek LG</title>
+<title>Spendly · Case study · Abhishek LG</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
@@ -485,13 +485,22 @@
   .foot-cta-nav a{font-size:16px;font-weight:600;color:var(--ink-soft);transition:color .2s;}
   .foot-cta-nav a:hover{color:var(--green);}
   @media(max-width:720px){.foot-cta-row1{flex-direction:column;align-items:flex-start;gap:16px;}.foot-cta-actions{width:100%;}}
+
+  /* footer buttons (matched to home page) */
+  .foot-cta-actions .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);font-weight:600;font-size:15.5px;line-height:1;padding:13px 22px;border-radius:999px;border:none;cursor:pointer;transition:transform .15s ease,box-shadow .2s ease,background .2s;white-space:nowrap;text-decoration:none;color:#fff;width:auto;height:auto;flex-direction:row;}
+  .foot-cta-actions .btn svg{width:17px;height:17px;flex-shrink:0;display:block;transition:transform .2s ease;}
+  .foot-cta-actions .btn-dark{color:#fff;}
+  .foot-cta-actions .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(0,0,0,.6);}
+  .foot-cta-actions .btn:hover svg{transform:translateX(2px);}
+  .foot-cta-actions .btn:active{transform:translateY(0) scale(.97);}
+  @media(max-width:720px){.foot-cta-actions .btn{white-space:normal;}}
 </style></head>
 <body>
 
 <!-- ============ NAV ============ -->
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG · home">
       <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
       <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
     </a>
@@ -509,20 +518,20 @@
     <section class="panel case-hero" data-screen-label="Hero">
       <span class="role-badge"><span class="dot"></span>Spendly · Product Designer &amp; Builder</span>
       <h1 class="proj">Most budget apps track what you spent.<br>Spendly asks if it should've been</h1>
-      <p class="subline">Replacing traditional budget tracking with an honest spending query — built and shipped independently to a growing base of active users.</p>
+      <p class="subline">I replaced budget tracking with one honest question about each spend. I built and shipped it on my own, and it has a growing group of active users.</p>
 
       <div class="metric-row">
         <div class="metric-card"><div class="num">25</div><div class="lab">Users acquired organically with zero ad spend</div></div>
-        <div class="metric-card"><div class="num">12–16</div><div class="lab">Daily actives engaging regularly with core features</div></div>
-        <div class="metric-card"><div class="num">1</div><div class="lab">End-to-end build — designed, developed, and deployed solo</div></div>
+        <div class="metric-card"><div class="num">12 to 16</div><div class="lab">Daily actives engaging regularly with core features</div></div>
+        <div class="metric-card"><div class="num">1</div><div class="lab">End-to-end build: designed, developed and deployed solo</div></div>
       </div>
     </section>
 
     <!-- OPENING STORY (no number, no eyebrow) -->
     <section class="panel story-panel reveal" data-screen-label="Opening Story">
-      <span class="story-mark" aria-hidden="true">&ldquo;</span>
-      <p class="story-quote">I used to track my expenses in Excel. I'd label each one — <em>Necessary, Good to Have, Unnecessary.</em> It was tedious. Open laptop, enter, calculate, go back and analyse. But that one habit — that one question — was the most honest thing I ever asked myself about money. I just needed a better tool for it.</p>
-      <p class="story-sign">— that tool became Spendly.</p>
+      
+      <p class="story-quote">I used to track my expenses in Excel. I'd label each one: <em>Necessary, Good to Have, Unnecessary.</em> It was tedious. Open laptop, enter, calculate, go back and analyse. But that one habit, that one question, was the most honest thing I ever asked myself about money. I just needed a better tool for it.</p>
+      <p class="story-sign">that tool became Spendly.</p>
     </section>
 
     <!-- STORY STRIP (interactive — no number, no eyebrow num) -->
@@ -550,7 +559,7 @@
                 <div class="scard">
                   <div class="snum">2</div>
                   <h4>A habit that <span class="em">stayed.</span></h4>
-                  <p>My mother still records every expense in a notebook. Notebook → Excel sheets.</p>
+                  <p>My mother still records every expense in a notebook. From notebook to Excel sheets.</p>
                   <div class="sill"><svg viewBox="0 0 140 110" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M28 60 L70 50 V88 L28 80 Z"/><path d="M112 60 L70 50 V88 L112 80 Z"/><path d="M70 50 V88"/>
                     <path d="M38 64 h24 M38 70 h20 M38 76 h22"/>
@@ -593,7 +602,7 @@
                 <div class="scard">
                   <div class="snum">6</div>
                   <h4>The <span class="em">limitation.</span></h4>
-                  <p>I'm a designer, not a developer. Frontend, backend, database, deployment — too much for a personal project.</p>
+                  <p>I'm a designer, not a developer. Frontend, backend, database and deployment were too much for a personal project.</p>
                   <div class="sill"><svg viewBox="0 0 140 110" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="44" cy="52" r="11"/><path d="M28 90 C28 74 60 74 60 90"/>
                     <rect x="62" y="62" width="40" height="24" rx="2"/><path d="M58 90 H106"/>
@@ -643,31 +652,28 @@
           <button class="car-arrow sstrip-arrow" id="storyNext" aria-label="Next cards"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg></button>
         </div>
         <div class="car-dots" id="storyDots">
-          <button class="car-dot on" data-i="0" aria-label="Cards 1–3"></button>
-          <button class="car-dot" data-i="1" aria-label="Cards 4–6"></button>
-          <button class="car-dot" data-i="2" aria-label="Cards 7–9"></button>
+          <button class="car-dot on" data-i="0" aria-label="Cards 1 to 3"></button>
+          <button class="car-dot" data-i="1" aria-label="Cards 4 to 6"></button>
+          <button class="car-dot" data-i="2" aria-label="Cards 7 to 9"></button>
         </div>
       </div>
     </section>
 
     <!-- 01 AND -->
     <section class="panel reveal" id="and" data-screen-label="01 The World As It Was">
-      <span class="eyebrow-num">01 — And</span>
-      <h2 class="sec-title">Everyone tracks. Nobody reflects</h2>
+      <span class="eyebrow-num">01 · And</span>
+      <h2 class="sec-title">People track their spending, but rarely reflect on it</h2>
       <div class="hl-grid">
         <div class="hl-card">
-          <span class="ic" aria-hidden="true">📓</span>
-          <h4>The Habit</h4>
-          <p>People around me — my mother, cousins, family — were writing every expense in notebooks. The discipline was real. The tool was limited.</p>
+          <h4>The habit</h4>
+          <p>People around me, like my mother, cousins and family, were writing every expense in notebooks. The discipline was real. The tool was limited.</p>
         </div>
         <div class="hl-card">
-          <span class="ic" aria-hidden="true">📊</span>
-          <h4>My Own System</h4>
-          <p>I used Excel. Labelled every spend. Worked — but only if I remembered to open the laptop, enter the data, and do the math. I often didn't.</p>
+          <h4>My own system</h4>
+          <p>I used Excel. Labelled every spend. It worked, but only if I remembered to open the laptop, enter the data, and do the math. I often didn't.</p>
         </div>
         <div class="hl-card">
-          <span class="ic" aria-hidden="true">💡</span>
-          <h4>The Real Question</h4>
+          <h4>The real question</h4>
           <p>Every app I explored while designing this told you how much you spent. None asked whether you should have.</p>
         </div>
       </div>
@@ -675,8 +681,8 @@
 
     <!-- 02 BUT -->
     <section class="panel reveal" id="but" data-screen-label="02 The Gap">
-      <span class="eyebrow-num">02 — But</span>
-      <h2 class="sec-title">Moneyview tracks it. Walnut syncs it. Nobody judges it</h2>
+      <span class="eyebrow-num">02 · But</span>
+      <h2 class="sec-title">Moneyview and Walnut track spending, but neither asks if it was worth it</h2>
       <div class="cmp-wrap">
         <table class="cmp">
           <colgroup><col /><col /><col /><col class="us-col" /></colgroup>
@@ -723,14 +729,14 @@
         </table>
       </div>
       <div class="callout">
-        <p>Auto-sync is convenient. But convenience removes the one moment of reflection that changes behaviour — the moment you consciously record a spend.</p>
+        <p>Auto-sync is convenient. But convenience removes the one moment of reflection that changes behaviour: the moment you consciously record a spend.</p>
       </div>
     </section>
 
     <!-- 03 THEREFORE -->
     <section class="panel reveal" id="therefore" data-screen-label="03 The Core Idea">
-      <span class="eyebrow-num">03 — Therefore</span>
-      <h2 class="sec-title">One label. Three words. That's the whole product</h2>
+      <span class="eyebrow-num">03 · Therefore</span>
+      <h2 class="sec-title">The whole product is one three-word label</h2>
       <div class="label-stack">
         <div class="label-card necessary">
           <span class="badge" aria-hidden="true">✅</span>
@@ -743,14 +749,14 @@
           <span class="badge" aria-hidden="true">〜</span>
           <div class="lc-body">
             <div class="lc-k"><b>GOOD TO HAVE</b></div>
-            <p>Things that add comfort but aren't essential. Worth tracking — these are where habits form.</p>
+            <p>Things that add comfort but aren't essential. Worth tracking, because this is where habits form.</p>
           </div>
         </div>
         <div class="label-card unnecessary">
           <span class="badge" aria-hidden="true">✗</span>
           <div class="lc-body">
             <div class="lc-k"><b>UNNECESSARY</b></div>
-            <p>Things you didn't need. The app doesn't judge you. But the data will — over time.</p>
+            <p>Things you didn't need. The app doesn't judge you. But over time, the data will.</p>
           </div>
         </div>
       </div>
@@ -784,32 +790,32 @@
           </div>
         </div>
       </div>
-      <p class="ph-note">[ Screen placeholder — Record Expense · Spendly UI (purple/indigo on dark) ]</p>
-      <p class="scr-cap">One question at entry point — <b>was this worth spending on?</b></p>
+      <p class="ph-note">[ Screen placeholder · Record Expense · Spendly UI (purple/indigo on dark) ]</p>
+      <p class="scr-cap">One question at the point of entry: was this worth spending on?</p>
     </section>
 
     <!-- 04 HOW I BUILT IT -->
     <section class="panel reveal" id="built" data-screen-label="04 How I Built It">
-      <span class="eyebrow-num">04 — How I Built It</span>
+      <span class="eyebrow-num">04 · How I built it</span>
       <h2 class="sec-title">I'm a designer. I don't write code. That was never going to stop me</h2>
       <div class="build-stack">
         <div class="build-card">
           <div class="bk"><span class="step">01</span>Designed</div>
           <div>
-            <p>End-to-end UX — flows, the labelling system, all screens, interactions. <strong>Every decision was mine.</strong></p>
+            <p>End-to-end UX: flows, the labelling system, all screens and interactions. Every decision was mine.</p>
           </div>
         </div>
         <div class="build-card">
           <div class="bk"><span class="step">02</span>Built</div>
           <div>
-            <p>AI-assisted tools to write and ship real code. A working PWA. <strong>Live on the web.</strong></p>
+            <p>AI-assisted tools to write and ship real code. A working PWA. Live on the web.</p>
             <div class="stack-tags"><span>Claude</span><span>Lovable</span><span>Supabase</span><span>Vercel</span></div>
           </div>
         </div>
         <div class="build-card">
           <div class="bk"><span class="step">03</span>Shipped</div>
           <div>
-            <p>No app store. No marketing. Shared manually to real people. <strong>25 users. 12–16 active.</strong></p>
+            <p>No app store. No marketing. Shared manually to real people. 25 users. 12 to 16 active.</p>
           </div>
         </div>
       </div>
@@ -817,19 +823,19 @@
 
     <!-- 05 THE PRODUCT -->
     <section class="panel reveal" id="product" data-screen-label="05 The Product">
-      <span class="eyebrow-num">05 — The Product</span>
+      <span class="eyebrow-num">05 · The product</span>
       <h2 class="sec-title">Three screens. One flow</h2>
       <div class="shots">
-        <figure class="shot"><img src="product/dashboard.jpeg" alt="Spendly dashboard — necessary vs unnecessary spend shown as a donut chart" /><figcaption><b>Dashboard</b> — wise vs unwise at a glance</figcaption></figure>
-        <figure class="shot"><img src="product/record.jpeg" alt="New expense screen — amount, category chips and the necessary / good to have / unnecessary label selector" /><figcaption><b>Record</b> — label your spend in 5 seconds</figcaption></figure>
-        <figure class="shot"><img src="product/saved.jpeg" alt="Expense recorded — confirmation screen with the logged amount and label" /><figcaption><b>Saved</b> — instant confirmation, no guilt</figcaption></figure>
+        <figure class="shot"><img src="product/dashboard.jpeg" alt="Spendly dashboard: necessary vs unnecessary spend shown as a donut chart" /><figcaption><b>Dashboard</b>: wise vs unwise at a glance</figcaption></figure>
+        <figure class="shot"><img src="product/record.jpeg" alt="New expense screen: amount, category chips and the necessary / good to have / unnecessary label selector" /><figcaption><b>Record</b>: label your spend in 5 seconds</figcaption></figure>
+        <figure class="shot"><img src="product/saved.jpeg" alt="Expense recorded: confirmation screen with the logged amount and label" /><figcaption><b>Saved</b>: instant confirmation, no guilt</figcaption></figure>
       </div>
 
       <div class="video-block">
-        <p class="story-eyebrow" style="margin-bottom:16px;">Spendly — Live Demo</p>
+        <p class="story-eyebrow" style="margin-bottom:16px;">Spendly · Live demo</p>
         <div class="video-frame">
           <div style="padding:56.25% 0 0 0;position:relative;">
-            <iframe src="https://player.vimeo.com/video/1200654945?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Spendly - Live Demo"></iframe>
+            <iframe src="https://player.vimeo.com/video/1200654945?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Spendly, Live Demo"></iframe>
           </div>
         </div>
       </div>
@@ -838,23 +844,23 @@
 
     <!-- 06 WHO USES IT -->
     <section class="panel reveal" id="who" data-screen-label="06 Who Uses It">
-      <span class="eyebrow-num">06 — Who Uses It</span>
+      <span class="eyebrow-num">06 · Who uses it</span>
       <h2 class="sec-title">I didn't target a market. I found one</h2>
       <div class="who-grid">
         <div class="who">
           <div class="k">Who came back</div>
-          <p>Homemakers managing household budgets. Working women balancing personal and household finances. Salaried middle-class users for whom <strong>every rupee has a purpose.</strong></p>
+          <p>Homemakers managing household budgets. Working women balancing personal and household finances. Salaried middle-class users for whom every rupee has a purpose.</p>
         </div>
         <div class="who">
           <div class="k">What that means</div>
-          <p>Not power users. <strong>Mindful ones.</strong> People who want to spend better — not just track faster. That's exactly who Spendly was built for.</p>
+          <p>Not power users. Mindful ones. People who want to spend better, and care about more than tracking faster. Spendly was built for them.</p>
         </div>
       </div>
     </section>
 
     <!-- 07 WHAT THIS TAUGHT ME -->
     <section class="panel reveal" id="taught" data-screen-label="07 What This Taught Me">
-      <span class="eyebrow-num">07 — What This Taught Me</span>
+      <span class="eyebrow-num">07 · What this taught me</span>
       <h2 class="sec-title">Being a founder taught me what being a designer never could</h2>
       <div class="learn-grid">
         <div class="learn"><div class="ln">1</div><div class="learn-body"><h4>Ownership sharpens every decision</h4><p>As a designer I could recommend anything. As a founder every call had a consequence I had to live with. That changed how I think.</p></div></div>
@@ -865,8 +871,8 @@
 
       <div class="closing">
         <div class="cap">Founder's note</div>
-        <p>Any company that hires me gets a designer who has felt the weight of shipping something real — who has made product decisions, not just design decisions. I know what it means to own something end to end.</p>
-        <div class="sign">— Abhishek</div>
+        <p>Any company that hires me gets a designer who has shipped something real and made product decisions as well as design decisions. I know what it means to own something end to end.</p>
+        <div class="sign">Abhishek</div>
       </div>
     </section>
 
@@ -899,7 +905,7 @@
     </nav>
   </div>
   <div class="foot-note">
-    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>© 2026 Abhishek LG · Staff UX Designer</span>
     <span>Designed &amp; built end to end.</span>
   </div>
 </footer>
@@ -947,5 +953,11 @@
 })();
 </script>
 
+<style id="scroll-fab-css">.sfab{position:fixed;right:20px;bottom:24px;z-index:900;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .25s ease,transform .25s ease;}.sfab.on{opacity:1;transform:none;pointer-events:auto;}.sfab button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,60,40,.14);background:rgba(251,248,241,.94);color:#15543b;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px -12px rgba(20,40,30,.45);backdrop-filter:blur(6px);transition:background .2s,color .2s,transform .15s,opacity .2s;}.sfab button:hover{background:#15543b;color:#fff;transform:translateY(-2px);}.sfab button[disabled]{opacity:.35;pointer-events:none;}.sfab svg{width:18px;height:18px;}@media(max-width:560px){.sfab{right:12px;bottom:14px;}.sfab button{width:44px;height:44px;}}@media print{.sfab{display:none;}}</style>
+<div class="sfab" id="sFab" aria-label="Page scroll"><button type="button" data-dir="up" aria-label="Go to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button><button type="button" data-dir="down" aria-label="Go to bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button></div>
+<script>(function(){var f=document.getElementById('sFab');if(!f)return;var up=f.querySelector('[data-dir=up]'),dn=f.querySelector('[data-dir=down]');var rm=matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+function tick(){var y=window.scrollY,H=document.documentElement.scrollHeight,v=window.innerHeight;var long=H>v*2.5;f.classList.toggle('on',long);dn.disabled=y+v>=H-40;up.disabled=y<40;}
+up.addEventListener('click',function(){window.scrollTo({top:0,behavior:rm});});dn.addEventListener('click',function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:rm});});
+window.addEventListener('scroll',tick,{passive:true});window.addEventListener('resize',tick);tick();})();</script>
 </body>
 </html>

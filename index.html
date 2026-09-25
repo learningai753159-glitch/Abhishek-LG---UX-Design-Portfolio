@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Abhishek LG — Senior UX Designer</title>
+<title>Abhishek LG · Staff UX Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Caveat:wght@500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
@@ -170,6 +170,11 @@
   }
   .stat .num{font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,40px);color:var(--green);line-height:1;}
   .stat .lab{font-size:14.5px;color:var(--ink-soft);margin-top:10px;line-height:1.4;font-weight:500;}
+  .stats{gap:0 40px;margin-top:0!important;padding-top:72px!important;}
+  .stat{background:none;border:none;border-radius:0;padding:26px 0 6px;position:relative;}
+  .stat .num{font-size:clamp(34px,3.6vw,48px)!important;letter-spacing:-.01em;}
+  .stat .lab{font-size:14px;max-width:24ch;}
+  @media (max-width:1000px){.stats{row-gap:8px;}}
 
   /* fanned cards */
   .fan{
@@ -673,6 +678,26 @@
   .foot-cta-nav a{font-size:16px;font-weight:600;color:var(--ink-soft);transition:color .2s;}
   .foot-cta-nav a:hover{color:var(--green);}
   @media(max-width:720px){.foot-cta-row1{flex-direction:column;align-items:flex-start;gap:16px;}.foot-cta-actions{width:100%;}}
+
+  .rq-lead-row,.rq-row{display:grid;gap:18px;margin-top:18px;align-items:start;}
+  .rq-lead-row{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:34px;}
+  .rq-row{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;}.rq-lead-row{align-items:stretch;}.rq blockquote p{font-size:16px!important;}.rq-lead blockquote p{font-size:17.5px!important;line-height:1.55;}.rq blockquote p:first-child::before{content:"\201C";}.rq blockquote p:last-child::after{content:"\201D";}
+  .rq{margin:0;background:#fffdf8;border:1px solid rgba(20,60,40,.1);border-radius:20px;padding:24px 24px 20px;display:flex;flex-direction:column;gap:16px;box-shadow:0 14px 30px -26px rgba(20,40,30,.45);}
+  .rq-lead{padding:28px 30px 24px;}
+  .rq-who{display:flex;align-items:center;gap:12px;}
+  .rq-who img{width:52px;height:52px;border-radius:50%;flex:none;object-fit:cover;}
+  .rq-who div{display:flex;flex-direction:column;gap:2px;min-width:0;}
+  .rq-who b{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:17px;color:#191919;}
+  .rq-who div span{font-size:13.5px;color:#5d6b64;line-height:1.35;}
+  .rq-li{margin-left:auto;align-self:flex-start;color:#0a66c2;}.rq-li svg{width:18px;height:18px;display:block;}
+  .rq blockquote{margin:0;display:flex;flex-direction:column;gap:10px;}
+  .rq blockquote p{margin:0;font-size:15px;line-height:1.62;color:#2c3733;text-wrap:pretty;}
+  .rq-lead blockquote p{font-size:16px;}
+  .rq mark{background:linear-gradient(transparent 55%,#f8e3a0 55%);color:inherit;padding:0 1px;}
+  .rq-rel{margin:auto 0 0;padding-top:12px;border-top:1px solid rgba(20,60,40,.08);font-size:12.5px;color:#7a847f;}
+  .rq-all{display:inline-block;margin-top:22px;font-size:15px;font-weight:600;color:var(--green);text-decoration:underline;text-underline-offset:3px;}.rq-all:hover{color:var(--green-bright,#008953);}
+  @media(max-width:1000px){.rq-row{grid-template-columns:repeat(2,minmax(0,1fr));}}
+  @media(max-width:720px){.rq-lead-row,.rq-row{grid-template-columns:1fr;}}
 </style>
 <link id="gfont-Abril-Fatface" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface:wght@300;400;500;600;700&amp;display=swap">
 <link id="gfont-Permanent-Marker" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker:wght@300;400;500;600;700&amp;display=swap">
@@ -711,9 +736,9 @@
 
   <div class="hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow" style="background:rgba(21,84,59,.08);color:var(--green);border:none;border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;display:inline-block;margin-bottom:24px">Product Designer</span>
+      <span class="eyebrow" style="background:rgba(21,84,59,.08);color:var(--green);border:none;border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;display:inline-block;margin-bottom:24px">Staff UX Designer</span>
       <h1 style="font-family: &quot;Bricolage Grotesque&quot;, sans-serif; font-weight:400; color:#008953; font-size:clamp(36px,5vw,58px); line-height:1.08; letter-spacing:-0.02em; margin-bottom:24px; max-width:16ch">Designing products that move critical business metrics</h1>
-      <p class="pitch" style="color:#475569;font-size:clamp(17px,1.4vw,19px);max-width:38rem;line-height:1.625;margin-bottom:32px">For 7+ years, I’ve taken complex, multi-industry platforms—from high-volume E-commerce and IoT to enterprise AI—and turned messy workflows into seamless product experiences designed to move critical business metrics.</p>
+      <p class="pitch" style="color:#475569;font-size:clamp(17px,1.4vw,19px);max-width:38rem;line-height:1.625;margin-bottom:32px">For 7+ years, I’ve worked on complex platforms across industries, from high-volume e-commerce and IoT to enterprise AI. I turn messy workflows into clear product experiences that move business metrics.</p>
       <div class="hero-cta" style="margin-bottom:0">
         <a class="btn btn-slate-dark" href="#work" style="background:#059669">Explore Case Studies</a>
         <a class="btn btn-slate-outline" href="assets/Abhishek-LG-Resume.pdf" download data-resume>Download Resume</a>
@@ -742,7 +767,7 @@
     <div class="pcard" style="background:#dcd7f3">
       <div class="pcard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#191919" stroke-width="1.6"><path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5"/><path d="M8 13h8M8 17h5"/></svg></div>
       <h3>0➔1 Operations digitization</h3>
-      <p>Replacing paper chaos with digital precision. NutBite, how a complete 0➔1 design transformed their entire operational workflow.</p>
+      <p>I replaced a store's paper records with an app. NutBite: how a 0➔1 design changed the way the whole store runs.</p>
       <a class="link-cta" href="spendly.html" style="color:#5b4bab">Explore NutBite <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
     <div class="pcard" style="background:#c4e2f4">
@@ -787,7 +812,7 @@
   <div class="sec-head">
     <div>
       <h2 style="font-family: &quot;Bricolage Grotesque&quot;, sans-serif; font-weight:500; letter-spacing:-0.01em; color: rgb(0, 137, 83)">Case studies</h2>
-      <p class="sub">Real products, shipped — not portfolio pieces.</p>
+      <p class="sub">Real products that I shipped.</p>
     </div>
   </div>
 
@@ -817,8 +842,8 @@
     <div class="tl-item reveal">
       <div class="tl-body">
         <a class="tl-card-link" href="nutbite.html" aria-label="Read the story: The store that learned to report itself"></a>
-        <h3 class="tl-h3-row">They needed a system to record their sales.<br>And I gave a business partner that never sleeps</h3>
-        <p class="role">Transforming paper logs and WhatsApp chatter into an automated business engine</p>
+        <h3 class="tl-h3-row">Simpler than a notebook: a store app for a first-time user</h3>
+        <p class="role">I replaced paper logs and WhatsApp photos with an app that records every sale.</p>
         <div class="tl-mock shot-mock">
           <img src="assets/nutbite-dashboard.png" alt="NutBite store dashboard: today's sales, annual sales, weekly and monthly totals, low inventory alerts, top selling and slow movers" style="width:100%;display:block;" />
         </div>
@@ -864,7 +889,7 @@
         </div>
         <div class="metrics-row">
           <div class="metrics">
-            <span class="metric">Solo founder — idea to live product</span>
+            <span class="metric">Solo founder, from idea to live product</span>
             <span class="metric">Designed, built &amp; shipped alone</span>
             <span class="metric">Used by real people, solving a real problem</span>
           </div>
@@ -879,18 +904,14 @@
 <section class="panel reveal testi-panel" data-screen-label="Testimonials">
   <div class="testi-highlight">
     <div class="testi-head">
-      <span class="testi-badge">★ Straight from LinkedIn</span>
+      <span class="testi-badge">From LinkedIn</span>
       <h2 style="font-family: &quot;Bricolage Grotesque&quot;, sans-serif; font-weight:500; letter-spacing:-0.01em;">What it's like working with me</h2>
       <p>Strong opinions, loosely held. Shared credit, owned outcomes.</p>
     </div>
-    <div class="testi-stage">
-      <div class="proof p1">
-        <img src="assets/linkedin-rec-james.png" alt="LinkedIn recommendation from James Whitlam, Founder at Vancap, who managed Abhishek directly at Concirrus" />
-      </div>
-      <div class="proof p2">
-        <img src="assets/linkedin-rec-farah.png" alt="LinkedIn recommendation from Farah Bukhari, Staff Product Owner at Concirrus, who worked with Abhishek on the same team" />
-      </div>
-    </div>
+    <div class="rq-lead-row"><figure class="rq rq-lead"><figcaption class="rq-who"><img src="assets/rec-whitlam.png" alt="" width="52" height="52"><div><b>James Whitlam</b><span>Founder at Vancap</span></div><span class="rq-li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span></figcaption><blockquote><p>Abhishek was the lead UI/UX designer in my team, driving forward industry-leading, AI-first product capabilities sold into globally recognised organisations.</p><p>His communication skills and professional approach to collaboration were fantastic, successfully bridging the gap between engineering teams based in India, and product and commercial teams in London.</p></blockquote><p class="rq-rel">August 17, 2026, James managed Abhishek directly</p></figure><figure class="rq rq-lead"><figcaption class="rq-who"><img src="assets/rec-farah.png" alt="" width="52" height="52"><div><b>Farah Bukhari</b><span>Staff Product Owner @ Concirrus</span></div><span class="rq-li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span></figcaption><blockquote><p>Abhishek possesses a rare combination of exceptional design skills and a deep, holistic knowledge of our entire product suite.</p><p>He has been an outstanding partner in our product development, and I recommend him to any team or organization lucky enough to have him next.</p></blockquote><p class="rq-rel">July 1, 2026, Farah worked with Abhishek on the same team</p></figure></div>
+    <div class="rq-row"><figure class="rq"><figcaption class="rq-who"><img src="assets/rec-steve.png" alt="" width="52" height="52"><div><b>Steve O'Reilly</b><span>Product Executive</span></div><span class="rq-li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span></figcaption><blockquote><p>He is a highly skilled UI/UX designer, a thoughtful design leader and an excellent collaborator.</p><p>Abhishek introduced processes and standards that brought greater consistency to the team’s approach and output.</p></blockquote><p class="rq-rel">September 23, 2026, Steve managed Abhishek directly</p></figure><figure class="rq"><figcaption class="rq-who"><img src="assets/rec-kunal.png" alt="" width="52" height="52"><div><b>Kunal Bhardwaj</b><span>Product Consultant | Product Manager | CSPO</span></div><span class="rq-li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span></figcaption><blockquote><p>His initiative and end-to-end vision is what sets him apart.</p><p>Even when requirements were ambiguous, he independently defined the problems, navigated edge cases across the entire user journey to delivered seamless user flows.</p></blockquote><p class="rq-rel">September 17, 2026, Kunal worked with Abhishek on the same team</p></figure><figure class="rq"><figcaption class="rq-who"><img src="assets/rec-rendell.png" alt="" width="52" height="52"><div><b>James Rendell</b><span>Chief Executive Officer · BirdsEyeView</span></div><span class="rq-li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span></figcaption><blockquote><p>He took a technical product built for underwriters and made it clear and easy to use, which mattered a great deal to a young company selling into the insurance market.</p></blockquote><p class="rq-rel">September 25, 2026, James was senior to Abhishek but didn’t manage Abhishek directly</p></figure></div>
+    <a class="rq-all" href="https://www.linkedin.com/in/abhishek-lg-162800219/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener">Read all recommendations on LinkedIn ↗</a>
+  </div>
   </div>
 </section>
 
@@ -899,7 +920,7 @@
   <div class="sec-head">
     <div>
       <h2 style="font-family: &quot;Bricolage Grotesque&quot;, sans-serif; font-weight:500; letter-spacing:-0.01em; color: rgb(0, 137, 83)">7+ years. 4 companies. One design journey</h2>
-      <p class="sub">From people to products — building experiences that are simple, scalable, and impactful.</p>
+      <p class="sub">From people to products, I build experiences that are simple, scalable and useful.</p>
     </div>
   </div>
   <ul class="exp-tl">
@@ -909,7 +930,7 @@
     <span class="exp-arrow a2"></span>
     <span class="exp-arrow a3"></span>
     <li class="exp-node" tabindex="0">
-      <span class="exp-yr">2017 — 2018</span>
+      <span class="exp-yr">2017 to 2018</span>
       <span class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg></span>
       <span class="exp-dot"></span>
       <h4 style="font-family: &quot;Libre Baskerville&quot;,serif">TalentXO</h4>
@@ -917,7 +938,7 @@
       <div class="exp-tip">Creative talent recruitment across startups, mid-size, and enterprise clients.</div>
     </li>
     <li class="exp-node" tabindex="0">
-      <span class="exp-yr">2019 — 2020</span>
+      <span class="exp-yr">2019 to 2020</span>
       <span class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M3 4h2l2.4 12.2a1.5 1.5 0 0 0 1.5 1.3h9.2a1.5 1.5 0 0 0 1.5-1.2L21 8H6"/></svg></span>
       <span class="exp-dot"></span>
       <h4 style="font-family: &quot;Libre Baskerville&quot;,serif">StoreKing</h4>
@@ -925,7 +946,7 @@
       <div class="exp-tip">Engineered low-bandwidth, offline-first commerce interfaces optimized for rural retailers across web and mobile.</div>
     </li>
     <li class="exp-node" tabindex="0">
-      <span class="exp-yr">2020 — 2023</span>
+      <span class="exp-yr">2020 to 2023</span>
       <span class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="13" width="4" height="7" rx="1"/><rect x="10" y="8" width="4" height="12" rx="1"/><rect x="16" y="4" width="4" height="16" rx="1"/></svg></span>
       <span class="exp-dot"></span>
       <h4 style="font-family: &quot;Libre Baskerville&quot;,serif">CoreValue Technologies</h4>
@@ -933,7 +954,7 @@
       <div class="exp-tip">Designed enterprise IoT analytics dashboards, automated underwriting workflows, and high-converting e-commerce systems.</div>
     </li>
     <li class="exp-node exp-node-active" tabindex="0">
-      <span class="exp-yr">2023 — 2026</span>
+      <span class="exp-yr">2023 to 2026</span>
       <span class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m12 3 2.9 6 6.6.6-5 4.4 1.5 6.4L12 17l-5.9 3.4 1.5-6.4-5-4.4 6.6-.6z"/></svg></span>
       <span class="exp-dot"></span>
       <h4 style="font-family: &quot;Libre Baskerville&quot;,serif">Concirrus</h4>
@@ -943,9 +964,9 @@
   </ul>
   <div class="res-card res-card-wide">
     <div class="res-card-text">
-      <h3 style="font-family: &quot;Trebuchet MS&quot;;margin-bottom:16px">The Unabridged Impact</h3>
+      <h3 style="font-family: &quot;Trebuchet MS&quot;;margin-bottom:16px">The unabridged impact</h3>
       <p>Detailed KPI breakdowns, cross-functional leadership frameworks, user adoption metrics, and full architectural scope across 7+ years of complex product builds.</p>
-      <p>This document outlines the operational systems and design governance strategies used to drive revenue growth and scale engineering workflows from 0→1 to enterprise rollout.</p>
+      <p>This document covers the operational systems and design governance I used to drive revenue growth and scale engineering work, from 0→1 to enterprise rollout.</p>
     </div>
     <div class="res-card-cta">
       <p class="res-card-note">Let's build meaningful<br>products together</p>
@@ -1183,7 +1204,7 @@
           </a>
     <a class="article" href="h10-help-docs.html">
       <div class="thumb c11">
-        <span class="fin-badge">★ Series Finale</span>
+        <span class="fin-badge">Series finale</span>
         <div class="thumb-art">
           <svg viewBox="0 0 340 230" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <g stroke="#15543b" stroke-width="4.5">
@@ -1248,7 +1269,7 @@
     </nav>
   </div>
   <div class="foot-note">
-    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>© 2026 Abhishek LG · Staff UX Designer</span>
     <span>Designed &amp; built end to end.</span>
   </div>
 </footer>
@@ -1465,6 +1486,12 @@
   }
 })();
 </script>
+<style id="scroll-fab-css">.sfab{position:fixed;right:20px;bottom:24px;z-index:900;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .25s ease,transform .25s ease;}.sfab.on{opacity:1;transform:none;pointer-events:auto;}.sfab button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,60,40,.14);background:rgba(251,248,241,.94);color:#15543b;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px -12px rgba(20,40,30,.45);backdrop-filter:blur(6px);transition:background .2s,color .2s,transform .15s,opacity .2s;}.sfab button:hover{background:#15543b;color:#fff;transform:translateY(-2px);}.sfab button[disabled]{opacity:.35;pointer-events:none;}.sfab svg{width:18px;height:18px;}@media(max-width:560px){.sfab{right:12px;bottom:14px;}.sfab button{width:44px;height:44px;}}@media print{.sfab{display:none;}}</style>
+<div class="sfab" id="sFab" aria-label="Page scroll"><button type="button" data-dir="up" aria-label="Go to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button><button type="button" data-dir="down" aria-label="Go to bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button></div>
+<script>(function(){var f=document.getElementById('sFab');if(!f)return;var up=f.querySelector('[data-dir=up]'),dn=f.querySelector('[data-dir=down]');var rm=matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+function tick(){var y=window.scrollY,H=document.documentElement.scrollHeight,v=window.innerHeight;var long=H>v*2.5;f.classList.toggle('on',long);dn.disabled=y+v>=H-40;up.disabled=y<40;}
+up.addEventListener('click',function(){window.scrollTo({top:0,behavior:rm});});dn.addEventListener('click',function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:rm});});
+window.addEventListener('scroll',tick,{passive:true});window.addEventListener('resize',tick);tick();})();</script>
 </body>
 </html>
 

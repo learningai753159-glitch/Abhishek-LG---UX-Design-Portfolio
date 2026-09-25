@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>User Control and Freedom — H3 · Abhishek LG</title>
+<title>User Control and Freedom · H3 · Abhishek LG</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
@@ -310,13 +310,22 @@
   .foot-cta-nav a{font-size:16px;font-weight:600;color:var(--ink-soft);transition:color .2s;}
   .foot-cta-nav a:hover{color:var(--green);}
   @media(max-width:720px){.foot-cta-row1{flex-direction:column;align-items:flex-start;gap:16px;}.foot-cta-actions{width:100%;}}
+
+  /* footer buttons (matched to home page) */
+  .foot-cta-actions .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);font-weight:600;font-size:15.5px;line-height:1;padding:13px 22px;border-radius:999px;border:none;cursor:pointer;transition:transform .15s ease,box-shadow .2s ease,background .2s;white-space:nowrap;text-decoration:none;color:#fff;width:auto;height:auto;flex-direction:row;}
+  .foot-cta-actions .btn svg{width:17px;height:17px;flex-shrink:0;display:block;transition:transform .2s ease;}
+  .foot-cta-actions .btn-dark{color:#fff;}
+  .foot-cta-actions .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(0,0,0,.6);}
+  .foot-cta-actions .btn:hover svg{transform:translateX(2px);}
+  .foot-cta-actions .btn:active{transform:translateY(0) scale(.97);}
+  @media(max-width:720px){.foot-cta-actions .btn{white-space:normal;}}
 </style></head>
 <body>
 
 <!-- ============ NAV ============ -->
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG · home">
       <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
       <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
     </a>
@@ -345,8 +354,8 @@
           <span class="v">User Control and Freedom</span>
         </span>
       </div>
-      <p class="heur-desc">Users need clearly marked emergency exits — the ability to cancel, undo, and back out without going through an extended process.</p>
-      <p class="subline" style="margin-top:24px;">A car without brakes isn't a car — it's a trap. When users can't stop, undo, or exit freely, they don't feel in control. And without control, there's no trust.</p>
+      <p class="heur-desc">Users need clearly marked emergency exits, the ability to cancel, undo, and back out without going through an extended process.</p>
+      <p class="subline" style="margin-top:24px;">A car without brakes isn't a car, it's a trap. When users can't stop, undo, or exit freely, they don't feel in control. And without control, there's no trust.</p>
     </section>
 
     <div class="article-grid">
@@ -356,9 +365,9 @@
 
         <!-- 01 -->
         <section class="panel reveal" id="brake" data-spy="brake" data-screen-label="01 The brake pedal">
-          <span class="eyebrow-num">01 — The brake pedal</span>
+          <span class="eyebrow-num">01 · The brake pedal</span>
           <h2 class="sec-title">Imagine driving without a brake</h2>
-          <p class="body-copy">Imagine you're driving and you have a steering wheel and an accelerator — but no brake. Would you feel safe? Would you even get in?</p>
+          <p class="body-copy">Imagine you're driving and you have a steering wheel and an accelerator, but no brake. Would you feel safe? Would you even get in?</p>
           <p class="body-copy">Probably not. Because without the ability to stop, back out, or change direction, you don't feel in control. And where there's no control, there's no confidence.</p>
 
           <div class="compare">
@@ -388,20 +397,20 @@
             </div>
           </div>
 
-          <p class="body-copy" style="margin-top:30px;">The same logic applies directly to digital experiences. When a product doesn't let users stop, undo, or exit freely — it doesn't feel like a tool. It feels like a trap. And trapped users don't come back.</p>
+          <p class="body-copy" style="margin-top:30px;">The same logic applies directly to digital experiences. When a product doesn't let users stop, undo, or exit freely, it doesn't feel like a tool. It feels like a trap. And trapped users don't come back.</p>
         </section>
 
         <!-- 02 -->
         <section class="panel reveal" id="showroom" data-spy="showroom" data-screen-label="02 Real-world story">
-          <span class="eyebrow-num">02 — Real-world story</span>
+          <span class="eyebrow-num">02 · Real-world story</span>
           <h2 class="sec-title">The furniture showroom with exit shortcuts built in</h2>
 
           <div class="story">
             <div class="seyebrow"><span class="d"></span>Real-world observation</div>
-            <h3>A pre-set path — with an escape hatch built in</h3>
-            <p>I visited one of the city's largest furniture showrooms. The layout guided you through a pre-set path — living rooms to kitchens to décor to lighting.</p>
+            <h3>A pre-set path, with an escape hatch built in</h3>
+            <p>I visited one of the city's largest furniture showrooms. The layout guided you through a pre-set path. Living rooms to kitchens to décor to lighting.</p>
             <p>But here's what I noticed: there were short exit paths built into the layout at intervals. If someone didn't want to continue, they could leave without walking through the entire store.</p>
-            <p>Now imagine those shortcuts weren't there. You'd get halfway through, realise it wasn't for you, and have no choice but to walk every remaining section just to find the exit. Frustrating — and entirely avoidable.</p>
+            <p>Now imagine those shortcuts weren't there. You'd get halfway through, realise it wasn't for you, and have no choice but to walk every remaining section just to find the exit. Frustrating, and entirely avoidable.</p>
           </div>
 
           <div class="ill">
@@ -444,35 +453,35 @@
                 <span class="lg exit"><span class="sw"></span>Exit shortcut</span>
               </div>
             </div>
-            <p class="ill-cap">Escape hatches at every stage — leave anytime, without walking the whole store.</p>
+            <p class="ill-cap">Escape hatches at every stage, leave anytime, without walking the whole store.</p>
           </div>
 
-          <p class="body-copy">This is exactly the principle in digital products — users should always have a quick way to cancel, back out, or exit without being forced to complete a long flow they didn't intend to start. The exit shortcut isn't a failure of design. It's what makes the rest of the design feel safe to explore.</p>
+          <p class="body-copy">This is exactly the principle in digital products. Users should always have a quick way to cancel, back out, or exit without being forced to complete a long flow they didn't intend to start. The exit shortcut isn't a failure of design. It's what makes the rest of the design feel safe to explore.</p>
         </section>
 
         <!-- 03 -->
         <section class="panel reveal" id="whatsapp" data-spy="whatsapp" data-screen-label="03 A personal story">
-          <span class="eyebrow-num">03 — A personal story</span>
-          <h2 class="sec-title">The message I really didn't want her to see</h2>
+          <span class="eyebrow-num">03 · A personal story</span>
+          <h2 class="sec-title">The message I didn't want her to see</h2>
 
           <div class="story">
-            <div class="seyebrow"><span class="d"></span>Personal experience — WhatsApp</div>
+            <div class="seyebrow"><span class="d"></span>Personal experience, WhatsApp</div>
             <h3>Accidentally forwarded. No way to undo</h3>
-            <p>A few years ago, I accidentally forwarded a WhatsApp message — one absolutely meant for someone else. The worst part? Back then, WhatsApp didn't have "Delete for Everyone."</p>
+            <p>A few years ago, I accidentally forwarded a WhatsApp message, one absolutely meant for someone else. The worst part? Back then, WhatsApp didn't have "Delete for Everyone."</p>
             <p>So there I was, panic-texting: "Hey! That was sent by mistake… not for you… please ignore it…" Uff. Awkward, exhausting, and entirely avoidable.</p>
-            <p>The product had no brake pedal. No undo, no recall, no exit. Once the message left — it was gone. The user — me — was left scrambling to fix a mistake the product gave me no tools to correct.</p>
+            <p>The product had no brake pedal. No undo, no recall, no exit. Once the message left, it was gone. The user, me, was left scrambling to fix a mistake the product gave me no tools to correct.</p>
           </div>
 
           <div class="ex-grid">
             <div class="ex-card bad">
-              <span class="xlab"><span class="d"></span>WhatsApp — Before</span>
+              <span class="xlab"><span class="d"></span>WhatsApp, Before</span>
               <h4>No control after sending</h4>
               <p>Once a message was sent, it was permanent. No delete, no recall, no edit. The only recovery was to text the other person manually and hope for the best.</p>
             </div>
             <div class="ex-card good">
-              <span class="xlab"><span class="d"></span>WhatsApp — After</span>
+              <span class="xlab"><span class="d"></span>WhatsApp, After</span>
               <h4>Delete for Everyone + Edit</h4>
-              <p>Today you can delete a message immediately after sending, or edit it to fix typos. The user is back in control — mistakes are recoverable, and the experience feels safe.</p>
+              <p>Today you can delete a message immediately after sending, or edit it to fix typos. The user is back in control. Mistakes are recoverable, and the experience feels safe.</p>
             </div>
           </div>
 
@@ -497,13 +506,13 @@
                 <text x="200" y="166" font-family="Caveat, cursive" font-size="19" font-weight="700" fill="#c8861f" stroke="none">pedal.</text>
               </svg>
             </div>
-            <p class="ill-cap">Delete for Everyone — the undo that gives the user back control after the message has left.</p>
+            <p class="ill-cap">Delete for Everyone, the undo that gives the user back control after the message has left.</p>
           </div>
         </section>
 
         <!-- 04 -->
         <section class="panel reveal" id="confidence" data-spy="confidence" data-screen-label="04 Control builds confidence">
-          <span class="eyebrow-num">04 — Control builds confidence</span>
+          <span class="eyebrow-num">04 · Control builds confidence</span>
           <h2 class="sec-title">Free users are confident users</h2>
           <p class="body-copy">Whether it's a physical product or a digital one, users should always feel in control of their journey. Not trapped in a flow, not locked into a decision, not one wrong tap away from something irreversible.</p>
 
@@ -512,41 +521,41 @@
               <div class="tk"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.5"/><rect x="14" y="5" width="4" height="14" rx="1.5"/></svg></div>
               <div>
                 <h4>Start or stop whenever they want</h4>
-                <p>A user should be able to abandon a flow at any point — without losing progress or being penalised for changing their mind.</p>
+                <p>A user should be able to abandon a flow at any point, without losing progress or being penalised for changing their mind.</p>
               </div>
             </div>
             <div class="take">
               <div class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 L4 9 l5 -5"/><path d="M4 9 h11 a5 5 0 0 1 0 10 h-4"/></svg></div>
               <div>
                 <h4>Undo actions easily</h4>
-                <p>Mistakes are human. A product that provides easy undo builds confidence — users explore more freely when they know they can always step back.</p>
+                <p>Mistakes are human. A product that provides easy undo builds confidence. Users explore more freely when they know they can always step back.</p>
               </div>
             </div>
             <div class="take">
               <div class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 7 9 4 15 7 21 4 21 17 15 20 9 17 3 20"/><line x1="9" y1="4" x2="9" y2="17"/><line x1="15" y1="7" x2="15" y2="20"/></svg></div>
               <div>
                 <h4>Navigate freely without feeling trapped</h4>
-                <p>Fixed flows and forced sequences frustrate users. Give them the ability to jump, skip, and exit — even if most won't use it. The option itself creates comfort.</p>
+                <p>Fixed flows and forced sequences frustrate users. Give them the ability to jump, skip, and exit, even if most won't use it. The option itself creates comfort.</p>
               </div>
             </div>
           </div>
 
           <div class="pull">
-            <p>"Control is not a luxury in UX — it's a necessity. When users feel free, they feel confident. And confident users come back."</p>
-            <p style="font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink-faint);margin:16px 0 0;">— The core of H3</p>
+            <p>"Control is not a luxury in UX, it's a necessity. When users feel free, they feel confident. And confident users come back."</p>
+            <p style="font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink-faint);margin:16px 0 0;">The core of H3</p>
           </div>
         </section>
 
         <!-- 05 -->
         <section class="panel reveal" id="closing" data-spy="closing" data-screen-label="05 Closing thought">
-          <span class="eyebrow-num">05 — Closing thought</span>
-          <h2 class="sec-title">Empower your users — and they'll trust your design</h2>
-          <p class="body-copy">A good product doesn't just guide users through a journey — it gives them the freedom to back out, change their mind, or fix their mistakes without fear. The exit shortcut, the undo button, the delete option — these are not edge cases. They are core to how safe a product feels.</p>
-          <p class="body-copy">If your product respects the user's right to control their own journey, it will feel safer, friendlier, and ultimately more trustworthy. Not because of the times users use the escape hatch — but because of how it feels knowing it's always there.</p>
+          <span class="eyebrow-num">05 · Closing thought</span>
+          <h2 class="sec-title">Give your users control, and they'll trust your design</h2>
+          <p class="body-copy">A good product doesn't just guide users through a journey. It gives them the freedom to back out, change their mind, or fix their mistakes without fear. The exit shortcut, the undo button, the delete option, these are not edge cases. They are core to how safe a product feels.</p>
+          <p class="body-copy">If your product respects the user's right to control their own journey, it will feel safer, friendlier, and ultimately more trustworthy. Not because of the times users use the escape hatch, but because of how it feels knowing it's always there.</p>
 
           <div class="callout-strong">
             <div class="cap">The lesson from H3</div>
-            <p>A car without a brake isn't a car — it's a trap. Don't build traps. Build products that let people drive with confidence.</p>
+            <p>A car without a brake isn't a car, it's a trap. Don't build traps. Build products that let people drive with confidence.</p>
           </div>
 
           <div class="takeaways">
@@ -554,14 +563,14 @@
               <div class="tk">T1</div>
               <div>
                 <h4>Apply this to your next design</h4>
-                <p>Walk through every critical action in your product — form submissions, deletions, purchases, multi-step flows. At each point ask: can the user get out of this? Can they undo it? If not, you're building without a brake pedal.</p>
+                <p>Walk through every critical action in your product, form submissions, deletions, purchases, multi-step flows. At each point ask: can the user get out of this? Can they undo it? If not, you're building without a brake pedal.</p>
               </div>
             </div>
             <div class="take">
               <div class="tk">T2</div>
               <div>
                 <h4>Up next</h4>
-                <p><span class="up">H4: Same Dosa, Every Time.</span> Why users arrive with expectations built from every product they've ever used — and what quietly happens when your design breaks them, even creatively.</p>
+                <p><span class="up">H4: Same Dosa, Every Time.</span> Why users arrive with expectations built from every product they've ever used, and what quietly happens when your design breaks them, even creatively.</p>
               </div>
             </div>
           </div>
@@ -598,7 +607,7 @@
     </nav>
   </div>
   <div class="foot-note">
-    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>© 2026 Abhishek LG · Staff UX Designer</span>
     <span>Designed &amp; built end to end.</span>
   </div>
 </footer>
@@ -628,5 +637,11 @@
 })();
 </script>
 
+<style id="scroll-fab-css">.sfab{position:fixed;right:20px;bottom:24px;z-index:900;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .25s ease,transform .25s ease;}.sfab.on{opacity:1;transform:none;pointer-events:auto;}.sfab button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,60,40,.14);background:rgba(251,248,241,.94);color:#15543b;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px -12px rgba(20,40,30,.45);backdrop-filter:blur(6px);transition:background .2s,color .2s,transform .15s,opacity .2s;}.sfab button:hover{background:#15543b;color:#fff;transform:translateY(-2px);}.sfab button[disabled]{opacity:.35;pointer-events:none;}.sfab svg{width:18px;height:18px;}@media(max-width:560px){.sfab{right:12px;bottom:14px;}.sfab button{width:44px;height:44px;}}@media print{.sfab{display:none;}}</style>
+<div class="sfab" id="sFab" aria-label="Page scroll"><button type="button" data-dir="up" aria-label="Go to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button><button type="button" data-dir="down" aria-label="Go to bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button></div>
+<script>(function(){var f=document.getElementById('sFab');if(!f)return;var up=f.querySelector('[data-dir=up]'),dn=f.querySelector('[data-dir=down]');var rm=matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+function tick(){var y=window.scrollY,H=document.documentElement.scrollHeight,v=window.innerHeight;var long=H>v*2.5;f.classList.toggle('on',long);dn.disabled=y+v>=H-40;up.disabled=y<40;}
+up.addEventListener('click',function(){window.scrollTo({top:0,behavior:rm});});dn.addEventListener('click',function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:rm});});
+window.addEventListener('scroll',tick,{passive:true});window.addEventListener('resize',tick);tick();})();</script>
 </body>
 </html>

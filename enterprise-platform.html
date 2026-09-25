@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The System Behind the Underwriter's Day — Case Study · Abhishek LG</title>
+<title>The System Behind the Underwriter's Day · Case Study · Abhishek LG</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
@@ -160,7 +160,7 @@
   .body-copy strong,.body-copy em{color:var(--ink);font-style:normal;font-weight:600;}
 
   /* hero */
-  .case-hero{padding-top:96px;}
+  .case-hero{padding-top:132px;}
   .role-badge{
     display:inline-flex;align-items:center;gap:10px;
     font-family:var(--font-body);font-weight:600;font-size:16px;
@@ -168,7 +168,7 @@
     padding:8px 16px;border-radius:999px;margin-bottom:26px;
   }
   .role-badge .dot{width:8px;height:8px;border-radius:50%;background:#2fae74;box-shadow:0 0 0 4px rgba(47,174,116,.18);}
-  .case-hero .proj{font-family:var(--font-hero);font-size:clamp(44px,7vw,88px);font-weight:400;line-height:.98;margin-bottom:8px;letter-spacing:0;}
+  .case-hero .proj{font-family:var(--font-hero);font-size:clamp(32px,4.4vw,58px);font-weight:400;line-height:1.08;margin-bottom:18px;letter-spacing:0;max-width:40ch;text-wrap:balance;}
   .case-hero .headline{font-family:var(--font-quote);font-weight:600;font-size:clamp(26px,3.4vw,44px);color:#1e1f1e;max-width:none;margin:8px 0 22px;line-height:1.15;letter-spacing:-.01em;}
   .case-hero .subline{font-size:clamp(17px,1.6vw,21px);color:var(--ink-soft);max-width:60ch;line-height:1.6;margin:0 0 40px;}
 
@@ -179,7 +179,15 @@
     padding:24px 26px;border:1px solid rgba(20,60,40,.06);
   }
   .metric-card .num{font-family:var(--font-num);font-weight:700;font-size:clamp(26px,2.8vw,38px);color:var(--green);line-height:1;}
-  .metric-card .lab{font-size:14.5px;color:var(--ink-soft);margin-top:10px;line-height:1.4;font-weight:500;}
+  .metric-card .lab{font-size:14.5px;color:var(--ink);margin-top:10px;line-height:1.4;font-weight:600;}
+  .metric-card .sm{font-size:13.5px;color:var(--ink-soft);margin-top:6px;line-height:1.45;}
+  .ru-legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:14px;font-size:12px;color:#5b6472;}
+  .ru-legend .k{display:inline-flex;align-items:center;gap:6px;}
+  .ru-legend .k i{width:8px;height:8px;border-radius:50%;display:inline-block;}
+  .ru-caption{font-size:13px;color:var(--ink-soft);margin-top:12px;}
+  .nav{transition:transform .3s ease,opacity .3s ease;}
+  .nav.nav-hidden{transform:translateY(-140%);opacity:0;}
+  @media(max-width:720px){.metric-row{grid-template-columns:1fr;}}
 
   /* placeholders — matched to homepage .ph */
   .ph-drop{
@@ -684,6 +692,203 @@
   .foot-cta-nav a{font-size:16px;font-weight:600;color:var(--ink-soft);transition:color .2s;}
   .foot-cta-nav a:hover{color:var(--green);}
   @media(max-width:720px){.foot-cta-row1{flex-direction:column;align-items:flex-start;gap:16px;}.foot-cta-actions{width:100%;}}
+  .main .panel.case-hero{padding-top:132px;}
+  .case-hero .role-badge{white-space:nowrap;}
+  @media(max-width:560px){.main .panel.case-hero{padding-top:108px;}.case-hero .role-badge{white-space:normal;border-radius:16px;align-items:flex-start;}.case-hero .role-badge .dot{margin-top:7px;flex:0 0 auto;}}
+  .pf-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;align-items:start;margin-top:10px;}
+  .pf-copy{font-size:clamp(17px,1.5vw,19px);line-height:1.7;color:var(--ink-soft);text-wrap:pretty;margin:0;}
+  .pf-flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;}
+  .pf-flow li{position:relative;display:flex;flex-direction:column;gap:12px;}
+  .pf-flow .n{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--green-bright);color:#fff;font-weight:700;font-size:15px;}
+  .pf-flow .t{font-size:15px;line-height:1.4;font-weight:600;color:var(--ink);}
+  .pf-flow li:not(:last-child)::after{content:'';position:absolute;top:17px;left:44px;right:-16px;height:2px;background:var(--green-bright);opacity:.45;}
+  .pf-flow li:not(:last-child)::before{content:'';position:absolute;top:13px;right:-17px;border:5px solid transparent;border-left:7px solid var(--green-bright);opacity:.7;}
+  .pf-users{margin-top:32px;padding-top:22px;border-top:1px solid rgba(20,60,40,.1);display:flex;flex-direction:column;gap:12px;}
+  .pf-users .h{font-size:14px;font-weight:700;color:var(--ink);}
+  .pf-users .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .pf-users .chips span{font-size:14px;color:var(--ink-soft);padding:6px 14px;border-radius:999px;border:1px solid rgba(20,60,40,.16);}
+  @media(max-width:1000px){.pf-grid{grid-template-columns:1fr;gap:32px;}}
+  @media(max-width:560px){.pf-flow{grid-template-columns:1fr;gap:18px;}.pf-flow li{flex-direction:row;align-items:center;}.pf-flow li:not(:last-child)::after{top:40px;left:17px;right:auto;width:2px;height:14px;}.pf-flow li:not(:last-child)::before{top:auto;bottom:-20px;right:auto;left:13px;border:5px solid transparent;border-top:7px solid var(--green-bright);}}
+  .rl-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:start;margin-top:10px;}
+  .rl-facts{margin:0;border-top:1px solid rgba(20,60,40,.12);}
+  .rl-facts div{display:grid;grid-template-columns:130px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid rgba(20,60,40,.12);}
+  .rl-facts dt{font-size:14px;font-weight:700;color:var(--ink);}
+  .rl-facts dd{margin:0;font-size:15.5px;line-height:1.5;color:var(--ink-soft);}
+  .rl-copy{margin:0;font-size:clamp(17px,1.5vw,19px);line-height:1.7;color:var(--ink-soft);text-wrap:pretty;}
+  @media(max-width:1000px){.rl-grid{grid-template-columns:1fr;gap:28px;}}
+  @media(max-width:560px){.rl-facts div{grid-template-columns:1fr;gap:4px;}}
+  .rs-group{margin-top:12px;}
+  .rs-group.rs-quiet{margin-top:52px;padding-top:36px;border-top:1px solid rgba(20,60,40,.12);}
+  .rs-h{font-family:var(--font-proj);font-weight:700;font-size:clamp(20px,1.9vw,24px);color:var(--ink);margin:0 0 6px;}
+  .rs-sub{margin:0 0 22px;font-size:15.5px;line-height:1.55;color:var(--ink-soft);max-width:62ch;}
+  .rs-main{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;}
+  .rs-main .rs-card{background:var(--panel-2);border:1px solid rgba(20,60,40,.08);border-radius:var(--radius-md);padding:26px 24px;}
+  .rs-main .num{font-family:var(--font-num);font-weight:700;font-size:clamp(30px,3.2vw,44px);line-height:1;color:var(--green);white-space:nowrap;}
+  .rs-main .lab{margin-top:12px;font-size:15px;line-height:1.45;font-weight:600;color:var(--ink);}
+  .rs-side{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+  .rs-side .rs-card{border:1px solid rgba(20,60,40,.12);border-radius:var(--radius-md);padding:18px 20px;}
+  .rs-side .num{font-family:var(--font-num);font-weight:600;font-size:clamp(22px,2vw,28px);line-height:1;color:var(--ink);}
+  .rs-side .lab{margin-top:8px;font-size:14px;line-height:1.45;color:var(--ink-soft);}
+  .rs-src{margin:14px 0 0;font-size:13px;color:var(--ink-soft);}
+  @media(max-width:1000px){.rs-main{grid-template-columns:repeat(2,minmax(0,1fr));}}
+  @media(max-width:560px){.rs-side{grid-template-columns:1fr;}.rs-main .rs-card{padding:20px 18px;}}
+  .wv-gl{max-width:300px;padding:14px 16px;}
+  .wv-gl-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px;font-family:var(--font-proj);font-weight:700;font-size:14px;color:var(--ink);}
+  .wv-gl-sub{font-family:var(--font-body);font-weight:500;font-size:11.5px;color:var(--ink-faint);}
+  .wv-gl-row{display:flex;align-items:center;gap:9px;padding:7px 0;border-top:1px solid rgba(20,60,40,.08);}
+  .wv-gl-row i{width:9px;height:9px;border-radius:50%;flex:0 0 auto;}
+  .wv-gl-row .r{flex:1;font-size:12.5px;font-weight:600;color:var(--ink);min-width:0;}
+  .wv-gl-row .c{font-size:11px;color:var(--ink-faint);white-space:nowrap;}
+  .work-see{margin:0 0 22px;display:flex;flex-direction:column;gap:8px;}
+  .work-see .h{font-size:13.5px;font-weight:700;color:var(--ink);}
+  .work-see ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px;}
+  .work-see li{font-size:14.5px;line-height:1.45;color:var(--ink-soft);}
+  .work-card .work-cta{margin-top:auto;}
+  @media(max-width:560px){
+    .case-hero .ru-sidebar,.case-hero .ru-search{display:none;}
+    .case-hero .ru-window{min-height:0!important;}
+    .case-hero .ru-topbar{padding:0 14px;}
+    .case-hero .ru-content{padding:16px 12px;}
+    .case-hero .ru-board{gap:10px;padding:10px;}
+    .rs-main .num{font-size:26px;white-space:normal;}
+    .rs-main .lab{font-size:14px;}
+    .wv-gl-row .c{display:none;}
+  }
+  .hero-split{margin:0 0 48px;}
+  .hero-split .subline{margin:0 0 36px;max-width:none;font-size:clamp(16px,1.3vw,18px);line-height:1.65;text-wrap:pretty;}
+  .hero-stats{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(20,60,40,.14);border-bottom:1px solid rgba(20,60,40,.14);}
+  .hero-stats div{display:flex;flex-direction:column;gap:12px;padding:24px 28px;border-left:1px solid rgba(20,60,40,.14);}
+  .hero-stats div:first-child{border-left:none;padding-left:0;}
+  .hero-stats dt{font-family:var(--font-num);font-weight:700;font-size:clamp(30px,3vw,40px);line-height:1;color:var(--green);}
+  .hero-stats dd{margin:0;display:flex;flex-direction:column;gap:4px;}
+  .hero-stats strong{font-size:15.5px;font-weight:600;line-height:1.4;color:var(--ink);}
+  .hero-stats span{font-size:14px;line-height:1.45;color:var(--ink-soft);}
+  @media(max-width:720px){.hero-stats{grid-template-columns:1fr;}.hero-stats div{border-left:none;border-top:1px solid rgba(20,60,40,.14);padding:18px 0;gap:8px;}.hero-stats div:first-child{border-top:none;}}
+  .pf2-intro{margin:6px 0 40px;max-width:68ch;font-size:clamp(16px,1.3vw,18px);line-height:1.65;color:var(--ink-soft);text-wrap:pretty;}
+  .pf2-flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;}
+  .pf2-flow li{display:flex;flex-direction:column;gap:10px;padding-right:28px;}
+  .pf2-top{position:relative;display:flex;align-items:center;margin-bottom:10px;}
+  .pf2-top .n{position:relative;z-index:1;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--green-bright);color:#fff;font-weight:700;font-size:16px;flex:0 0 auto;}
+  .pf2-flow li:not(:last-child) .pf2-top::after{content:'';position:absolute;left:52px;right:-16px;top:50%;height:2px;background:var(--green-bright);opacity:.4;}
+  .pf2-flow li:not(:last-child) .pf2-top::before{content:'';position:absolute;right:-18px;top:50%;transform:translateY(-50%);border:5px solid transparent;border-left:8px solid var(--green-bright);opacity:.7;}
+  .pf2-flow h3{margin:0;font-family:var(--font-proj);font-weight:700;font-size:clamp(17px,1.4vw,19px);line-height:1.3;color:var(--ink);text-wrap:balance;}
+  .pf2-flow p{margin:0;font-size:15px;line-height:1.55;color:var(--ink-soft);text-wrap:pretty;}
+  .pf2-flow .who{margin-top:auto;align-self:flex-start;font-size:13px;font-weight:600;color:var(--green);padding:5px 12px;border-radius:999px;border:1px solid rgba(20,60,40,.16);}
+  .pf2-note{margin:36px 0 0;padding-top:20px;border-top:1px solid rgba(20,60,40,.12);font-size:15px;line-height:1.55;color:var(--ink-soft);}
+  .pf2-note strong{color:var(--ink);}
+  @media(max-width:1000px){.pf2-flow{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:36px;}.pf2-flow li:nth-child(2) .pf2-top::after,.pf2-flow li:nth-child(2) .pf2-top::before{display:none;}}
+  @media(max-width:560px){.pf2-flow{grid-template-columns:1fr;row-gap:0;}.pf2-flow li{position:relative;padding:0 0 28px 58px;gap:8px;}.pf2-top{position:absolute;left:0;top:0;margin:0;}.pf2-flow li .pf2-top::before{display:none!important;}.pf2-flow li:not(:last-child)::after{content:'';position:absolute;left:19px;top:48px;bottom:6px;width:2px;background:var(--green-bright);opacity:.4;}.pf2-flow li .pf2-top::after{display:none!important;}.pf2-flow .who{margin-top:4px;}}
+  .pf2-flow li{align-items:center;text-align:center;padding:0 14px;}
+  .pf2-top{justify-content:center;width:100%;margin-bottom:4px;}
+  .pf2-flow li:not(:last-child) .pf2-top::after{left:calc(50% + 32px);right:calc(-50% + 32px);}
+  .pf2-flow li:not(:last-child) .pf2-top::before{right:calc(-50% + 30px);}
+  .pf2-flow .who{margin:0 0 4px;align-self:center;}
+  .pf2-flow p{max-width:30ch;}
+  .pf2-note{text-align:center;}
+  @media(max-width:560px){.pf2-flow li{align-items:flex-start;text-align:left;padding:0 0 28px 58px;}.pf2-top{width:auto;}.pf2-flow .who{align-self:flex-start;margin:6px 0 2px;}.pf2-note{text-align:left;}}
+  .rl-grid{grid-template-columns:1fr;}
+  .rl-facts div{grid-template-columns:180px minmax(0,1fr);gap:24px;}
+  @media(max-width:560px){.rl-facts div{grid-template-columns:1fr;gap:4px;}}
+  .rs2-a{margin-top:12px;}
+  .rs2-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(20,60,40,.14);border-bottom:1px solid rgba(20,60,40,.14);}
+  .rs2-strip>div{padding:30px 28px 32px;border-left:1px solid rgba(20,60,40,.14);display:flex;flex-direction:column;gap:14px;}
+  .rs2-strip>div:first-child{border-left:none;padding-left:0;}
+  .rs2-strip .num{font-family:var(--font-num);font-weight:700;font-size:clamp(34px,3.6vw,52px);line-height:1;color:var(--green);white-space:nowrap;}
+  .rs2-strip .lab{font-size:15.5px;line-height:1.5;color:var(--ink-soft);text-wrap:pretty;}
+  .rs2-b{margin-top:64px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:56px;align-items:start;}
+  .rs2-b-head .rs-sub{margin-bottom:14px;}
+  .rs2-b-head .rs-src{margin:0;}
+  .rs2-list{list-style:none;margin:0;padding:0;border-top:1px solid rgba(20,60,40,.12);}
+  .rs2-list li{display:grid;grid-template-columns:110px minmax(0,1fr);gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid rgba(20,60,40,.12);}
+  .rs2-list .num{font-family:var(--font-num);font-weight:600;font-size:clamp(24px,2.2vw,30px);line-height:1;color:var(--ink);}
+  .rs2-list .lab{font-size:15.5px;line-height:1.5;color:var(--ink-soft);}
+  @media(max-width:1000px){.rs2-strip{grid-template-columns:repeat(2,minmax(0,1fr));}.rs2-strip>div:nth-child(3){border-left:none;padding-left:0;}.rs2-strip>div:nth-child(n+3){border-top:1px solid rgba(20,60,40,.14);}.rs2-b{grid-template-columns:1fr;gap:24px;}}
+  @media(max-width:560px){.rs2-strip>div{padding:22px 0 22px 16px;}.rs2-strip>div:nth-child(odd){padding-left:0;padding-right:12px;}.rs2-strip .num{font-size:28px;white-space:normal;}.rs2-strip .lab{font-size:14px;}.rs2-list li{grid-template-columns:80px minmax(0,1fr);gap:14px;}}
+  .pf2-flow .who{white-space:nowrap;}
+  .cs-intro{max-width:none;text-wrap:pretty;}
+  .cs-overview{display:inline-block;margin-top:28px;font-size:15px;font-weight:600;color:var(--green);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;}
+  .cs-overview:hover{color:var(--ink);}
+  html{scroll-behavior:smooth;}
+  #platform{scroll-margin-top:24px;}
+  .cq-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-rows:auto auto;gap:18px;margin-top:22px;}
+  .cq{margin:0;border-radius:var(--radius-md);padding:30px 32px 28px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden;}
+  .cq-peach{background:var(--peach);}.cq-lavender{background:var(--lavender);}.cq-sky{background:var(--sky);}
+  .cq-lead{grid-row:1 / span 2;padding:40px 42px 36px;justify-content:space-between;}
+  .cq-mark{font-family:var(--font-num);font-size:64px;line-height:.8;height:34px;color:rgba(25,25,25,.28);}
+  .cq-lead .cq-mark{font-size:120px;height:62px;}
+  .cq blockquote{margin:0;font-family:var(--font-quote);font-weight:500;font-size:clamp(17px,1.45vw,19px);line-height:1.5;color:var(--black);text-wrap:pretty;}
+  .cq-lead blockquote{font-size:clamp(22px,2.3vw,30px);line-height:1.35;flex:1;display:flex;align-items:center;}
+  .cq figcaption{display:flex;flex-direction:column;gap:2px;padding-top:14px;border-top:1px solid rgba(25,25,25,.16);font-size:14px;color:rgba(25,25,25,.72);}
+  .cq figcaption strong{font-size:14.5px;color:var(--black);}
+  @media(max-width:860px){.cq-grid{grid-template-columns:1fr;}.cq-lead{grid-row:auto;padding:30px 28px;}.cq-lead .cq-mark{font-size:84px;height:44px;}}
+  .cq-src{margin:16px 0 0;font-size:13px;color:var(--ink-soft);}
+  .src-link{font-weight:600;color:var(--green);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;}
+  .src-link:hover{color:var(--ink);}
+  .rs-src,.cq-src{font-size:14px;}
+  .lc{margin-top:8px;}
+  .lc-flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));row-gap:18px;}
+  .lc-ph{grid-row:1;margin:0 10px;padding-bottom:12px;position:relative;border-bottom:1.5px solid rgba(0,137,83,.38);}
+  .lc-ph::before,.lc-ph::after{content:'';position:absolute;bottom:-9px;width:1.5px;height:9px;background:rgba(0,137,83,.38);}
+  .lc-ph::before{left:0;}.lc-ph::after{right:0;}
+  .lc-ph span{display:block;text-align:center;font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--green);}
+  .lc-ph-a{grid-column:1 / 5;}.lc-ph-b{grid-column:5 / 7;}.lc-ph-a2{display:none;}
+  .lc-step{grid-row:2;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:10px 12px 0;}
+  .lc-top{position:relative;width:100%;display:flex;justify-content:center;margin-bottom:4px;}
+  .lc-top .n{position:relative;z-index:1;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--green-bright);color:#fff;font-weight:700;font-size:16px;}
+  .lc-step:not(.lc-s6) .lc-top::after{content:'';position:absolute;top:50%;left:calc(50% + 30px);right:calc(-50% + 34px);height:2px;background:var(--green-bright);opacity:.4;}
+  .lc-step:not(.lc-s6) .lc-top::before{content:'';position:absolute;top:50%;right:calc(-50% + 27px);transform:translateY(-50%);border:5px solid transparent;border-left:8px solid var(--green-bright);opacity:.7;}
+  .lc-step .who{white-space:nowrap;font-size:12.5px;font-weight:600;color:var(--green);padding:4px 11px;border-radius:999px;border:1px solid rgba(20,60,40,.16);}
+  .lc-step h3{margin:0;min-height:2.6em;display:flex;align-items:flex-start;justify-content:center;font-family:var(--font-proj);font-weight:700;font-size:17px;line-height:1.3;color:var(--ink);text-wrap:balance;}
+  .lc-step p{margin:0;font-size:14px;line-height:1.55;color:var(--ink-soft);text-wrap:pretty;}
+  .lc-returns{position:relative;height:84px;margin-top:14px;}
+  .lc-ret{position:absolute;top:0;border:1.5px solid rgba(0,137,83,.38);border-top:none;border-radius:0 0 16px 16px;}
+  .lc-ret::before{content:'';position:absolute;top:-2px;left:-6px;border:5px solid transparent;border-bottom:8px solid rgba(0,137,83,.38);border-top:none;}
+  .lc-ret span{position:absolute;left:50%;bottom:0;transform:translate(-50%,50%);white-space:nowrap;background:var(--panel);padding:0 10px;font-size:13px;font-weight:600;color:var(--green);}
+  .lc-ret-out{left:calc(100% / 12);right:calc(100% / 12);height:70px;}
+  .lc-ret-in{left:calc(100% * 5 / 12);right:25%;height:32px;}
+  .lc-returns-alt{display:none;list-style:none;margin:28px 0 0;padding:0;flex-direction:column;gap:6px;font-size:14px;line-height:1.5;color:var(--ink-soft);}
+  .lc-returns-alt strong{color:var(--green);}
+  .lc-def{margin:22px 0 0;font-size:14px;line-height:1.55;color:var(--ink-soft);text-align:center;}
+  .lc-def strong{color:var(--ink);}
+  .lc-foot{margin-top:28px;padding-top:18px;border-top:1px solid rgba(20,60,40,.12);display:flex;flex-direction:column;gap:6px;text-align:center;}
+  .lc-foot p{margin:0;font-size:14px;line-height:1.6;color:var(--ink-soft);}
+  .lc-foot strong{color:var(--ink);}
+  .lc-foot a{color:var(--green);font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+  .lc-foot a:hover{color:var(--ink);}
+  @media(max-width:1199px){
+    .lc-flow{grid-template-columns:repeat(3,minmax(0,1fr));}
+    .lc-ph-a{grid-column:1 / 4;grid-row:1;}
+    .lc-s1,.lc-s2,.lc-s3{grid-row:2;}
+    .lc-ph-a2{display:block;grid-column:1 / 2;grid-row:3;margin-top:18px;}
+    .lc-ph-b{grid-column:2 / 4;grid-row:3;margin-top:18px;}
+    .lc-s4,.lc-s5,.lc-s6{grid-row:4;}
+    .lc-s3 .lc-top::after,.lc-s3 .lc-top::before{display:none;}
+    .lc-returns{display:none;}
+    .lc-returns-alt{display:flex;}
+    .lc-def,.lc-foot{text-align:left;}
+  }
+  @media(max-width:640px){
+    .lc-flow{display:flex;flex-direction:column;row-gap:0;}
+    .lc-ph{margin:0 0 18px;border-bottom:none;border-top:1.5px solid rgba(0,137,83,.38);padding:10px 0 0;}
+    .lc-ph::before,.lc-ph::after{display:none;}
+    .lc-ph span{text-align:left;}
+    .lc-ph-a{order:0;}.lc-s1{order:1;}.lc-s2{order:2;}.lc-s3{order:3;}.lc-s4{order:4;}.lc-ph-b{order:5;margin-top:10px;}.lc-s5{order:6;}.lc-s6{order:7;}
+    .lc-ph-a2{display:none;}
+    .lc-step{position:relative;align-items:flex-start;text-align:left;padding:0 0 26px 58px;gap:8px;}
+    .lc-top{position:absolute;left:0;top:0;width:auto;margin:0;}
+    .lc-step .lc-top::after,.lc-step .lc-top::before{display:none!important;}
+    .lc-step:not(.lc-s4):not(.lc-s6)::after{content:'';position:absolute;left:19px;top:48px;bottom:6px;width:2px;background:var(--green-bright);opacity:.4;}
+    .lc-step h3{min-height:0;justify-content:flex-start;}
+  }
+  .lc-intro{max-width:none;}
+  .case-hero .ru-card .nm,.case-hero .ru-card .dr{white-space:nowrap;}
+  @media(max-width:1199px){.case-hero .ru-sidebar{display:none;}.case-hero .ru-card .nm,.case-hero .ru-card .dr{white-space:normal;}}
+  .case-hero .ru-search{white-space:nowrap;}
+  .case-hero .ru-col{min-width:0;}
+  .nda-note{display:flex;gap:16px;align-items:flex-start;margin:0 0 32px;padding:14px 18px;background:#f6f0e6;border:1px dashed #c4a575;border-radius:10px;}.nda-stamp{flex:none;margin-top:2px;padding:4px 9px;background:#3a352c;color:#fff;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:4px;transform:rotate(-2deg);line-height:1.3;}.nda-lab{margin:0 0 4px;font-size:13px;font-weight:500;color:#8a6d3f;}.nda-txt{margin:0;font-size:16px;line-height:1.6;color:var(--ink);text-wrap:pretty;}@media(max-width:620px){.nda-note{flex-direction:column;gap:10px;}}
+  .lc-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;}
+  .lc-some{white-space:nowrap;font-size:11.5px;font-weight:600;color:var(--ink-soft);padding:4px 9px;border-radius:999px;background:rgba(21,84,59,.08);}
+  @media(max-width:640px){.lc-chips{justify-content:flex-start;}}
 </style></head>
 <body>
 
@@ -691,7 +896,7 @@
 <!-- ============ NAV ============ -->
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG, home">
       <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
       <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
     </a>
@@ -709,16 +914,14 @@
 
     <!-- HERO -->
     <section class="panel case-hero" data-screen-label="Hero">
-      <span class="role-badge"><span class="dot"></span>Staff UX Designer · Enterprise Platform · B2B SaaS</span>
-      <h1 class="proj">Replacing 8 legacy tools with one multi-tenant platform</h1>
-      <p class="subline">Re-architecting complex risk decisioning for speed and precision — cutting workflow friction by 90% across high-stakes industries like Aviation, Marine, and Construction.</p>
-
-      <div class="metric-row">
-        <div class="metric-card"><div class="num">90%+</div><div class="lab">Reduction in manual task friction</div></div>
-        <div class="metric-card"><div class="num">4×</div><div class="lab">Shipping velocity across engineering</div></div>
-        <div class="metric-card"><div class="num">5</div><div class="lab">Lines of business unified — Aviation, Marine, Construction &amp; more</div></div>
+      <span class="role-badge"><span class="dot"></span>Staff UX Designer · AI underwriting platform · 2023 to 2026</span>
+      <h1 class="proj">Designing one underwriting platform for five lines of specialty insurance</h1>
+      <div class="hero-split">
+        <p class="subline">Underwriters were pricing million-dollar risks from emails, PDFs and spreadsheets. We designed the platform they now work in, from the first broker submission to the bound policy.</p>
+        <dl class="hero-stats"><div><dt>5</dt><dd><strong>lines of business on one shared workflow</strong><span>New lines are configured, not redesigned.</span></dd></div><div><dt>3</dt><dd><strong>patterns I introduced became platform standards</strong><span>Side panel, options bar, unified filter.</span></dd></div><div><dt>0</dt><dd><strong>support tickets for role or permission changes</strong><span>After User Management launched.</span></dd></div></dl>
       </div>
 
+      <aside class="nda-note"><span class="nda-stamp">NDA</span><div><p class="nda-lab">A note on confidentiality</p><p class="nda-txt">This work is under NDA, so I can't show the real screens, product name, client data or detailed results. The process and decisions are real. The interfaces are recreated with a different theme, product name and sample data.</p></div></aside>
       <div class="ru-window" style="min-height:520px;" aria-hidden="true">
         <div class="ru-app">
           <div class="ru-sidebar">
@@ -743,20 +946,20 @@
               <div class="ru-card-shell">
                 <div class="ru-board">
                   <div class="ru-col"><div class="ru-col-head"><span class="dot" style="background:#2c2f34;"></span><span class="t">Inbox</span><span class="n">4</span></div>
-                    <div class="ru-card"><div class="nm">Meridian Airways</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c1">JW</span></div></div>
-                    <div class="ru-card"><div class="nm">Pacific Air Co</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c1">JW</span></div></div>
+                    <div class="ru-card"><div class="nm">Meridian Airways</div><div class="dr">12 Jan 2025 → 12 Jan 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c1">JW</span></div></div>
+                    <div class="ru-card"><div class="nm">Pacific Air Co</div><div class="dr">3 Feb 2025 → 3 Feb 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c1">AM</span></div></div>
                   </div>
                   <div class="ru-col"><div class="ru-col-head"><span class="dot" style="background:var(--amber);"></span><span class="t">UW Review</span><span class="n">3</span></div>
-                    <div class="ru-card"><div class="nm">Atlantic Shippers</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-x"></i><i class="ru-x"></i></span><span class="ru-init c2">JW</span></div></div>
-                    <div class="ru-card"><div class="nm">Meridian Airways</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c2">JW</span></div></div>
+                    <div class="ru-card"><div class="nm">Atlantic Shippers</div><div class="dr">18 Mar 2025 → 18 Mar 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-x"></i><i class="ru-x"></i></span><span class="ru-init c2">PN</span></div></div>
+                    <div class="ru-card"><div class="nm">Northern Freight</div><div class="dr">1 Apr 2025 → 1 Apr 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c2">DC</span></div></div>
                   </div>
                   <div class="ru-col"><div class="ru-col-head"><span class="dot" style="background:var(--blue);"></span><span class="t">Quoted</span><span class="n">2</span></div>
-                    <div class="ru-card"><div class="nm">Pacific Air Co</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c3">JW</span></div></div>
-                    <div class="ru-card"><div class="nm">Meridian Airways</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-x"></i></span><span class="ru-init c3">JW</span></div></div>
+                    <div class="ru-card"><div class="nm">Coastal Lines</div><div class="dr">22 May 2025 → 22 May 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c3">SR</span></div></div>
+                    <div class="ru-card"><div class="nm">Summit Cargo</div><div class="dr">9 Jul 2025 → 9 Jul 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-x"></i></span><span class="ru-init c3">AM</span></div></div>
                   </div>
                   <div class="ru-col"><div class="ru-col-head"><span class="dot" style="background:var(--emerald);"></span><span class="t">Bound</span><span class="n">3</span></div>
-                    <div class="ru-card"><div class="nm">Atlantic Shippers</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c4">JW</span></div></div>
-                    <div class="ru-card"><div class="nm">Meridian Airways</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c4">JW</span></div></div>
+                    <div class="ru-card"><div class="nm">Harbour Marine</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c4">JW</span></div></div>
+                    <div class="ru-card"><div class="nm">Skyline Construction</div><div class="dr">30 Oct 2025 → 30 Oct 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c4">PN</span></div></div>
                   </div>
                 </div>
               </div>
@@ -764,92 +967,30 @@
           </div>
         </div>
       </div>
+      <p class="ru-caption">Interface recreated with sample data. Product name and colours changed for confidentiality.</p>
 
-      <div class="jump-row">
-        <span class="jl">2 case studies inside this platform</span>
-        <a class="jump-pill" href="#works">See selected works &darr;</a>
-      </div>
     </section>
 
-    <!-- 01 THE PLATFORM -->
-    <section class="panel reveal" id="platform" data-screen-label="01 The Platform">
-      <span class="eyebrow-num">01 — The Platform</span>
-      <h2 class="sec-title">What this platform does</h2>
-      <p class="lead-line">"Specialty insurance is one of the most complex, high-stakes domains in enterprise software. Every decision an underwriter makes can be worth millions."</p>
-      <div class="insight-grid three">
-        <div class="insight status-card"><span class="badge badge-red">🔴 THE FRICTION</span><div class="k">The Operational Friction</div><p>Underwriters lost 3+ hours daily toggling between raw Excel sheets, emails, and 8+ disconnected legacy platforms to price commercial risks.</p><span class="stat-pill">3+ Hours Lost / Day</span></div>
-        <div class="insight status-card"><span class="badge badge-green">⚡ THE SOLUTION</span><div class="k">The Platform Solution</div><p>Designed an AI-assisted workbench that centralizes submission intake, automates risk triage, and standardizes underwriting decisions.</p><span class="stat-pill">90% Friction Cut</span></div>
-        <div class="insight status-card"><span class="badge badge-blue">👑 MY OWNERSHIP</span><div class="k">My Direct Contribution</div><p>Owned end-to-end 0→1 flow architecture, component systems, and UX strategy — collaborating directly with domain experts and engineering teams.</p><span class="stat-pill">Lead Designer · 0→1 Architecture</span></div>
-      </div>
-    </section>
-
-    <!-- 02 MY ROLE -->
-    <section class="panel reveal" id="role" data-screen-label="02 My Role">
-      <span class="eyebrow-num">02 — My Role</span>
-      <h2 class="sec-title">My role &amp; impact</h2>
-      <p class="lead-line">"Joined as sole designer. Now leading design architecture across the platform."</p>
-      <div class="narrative">
-        <p>3 years ago I was handed a single product with zero design system. Today I lead a team of 3 designers, own decisions across 5 LOBs, and work directly with executive product leadership.</p>
-      </div>
-      <div class="role-list three">
-        <div class="rp">
-          <span class="ic-inline">👑</span><h4>Strategic Product Leadership</h4>
-          <p>Recruited and now lead 3 designers. Partner directly with the Product Director on roadmap, feature directions, and cross-LOB standards.</p>
-        </div>
-        <div class="rp">
-          <span class="ic-inline">🧱</span><h4>Unified Enterprise Architecture</h4>
-          <p>Redesigned a 10-year-old system into a modular component library and horizontal workflow architecture built for multi-tenant scale.</p>
-        </div>
-        <div class="rp">
-          <span class="ic-inline">⚡</span><h4>AI-Driven Execution</h4>
-          <p>Introduced AI workflows into team design processes — eliminating repetitive tasks and cutting project delivery timelines from 6 weeks down to 2–3.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 03 IMPACT -->
-    <section class="panel reveal" id="impact" data-screen-label="03 Impact">
-      <span class="eyebrow-num">03 — Impact</span>
-      <h2 class="sec-title">What this looks like in numbers</h2>
-      <p class="lead-line">"These are not vanity metrics. Each one connects directly to a business outcome."</p>
-      <div class="impact-carousel" id="impactCarousel">
-        <div class="impact-track" id="impactTrack">
-          <div class="impact-slide">
-            <div class="impact-card"><div class="num">92%</div><h4>Reduction in time-to-quote</h4><p>Underwriters respond to brokers in minutes, not days. Faster quotes = faster revenue = stronger broker relationships.</p></div>
-            <div class="impact-card"><div class="num">2.5×</div><h4>More submissions per underwriter per day</h4><p>One designer's system did the work of hiring an entire extra team. Pure workforce multiplication.</p></div>
-            <div class="impact-card"><div class="num">4×</div><h4>More high-appetite deals closed</h4><p>Design directly connected to the most valuable business outcomes. High-appetite deals are where revenue is won.</p></div>
-          </div>
-          <div class="impact-slide">
-            <div class="impact-card"><div class="num">85%</div><h4>Reduction in manual systems used</h4><p>Replaced fragmented spreadsheets, emails, and legacy tools with one coherent platform. Systems thinking at scale.</p></div>
-            <div class="impact-card"><div class="num">1</div><h4>Unified design system · 5 LOBs · Multiple clients</h4><p>One component library. Zero inconsistency. Scalable across every product line and every client without redesign.</p></div>
-            <div class="impact-card"><div class="num">1</div><h4>Horizontal user journey · Any LOB · Any client</h4><p>Modular architecture designed to scale infinitely. Each addition is independently priceable — enabling company revenue growth through design.</p></div>
-          </div>
-        </div>
-        <div class="impact-dots" id="impactDots">
-          <button class="active" aria-label="Slide 1"></button>
-          <button aria-label="Slide 2"></button>
-        </div>
-      </div>
-    </section>
-
-    <!-- 04 SELECTED WORKS -->
-    <section class="panel reveal" id="works" data-screen-label="04 Selected Works">
-      <span class="eyebrow-num">04 — Selected Works</span>
-      <h2 class="sec-title">Work inside this platform</h2>
-      <p class="jump-prompt">Explore the two major modules I owned end-to-end. Click either module to inspect interactive UI flows, screen designs, and system logic.</p>
+    <!-- 01 CASE STUDIES -->
+    <section class="panel reveal" id="works" data-screen-label="01 Case studies">
+      <span class="eyebrow-num">01 · Case studies</span>
+      <h2 class="sec-title">It started with two problems</h2>
+      <p class="jump-prompt cs-intro">The workflow only worked for one line of business, and every client change had to go through our support team. Each case study shows how I worked through one of them, what I tried, and what I decided.</p>
       <div class="mini-grid">
         <a class="mini-card work-card" id="work-intake" href="pre-bind-intake.html">
           <div class="work-visual wv-peach">
-            <div class="wv-mock wv-sub">
-              <div class="wv-sub-top"><span class="wv-air">Meridian Airways</span></div>
-              <div class="wv-sub-date">19 Aug 2025 → 19 Aug 2026</div>
-              <div class="wv-sub-bot"><span class="wv-dots"><i style="background:#3aa76d"></i><i style="background:#e6a23c"></i><i style="background:#d9534f"></i></span><span class="wv-av" style="background:#2f5fdb">JW</span></div>
+            <div class="wv-mock wv-gl">
+              <div class="wv-gl-head"><span>Guideline matches</span><span class="wv-gl-sub">Meridian Airways</span></div>
+              <div class="wv-gl-row"><i style="background:#3aa76d"></i><span class="r">Fleet age under 15 years</span><span class="c">Risk appetite</span></div>
+              <div class="wv-gl-row"><i style="background:#e6a23c"></i><span class="r">Pilot hours below target</span><span class="c">Advisory</span></div>
+              <div class="wv-gl-row"><i style="background:#d9534f"></i><span class="r">Route over excluded territory</span><span class="c">Restriction</span></div>
             </div>
           </div>
-          <span class="work-badge">0→1 Flow Architecture</span>
-          <h4>Pre-bind · Submission Intake</h4>
-          <p>How brokers submit complex risks and how underwriters triage, assess, and quote policies across 5 enterprise lines of business.</p>
-          <span class="work-cta">Explore Submission Intake UI →</span>
+          <span class="work-badge">Pre-bind workflow</span>
+          <h4>One workflow for every line of business</h4>
+          <p>How I turned a Marine-only workflow into one base that every line of business and client can configure.</p>
+          <div class="work-see"><span class="h">What you'll see</span><ul><li>Auditing four lines to find what they share</li><li>Deciding what stays common and what gets configured</li><li>Three patterns that became platform standards</li></ul></div>
+          <span class="work-cta">Read case study →</span>
         </a>
         <a class="mini-card work-card" id="work-team" href="team-management.html">
           <div class="work-visual wv-lav">
@@ -860,13 +1001,84 @@
               <div class="wv-row"><span class="wv-av" style="background:#c07a1e">DC</span><span class="wv-nm">Daniel Cho</span><span class="wv-role">Jr UW</span></div>
             </div>
           </div>
-          <span class="work-badge">Enterprise Systems Design</span>
-          <h4>Team &amp; User Management</h4>
-          <p>Role architecture, granular access control, and organization management across a multi-tenant, multi-client enterprise structure.</p>
-          <span class="work-cta">Explore Permissions System UI →</span>
+          <span class="work-badge">Team and user management</span>
+          <h4>Letting each client run the platform themselves</h4>
+          <p>How I moved user, role and team setup from our support team into the client's own hands.</p>
+          <div class="work-see"><span class="h">What you'll see</span><ul><li>Client-defined roles and permissions</li><li>Teams organised by region</li><li>A delete flow that reassigns work instead of blocking it</li></ul></div>
+          <span class="work-cta">Read case study →</span>
         </a>
       </div>
+      <a class="cs-overview" href="#platform">New to specialty insurance? Read the 60-second overview ↓</a>
     </section>
+
+    <!-- 02 THE PLATFORM -->
+    <section class="panel reveal" id="platform" data-screen-label="02 The Platform">
+      <span class="eyebrow-num">02 · The platform</span>
+      <h2 class="sec-title">The platform in 60 seconds</h2>
+      <p class="pf2-intro lc-intro">An underwriter decides whether to insure a risk, like a fleet of aircraft, a ship, or a building project, and at what price. Once the policy is live, the insurer keeps watching it, and what they see shapes the next decision. The platform covers the whole cycle.</p>
+      <div class="lc">
+        <div class="lc-flow">
+          <div class="lc-ph lc-ph-a"><span>Before the policy · Pre-bind</span></div>
+          <div class="lc-ph lc-ph-a2" aria-hidden="true"></div>
+          <div class="lc-ph lc-ph-b"><span>After the policy · Post-bind</span></div>
+          <div class="lc-step lc-s1"><div class="lc-top"><span class="n">1</span></div><span class="who">Broker</span><h3>Sends submission</h3><p>Details arrive as emails, PDFs and spreadsheets.</p></div>
+          <div class="lc-step lc-s2"><div class="lc-top"><span class="n">2</span></div><span class="lc-chips"><span class="who">Clearance team</span><span class="lc-some">Some clients</span></span><h3>Checks the data</h3><p>AI turns the pile into one record. Clients with a separate clearance team check it here. Others go straight to review.</p></div>
+          <div class="lc-step lc-s3"><div class="lc-top"><span class="n">3</span></div><span class="who">Underwriter</span><h3>Assesses and prices</h3><p>The risk is checked against the insurer's rules and loss history, then priced. The underwriter sees how it adds to what is already written.</p></div>
+          <div class="lc-step lc-s4"><div class="lc-top"><span class="n">4</span></div><span class="who">Underwriter</span><h3>Quotes and binds</h3><p>The accepted quote becomes a live policy.</p></div>
+          <div class="lc-step lc-s5"><div class="lc-top"><span class="n">5</span></div><span class="who">Underwriter</span><h3>Tracks exposure</h3><p>A map shows insured value piling up in one place, like a port or a blast zone. Alerts fire when limits get close or an event happens nearby.</p></div>
+          <div class="lc-step lc-s6"><div class="lc-top"><span class="n">6</span></div><span class="who">Underwriter</span><h3>Manages the policy</h3><p>Mid-term changes, reports, and renewal.</p></div>
+        </div>
+        <div class="lc-returns" aria-hidden="true">
+          <div class="lc-ret lc-ret-out"><span>Renewal</span></div>
+          <div class="lc-ret lc-ret-in"><span>Live exposure informs every new quote</span></div>
+        </div>
+        <ul class="lc-returns-alt">
+          <li><strong>Renewal:</strong> step 6 leads back to step 1.</li>
+          <li><strong>Live exposure informs every new quote:</strong> step 5 feeds back into step 3.</li>
+        </ul>
+        <p class="lc-def"><strong>Accumulation:</strong> the total an insurer could lose if one event hits one place, like a storm at a port full of insured ships.</p>
+      </div>
+      <div class="lc-foot">
+        <p>Covered in: "<a href="pre-bind-intake.html">One workflow for every line of business</a>" (steps 1 to 4) · "<a href="team-management.html">Letting each client run the platform themselves</a>" (admin setup)</p>
+      </div>
+    </section>
+
+    <!-- 03 MY ROLE -->
+    <section class="panel reveal" id="role" data-screen-label="03 My Role">
+      <span class="eyebrow-num">03 · My role</span>
+      <h2 class="sec-title">My role</h2>
+      <div class="rl-grid">
+        <dl class="rl-facts"><div><dt>Title</dt><dd>Staff UX Designer</dd></div><div><dt>Time</dt><dd>July 2023 to September 2026</dd></div><div><dt>Team</dt><dd>Joined as the only designer. Grew the team to four.</dd></div><div><dt>Worked with</dt><dd>Worked closely with the Product Director and UK-based product managers, plus engineering and underwriting experts. Set the design process the product team followed.</dd></div><div><dt>Owned</dt><dd>Submission intake, clearance, guidelines, underwriter workbench, user management and the full post-bind workflow.</dd></div><div><dt>Led</dt><dd>A complete redesign of the shared component library. Created the design guidelines the team built on.</dd></div></dl>
+      </div>
+    </section>
+
+    <!-- 04 RESULTS -->
+    <section class="panel reveal" id="impact" data-screen-label="04 Results">
+      <span class="eyebrow-num">04 · Results</span>
+      <h2 class="sec-title">Results</h2>
+      <div class="rs2-a">
+        <h3 class="rs-h">What my design work changed</h3>
+        <p class="rs-sub">Results from the features I designed.</p>
+        <div class="rs2-strip"><div><div class="num">8+ to 2</div><div class="lab">interactions to apply filters</div></div><div><div class="num">100%</div><div class="lab">of client environments set up without backend help</div></div><div><div class="num">0</div><div class="lab">full redesigns needed to add a new line of business</div></div><div><div class="num">3</div><div class="lab">designers building on the component library I started</div></div></div>
+      </div>
+      <div class="rs2-b">
+        <div class="rs2-b-head">
+          <h3 class="rs-h">What the platform achieved</h3>
+          <p class="rs-sub">Company-reported results. My workflows were one part of this, alongside AI, data and engineering work.</p>
+          <p class="rs-src">Source: <a class="src-link" href="https://concirrus.ai/underwriting-workbench/" target="_blank" rel="noopener">Concirrus website ↗</a></p>
+        </div>
+        <ul class="rs2-list"><li><span class="num">85%</span><span class="lab">reduction in manual systems used</span></li><li><span class="num">92%</span><span class="lab">reduction in time to quote</span></li><li><span class="num">2.5x</span><span class="lab">submissions processed daily</span></li><li><span class="num">4x</span><span class="lab">high-appetite deals closed</span></li></ul>
+      </div>
+    </section>
+
+    <!-- 05 CUSTOMERS -->
+    <section class="panel reveal" id="customers" data-screen-label="05 What customers say">
+      <span class="eyebrow-num">05 · What customers say</span>
+      <div class="cq-grid"><figure class="cq cq-peach cq-lead"><span class="cq-mark" aria-hidden="true">“</span><blockquote>This technology is invaluable in enhancing our efficiency and accuracy, allowing us to stay ahead of the competition.</blockquote><figcaption><strong>CEO</strong><span>Specialty insurance company</span></figcaption></figure><figure class="cq cq-lavender"><span class="cq-mark" aria-hidden="true">“</span><blockquote>We've seen substantial growth through the combination of excellent technology and underwriting talent.</blockquote><figcaption><strong>President</strong><span>Aviation underwriting firm</span></figcaption></figure><figure class="cq cq-sky"><span class="cq-mark" aria-hidden="true">“</span><blockquote>In my 33 years in the business, Concirrus has been one of the best development teams I've worked with.</blockquote><figcaption><strong>President</strong><span>Specialty underwriting firm</span></figcaption></figure></div>
+      <p class="cq-src">Source: <a class="src-link" href="https://concirrus.ai/" target="_blank" rel="noopener">Concirrus website ↗</a></p>
+    </section>
+
+    
 
   </main>
 </div>
@@ -897,7 +1109,7 @@
     </nav>
   </div>
   <div class="foot-note">
-    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>© 2026 Abhishek LG · Staff UX Designer</span>
     <span>Designed &amp; built end to end.</span>
   </div>
 </footer>
@@ -909,25 +1121,6 @@
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   },{threshold:.10, rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
-
-  /* impact carousel */
-  var carousel = document.getElementById('impactCarousel');
-  if(carousel){
-    var track = document.getElementById('impactTrack');
-    var dots = Array.prototype.slice.call(document.querySelectorAll('#impactDots button'));
-    var idx = 0, timer;
-    function goTo(i){
-      idx = i;
-      track.style.transform = 'translateX(-' + (idx*50) + '%)';
-      dots.forEach(function(d,j){ d.classList.toggle('active', j===idx); });
-    }
-    function start(){ timer = setInterval(function(){ goTo((idx+1)%dots.length); }, 5500); }
-    function stop(){ clearInterval(timer); }
-    dots.forEach(function(d,i){ d.addEventListener('click', function(){ goTo(i); stop(); start(); }); });
-    carousel.addEventListener('mouseenter', stop);
-    carousel.addEventListener('mouseleave', start);
-    start();
-  }
 
   /* sidebar scrollspy */
   var jumps = {};
@@ -947,5 +1140,12 @@
 })();
 </script>
 
+<script>(function(){var n=document.querySelector('.nav'),y=scrollY;addEventListener('scroll',function(){var c=scrollY;if(c>y&&c>80)n.classList.add('nav-hidden');else if(c<y)n.classList.remove('nav-hidden');y=c;},{passive:true});})();</script>
+<style id="scroll-fab-css">.sfab{position:fixed;right:20px;bottom:24px;z-index:900;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .25s ease,transform .25s ease;}.sfab.on{opacity:1;transform:none;pointer-events:auto;}.sfab button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,60,40,.14);background:rgba(251,248,241,.94);color:#15543b;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px -12px rgba(20,40,30,.45);backdrop-filter:blur(6px);transition:background .2s,color .2s,transform .15s,opacity .2s;}.sfab button:hover{background:#15543b;color:#fff;transform:translateY(-2px);}.sfab button[disabled]{opacity:.35;pointer-events:none;}.sfab svg{width:18px;height:18px;}@media(max-width:560px){.sfab{right:12px;bottom:14px;}.sfab button{width:44px;height:44px;}}@media print{.sfab{display:none;}}</style>
+<div class="sfab" id="sFab" aria-label="Page scroll"><button type="button" data-dir="up" aria-label="Go to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button><button type="button" data-dir="down" aria-label="Go to bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button></div>
+<script>(function(){var f=document.getElementById('sFab');if(!f)return;var up=f.querySelector('[data-dir=up]'),dn=f.querySelector('[data-dir=down]');var rm=matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+function tick(){var y=window.scrollY,H=document.documentElement.scrollHeight,v=window.innerHeight;var long=H>v*2.5;f.classList.toggle('on',long);dn.disabled=y+v>=H-40;up.disabled=y<40;}
+up.addEventListener('click',function(){window.scrollTo({top:0,behavior:rm});});dn.addEventListener('click',function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:rm});});
+window.addEventListener('scroll',tick,{passive:true});window.addEventListener('resize',tick);tick();})();</script>
 </body>
 </html>

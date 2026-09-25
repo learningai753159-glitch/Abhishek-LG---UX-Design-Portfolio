@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Great UX is being there when it's not easy — H10 · Abhishek LG</title>
+<title>Great UX is being there when it's not easy · H10 · Abhishek LG</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
@@ -230,13 +230,22 @@
   .foot-cta-nav a{font-size:16px;font-weight:600;color:var(--ink-soft);transition:color .2s;}
   .foot-cta-nav a:hover{color:var(--green);}
   @media(max-width:720px){.foot-cta-row1{flex-direction:column;align-items:flex-start;gap:16px;}.foot-cta-actions{width:100%;}}
+
+  /* footer buttons (matched to home page) */
+  .foot-cta-actions .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);font-weight:600;font-size:15.5px;line-height:1;padding:13px 22px;border-radius:999px;border:none;cursor:pointer;transition:transform .15s ease,box-shadow .2s ease,background .2s;white-space:nowrap;text-decoration:none;color:#fff;width:auto;height:auto;flex-direction:row;}
+  .foot-cta-actions .btn svg{width:17px;height:17px;flex-shrink:0;display:block;transition:transform .2s ease;}
+  .foot-cta-actions .btn-dark{color:#fff;}
+  .foot-cta-actions .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(0,0,0,.6);}
+  .foot-cta-actions .btn:hover svg{transform:translateX(2px);}
+  .foot-cta-actions .btn:active{transform:translateY(0) scale(.97);}
+  @media(max-width:720px){.foot-cta-actions .btn{white-space:normal;}}
 </style></head>
 <body>
 
 <!-- ============ NAV ============ -->
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG · home">
       <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
       <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
     </a>
@@ -256,7 +265,7 @@
         <span>Heuristics</span>
         <span>H10</span>
         <span class="read">4 min read</span>
-        <span class="fin">★ Series Finale</span>
+        <span class="fin">Series finale</span>
       </div>
       <h1 class="headline">Great UX is being there when it's not easy</h1>
       <div class="heur-badge">
@@ -267,21 +276,21 @@
         </span>
       </div>
       <p class="heur-desc">Even though it's better if the system can be used without documentation, it may be necessary to provide help. It should be easy to search, focused on the user's task, and list concrete steps.</p>
-      <p class="subline" style="margin-top:24px;">The best products are intuitive. But even the best designs confuse someone at some point. What makes a product truly user-centered isn't the absence of confusion — it's the presence of helpful, human support right when it's needed.</p>
+      <p class="subline" style="margin-top:24px;">The best products are intuitive. But even the best designs confuse someone at some point. What makes a product user-centered isn't the absence of confusion. It's the presence of helpful, human support right when it's needed.</p>
     </section>
 
     <div class="article-main">
 
       <!-- 01 -->
       <section class="panel reveal" data-screen-label="01 Real-world story">
-        <span class="eyebrow-num">01 — Real-world story</span>
-        <h2 class="sec-title">The IKEA manual nobody reads — until they do</h2>
+        <span class="eyebrow-num">01 · Real-world story</span>
+        <h2 class="sec-title">The IKEA manual nobody reads, until they do</h2>
 
         <div class="story">
-          <div class="seyebrow"><span class="d"></span>Real-world analogy — the flatpack wardrobe</div>
-          <h3>You try without it. Then you reach for it. And it saves you</h3>
+          <div class="seyebrow"><span class="d"></span>Real-world analogy, the flatpack wardrobe</div>
+          <h3>You try without it, then you reach for it, and it saves you</h3>
           <p>Most of us have a love-hate relationship with IKEA. You buy a wardrobe, carry it home in a flatpack box, and what do you do first? Try building it without the manual.</p>
-          <p>Then — 45 minutes and a few misplaced wooden dowels later — you reach for the booklet. And it saves you. Not because you're bad at assembling things. But because the manual was designed well enough to be useful exactly when you needed it.</p>
+          <p>Then, 45 minutes and a few misplaced wooden dowels later, you reach for the booklet. And it saves you. Not because you're bad at assembling things. But because the manual was designed well enough to be useful exactly when you needed it.</p>
           <p>The best IKEA manuals use clear visuals showing exactly where each part goes, avoid paragraphs of confusing text, highlight warnings with recognisable icons, and offer troubleshooting steps at the end.</p>
           <p>Now imagine if IKEA gave you just the parts with no manual at all. <strong>That's exactly how a product without good documentation feels.</strong></p>
         </div>
@@ -357,67 +366,67 @@
               </g>
             </svg>
           </div>
-          <p class="ill-cap">Same product. Same parts. The manual isn't the product — but its presence or absence defines the entire experience of building it.</p>
+          <p class="ill-cap">Same product. Same parts. The manual isn't the product, but its presence or absence defines the entire experience of building it.</p>
         </div>
       </section>
 
       <!-- 02 -->
       <section class="panel reveal" data-screen-label="02 Old vs new">
-        <span class="eyebrow-num">02 — The old vs new approach</span>
+        <span class="eyebrow-num">02 · The old vs new approach</span>
         <h2 class="sec-title">From "RTFM" to "We've got you."</h2>
 
         <div class="dual-grid">
           <div class="dual-card grey">
             <span class="dlab"><span class="d"></span>Old approach</span>
-            <p class="quote">"RTFM — Read the Manual."</p>
+            <p class="quote">"RTFM, Read the Manual."</p>
             <p>Help was the user's problem. Documentation existed in dense manuals, technical wikis, and PDFs nobody read. If you couldn't figure it out, that was on you. The product didn't need to care.</p>
           </div>
           <div class="dual-card green">
             <span class="dlab"><span class="d"></span>Modern UX standard</span>
             <p class="quote">"We're here when you need us."</p>
-            <p>Help is designed as part of the experience. Contextual tooltips, inline examples, onboarding flows, searchable FAQs — designed to meet users at the point of confusion, not after they've already given up.</p>
+            <p>Help is designed as part of the experience. Contextual tooltips, inline examples, onboarding flows, searchable FAQs. Designed to meet users at the point of confusion, not after they've already given up.</p>
           </div>
         </div>
 
         <div class="pull">
-          <p>"The shift isn't just philosophical — it's practical. Help that's hard to find is help that doesn't exist. The best documentation feels like part of the product, not an afterthought bolted on the side."</p>
-          <p class="attr">— The shift in H10</p>
+          <p>"The shift isn't just philosophical, it's practical. Help that's hard to find is help that doesn't exist. The best documentation feels like part of the product, not an afterthought bolted on the side."</p>
+          <p class="attr">The shift in H10</p>
         </div>
       </section>
 
       <!-- 03 -->
       <section class="panel reveal" data-screen-label="03 Help patterns">
-        <span class="eyebrow-num">03 — Help patterns in UX</span>
+        <span class="eyebrow-num">03 · Help patterns in UX</span>
         <h2 class="sec-title">How good products embed help into the experience</h2>
-        <p class="body-copy">There are many ways to provide help — and the best ones don't interrupt the user's task. They sit quietly at the point of confusion, ready when needed, invisible when not.</p>
+        <p class="body-copy">There are many ways to provide help, and the best ones don't interrupt the user's task. They sit quietly at the point of confusion, ready when needed, invisible when not.</p>
 
         <div class="help-grid">
           <div class="help">
             <div class="hic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1H10l-5 4v-4H4a1 1 0 0 1 -1 -1V6a1 1 0 0 1 1 -1Z"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="13.5" x2="13" y2="13.5"/></svg></div>
             <div>
               <h4>Inline tooltips</h4>
-              <p>Small contextual hints that appear when a user hovers or focuses on a field. No page navigation needed — help comes to the user.</p>
+              <p>Small contextual hints that appear when a user hovers or focuses on a field. No page navigation needed, help comes to the user.</p>
             </div>
           </div>
           <div class="help">
             <div class="hic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg></div>
             <div>
               <h4>Searchable FAQs</h4>
-              <p>Help content that users can search by what they're actually trying to do — not by how the product team categorised it. Real questions, real answers.</p>
+              <p>Help content that users can search by what they're actually trying to do, not by how the product team categorised it. Real questions, real answers.</p>
             </div>
           </div>
           <div class="help">
             <div class="hic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7 -7.5 7 -13a7 7 0 0 0 -14 0c0 5.5 7 13 7 13Z"/><circle cx="12" cy="9" r="2.6"/></svg></div>
             <div>
               <h4>Contextual hints</h4>
-              <p>Hints that appear based on what the user is doing — not randomly. If a user hesitates on a step, the system surfaces relevant guidance automatically.</p>
+              <p>Hints that appear based on what the user is doing, not randomly. If a user hesitates on a step, the system surfaces relevant guidance automatically.</p>
             </div>
           </div>
           <div class="help">
             <div class="hic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.4"/><line x1="14.4" y1="9.6" x2="18.4" y2="5.6"/><line x1="9.6" y1="9.6" x2="5.6" y2="5.6"/><line x1="14.4" y1="14.4" x2="18.4" y2="18.4"/><line x1="9.6" y1="14.4" x2="5.6" y2="18.4"/></svg></div>
             <div>
               <h4>Always-visible support</h4>
-              <p>A Help or Support option that's always accessible from the menu — not buried five levels deep. Users shouldn't have to work to find help.</p>
+              <p>A Help or Support option that's always accessible from the menu, not buried five levels deep. Users shouldn't have to work to find help.</p>
             </div>
           </div>
         </div>
@@ -425,9 +434,9 @@
 
       <!-- 04 -->
       <section class="panel reveal" data-screen-label="04 Embedded help">
-        <span class="eyebrow-num">04 — Embedded help</span>
+        <span class="eyebrow-num">04 · Embedded help</span>
         <h2 class="sec-title">Help as part of the experience, not separate from it</h2>
-        <p class="body-copy">The difference between good and bad help isn't the quality of the content — it's the placement. Help buried in a separate documentation portal is rarely found in the moment of need. Help embedded at the point of confusion is exactly what users need, exactly when they need it.</p>
+        <p class="body-copy">The difference between good and bad help isn't the quality of the content, it's the placement. Help buried in a separate documentation portal is rarely found in the moment of need. Help embedded at the point of confusion is exactly what users need, exactly when they need it.</p>
 
         <div class="ill">
           <div class="ill-frame">
@@ -474,20 +483,20 @@
               </g>
             </svg>
           </div>
-          <p class="ill-cap">Same form. Left: the user is confused and help is a scroll away. Right: a question mark icon reveals the format inline — help appears at the exact point of confusion, without leaving the task.</p>
+          <p class="ill-cap">Same form. Left: the user is confused and help is a scroll away. Right: a question mark icon reveals the format inline. Help appears at the exact point of confusion, without leaving the task.</p>
         </div>
       </section>
 
       <!-- 05 -->
       <section class="panel reveal" data-screen-label="05 Takeaways">
-        <span class="eyebrow-num">05 — What to design for</span>
+        <span class="eyebrow-num">05 · What to design for</span>
         <h2 class="sec-title">Support users with empathy</h2>
 
         <div class="feat-list">
           <div class="feat">
             <span class="fd"></span>
             <div>
-              <h4>Make help easy to find — no one should have to dig for it</h4>
+              <h4>Make help easy to find, no one should have to dig for it</h4>
               <p>Help options should be visible and accessible from anywhere in the product. If users have to search for your Help section, it's already too hard to find.</p>
             </div>
           </div>
@@ -495,21 +504,21 @@
             <span class="fd"></span>
             <div>
               <h4>Embed help within the experience</h4>
-              <p>Tooltips, inline hints, onboarding overlays, contextual icons — these meet users at the point of confusion, not after they've already given up.</p>
+              <p>Tooltips, inline hints, onboarding overlays, contextual icons, these meet users at the point of confusion, not after they've already given up.</p>
             </div>
           </div>
           <div class="feat">
             <span class="fd"></span>
             <div>
               <h4>Use visuals, examples, and simple language</h4>
-              <p>Help content should be as carefully designed as the product itself. Clear screenshots, plain language, concrete examples — not technical jargon and dense paragraphs.</p>
+              <p>Help content should be as carefully designed as the product itself. Clear screenshots, plain language, concrete examples, not technical jargon and dense paragraphs.</p>
             </div>
           </div>
           <div class="feat">
             <span class="fd"></span>
             <div>
               <h4>Don't punish users for needing help</h4>
-              <p>Needing help is human. The tone, accessibility, and design of your help system should make users feel supported — not embarrassed for not knowing.</p>
+              <p>Needing help is human. The tone, accessibility, and design of your help system should make users feel supported, not embarrassed for not knowing.</p>
             </div>
           </div>
         </div>
@@ -517,10 +526,10 @@
 
       <!-- 06 -->
       <section class="panel reveal" data-screen-label="06 Closing thought">
-        <span class="eyebrow-num">06 — Closing thought</span>
+        <span class="eyebrow-num">06 · Closing thought</span>
         <h2 class="sec-title">The best products are still there when they're hard</h2>
-        <p class="body-copy">Even the most intuitive designs can confuse someone at some point. That's not a failure of design — it's a reality of designing for millions of different people with different backgrounds, contexts, and expectations.</p>
-        <p class="body-copy">What makes a product truly user-centered is not the absence of confusion — but the presence of helpful, human support right when it's needed. The IKEA manual nobody reads until they need it — but when they do, it's exactly right. <strong>That's the standard.</strong></p>
+        <p class="body-copy">Even the most intuitive designs can confuse someone at some point. That's not a failure of design. It's a reality of designing for millions of different people with different backgrounds, contexts, and expectations.</p>
+        <p class="body-copy">What makes a product user-centered is not the absence of confusion, but the presence of helpful, human support right when it's needed. The IKEA manual nobody reads until they need it, but when they do, it's exactly right. <strong>That's the standard.</strong></p>
 
         <div class="callout-strong">
           <div class="cap">The closing thought of the series</div>
@@ -530,12 +539,12 @@
 
       <!-- 07 SERIES COMPLETE -->
       <section class="panel reveal" data-screen-label="07 Series complete">
-        <span class="fin-eyebrow">★ 10-week series — complete</span>
+        <span class="fin-eyebrow">10-week series, complete</span>
         <h2 class="sec-title">NN heuristics as I see it</h2>
-        <p class="body-copy">Ten weeks. Ten heuristics. Ten real-life stories that connect design principles to the world we actually live in. From dosas to dance classes, from wash basins to WhatsApp — UX really is everywhere.</p>
+        <p class="body-copy">Ten weeks. Ten heuristics. Ten real-life stories that connect design principles to the world we actually live in. From dosas to dance classes, from wash basins to WhatsApp, UX is everywhere.</p>
 
         <div class="series">
-          <a class="srow hl" href="ux-not-screens.html"><span class="sn">00</span><span class="st">UX — More Than Just Screens</span></a>
+          <a class="srow hl" href="ux-not-screens.html"><span class="sn">00</span><span class="st">UX, More Than Just Screens</span></a>
           <a class="srow" href="h1-visibility.html"><span class="sn">01</span><span class="st">A Good Product Works. A Great Product Talks.</span></a>
           <a class="srow" href="h2-real-world.html"><span class="sn">02</span><span class="st">Design Is Not About Teaching. It's About Feeling at Home.</span></a>
           <a class="srow" href="h3-control-freedom.html"><span class="sn">03</span><span class="st">Your Users Need a Brake Pedal.</span></a>
@@ -552,7 +561,7 @@
           <span class="arr">→</span>
           <div>
             <h4>What's next</h4>
-            <p>This series is complete — but the thinking continues. New articles exploring design communication, designer growth, and empathy in practice are coming. The goal remains the same: helping designers see UX everywhere, not just on screens.</p>
+            <p>This series is complete, but the thinking continues. New articles exploring design communication, designer growth, and empathy in practice are coming. The goal remains the same: helping designers see UX everywhere, not just on screens.</p>
           </div>
         </div>
       </section>
@@ -587,7 +596,7 @@
     </nav>
   </div>
   <div class="foot-note">
-    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>© 2026 Abhishek LG · Staff UX Designer</span>
     <span>Designed &amp; built end to end.</span>
   </div>
 </footer>
@@ -601,5 +610,11 @@
 })();
 </script>
 
+<style id="scroll-fab-css">.sfab{position:fixed;right:20px;bottom:24px;z-index:900;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .25s ease,transform .25s ease;}.sfab.on{opacity:1;transform:none;pointer-events:auto;}.sfab button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,60,40,.14);background:rgba(251,248,241,.94);color:#15543b;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px -12px rgba(20,40,30,.45);backdrop-filter:blur(6px);transition:background .2s,color .2s,transform .15s,opacity .2s;}.sfab button:hover{background:#15543b;color:#fff;transform:translateY(-2px);}.sfab button[disabled]{opacity:.35;pointer-events:none;}.sfab svg{width:18px;height:18px;}@media(max-width:560px){.sfab{right:12px;bottom:14px;}.sfab button{width:44px;height:44px;}}@media print{.sfab{display:none;}}</style>
+<div class="sfab" id="sFab" aria-label="Page scroll"><button type="button" data-dir="up" aria-label="Go to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button><button type="button" data-dir="down" aria-label="Go to bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button></div>
+<script>(function(){var f=document.getElementById('sFab');if(!f)return;var up=f.querySelector('[data-dir=up]'),dn=f.querySelector('[data-dir=down]');var rm=matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+function tick(){var y=window.scrollY,H=document.documentElement.scrollHeight,v=window.innerHeight;var long=H>v*2.5;f.classList.toggle('on',long);dn.disabled=y+v>=H-40;up.disabled=y<40;}
+up.addEventListener('click',function(){window.scrollTo({top:0,behavior:rm});});dn.addEventListener('click',function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:rm});});
+window.addEventListener('scroll',tick,{passive:true});window.addEventListener('resize',tick);tick();})();</script>
 </body>
 </html>

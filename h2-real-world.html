@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Match Between System and the Real World — H2 · Abhishek LG</title>
+<title>Match Between System and the Real World · H2 · Abhishek LG</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
@@ -289,13 +289,22 @@
   .foot-cta-nav a{font-size:16px;font-weight:600;color:var(--ink-soft);transition:color .2s;}
   .foot-cta-nav a:hover{color:var(--green);}
   @media(max-width:720px){.foot-cta-row1{flex-direction:column;align-items:flex-start;gap:16px;}.foot-cta-actions{width:100%;}}
+
+  /* footer buttons (matched to home page) */
+  .foot-cta-actions .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);font-weight:600;font-size:15.5px;line-height:1;padding:13px 22px;border-radius:999px;border:none;cursor:pointer;transition:transform .15s ease,box-shadow .2s ease,background .2s;white-space:nowrap;text-decoration:none;color:#fff;width:auto;height:auto;flex-direction:row;}
+  .foot-cta-actions .btn svg{width:17px;height:17px;flex-shrink:0;display:block;transition:transform .2s ease;}
+  .foot-cta-actions .btn-dark{color:#fff;}
+  .foot-cta-actions .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(0,0,0,.6);}
+  .foot-cta-actions .btn:hover svg{transform:translateX(2px);}
+  .foot-cta-actions .btn:active{transform:translateY(0) scale(.97);}
+  @media(max-width:720px){.foot-cta-actions .btn{white-space:normal;}}
 </style></head>
 <body>
 
 <!-- ============ NAV ============ -->
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG · home">
       <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
       <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
     </a>
@@ -324,7 +333,7 @@
           <span class="v">Match Between System and the Real World</span>
         </span>
       </div>
-      <p class="subline" style="margin-top:24px;">Users arrive with mental models already formed — built from years of dustbins, shopping carts, and landline phones. The designer's job isn't to teach them something new. It's to meet them where they already are.</p>
+      <p class="subline" style="margin-top:24px;">Users arrive with mental models already formed. Built from years of dustbins, shopping carts, and landline phones. The designer's job isn't to teach them something new. It's to meet them where they already are.</p>
     </section>
 
     <div class="article-grid">
@@ -334,22 +343,22 @@
 
         <!-- 01 -->
         <section class="panel reveal" id="meaning" data-spy="meaning" data-screen-label="01 What it means">
-          <span class="eyebrow-num">01 — What it means</span>
+          <span class="eyebrow-num">01 · What it means</span>
           <h2 class="sec-title">Design for users, not for yourself</h2>
-          <p class="body-copy">This heuristic is about designing products that speak the user's language — visually, interactively, and in words. It's about aligning design with real-world behaviour, not internal team logic or technical conventions.</p>
+          <p class="body-copy">This heuristic is about designing products that speak the user's language, visually, interactively, and in words. It's about aligning design with real-world behaviour, not internal team logic or technical conventions.</p>
           <p class="body-copy">Our first responsibility is to understand who our users actually are. Not who we assume them to be.</p>
 
           <div class="pull">
             <p>"What is their tech comfort level? How do they interact with digital products? What do they expect based on their real-world experience? Assuming users will figure it out is never a good UX strategy."</p>
-            <p style="font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink-faint);margin:16px 0 0;">— The core question this heuristic forces you to ask</p>
+            <p style="font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink-faint);margin:16px 0 0;">The core question this heuristic forces you to ask</p>
           </div>
 
-          <p class="body-copy" style="margin-top:26px;">Even senior professionals in decision-making roles might not be as comfortable with digital interfaces as we think. Clarity over cleverness — always. When we answer these questions honestly, choosing the right icons, words, and patterns becomes natural.</p>
+          <p class="body-copy" style="margin-top:26px;">Even senior professionals in decision-making roles might not be as comfortable with digital interfaces as we think. Clarity over cleverness, always. When we answer these questions honestly, choosing the right icons, words, and patterns becomes natural.</p>
         </section>
 
         <!-- 02 -->
         <section class="panel reveal" id="dustbin" data-spy="dustbin" data-screen-label="02 The dustbin moment">
-          <span class="eyebrow-num">02 — The dustbin moment</span>
+          <span class="eyebrow-num">02 · The dustbin moment</span>
           <h2 class="sec-title">The recycle bin needed zero explanation</h2>
           <p class="body-copy">Let's take the simplest example: the Recycle Bin on a computer desktop. We've all seen it. We all instantly know what it means. But nobody taught us. No manual explained it. We just knew.</p>
           <p class="body-copy">Because in the real world, we've used dustbins all our lives.</p>
@@ -392,13 +401,13 @@
             <p class="ill-cap">The digital system borrowed a mental model that already existed in the physical world.</p>
           </div>
 
-          <p class="body-copy">The behaviour mapped perfectly — throw away what's not needed, retrieve it if you change your mind, lose it forever once the bin is emptied. The digital system borrowed a mental model that already existed.</p>
-          <p class="body-copy">Users didn't need a tutorial. They felt at home instantly — because the design respected what they already knew.</p>
+          <p class="body-copy">The behaviour mapped perfectly. Throw away what's not needed, retrieve it if you change your mind, lose it for good once the bin is emptied. The digital system borrowed a mental model that already existed.</p>
+          <p class="body-copy">Users didn't need a tutorial. They felt at home instantly, because the design respected what they already knew.</p>
         </section>
 
         <!-- 03 -->
         <section class="panel reveal" id="metaphors" data-spy="metaphors" data-screen-label="03 More metaphors">
-          <span class="eyebrow-num">03 — More metaphors</span>
+          <span class="eyebrow-num">03 · More metaphors</span>
           <h2 class="sec-title">Intentional choices, not random icons</h2>
           <p class="body-copy">The recycle bin isn't an isolated example. Everywhere in digital design, real-world objects have been borrowed to make digital actions instantly understood.</p>
 
@@ -438,32 +447,32 @@
                 <svg class="micon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 <h4>Phone icon looks like a landline</h4>
               </div>
-              <p>We've used smartphones for 15+ years, yet the call icon still looks like a 1970s receiver. That's intentional — the mental model is too strong to replace.</p>
+              <p>We've used smartphones for 15+ years, yet the call icon still looks like a 1970s receiver. That's intentional, the mental model is too strong to replace.</p>
             </div>
             <div class="meta-card">
               <div class="mhead">
                 <svg class="micon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="27" r="13"/><path d="M24 27 V19 M24 27 l6 4"/><path d="M9 14 a7 7 0 0 1 8 -4"/><path d="M39 14 a7 7 0 0 0 -8 -4"/><path d="M16 38 l-3 4 M32 38 l3 4"/></svg>
-                <h4>Alarm icon — the analog clock</h4>
+                <h4>Alarm icon, the analog clock</h4>
               </div>
-              <p>Even on a purely digital interface, alarm icons still show bells and clock faces. The metaphor bridges old and new — making a digital function feel physically familiar.</p>
+              <p>Even on a purely digital interface, alarm icons still show bells and clock faces. The metaphor bridges old and new, making a digital function feel physically familiar.</p>
             </div>
             <div class="meta-card">
               <div class="mhead">
                 <svg class="micon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="16"/><circle cx="24" cy="24" r="4.5"/><path d="M24 19.5 V11 M20.2 26 L9 33 M27.8 26 L39 33"/></svg>
                 <h4>Steering wheel in racing games</h4>
               </div>
-              <p>Car racing games feel more natural with a steering wheel UI than tilt controls. The physical action maps to the digital one — muscle memory crosses over seamlessly.</p>
+              <p>Car racing games feel more natural with a steering wheel UI than tilt controls. The physical action maps to the digital one, muscle memory crosses over seamlessly.</p>
             </div>
           </div>
 
-          <p class="closing-line">These metaphors are not random. They are intentional choices that connect digital actions to real-world understanding — letting users recognise what to do instantly, without a tutorial.</p>
+          <p class="closing-line">These metaphors are not random. They are intentional choices that connect digital actions to real-world understanding. Letting users recognise what to do instantly, without a tutorial.</p>
         </section>
 
         <!-- 04 -->
         <section class="panel reveal" id="language" data-spy="language" data-screen-label="04 Language clarity">
-          <span class="eyebrow-num">04 — Language clarity</span>
-          <h2 class="sec-title">It's not just icons — it's words too</h2>
-          <p class="body-copy">This heuristic extends beyond visual metaphors. The language we use in a product matters just as much. When words on a screen match how users actually think and speak, everything feels natural. When they don't, users hesitate — even if the function itself is simple.</p>
+          <span class="eyebrow-num">04 · Language clarity</span>
+          <h2 class="sec-title">It's not just icons, it's words too</h2>
+          <p class="body-copy">This heuristic extends beyond visual metaphors. The language we use in a product matters just as much. When words on a screen match how users actually think and speak, everything feels natural. When they don't, users hesitate, even if the function itself is simple.</p>
           <p class="body-copy">Clear language is inclusive language. It lowers the barrier for every user who isn't a developer, designer, or power user.</p>
 
           <div class="cmp-wrap">
@@ -505,13 +514,13 @@
 
         <!-- 05 -->
         <section class="panel reveal" id="empathy" data-spy="empathy" data-screen-label="05 Know your users">
-          <span class="eyebrow-num">05 — Know your users</span>
+          <span class="eyebrow-num">05 · Know your users</span>
           <h2 class="sec-title">All of this comes from one thing: empathy</h2>
-          <p class="body-copy">Ultimately, this heuristic is about one thing — knowing your users well enough to design in their language, not yours. The better we understand their habits, mental models, and level of tech comfort, the easier it becomes to meet them where they already are.</p>
+          <p class="body-copy">Ultimately, this heuristic is about one thing. Knowing your users well enough to design in their language, not yours. The better we understand their habits, mental models, and level of tech comfort, the easier it becomes to meet them where they already are.</p>
 
           <div class="pull">
-            <p>"This heuristic is not just about making things familiar — it's about building trust through understanding. When a product speaks your language, it feels like it was made for you."</p>
-            <p style="font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink-faint);margin:16px 0 0;">— The real goal of H2</p>
+            <p>"This heuristic is not just about making things familiar, it's about building trust through understanding. When a product speaks your language, it feels like it was made for you."</p>
+            <p style="font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink-faint);margin:16px 0 0;">The real goal of H2</p>
           </div>
 
           <p class="body-copy" style="margin-top:26px;">Ask these before every design decision: How do users normally interact with products like this? What references do they already understand? What words do they use for this task? The answers should shape every label, icon, and interaction in your product.</p>
@@ -519,10 +528,10 @@
 
         <!-- 06 -->
         <section class="panel reveal" id="closing" data-spy="closing" data-screen-label="06 Closing thought">
-          <span class="eyebrow-num">06 — Closing thought</span>
+          <span class="eyebrow-num">06 · Closing thought</span>
           <h2 class="sec-title">Let them feel at home</h2>
-          <p class="body-copy">When systems speak in a language users already understand, the product feels natural — like it was made just for them.</p>
-          <p class="body-copy">The recycle bin didn't need a manual. The shopping cart didn't need a tutorial. The phone icon didn't need an explanation. They all borrowed from a world users already knew — and that's exactly what made them work.</p>
+          <p class="body-copy">When systems speak in a language users already understand, the product feels natural, like it was made just for them.</p>
+          <p class="body-copy">The recycle bin didn't need a manual. The shopping cart didn't need a tutorial. The phone icon didn't need an explanation. They all borrowed from a world users already knew, and that's exactly what made them work.</p>
 
           <div class="callout-strong">
             <div class="cap">The closing thought of H2</div>
@@ -534,14 +543,14 @@
               <div class="tk">T1</div>
               <div>
                 <h4>Apply this to your next design</h4>
-                <p>Go through every label, icon, and CTA in your product. Ask: would a user who has never seen this before understand it immediately? If not — what real-world reference could you borrow to make it click?</p>
+                <p>Go through every label, icon, and CTA in your product. Ask: would a user who has never seen this before understand it immediately? If not, what real-world reference could you borrow to make it click?</p>
               </div>
             </div>
             <div class="take">
               <div class="tk">T2</div>
               <div>
                 <h4>Up next</h4>
-                <p><span class="up">H3: Let Them Go Back. Always.</span> Why every product needs a clearly marked emergency exit — and what happens when users feel trapped with no way out.</p>
+                <p><span class="up">H3: Let Them Go Back. Always.</span> Why every product needs a clearly marked emergency exit, and what happens when users feel trapped with no way out.</p>
               </div>
             </div>
           </div>
@@ -578,7 +587,7 @@
     </nav>
   </div>
   <div class="foot-note">
-    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>© 2026 Abhishek LG · Staff UX Designer</span>
     <span>Designed &amp; built end to end.</span>
   </div>
 </footer>
@@ -608,5 +617,11 @@
 })();
 </script>
 
+<style id="scroll-fab-css">.sfab{position:fixed;right:20px;bottom:24px;z-index:900;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .25s ease,transform .25s ease;}.sfab.on{opacity:1;transform:none;pointer-events:auto;}.sfab button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,60,40,.14);background:rgba(251,248,241,.94);color:#15543b;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px -12px rgba(20,40,30,.45);backdrop-filter:blur(6px);transition:background .2s,color .2s,transform .15s,opacity .2s;}.sfab button:hover{background:#15543b;color:#fff;transform:translateY(-2px);}.sfab button[disabled]{opacity:.35;pointer-events:none;}.sfab svg{width:18px;height:18px;}@media(max-width:560px){.sfab{right:12px;bottom:14px;}.sfab button{width:44px;height:44px;}}@media print{.sfab{display:none;}}</style>
+<div class="sfab" id="sFab" aria-label="Page scroll"><button type="button" data-dir="up" aria-label="Go to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button><button type="button" data-dir="down" aria-label="Go to bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button></div>
+<script>(function(){var f=document.getElementById('sFab');if(!f)return;var up=f.querySelector('[data-dir=up]'),dn=f.querySelector('[data-dir=down]');var rm=matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+function tick(){var y=window.scrollY,H=document.documentElement.scrollHeight,v=window.innerHeight;var long=H>v*2.5;f.classList.toggle('on',long);dn.disabled=y+v>=H-40;up.disabled=y<40;}
+up.addEventListener('click',function(){window.scrollTo({top:0,behavior:rm});});dn.addEventListener('click',function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:rm});});
+window.addEventListener('scroll',tick,{passive:true});window.addEventListener('resize',tick);tick();})();</script>
 </body>
 </html>

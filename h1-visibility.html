@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Visibility of System Status — H1 · Abhishek LG</title>
+<title>Visibility of System Status · H1 · Abhishek LG</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
@@ -244,13 +244,22 @@
   .foot-cta-nav a{font-size:16px;font-weight:600;color:var(--ink-soft);transition:color .2s;}
   .foot-cta-nav a:hover{color:var(--green);}
   @media(max-width:720px){.foot-cta-row1{flex-direction:column;align-items:flex-start;gap:16px;}.foot-cta-actions{width:100%;}}
+
+  /* footer buttons (matched to home page) */
+  .foot-cta-actions .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);font-weight:600;font-size:15.5px;line-height:1;padding:13px 22px;border-radius:999px;border:none;cursor:pointer;transition:transform .15s ease,box-shadow .2s ease,background .2s;white-space:nowrap;text-decoration:none;color:#fff;width:auto;height:auto;flex-direction:row;}
+  .foot-cta-actions .btn svg{width:17px;height:17px;flex-shrink:0;display:block;transition:transform .2s ease;}
+  .foot-cta-actions .btn-dark{color:#fff;}
+  .foot-cta-actions .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(0,0,0,.6);}
+  .foot-cta-actions .btn:hover svg{transform:translateX(2px);}
+  .foot-cta-actions .btn:active{transform:translateY(0) scale(.97);}
+  @media(max-width:720px){.foot-cta-actions .btn{white-space:normal;}}
 </style></head>
 <body>
 
 <!-- ============ NAV ============ -->
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG · home">
       <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
       <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
     </a>
@@ -279,7 +288,7 @@
           <span class="v">Visibility of System Status</span>
         </span>
       </div>
-      <p class="subline" style="margin-top:24px;">Keep users informed. Always. Even silence is a message — and usually the wrong one.</p>
+      <p class="subline" style="margin-top:24px;">Keep users informed. Always. Even silence is a message, and usually the wrong one.</p>
     </section>
 
     <div class="article-grid">
@@ -289,11 +298,11 @@
 
         <!-- 01 -->
         <section class="panel reveal" id="start" data-spy="start" data-screen-label="01 Where it starts">
-          <span class="eyebrow-num">01 — Where it starts</span>
+          <span class="eyebrow-num">01 · Where it starts</span>
           <h2 class="sec-title">A lift that doesn't tell you where it's going</h2>
-          <p class="body-copy">You press the button. The doors close. The lift moves. But there's no floor indicator — no display, no number, no sound. Just movement in a metal box.</p>
+          <p class="body-copy">You press the button. The doors close. The lift moves. But there's no floor indicator, no display, no number, no sound. Just movement in a metal box.</p>
           <p class="body-copy">Do you get out at the next floor and check? Wait and hope? Press every button until something makes sense?</p>
-          <p class="body-copy">That's what it feels like when a digital product goes quiet. You took an action. Something is happening. But the system isn't telling you what — or whether it worked at all.</p>
+          <p class="body-copy">That's what it feels like when a digital product goes quiet. You took an action. Something is happening. But the system isn't telling you what, or whether it worked at all.</p>
 
           <div class="ill">
             <div class="ill-frame">
@@ -323,7 +332,7 @@
 
         <!-- 02 -->
         <section class="panel reveal" id="principle" data-spy="principle" data-screen-label="02 The principle">
-          <span class="eyebrow-num">02 — The principle</span>
+          <span class="eyebrow-num">02 · The principle</span>
           <h2 class="sec-title">Always keep users in the loop</h2>
           <p class="body-copy">Nielsen's first heuristic is deceptively simple: keep users informed about what is happening, with appropriate feedback, within a reasonable time.</p>
           <p class="body-copy">That's it. But <strong>"appropriate"</strong> and <strong>"reasonable"</strong> do a lot of work in that sentence.</p>
@@ -336,21 +345,21 @@
             <div class="ex-card bad">
               <span class="xlab"><span class="d"></span>Without visibility</span>
               <h4>You type. Nothing appears</h4>
-              <p>You'd immediately wonder — is my keyboard working? Did I make a mistake? Is the system receiving this? The moment feedback disappears, the interaction breaks.</p>
+              <p>You'd immediately wonder, is my keyboard working? Did I make a mistake? Is the system receiving this? The moment feedback disappears, the interaction breaks.</p>
             </div>
             <div class="ex-card good">
               <span class="xlab"><span class="d"></span>With visibility</span>
               <h4>You type. Characters appear in real time</h4>
-              <p>Instant confirmation. The system is listening. You're in control. You don't have to wonder — you can see it working.</p>
+              <p>Instant confirmation. The system is listening. You're in control. You don't have to wonder, you can see it working.</p>
             </div>
           </div>
         </section>
 
         <!-- 03 -->
         <section class="panel reveal" id="example" data-spy="example" data-screen-label="03 A simple example">
-          <span class="eyebrow-num">03 — A simple example</span>
+          <span class="eyebrow-num">03 · A simple example</span>
           <h2 class="sec-title">The most basic feedback loop in digital products</h2>
-          <p class="body-copy">Think about typing in a text field. Characters appear as you press each key. That's it — that's Heuristic 1 in its most basic form.</p>
+          <p class="body-copy">Think about typing in a text field. Characters appear as you press each key, that's it. That's Heuristic 1 in its most basic form.</p>
           <p class="body-copy">Now imagine a system where nothing appears until you press Enter. You'd immediately wonder: is my keyboard working? Did I make a mistake? Is the system receiving my input?</p>
           <p class="body-copy">The moment feedback disappears, the interaction breaks. We depend on constant confirmation that our input is being received.</p>
 
@@ -378,12 +387,12 @@
 
         <!-- 04 -->
         <section class="panel reveal" id="failure" data-spy="failure" data-screen-label="04 A real failure">
-          <span class="eyebrow-num">04 — A real failure</span>
+          <span class="eyebrow-num">04 · A real failure</span>
           <h2 class="sec-title">My medical insurance experience</h2>
 
           <div class="story">
-            <div class="seyebrow"><span class="d"></span>Real failure — personal experience</div>
-            <h3>Payment made. Page loaded. Nothing</h3>
+            <div class="seyebrow"><span class="d"></span>Real failure, personal experience</div>
+            <h3>Payment made, page loaded, and nothing</h3>
             <p>I recently renewed my medical insurance online. Filled the form. Reviewed everything. Made the payment. Got redirected to a page where I was supposed to receive my updated policy document.</p>
             <p>Instead, the page just<strong>... sat there.</strong></p>
             <ul class="miss-list">
@@ -393,7 +402,7 @@
               <li><span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>Not even an error</li>
             </ul>
             <p>Naturally, my mind started racing. Did my payment go through? Should I try again? Would I be double-charged if I retried?</p>
-            <p>To find out — I had to check my bank statement, call my insurance agent, share a screenshot, wait 30+ minutes, and receive my policy two days later.</p>
+            <p>To find out. I had to check my bank statement, call my insurance agent, share a screenshot, wait 30+ minutes, and receive my policy two days later.</p>
           </div>
 
           <div class="solution">
@@ -405,9 +414,9 @@
 
         <!-- 05 -->
         <section class="panel reveal" id="stakes" data-spy="stakes" data-screen-label="05 The stakes">
-          <span class="eyebrow-num">05 — The stakes</span>
+          <span class="eyebrow-num">05 · The stakes</span>
           <h2 class="sec-title">Silence is never neutral in a product</h2>
-          <p class="body-copy">This isn't just about good design — it's about building trust. Especially in high-stakes contexts, users need to feel confident their action has been received and is being handled.</p>
+          <p class="body-copy">This isn't just about good design, it's about building trust. Especially in high-stakes contexts, users need to feel confident their action has been received and is being handled.</p>
 
           <div class="ex-grid">
             <div class="ex-card bad">
@@ -418,7 +427,7 @@
             <div class="ex-card bad">
               <span class="xlab"><span class="d"></span>High stakes, no feedback</span>
               <h4>Healthcare &amp; insurance</h4>
-              <p>Is my form submitted? Is my policy active? In healthcare, uncertainty isn't just frustrating — it creates real-world consequences.</p>
+              <p>Is my form submitted? Is my policy active? In healthcare, uncertainty isn't just frustrating, it creates real-world consequences.</p>
             </div>
             <div class="ex-card good">
               <span class="xlab"><span class="d"></span>Good visibility</span>
@@ -428,24 +437,24 @@
             <div class="ex-card good">
               <span class="xlab"><span class="d"></span>Good visibility</span>
               <h4>Success confirmations</h4>
-              <p>A tick, a green banner, a "Thank you" — these cost almost nothing to build and deliver enormous psychological relief to the user.</p>
+              <p>A tick, a green banner, a "Thank you", these cost almost nothing to build and deliver enormous psychological relief to the user.</p>
             </div>
           </div>
 
-          <p class="body-copy" style="margin-top:24px;">Lack of feedback leads to confusion, repeat actions, and unnecessary support queries — all of which hurt both UX and business performance.</p>
+          <p class="body-copy" style="margin-top:24px;">Lack of feedback leads to confusion, repeat actions, and unnecessary support queries, all of which hurt both UX and business performance.</p>
           <p class="closing-line">Visibility isn't a nice-to-have. It's how a product earns trust.</p>
         </section>
 
         <!-- 06 -->
         <section class="panel reveal" id="takeaway" data-spy="takeaway" data-screen-label="06 The takeaway">
-          <span class="eyebrow-num">06 — The takeaway</span>
+          <span class="eyebrow-num">06 · The takeaway</span>
           <h2 class="sec-title">Visibility is a form of respect</h2>
-          <p class="body-copy">Visibility of System Status isn't just a UX best practice — it's a form of respect. For the user's time. Their attention. Their trust in your product.</p>
-          <p class="body-copy">Whether it's a blinking light, a progress bar, a success tick, or a simple "Thank you" — good products always keep users in the loop. Because the moment a user feels left in the dark, the experience is broken — even if everything technically worked.</p>
+          <p class="body-copy">Visibility of System Status isn't just a UX best practice, it's a form of respect. For the user's time. Their attention. Their trust in your product.</p>
+          <p class="body-copy">Whether it's a blinking light, a progress bar, a success tick, or a simple "Thank you". Good products always keep users in the loop. Because the moment a user feels left in the dark, the experience is broken, even if everything technically worked.</p>
 
           <div class="pull">
             <p>"A good product doesn't just work. It communicates. And sometimes, one sentence is all it takes."</p>
-            <p style="font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink-faint);margin:16px 0 0;">— The lesson from my insurance renewal</p>
+            <p style="font-family:var(--font-body);font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink-faint);margin:16px 0 0;">The lesson from my insurance renewal</p>
           </div>
 
           <div class="takeaways">
@@ -453,14 +462,14 @@
               <div class="tk">T1</div>
               <div>
                 <h4>Apply this to your next design</h4>
-                <p>Walk through your product's critical actions — form submissions, payments, uploads, deletions. At each step ask: does the user know something happened? If the answer is "they'll figure it out" — you have a visibility problem.</p>
+                <p>Walk through your product's critical actions, form submissions, payments, uploads, deletions. At each step ask: does the user know something happened? If the answer is "they'll figure it out", you have a visibility problem.</p>
               </div>
             </div>
             <div class="take">
               <div class="tk">T2</div>
               <div>
                 <h4>Up next</h4>
-                <p><span class="up">H2: Design in a Language They Already Know.</span> How using the right words, familiar metaphors, and real-world references makes products feel natural — without users needing to think twice.</p>
+                <p><span class="up">H2: Design in a Language They Already Know.</span> How using the right words, familiar metaphors, and real-world references makes products feel natural, without users needing to think twice.</p>
               </div>
             </div>
           </div>
@@ -497,7 +506,7 @@
     </nav>
   </div>
   <div class="foot-note">
-    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>© 2026 Abhishek LG · Staff UX Designer</span>
     <span>Designed &amp; built end to end.</span>
   </div>
 </footer>
@@ -527,5 +536,11 @@
 })();
 </script>
 
+<style id="scroll-fab-css">.sfab{position:fixed;right:20px;bottom:24px;z-index:900;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .25s ease,transform .25s ease;}.sfab.on{opacity:1;transform:none;pointer-events:auto;}.sfab button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,60,40,.14);background:rgba(251,248,241,.94);color:#15543b;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px -12px rgba(20,40,30,.45);backdrop-filter:blur(6px);transition:background .2s,color .2s,transform .15s,opacity .2s;}.sfab button:hover{background:#15543b;color:#fff;transform:translateY(-2px);}.sfab button[disabled]{opacity:.35;pointer-events:none;}.sfab svg{width:18px;height:18px;}@media(max-width:560px){.sfab{right:12px;bottom:14px;}.sfab button{width:44px;height:44px;}}@media print{.sfab{display:none;}}</style>
+<div class="sfab" id="sFab" aria-label="Page scroll"><button type="button" data-dir="up" aria-label="Go to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button><button type="button" data-dir="down" aria-label="Go to bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button></div>
+<script>(function(){var f=document.getElementById('sFab');if(!f)return;var up=f.querySelector('[data-dir=up]'),dn=f.querySelector('[data-dir=down]');var rm=matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+function tick(){var y=window.scrollY,H=document.documentElement.scrollHeight,v=window.innerHeight;var long=H>v*2.5;f.classList.toggle('on',long);dn.disabled=y+v>=H-40;up.disabled=y<40;}
+up.addEventListener('click',function(){window.scrollTo({top:0,behavior:rm});});dn.addEventListener('click',function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:rm});});
+window.addEventListener('scroll',tick,{passive:true});window.addEventListener('resize',tick);tick();})();</script>
 </body>
 </html>

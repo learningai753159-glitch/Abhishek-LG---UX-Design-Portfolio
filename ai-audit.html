@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AI Speed. Human Depth. — Case Study · Abhishek LG</title>
+<title>AI Speed. Human Depth. · Case study · Abhishek LG</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
@@ -378,13 +378,22 @@
   .foot-cta-nav a{font-size:16px;font-weight:600;color:var(--ink-soft);transition:color .2s;}
   .foot-cta-nav a:hover{color:var(--green);}
   @media(max-width:720px){.foot-cta-row1{flex-direction:column;align-items:flex-start;gap:16px;}.foot-cta-actions{width:100%;}}
+
+  /* footer buttons (matched to home page) */
+  .foot-cta-actions .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);font-weight:600;font-size:15.5px;line-height:1;padding:13px 22px;border-radius:999px;border:none;cursor:pointer;transition:transform .15s ease,box-shadow .2s ease,background .2s;white-space:nowrap;text-decoration:none;color:#fff;width:auto;height:auto;flex-direction:row;}
+  .foot-cta-actions .btn svg{width:17px;height:17px;flex-shrink:0;display:block;transition:transform .2s ease;}
+  .foot-cta-actions .btn-dark{color:#fff;}
+  .foot-cta-actions .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(0,0,0,.6);}
+  .foot-cta-actions .btn:hover svg{transform:translateX(2px);}
+  .foot-cta-actions .btn:active{transform:translateY(0) scale(.97);}
+  @media(max-width:720px){.foot-cta-actions .btn{white-space:normal;}}
 </style></head>
 <body>
 
 <!-- ============ NAV ============ -->
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG · home">
       <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
       <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
     </a>
@@ -403,7 +412,7 @@
       <span class="role-badge"><span class="dot"></span>AI-Augmented UX · Research Systems</span>
       <h1 class="proj">Skipping the manual audit: how I engineered AI to run it instead</h1>
       <p class="headline">Not prompted. Directed</p>
-      <p class="subline">The audit is proof. AI is the point — a force multiplier for faster research, sharper findings, and more intentional redesign.</p>
+      <p class="subline">The audit is proof. AI is the point, a force multiplier for faster research, sharper findings, and more intentional redesign.</p>
 
       <div class="metric-row">
         <div class="metric-card"><div class="num">&gt;50%</div><div class="lab">Research time compressed</div></div>
@@ -414,10 +423,10 @@
 
     <!-- 01 THE PROBLEM WITH UX AUDITS -->
     <section class="panel reveal" id="problem" data-screen-label="01 The Problem With UX Audits">
-      <span class="eyebrow-num">01 — The Problem With UX Audits</span>
+      <span class="eyebrow-num">01 · The Problem With UX Audits</span>
       <h2 class="sec-title">Most UX audits take weeks. That's a resource problem, not a research problem</h2>
       <div class="insight-grid two">
-        <div class="insight"><div class="k">The Old Way</div><p>Senior designers spend the majority of audit time on low-level sorting — tagging violations, building severity matrices by hand. Strategic thinking gets whatever time is left.</p></div>
+        <div class="insight"><div class="k">The Old Way</div><p>Senior designers spend the majority of audit time on low-level sorting, tagging violations, building severity matrices by hand. Strategic thinking gets whatever time is left.</p></div>
         <div class="insight"><div class="k">The Reframe</div><p>AI handles classification at velocity. The designer focuses entirely on synthesis, strategy, and design. That is the system I built.</p></div>
       </div>
     </section>
@@ -427,7 +436,7 @@
       <h2 class="sec-title">Why IRCTC?</h2>
       <div class="insight-grid three">
         <div class="insight"><div class="k">The Scale</div><p>13 million daily passengers. The only official platform to book Indian Railways tickets online. No alternative. No competition.</p></div>
-        <div class="insight"><div class="k">The Stakes</div><p>Missing a booking means missing travel. UX failure here has real-world consequences — not just frustration.</p></div>
+        <div class="insight"><div class="k">The Stakes</div><p>Missing a booking means missing travel. UX failure here has real-world consequences, not just frustration.</p></div>
         <div class="insight"><div class="k">The Opportunity</div><p>A monopoly product with no incentive to improve is the most interesting UX problem to audit. Every finding matters more when users have nowhere else to go.</p></div>
       </div>
       <div class="pull">
@@ -437,16 +446,16 @@
 
     <!-- 02 THE AI AUDIT SYSTEM -->
     <section class="panel reveal" id="system" data-screen-label="02 The AI Audit System">
-      <span class="eyebrow-num">02 — The AI Audit System</span>
-      <h2 class="sec-title">6 frameworks. 8 screens. Minutes — not weeks</h2>
-      <p class="hint-line">Custom prompt frameworks built on foundational usability principles — <strong>AI clustered the patterns, I architected the findings.</strong></p>
+      <span class="eyebrow-num">02 · The AI Audit System</span>
+      <h2 class="sec-title">6 frameworks. 8 screens. Minutes, not weeks</h2>
+      <p class="hint-line">Custom prompt frameworks built on foundational usability principles<strong>AI clustered the patterns, I architected the findings.</strong></p>
       <div class="insight-grid three fw-grid">
-        <div class="insight fw peach"><div class="k">Nielsen's 10 Heuristics</div><p>Primary classifier — every observation mapped against all 10 heuristics instantly.</p></div>
-        <div class="insight fw lavender"><div class="k">Fitts's Law</div><p>Interaction geometry — violations flagged when the most-used action requires the most physical effort.</p></div>
-        <div class="insight fw sky"><div class="k">Cognitive Load Theory</div><p>Friction classifier — screens exceeding working-memory thresholds identified at scale.</p></div>
-        <div class="insight fw pink"><div class="k">Jakob's Law</div><p>Convention detector — all departures from established mobile UI conventions flagged.</p></div>
-        <div class="insight fw mint"><div class="k">Visual Hierarchy</div><p>Salience mapping — screens where everything competes and nothing wins.</p></div>
-        <div class="insight fw yellow"><div class="k">WCAG 2.1</div><p>Accessibility — contrast, touch targets, and legibility evaluated across the full flow.</p></div>
+        <div class="insight fw peach"><div class="k">Nielsen's 10 Heuristics</div><p>Primary classifier, every observation mapped against all 10 heuristics instantly.</p></div>
+        <div class="insight fw lavender"><div class="k">Fitts's Law</div><p>Interaction geometry. Violations flagged when the most-used action requires the most physical effort.</p></div>
+        <div class="insight fw sky"><div class="k">Cognitive Load Theory</div><p>Friction classifier, screens exceeding working-memory thresholds identified at scale.</p></div>
+        <div class="insight fw pink"><div class="k">Jakob's Law</div><p>Convention detector, all departures from established mobile UI conventions flagged.</p></div>
+        <div class="insight fw mint"><div class="k">Visual Hierarchy</div><p>Salience mapping, screens where everything competes and nothing wins.</p></div>
+        <div class="insight fw yellow"><div class="k">WCAG 2.1</div><p>Accessibility. Contrast, touch targets, and legibility evaluated across the full flow.</p></div>
       </div>
       <div class="sev-tiers">
         <div class="tier"><span class="sev critical"><span class="d"></span>Critical</span><p>Transaction blocks / search failures.</p></div>
@@ -457,24 +466,24 @@
 
     <!-- 03 KEY FINDINGS -->
     <section class="panel reveal" id="findings" data-screen-label="03 Key Findings">
-      <span class="eyebrow-num">03 — Key Findings</span>
+      <span class="eyebrow-num">03 · Key Findings</span>
       <h2 class="sec-title">8 screens. Every single one had a classifiable violation</h2>
       <div class="finding-grid">
         <div class="finding">
           <div class="ftext">
             <div class="fhead"><span class="fnum">Finding 01</span><span class="sev critical"><span class="d"></span>Critical</span></div>
             <h4>Login CTA invisible against app icon</h4>
-            <p>The circular red button matches the app icon — so the primary CTA reads as decoration.</p>
+            <p>The circular red button matches the app icon, so the primary CTA reads as decoration.</p>
           </div>
-          <div class="fshot"><img src="findings/f01-signin.jpeg" alt="IRCTC Sign In screen — circular red LOGIN button blends into the app icon" /></div>
+          <div class="fshot"><img src="findings/f01-signin.jpeg" alt="IRCTC Sign In screen. Circular red LOGIN button blends into the app icon" /></div>
         </div>
         <div class="finding">
           <div class="ftext">
             <div class="fhead"><span class="fnum">Finding 02</span><span class="sev critical"><span class="d"></span>Critical</span></div>
             <h4>Ad CTA competes with recovery flow</h4>
-            <p>A "SIGN UP" ad banner sits above the "Next" button during password recovery — two CTAs when the user is already locked out.</p>
+            <p>A "SIGN UP" ad banner sits above the "Next" button during password recovery. Two CTAs when the user is already locked out.</p>
           </div>
-          <div class="fshot"><img src="findings/f02-forgot.jpeg" alt="Forgot Account Details screen — IDFC First Bank ad banner sits directly above the Next button" /></div>
+          <div class="fshot"><img src="findings/f02-forgot.jpeg" alt="Forgot Account Details screen. IDFC First Bank ad banner sits directly above the Next button" /></div>
         </div>
         <div class="finding fwide">
           <div>
@@ -488,7 +497,7 @@
               <img src="findings/f03-2-train.jpeg" alt="Train menu screen" />
               <img src="findings/f03-3-search.jpeg" alt="Train search screen" />
             </div>
-            <div class="frow-label">Home → Train → Search — 3 taps</div>
+            <div class="frow-label">Home → Train → Search, 3 taps</div>
           </div>
         </div>
         <div class="finding">
@@ -497,7 +506,7 @@
             <h4>Ad covers fare and booking CTA</h4>
             <p>An SBI ad sits between class/availability and the booking CTA. Users scroll past a bank ad to see what they will pay.</p>
           </div>
-          <div class="fshot"><img src="findings/f04-traindetails.jpeg" alt="Train details screen — large SBI ad covers the fare and the Passenger Details CTA" /></div>
+          <div class="fshot"><img src="findings/f04-traindetails.jpeg" alt="Train details screen. Large SBI ad covers the fare and the Passenger Details CTA" /></div>
         </div>
         <div class="finding">
           <div class="ftext">
@@ -505,45 +514,45 @@
             <h4>Full-screen ad mid passenger form</h4>
             <p>A furniture ad interrupts the highest-stakes data-entry screen. UPI listed as secondary.</p>
           </div>
-          <div class="fshot"><img src="findings/f05-passenger.jpeg" alt="Passenger Details screen — full Pepperfry furniture ad interrupts the form" /></div>
+          <div class="fshot"><img src="findings/f05-passenger.jpeg" alt="Passenger Details screen, full Pepperfry furniture ad interrupts the form" /></div>
         </div>
       </div>
       <div class="sys-grid">
         <div class="sys"><h5>No progress indicator</h5><p>5-screen flow. Zero indication of steps remaining. H1 violation across the entire funnel.</p></div>
-        <div class="sys"><h5>Typography without hierarchy</h5><p>Titles, labels, body, CTAs — near-identical weights. When everything is important, nothing is.</p></div>
-        <div class="sys"><h5>Colour encodes nothing</h5><p>Orange on app bars, CTAs, status badges, headers simultaneously. One colour, every meaning — carries no meaning.</p></div>
+        <div class="sys"><h5>Typography without hierarchy</h5><p>Titles, labels, body, CTAs, near-identical weights. When everything is important, nothing is.</p></div>
+        <div class="sys"><h5>Colour encodes nothing</h5><p>Orange on app bars, CTAs, status badges, headers simultaneously. One colour, every meaning, carries no meaning.</p></div>
       </div>
     </section>
 
     <!-- 04 CUSTOMER JOURNEY MAP -->
     <section class="panel reveal" id="journey" data-screen-label="04 Customer Journey Map">
-      <span class="eyebrow-num">04 — Customer Journey Map</span>
+      <span class="eyebrow-num">04 · Customer Journey Map</span>
       <h2 class="sec-title">Failed at every commitment peak</h2>
       <div class="journey">
         <div class="stage">
           <span class="st-label">Stage 01</span><span class="st-emotion">Anxious</span>
           <div class="meter"><i style="background:#d99a2b"></i><i style="background:#d99a2b"></i><i></i><i></i><i></i></div>
-          <p>Launch — outdated visual language triggers distrust before any interaction.</p>
+          <p>Launch. Outdated visual language triggers distrust before any interaction.</p>
         </div>
         <div class="stage">
           <span class="st-label">Stage 02</span><span class="st-emotion">Frustrated</span>
           <div class="meter"><i style="background:#d97b2b"></i><i style="background:#d97b2b"></i><i style="background:#d97b2b"></i><i></i><i></i></div>
-          <p>Login — invisible CTA, cross-promo grid, ad at worst possible moment.</p>
+          <p>Login. Invisible CTA, cross-promo grid, ad at worst possible moment.</p>
         </div>
         <div class="stage">
           <span class="st-label">Stage 03</span><span class="st-emotion">Impatient</span>
           <div class="meter"><i style="background:#d97b2b"></i><i style="background:#d97b2b"></i><i style="background:#cf4f33"></i><i style="background:#cf4f33"></i><i></i></div>
-          <p>Finding booking — identical icons, 3 taps minimum, no shortcut for primary task.</p>
+          <p>Finding booking. Identical icons, 3 taps minimum, no shortcut for primary task.</p>
         </div>
         <div class="stage">
           <span class="st-label">Stage 04</span><span class="st-emotion">Angry</span>
           <div class="meter"><i style="background:#cf4f33"></i><i style="background:#cf4f33"></i><i style="background:#cf4f33"></i><i style="background:#cf4f33"></i><i style="background:#cf4f33"></i></div>
-          <p>Train details — ad physically covers the two most important elements.</p>
+          <p>Train details. Ad physically covers the two most important elements.</p>
         </div>
         <div class="stage">
           <span class="st-label">Stage 05</span><span class="st-emotion">Exhausted</span>
           <div class="meter"><i style="background:#a3402c"></i><i style="background:#a3402c"></i><i style="background:#a3402c"></i><i style="background:#a3402c"></i><i style="background:#a3402c"></i></div>
-          <p>Passenger form — full-screen ad at most critical data-entry moment.</p>
+          <p>Passenger form, full-screen ad at most critical data-entry moment.</p>
         </div>
       </div>
       <div class="pull">
@@ -553,7 +562,7 @@
 
     <!-- 05 COMPETITOR ANALYSIS -->
     <section class="panel reveal" id="competitor" data-screen-label="05 Competitor Analysis">
-      <span class="eyebrow-num">05 — Competitor Analysis</span>
+      <span class="eyebrow-num">05 · Competitor Analysis</span>
       <h2 class="sec-title">What the market figured out that IRCTC hasn't</h2>
       <div class="cmp-wrap">
         <table class="cmp">
@@ -571,22 +580,22 @@
         </table>
       </div>
       <div class="insight-grid three" style="margin-top:26px;">
-        <div class="insight fw sky"><div class="k">From MakeMyTrip</div><p>Search-first home eliminates intermediate screens — primary task in one tap.</p></div>
-        <div class="insight fw mint"><div class="k">From Cleartrip</div><p>Progress visibility reduces anxiety — users complete more when they know how close they are to done.</p></div>
+        <div class="insight fw sky"><div class="k">From MakeMyTrip</div><p>Search-first home eliminates intermediate screens, primary task in one tap.</p></div>
+        <div class="insight fw mint"><div class="k">From Cleartrip</div><p>Progress visibility reduces anxiety. Users complete more when they know how close they are to done.</p></div>
         <div class="insight fw lavender"><div class="k">From Both</div><p>Ads belong in passive browsing. Never inside login, booking, or payment.</p></div>
       </div>
     </section>
 
     <!-- 06 THE AI ORCHESTRATION WORKFLOW -->
     <section class="panel reveal" id="workflow" data-screen-label="06 The AI Orchestration Workflow">
-      <span class="eyebrow-num">06 — The AI Orchestration Workflow</span>
+      <span class="eyebrow-num">06 · The AI Orchestration Workflow</span>
       <h2 class="sec-title">This is what AI-augmented UX research actually looks like</h2>
       <div class="flow-ribbon">
         <div class="flow-step"><span class="fs-num">01</span><h4>Framework Engineering</h4><p>6 custom prompt frameworks, each trained on a specific usability principle.</p></div>
         <span class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <div class="flow-step"><span class="fs-num">02</span><h4>AI Classification</h4><p>8 screens classified simultaneously — clustered by framework, severity, and screen, in minutes.</p></div>
+        <div class="flow-step"><span class="fs-num">02</span><h4>AI Classification</h4><p>8 screens classified simultaneously. Clustered by framework, severity, and screen, in minutes.</p></div>
         <span class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <div class="flow-step"><span class="fs-num">03</span><h4>Human Synthesis</h4><p>3 systemic issues AI cannot see — patterns that require product strategy, not just screens.</p></div>
+        <div class="flow-step"><span class="fs-num">03</span><h4>Human Synthesis</h4><p>3 systemic issues AI cannot see. Patterns that require product strategy, not just screens.</p></div>
         <span class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         <div class="flow-step"><span class="fs-num">04</span><h4>Designer-Led Redesign</h4><p>Every screen planned before prompting. AI generated. I refined. Every decision mine.</p></div>
       </div>
@@ -611,17 +620,17 @@
         </div>
       </div>
       <div class="pull">
-        <p>"AI is a brilliant synthesizer. It is an incredibly poor architect of human empathy."</p>
+        <p>"AI is a brilliant synthesizer. It is a poor architect of human empathy."</p>
       </div>
     </section>
 
     <!-- 07 REDESIGN PRINCIPLES + BEFORE & AFTER -->
     <section class="panel reveal" id="redesign" data-screen-label="07 Redesign Principles">
-      <span class="eyebrow-num">07 — Redesign Principles + Before &amp; After</span>
+      <span class="eyebrow-num">07 · Redesign Principles + Before &amp; After</span>
       <h2 class="sec-title">Every finding maps to a principle. Every principle maps to a decision</h2>
       <div class="principle-list">
         <div class="principle-row"><span class="pr-num">01</span><div class="pr-body"><h4>Search first</h4><p>Primary task on home screen. Zero intermediate screens for what 80% of users came to do.</p></div></div>
-        <div class="principle-row"><span class="pr-num">02</span><div class="pr-body"><h4>Zero ads in task flow</h4><p>Ads in passive moments only — never inside login, recovery, booking, or payment.</p></div></div>
+        <div class="principle-row"><span class="pr-num">02</span><div class="pr-body"><h4>Zero ads in task flow</h4><p>Ads in passive moments only, never inside login, recovery, booking, or payment.</p></div></div>
         <div class="principle-row"><span class="pr-num">03</span><div class="pr-body"><h4>Progress visibility</h4><p>A 5-step flow needs a 5-step indicator. Users always know where they are.</p></div></div>
         <div class="principle-row"><span class="pr-num">04</span><div class="pr-body"><h4>Colour with meaning</h4><p>One colour cannot mean everything. Clear visual hierarchy across actions, status, and decoration.</p></div></div>
       </div>
@@ -630,18 +639,18 @@
         <!-- SET 1 — LOGIN -->
         <div class="ba-set">
           <div class="ba-set-head">
-            <span class="ba-set-label">Screen 01 — Login</span>
+            <span class="ba-set-label">Screen 01, Login</span>
             <h3 class="ba-set-title">From a cluttered orange wall to a clean, single-purpose screen</h3>
           </div>
           <div class="ba-cols">
             <div class="ba-col">
-              <div class="ba-chead before">Before — Original IRCTC</div>
-              <div class="ba-screen"><img src="findings/f01-signin.jpeg" alt="IRCTC Sign In screen — circular red LOGIN button, More Apps of IRCTC cross-promo grid, and ad banner at the bottom" /></div>
+              <div class="ba-chead before">Before, Original IRCTC</div>
+              <div class="ba-screen"><img src="findings/f01-signin.jpeg" alt="IRCTC Sign In screen. Circular red LOGIN button, More Apps of IRCTC cross-promo grid, and ad banner at the bottom" /></div>
               <p class="ba-cnote">LOGIN button styled as icon. 5-app cross-promo grid. Ad banner at bottom. Maximum cognitive load on the simplest screen.</p>
             </div>
             <div class="ba-col">
-              <div class="ba-chead after">After — RailGo Redesign (Hi-fi)</div>
-              <div class="ba-after"><img src="findings/after-login.png" alt="RailGo redesigned login — RailGo logo, Welcome back heading, a single mobile number field and a Send OTP button, no ads" /></div>
+              <div class="ba-chead after">After, RailGo Redesign (Hi-fi)</div>
+              <div class="ba-after"><img src="findings/after-login.png" alt="RailGo redesigned login. RailGo logo, Welcome back heading, a single mobile number field and a Send OTP button, no ads" /></div>
               <p class="ba-cnote">Phone number + OTP. Single prominent CTA. Zero ads, zero cross-promotion. Task completable in under 10 seconds.</p>
             </div>
           </div>
@@ -650,18 +659,18 @@
         <!-- SET 2 — HOME -->
         <div class="ba-set">
           <div class="ba-set-head">
-            <span class="ba-set-label">Screen 02 — Home</span>
-            <h3 class="ba-set-title">Search on the home screen — eliminating the 3-tap navigation entirely</h3>
+            <span class="ba-set-label">Screen 02, Home</span>
+            <h3 class="ba-set-title">Search on the home screen, eliminating the 3-tap navigation entirely</h3>
           </div>
           <div class="ba-cols">
             <div class="ba-col">
-              <div class="ba-chead before">Before — Original IRCTC</div>
-              <div class="ba-screen"><img src="findings/f03b-trainsearch.jpeg" alt="IRCTC Train Search screen — STN station codes only, reached after three taps, with an ad below the Search Trains CTA" /></div>
+              <div class="ba-chead before">Before, Original IRCTC</div>
+              <div class="ba-screen"><img src="findings/f03b-trainsearch.jpeg" alt="IRCTC Train Search screen. STN station codes only, reached after three taps, with an ad below the Search Trains CTA" /></div>
               <p class="ba-cnote">This is what users reach after 3 taps. Station codes only, cluttered layout, ad below the search CTA.</p>
             </div>
             <div class="ba-col">
-              <div class="ba-chead after">After — RailGo Redesign (Hi-fi)</div>
-              <div class="ba-after"><img src="findings/after-home.png" alt="RailGo redesigned home — personalised greeting, From and To stations with full names, depart date, travellers and a Search trains button, with recent searches below" /></div>
+              <div class="ba-chead after">After, RailGo Redesign (Hi-fi)</div>
+              <div class="ba-after"><img src="findings/after-home.png" alt="RailGo redesigned home. Personalised greeting, From and To stations with full names, depart date, travellers and a Search trains button, with recent searches below" /></div>
               <p class="ba-cnote">Search form on home. Full station names. Recent journeys. 0 taps to start booking. Zero ads.</p>
             </div>
           </div>
@@ -670,18 +679,18 @@
         <!-- SET 3 — TRAIN DETAILS & CLASS SELECTION -->
         <div class="ba-set">
           <div class="ba-set-head">
-            <span class="ba-set-label">Screen 03 — Train Details &amp; Class Selection</span>
+            <span class="ba-set-label">Screen 03, Train Details &amp; Class Selection</span>
             <h3 class="ba-set-title">From abbreviations and manual refresh to described classes with progress steps</h3>
           </div>
           <div class="ba-cols">
             <div class="ba-col">
-              <div class="ba-chead before">Before — Original IRCTC</div>
-              <div class="ba-screen"><img src="findings/f04-traindetails.jpeg" alt="Train details screen — abbreviated class names, manual refresh, and a large SBI ad covering the fare and booking CTA" /></div>
+              <div class="ba-chead before">Before, Original IRCTC</div>
+              <div class="ba-screen"><img src="findings/f04-traindetails.jpeg" alt="Train details screen. Abbreviated class names, manual refresh, and a large SBI ad covering the fare and booking CTA" /></div>
               <p class="ba-cnote">Abbreviations for class names. Manual refresh required. SBI ad covering fare and booking CTA.</p>
             </div>
             <div class="ba-col">
-              <div class="ba-chead after">After — RailGo Redesign (Hi-fi)</div>
-              <div class="ba-after"><img src="findings/after-class.png" alt="RailGo redesigned class selection — progress steps, train summary, and described class cards with photos and fares, ad removed" /></div>
+              <div class="ba-chead after">After, RailGo Redesign (Hi-fi)</div>
+              <div class="ba-after"><img src="findings/after-class.png" alt="RailGo redesigned class selection. Progress steps, train summary, and described class cards with photos and fares, ad removed" /></div>
               <p class="ba-cnote">Progress indicator. Described class names with photos. Ad removed. Fare fully visible.</p>
             </div>
           </div>
@@ -689,7 +698,7 @@
 
       </div>
       <div class="proto-video">
-        <span class="vlabel">RailGo Redesign — Prototype Walkthrough</span>
+        <span class="vlabel">RailGo Redesign, Prototype Walkthrough</span>
         <div class="vframe">
           <div style="padding:75% 0 0 0;position:relative;">
             <iframe src="https://player.vimeo.com/video/1200772618?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
@@ -697,7 +706,7 @@
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               style="position:absolute;top:0;left:0;width:100%;height:100%;"
-              title="RailGo - Live Demo">
+              title="RailGo, Live Demo">
             </iframe>
           </div>
         </div>
@@ -707,7 +716,7 @@
 
     <!-- 08 IMPACT -->
     <section class="panel reveal" id="impact" data-screen-label="08 Impact">
-      <span class="eyebrow-num">08 — Impact</span>
+      <span class="eyebrow-num">08 · Impact</span>
       <h2 class="sec-title">What this system delivered</h2>
       <div class="impact-grid">
         <div class="impact-stat"><div class="num">&gt;50%</div><div class="lab">Research time compressed vs manual audit</div></div>
@@ -716,14 +725,14 @@
         <div class="impact-stat"><div class="num">3</div><div class="lab">Systemic issues identified beyond individual findings</div></div>
       </div>
       <div class="learn-grid">
-        <div class="learn"><div class="ln">1</div><div class="learn-body"><h4>AI multiplies output — not judgment</h4><p>Frameworks are reusable on any product. Strategic synthesis remains entirely human.</p></div></div>
+        <div class="learn"><div class="ln">1</div><div class="learn-body"><h4>AI multiplies output, not judgment</h4><p>Frameworks are reusable on any product. Strategic synthesis remains entirely human.</p></div></div>
         <div class="learn"><div class="ln">2</div><div class="learn-body"><h4>Systemic issues only appear when you zoom out</h4><p>Screen findings are fixable. Systemic patterns require a designer who sees the whole product.</p></div></div>
-        <div class="learn"><div class="ln">3</div><div class="learn-body"><h4>The costliest failures hit users who said yes</h4><p>Friction at commitment peaks is the finding that changes product strategy — not screen fixes.</p></div></div>
+        <div class="learn"><div class="ln">3</div><div class="learn-body"><h4>The costliest failures hit users who said yes</h4><p>Friction at commitment peaks is the finding that changes product strategy, not screen fixes.</p></div></div>
         <div class="learn"><div class="ln">4</div><div class="learn-body"><h4>Research velocity is a design skill</h4><p>Compressing weeks into hours without losing depth is a systems design problem. I solved it with prompt engineering.</p></div></div>
       </div>
       <div class="closing">
         <div class="cap">The value I bring</div>
-        <p>"A senior designer who can run a full heuristic audit, build the AI system to accelerate it, synthesize systemic insights, and design the solutions — in the time it takes most teams to finish the research phase. That is the value I bring."</p>
+        <p>"A senior designer who can run a full heuristic audit, build the AI system to accelerate it, synthesize systemic insights, and design the solutions, in the time it takes most teams to finish the research phase. That is the value I bring."</p>
       </div>
     </section>
 
@@ -756,7 +765,7 @@
     </nav>
   </div>
   <div class="foot-note">
-    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>© 2026 Abhishek LG · Staff UX Designer</span>
     <span>Designed &amp; built end to end.</span>
   </div>
 </footer>
@@ -770,5 +779,11 @@
 })();
 </script>
 
+<style id="scroll-fab-css">.sfab{position:fixed;right:20px;bottom:24px;z-index:900;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .25s ease,transform .25s ease;}.sfab.on{opacity:1;transform:none;pointer-events:auto;}.sfab button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,60,40,.14);background:rgba(251,248,241,.94);color:#15543b;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px -12px rgba(20,40,30,.45);backdrop-filter:blur(6px);transition:background .2s,color .2s,transform .15s,opacity .2s;}.sfab button:hover{background:#15543b;color:#fff;transform:translateY(-2px);}.sfab button[disabled]{opacity:.35;pointer-events:none;}.sfab svg{width:18px;height:18px;}@media(max-width:560px){.sfab{right:12px;bottom:14px;}.sfab button{width:44px;height:44px;}}@media print{.sfab{display:none;}}</style>
+<div class="sfab" id="sFab" aria-label="Page scroll"><button type="button" data-dir="up" aria-label="Go to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button><button type="button" data-dir="down" aria-label="Go to bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button></div>
+<script>(function(){var f=document.getElementById('sFab');if(!f)return;var up=f.querySelector('[data-dir=up]'),dn=f.querySelector('[data-dir=down]');var rm=matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+function tick(){var y=window.scrollY,H=document.documentElement.scrollHeight,v=window.innerHeight;var long=H>v*2.5;f.classList.toggle('on',long);dn.disabled=y+v>=H-40;up.disabled=y<40;}
+up.addEventListener('click',function(){window.scrollTo({top:0,behavior:rm});});dn.addEventListener('click',function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:rm});});
+window.addEventListener('scroll',tick,{passive:true});window.addEventListener('resize',tick);tick();})();</script>
 </body>
 </html>

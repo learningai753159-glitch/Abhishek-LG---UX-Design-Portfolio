@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pre-bind · Submission Intake — Case Study · Abhishek LG</title>
+<title>Pre-bind workflow · Case study · Abhishek LG</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
@@ -367,6 +367,26 @@
   .finding p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.58;}
   .finding .ph-drop{min-height:250px;height:100%;}
 
+  /* sticky notes problem board */
+  .notes-label{display:flex;align-items:center;gap:12px;margin:30px 0 6px;font-family:var(--font-body);font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);}
+  .notes-label::after{content:'';flex:1;height:1px;background:rgba(44,55,51,.12);}
+  .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px 20px;margin:22px 0 0;padding:0;list-style:none;}
+  .notes li{position:relative;background:#fbeba4;color:#3a3320;font-size:15px;line-height:1.5;padding:24px 22px 26px;border-radius:2px;box-shadow:0 10px 22px -14px rgba(60,50,20,.5);transition:transform .2s ease, box-shadow .2s ease;}
+  .notes li:nth-child(3n+1){transform:rotate(-1.1deg);background:#fbeba4;}
+  .notes li:nth-child(3n+2){transform:rotate(.8deg);background:#f7e08f;}
+  .notes li:nth-child(3n+3){transform:rotate(-.5deg);background:#fdf0b8;}
+  .notes li:hover{transform:rotate(0deg) translateY(-4px);box-shadow:0 18px 32px -16px rgba(60,50,20,.55);z-index:2;}
+  .notes li::before{content:'';position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:54px;height:16px;background:rgba(255,255,255,.55);border:1px solid rgba(60,50,20,.08);}
+  /* consequence band */
+  .conseq-link{display:flex;align-items:center;gap:14px;margin:44px 0 0;font-family:var(--font-hand);font-size:27px;color:var(--ink-soft);}
+  .conseq-link::after{content:'';flex:1;height:1px;border-top:2px dashed rgba(21,84,59,.3);}
+  .conseq{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:18px;}
+  .conseq-card{background:var(--green);color:#dff0e6;border-radius:20px;padding:32px 34px;}
+  .conseq-card .k{font-family:var(--font-body);font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#8fc4a8;margin-bottom:14px;}
+  .conseq-card .big{font-family:var(--font-display);font-size:42px;line-height:1.05;color:#fff;margin:0 0 10px;}
+  .conseq-card p{margin:0;font-size:15.5px;line-height:1.6;color:#c3ddcd;}
+  @media(max-width:900px){.notes{grid-template-columns:repeat(2,1fr);}.conseq{grid-template-columns:1fr;}}
+  @media(max-width:620px){.notes{grid-template-columns:1fr;}.conseq-card .big{font-size:34px;}}
   /* systemic issues */
   .sys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px;}
   .sys{background:var(--panel-2);border-left:4px solid var(--yellow);border-radius:0 18px 18px 0;padding:24px 26px;}
@@ -417,6 +437,104 @@
   .layer h4{font-family:var(--font-cursive);font-weight:600;font-size:26px;color:#26312c;line-height:1.1;letter-spacing:0;}
   .layer .lpct{font-family:var(--font-num);font-weight:700;font-size:15px;color:#33433b;background:rgba(255,255,255,.5);padding:5px 13px;border-radius:999px;white-space:nowrap;}
   .layer p{margin:0;font-size:15.5px;color:#39433d;line-height:1.55;max-width:74ch;}
+
+  /* ---------- 03 The Process: project wall ---------- */
+  .proc-bridge{display:flex;flex-direction:column;gap:18px;margin:6px 0 30px;}
+  .proc-bridge .blead{margin:0;font-size:17px;color:var(--ink-soft);line-height:1.6;max-width:66ch;}
+  .trail{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none;}
+  .trail button{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:600;font-size:14px;color:var(--green);background:#e7f0e8;border:1px solid rgba(21,84,59,.16);border-radius:999px;padding:9px 16px;cursor:pointer;transition:background .2s,color .2s;}
+  .trail button .tn{font-family:var(--font-num);font-size:12px;opacity:.6;}
+  .trail button:hover{background:#d8e8db;}
+  .trail button[aria-current="true"]{background:var(--green);color:#fff;border-color:var(--green);}
+  .trail button[aria-current="true"] .tn{opacity:.75;}
+  .ph-toggle{align-self:flex-start;display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:600;font-size:13.5px;color:var(--ink-soft);background:transparent;border:1px dashed rgba(21,84,59,.4);border-radius:999px;padding:8px 15px;cursor:pointer;}
+  .ph-toggle:hover{color:var(--green);border-color:var(--green);}
+  body.ph-hidden .ph{display:none;}
+  body.ph-hidden .rewrite-pill{display:none;}
+  /* thread */
+  .proc-wall{position:relative;}
+  .proc-thread{display:none;}
+  /* chapters as tab panels */
+  .chap{position:relative;padding:0;}
+  .chap[hidden]{display:none;}
+  .chap::before{content:attr(data-n);display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--panel);border:2px solid var(--green);color:var(--green);font-family:var(--font-num);font-weight:700;font-size:11px;align-items:center;justify-content:center;margin-bottom:10px;}
+  .chap h3{font-family:var(--font-cursive);font-weight:600;font-size:27px;color:var(--green);margin:0 0 4px;line-height:1.15;}
+  .chap .cstage{font-family:var(--font-body);font-weight:700;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:12px;}
+  .chap>p{margin:0 0 16px;font-size:15.5px;color:var(--ink-soft);line-height:1.6;max-width:68ch;}
+  .reveal-chap{opacity:0;transform:translateY(10px);transition:opacity .35s ease,transform .35s ease;}
+  .reveal-chap.in{opacity:1;transform:none;}
+  /* placeholders */
+  .ph{position:relative;border:2px dashed rgba(21,84,59,.42);background:#eef5ef;border-radius:16px;padding:22px 20px 18px;}
+  .ph-pill{position:absolute;top:-11px;left:16px;font-family:var(--font-num);font-weight:700;font-size:10.5px;letter-spacing:.12em;background:var(--green);color:#fff;padding:4px 10px;border-radius:999px;}
+  .ph .what{margin:6px 0 4px;font-size:14.5px;color:var(--ink);line-height:1.5;}
+  .ph .fmt{margin:0;font-size:12.5px;color:var(--ink-faint);}
+  .ph-img{min-height:150px;display:flex;flex-direction:column;justify-content:center;}
+  .rewrite-pill{display:inline-block;font-family:var(--font-num);font-weight:700;font-size:10px;letter-spacing:.12em;background:#f7d24a;color:#4a3c05;padding:3px 8px;border-radius:999px;margin-left:8px;vertical-align:2px;}
+  /* artefact framing */
+  .artefacts{display:grid;gap:18px;}
+  .artefacts.two{grid-template-columns:1fr 1fr;}
+  .artefacts.three{grid-template-columns:repeat(3,1fr);}
+  .tapecard{position:relative;background:var(--panel-2);border:1px solid rgba(44,55,51,.1);border-radius:6px;padding:20px 18px;box-shadow:0 10px 24px -18px rgba(40,50,40,.55);}
+  .tapecard::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(-2deg);width:58px;height:17px;background:rgba(247,210,74,.4);border:1px solid rgba(60,50,20,.08);}
+  .tapecard.t1{transform:rotate(-.7deg);} .tapecard.t2{transform:rotate(.6deg);} .tapecard.t3{transform:rotate(-.4deg);}
+  .src-tag{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-body);font-weight:600;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--green);background:#e2eee4;border-radius:999px;padding:5px 11px;margin-top:12px;}
+  .quote-card{background:var(--panel-2);border:1px solid rgba(44,55,51,.1);border-radius:18px;padding:26px 28px;position:relative;}
+  .quote-card .qmark{font-family:var(--font-cursive);font-size:52px;line-height:.6;color:rgba(21,84,59,.3);}
+  .recon{display:inline-block;font-size:11.5px;color:var(--ink-faint);margin-top:10px;font-style:italic;}
+  /* ch2 flow */
+  .flow-card{background:var(--panel-2);border:1px solid rgba(44,55,51,.1);border-radius:20px;padding:24px;}
+  .seg{display:inline-flex;background:#e7f0e8;border-radius:999px;padding:4px;gap:4px;margin-bottom:18px;}
+  .seg button{font-family:var(--font-body);font-weight:700;font-size:13px;color:var(--green);background:transparent;border:none;border-radius:999px;padding:7px 18px;cursor:pointer;}
+  .seg button[aria-selected="true"]{background:var(--green);color:#fff;}
+  .flow-scroll{overflow-x:auto;padding-bottom:6px;}
+  .flow{display:flex;align-items:stretch;gap:0;min-width:min-content;}
+  .flow[hidden]{display:none;}
+  .stop{flex:0 0 auto;width:168px;background:var(--panel);border:1px solid rgba(44,55,51,.12);border-radius:14px;padding:14px 15px;position:relative;}
+  .stop+.stop{margin-left:34px;}
+  .stop+.stop::before{content:'';position:absolute;left:-30px;top:50%;width:26px;height:2px;background:rgba(21,84,59,.28);}
+  .stop+.stop::after{content:'';position:absolute;left:-8px;top:50%;transform:translateY(-50%);border:5px solid transparent;border-left-color:rgba(21,84,59,.4);}
+  .stop h5{font-family:var(--font-proj);font-weight:700;font-size:14px;color:var(--ink);margin:0 0 6px;line-height:1.3;}
+  .stop .sink{position:absolute;top:-9px;right:-9px;width:22px;height:22px;border-radius:50%;background:#d9483b;color:#fff;font-family:var(--font-num);font-weight:700;font-size:10px;display:flex;align-items:center;justify-content:center;}
+  .stop .ph{padding:12px 10px 10px;border-radius:10px;}
+  .stop .ph-pill{left:8px;font-size:9.5px;}
+  .stop .what{font-size:12.5px;margin:2px 0 0;}
+  .flow-cap{margin:14px 0 0;font-size:13px;color:var(--ink-faint);}
+  /* ch3 fan */
+  .fan{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .opt{background:var(--panel-2);border:1px solid rgba(44,55,51,.12);border-radius:16px;padding:18px;cursor:pointer;text-align:left;font:inherit;transition:transform .25s ease,opacity .25s ease,box-shadow .25s ease;opacity:.72;}
+  .opt:nth-child(1){transform:rotate(-1.4deg);} .opt:nth-child(2){transform:rotate(.9deg);} .opt:nth-child(3){transform:rotate(-.6deg);}
+  .opt[aria-pressed="true"]{opacity:1;transform:rotate(0) translateY(-6px);box-shadow:0 20px 40px -24px rgba(30,45,35,.55);border-color:rgba(21,84,59,.3);}
+  .opt h5{font-family:var(--font-proj);font-weight:700;font-size:15.5px;color:var(--ink);margin:0 0 10px;display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
+  .chosen-tag{font-family:var(--font-body);font-weight:700;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;background:var(--green);color:#fff;padding:3px 9px;border-radius:999px;}
+  .opt-note{margin-top:12px;display:none;}
+  .opt[aria-pressed="true"] .opt-note{display:block;}
+  .opt-note .hand{font-family:var(--font-hand);font-size:20px;color:var(--ink-soft);margin:0 0 8px;}
+  /* ch4 compare */
+  .cmp{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(44,55,51,.12);background:var(--panel-2);}
+  .cmp-panes{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(44,55,51,.12);}
+  .cmp-pane{background:var(--panel-2);padding:20px;}
+  .cmp-pane .vlabel{font-family:var(--font-num);font-weight:700;font-size:11px;letter-spacing:.12em;color:var(--green);margin-bottom:10px;display:block;}
+  .trigger-card{background:var(--panel-2);border:1px solid rgba(44,55,51,.12);border-radius:16px;padding:20px 22px;margin-top:16px;}
+  .trigger-tags{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 0;}
+  .trigger-tags span{font-size:12px;color:var(--ink-soft);background:#e9e3d6;border-radius:999px;padding:4px 11px;}
+  /* ch5 tug of war */
+  .tug{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;margin-top:14px;}
+  .tug .side{background:#e7f0e8;border-radius:12px;padding:14px;text-align:center;font-size:13.5px;color:var(--green);font-weight:600;}
+  .tug .rope{font-family:var(--font-num);font-size:12px;color:var(--ink-faint);letter-spacing:.1em;}
+  .tug-res{margin-top:12px;}
+  .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px;}
+  /* closing */
+  .proc-close{display:flex;flex-direction:column;gap:14px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(44,55,51,.1);}
+  .proc-close .cline{font-family:var(--font-hand);font-size:27px;color:var(--ink-soft);margin:0;display:flex;align-items:center;gap:12px;}
+  .proc-close .cline::after{content:'↓';font-family:var(--font-body);font-size:20px;color:var(--green);}
+  @media(prefers-reduced-motion:reduce){.reveal-chap{opacity:1;transform:none;transition:none;}.opt{transition:none;}}
+  @media(max-width:860px){
+    .artefacts.two,.artefacts.three,.fan,.thumbs,.cmp-panes{grid-template-columns:1fr;}
+    .proc-wall{padding-left:0;}
+    .chap{border-top:none;padding-top:0;}
+    .opt{opacity:1;transform:none;}
+    .tug{grid-template-columns:1fr;}
+  }
 
   /* callout chips */
   .callout-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;}
@@ -605,6 +723,323 @@
   .foot-cta-nav a{font-size:16px;font-weight:600;color:var(--ink-soft);transition:color .2s;}
   .foot-cta-nav a:hover{color:var(--green);}
   @media(max-width:720px){.foot-cta-row1{flex-direction:column;align-items:flex-start;gap:16px;}.foot-cta-actions{width:100%;}}
+  .jobs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;margin:30px 0 40px;align-items:start;}
+  .job-t{margin:0 0 6px;}
+  .job-notes{grid-template-columns:1fr!important;gap:22px;margin-top:18px;}
+  .job-notes li.job-green{background:#dcefd9!important;color:#24402c;}
+  .conseq-one{grid-template-columns:1fr!important;}
+  @media(max-width:720px){.jobs{grid-template-columns:1fr;gap:28px;}}
+  .appr-intro{max-width:none;font-size:clamp(16px,1.3vw,18px);line-height:1.65;color:var(--ink-soft);margin:0 0 28px;text-wrap:pretty;}
+  .appr-close{margin:24px 0 0;font-size:15.5px;line-height:1.55;font-weight:600;color:var(--ink);}
+  .case-hero .role-badge{display:inline-flex;align-items:center;font-family:var(--font-body);font-weight:600;font-size:15px;color:var(--green-bright);background:rgba(21,84,59,.08);padding:8px 16px;border-radius:999px;margin-bottom:22px;}
+  .case-hero .proj{font-size:clamp(32px,4.4vw,58px);line-height:1.08;margin-bottom:18px;max-width:40ch;text-wrap:balance;}
+  .case-hero .subline{max-width:none;margin:0 0 14px;text-wrap:pretty;}
+  .hero-scope{margin:0 0 44px;font-size:14.5px;font-weight:600;color:var(--ink);}
+  .panel.case-hero{background:linear-gradient(180deg,#e9f1ea 0,#f1f5ee 46%,var(--panel) 100%);border:1px solid rgba(21,84,59,.1);}
+  .case-hero .proj{font-size:clamp(36px,5.2vw,68px);letter-spacing:-.02em;line-height:1.04;}
+  .case-hero .hero-scope{display:inline-flex;margin-top:10px;padding:9px 14px;border-radius:10px;background:rgba(255,255,255,.7);border:1px solid rgba(21,84,59,.12);}
+  .lob-label{margin:0 0 12px;font-size:14px;font-weight:600;color:var(--ink-soft);}
+  .lob-panel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:28px;}
+  .lob-card{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:18px;box-shadow:0 4px 14px -8px rgba(15,18,22,.15);display:flex;flex-direction:column;gap:14px;min-width:0;}
+  .lob-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+  .lob-brand{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--ink);}
+  .lob-brand .lg{width:20px;height:20px;border-radius:6px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:9px;}
+  .lob-tag{font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);}
+  .lob-ins{display:flex;flex-direction:column;gap:2px;}
+  .lob-ins .k{font-size:11px;color:var(--sub);}
+  .lob-ins .v{font-size:16px;font-weight:700;color:var(--ink);}
+  .lob-fields{background:var(--accent-soft);border-radius:9px;padding:4px 12px;}
+  .lob-fields .ru-frow{border-bottom-color:rgba(0,122,215,.14);}
+  .lob-ft{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--line);font-size:11.5px;color:var(--sub);}
+  .lob-ft .ru-rag i{width:9px;height:9px;}
+  .lob-wrap .ru-caption{font-size:13px;color:var(--ink-soft);margin:12px 0 0;}
+  @media(max-width:860px){.lob-panel{grid-template-columns:1fr;padding:18px;}}
+  .goal-table{margin:8px 0 0;border-top:1px solid rgba(20,60,40,.12);}
+  .goal-table div{display:grid;grid-template-columns:300px minmax(0,1fr);gap:24px;padding:14px 0;border-bottom:1px solid rgba(20,60,40,.12);align-items:baseline;}
+  .goal-table dt{display:flex;align-items:baseline;gap:12px;font-size:15px;font-weight:700;color:var(--ink);}
+  .goal-table .gn{font-family:var(--font-num);font-weight:700;font-size:15px;color:var(--green-bright);min-width:14px;}
+  .goal-table dd{margin:0;font-size:15.5px;line-height:1.5;color:var(--ink-soft);}
+  @media(max-width:720px){.goal-table div{grid-template-columns:1fr;gap:4px;}.goal-table dd{padding-left:26px;}}
+  .pt-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:6px 0 30px;border-bottom:1px solid rgba(20,60,40,.14);}
+  .pt-tabs button{appearance:none;background:none;border:none;border-top:3px solid transparent;text-align:left;padding:16px 20px 16px 0;cursor:pointer;display:flex;flex-direction:column;gap:4px;font-family:var(--font-body);}
+  .pt-tabs button+button{padding-left:20px;border-left:1px solid rgba(20,60,40,.14);}
+  .pt-tabs .nm{font-size:16px;font-weight:700;color:var(--ink-soft);}
+  .pt-tabs .ds{font-size:14px;line-height:1.4;color:var(--ink-faint);}
+  .pt-tabs button[aria-selected="true"]{border-top-color:var(--green-bright);}
+  .pt-tabs button[aria-selected="true"] .nm{color:var(--green);}
+  .pt-tabs button[aria-selected="true"] .ds{color:var(--ink-soft);}
+  .pt-tabs button:hover .nm{color:var(--green);}
+  .pt-mnum{display:none;font-size:13px;font-weight:700;color:var(--green);margin-bottom:6px;}
+  .pt-panel h3{margin:0 0 8px;font-family:var(--font-proj);font-weight:700;font-size:clamp(20px,1.9vw,24px);color:var(--ink);}
+  .pt-txt{margin:0 0 8px;font-size:16px;line-height:1.6;color:var(--ink-soft);text-wrap:pretty;}
+  .pt-notes{grid-template-columns:repeat(2,minmax(0,1fr))!important;margin-bottom:34px;}
+  .pt-fig{margin:28px 0 0;display:flex;flex-direction:column;gap:14px;}
+  .pt-fig figcaption{font-size:13px;color:var(--ink-soft);}
+  .pt-wf{background:#f4f4f2;border:1px solid #dcdcd8;border-radius:12px;padding:20px 22px 40px;display:flex;flex-direction:column;gap:22px;}
+  .wf-head{display:flex;justify-content:space-between;align-items:center;}
+  .wf-bar{display:block;height:12px;border-radius:4px;background:#d6d6d2;}
+  .wf-bar.w40{width:40%;height:16px;}
+  .wf-bar.empty{background:#fff;border:1px dashed #c8c8c4;height:12px;}
+  .wf-btn{width:90px;height:28px;border-radius:6px;background:#cfcfcb;}
+  .wf-tabs{display:flex;gap:8px;align-self:flex-start;}
+  .wf-tabs span{font-size:12.5px;color:#777;padding:6px 12px;border-radius:6px;background:#e6e6e3;}
+  .wf-tabs span.on{background:#fff;color:#444;border:1px solid #d6d6d2;}
+  .wf-body{display:flex;flex-direction:column;gap:30px;}
+  .wf-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px;max-width:62%;}
+  .wf-f{display:flex;flex-direction:column;gap:6px;}
+  .wf-f .l{font-size:12px;color:#777;}
+  .pt-mark{position:relative;}
+  .pt-mark::after{content:'';position:absolute;inset:-12px -16px;border:2px solid #d9443a;border-radius:50%;transform:rotate(-1.5deg);pointer-events:none;opacity:.85;}
+  .pt-note{position:absolute;left:calc(100% + 26px);top:50%;transform:translateY(-50%) rotate(-2deg);font-family:var(--font-hand);font-style:normal;font-size:22px;line-height:1;color:#d9443a;white-space:nowrap;}
+  .pt-tbl-wrap{overflow-x:auto;}
+  .pt-tbl{width:100%;border-collapse:collapse;font-size:14.5px;}
+  .pt-tbl th,.pt-tbl td{padding:11px 14px;text-align:left;border-bottom:1px solid rgba(20,60,40,.14);}
+  .pt-tbl thead th{font-size:13px;font-weight:700;color:var(--ink);border-bottom:1.5px solid rgba(20,60,40,.25);}
+  .pt-tbl tbody th[scope="row"]{font-weight:600;color:var(--ink);}
+  .pt-tbl td{color:var(--ink-soft);text-align:center;}
+  .pt-tbl thead th:nth-child(n+3){text-align:center;}
+  .pt-shared td,.pt-shared th[scope="row"]{background:rgba(21,84,59,.06);}
+  .pt-grp{font-size:12px;font-weight:700;color:var(--green);vertical-align:middle;width:92px;border-right:1px solid rgba(20,60,40,.14);}
+  .pt-ck{color:var(--green);font-weight:700;}
+  .pt-flow{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr) 28px minmax(0,1fr) 28px minmax(0,1fr);align-items:center;margin-top:26px;row-gap:0;}
+  .pt-flow .fn{text-align:center;font-size:14px;font-weight:600;color:var(--ink);padding:12px 8px;border:1.5px solid rgba(20,60,40,.25);border-radius:10px;background:var(--panel);}
+  .pt-flow .fa{text-align:center;color:var(--green);font-size:18px;}
+  .f-loop{grid-column:3 / 5;grid-row:2;margin:0 0 0 50%;height:34px;border:1.5px dashed rgba(21,84,59,.5);border-top:none;border-radius:0 0 14px 14px;position:relative;}
+  .f-loop::after{content:'';position:absolute;right:-6px;top:-2px;border:5px solid transparent;border-bottom:8px solid rgba(21,84,59,.7);border-top:none;}
+  .f-loop span{position:absolute;top:calc(100% + 8px);left:0;white-space:nowrap;font-size:13px;font-weight:600;color:var(--green);}
+  .pt-flow{padding-bottom:30px;}
+  .pt-dec{list-style:none;margin:22px 0 0;padding:0;border-top:1px solid rgba(20,60,40,.14);}
+  .pt-dec li{display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1.4fr);gap:12px;align-items:baseline;padding:16px 0;border-bottom:1px solid rgba(20,60,40,.14);}
+  .pt-dec .pb{font-size:15px;font-weight:600;color:var(--ink);}
+  .pt-dec .ar{color:var(--green);font-size:18px;text-align:center;}
+  .pt-dec .dc{font-size:15px;line-height:1.55;color:var(--ink-soft);}
+  .pt-link{display:inline-block;margin-top:22px;font-size:15px;font-weight:600;color:var(--green);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;}
+  .pt-link:hover{color:var(--ink);}
+  .pt-lab{margin:44px 0 6px;}
+  .pt-close{margin:0;font-family:var(--font-proj);font-weight:700;font-size:clamp(18px,1.7vw,22px);line-height:1.4;color:var(--ink);}
+  @media(max-width:1000px){.wf-grid{max-width:none;}.pt-mark{margin-bottom:38px;}.pt-note{left:-4px;top:calc(100% + 18px);transform:rotate(-2deg);font-size:19px;}.wf-tabs{flex-wrap:wrap;}.wf-body{gap:44px;}}
+  @media(max-width:720px){
+    .pt-panel+.pt-panel{margin-top:44px;padding-top:30px;border-top:1px solid rgba(20,60,40,.14);}
+    .pt-notes{grid-template-columns:1fr!important;}
+    .pt-dec li{grid-template-columns:1fr;gap:6px;}
+    .pt-dec .ar{display:none;}
+    .pt-flow{grid-template-columns:minmax(0,1fr) 16px minmax(0,1fr) 16px minmax(0,1fr) 16px minmax(0,1fr);padding-bottom:52px;}
+    .pt-flow .fn{font-size:12px;padding:10px 4px;}
+    .f-loop span{white-space:normal;width:220px;}
+    .pt-tbl{font-size:13px;}.pt-tbl th,.pt-tbl td{padding:9px 8px;}.pt-grp{width:auto;}
+  }
+  #process .ph-toggle{margin:0 0 30px;white-space:nowrap;width:max-content;}
+  .pt-sub{margin:10px 0 4px;font-family:var(--font-proj);font-weight:700;font-size:clamp(22px,2.1vw,28px);color:var(--ink);}
+  .pt-sub2{margin-top:64px;padding-top:40px;border-top:1px solid rgba(20,60,40,.14);}
+  .pt-subline{margin:0 0 18px;font-size:16px;color:var(--ink-soft);}
+  .pt-tabs.pt-four{grid-template-columns:repeat(5,minmax(0,1fr));}
+  .pt-n3{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+  .pt-panel>.ph{margin-top:8px;}
+  .pt-n6{grid-template-columns:repeat(3,minmax(0,1fr))!important;align-items:start;}
+  .pt-n6 li.aim{background:#d8efd9!important;color:#1f4a32;font-family:var(--font-hand);font-size:27px;line-height:1.15;padding:30px 24px 32px;transform:rotate(1.6deg) scale(1.05);}
+  .pt-n6 li.aim:hover{transform:rotate(0deg) scale(1.05) translateY(-4px);}
+  .pw-label{margin:6px 0 0;font-family:var(--font-hand);font-size:27px;color:var(--ink-soft);}
+  .pw-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;margin-top:22px;padding:6px 4px 10px;}
+  .pw-card{position:relative;margin:0;background:#fff;padding:12px 12px 34px;border-radius:3px;box-shadow:0 12px 26px -14px rgba(30,40,35,.45);transition:transform .25s ease,box-shadow .25s ease;}
+  .pw-card::before{content:'';position:absolute;top:-9px;left:50%;transform:translateX(-50%) rotate(-2deg);width:70px;height:20px;background:rgba(245,238,205,.8);border:1px solid rgba(60,50,20,.1);z-index:1;}
+  .pw-card:nth-child(1){transform:rotate(-2.4deg);}.pw-card:nth-child(2){transform:rotate(1.8deg);}.pw-card:nth-child(3){transform:rotate(-1deg);}.pw-card:nth-child(4){transform:rotate(2.8deg);}
+  .pw-photo{aspect-ratio:4/3;overflow:hidden;background:#f4f4f1;}
+  .pw-mix{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto auto;gap:34px 30px;align-items:center;padding:14px 8px 16px;}
+  .pw-mix .pw-c1{grid-column:1;grid-row:1;}.pw-mix .pw-c2{grid-column:1;grid-row:2;}.pw-mix .pw-c3{grid-column:2;grid-row:1/3;}.pw-mix .pw-c4{grid-column:3;grid-row:1/3;}
+  .pw-mix .pw-p .pw-photo{aspect-ratio:auto;}.pw-mix .pw-l .pw-photo{aspect-ratio:auto;}
+  .pw-mix .pw-photo img{height:auto;object-fit:initial;}
+  .pw-photo img{display:block;width:100%;height:100%;object-fit:cover;}
+  .pw-empty{height:100%;box-sizing:border-box;border:2px dashed rgba(21,84,59,.42);background:#eef5ef;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;}
+  .pw-empty span{font-family:var(--font-num);font-weight:700;font-size:10.5px;letter-spacing:.12em;background:var(--green);color:#fff;padding:4px 10px;border-radius:999px;}
+  .pw-empty span,.pw-empty b{white-space:nowrap;flex:none;width:max-content;}
+  .pw-empty b{font-size:14px;color:var(--ink-soft);font-weight:600;}
+  .pw-card.has-img{cursor:zoom-in;}
+  @media(hover:hover) and (min-width:901px){.pw-card.has-img:hover{transform:rotate(0deg) translateY(-6px);box-shadow:0 22px 36px -16px rgba(30,40,35,.5);z-index:2;}}
+  .pw-cap{margin:18px 0 0;font-size:13px;color:var(--ink-soft);}
+  .pw-lb{position:fixed;inset:0;z-index:1000;background:rgba(15,20,18,.9);display:flex;align-items:center;justify-content:center;padding:40px 70px;}
+  .pw-lb[hidden]{display:none;}
+  .pw-lb img{max-width:100%;max-height:100%;object-fit:contain;}
+  .pw-lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:48px;height:48px;border-radius:50%;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .pw-lb button:hover{background:rgba(255,255,255,.24);}
+  .pw-lb .x{top:18px;right:18px;}.pw-lb .pv{left:14px;top:50%;margin-top:-24px;}.pw-lb .nx{right:14px;top:50%;margin-top:-24px;}
+  @media(max-width:900px){.pt-n6{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.pw-row{grid-template-columns:repeat(2,minmax(0,1fr));}.pw-mix{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;}.pw-mix .pw-card{grid-column:auto!important;grid-row:auto!important;}}
+  @media(max-width:620px){.pt-n6{grid-template-columns:1fr!important;}.pw-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:20px;padding:14px 4px 16px;}.pw-card{flex:0 0 78%;scroll-snap-align:center;}.pw-lb{padding:60px 12px;}}
+  .sk-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:26px;}
+  .sk-card{margin:0;display:flex;flex-direction:column;gap:16px;min-width:0;}
+  .sk{position:relative;min-height:250px;box-sizing:border-box;padding:18px 16px 16px;background:#fff;background-image:linear-gradient(rgba(60,90,80,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(60,90,80,.07) 1px,transparent 1px);background-size:18px 18px;border:2px solid var(--ink);border-radius:14px 6px 12px 5px/6px 12px 5px 14px;font-family:var(--font-hand);color:var(--ink);font-size:19px;line-height:1.1;box-shadow:0 12px 24px -18px rgba(30,40,35,.5);}
+  .sk-card:nth-child(1) .sk{transform:rotate(-.6deg);}.sk-card:nth-child(2) .sk{transform:rotate(.5deg);}.sk-card:nth-child(3) .sk{transform:rotate(-.4deg);}
+  .sk-n{position:absolute;top:-11px;right:-11px;width:22px;height:22px;border-radius:50%;background:#c2412d;color:#fff;font-family:var(--font-num);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1;}
+  .sk-bar{display:flex;flex-wrap:wrap;gap:7px;}
+  .sk-chip{position:relative;border:1.8px solid var(--ink);border-radius:999px 880px 999px 900px;padding:3px 10px;background:#fff;}
+  .sk-chip.on{background:#fbeeb8;}
+  .sk-dd{margin-top:8px;width:58%;display:flex;flex-direction:column;gap:6px;border:1.8px solid var(--ink);border-radius:6px 10px 5px 9px;padding:10px 12px;background:#fff;}
+  .sk-dd>span{position:relative;display:flex;align-items:center;gap:7px;}
+  .sk-cb{width:12px;height:12px;border:1.6px solid var(--ink);border-radius:2px;flex:none;}
+  .sk-cb.x{background:linear-gradient(45deg,transparent 42%,var(--ink) 42% 58%,transparent 58%),linear-gradient(-45deg,transparent 42%,var(--ink) 42% 58%,transparent 58%);}
+  .sk-dd .sk-btn{align-self:flex-start;margin-top:3px;border:1.8px solid var(--ink);border-radius:5px 8px 5px 7px;padding:2px 12px;background:#e3efe6;}
+  .sk-ann{position:absolute;margin:0;color:#c2412d;font-family:var(--font-hand);font-size:19px;line-height:1.05;}
+  .sk-arw{position:absolute;color:#c2412d;overflow:visible;}
+  .sk-a1{right:14px;bottom:14px;width:38%;text-align:right;}
+  .sk-r1{right:28%;top:40px;width:26%;height:auto;}
+  .sk-tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:1.8px solid var(--ink);}
+  .sk-tabs span{padding:3px 8px;border:1.8px solid var(--ink);border-bottom:0;border-radius:7px 9px 0 0;background:#fff;font-size:17px;}
+  .sk-tabs .on{background:#fbeeb8;}
+  .sk-tabs .sk-ring{outline:2px solid #c2412d;outline-offset:3px;border-radius:9px 12px 0 0;}
+  .sk-body{display:flex;flex-direction:column;gap:10px;padding:14px 4px 0;width:52%;}
+  .sk-body i{display:block;height:2px;background:var(--ink);opacity:.55;border-radius:2px;}.sk-body i.s{width:62%;}
+  .sk-a2{right:14px;top:78px;width:40%;}
+  .sk-a3{right:14px;bottom:14px;width:48%;text-align:right;}
+  .sk-r2{left:30%;top:52px;width:24%;height:auto;}
+  .sk-pages{display:flex;flex-direction:column;gap:12px;}
+  .sk-pg{position:relative;border:1.8px solid var(--ink);border-radius:6px 9px 5px 8px;padding:18px 10px 10px;background:#fff;display:flex;flex-direction:column;gap:6px;}
+  .sk-lbl{position:absolute;top:-2px;left:8px;font-size:14px;color:var(--ink-soft);}
+  .sk-hd{display:flex;align-items:center;flex-wrap:wrap;gap:6px;justify-content:space-between;}
+  .sk-crumb{position:relative;font-size:16px;text-decoration:underline dotted;}
+  .sk-srch{position:relative;border:1.6px solid var(--ink);border-radius:999px;padding:1px 10px;font-size:16px;}
+  .sk-vw{display:flex;gap:3px;}.sk-vw i{width:13px;height:13px;border:1.6px solid var(--ink);border-radius:2px;}
+  .sk-tb{border:1.6px solid var(--ink);border-bottom:0;border-radius:5px 5px 0 0;padding:0 7px;font-size:15px;}
+  .sk-low{align-self:flex-start;}
+  .sk-pages .sk-a4{position:static;align-self:flex-end;}
+  .sk-card figcaption{display:flex;flex-direction:column;gap:6px;}
+  .sk-t{font-family:var(--font-hand);font-size:25px;color:var(--ink);line-height:1.1;}
+  .sk-d{font-size:15px;line-height:1.55;color:var(--ink-soft);text-wrap:pretty;}
+  @media(max-width:1000px){.sk-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+  @media(max-width:620px){.sk-grid{grid-template-columns:1fr;}}
+  .pw-one{display:block;padding:14px 10px 6px;}
+  .pw-one .pw-card{transform:rotate(-.5deg);max-width:100%;}
+  .pw-one .pw-photo{aspect-ratio:auto;}.pw-one .pw-photo img{height:auto;object-fit:initial;}
+  .jr-steps{list-style:none;counter-reset:jr;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;}
+  .jr-steps li{counter-increment:jr;display:flex;flex-direction:column;gap:6px;padding-top:14px;border-top:2px solid var(--green);}
+  .jr-steps li::before{content:counter(jr,decimal-leading-zero);font-family:var(--font-num);font-size:12px;font-weight:700;color:var(--green);letter-spacing:.06em;}
+  .jr-steps b{font-size:16px;color:var(--ink);}
+  .jr-steps span{font-size:14.5px;line-height:1.55;color:var(--ink-soft);text-wrap:pretty;}
+  .jr-gl{margin-top:14px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:22px;}
+  .jr-gl-ticks{grid-column:1/4;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:22px;}
+  .jr-gl-ticks i{display:block;justify-self:center;width:2px;height:22px;background:repeating-linear-gradient(var(--green) 0 4px,transparent 4px 8px);position:relative;}
+  .jr-gl-ticks i::before{content:'';position:absolute;top:-2px;left:50%;margin-left:-5px;border:5px solid transparent;border-bottom:7px solid var(--green);border-top:0;}
+  .jr-gl-box{grid-column:1/4;border:1.8px dashed var(--green);border-radius:12px;background:#eef5ef;padding:16px 20px;display:flex;flex-direction:column;gap:8px;}
+  .jr-gl-tag{align-self:flex-start;font-family:var(--font-num);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--green);padding:4px 10px;border-radius:999px;}
+  .jr-gl-box p{margin:0;font-size:15px;line-height:1.6;color:var(--ink-soft);text-wrap:pretty;}
+  @media(max-width:1000px){.jr-gl{grid-template-columns:1fr;}.jr-gl-ticks{display:none;}.jr-gl-box{grid-column:1;}}
+  @media(max-width:1000px){.jr-steps{grid-template-columns:repeat(2,minmax(0,1fr));}}
+  @media(max-width:620px){.jr-steps{grid-template-columns:1fr;}.pw-one{display:block;overflow:visible;}.pw-one .pw-card{flex:none;}}
+  .sk2-ph{aspect-ratio:16/9;height:auto;}
+  .sk2-grid{margin-top:16px;}.sk2-lab{margin-top:34px;}.sk2-txt{margin-top:34px;}
+  .pt-tabs-wrap{position:relative;}
+  @media(max-width:1000px){.pt-tabs.pt-four{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;}.pt-tabs.pt-four::-webkit-scrollbar{display:none;}.pt-tabs.pt-four button{flex:0 0 auto;white-space:nowrap;padding-right:22px;}.pt-tabs-wrap::after{content:"";position:absolute;top:0;right:0;bottom:0;width:56px;pointer-events:none;background:linear-gradient(90deg,rgba(251,248,241,0),var(--panel));transition:opacity .2s;}.pt-tabs-wrap.at-end::after{opacity:0;}}
+  .sk2-wide{grid-column:span 2;}
+  .sk2-h{font-size:21px;font-weight:700;}
+  .sk2-btn{align-self:flex-start;border:1.8px solid var(--ink);border-radius:5px 8px 5px 7px;padding:2px 12px;background:#e3efe6;}
+  .sk2-wb{display:grid;grid-template-columns:.55fr 2fr 1.2fr;gap:12px;}
+  .sk2-list{display:flex;flex-direction:column;gap:8px;border-right:1.8px solid var(--ink);padding-right:10px;}
+  .sk2-list i{display:block;height:26px;border:1.6px solid var(--ink);border-radius:4px;}.sk2-list i.on{background:#fbeeb8;}
+  .sk2-main{display:flex;flex-direction:column;gap:10px;min-width:0;}
+  .sk2-tbl{display:flex;flex-direction:column;gap:9px;border:1.6px solid var(--ink);border-radius:4px;padding:10px;}
+  .sk2-tbl i{display:block;height:2px;background:var(--ink);opacity:.5;}
+  .sk2-side{display:flex;flex-direction:column;gap:7px;border-left:1.8px solid var(--ink);padding-left:10px;}
+  .sk2-alert{color:#c2412d;font-size:17px;}
+  .sk2-g{display:flex;align-items:center;gap:6px;border:1.6px solid var(--ink);border-radius:4px;padding:3px 6px;font-size:16px;}
+  .sk2-g i,.sk2-dot{width:10px;height:10px;border-radius:2px;flex:none;display:inline-block;}
+  .sk2-g i.r,.sk2-dot.r{background:#d9534f;}.sk2-g i.g,.sk2-dot.g{background:#4caf6e;}.sk2-g i.o{background:#e9a23b;}
+  .sk2-rule{display:flex;flex-direction:column;gap:12px;}
+  .sk2-row{display:flex;align-items:center;flex-wrap:wrap;gap:6px;}
+  .sk2-f{display:inline-flex;align-items:center;gap:6px;border:1.6px solid var(--ink);border-radius:4px;padding:2px 8px;background:#fff;}
+  .sk2-fb{display:inline-block;}
+  .sk2-flt{margin-top:8px;display:grid;grid-template-columns:.9fr 1.2fr;border:1.8px solid var(--ink);border-radius:6px 10px 5px 9px;background:#fff;}
+  .sk2-cats{display:flex;flex-direction:column;border-right:1.6px solid var(--ink);}
+  .sk2-cats span{padding:5px 10px;border-bottom:1px dashed rgba(44,55,51,.4);}.sk2-cats span.on{background:#fbeeb8;}
+  .sk2-opts{display:flex;flex-direction:column;gap:6px;padding:8px 10px;}
+  .sk2-opts>span{display:flex;align-items:center;gap:7px;}
+  .sk2-sb{display:grid;grid-template-columns:1.3fr 1fr;gap:12px;}
+  .sk2-sb .sk-body{width:100%;padding-top:4px;}
+  .sk2-rail{display:flex;flex-direction:column;gap:6px;border-left:1.8px solid var(--ink);padding-left:10px;}
+  .sk2-rail span.on{font-weight:700;text-decoration:underline;}
+  .sk2-note{border:1.4px solid var(--ink);border-radius:3px;padding:3px 6px;font-size:15px;background:#fbeeb8;}
+  .sk2-r{display:flex;align-items:center;gap:6px;}
+  .sk2-fix .sk-crumb{white-space:nowrap;font-size:15px;}
+  .sk2-row>span{white-space:nowrap;}
+  .sk2-tabrow{display:flex;gap:4px;margin-top:4px;}
+  @media(max-width:1000px){.sk2-wide{grid-column:1/-1;}}
+  @media(max-width:620px){.sk2-wb{grid-template-columns:1fr 1fr;}.sk2-list{display:none;}}
+  .dc-choice{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:30px;}
+  .dc-card{position:relative;border-radius:16px;padding:24px 24px 26px;border:1.5px solid rgba(20,60,40,.14);background:var(--panel-2);display:flex;flex-direction:column;gap:8px;}
+  .dc-card h3{margin:6px 0 0;font-family:var(--font-proj);font-weight:700;font-size:20px;color:var(--ink);}
+  .dc-card p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-soft);text-wrap:pretty;}
+  .dc-tag{align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;}
+  .dc-card.no{}.dc-card.no .dc-tag{background:rgba(44,55,51,.1);color:var(--ink);}.dc-card.no h3{color:var(--ink-soft);}
+  .dc-card.yes{border:2px solid var(--green-bright);background:#fff;box-shadow:0 14px 30px -20px rgba(21,84,59,.45);}.dc-card.yes .dc-tag{background:var(--green-bright);color:#fff;}
+  .dc-rows{margin-top:36px;border-top:1px solid rgba(20,60,40,.14);}
+  .dc-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:32px;align-items:center;padding:24px 0;border-bottom:1px solid rgba(20,60,40,.14);}
+  .dc-k{display:block;font-size:13px;font-weight:700;color:var(--green);margin-bottom:6px;}
+  .dc-lab p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-soft);}
+  .dc-strip{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;row-gap:10px;}
+  .dc-strip>li{display:flex;align-items:center;font-size:14px;font-weight:600;color:var(--ink);background:#fff;border:1.5px solid rgba(20,60,40,.2);border-radius:999px;padding:7px 14px;white-space:nowrap;}
+  .dc-strip>li+li{margin-left:26px;position:relative;}
+  .dc-strip>li+li::before{content:'→';position:absolute;left:-20px;color:var(--green);font-weight:700;}
+  .dc-strip>li.dc-clr{padding:0;border:0;background:none;margin-left:0;overflow:hidden;max-width:0;opacity:0;transition:max-width .4s ease,opacity .3s ease,margin .4s ease;}
+  .dc-strip>li.dc-clr::before{opacity:0;}
+  .dc-strip>li.dc-clr span{display:block;background:#e6f4ec;border:1.5px solid var(--green-bright);color:var(--green);border-radius:999px;padding:7px 14px;}
+  .dc-strip.on>li.dc-clr{max-width:220px;opacity:1;margin-left:26px;overflow:visible;}.dc-strip.on>li.dc-clr::before{opacity:1;}
+  .dc-tags{display:flex;flex-wrap:wrap;gap:10px;}
+  .dc-tags span{font-size:14px;color:var(--ink-soft);background:#fff;border:1.5px solid rgba(20,60,40,.2);border-radius:8px;padding:7px 12px;}.dc-tags b{color:var(--ink);}
+  .dc-tg{display:flex;align-items:center;flex-wrap:wrap;gap:12px;}
+  .dc-sw{appearance:none;border:0;width:48px;height:28px;border-radius:999px;background:rgba(44,55,51,.25);position:relative;cursor:pointer;transition:background .25s;flex:none;}
+  .dc-knob{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .25s ease;}
+  .dc-sw[aria-checked="true"]{background:var(--green-bright);}.dc-sw[aria-checked="true"] .dc-knob{transform:translateX(20px);}
+  .dc-sw:focus-visible{outline:2px solid var(--green);outline-offset:3px;}
+  .dc-tg label{font-size:15px;font-weight:600;color:var(--ink);cursor:pointer;}
+  .dc-state{font-size:13px;font-weight:700;color:var(--ink-soft);min-width:24px;}
+  .dc-try{font-family:var(--font-hand);font-size:22px;color:var(--green);}
+  #strategy .pt-end{margin-top:30px;}
+  @media(prefers-reduced-motion:reduce){.dc-strip>li.dc-clr,.dc-knob,.dc-sw{transition:none;}}
+  @media(max-width:720px){.dc-choice{grid-template-columns:1fr;}.dc-row{grid-template-columns:1fr;gap:14px;}}
+  .acc-h-tag{display:flex;align-items:center;flex-wrap:wrap;gap:10px;}
+  .acc-opt{font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--green);border:1.5px solid var(--green);border-radius:999px;padding:3px 10px;}
+  .stp-line{margin:0 0 18px;}
+  .learn-diff{margin:34px 0 30px;padding-top:22px;border-top:1px solid rgba(20,60,40,.18);}
+  .learn-diff p{margin:0;font-size:16px;line-height:1.6;color:var(--ink-soft);}
+  .learn-diff .learn-diff-lab{margin-bottom:8px;font-size:13px;font-weight:700;color:var(--green);}
+  .rx-tests{list-style:none;margin:30px 0 0;padding:0;border-top:1px solid rgba(20,60,40,.14);}
+  .rx-tests li{display:grid;grid-template-columns:34px minmax(0,.8fr) minmax(0,1.6fr);gap:18px 22px;align-items:start;padding:22px 0;border-bottom:1px solid rgba(20,60,40,.14);}
+  .rx-ck{width:28px;height:28px;border-radius:50%;background:var(--green-bright);color:#fff;display:flex;align-items:center;justify-content:center;}.rx-ck svg{width:15px;height:15px;}
+  .rx-tests h3{margin:2px 0 0;font-family:var(--font-proj);font-weight:700;font-size:18px;color:var(--ink);}
+  .rx-tests p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-soft);text-wrap:pretty;}
+  .rx-ph{background:#fbeeb8;color:var(--ink);border-radius:4px;padding:0 4px;font-weight:600;}
+  #impact .appr-intro a{color:var(--green)!important;font-weight:600;text-decoration:underline!important;text-underline-offset:3px;}#impact .appr-intro a:hover{color:var(--green-deep)!important;}
+  .rx-lab{margin:40px 0 14px;font-size:13px;font-weight:700;color:var(--green);}
+  .rx-stats{margin:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px 26px;}
+  @media(max-width:1000px){.rx-stats{grid-template-columns:repeat(6,minmax(0,1fr));}.rx-stats div{grid-column:span 2;}.rx-stats div:nth-child(n+4){grid-column:span 3;}}
+  .rx-stats div{display:flex;flex-direction:column;gap:4px;padding-top:12px;border-top:1px solid rgba(20,60,40,.18);}
+  .rx-stats dt{font-family:var(--font-proj);font-weight:700;font-size:22px;color:var(--green);line-height:1.2;}
+  .rx-stats dd{margin:0;font-size:13.5px;line-height:1.45;color:var(--ink-soft);}
+  @media(max-width:720px){.rx-tests li{grid-template-columns:34px minmax(0,1fr);}.rx-tests p{grid-column:2;}.rx-stats{grid-template-columns:repeat(2,minmax(0,1fr));}.rx-stats div,.rx-stats div:nth-child(n+4){grid-column:auto;}}
+  .how-list{margin:4px 0 26px;padding-left:22px;display:flex;flex-direction:column;gap:8px;}
+  .how-list li{font-size:16px;line-height:1.6;color:var(--ink-soft);padding-left:4px;}
+  .how-list li::marker{color:var(--green);font-weight:700;}
+  .stp-tagrow{display:flex;align-items:center;flex-wrap:wrap;gap:10px;}
+  .why-note{margin:20px 0 24px;padding:12px 18px;border-left:3px solid var(--green-bright);background:rgba(0,137,83,.05);}
+  .why-note a,.ru-cap a,p.ru-cap a[href]{color:var(--green)!important;text-decoration:underline!important;font-weight:600;text-decoration:underline;text-underline-offset:3px;}.why-note a:hover{color:var(--green-deep);}
+  .why-note p{margin:0;font-size:16px;line-height:1.6;color:var(--ink);}
+  .pt-gap{margin-top:28px;}
+  .pt-end{margin:26px 0 0;font-size:16px;line-height:1.6;font-weight:600;color:var(--ink);}
+  .pt-lv{margin:18px 0 30px;border-top:1px solid rgba(20,60,40,.14);}
+  .pt-lv div{display:grid;grid-template-columns:160px minmax(0,1fr);gap:20px;padding:13px 0;border-bottom:1px solid rgba(20,60,40,.14);}
+  .pt-lv dt{font-size:15px;font-weight:700;color:var(--ink);}
+  .pt-lv dd{margin:0;font-size:15px;line-height:1.5;color:var(--ink-soft);}
+  .pb-tl{list-style:none;margin:22px 0 36px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));}
+  .pb-tl li{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:0 8px;}
+  .pb-tl .n{position:relative;z-index:1;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--green-bright);color:#fff;font-weight:700;font-size:16px;}
+  .pb-tl .t{font-size:15px;font-weight:600;color:var(--ink);}
+  .pb-tl li:not(:last-child)::after{content:'';position:absolute;top:19px;left:calc(50% + 30px);right:calc(-50% + 34px);height:2px;background:var(--green-bright);opacity:.4;}
+  .pb-tl li:not(:last-child)::before{content:'';position:absolute;top:14px;right:calc(-50% + 27px);border:5px solid transparent;border-left:8px solid var(--green-bright);opacity:.7;}
+  .pb-rows{display:flex;flex-direction:column;border-top:1px solid rgba(20,60,40,.14);}
+  .pb-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:40px;padding:28px 0;border-bottom:1px solid rgba(20,60,40,.14);align-items:start;}
+  .pb-k{display:block;font-size:14px;font-weight:700;color:var(--green);margin-bottom:8px;}
+  .pb-txt p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-soft);}
+  .pb-media{display:flex;flex-direction:column;gap:22px;}
+  .pb-media .pt-link{margin-top:0;}
+  @media(max-width:1000px){.pt-n3{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.pt-tabs.pt-four .ds{font-size:13px;}}
+  @media(max-width:720px){.pt-n3{grid-template-columns:1fr!important;}.pb-row{grid-template-columns:1fr;gap:18px;}.pt-lv div{grid-template-columns:1fr;gap:4px;}.pb-tl{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px;}.pb-tl li:nth-child(2)::after,.pb-tl li:nth-child(2)::before{display:none;}}
 </style></head>
 <body>
 
@@ -617,146 +1052,184 @@
     <!-- HERO -->
     <section class="panel case-hero" data-screen-label="Hero">
       <div class="crumb">
-        <a class="crumb-parent" href="enterprise-platform.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>The System Behind the Underwriter's Day</a>
+        <a class="crumb-parent" href="enterprise-platform.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>The platform overview</a>
         <a class="crumb-home" href="index.html" aria-label="Portfolio home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg></a>
       </div>
-      <h1 class="proj">Pre-bind · Submission intake</h1>
-      <p class="headline">I didn't build a feature. I built the foundation every LOB runs on.</p>
-
-      <div class="exec-card" aria-label="Executive summary">
-        <div class="ex-row"><span class="ex-tag">Role &amp; Ownership</span><p class="ex-txt">Lead Product Designer — owned <strong>0→1 flow architecture, AI ingestion &amp; workbench systems</strong> end-to-end.</p></div>
-        <div class="ex-row"><span class="ex-tag">The Challenge</span><p class="ex-txt">Underwriters manually triaged multi-page PDFs across <strong>8+ legacy tools</strong> with zero centralized risk visibility.</p></div>
-        <div class="ex-row"><span class="ex-tag">The Solution</span><p class="ex-txt">Designed a <strong>two-stage automated intake and risk-assessment workbench</strong> for Aviation, Marine, and Construction lines of business.</p></div>
-      </div>
-
-      <div class="metric-row">
-        <div class="metric-card"><div class="num">92%</div><div class="lab">Manual work reduced</div></div>
-        <div class="metric-card"><div class="num">2.5×</div><div class="lab">More submissions / day</div></div>
-        <div class="metric-card"><div class="num">5 LOBs</div><div class="lab">One base system I designed</div></div>
-      </div>
-
-      <div class="ru-window" style="min-height:520px;" aria-hidden="true">
-        <div class="ru-app">
-          <div class="ru-sidebar">
-            <div class="ru-brand"><span class="lg">RL</span><span class="nm">RiskLane</span></div>
-            <div class="ru-nav">
-              <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Dashboard</a>
-              <a class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Submissions</a>
-              <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Clearance</a>
-              <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/></svg>Guidelines</a>
-              <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 0 1-4 0v-.1A1.6 1.6 0 0 0 7 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1A2 2 0 1 1 2.3 17l.1-.1A1.6 1.6 0 0 0 1.3 14H1a2 2 0 0 1 0-4h.1A1.6 1.6 0 0 0 2.7 7a1.6 1.6 0 0 0-.3-1.8l-.1-.1A2 2 0 1 1 5 2.3l.1.1A1.6 1.6 0 0 0 7 2.7h.1A1.6 1.6 0 0 0 8 1.3V1a2 2 0 0 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1 1.6 1.6 0 0 0 1.8.3l.1-.1A2 2 0 1 1 21.7 5l-.1.1a1.6 1.6 0 0 0-.3 2.7V8a1.6 1.6 0 0 0 1.4 1.6H21a2 2 0 0 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg>Settings</a>
-            </div>
-            <div class="ru-side-foot"><span class="av">EU</span><div class="tx"><div>Erin Uy</div><div>Underwriter</div></div></div>
+      <span class="role-badge">Case study 1 of 2 · Pre-bind workflow</span>
+      <h1 class="proj">One workflow for every line of business</h1>
+      <p class="subline">The submission workflow was built only for Marine. As Aviation, Construction and PV&amp;T came on board, I redesigned it as one base that any line of business or client can configure.</p>
+      <p class="hero-scope">My scope: the shared workflow, submission intake, guidelines, workbench, quote and bind</p>
+      <div class="lob-wrap">
+        <p class="lob-label">Same base. Configured per line.</p>
+        <div class="ru-panel lob-panel" aria-hidden="true">
+          <div class="lob-card">
+            <div class="lob-top"><span class="lob-brand"><span class="lg">RL</span>RiskLane</span><span class="lob-tag">Marine</span></div>
+            <div class="lob-ins"><span class="k">Insured</span><span class="v">Harbour Marine</span></div>
+            <div class="lob-fields"><div class="ru-frow"><span class="k">Vessels</span><span class="v">6</span></div><div class="ru-frow"><span class="k">Vessel type</span><span class="v">Bulk carrier</span></div><div class="ru-frow"><span class="k">Flag</span><span class="v">Panama</span></div></div>
+            <div class="lob-ft"><span class="k">Guidelines</span><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-x"></i></span></div>
           </div>
-          <div class="ru-main">
-            <div class="ru-topbar">
-              <div class="ru-crumb">Dashboard <span>/ Submissions</span></div>
-              <div class="ru-tb-right"><div class="ru-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Search submissions</div><button class="ru-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="width:12px;height:12px;"><path d="M12 5v14M5 12h14"/></svg>New submission</button><div class="ru-avatar">EU</div></div>
-            </div>
-            <div class="ru-content">
-              <h3 class="ru-page-h">Submissions</h3>
-              <p class="ru-page-sub">Broker inbox to bound policy, in one unified view.</p>
-              <div class="ru-card-shell">
-                <div class="ru-board">
-                  <div class="ru-col"><div class="ru-col-head"><span class="dot" style="background:#2c2f34;"></span><span class="t">Inbox</span><span class="n">4</span></div>
-                    <div class="ru-card"><div class="nm">Meridian Airways</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c1">JW</span></div></div>
-                    <div class="ru-card"><div class="nm">Pacific Air Co</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c1">JW</span></div></div>
-                  </div>
-                  <div class="ru-col"><div class="ru-col-head"><span class="dot" style="background:var(--amber);"></span><span class="t">UW Review</span><span class="n">3</span></div>
-                    <div class="ru-card"><div class="nm">Atlantic Shippers</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-x"></i><i class="ru-x"></i></span><span class="ru-init c2">JW</span></div></div>
-                    <div class="ru-card"><div class="nm">Meridian Airways</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c2">JW</span></div></div>
-                  </div>
-                  <div class="ru-col"><div class="ru-col-head"><span class="dot" style="background:var(--blue);"></span><span class="t">Quoted</span><span class="n">2</span></div>
-                    <div class="ru-card"><div class="nm">Pacific Air Co</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c3">JW</span></div></div>
-                    <div class="ru-card"><div class="nm">Meridian Airways</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-x"></i></span><span class="ru-init c3">JW</span></div></div>
-                  </div>
-                  <div class="ru-col"><div class="ru-col-head"><span class="dot" style="background:var(--emerald);"></span><span class="t">Bound</span><span class="n">3</span></div>
-                    <div class="ru-card"><div class="nm">Atlantic Shippers</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c4">JW</span></div></div>
-                    <div class="ru-card"><div class="nm">Meridian Airways</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="ft"><span class="ru-rag"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></span><span class="ru-init c4">JW</span></div></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="lob-card">
+            <div class="lob-top"><span class="lob-brand"><span class="lg">RL</span>RiskLane</span><span class="lob-tag">Aviation</span></div>
+            <div class="lob-ins"><span class="k">Insured</span><span class="v">Meridian Airways</span></div>
+            <div class="lob-fields"><div class="ru-frow"><span class="k">Aircraft</span><span class="v">14</span></div><div class="ru-frow"><span class="k">Fleet type</span><span class="v">Commercial jet</span></div><div class="ru-frow"><span class="k">Avg age</span><span class="v">9 years</span></div></div>
+            <div class="lob-ft"><span class="k">Guidelines</span><span class="ru-rag"><i class="ru-g"></i><i class="ru-x"></i><i class="ru-r"></i></span></div>
+          </div>
+          <div class="lob-card">
+            <div class="lob-top"><span class="lob-brand"><span class="lg">RL</span>RiskLane</span><span class="lob-tag">Construction</span></div>
+            <div class="lob-ins"><span class="k">Insured</span><span class="v">Skyline Construction</span></div>
+            <div class="lob-fields"><div class="ru-frow"><span class="k">Projects</span><span class="v">3</span></div><div class="ru-frow"><span class="k">Contract value</span><span class="v">$42M</span></div><div class="ru-frow"><span class="k">Duration</span><span class="v">18 months</span></div></div>
+            <div class="lob-ft"><span class="k">Guidelines</span><span class="ru-rag"><i class="ru-o"></i><i class="ru-x"></i><i class="ru-x"></i></span></div>
           </div>
         </div>
+        <p class="ru-caption">Interface recreated with sample data. Product name and colours changed for confidentiality.</p>
       </div>
-      <p class="ru-cap">Submission workflow — from broker inbox to bound policy in one unified view. <b>Three RAG dots per card</b> let an underwriter read risk at a glance.</p>
-
     </section>
 
     <!-- 01 THE PROBLEM -->
     <section class="panel reveal" id="problem" data-screen-label="01 The Problem">
-      <span class="eyebrow-num">01 — The Problem</span>
-      <h2 class="sec-title">Underwriters were doing two jobs. They should only be doing one</h2>
-      <p class="sub-label">The old reality</p>
-      <ul class="bullets warn">
-        <li>Every submission arrived as 3–5 separate files — Excel for policy details, PDF for schedules, email threads for context.</li>
-        <li>Underwriters manually assembled all documents before they could begin risk assessment.</li>
-        <li>Identifying missing critical data meant opening every document individually — across 10+ files.</li>
-        <li>No single place to see the full picture of a risk.</li>
-        <li>Half a day lost per submission to admin — before any actual underwriting began.</li>
-        <li>High chance of missing crucial information — no system to flag it.</li>
-        <li>Unable to process more than a handful of submissions per day.</li>
-      </ul>
-      <div class="insight-grid two" style="margin-top:24px;">
-        <div class="insight"><div class="k">The Cost</div><p>40% of every underwriter's day was lost to non-value-added administrative work — before a single risk decision was made.</p></div>
-        <div class="insight"><div class="k">The Gap</div><p>No intelligence to flag concerns. No structure to guide decisions. Just documents and an expert trying to make sense of them — manually, every time.</p></div>
+      <span class="eyebrow-num">01 · The problem</span>
+      <h2 class="sec-title">The workflow worked, but only for Marine.</h2>
+      <p class="appr-intro">It already turned emails, PDFs and spreadsheets into one submission. The problem was that every part of it was built around one line of business.</p>
+      <div class="jobs">
+        <div class="job">
+          <p class="conseq-link job-t">What we had</p>
+          <ul class="notes job-notes">
+            <li>One submission flow, designed around Marine data and terms.</li>
+            <li>Every screen assumed a single line of business.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <p class="conseq-link job-t">What was coming</p>
+          <ul class="notes job-notes">
+            <li class="job-green">Aviation, Construction and PV&amp;T, each with its own data, terms and steps.</li>
+            <li class="job-green">Several clients per line, each working their own way.</li>
+            <li class="job-green">Some clients had extra steps, like a separate clearance team.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="conseq-link">What it added up to</p>
+      <div class="conseq conseq-one">
+        <div class="conseq-card">
+          <div class="k">The cost</div>
+          <p class="big">A rebuild for every new line</p>
+          <p>Each new line would have meant a new design and a new build. Clients using more than one line would have had to learn a different product each time.</p>
+        </div>
       </div>
     </section>
 
-    <!-- 02 THE STRATEGY -->
-    <section class="panel reveal" id="strategy" data-screen-label="02 The Strategy">
-      <span class="eyebrow-num">02 — The Strategy</span>
-      <h2 class="sec-title">One system. Every LOB. Every client</h2>
-      <p class="lead-line">"If we built this for Aviation alone, we'd rebuild it for every new LOB. That's not a product — that's a cost centre."</p>
-      <div class="arch-layers">
-        <div class="layer">
-          <div class="lhead"><h4>Layer 1 — Base horizontal workflow</h4><span class="lpct">75% shared</span></div>
-          <p>One common user journey from submission entry to policy bind. Works identically across Aviation, Marine, Construction, Property, and PVT. Designed once. Deployed everywhere.</p>
-        </div>
-        <div class="layer">
-          <div class="lhead"><h4>Layer 2 — LOB customisation</h4><span class="lpct">Configurable</span></div>
-          <p>Label changes, column headings, sector-specific data fields, additional cards per LOB. No redesign. Configuration only.</p>
-        </div>
-        <div class="layer">
-          <div class="lhead"><h4>Layer 3 — Client customisation</h4><span class="lpct">Configurable</span></div>
-          <p>Feature toggles, naming conventions, email templates, client-specific additions. Layered on top. Still no redesign.</p>
-        </div>
-      </div>
-      <div class="callout-grid">
-        <div class="callout"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>New LOB onboarding:</strong> weeks, not months.</div></div>
-        <div class="callout"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>New client onboarding:</strong> days, not weeks.</div></div>
-        <div class="callout"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span><div>Sales team could demo any LOB from existing prototype — <strong>closing deals before a single line of new code was written.</strong></div></div>
-        <div class="callout"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>Design and dev cost per new LOB:</strong> near zero after base was built.</div></div>
-      </div>
+    <!-- 02 THE GOAL -->
+    <section class="panel reveal" id="goal" data-screen-label="02 The Goal">
+      <span class="eyebrow-num">02 · The goal</span>
+      <h2 class="sec-title">What the new workflow had to do</h2>
+      <p class="appr-intro">Before designing anything, I set four tests the new workflow had to pass.</p>
+      <dl class="goal-table"><div><dt><span class="gn">1</span>New lines, no redesign</dt><dd>A new line of business should need configuration, not a new design.</dd></div><div><dt><span class="gn">2</span>Many clients per line</dt><dd>Each client should be able to work their own way on the same base.</dd></div><div><dt><span class="gn">3</span>One experience everywhere</dt><dd>A client using several lines should never have to learn a new product.</dd></div><div><dt><span class="gn">4</span>Lower build cost</dt><dd>Engineers build the core once, not once per line.</dd></div></dl>
     </section>
 
-    <!-- 03 THE SOLUTION -->
-    <section class="panel reveal" id="solution" data-screen-label="03 The Solution">
-      <span class="eyebrow-num">03 — The Solution</span>
-      <h2 class="sec-title">From scattered documents to one intelligent workspace</h2>
+    <!-- 03 THE PROCESS -->
+    <section class="panel reveal" id="process" data-screen-label="03 The Process">
+      <span class="eyebrow-num">03 · The process</span>
+      <h2 class="sec-title">How I got there</h2>
+      <p class="appr-intro">Marine had a working flow. Aviation and Construction were next, with more lines planned, each with several clients. First we learned what each line needed. Then we built one system for all of them.</p>
+      <div class="pt-tabs-wrap"><div class="pt-tabs pt-four" role="tablist" aria-label="How I got there" style="margin-top:36px">
+        <button type="button" role="tab" id="pt-t1" aria-controls="pt-p1" aria-selected="true"><span class="nm">01 · New client needs</span></button>
+        <button type="button" role="tab" id="pt-t2" aria-controls="pt-p2" aria-selected="false"><span class="nm">02 · Gaps in Marine</span></button>
+        <button type="button" role="tab" id="pt-t3" aria-controls="pt-p3" aria-selected="false"><span class="nm">03 · User journey</span></button>
+        <button type="button" role="tab" id="pt-t4" aria-controls="pt-p4" aria-selected="false"><span class="nm">04 · Usability issues</span></button>
+        <button type="button" role="tab" id="pt-t5" aria-controls="pt-p5" aria-selected="false"><span class="nm">05 · Sketches</span></button>
+      </div></div>
+      <div class="pt-panel" id="pt-p1" role="tabpanel" aria-labelledby="pt-t1">
+        <span class="pt-mnum">01 · New client needs</span>
+        <h3>Every line worked a little differently</h3>
+        <p class="pt-txt">We started by speaking with Aviation and Construction clients and mapping how each line handled a submission. This is what we found.</p>
+        <ul class="notes pt-notes pt-n6"><li>Some Aviation clients had a separate clearance team to check submissions first.</li><li>Marine and Construction had no split. Underwriters did everything.</li><li>Submissions came in by email, or underwriters created them by hand.</li><li>Every field had to be checked by hand to find missing data.</li><li>Crucial data for quote and bind was easy to miss.</li><li class="aim">Aim: cut their checking time by half.</li></ul>
+        <p class="pw-label">From the whiteboard</p>
+        <div class="pw-row pw-mix" id="photoWall"><figure class="pw-card pw-l pw-c1" data-i="0"><div class="pw-photo"><img src="assets/prebind/whiteboard-1.jpeg" alt="Whiteboard notes on the submission problem and the aim to cut checking time by half" loading="lazy" /></div></figure><figure class="pw-card pw-l pw-c2" data-i="1"><div class="pw-photo"><img src="assets/prebind/whiteboard-2.jpeg" alt="Full whiteboard with the problem, the Aviation split flow and the user journey" loading="lazy" /></div></figure><figure class="pw-card pw-p pw-c3" data-i="2"><div class="pw-photo"><img src="assets/prebind/whiteboard-3.jpeg" alt="Whiteboard user journey from submission to policy issue" loading="lazy" /></div></figure><figure class="pw-card pw-p pw-c4" data-i="3"><div class="pw-photo"><img src="assets/prebind/whiteboard-4.jpeg" alt="Whiteboard Aviation clearance and underwriter flows next to Marine and Construction" loading="lazy" /></div></figure></div>
+        <p class="pw-cap">Redrawn from my project notes. Click any photo to zoom.</p>
+      </div>
+      <div class="pt-panel" id="pt-p2" role="tabpanel" aria-labelledby="pt-t2" hidden>
+        <span class="pt-mnum">02 · Gaps in Marine</span>
+        <h3>Built for ships, in one straight line</h3>
+        <ul class="notes pt-notes pt-n3"><li>Fields were designed around vessels. Aircraft and building projects had nowhere to go.</li><li>One straight flow: one person checked, evaluated, quoted and bound. There was no room for a clearance step.</li><li>Screens were built for Marine alone. Every new line would have needed them rebuilt.</li></ul>
+        <figure class="pt-fig">
+          <div class="pt-tbl-wrap"><table class="pt-tbl"><thead><tr><th></th><th scope="col">Feature</th><th scope="col">Marine</th><th scope="col">Aviation</th><th scope="col">Construction</th></tr></thead><tbody><tr class="pt-shared"><th class="pt-grp" rowspan="4" scope="rowgroup">Shared</th><th scope="row">Submission from multiple files</th><td><span class="pt-ck">✓</span></td><td><span class="pt-ck">✓</span></td><td><span class="pt-ck">✓</span></td></tr><tr class="pt-shared"><th scope="row">Check for missing data</th><td><span class="pt-ck">✓</span></td><td><span class="pt-ck">✓</span></td><td><span class="pt-ck">✓</span></td></tr><tr class="pt-shared"><th scope="row">Quote and bind</th><td><span class="pt-ck">✓</span></td><td><span class="pt-ck">✓</span></td><td><span class="pt-ck">✓</span></td></tr><tr class="pt-shared"><th scope="row">Notes and attachments</th><td><span class="pt-ck">✓</span></td><td><span class="pt-ck">✓</span></td><td><span class="pt-ck">✓</span></td></tr><tr class="pt-conf"><th class="pt-grp" rowspan="2" scope="rowgroup">Configured</th><th scope="row">Line-specific fields</th><td>Vessels</td><td>Aircraft</td><td>Projects</td></tr><tr class="pt-conf"><th scope="row">Separate clearance team</th><td></td><td>Some clients</td><td></td></tr></tbody></table></div>
+          <figcaption>Rebuilt from my working notes.</figcaption>
+        </figure>
+      </div>
+      <div class="pt-panel" id="pt-p3" role="tabpanel" aria-labelledby="pt-t3" hidden>
+        <span class="pt-mnum">03 · User journey</span>
+        <h3>One journey, from first email to post-bind</h3>
+        <p class="pt-txt">With the client needs and the gaps in Marine clear, I mapped the full underwriter journey on the whiteboard. This sketch became the base for the flowchart.</p>
+        <div class="pw-row pw-one"><figure class="pw-card has-img"><div class="pw-photo"><img src="assets/prebind/user-journey.jpeg" alt="Whiteboard sketch of the underwriter user journey from broker email to post-bind workflow" loading="lazy" /></div></figure></div>
+        <p class="pw-cap">The underwriter journey, sketched on the whiteboard. Click the photo to zoom.</p>
+        <ol class="jr-steps"><li><b>Submission</b><span>Submissions came in two ways. Brokers sent emails with several files, or underwriters created one in the platform.</span></li><li><b>Clearance review</b><span>For Aviation, a clearance team checked each submission first. Missing fields were filled and crucial data was highlighted.</span></li><li><b>Underwriter review</b><span>In the workbench, underwriters validated the data, ran checks, read the documents and decided to quote or reject.</span></li><li><b>Quote and bind</b><span>An approved submission moved to quote, then bind, then the post-bind workflow. Post-bind existed only for Marine at the time.</span></li></ol>
+        <div class="jr-gl"><div class="jr-gl-ticks" aria-hidden="true"><i></i><i></i><i></i></div><div class="jr-gl-box"><span class="jr-gl-tag">Guidelines · runs in the background</span><p>Guidelines were not a step in the journey. Teams set them up in a separate part of the platform. When a submission arrived, the system checked it against every guideline and highlighted any match. Clearance teams and underwriters saw those highlights at each review.</p></div></div>
+      </div>
+      <div class="pt-panel" id="pt-p4" role="tabpanel" aria-labelledby="pt-t4" hidden>
+        <span class="pt-mnum">04 · Usability issues</span>
+        <h3>Small problems that would multiply across every line</h3>
+        <p class="pt-txt">My own review of the Marine screens found three problems. On one line they were annoying. On five, they would be everywhere.</p>
+        <div class="sk-grid">
+<figure class="sk-card"><div class="sk"><div class="sk-bar"><span class="sk-chip on">Line ▾<b class="sk-n">1</b></span><span class="sk-chip">Status ▾</span><span class="sk-chip">Broker ▾</span><span class="sk-chip">Date ▾</span></div><div class="sk-dd"><span><i class="sk-cb x"></i>Marine</span><span><i class="sk-cb x"></i>Aviation<b class="sk-n">2</b></span><span><i class="sk-cb"></i>Construction</span><span class="sk-btn">Apply<b class="sk-n">3</b></span></div><p class="sk-ann sk-a1">then again for Status, Broker, Date...</p><svg class="sk-arw sk-r1" viewBox="0 0 100 60" aria-hidden="true"><path d="M88 56 C 96 30, 80 8, 40 6 M40 6 l8 -5 M40 6 l7 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><figcaption><span class="sk-t">Too many clicks to filter</span><span class="sk-d">Each filter had its own chip. Users opened, selected and applied one, then did it all again for the next.</span></figcaption></figure>
+<figure class="sk-card"><div class="sk"><div class="sk-tabs"><span class="on">Details</span><span class="sk-ring">Notes</span><span class="sk-ring">Attachments</span><span>Updates</span></div><div class="sk-body"><i></i><i></i><i class="s"></i><i></i><i class="s"></i></div><p class="sk-ann sk-a2">leave the page to check a note</p><p class="sk-ann sk-a3">come back, find your place again</p><svg class="sk-arw sk-r2" viewBox="0 0 100 60" aria-hidden="true"><path d="M10 56 C 20 30, 40 16, 62 6 M62 6 l-9 0 M62 6 l-4 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><figcaption><span class="sk-t">Leaving the page to check a note</span><span class="sk-d">Notes, attachments and updates sat in separate tabs. To check one while reviewing, users had to leave the submission and come back.</span></figcaption></figure>
+<figure class="sk-card"><div class="sk sk-pages"><div class="sk-pg"><span class="sk-lbl">Page A</span><div class="sk-hd"><span class="sk-crumb">Home / Submissions</span><span class="sk-srch">Search</span><span class="sk-vw"><i></i><i></i></span></div></div><div class="sk-pg"><span class="sk-lbl">Page B</span><div class="sk-hd"><span class="sk-vw"><i></i><i></i></span><span class="sk-tb">Tab 1</span><span class="sk-tb">Tab 2</span><span class="sk-srch sk-q">Search<b class="sk-n">?</b></span></div><span class="sk-crumb sk-low">Home / Policy<b class="sk-n">?</b></span></div><p class="sk-ann sk-a4">different spot on every page</p></div><figcaption><span class="sk-t">Controls that kept moving</span><span class="sk-d">Breadcrumbs, search and view switch sat in a different place on each page, and got pushed around when tabs were added.</span></figcaption></figure>
+</div>
+        <p class="pw-cap">Illustrations of the old Marine screens.</p>
+        <a class="pt-link" href="#contributions">See how I fixed these ↓</a>
+      </div>
+      <div class="pt-panel" id="pt-p5" role="tabpanel" aria-labelledby="pt-t5" hidden>
+        <span class="pt-mnum">05 · Sketches</span>
+        <h3>From sketches to reviewed mockups</h3>
+        <p class="pt-txt">I sketched on paper first, turned the sketches into low-fi wireframes, then reviewed quick mockups with clients, the internal team and developers.</p>
+        <div class="pw-row pw-one"><figure class="pw-card"><div class="pw-photo"><img src="assets/pb-paper-sketches.jpeg" alt="Paper sketches of the new screens: underwriter workbench, sidebar panels, breadcrumbs and guideline creation"></div></figure></div>
+        <p class="pw-label sk2-lab">Low-fi wireframes</p>
+        <div class="sk-grid sk2-grid">
+<figure class="sk-card sk2-wide"><div class="sk sk2-wb"><div class="sk2-list"><i class="on"></i><i></i><i></i><i></i></div><div class="sk2-main"><span class="sk2-h">Meridian Airways</span><div class="sk-tabs"><span class="on">Rater</span><span>Policy</span><span>Aircraft</span><span>Loss</span></div><div class="sk2-tbl"><i></i><i></i><i></i><i></i></div><span class="sk2-btn">Quote</span></div><div class="sk2-side"><span class="sk2-h">Guidelines</span><span class="sk2-alert">! 6 matches</span><span class="sk2-g"><i class="r"></i>Fleet age</span><span class="sk2-g"><i class="g"></i>Coverage</span><span class="sk2-g"><i class="o"></i>Route</span></div></div><figcaption><span class="sk-t">Underwriter workbench</span></figcaption></figure>
+<figure class="sk-card"><div class="sk sk2-rule"><span class="sk2-h">New guideline</span><div class="sk2-row"><span class="sk2-f">Year built</span><span class="sk2-f sm">&lt;</span><span class="sk2-f sm">2010</span></div><div class="sk2-row"><span>then flag as</span><span class="sk2-f"><i class="sk2-dot g"></i>Risk appetite ▾</span></div><div class="sk2-row"><span>for</span><span class="sk-chip">Aviation</span></div><span class="sk2-btn">Save rule</span></div><figcaption><span class="sk-t">Guideline rule</span></figcaption></figure>
+<figure class="sk-card"><div class="sk"><span class="sk-chip on sk2-fb">Filters ▾</span><div class="sk2-flt"><div class="sk2-cats"><span class="on">Line</span><span>Status</span><span>Broker</span><span>Date</span></div><div class="sk2-opts"><span><i class="sk-cb x"></i>Marine</span><span><i class="sk-cb x"></i>Aviation</span><span><i class="sk-cb"></i>Construction</span><span class="sk2-btn">Apply all</span></div></div></div><figcaption><span class="sk-t">One filter panel</span></figcaption></figure>
+<figure class="sk-card"><div class="sk sk2-sb"><div class="sk2-main"><span class="sk2-h">Submission</span><div class="sk-body"><i></i><i></i><i class="s"></i><i></i><i class="s"></i><i></i></div></div><div class="sk2-rail"><span class="on">Notes</span><span class="sk2-note">Broker asked for renewal date</span><span class="sk2-note">Hull survey.pdf</span><span>Attachments</span><span>Updates</span></div></div><figcaption><span class="sk-t">Notes in a side panel</span></figcaption></figure>
+<figure class="sk-card"><div class="sk sk-pages"><div class="sk-pg sk2-fix"><div class="sk-hd"><span class="sk-crumb">Home / Submissions</span><span class="sk2-r"><span class="sk-srch">Search</span><span class="sk-vw"><i></i><i></i></span></span></div><div class="sk2-tabrow"><span class="sk-tb">Tab 1</span><span class="sk-tb">Tab 2</span><span class="sk-tb">Tab 3</span></div></div><div class="sk-pg sk2-fix"><div class="sk-hd"><span class="sk-crumb">Home / Policy</span><span class="sk2-r"><span class="sk-srch">Search</span><span class="sk-vw"><i></i><i></i></span></span></div><div class="sk2-tabrow"><span class="sk-tb">Tab 1</span></div></div></div><figcaption><span class="sk-t">Page controls in one place</span></figcaption></figure>
+</div>
+      </div>
+      <p class="conseq-link pt-lab">What this taught me</p>
+      <p class="pt-close">Understand every line first. Then design the shared path, and make the differences optional.</p>
+    </section>
+
+    <!-- 04 THE DECISION -->
+    <section class="panel reveal" id="strategy" data-screen-label="04 The Decision">
+      <span class="eyebrow-num">04 · The decision</span>
+      <h2 class="sec-title">One base, configured for every line and client</h2>
+      <p class="appr-intro">Everything we learned pointed to one answer: build the shared journey once, and handle the differences as settings on top.</p>
+      <div class="dc-choice"><div class="dc-card no"><span class="dc-tag">Rejected</span><h3>A separate flow for each line</h3><p>The fastest way to launch Aviation. The slowest way to launch everything after it.</p></div><div class="dc-card yes"><span class="dc-tag">Chosen</span><h3>One shared base, configured on top</h3><p>More thinking up front. After that, each new line or client is a setup job, not a project.</p></div></div>
+      <div class="dc-rows">
+        <div class="dc-row"><div class="dc-lab"><span class="dc-k">Base</span><p>The journey and screen layouts are the same for everyone.</p></div><div class="dc-vis"><ol class="dc-strip" id="dcStrip"><li>Submission</li><li class="dc-clr" aria-hidden="true"><span>Clearance review</span></li><li>Underwriter review</li><li>Quote</li><li>Bind</li></ol></div></div>
+        <div class="dc-row"><div class="dc-lab"><span class="dc-k">Line of business</span><p>Fields and labels change per line, as shown at the top of this page.</p></div><div class="dc-vis"><div class="dc-tags"><span><b>Marine:</b> Vessels</span><span><b>Aviation:</b> Aircraft</span><span><b>Construction:</b> Projects</span></div></div></div>
+        <div class="dc-row"><div class="dc-lab"><span class="dc-k">Client</span><p>Steps switch on or off per client.</p></div><div class="dc-vis"><div class="dc-tg"><button type="button" class="dc-sw" id="dcSw" role="switch" aria-checked="false" aria-controls="dcStrip"><span class="dc-knob"></span></button><label for="dcSw">Clearance team</label><span class="dc-state" id="dcState">Off</span><span class="dc-try">Try it</span></div></div></div>
+      </div>
+      <p class="pt-end">Marine, Aviation, Construction, Property and PV&amp;T all run on this base today.</p>
+    </section>
+
+    <!-- 05 THE SOLUTION -->
+    <section class="panel reveal" id="solution" data-screen-label="05 The Solution">
+      <span class="eyebrow-num">05 · The design</span>
+      <h2 class="sec-title">The shared journey, screen by screen</h2>
       <div class="accordion">
 
         <div class="acc-item">
           <div class="acc-head">
             <div>
               <span class="acc-phase">Phase 1</span>
-              <h3>Submission creation &amp; clearance</h3>
-              <p class="acc-sum">AI-powered ingestion turns 5 separate documents into one structured workspace. A dedicated clearance stage ensures data quality before any underwriter touches it.</p>
-              <div class="acc-badges"><span>AI document extraction</span><span>Missing data flags</span><span>Guidelines intelligence</span></div>
+              <h3 class="acc-h-tag">Submission and clearance <span class="acc-opt">Optional per client</span></h3>
+              <p class="acc-sum">AI turns up to 5 documents into one structured submission. Clients with a clearance team check it here first. Others send it straight to underwriting.</p>
+              <div class="acc-badges"><span>AI document extraction</span><span>Missing data flags</span><span>Guidelines</span></div>
             </div>
           </div>
           <div class="acc-body">
             <div class="divider"></div>
             <div class="step">
-              <div class="stp-num">Step 1 — Submission creation</div>
-              <div class="ba-row">
-                <div class="ba-chip before"><div class="t">Before</div><p>Underwriters manually assembled documents from email.</p></div>
-                <div class="ba-chip after"><div class="t">After</div><p>Upload up to 5 files (PDF, Excel, CSV, email). AI extracts and structures all data automatically into one unified submission.</p></div>
-              </div>
+              <div class="stp-num">Step 1 · Submission creation</div>
+              <p class="body-copy stp-line">Submissions arrive by email or are created by the underwriter. AI pulls the data from every file into one record.</p>
               <div class="ru-stack">
                 <div>
-                  <p class="ru-eyebrow">Before / after</p>
                   <div class="ru-panel" style="min-height:380px;" aria-hidden="true">
                     <div class="ru-ba">
                       <div class="side before">
@@ -764,7 +1237,7 @@
                         <div class="ru-docs"><div class="ru-doc scatter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Policy.xlsx</div><div class="ru-doc scatter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Fleet.pdf</div><div class="ru-doc scatter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Loss.pdf</div><div class="ru-doc scatter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Coverage.pdf</div><div class="ru-doc scatter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Email thread</div></div>
                         <div class="ru-arrow-down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
                         <div class="ru-flow-ico sad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 15.5s1.5-2 4-2 4 2 4 2"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div>
-                        <div class="ru-mini-cap"><b>5 documents.</b> No structure. Manual assembly, every time.</div>
+                        <div class="ru-mini-cap">5 files, put together by hand.</div>
                       </div>
                       <div class="side after">
                         <span class="ru-tag-lbl after">After</span>
@@ -774,14 +1247,12 @@
                           <div class="wt"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Unified submission</div>
                           <div class="ru-frow"><span class="k">Insured name</span><span class="v">Meridian Airways</span></div><div class="ru-frow"><span class="k">Coverage type</span><span class="v">Aviation hull</span></div><div class="ru-frow"><span class="k">Fleet size</span><span class="v">14 aircraft</span></div><div class="ru-frow"><span class="k">Loss ratio</span><span class="v">62%</span></div><div class="ru-frow"><span class="k">Effective date</span><span class="v">19 Aug 2025</span></div>
                         </div>
-                        <div class="ru-mini-cap"><b>One upload.</b> AI extracts everything. Structured instantly.</div>
+                        <div class="ru-mini-cap">One upload, one structured record.</div>
                       </div>
                     </div>
                   </div>
-                  <p class="ru-cap">Five scattered documents become one structured workspace — the underwriter never assembles files by hand again.</p>
                 </div>
                 <div>
-                  <p class="ru-eyebrow">Upload &amp; AI processing</p>
                   <div class="ru-panel" style="min-height:320px;display:flex;align-items:center;justify-content:center;padding:28px;" aria-hidden="true">
                     <div class="ru-modal">
                       <h4>Create submission</h4>
@@ -798,18 +1269,18 @@
                       </div>
                     </div>
                   </div>
-                  <p class="ru-cap">AI processes each document independently — success, processing, and failure states are all visible.</p>
+                  <p class="ru-cap">Each file shows its own status, so one failed file never blocks the rest.</p>
                 </div>
               </div>
             </div>
             <div class="step">
-              <div class="stp-num">Step 2 — Clearance stage</div>
-              <h5>Data quality before underwriting judgement.</h5>
-              <p class="body-copy" style="margin-bottom:0;">A dedicated team reviews data quality before it reaches underwriters. System automatically surfaces all missing required fields — no manual scanning needed.</p>
-              <div class="pull tight"><p>"Separating data quality from underwriting judgement was a respect-for-expertise decision. Underwriters should spend their time on risk — not admin."</p></div>
+              <div class="stp-num stp-tagrow">Step 2 · Clearance review <span class="acc-opt">Optional per client</span></div>
+              <h5>Checking the data before underwriting</h5>
+              <p class="body-copy" style="margin-bottom:0;">For clients with a clearance team, this is where the data gets checked. The system flags every missing required field, so nobody scans documents by hand.</p>
+              <div class="why-note"><p>Why a separate step: underwriters should spend their time judging risk, not chasing data. Clients without a clearance team see the same flags in the underwriter's view.</p></div>
               <div class="ru-2col">
                 <div>
-                  <p class="ru-eyebrow">Clearance form — missing data</p>
+                  <p class="ru-eyebrow">Clearance form</p>
                   <div class="ru-panel" style="min-height:380px;padding:22px;" aria-hidden="true">
                     <div class="ru-white-card" style="padding:22px;">
                       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:18px;">
@@ -825,36 +1296,29 @@
                       </div>
                     </div>
                   </div>
-                  <p class="ru-cap">The system surfaces missing fields automatically — no manual document scanning.</p>
+                  <p class="ru-cap">Missing fields are marked right where they need filling.</p>
                 </div>
                 <div>
-                  <p class="ru-eyebrow">Guidelines — missing fields</p>
+                  <p class="ru-eyebrow">Guidelines panel</p>
                   <div class="ru-panel" style="min-height:380px;padding:22px;" aria-hidden="true">
                     <div class="ru-h" style="font-size:18px;margin-bottom:16px;">Guidelines</div>
                     <div class="ru-banner"><span class="dia"></span>Missing fields found against active guidelines</div>
-                    <div class="ru-gblock"><div class="top"><span class="ru-sq sq-r"></span>Risk appetite<span class="cat">· Fleet age restriction</span></div><div class="miss">Missing: <b>Year of manufacture</b></div></div>
+                    <div class="ru-gblock"><div class="top"><span class="ru-sq sq-r"></span>Restriction<span class="cat">· Fleet age restriction</span></div><div class="miss">Missing: <b>Year of manufacture</b></div></div>
                     <div class="ru-gblock"><div class="top"><span class="ru-sq sq-g"></span>Risk appetite<span class="cat">· Coverage threshold</span></div><div class="miss">Missing: <b>Total insured value</b></div></div>
                     <div class="ru-gblock"><div class="top"><span class="ru-sq sq-o"></span>Advisory<span class="cat">· Route restriction</span></div><div class="miss">Missing: <b>Operating territory</b></div></div>
                   </div>
-                  <p class="ru-cap">Guideline-linked missing fields are surfaced in the sidebar — not buried in the form.</p>
+                  <p class="ru-cap">Missing fields linked to a guideline also appear in the side panel, so critical gaps are never buried in the form.</p>
                 </div>
               </div>
             </div>
             <div class="step">
-              <div class="stp-num">Step 3 — Guidelines feature</div>
-              <h5>An independent rule-book system, designed from scratch.</h5>
-              <p class="body-copy">Underwriters create custom rules — when any submission matches a guideline parameter it is automatically flagged.</p>
-              <p class="sub-label">How it works</p>
-              <ul class="bullets">
-                <li>Underwriter sets rule: "flag any aircraft built before 2010".</li>
-                <li>Any submission with matching data is automatically highlighted.</li>
-                <li>RAG dot system on submission cards: 3 dots per card (Risk appetite / Advisory / Restriction).</li>
-                <li>Coloured dot = match found · Grey dot = no match.</li>
-                <li>A glance replaces manual scanning of entire documents.</li>
-              </ul>
+              <div class="stp-num">Step 3 · Guidelines</div>
+              <h5>A rule book that checks every submission</h5>
+              <p class="body-copy">I designed guidelines from scratch, as a separate part of the platform. Underwriters write their own rules, and every new submission is checked against them automatically.</p>
+              <ol class="how-list"><li>Set a rule, like "flag any aircraft built before 2010".</li><li>Live rules run on every incoming submission, in every line of business.</li><li>Matches show as three dots on each submission card: Risk appetite, Advisory and Restriction. Coloured means a match. Grey means none.</li></ol>
               <div class="ru-stack">
                 <div>
-                  <p class="ru-eyebrow">The underwriter's rule book</p>
+                  <p class="ru-eyebrow">Rule book</p>
                   <div class="ru-panel" style="min-height:340px;padding:22px;" aria-hidden="true">
                     <div style="display:flex;align-items:center;gap:18px;margin-bottom:16px;">
                       <span class="ru-h" style="font-size:18px;">Guidelines</span>
@@ -864,7 +1328,7 @@
                     <table class="ru-tbl">
                       <thead><tr><th>Status</th><th>Name</th><th>Rule</th><th>Line of business</th><th>Criteria</th></tr></thead>
                       <tbody>
-                        <tr class="sel"><td><span class="ru-status-cell"><span class="ru-live">LIVE</span><span class="ru-tog"></span></span></td><td>Fleet age restriction</td><td>Risk appetite</td><td>Aviation</td><td>Criteria A, Criteria B, Criteria C</td></tr>
+                        <tr class="sel"><td><span class="ru-status-cell"><span class="ru-live">LIVE</span><span class="ru-tog"></span></span></td><td>Fleet age restriction</td><td>Restriction</td><td>Aviation</td><td>Criteria A, Criteria B, Criteria C</td></tr>
                         <tr class=""><td><span class="ru-status-cell"><span class="ru-live">LIVE</span><span class="ru-tog"></span></span></td><td>Coverage threshold</td><td>Risk appetite</td><td>Aviation</td><td>Criteria A, Criteria B, Criteria C</td></tr>
                         <tr class="off"><td><span class="ru-status-cell"><span class="ru-offb">OFF</span><span class="ru-tog off"></span></span></td><td>Route restriction</td><td>Advisory</td><td>Aviation</td><td>Criteria A, Criteria B</td></tr>
                         <tr class=""><td><span class="ru-status-cell"><span class="ru-live">LIVE</span><span class="ru-tog"></span></span></td><td>TIV limit</td><td>Risk appetite</td><td>Marine</td><td>Criteria A, Criteria B, Criteria C</td></tr>
@@ -872,10 +1336,10 @@
                       </tbody>
                     </table>
                   </div>
-                  <p class="ru-cap">The underwriter's rule book — <b>live rules auto-apply</b> to every incoming submission, across every line of business.</p>
+                  <p class="ru-cap">Each rule can be switched on, off or archived without being lost.</p>
                 </div>
                 <div>
-                  <p class="ru-eyebrow">Criteria builder</p>
+                  <p class="ru-eyebrow">Rule builder</p>
                   <div class="ru-panel" style="min-height:340px;display:flex;align-items:center;justify-content:center;padding:24px;" aria-hidden="true">
                     <div class="ru-modal" style="max-width:600px;">
                       <h4>Create guideline</h4>
@@ -885,16 +1349,16 @@
                         <span class="hd">Criteria</span><span class="hd">Operator</span><span class="hd">Value</span>
                         <span class="ru-sel">Fleet age<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span><span class="ru-sel">More than<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span><span class="ru-sel">2010<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span>
                         <span class="ru-sel">Aircraft type<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span><span class="ru-sel">Equals to<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span><span class="ru-sel">Commercial<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span>
-                        <span class="ru-sel">Loss ratio<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span><span class="ru-sel">Between<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span><span class="ru-sel">60% — 80%<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span>
+                        <span class="ru-sel">Loss ratio<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span><span class="ru-sel">Between<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span><span class="ru-sel">60% to 80%<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span>
                       </div>
                       <div class="ru-addmore">+ Add more</div>
                       <div style="display:flex;justify-content:flex-end;margin-top:22px;"><span class="ru-btn-dark">Create guideline</span></div>
                     </div>
                   </div>
-                  <p class="ru-cap">A simple three-column logic builder — any rule, any parameter, any line of business.</p>
+                  <p class="ru-cap">Every rule uses the same three parts, criteria, operator and value, so one builder works for any line of business.</p>
                 </div>
                 <div>
-                  <p class="ru-eyebrow">RAG indicator system</p>
+                  <p class="ru-eyebrow">Submission cards</p>
                   <div class="ru-panel" style="background:transparent;border:none;box-shadow:none;padding:0;">
                   <div class="ru-rag3" aria-hidden="true">
                     <div class="ru-ragcard"><div class="nm">Meridian Airways</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="dots"><i class="ru-g"></i><i class="ru-o"></i><i class="ru-r"></i></div><div class="lab">All 3 guidelines matched</div></div>
@@ -902,7 +1366,7 @@
                     <div class="ru-ragcard"><div class="nm">Atlantic Shippers</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="dots"><i class="ru-x"></i><i class="ru-x"></i><i class="ru-x"></i></div><div class="lab">No guidelines matched</div></div>
                   </div>
                   </div>
-                  <p class="ru-cap"><b>Three dots per card. Coloured = match. Grey = no match.</b> A glance replaces manual scanning of entire documents.</p>
+                  <p class="ru-cap">One look at the dots replaces reading the whole submission.</p>
                 </div>
               </div>
             </div>
@@ -920,16 +1384,16 @@
             <div>
               <span class="acc-phase">Phase 2</span>
               <h3>Underwriter workbench</h3>
-              <p class="acc-sum">Once clearance is complete, submissions move to the underwriter. Risk signals surface automatically. Every guideline match is visible before the first decision is made.</p>
-              <div class="acc-badges"><span>Auto guideline matching</span><span>Risk signals</span><span>Quote &amp; bind workflow</span></div>
+              <p class="acc-sum">Submissions arrive here after clearance, or straight from intake for clients without it. Every guideline match is visible before the underwriter makes a single decision.</p>
+              <div class="acc-badges"><span>Guideline matching</span><span>Risk signals</span><span>Quote and bind</span></div>
             </div>
           </div>
           <div class="acc-body">
             <div class="divider"></div>
             <div class="step">
-              <div class="stp-num">Step 1 — Submission enters UW workbench</div>
-              <h5>All documents, one unified workspace.</h5>
-              <p class="body-copy">Once clearance is approved, submission moves to underwriter. All data from all documents visible in one unified workspace. No switching between files. No manual assembly.</p>
+              <div class="stp-num">Step 4 · The workbench</div>
+              <h5>Everything about a risk, on one screen</h5>
+              <p class="body-copy">Data from every document sits in one place. No switching between files, no putting them together by hand.</p>
               <div class="ru-panel" style="min-height:460px;" aria-hidden="true">
                 <div class="ru-wb">
                   <div class="pane inbox">
@@ -940,7 +1404,7 @@
                   </div>
                   <div class="pane center">
                     <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;row-gap:8px;"><span class="ru-h" style="font-size:17px;">Meridian Airways Pvt. Ltd</span><span class="ru-status"><span class="d"></span>UW REVIEW</span></div>
-                    <div class="ru-quote" style="margin-bottom:4px;">Quote 1 — $1,000,000</div>
+                    <div class="ru-quote" style="margin-bottom:4px;">Quote 1 · $1,000,000</div>
                     <div class="ru-tabs"><span class="on">Rater</span><span>Policy Info</span><span>Aircraft Info</span><span>Loss Info</span></div>
                     <table class="ru-mtbl">
                       <thead><tr><th>N-Number</th><th>Type</th><th>Year</th><th>Manufacturer</th><th>Status</th></tr></thead>
@@ -963,25 +1427,25 @@
                   </div>
                 </div>
               </div>
-              <p class="ru-cap">All documents, all data, one workspace — inbox, submission detail, and risk summary side by side. <b>No switching between files.</b></p>
+              <p class="ru-cap">Inbox, submission and risk summary side by side, so the underwriter can move between submissions without losing their place.</p>
             </div>
             <div class="step">
-              <div class="stp-num">Step 2 — Automatic guideline matching</div>
-              <h5>Risk signals before raw data.</h5>
-              <p class="body-copy" style="margin-bottom:0;">System automatically surfaces any guideline matches in the right sidebar. Underwriter sees risk signals before diving into raw data.</p>
-              <div class="pull tight"><p>"The side panel solved the visibility problem without creating a noise problem. This single pattern decision — made once — now lives across every section of the product."</p></div>
+              <div class="stp-num">Step 5 · Guideline matching</div>
+              <h5>Risk signals before raw data</h5>
+              <p class="body-copy" style="margin-bottom:0;">Every guideline match appears in the side panel as soon as the underwriter opens a submission. Values that break a rule show in red.</p>
+              <div class="why-note"><p>Why a side panel: it made risk signals visible without crowding the main screen. The same panel later became a standard across the whole platform. <a href="#contributions">More in Patterns ↓</a></p></div>
               <div class="ru-2col">
                 <div>
-                  <p class="ru-eyebrow">Risk signals — matches found</p>
+                  <p class="ru-eyebrow">Side panel · guideline matches</p>
                   <div class="ru-panel" style="min-height:400px;padding:22px;" aria-hidden="true">
                     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;"><span class="ru-h" style="font-size:18px;">Guidelines</span><span class="ru-link">Go to guidelines</span></div>
                     <div class="ru-alert"><span class="b">!</span>6 Guidelines matches found</div>
-                    <div class="ru-gblock"><div class="top"><span class="ru-sq sq-r"></span>Risk appetite<span class="cat">· Fleet age restriction</span></div><table class="ru-ct"><thead><tr><th>Criteria</th><th>Rule value</th><th>Sub. value</th></tr></thead><tbody><tr><td>Criteria 1</td><td>70 hrs</td><td class="bad">80 hrs</td></tr><tr><td>Criteria 2</td><td>30</td><td class="bad">20</td></tr><tr><td>Criteria 3</td><td>20</td><td class="bad">10</td></tr></tbody></table></div>
+                    <div class="ru-gblock"><div class="top"><span class="ru-sq sq-r"></span>Restriction<span class="cat">· Fleet age restriction</span></div><table class="ru-ct"><thead><tr><th>Criteria</th><th>Rule value</th><th>Sub. value</th></tr></thead><tbody><tr><td>Criteria 1</td><td>70 hrs</td><td class="bad">80 hrs</td></tr><tr><td>Criteria 2</td><td>30</td><td class="bad">20</td></tr><tr><td>Criteria 3</td><td>20</td><td class="bad">10</td></tr></tbody></table></div>
                     <div class="ru-gblock"><div class="top"><span class="ru-sq sq-g"></span>Risk appetite<span class="cat">· Coverage threshold</span></div><table class="ru-ct"><thead><tr><th>Criteria</th><th>Rule value</th><th>Sub. value</th></tr></thead><tbody><tr><td>Criteria 1</td><td>70 hrs</td><td class="bad">80 hrs</td></tr><tr><td>Criteria 2</td><td>20-70 hrs</td><td class="bad">80 hrs</td></tr></tbody></table></div>
                     <div class="ru-gblock"><div class="top"><span class="ru-sq sq-o"></span>Advisory<span class="cat">· Route restriction</span></div><table class="ru-ct"><thead><tr><th>Criteria</th><th>Rule value</th><th>Sub. value</th></tr></thead><tbody><tr><td>Criteria 1</td><td>20</td><td class="bad">30</td></tr></tbody></table></div>
                     <div style="display:flex;justify-content:flex-end;margin-top:14px;"><span class="ru-btn-dark">See analytics</span></div>
                   </div>
-                  <p class="ru-cap">Risk signals surface automatically — <b>before the underwriter opens a single data field.</b> Values that exceed a rule show in red.</p>
+                  <p class="ru-cap">Each match shows the rule value next to the submission's value, so the underwriter sees exactly why it was flagged.</p>
                 </div>
                 <div>
                   <p class="ru-eyebrow">Submission overview</p>
@@ -1002,23 +1466,23 @@
                       </div>
                     </div>
                   </div>
-                  <p class="ru-cap">Complete submission overview — status, schedule, and guideline health at a glance.</p>
+                  <p class="ru-cap">Schedule, missing data and guideline health in one view.</p>
                 </div>
               </div>
             </div>
             <div class="step">
-              <div class="stp-num">Step 3 — Quote &amp; bind</div>
-              <h5>Review, quote, and bind in one place.</h5>
-              <p class="body-copy">Underwriter reviews, quotes, and binds — all within the same workspace. No switching tools. No rekeying data.</p>
+              <div class="stp-num">Step 6 · Quote and bind</div>
+              <h5>Review, quote and bind in one place</h5>
+              <p class="body-copy">The underwriter builds quotes, checks policy details and binds, all in the same workspace. No switching tools, no typing data in twice.</p>
               <div class="ru-panel" style="min-height:380px;padding:26px;" aria-hidden="true">
                 <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap;"><span class="ru-h" style="font-size:18px;">Atlantic Shippers Ltd.</span><span class="ru-status"><span class="d"></span>UW REVIEW</span></div>
                 <div class="ru-h" style="font-size:15px;color:#3a403b;margin-bottom:6px;">Quote versions (4)</div>
-                <div class="ru-qtabs"><span class="ru-qtab on">Quote 1 — $1,000,000</span><span class="ru-qtab">Quote 2 — $850,000</span><span class="ru-qtab">Quote 3 — $1,200,000</span><span class="ru-qtab">Quote 4 — $975,000</span></div>
+                <div class="ru-qtabs"><span class="ru-qtab on">Quote 1 · $1,000,000</span><span class="ru-qtab">Quote 2 · $850,000</span><span class="ru-qtab">Quote 3 · $1,200,000</span><span class="ru-qtab">Quote 4 · $975,000</span></div>
                 <div class="ru-tabs" style="margin-bottom:0;"><span class="on">Rater</span><span>Policy Info</span><span>Aircraft Info</span><span>Loss Info</span></div>
                 <div class="ru-summary-bar"><div><div class="k">Issuing Company</div><div class="v">Global Insurance Corp</div></div><div><div class="k">Total limit</div><div class="v">$50,000,000</div></div><div><div class="k">UW Premium</div><div class="v">$30,000</div></div></div>
                 <div style="display:flex;justify-content:flex-end;margin-top:18px;"><span class="ru-btn-dark">Generate proposal</span></div>
               </div>
-              <p class="ru-cap">Multiple quote versions, full policy detail, and bind — all from the same workspace. <b>No rekeying, no switching tools.</b></p>
+              <p class="ru-cap">Quote versions sit side by side, so the underwriter can compare options before sending a proposal.</p>
             </div>
           </div>
         </div>
@@ -1026,25 +1490,26 @@
       </div>
     </section>
 
-    <!-- 04 MY DESIGN CONTRIBUTIONS -->
-    <section class="panel reveal" id="contributions" data-screen-label="04 My Design Contributions">
-      <span class="eyebrow-num">04 — My Design Contributions</span>
-      <h2 class="sec-title">Three decisions I made that became platform standards</h2>
+    <!-- 06 MY DESIGN CONTRIBUTIONS -->
+    <section class="panel reveal" id="contributions" data-screen-label="06 Patterns">
+      <span class="eyebrow-num">06 · Patterns</span>
+      <h2 class="sec-title">Three small fixes, now used across every line</h2>
+      <p class="appr-intro">The usability problems from the Marine review, each solved once and reused everywhere.</p>
       <div class="contrib-grid">
         <div class="contrib stacked">
           <div>
-            <h4>01 · Right Side Panel</h4>
+            <h4>01 · Right side panel</h4>
             <div class="pdo">
-              <div class="row p"><span class="lbl">Problem</span><p>Supporting features (notes, attachments, guidelines, audit logs) needed dedicated space. Tab switching felt like changing pages — breaking workflow.</p></div>
-              <div class="row d"><span class="lbl">Decision</span><p>Introduced a persistent right sidebar to house all supporting features in one accessible place. Eliminated multiple dedicated tabs entirely.</p></div>
-              <div class="row o"><span class="lbl">Outcome</span><p>Adopted across every section of the platform across all 5 LOBs. Still the core navigation pattern today.</p></div>
+              <div class="row p"><span class="lbl">Problem</span><p>Notes, attachments, guidelines and audit logs each had their own tab. Every switch felt like leaving the page, and broke the underwriter's flow.</p></div>
+              <div class="row d"><span class="lbl">Decision</span><p>One side panel that stays open next to the work and holds all of them. The separate tabs were removed.</p></div>
+              <div class="row o"><span class="lbl">Outcome</span><p>Used in every section of the platform, across all 5 lines of business. It was still the core pattern when I left.</p></div>
             </div>
           </div>
           <div>
-            <p class="body-copy" style="margin:0 0 20px;">The sidebar houses four states accessible via the right icon strip — Summary, Notes, Attachments, and Updates. Two key states shown below.</p>
+            <p class="body-copy" style="margin:0 0 20px;">An icon strip switches the panel between views like Summary, Notes, Attachments and Updates. Two are shown below.</p>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
               <div>
-                <p class="ru-eyebrow">Summary</p>
+                <p class="ru-eyebrow" style="text-transform:none;">Summary</p>
                 <div class="ru-panel" style="min-height:380px;padding:22px;" aria-hidden="true">
                   <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap;"><span class="ru-h" style="font-size:16px;">Meridian Airways</span><span class="ru-status"><span class="d"></span>UW REVIEW</span></div>
                   <div style="font-size:12.5px;color:#6b7280;margin-bottom:16px;">19 Aug 2025 → 19 Aug 2026</div>
@@ -1060,7 +1525,7 @@
                 </div>
               </div>
               <div>
-                <p class="ru-eyebrow">Attachments</p>
+                <p class="ru-eyebrow" style="text-transform:none;">Attachments</p>
                 <div class="ru-panel" style="min-height:380px;padding:22px;" aria-hidden="true">
                   <div class="ru-h" style="font-size:16px;margin-bottom:14px;">Attachments</div>
                   <div style="border:1.5px dashed #c9ccd3;border-radius:11px;background:#f2f3f5;height:76px;display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:16px;">
@@ -1071,20 +1536,20 @@
                 </div>
               </div>
             </div>
-            <p class="ru-cap">One persistent sidebar replaces multiple tabs — all supporting features accessible without leaving the page.</p>
+            <p class="ru-cap">From the first sketch to a platform standard. <a href="#process" data-open-tab="pt-t5">See the sketch in the process, Tab 5 ↑</a></p>
             <div style="display:flex;flex-direction:column;align-items:center;gap:11px;margin-top:18px;">
               <div style="display:flex;gap:20px;align-items:center;"><span style="width:22px;height:22px;color:#9aa0ac;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><span style="width:22px;height:22px;color:#9aa0ac;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span style="width:22px;height:22px;color:#9aa0ac;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></span><span style="width:22px;height:22px;color:#9aa0ac;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22V4h13l-2 4 2 4H6"/></svg></span><span style="width:22px;height:22px;color:#0568b3;background:#e3f1fc;border-radius:7px;padding:4px;width:30px;height:30px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6.2"/><path d="M16 3l5 5-9 9H7v-5z"/></svg></span><span style="width:22px;height:22px;color:#9aa0ac;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span></div>
-              <div style="font-size:13px;color:#6b7280;font-weight:500;">Right icon strip — switches between states</div>
+              <div style="font-size:13px;color:#6b7280;font-weight:500;">The icon strip switches between views.</div>
             </div>
           </div>
         </div>
         <div class="contrib stacked">
           <div>
-            <h4>02 · Options Bar</h4>
+            <h4>02 · Options bar</h4>
             <div class="pdo">
-              <div class="row p"><span class="lbl">Problem</span><p>Page controls (breadcrumbs, layout switch, search, filters) were scattered — no consistent location across pages.</p></div>
-              <div class="row d"><span class="lbl">Decision</span><p>Introduced a dedicated options bar just below the tab navigation. One consistent location for all page-level controls across every screen.</p></div>
-              <div class="row o"><span class="lbl">Outcome</span><p>Standardised across all features and LOBs. Reduced visual noise and improved discoverability of page controls.</p></div>
+              <div class="row p"><span class="lbl">Problem</span><p>Breadcrumbs, layout switch, search and filters sat in a different place on every page.</p></div>
+              <div class="row d"><span class="lbl">Decision</span><p>One options bar, just below the tabs, holding every page-level control. Same place on every screen.</p></div>
+              <div class="row o"><span class="lbl">Outcome</span><p>Standard across every feature and line of business. Less visual noise, and controls are always where users expect them.</p></div>
             </div>
           </div>
           <div>
@@ -1104,16 +1569,16 @@
                 <div class="ru-colhead"><span style="width:9px;height:9px;border-radius:50%;background:#2c332e;flex:0 0 auto;"></span>INBOX<span class="ct">(4)</span></div><div class="ru-colhead"><span style="width:9px;height:9px;border-radius:50%;background:#e0218a;flex:0 0 auto;"></span>UW REVIEW<span class="ct">(3)</span></div><div class="ru-colhead"><span style="width:9px;height:9px;border-radius:50%;background:#2f78d6;flex:0 0 auto;"></span>QUOTED<span class="ct">(2)</span></div><div class="ru-colhead"><span style="width:9px;height:9px;border-radius:50%;background:#2f9e63;flex:0 0 auto;"></span>BOUND<span class="ct">(3)</span></div>
               </div>
             </div>
-            <p class="ru-cap">One consistent control bar across every page — <b>breadcrumb, layout, search, filters</b> always in the same place.</p>
+            <p class="ru-cap">From the first sketch to a platform standard. <a href="#process" data-open-tab="pt-t5">See the sketch in the process, Tab 5 ↑</a></p>
           </div>
         </div>
         <div class="contrib stacked">
           <div>
-            <h4>03 · Unified Filter System</h4>
+            <h4>03 · Unified filters</h4>
             <div class="pdo">
-              <div class="row p"><span class="lbl">Problem</span><p>10 filters appeared separately — users opened each one individually, applied them one by one. 4 filters = minimum 8 interactions.</p></div>
-              <div class="row d"><span class="lbl">Decision</span><p>Consolidated all filters into one panel. Left side shows all filters. Right side shows applied filters as tags. Select all at once. Apply once.</p></div>
-              <div class="row o"><span class="lbl">Outcome</span><p>Reduced filter interactions from 8+ to 2. Applied filters visible at a glance without reopening dropdowns. Adopted platform-wide across all LOBs.</p></div>
+              <div class="row p"><span class="lbl">Problem</span><p>10 filters, each opened and applied on its own. Using 4 filters took at least 8 interactions.</p></div>
+              <div class="row d"><span class="lbl">Decision</span><p>One filter panel. All filters on the left, applied filters as removable tags on the right. Select everything, apply once.</p></div>
+              <div class="row o"><span class="lbl">Outcome</span><p>From 8 or more interactions down to 2. Applied filters stay visible without reopening anything. Used across every line of business.</p></div>
             </div>
           </div>
           <div>
@@ -1141,54 +1606,35 @@
                 </div>
               </div>
             </div>
-            <p class="ru-cap">All filters in one panel — <b>select all, apply once.</b> Applied selections stay visible as removable tags.</p>
+            <p class="ru-cap">The problem is in the process, <a href="#process" data-open-tab="pt-t4">Tab 4</a>. The first sketch is in <a href="#process" data-open-tab="pt-t5">Tab 5 ↑</a></p>
           </div>
         </div>
       </div>
         </section>
 
-    <!-- 05 IMPACT -->
-    <section class="panel reveal" id="impact" data-screen-label="05 Impact">
-      <span class="eyebrow-num">05 — Impact</span>
-      <h2 class="sec-title">What one design foundation unlocked</h2>
-      <p class="impact-rowlabel">Row 1 — Business metrics</p>
-      <div class="impact-grid">
-        <div class="impact-stat"><div class="num">92%</div><div class="lab">Reduction in manual work</div><div class="sub">Half a day of admin per submission → minutes.</div></div>
-        <div class="impact-stat"><div class="num">2.5×</div><div class="lab">More submissions per underwriter per day</div><div class="sub">Same headcount. 2.5× the output.</div></div>
-        <div class="impact-stat"><div class="num">4×</div><div class="lab">More high-appetite deals closed</div><div class="sub">Faster triage = faster response = more wins.</div></div>
-        <div class="impact-stat"><div class="num">85%</div><div class="lab">Reduction in manual systems used</div><div class="sub">From 5+ tools to one unified workspace.</div></div>
-      </div>
-      <p class="impact-rowlabel second">Row 2 — Platform metrics</p>
-      <div class="impact-grid">
-        <div class="impact-stat"><div class="num">5</div><div class="lab">LOBs built on one base system</div><div class="sub">Aviation, Marine, Construction, Property, PVT — all on the foundation I designed.</div></div>
-        <div class="impact-stat"><div class="num">0</div><div class="lab">Full redesigns needed for new LOBs</div><div class="sub">Configuration only. Base holds for every sector.</div></div>
-        <div class="impact-stat"><div class="num">3</div><div class="lab">Designers now building on my architecture</div><div class="sub">The foundation scaled beyond me.</div></div>
-        <div class="impact-stat"><div class="num">1</div><div class="lab">Platform shortlisted for AI Implementation in Insurance</div><div class="sub">2025 Insurance Insider US Honors.</div></div>
-      </div>
+    <!-- 07 RESULTS -->
+    <section class="panel reveal" id="impact" data-screen-label="07 Results">
+      <span class="eyebrow-num">07 · Results</span>
+      <h2 class="sec-title">Did it pass the four tests?</h2>
+      <p class="appr-intro">In <a href="#goal">section 02</a>, I set four tests for the new workflow. Here is how it did.</p>
+      <ol class="rx-tests"><li><span class="rx-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><h3>New lines, no redesign</h3><p>Construction, Property and PV&amp;T were added on the same base, through configuration, with zero full redesigns. Designing a new line took under 2 weeks (estimate).</p></li><li><span class="rx-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><h3>Many clients per line</h3><p>Clients switch steps like clearance on or off on the same base. A client-specific change for a demo took 2 to 3 days (estimate), as a configuration update rather than new design work.</p></li><li><span class="rx-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><h3>One experience everywhere</h3><p>The same journey and the same three patterns in all 5 lines. A client on several lines learns the product once.</p></li><li><span class="rx-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span><h3>Lower build cost</h3><p>New lines reused the base screens and the shared component library. Engineering configured new lines instead of building new products.</p></li></ol>
+      <p class="rx-lab">By the numbers</p>
+      <dl class="rx-stats"><div><dt>5</dt><dd>lines of business on one base</dd></div><div><dt>Under 2 weeks</dt><dd>to design a new line (estimate)</dd></div><div><dt>2 to 3 days</dt><dd>for a client demo change (estimate)</dd></div><div><dt>8+ to 2</dt><dd>interactions to filter</dd></div><div><dt>4 to 1</dt><dd>steps to check a note</dd></div></dl>
     </section>
 
-    <!-- 06 TESTIMONIALS -->
-    <section class="panel reveal" id="testimonials" data-screen-label="06 Testimonials">
-      <span class="eyebrow-num">06 — What stakeholders say</span>
-      <div class="testi-grid">
-        <div class="testi"><div class="mark">"</div><p>This technology is invaluable in enhancing our efficiency and accuracy, allowing us to stay ahead of the competition.</p><div class="src">— CEO, Global Specialty Insurer</div></div>
-        <div class="testi"><div class="mark">"</div><p>We've seen substantial growth through the combination of excellent technology and underwriting talent.</p><div class="src">— President, Aviation Underwriting Practice</div></div>
-        <div class="testi"><div class="mark">"</div><p>In my 33 years in the business, this has been one of the best development teams I've worked with.</p><div class="src">— President, Specialty Underwriters</div></div>
-      </div>
-    </section>
-
-    <!-- 07 LEARNINGS -->
-    <section class="panel reveal" id="learnings" data-screen-label="07 Learnings">
-      <span class="eyebrow-num">07 — What this taught me</span>
+    <!-- 08 LEARNINGS -->
+    <section class="panel reveal" id="learnings" data-screen-label="08 What I learned">
+      <span class="eyebrow-num">08 · What I learned</span>
+      <h2 class="sec-title">What I would take to the next platform</h2>
       <div class="learn-grid">
-        <div class="learn"><div class="ln">1</div><div class="learn-body"><h4>Foundation decisions are product strategy decisions</h4><p>Designing one base system that works for five sectors meant making deliberate constraints early. Those constraints felt limiting — they're what made the system scale without chaos.</p></div></div>
-        <div class="learn"><div class="ln">2</div><div class="learn-body"><h4>The user's real job is judgement, not data entry</h4><p>Every design decision came back to one question: does this help the underwriter make a better decision, faster? When that was the north star, the right solutions became obvious.</p></div></div>
-        <div class="learn"><div class="ln">3</div><div class="learn-body"><h4>Design for the designers who come after you</h4><p>When three more designers joined, they needed to extend the system without relearning it. Designing the handoff is part of the work.</p></div></div>
-        <div class="learn"><div class="ln">4</div><div class="learn-body"><h4>A pattern decision made once can live everywhere</h4><p>The right sidebar. The options bar. The unified filter. Each was a single decision that became a platform-wide standard. That's the leverage of systems thinking.</p></div></div>
+        <div class="learn"><div class="ln">1</div><div class="learn-body"><h4>The biggest decision came from listening</h4><p>The optional clearance stage was not in any brief. It came from Aviation clients describing how their teams actually worked. The shape of the platform came from how clients worked, not from the Marine screens.</p></div></div>
+        <div class="learn"><div class="ln">2</div><div class="learn-body"><h4>Differences are settings, not separate products</h4><p>Every time a line or client worked differently, the question was the same: can this be a setting on the base? Treating clearance as a switch, not a second product, is what let one base serve clients who work very differently.</p></div></div>
+        <div class="learn"><div class="ln">3</div><div class="learn-body"><h4>Small fixes multiply at platform scale</h4><p>A filter that takes 8 clicks is a small annoyance on one line. On five lines, it is everywhere. Fixing it once in the base fixed it for every line at the same time.</p></div></div>
       </div>
+      <div class="learn-diff"><p class="learn-diff-lab">What I would do differently</p><p>Measure from day one. We aimed to cut checking time by half, but never set up a way to track it. Next time, I would agree how to measure success with the product team before launch, not after.</p></div>
       <div class="closing">
-        <div class="cap">Designing at platform scale</div>
-        <p>"I was handed one LOB and no design system. I left behind a foundation that five products and three designers are built on. That is what it means to design at platform scale."</p>
+        <div class="cap">In one line</div>
+        <p>Marine had a working flow built for one line. I left a base that five lines of business and their clients run on, where adding a new line is a setup job, not a rebuild.</p>
       </div>
     </section>
 
@@ -1221,7 +1667,7 @@
     </nav>
   </div>
   <div class="foot-note">
-    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>© 2026 Abhishek LG · Staff UX Designer</span>
     <span>Designed &amp; built end to end.</span>
   </div>
 </footer>
@@ -1254,5 +1700,61 @@
 })();
 </script>
 
+
+<div class="pw-lb" id="pwLb" hidden role="dialog" aria-modal="true" aria-label="Whiteboard photo"><img alt="" /><button type="button" class="x" aria-label="Close">×</button><button type="button" class="pv" aria-label="Previous photo">‹</button><button type="button" class="nx" aria-label="Next photo">›</button></div>
+<script>
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('.pw-row .pw-card')),lb=document.getElementById('pwLb');if(!lb)return;
+  var big=lb.querySelector('img'),list=[],cur=0;
+  function scan(row){list=[];cards.forEach(function(c){var im=c.querySelector('.pw-photo img');c.classList.toggle('has-img',!!im);});(row?[].slice.call(row.querySelectorAll('.pw-card')):[]).forEach(function(c){var im=c.querySelector('.pw-photo img');c.classList.toggle('has-img',!!im);if(im)list.push({c:c,src:im.currentSrc||im.src,alt:im.alt});});}
+  function show(i){if(!list.length)return;cur=(i+list.length)%list.length;big.src=list[cur].src;big.alt=list[cur].alt||'';}
+  function open(c){scan(c.closest('.pw-row'));var i=list.findIndex(function(x){return x.c===c;});if(i<0)return;show(i);lb.hidden=false;document.body.style.overflow='hidden';}
+  function close(){lb.hidden=true;document.body.style.overflow='';}
+  scan();cards.forEach(function(c){c.addEventListener('click',function(){open(c);});});
+  lb.querySelector('.x').onclick=close;lb.querySelector('.pv').onclick=function(e){e.stopPropagation();show(cur-1);};lb.querySelector('.nx').onclick=function(e){e.stopPropagation();show(cur+1);};
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);});
+})();
+</script>
+<script>
+(function(){
+  var sw=document.getElementById('dcSw'),st=document.getElementById('dcStrip'),ss=document.getElementById('dcState');if(sw&&st){sw.addEventListener('click',function(){var on=sw.getAttribute('aria-checked')!=='true';sw.setAttribute('aria-checked',String(on));st.classList.toggle('on',on);st.querySelector('.dc-clr').setAttribute('aria-hidden',String(!on));ss.textContent=on?'On':'Off';});}
+  document.querySelectorAll('a[data-open-tab]').forEach(function(l){l.addEventListener('click',function(){var t=document.getElementById(l.getAttribute('data-open-tab'));if(t)t.click();});});
+  var tw=document.querySelector('.pt-tabs-wrap'),tb=tw&&tw.querySelector('.pt-tabs');if(tb){var ck=function(){tw.classList.toggle('at-end',tb.scrollLeft+tb.clientWidth>=tb.scrollWidth-4);};tb.addEventListener('scroll',ck,{passive:true});window.addEventListener('resize',ck);ck();}
+  var toggle=document.getElementById('phToggle');
+  if(toggle){toggle.addEventListener('click',function(){var on=document.body.classList.toggle('ph-hidden');toggle.setAttribute('aria-pressed',String(on));toggle.textContent=on?'Show placeholders':'Hide placeholders';});}
+  document.querySelectorAll('.flow-card .seg button').forEach(function(b){b.addEventListener('click',function(){var card=b.closest('.flow-card');card.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-selected',String(x===b));});card.querySelectorAll('.flow').forEach(function(f){f.hidden=f.dataset.view!==b.dataset.flow;});});});
+  document.querySelectorAll('.fan .opt').forEach(function(o){o.addEventListener('click',function(){o.closest('.fan').querySelectorAll('.opt').forEach(function(x){x.setAttribute('aria-pressed',String(x===o));});});});
+  var trail=[].slice.call(document.querySelectorAll('#procTrail button'));
+  var chaps=[].slice.call(document.querySelectorAll('.chap'));
+  function select(i){
+    trail.forEach(function(b,j){b.setAttribute('aria-selected',String(j===i));b.setAttribute('aria-current',String(j===i));});
+    chaps.forEach(function(c,j){c.hidden=j!==i;if(j===i){c.classList.remove('in');void c.offsetWidth;c.classList.add('in');}});
+  }
+  trail.forEach(function(b,i){
+    b.addEventListener('click',function(){select(i);});
+    b.addEventListener('keydown',function(e){
+      var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;
+      if(!d) return; e.preventDefault();
+      var n=(i+d+trail.length)%trail.length; select(n); trail[n].focus();
+    });
+  });
+  select(0);
+})();
+</script>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.pt-tabs [role="tab"]'));
+  function sel(i){tabs.forEach(function(t,j){var on=j===i;t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!on;});}
+  tabs.forEach(function(t,i){t.addEventListener('click',function(){sel(i);});t.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;e.preventDefault();var n=(i+d+tabs.length)%tabs.length;sel(n);tabs[n].focus();});});
+  sel(0);
+})();
+</script>
+<style id="scroll-fab-css">.sfab{position:fixed;right:20px;bottom:24px;z-index:900;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .25s ease,transform .25s ease;}.sfab.on{opacity:1;transform:none;pointer-events:auto;}.sfab button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,60,40,.14);background:rgba(251,248,241,.94);color:#15543b;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px -12px rgba(20,40,30,.45);backdrop-filter:blur(6px);transition:background .2s,color .2s,transform .15s,opacity .2s;}.sfab button:hover{background:#15543b;color:#fff;transform:translateY(-2px);}.sfab button[disabled]{opacity:.35;pointer-events:none;}.sfab svg{width:18px;height:18px;}@media(max-width:560px){.sfab{right:12px;bottom:14px;}.sfab button{width:44px;height:44px;}}@media print{.sfab{display:none;}}</style>
+<div class="sfab" id="sFab" aria-label="Page scroll"><button type="button" data-dir="up" aria-label="Go to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button><button type="button" data-dir="down" aria-label="Go to bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button></div>
+<script>(function(){var f=document.getElementById('sFab');if(!f)return;var up=f.querySelector('[data-dir=up]'),dn=f.querySelector('[data-dir=down]');var rm=matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+function tick(){var y=window.scrollY,H=document.documentElement.scrollHeight,v=window.innerHeight;var long=H>v*2.5;f.classList.toggle('on',long);dn.disabled=y+v>=H-40;up.disabled=y<40;}
+up.addEventListener('click',function(){window.scrollTo({top:0,behavior:rm});});dn.addEventListener('click',function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:rm});});
+window.addEventListener('scroll',tick,{passive:true});window.addEventListener('resize',tick);tick();})();</script>
 </body>
 </html>

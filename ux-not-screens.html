@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>UX is not just screens — Abhishek LG</title>
+<title>UX is not just screens · Abhishek LG</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
@@ -191,13 +191,22 @@
   .foot-cta-nav a{font-size:16px;font-weight:600;color:var(--ink-soft);transition:color .2s;}
   .foot-cta-nav a:hover{color:var(--green);}
   @media(max-width:720px){.foot-cta-row1{flex-direction:column;align-items:flex-start;gap:16px;}.foot-cta-actions{width:100%;}}
+
+  /* footer buttons (matched to home page) */
+  .foot-cta-actions .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);font-weight:600;font-size:15.5px;line-height:1;padding:13px 22px;border-radius:999px;border:none;cursor:pointer;transition:transform .15s ease,box-shadow .2s ease,background .2s;white-space:nowrap;text-decoration:none;color:#fff;width:auto;height:auto;flex-direction:row;}
+  .foot-cta-actions .btn svg{width:17px;height:17px;flex-shrink:0;display:block;transition:transform .2s ease;}
+  .foot-cta-actions .btn-dark{color:#fff;}
+  .foot-cta-actions .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(0,0,0,.6);}
+  .foot-cta-actions .btn:hover svg{transform:translateX(2px);}
+  .foot-cta-actions .btn:active{transform:translateY(0) scale(.97);}
+  @media(max-width:720px){.foot-cta-actions .btn{white-space:normal;}}
 </style></head>
 <body>
 
 <!-- ============ NAV ============ -->
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a class="nav-brand" href="index.html" aria-label="Abhishek LG — home">
+    <a class="nav-brand" href="index.html" aria-label="Abhishek LG · home">
       <span class="nav-avatar" role="img" aria-label="Abhishek LG"></span>
       <span class="nm" style="font-family:var(--font-hero);white-space:nowrap;font-size:16px">Hi, I'm Abhishek LG</span>
     </a>
@@ -229,10 +238,10 @@
 
         <!-- 01 -->
         <section class="panel reveal" id="begin" data-spy="begin" data-screen-label="01 Where it begins">
-          <span class="eyebrow-num">01 — Where it begins</span>
+          <span class="eyebrow-num">01 · Where it begins</span>
           <h2 class="sec-title">You've already experienced bad UX today</h2>
-          <p class="body-copy">This morning, before you opened your laptop, you probably touched at least three things someone designed. A tap. A door handle. A switch. And at least one of them made you pause for half a second — which side is hot? Do I push or pull? Why is this so awkward?</p>
-          <p class="body-copy">That pause? That's UX failing. Not a screen. Not an app. Just a thing that was designed for a person — and didn't quite get it right.</p>
+          <p class="body-copy">This morning, before you opened your laptop, you probably touched at least three things someone designed. A tap. A door handle. A switch. And at least one of them made you pause for half a second. Which side is hot? Do I push or pull? Why is this so awkward?</p>
+          <p class="body-copy">That pause is UX failing. It wasn't a screen or an app, just a thing designed for a person that didn't quite get it right.</p>
 
           <div class="ill">
             <div class="ill-frame">
@@ -254,11 +263,11 @@
 
         <!-- 02 -->
         <section class="panel reveal" id="around" data-spy="around" data-screen-label="02 Look around">
-          <span class="eyebrow-num">02 — Look around</span>
+          <span class="eyebrow-num">02 · Look around</span>
           <h2 class="sec-title">The chair you're sitting on is a UX decision</h2>
           <p class="body-copy">The height of it. Whether the back supports you or fights you. Whether the armrests are where your arms actually fall. Someone decided all of that. That's UX.</p>
           <p class="body-copy">The road sign that confused you last week? UX. The queue system at the bank that had everyone standing in the wrong place? UX. The restaurant menu where you couldn't find the price? UX.</p>
-          <p class="body-copy">None of these are screens. All of them are experiences someone designed — or forgot to design properly.</p>
+          <p class="body-copy">None of these are screens. All of them are experiences someone designed, or forgot to design properly.</p>
 
           <div class="pull">
             <p>"UX is the gap between what the designer assumed and what the person actually felt."</p>
@@ -297,10 +306,10 @@
 
         <!-- 03 -->
         <section class="panel reveal" id="clear" data-spy="clear" data-screen-label="03 Let's be clear">
-          <span class="eyebrow-num">03 — Let's be clear</span>
-          <h2 class="sec-title">Not screens. Not aesthetics. Not UI</h2>
+          <span class="eyebrow-num">03 · Let's be clear</span>
+          <h2 class="sec-title">UX is more than screens, aesthetics or UI</h2>
           <p class="body-copy">UX is the experience of using something. How it makes you feel while you're doing a task. Whether it helped you or got in your way.</p>
-          <p class="body-copy">A tap can work perfectly — water comes out, nothing leaks — and still have terrible UX if you burned your hand figuring out which side was hot.</p>
+          <p class="body-copy">A tap can work perfectly, with water coming out and nothing leaking, and still have terrible UX if you burned your hand figuring out which side was hot.</p>
           <p class="body-copy"><strong>Functional is not the same as good.</strong></p>
 
           <div class="compare">
@@ -335,7 +344,7 @@
 
         <!-- 04 -->
         <section class="panel reveal" id="see" data-spy="see" data-screen-label="04 How to see it">
-          <span class="eyebrow-num">04 — How to see it</span>
+          <span class="eyebrow-num">04 · How to see it</span>
           <h2 class="sec-title">Once you see it, you can't unsee it</h2>
           <p class="body-copy">This is the most useful thing I've picked up in 6 years of doing this. Not a tool. Not a framework. A way of noticing things.</p>
 
@@ -344,14 +353,14 @@
               <div class="sn">01</div>
               <div>
                 <h4>Notice the friction</h4>
-                <p>That half-second pause, the small confusion, the moment you had to think when you shouldn't have — that's your signal. Start there.</p>
+                <p>That half-second pause, the small confusion, the moment you had to think when you shouldn't have. That's your signal. Start there.</p>
               </div>
             </div>
             <div class="step">
               <div class="sn">02</div>
               <div>
                 <h4>Ask who it was designed for</h4>
-                <p>Good UX requires someone to genuinely care about the person on the other side. Most bad UX happens when someone designed for themselves, or for "the average user" — without asking who that is.</p>
+                <p>Good UX requires someone to care about the person on the other side. Most bad UX happens when someone designed for themselves, or for "the average user", without asking who that is.</p>
               </div>
             </div>
             <div class="step">
@@ -373,9 +382,9 @@
 
         <!-- 05 -->
         <section class="panel reveal" id="work" data-spy="work" data-screen-label="05 What it means for my work">
-          <span class="eyebrow-num">05 — What this means for my work</span>
+          <span class="eyebrow-num">05 · What this means for my work</span>
           <h2 class="sec-title">I don't start in Figma. I start by watching people</h2>
-          <p class="body-copy">Before I design a single screen, I try to understand the moment the person is in. What do they already know? What are they trying to do? What would make them feel stupid — and how do I design that feeling out?</p>
+          <p class="body-copy">Before I design a single screen, I try to understand the moment the person is in. What do they already know? What are they trying to do? What would make them feel stupid, and how do I design that feeling out?</p>
           <p class="body-copy">That comes from years of noticing UX outside screens. The bad tap taught me more about feedback and clarity than any design book. The confusing queue taught me about system visibility. The menu with no prices taught me about trust.</p>
 
           <div class="callout-strong">
@@ -388,12 +397,12 @@
         <section class="panel reveal" id="closing" data-spy="closing" data-screen-label="Closing">
           <span class="eyebrow-num">Closing</span>
           <h2 class="sec-title">Every bad tap is a teacher</h2>
-          <p class="body-copy">The mindset that makes good design good — the empathy, the observation, the insistence on designing for the person rather than the function — that's trained everywhere. Not just in Figma.</p>
+          <p class="body-copy">The mindset that makes good design good is the empathy, the observation and the insistence on designing for the person rather than the function. You can train it anywhere, not only in Figma.</p>
           <p class="body-copy">Pay attention to the things that make you pause. They're trying to tell you something.</p>
 
           <div class="sig">
-            <div class="nm">— Abhishek · Senior UX Designer</div>
-            <span class="tag">Part 1 of 11 — UX as I see it</span>
+            <div class="nm">Abhishek · Staff UX Designer</div>
+            <span class="tag">Part 1 of 11 · UX as I see it</span>
           </div>
         </section>
 
@@ -428,7 +437,7 @@
     </nav>
   </div>
   <div class="foot-note">
-    <span>© 2026 Abhishek LG · Senior UX Designer</span>
+    <span>© 2026 Abhishek LG · Staff UX Designer</span>
     <span>Designed &amp; built end to end.</span>
   </div>
 </footer>
@@ -458,5 +467,11 @@
 })();
 </script>
 
+<style id="scroll-fab-css">.sfab{position:fixed;right:20px;bottom:24px;z-index:900;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .25s ease,transform .25s ease;}.sfab.on{opacity:1;transform:none;pointer-events:auto;}.sfab button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,60,40,.14);background:rgba(251,248,241,.94);color:#15543b;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px -12px rgba(20,40,30,.45);backdrop-filter:blur(6px);transition:background .2s,color .2s,transform .15s,opacity .2s;}.sfab button:hover{background:#15543b;color:#fff;transform:translateY(-2px);}.sfab button[disabled]{opacity:.35;pointer-events:none;}.sfab svg{width:18px;height:18px;}@media(max-width:560px){.sfab{right:12px;bottom:14px;}.sfab button{width:44px;height:44px;}}@media print{.sfab{display:none;}}</style>
+<div class="sfab" id="sFab" aria-label="Page scroll"><button type="button" data-dir="up" aria-label="Go to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button><button type="button" data-dir="down" aria-label="Go to bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button></div>
+<script>(function(){var f=document.getElementById('sFab');if(!f)return;var up=f.querySelector('[data-dir=up]'),dn=f.querySelector('[data-dir=down]');var rm=matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+function tick(){var y=window.scrollY,H=document.documentElement.scrollHeight,v=window.innerHeight;var long=H>v*2.5;f.classList.toggle('on',long);dn.disabled=y+v>=H-40;up.disabled=y<40;}
+up.addEventListener('click',function(){window.scrollTo({top:0,behavior:rm});});dn.addEventListener('click',function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:rm});});
+window.addEventListener('scroll',tick,{passive:true});window.addEventListener('resize',tick);tick();})();</script>
 </body>
 </html>
