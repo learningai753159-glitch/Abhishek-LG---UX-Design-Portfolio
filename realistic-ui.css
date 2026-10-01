@@ -132,6 +132,8 @@
 .ru-stack{display:flex;flex-direction:column;gap:28px;margin-top:14px;}
 .ru-2col{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:14px;}
 @media (max-width:900px){ .ru-2col{grid-template-columns:1fr;} }
+.ru-2col>*{min-width:0;}
+@media (max-width:560px){ .ru-2col>*{overflow-x:auto;} }
 .ru-eyebrow{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin:0 0 9px;}
 .ru-cap{font-size:14px;color:var(--sub);line-height:1.55;margin:14px auto 0;text-align:center;max-width:64ch;}
 .ru-cap b{color:var(--ink);font-weight:600;}

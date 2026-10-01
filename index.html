@@ -3,7 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Abhishek LG · Staff UX Designer</title>
+<title>Abhishek LG · Staff Product &amp; UX Designer</title>
+<meta name="description" content="Staff Product &amp; UX Designer with 7+ years in enterprise AI, insurance SaaS, IoT and commerce. Based in Bengaluru, working with global teams.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Abhishek LG · Staff Product &amp; UX Designer">
+<meta property="og:description" content="Staff Product &amp; UX Designer with 7+ years in enterprise AI, insurance SaaS, IoT and commerce. Based in Bengaluru, working with global teams.">
+<meta property="og:image" content="https://your-domain.com/assets/abhishek-portrait.png">
+<meta property="og:url" content="https://your-domain.com/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Caveat:wght@500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
@@ -170,10 +177,20 @@
   }
   .stat .num{font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3vw,40px);color:var(--green);line-height:1;}
   .stat .lab{font-size:14.5px;color:var(--ink-soft);margin-top:10px;line-height:1.4;font-weight:500;}
-  .stats{gap:0 40px;margin-top:0!important;padding-top:72px!important;}
+  .stats{gap:0 40px;margin-top:0!important;padding-top:36px!important;}
   .stat{background:none;border:none;border-radius:0;padding:26px 0 6px;position:relative;}
   .stat .num{font-size:clamp(34px,3.6vw,48px)!important;letter-spacing:-.01em;}
-  .stat .lab{font-size:14px;max-width:24ch;}
+  .stat .lab{font-size:14px;}
+  .stats{margin-top:36px!important;padding:6px 0!important;gap:0!important;background:#fff;border:1px solid rgba(21,84,59,.1);border-radius:22px;box-shadow:0 22px 44px -36px rgba(21,84,59,.45);}
+  .stat{padding:26px 30px!important;border-left:1px solid rgba(21,84,59,.1);}
+  .stat:first-child{border-left:0;}
+  .stat .num{font-family:var(--font-body)!important;font-weight:700;color:#191919!important;font-size:clamp(30px,3vw,42px)!important;letter-spacing:-.03em;display:flex;align-items:baseline;gap:2px;font-variant-numeric:tabular-nums;}
+  .stat .num .u{font-size:.5em;font-weight:600;color:#008953;letter-spacing:0;}
+  .stat .num .u-gap{margin-left:6px;}
+  .stat .num .ar{font-size:.62em;font-weight:500;color:#008953;margin:0 8px;}
+  .stat .lab{font-size:14.5px;line-height:1.5;color:#5d6b64!important;margin-top:10px;text-wrap:pretty;}
+  @media (max-width:1000px){.stat:nth-child(3){border-left:0;}.stat:nth-child(n+3){border-top:1px solid rgba(21,84,59,.1);}}
+  @media (max-width:560px){.stat{padding:20px 18px!important;}}
   @media (max-width:1000px){.stats{row-gap:8px;}}
 
   /* fanned cards */
@@ -416,13 +433,18 @@
     .exp-tip{position:static;width:auto;transform:none;margin-top:10px;opacity:1;pointer-events:auto;}
   }
   .res-card{background:var(--yellow);border-radius:var(--radius-lg);padding:40px;color:#dff0e6;height:100%;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;background-image:radial-gradient(rgba(21,84,59,.06) 1.5px,transparent 1.5px);background-size:16px 16px;}
-  .res-card-wide{flex-direction:row;align-items:center;justify-content:space-between;gap:40px;padding:44px 40px;}
+  .res-card-wide{flex-direction:row;align-items:center;justify-content:space-between;gap:40px;padding:32px 40px;}
   .res-card-wide .btn{flex-shrink:0;}
-  .res-card-cta{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:16px;flex-shrink:0;padding:34px 0 4px;}
+  .res-card-cta{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:16px;flex-shrink:0;padding:0;}
   .res-card-cta .res-card-note{margin:0;text-align:center;line-height:1.3;white-space:nowrap;}
   .res-card-note{font-family:var(--font-hand);color:var(--black);font-size:72px;margin:0 0 14px;}
   .res-card p{font-size:16px;color:#3f5c4d;line-height:1.6;margin:0 0 14px;}
   .res-card .btn{background:var(--black);color:#fff;}
+  .res-card-text{flex:1 1 auto;min-width:0;}
+  .res-card p.res-card-line{margin:0 0 10px;}
+  @media(min-width:1100px){.res-card p.res-card-line{white-space:nowrap;}}
+  .res-card p.res-card-hand{font-family:var(--font-hand);color:var(--black);font-size:26px;line-height:1.2;margin:0;}
+  .res-card-wide .res-card-cta{align-self:center;margin-left:auto;}
   .res-card .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(0,0,0,.5);}
   @media(max-width:900px){.res-card-wide{flex-direction:column;align-items:flex-start;}}
 
@@ -451,7 +473,7 @@
   .avail b{color:var(--green);font-weight:600;}
 
   /* ---------- footer ---------- */
-  footer{padding:30px 28px 60px;}
+  footer{padding:0 28px 60px;}
   .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
   .foot-grid h4{font-family:var(--font-display);font-size:24px;color:var(--ink);margin-bottom:20px;}
   .foot-grid ul{list-style:none;padding:0;margin:0;}
@@ -698,6 +720,47 @@
   .rq-all{display:inline-block;margin-top:22px;font-size:15px;font-weight:600;color:var(--green);text-decoration:underline;text-underline-offset:3px;}.rq-all:hover{color:var(--green-bright,#008953);}
   @media(max-width:1000px){.rq-row{grid-template-columns:repeat(2,minmax(0,1fr));}}
   @media(max-width:720px){.rq-lead-row,.rq-row{grid-template-columns:1fr;}}
+.bl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;}
+.bl-card{position:relative;display:flex;flex-direction:column;min-width:0;}
+.bl-link{position:absolute;inset:0;z-index:2;border-radius:22px;}
+.bl-img{aspect-ratio:520/315;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-card);background:#0e1020;margin-bottom:26px;}
+.bl-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .5s ease;}
+.bl-card:hover .bl-img img{transform:scale(1.03);}
+.bl-card h3{font-family:var(--font-body);font-weight:700;font-size:clamp(20px,1.8vw,26px);line-height:1.3;letter-spacing:-.01em;color:#191919;margin:0 0 12px;text-wrap:pretty;}
+.bl-card p{font-size:16.5px;line-height:1.6;color:var(--ink-soft);margin:0 0 18px;text-wrap:pretty;}
+.bl-chips{display:flex;flex-wrap:wrap;gap:10px;margin:auto 0 20px;}
+.bl-chips span{font-size:14px;font-weight:600;color:var(--green);background:rgba(21,84,59,.08);padding:8px 14px;border-radius:999px;}
+.bl-cta{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:700;color:#191919;transition:gap .2s ease;}.bl-cta svg{width:15px;height:15px;}
+.bl-card:hover .bl-cta{gap:10px;}
+@media(max-width:1000px){.bl-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;}}
+@media(max-width:640px){.bl-grid{grid-template-columns:1fr;gap:44px;}}
+@media(prefers-reduced-motion:reduce){.bl-img img{transition:none;}.bl-card:hover .bl-img img{transform:none;}}
+.rq-mini-wrap{margin:36px 0 4px;}
+.rq-mini{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.rq-mini-card{position:relative;overflow:hidden;margin:0;padding:20px 22px 16px 24px;border:1px solid rgba(0,137,83,.14);border-radius:18px;background:#fff;display:flex;flex-direction:column;justify-content:space-between;gap:14px;box-shadow:0 1px 0 rgba(20,60,40,.04),0 18px 36px -30px rgba(21,84,59,.5);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+.rq-mini-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#008953,#7fcf9f);}
+.rq-mini-card:hover{transform:translateY(-3px);border-color:rgba(0,137,83,.3);box-shadow:0 1px 0 rgba(20,60,40,.04),0 24px 40px -26px rgba(21,84,59,.55);}
+.rq-mini-q{position:absolute;right:14px;bottom:-34px;font-family:"Libre Baskerville",Georgia,serif;font-size:150px;line-height:1;color:#008953;opacity:.07;pointer-events:none;}
+.rq-mini-li{position:absolute;top:16px;right:16px;color:#0a66c2;opacity:.85;}.rq-mini-li svg{width:15px;height:15px;display:block;}
+.rq-mini-card blockquote{position:relative;margin:0;padding-right:22px;font-size:15px;line-height:1.55;color:#191919;text-wrap:pretty;}
+.rq-mini-card mark{background:linear-gradient(transparent 58%,#f8e3a0 58%);color:inherit;padding:0 1px;}
+.rq-mini-card figcaption{position:relative;display:flex;align-items:center;gap:11px;font-size:12.5px;line-height:1.4;color:#64748b;}.rq-mini-card figcaption>span{display:flex;flex-direction:column;}
+.rq-mini-card figcaption img{width:36px;height:36px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 2px #fff,0 0 0 3.5px rgba(0,137,83,.35);}
+.rq-mini-card figcaption b{color:#191919;font-weight:700;font-size:13.5px;}
+.rq-mini-rel{display:inline-flex;align-items:center;gap:6px;color:#15543b;font-weight:600;}.rq-mini-rel::before{content:"";width:6px;height:6px;border-radius:50%;background:#2fae74;box-shadow:0 0 0 3px rgba(47,174,116,.18);}
+@media(max-width:720px){.rq-mini{grid-template-columns:1fr;}}
+@media(max-width:560px){.rq-mini-card{padding:18px 18px 14px 20px;}.rq-mini-all{font-size:12px;}}
+@media(prefers-reduced-motion:reduce){.rq-mini-card{transition:none;}.rq-mini-card:hover{transform:none;}}
+@media(max-width:560px){.sec-head h2{white-space:normal!important;}}
+.foot-cta-actions{align-items:center;flex:1 1 100%;}
+.foot-email-group{margin-left:auto;display:flex;align-items:center;gap:10px;padding:6px 6px 6px 16px;border-radius:999px;background:#fff;border:1px solid rgba(227,59,46,.22);box-shadow:0 12px 26px -20px rgba(227,59,46,.55);min-width:0;}
+.foot-email-ic{display:flex;color:#e33b2e;}.foot-email-ic svg{width:18px;height:18px;}
+.foot-email{font-size:15px;font-weight:600;color:var(--ink);user-select:all;white-space:nowrap;}
+.foot-email-btn{background-color:#e33b2e!important;flex:none;}
+.foot-email-group{flex:none;max-width:100%;}
+@media(max-width:1100px){.foot-email-group{margin-left:0;}}
+@media(max-width:720px){.foot-email-group{width:100%;}}
+@media(max-width:480px){.foot-email{white-space:normal;overflow-wrap:anywhere;min-width:0;}.foot-email-group{flex-wrap:wrap;border-radius:20px;padding:12px;}.foot-email-btn{width:100%;justify-content:center;}}
 </style>
 <link id="gfont-Abril-Fatface" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface:wght@300;400;500;600;700&amp;display=swap">
 <link id="gfont-Permanent-Marker" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker:wght@300;400;500;600;700&amp;display=swap">
@@ -736,9 +799,9 @@
 
   <div class="hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow" style="background:rgba(21,84,59,.08);color:var(--green);border:none;border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;display:inline-block;margin-bottom:24px">Staff UX Designer</span>
-      <h1 style="font-family: &quot;Bricolage Grotesque&quot;, sans-serif; font-weight:400; color:#008953; font-size:clamp(36px,5vw,58px); line-height:1.08; letter-spacing:-0.02em; margin-bottom:24px; max-width:16ch">Designing products that move critical business metrics</h1>
-      <p class="pitch" style="color:#475569;font-size:clamp(17px,1.4vw,19px);max-width:38rem;line-height:1.625;margin-bottom:32px">For 7+ years, I’ve worked on complex platforms across industries, from high-volume e-commerce and IoT to enterprise AI. I turn messy workflows into clear product experiences that move business metrics.</p>
+      <span class="eyebrow" style="background:rgba(21,84,59,.08);color:var(--green);border:none;border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;display:inline-block;margin-bottom:24px">Staff Product &amp; UX Designer</span>
+      <h1 style="font-family: &quot;Bricolage Grotesque&quot;, sans-serif; font-weight:400; color:#008953; font-size:clamp(36px,5vw,58px); line-height:1.08; letter-spacing:-0.02em; margin-bottom:24px; max-width:16ch">I design complex products that people rely on to do their jobs</h1>
+      <p class="pitch" style="color:#475569;font-size:clamp(15.5px,1.2vw,17px);max-width:none;line-height:1.6;margin-bottom:32px">7+ years designing enterprise AI, insurance, IoT and commerce platforms. I turn tangled workflows into clear, shipped products, working closely with product and engineering teams in India and the UK.</p>
       <div class="hero-cta" style="margin-bottom:0">
         <a class="btn btn-slate-dark" href="#work" style="background:#059669">Explore Case Studies</a>
         <a class="btn btn-slate-outline" href="assets/Abhishek-LG-Resume.pdf" download data-resume>Download Resume</a>
@@ -750,33 +813,14 @@
     </div>
   </div>
 
-  <div class="stats reveal" style="padding-top:40px;margin-top:0">
-    <div class="stat"><div class="num" style="font-family:&quot;Libre Baskerville&quot;;color:#191919">90%+</div><div class="lab" style="color:#64748b">Workflow Friction Cut (Enterprise B2B SaaS)</div></div>
-    <div class="stat"><div class="num" style="font-family:&quot;Libre Baskerville&quot;;color:#191919">4x</div><div class="lab" style="color:#64748b">Product Velocity Boost (Business-Critical Apps)</div></div>
-    <div class="stat"><div class="num" style="font-family:&quot;Libre Baskerville&quot;;color:#191919">0➔1</div><div class="lab" style="color:#64748b">Offline Ecosystems Digitized (Operations &amp; ERP Platforms)</div></div>
-    <div class="stat"><div class="num" style="font-family:&quot;Libre Baskerville&quot;;color:#191919">5+</div><div class="lab" style="color:#64748b">Complex Platforms Scaled (Multi-tenant Systems)</div></div>
+  <div class="stats reveal">
+    <div class="stat"><div class="num">92<span class="u">%</span></div><div class="lab">Faster time-to-quote (Enterprise insurance SaaS)</div></div>
+    <div class="stat"><div class="num">2–3<span class="u u-gap">wks</span></div><div class="lab">Design delivery, down from 6 weeks</div></div>
+    <div class="stat"><div class="num">4</div><div class="lab">Lines of business launched</div></div>
+    <div class="stat"><div class="num">1<span class="ar">→</span>4</div><div class="lab">Grew the design team</div></div>
   </div>
 
-  <div class="cards-row reveal">
-    <div class="pcard" style="background:#f6d6ad">
-      <div class="pcard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#191919" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
-      <h3>Enterprise AI &amp; SaaS workflows</h3>
-      <p>From blank canvas to live outcomes, enterprise scale, founder speed, from start to finish every time.</p>
-      <a class="link-cta" href="#work" style="color:#8a5a1f">See the work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-    <div class="pcard" style="background:#dcd7f3">
-      <div class="pcard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#191919" stroke-width="1.6"><path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5"/><path d="M8 13h8M8 17h5"/></svg></div>
-      <h3>0➔1 Operations digitization</h3>
-      <p>I replaced a store's paper records with an app. NutBite: how a 0➔1 design changed the way the whole store runs.</p>
-      <a class="link-cta" href="spendly.html" style="color:#5b4bab">Explore NutBite <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-    <div class="pcard" style="background:#c4e2f4">
-      <div class="pcard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#191919" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
-      <h3>Design logic &amp; strategy</h3>
-      <p>10 heuristics. 10 real-life stories. UX explained through dosas, dance classes, and badly designed taps.</p>
-      <a class="link-cta" href="#writing" style="color:#1f6a8c">Read my thinking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-  </div>
+  <div class="rq-mini-wrap reveal"><div class="rq-mini"><figure class="rq-mini-card"><span class="rq-mini-q" aria-hidden="true">“</span><span class="rq-mini-li" title="LinkedIn recommendation"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span><blockquote>Abhishek was the <mark>lead UI/UX designer</mark> in my team, driving forward industry-leading, <mark>AI-first product capabilities</mark> sold into globally recognised organisations.</blockquote><figcaption><img src="assets/rec-whitlam.png" alt="" width="36" height="36"><span><span><b>James Whitlam</b> · Founder at Vancap</span><span class="rq-mini-rel">Managed Abhishek directly</span></span></figcaption></figure><figure class="rq-mini-card"><span class="rq-mini-q" aria-hidden="true">“</span><span class="rq-mini-li" title="LinkedIn recommendation"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span><blockquote>He is a <mark>highly skilled UI/UX designer</mark>, a <mark>thoughtful design leader</mark> and an excellent collaborator.</blockquote><figcaption><img src="assets/rec-steve.png" alt="" width="36" height="36"><span><span><b>Steve O'Reilly</b> · Product Executive</span><span class="rq-mini-rel">Managed Abhishek directly</span></span></figcaption></figure></div></div>
 
 </section>
 
@@ -792,17 +836,17 @@
     <div class="step">
       <div class="step-num">01</div>
       <h3>Discovery &amp; logic first</h3>
-      <p>Behavioral research and workflow mapping before touching Figma. Deconstructing legacy tech debt into clean system architecture.</p>
+      <p>Research and workflow mapping before any screens. Untangling legacy systems into a clear structure.</p>
     </div>
     <div class="step">
       <div class="step-num">02</div>
-      <h3>0➔1 Execution grit</h3>
-      <p>Converting paper-heavy, offline friction into modern digital platforms through direct user and stakeholder collaboration.</p>
+      <h3>0→1 execution</h3>
+      <p>Turning paper-heavy, offline processes into digital products, working directly with users and stakeholders.</p>
     </div>
     <div class="step">
       <div class="step-num">03</div>
       <h3>Scalable systems &amp; handoff</h3>
-      <p>Building modular design systems optimized for rapid engineering execution and data-backed iteration.</p>
+      <p>Building modular design systems optimised for rapid engineering execution and data-backed iteration.</p>
     </div>
   </div>
 </section>
@@ -812,7 +856,7 @@
   <div class="sec-head">
     <div>
       <h2 style="font-family: &quot;Bricolage Grotesque&quot;, sans-serif; font-weight:500; letter-spacing:-0.01em; color: rgb(0, 137, 83)">Case studies</h2>
-      <p class="sub">Real products that I shipped.</p>
+      <p class="sub">Selected work</p>
     </div>
   </div>
 
@@ -831,85 +875,40 @@
           <div class="metrics">
             <span class="metric">92% ↓ time-to-quote</span>
             <span class="metric">4× high-appetite deals closed</span>
-            <span class="metric">85% reduction in manual work · Across 5 lines of business</span>
+            <span class="metric">8 tools → 1 · Across 4 launched lines of business</span>
           </div>
           <a class="link-cta" href="enterprise-platform.html" style="color:#191919;font-size:15px;flex:0 0 auto;">Read the story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </div>
 
-    <!-- NutBite -->
-    <div class="tl-item reveal">
-      <div class="tl-body">
-        <a class="tl-card-link" href="nutbite.html" aria-label="Read the story: The store that learned to report itself"></a>
-        <h3 class="tl-h3-row">Simpler than a notebook: a store app for a first-time user</h3>
-        <p class="role">I replaced paper logs and WhatsApp photos with an app that records every sale.</p>
-        <div class="tl-mock shot-mock">
-          <img src="assets/nutbite-dashboard.png" alt="NutBite store dashboard: today's sales, annual sales, weekly and monthly totals, low inventory alerts, top selling and slow movers" style="width:100%;display:block;" />
-        </div>
-        <div class="metrics-row">
-          <div class="metrics">
-            <span class="metric">60% fewer missed reports</span>
-            <span class="metric">50% less inventory waste</span>
-            <span class="metric">5 screens · full store digitized</span>
-          </div>
-          <a class="link-cta" href="nutbite.html" style="color:#191919;font-size:15px;flex:0 0 auto;">Read the story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </div>
-    </div>
+  </div>
+</section>
 
-    <!-- AI Audit -->
-    <div class="tl-item reveal">
-      <div class="tl-body">
-        <a class="tl-card-link" href="ai-audit.html" aria-label="Read the story: AI Speed. Human Depth."></a>
-        <h3 class="tl-h3-row">Skipping the manual audit: how I engineered AI to run it instead</h3>
-        <p class="role">Not prompted. Directed</p>
-        <div class="tl-mock shot-mock">
-          <img src="assets/ai-audit-diagram.png" alt="AI audit diagram: sketches and pain points flowing through AI into structured heuristic findings" style="width:100%;display:block;" />
-        </div>
-        <div class="metrics-row">
-          <div class="metrics">
-            <span class="metric">AI-augmented research system</span>
-            <span class="metric">&gt;50% research time saved</span>
-            <span class="metric">Strategy, findings &amp; fix</span>
-          </div>
-          <a class="link-cta" href="ai-audit.html" style="color:#191919;font-size:15px;flex:0 0 auto;">Read the story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </div>
+<!-- ============ BUILDER LAB ============ -->
+<section id="builder-lab" class="panel reveal" data-screen-label="Builder Lab">
+  <div class="sec-head">
+    <div>
+      <h2 style="font-family: &quot;Bricolage Grotesque&quot;, sans-serif; font-weight:500; letter-spacing:-0.01em; color: rgb(0, 137, 83)">Builder lab</h2>
+      <p class="sub">Products I designed and built myself, outside my main role</p>
     </div>
-
-    <!-- Spendly -->
-    <div class="tl-item reveal">
-      <div class="tl-body">
-        <a class="tl-card-link" href="spendly.html" aria-label="Read the story: Spendly"></a>
-        <h3 class="tl-h3-row">Most budget apps track what you spent.<br>Spendly asks if it should've been</h3>
-        <p class="role">Replacing reactive expense logs with reflection-based financial tracking</p>
-        <div class="tl-mock shot-mock">
-          <img src="assets/spendly-screens.png" alt="Spendly expense tracker screens: new expense entry, daily dashboard, and expense recorded confirmation" style="width:100%;display:block;" />
-        </div>
-        <div class="metrics-row">
-          <div class="metrics">
-            <span class="metric">Solo founder, from idea to live product</span>
-            <span class="metric">Designed, built &amp; shipped alone</span>
-            <span class="metric">Used by real people, solving a real problem</span>
-          </div>
-          <a class="link-cta" href="spendly.html" style="color:#191919;font-size:15px;flex:0 0 auto;">Read the story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </div>
-    </div>
+  </div>
+  <div class="bl-grid">
+    <article class="bl-card"><a class="bl-link" href="nutbite.html" aria-label="Read the story: NutBite: a store app for a first-time user"></a><div class="bl-img"><img src="assets/nutbite-dashboard.png" alt="NutBite store dashboard" loading="lazy"></div><h3>NutBite: a store app for a first-time user</h3><p>Replaced paper logs and WhatsApp photos for a cashew store in Karnataka, India.</p><div class="bl-chips"><span>Live client</span><span>Designed &amp; built</span></div><span class="bl-cta">Read the story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article>
+    <article class="bl-card"><a class="bl-link" href="spendly.html" aria-label="Read the story: Spendly: an expense tracker that asks if it was worth it"></a><div class="bl-img"><img src="assets/spendly-screens.png" alt="Spendly expense tracker screens" loading="lazy"></div><h3>Spendly: an expense tracker that asks if it was worth it</h3><p>A personal finance app I designed, built and shipped solo.</p><div class="bl-chips"><span>25 users</span><span>Designed &amp; built</span></div><span class="bl-cta">Read the story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article>
+    <article class="bl-card"><a class="bl-link" href="ai-audit.html" aria-label="Read the story: Using AI to speed up a UX audit"></a><div class="bl-img"><img src="assets/ai-audit-diagram.png" alt="AI audit diagram" loading="lazy"></div><h3>Using AI to speed up a UX audit</h3><p>A heuristic audit and redesign of IRCTC, India's national railway booking app.</p><div class="bl-chips"><span>Self-initiated</span><span>AI-assisted research</span></div><span class="bl-cta">Read the story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article>
   </div>
 </section>
 
 <!-- ============ TESTIMONIALS ============ -->
-<section class="panel reveal testi-panel" data-screen-label="Testimonials">
+<section id="testimonials" class="panel reveal testi-panel" data-screen-label="Testimonials">
   <div class="testi-highlight">
     <div class="testi-head">
       <span class="testi-badge">From LinkedIn</span>
       <h2 style="font-family: &quot;Bricolage Grotesque&quot;, sans-serif; font-weight:500; letter-spacing:-0.01em;">What it's like working with me</h2>
-      <p>Strong opinions, loosely held. Shared credit, owned outcomes.</p>
     </div>
-    <div class="rq-lead-row"><figure class="rq rq-lead"><figcaption class="rq-who"><img src="assets/rec-whitlam.png" alt="" width="52" height="52"><div><b>James Whitlam</b><span>Founder at Vancap</span></div><span class="rq-li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span></figcaption><blockquote><p>Abhishek was the lead UI/UX designer in my team, driving forward industry-leading, AI-first product capabilities sold into globally recognised organisations.</p><p>His communication skills and professional approach to collaboration were fantastic, successfully bridging the gap between engineering teams based in India, and product and commercial teams in London.</p></blockquote><p class="rq-rel">August 17, 2026, James managed Abhishek directly</p></figure><figure class="rq rq-lead"><figcaption class="rq-who"><img src="assets/rec-farah.png" alt="" width="52" height="52"><div><b>Farah Bukhari</b><span>Staff Product Owner @ Concirrus</span></div><span class="rq-li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span></figcaption><blockquote><p>Abhishek possesses a rare combination of exceptional design skills and a deep, holistic knowledge of our entire product suite.</p><p>He has been an outstanding partner in our product development, and I recommend him to any team or organization lucky enough to have him next.</p></blockquote><p class="rq-rel">July 1, 2026, Farah worked with Abhishek on the same team</p></figure></div>
-    <div class="rq-row"><figure class="rq"><figcaption class="rq-who"><img src="assets/rec-steve.png" alt="" width="52" height="52"><div><b>Steve O'Reilly</b><span>Product Executive</span></div><span class="rq-li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span></figcaption><blockquote><p>He is a highly skilled UI/UX designer, a thoughtful design leader and an excellent collaborator.</p><p>Abhishek introduced processes and standards that brought greater consistency to the team’s approach and output.</p></blockquote><p class="rq-rel">September 23, 2026, Steve managed Abhishek directly</p></figure><figure class="rq"><figcaption class="rq-who"><img src="assets/rec-kunal.png" alt="" width="52" height="52"><div><b>Kunal Bhardwaj</b><span>Product Consultant | Product Manager | CSPO</span></div><span class="rq-li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span></figcaption><blockquote><p>His initiative and end-to-end vision is what sets him apart.</p><p>Even when requirements were ambiguous, he independently defined the problems, navigated edge cases across the entire user journey to delivered seamless user flows.</p></blockquote><p class="rq-rel">September 17, 2026, Kunal worked with Abhishek on the same team</p></figure><figure class="rq"><figcaption class="rq-who"><img src="assets/rec-rendell.png" alt="" width="52" height="52"><div><b>James Rendell</b><span>Chief Executive Officer · BirdsEyeView</span></div><span class="rq-li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span></figcaption><blockquote><p>He took a technical product built for underwriters and made it clear and easy to use, which mattered a great deal to a young company selling into the insurance market.</p></blockquote><p class="rq-rel">September 25, 2026, James was senior to Abhishek but didn’t manage Abhishek directly</p></figure></div>
+    <div class="rq-lead-row"><figure class="rq rq-lead"><figcaption class="rq-who"><img src="assets/rec-whitlam.png" alt="" width="52" height="52"><div><b>James Whitlam</b><span>Founder at Vancap</span></div><span class="rq-li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span></figcaption><blockquote><p>Abhishek was the lead UI/UX designer in my team, driving forward industry-leading, AI-first product capabilities sold into globally recognised organisations.</p><p>His communication skills and professional approach to collaboration were fantastic, successfully bridging the gap between engineering teams based in India, and product and commercial teams in London.</p></blockquote><p class="rq-rel">17 Aug 2026, James managed Abhishek directly</p></figure><figure class="rq rq-lead"><figcaption class="rq-who"><img src="assets/rec-farah.png" alt="" width="52" height="52"><div><b>Farah Bukhari</b><span>Staff Product Owner @ Concirrus</span></div><span class="rq-li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span></figcaption><blockquote><p>Abhishek possesses a rare combination of exceptional design skills and a deep, holistic knowledge of our entire product suite.</p><p>He has been an outstanding partner in our product development, and I recommend him to any team or organisation lucky enough to have him next.</p></blockquote><p class="rq-rel">1 Jul 2026, Farah worked with Abhishek on the same team</p></figure></div>
+    <div class="rq-row"><figure class="rq"><figcaption class="rq-who"><img src="assets/rec-steve.png" alt="" width="52" height="52"><div><b>Steve O'Reilly</b><span>Product Executive</span></div><span class="rq-li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span></figcaption><blockquote><p>He is a highly skilled UI/UX designer, a thoughtful design leader and an excellent collaborator.</p><p>Abhishek introduced processes and standards that brought greater consistency to the team’s approach and output.</p></blockquote><p class="rq-rel">23 Sep 2026, Steve managed Abhishek directly</p></figure><figure class="rq"><figcaption class="rq-who"><img src="assets/rec-kunal.png" alt="" width="52" height="52"><div><b>Kunal Bhardwaj</b><span>Product Consultant | Product Manager | CSPO</span></div><span class="rq-li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span></figcaption><blockquote><p>His initiative and end-to-end vision is what sets him apart.</p><p>Even when requirements were ambiguous, he independently defined the problems, navigated edge cases across the entire user journey to delivered seamless user flows.</p></blockquote><p class="rq-rel">17 Sep 2026, Kunal worked with Abhishek on the same team</p></figure><figure class="rq"><figcaption class="rq-who"><img src="assets/rec-rendell.png" alt="" width="52" height="52"><div><b>James Rendell</b><span>Chief Executive Officer · BirdsEyeView</span></div><span class="rq-li"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></span></figcaption><blockquote><p>He took a technical product built for underwriters and made it clear and easy to use, which mattered a great deal to a young company selling into the insurance market.</p></blockquote><p class="rq-rel">25 Sep 2026, James was senior to Abhishek but didn’t manage Abhishek directly</p></figure></div>
     <a class="rq-all" href="https://www.linkedin.com/in/abhishek-lg-162800219/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener">Read all recommendations on LinkedIn ↗</a>
   </div>
   </div>
@@ -919,8 +918,7 @@
 <section id="resume" class="panel reveal" data-screen-label="Resume">
   <div class="sec-head">
     <div>
-      <h2 style="font-family: &quot;Bricolage Grotesque&quot;, sans-serif; font-weight:500; letter-spacing:-0.01em; color: rgb(0, 137, 83)">7+ years. 4 companies. One design journey</h2>
-      <p class="sub">From people to products, I build experiences that are simple, scalable and useful.</p>
+      <h2 style="font-family: &quot;Bricolage Grotesque&quot;, sans-serif; font-weight:500; letter-spacing:-0.01em; color: rgb(0, 137, 83)">Experience</h2>
     </div>
   </div>
   <ul class="exp-tl">
@@ -933,7 +931,7 @@
       <span class="exp-yr">2017 to 2018</span>
       <span class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg></span>
       <span class="exp-dot"></span>
-      <h4 style="font-family: &quot;Libre Baskerville&quot;,serif">TalentXO</h4>
+      <h4 style="font-family: &quot;Libre Baskerville&quot;,serif">TalentXo</h4>
       <span class="exp-role">Talent Acquisition Executive</span>
       <div class="exp-tip">Creative talent recruitment across startups, mid-size, and enterprise clients.</div>
     </li>
@@ -943,7 +941,7 @@
       <span class="exp-dot"></span>
       <h4 style="font-family: &quot;Libre Baskerville&quot;,serif">StoreKing</h4>
       <span class="exp-role">UI Designer</span>
-      <div class="exp-tip">Engineered low-bandwidth, offline-first commerce interfaces optimized for rural retailers across web and mobile.</div>
+      <div class="exp-tip">Engineered low-bandwidth, offline-first commerce interfaces optimised for rural retailers across web and mobile.</div>
     </li>
     <li class="exp-node" tabindex="0">
       <span class="exp-yr">2020 to 2023</span>
@@ -951,7 +949,7 @@
       <span class="exp-dot"></span>
       <h4 style="font-family: &quot;Libre Baskerville&quot;,serif">CoreValue Technologies</h4>
       <span class="exp-role">UX Designer</span>
-      <div class="exp-tip">Designed enterprise IoT analytics dashboards, automated underwriting workflows, and high-converting e-commerce systems.</div>
+      <div class="exp-tip">Designed enterprise IoT analytics dashboards, automated underwriting workflows, and e-commerce catalogue and checkout flows.</div>
     </li>
     <li class="exp-node exp-node-active" tabindex="0">
       <span class="exp-yr">2023 to 2026</span>
@@ -959,17 +957,16 @@
       <span class="exp-dot"></span>
       <h4 style="font-family: &quot;Libre Baskerville&quot;,serif">Concirrus</h4>
       <span class="exp-role">Staff UX Designer</span>
-      <div class="exp-tip">Scales AI-native specialty insurance platforms by turning complex risk logic into streamlined workflows. Led design expansion from a sole contributor to a team of four.</div>
+      <div class="exp-tip">Designed AI-assisted underwriting workflows across 4 lines of business. Grew design from 1 to a team of 4.</div>
     </li>
   </ul>
   <div class="res-card res-card-wide">
     <div class="res-card-text">
-      <h3 style="font-family: &quot;Trebuchet MS&quot;;margin-bottom:16px">The unabridged impact</h3>
-      <p>Detailed KPI breakdowns, cross-functional leadership frameworks, user adoption metrics, and full architectural scope across 7+ years of complex product builds.</p>
-      <p>This document covers the operational systems and design governance I used to drive revenue growth and scale engineering work, from 0→1 to enterprise rollout.</p>
+      <h3 style="font-family: &quot;Trebuchet MS&quot;;margin-bottom:16px">The full picture, on two pages</h3>
+      <p class="res-card-line">Every role, the products I worked on, and the results behind them. Easy to share with your team.</p>
+      <p class="res-card-hand">Open to product and UX design roles, remote or Bengaluru</p>
     </div>
     <div class="res-card-cta">
-      <p class="res-card-note">Let's build meaningful<br>products together</p>
       <a class="btn" href="assets/Abhishek-LG-Resume.pdf" download data-resume style="color: #fff">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
         Download Resume
@@ -983,7 +980,7 @@
   <div class="sec-head">
     <div>
       <h2 style="font-family: &quot;Bricolage Grotesque&quot;, sans-serif; font-weight:500; letter-spacing:-0.01em; color: rgb(0, 137, 83)">Thinking out loud</h2>
-      <p class="sub">Notes on AI-native enterprise UX, behavioral design, and systems.</p>
+      <p class="sub">Short reads on design, written the way I think about it.</p>
     </div>
   </div>
 
@@ -1154,7 +1151,7 @@
         </div>
       </div>
       <div class="read" style="color: rgb(132, 146, 138)">4 min read</div>
-      <h3 style="font-family: &quot;Trebuchet MS&quot;">Every user has a rhythm. Design should honor it</h3>
+      <h3 style="font-family: &quot;Trebuchet MS&quot;">Every user has a rhythm. Design should honour it</h3>
       
           </a>
     <a class="article" href="h8-minimal-design.html">
@@ -1246,7 +1243,7 @@
 <footer id="contact">
   <div class="panel reveal foot-cta" style="margin-bottom:0;max-width:var(--maxw);">
     <div class="foot-cta-row1">
-      <div class="foot-cta-text"><h3 class="foot-cta-h">Let's connect</h3><p class="foot-cta-sub">Always open to thoughtful conversations and new opportunities.</p></div>
+      <div class="foot-cta-text"><h3 class="foot-cta-h">Let's connect</h3><p class="foot-cta-sub">Always open to thoughtful conversations and new opportunities.</p><p class="foot-cta-sub">Available for interviews across IST, UK and US time zones.</p></div>
       <div class="foot-cta-actions">
         <a class="btn btn-dark" href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener" style="background-color:#0a66c2;">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.06V21h-4v-6.2c0-1.48-.03-3.38-2.06-3.38s-2.38 1.6-2.38 3.27V21H9z"/></svg>
@@ -1256,10 +1253,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v5h5M7 3h8l4 4v14H7zM3 7v14h12" opacity=".4"/><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/></svg>
           Download resume
         </a>
-        <button class="btn btn-dark" id="copyEmail" data-email="abhisheklokesh.uiux159@gmail.com" style="background-color:#e33b2e;">
+        <div class="foot-email-group"><span class="foot-email-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span class="foot-email">abhisheklokesh.uiux159@gmail.com</span><button class="btn btn-dark foot-email-btn" id="copyEmail" data-email="abhisheklokesh.uiux159@gmail.com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
           Copy email
-        </button>
+        </button></div>
       </div>
     </div>
     <nav class="foot-cta-nav">
@@ -1269,7 +1266,7 @@
     </nav>
   </div>
   <div class="foot-note">
-    <span>© 2026 Abhishek LG · Staff UX Designer</span>
+    <span>© 2026 Abhishek LG · Staff Product &amp; UX Designer</span>
     <span>Designed &amp; built end to end.</span>
   </div>
 </footer>
@@ -1442,7 +1439,9 @@
           if(en.isIntersecting && !ran){
             ran = true;
             statsEl.querySelectorAll('.num').forEach(function(num){
-              var raw = num.textContent.trim();
+              var node = num.firstChild;
+              if(!node || node.nodeType !== 3){ return; }
+              var raw = node.nodeValue;
               var m = raw.match(/^(\D*)(\d+(?:\.\d+)?)(.*)$/);
               if(!m){ return; }
               var pre = m[1], target = parseFloat(m[2]), suf = m[3], dur = 1000, t0 = null;
@@ -1450,10 +1449,10 @@
                 if(t0===null) t0 = ts;
                 var p = Math.min((ts - t0)/dur, 1);
                 var eased = 1 - Math.pow(1 - p, 3);
-                num.textContent = pre + Math.round(target * eased) + suf;
-                if(p < 1) requestAnimationFrame(step); else num.textContent = raw;
+                node.nodeValue = pre + Math.round(target * eased) + suf;
+                if(p < 1) requestAnimationFrame(step); else node.nodeValue = raw;
               }
-              num.textContent = pre + '0' + suf;
+              node.nodeValue = pre + '0' + suf;
               requestAnimationFrame(step);
             });
             sObs.disconnect();
@@ -1495,5 +1494,3 @@ window.addEventListener('scroll',tick,{passive:true});window.addEventListener('r
 </body>
 </html>
 
-<style id="__om-edit-overrides">
-</style>

@@ -3,7 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AI Speed. Human Depth. · Case study · Abhishek LG</title>
+<title>AI Speed. Human Depth. · Abhishek LG, Product &amp; UX Designer</title>
+<meta name="description" content="Staff Product &amp; UX Designer with 7+ years in enterprise AI, insurance SaaS, IoT and commerce. Based in Bengaluru, working with global teams.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Speed. Human Depth. · Abhishek LG, Product &amp; UX Designer">
+<meta property="og:description" content="Staff Product &amp; UX Designer with 7+ years in enterprise AI, insurance SaaS, IoT and commerce. Based in Bengaluru, working with global teams.">
+<meta property="og:image" content="https://your-domain.com/assets/abhishek-portrait.png">
+<meta property="og:url" content="https://your-domain.com/ai-audit.html">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link id="gfont-Bricolage-Grotesque" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
@@ -168,7 +175,8 @@
   .closing p{font-family:var(--font-quote);font-weight:600;font-size:clamp(22px,2.6vw,33px);line-height:1.3;color:#fff;margin:0;max-width:40ch;letter-spacing:-.01em;}
 
   /* ---------- footer ---------- */
-  footer{padding:30px 28px 60px;}
+  footer{padding:0 28px 60px;}
+  @media(max-width:560px){footer{padding-left:16px;padding-right:16px;}}
   .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
   .foot-grid h4{font-family:var(--font-display);font-size:24px;color:var(--ink);margin-bottom:20px;}
   .foot-grid ul{list-style:none;padding:0;margin:0;}
@@ -387,6 +395,16 @@
   .foot-cta-actions .btn:hover svg{transform:translateX(2px);}
   .foot-cta-actions .btn:active{transform:translateY(0) scale(.97);}
   @media(max-width:720px){.foot-cta-actions .btn{white-space:normal;}}
+.stat-cap{display:block;margin-top:6px;font-size:12.5px;line-height:1.45;color:var(--ink-soft);opacity:.8;font-weight:400;}
+.foot-cta-actions{align-items:center;flex:1 1 100%;}
+.foot-email-group{margin-left:auto;display:flex;align-items:center;gap:10px;padding:6px 6px 6px 16px;border-radius:999px;background:#fff;border:1px solid rgba(227,59,46,.22);box-shadow:0 12px 26px -20px rgba(227,59,46,.55);min-width:0;}
+.foot-email-ic{display:flex;color:#e33b2e;}.foot-email-ic svg{width:18px;height:18px;}
+.foot-email{font-size:15px;font-weight:600;color:var(--ink);user-select:all;white-space:nowrap;}
+.foot-email-btn{background-color:#e33b2e!important;flex:none;}
+.foot-email-group{flex:none;max-width:100%;}
+@media(max-width:1100px){.foot-email-group{margin-left:0;}}
+@media(max-width:720px){.foot-email-group{width:100%;}}
+@media(max-width:480px){.foot-email{white-space:normal;overflow-wrap:anywhere;min-width:0;}.foot-email-group{flex-wrap:wrap;border-radius:20px;padding:12px;}.foot-email-btn{width:100%;justify-content:center;}}
 </style></head>
 <body>
 
@@ -415,7 +433,7 @@
       <p class="subline">The audit is proof. AI is the point, a force multiplier for faster research, sharper findings, and more intentional redesign.</p>
 
       <div class="metric-row">
-        <div class="metric-card"><div class="num">&gt;50%</div><div class="lab">Research time compressed</div></div>
+        <div class="metric-card"><div class="num">&gt;50%</div><div class="lab">Research time compressed<span class="stat-cap">~[X] days manual estimate → ~[X] hours with AI · my own comparison</span></div></div>
         <div class="metric-card"><div class="num">8</div><div class="lab">Screens fully classified</div></div>
         <div class="metric-card"><div class="num">6</div><div class="lab">Frameworks applied simultaneously</div></div>
       </div>
@@ -435,19 +453,19 @@
     <section class="panel reveal" data-screen-label="The Product Selected">
       <h2 class="sec-title">Why IRCTC?</h2>
       <div class="insight-grid three">
-        <div class="insight"><div class="k">The Scale</div><p>13 million daily passengers. The only official platform to book Indian Railways tickets online. No alternative. No competition.</p></div>
+        <div class="insight"><div class="k">The Scale</div><p>Millions of bookings every day. The only official platform to book Indian Railways tickets online. No alternative. No competition.</p></div>
         <div class="insight"><div class="k">The Stakes</div><p>Missing a booking means missing travel. UX failure here has real-world consequences, not just frustration.</p></div>
         <div class="insight"><div class="k">The Opportunity</div><p>A monopoly product with no incentive to improve is the most interesting UX problem to audit. Every finding matters more when users have nowhere else to go.</p></div>
       </div>
       <div class="pull">
-        <p>"I didn't pick IRCTC because it was broken. I picked it because when 13 million people have no alternative, getting the UX right is not a nice-to-have. It is a responsibility."</p>
+        <p>"I didn't pick IRCTC because it was broken. I picked it because when millions of people have no alternative, getting the UX right is not a nice-to-have. It is a responsibility."</p>
       </div>
     </section>
 
     <!-- 02 THE AI AUDIT SYSTEM -->
     <section class="panel reveal" id="system" data-screen-label="02 The AI Audit System">
       <span class="eyebrow-num">02 · The AI Audit System</span>
-      <h2 class="sec-title">6 frameworks. 8 screens. Minutes, not weeks</h2>
+      <h2 class="sec-title">6 frameworks. 8 screens. Hours, not weeks</h2>
       <p class="hint-line">Custom prompt frameworks built on foundational usability principles<strong>AI clustered the patterns, I architected the findings.</strong></p>
       <div class="insight-grid three fw-grid">
         <div class="insight fw peach"><div class="k">Nielsen's 10 Heuristics</div><p>Primary classifier, every observation mapped against all 10 heuristics instantly.</p></div>
@@ -564,6 +582,7 @@
     <section class="panel reveal" id="competitor" data-screen-label="05 Competitor Analysis">
       <span class="eyebrow-num">05 · Competitor Analysis</span>
       <h2 class="sec-title">What the market figured out that IRCTC hasn't</h2>
+      <p class="hint-line">MakeMyTrip and Cleartrip are leading Indian travel booking apps.</p>
       <div class="cmp-wrap">
         <table class="cmp">
           <colgroup><col /><col /><col /><col /></colgroup>
@@ -593,7 +612,7 @@
       <div class="flow-ribbon">
         <div class="flow-step"><span class="fs-num">01</span><h4>Framework Engineering</h4><p>6 custom prompt frameworks, each trained on a specific usability principle.</p></div>
         <span class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <div class="flow-step"><span class="fs-num">02</span><h4>AI Classification</h4><p>8 screens classified simultaneously. Clustered by framework, severity, and screen, in minutes.</p></div>
+        <div class="flow-step"><span class="fs-num">02</span><h4>AI Classification</h4><p>8 screens classified in hours, clustered by framework, severity, and screen.</p></div>
         <span class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         <div class="flow-step"><span class="fs-num">03</span><h4>Human Synthesis</h4><p>3 systemic issues AI cannot see. Patterns that require product strategy, not just screens.</p></div>
         <span class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
@@ -620,7 +639,7 @@
         </div>
       </div>
       <div class="pull">
-        <p>"AI is a brilliant synthesizer. It is a poor architect of human empathy."</p>
+        <p>"AI is a brilliant synthesiser. It is a poor architect of human empathy."</p>
       </div>
     </section>
 
@@ -732,7 +751,7 @@
       </div>
       <div class="closing">
         <div class="cap">The value I bring</div>
-        <p>"A senior designer who can run a full heuristic audit, build the AI system to accelerate it, synthesize systemic insights, and design the solutions, in the time it takes most teams to finish the research phase. That is the value I bring."</p>
+        <p>"A senior designer who can run a full heuristic audit, build the AI system to accelerate it, synthesise systemic insights, and design the solutions, in the time it takes most teams to finish the research phase. That is the value I bring."</p>
       </div>
     </section>
 
@@ -740,9 +759,9 @@
 </div>
 
 <footer>
-  <div class="panel reveal foot-cta" style="margin-bottom:0;max-width:var(--maxw);">
+  <div class="panel reveal foot-cta" style="margin-top:22px;margin-bottom:0;max-width:calc(var(--maxw) - 56px);">
     <div class="foot-cta-row1">
-      <div class="foot-cta-text"><h3 class="foot-cta-h">Let's connect</h3><p class="foot-cta-sub">Always open to thoughtful conversations and new opportunities.</p></div>
+      <div class="foot-cta-text"><h3 class="foot-cta-h">Let's connect</h3><p class="foot-cta-sub">Always open to thoughtful conversations and new opportunities.</p><p class="foot-cta-sub">Available for interviews across IST, UK and US time zones.</p></div>
       <div class="foot-cta-actions">
         <a class="btn btn-dark" href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener" style="background-color:#0a66c2;">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM3 8.98h4V21H3zM9 8.98h3.8v1.64h.05a4.17 4.17 0 0 1 3.75-2.06C20.5 8.56 22 10.6 22 14.06V21h-4v-6.2c0-1.48-.03-3.38-2.06-3.38s-2.38 1.6-2.38 3.27V21H9z"/></svg>
@@ -752,10 +771,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v5h5M7 3h8l4 4v14H7zM3 7v14h12" opacity=".4"/><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/></svg>
           Download resume
         </a>
-        <button class="btn btn-dark" id="copyEmail" data-email="abhisheklokesh.uiux159@gmail.com" style="background-color:#e33b2e;">
+        <div class="foot-email-group"><span class="foot-email-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span class="foot-email">abhisheklokesh.uiux159@gmail.com</span><button class="btn btn-dark foot-email-btn" id="copyEmail" data-email="abhisheklokesh.uiux159@gmail.com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
           Copy email
-        </button>
+        </button></div>
       </div>
     </div>
     <nav class="foot-cta-nav">
@@ -765,7 +784,7 @@
     </nav>
   </div>
   <div class="foot-note">
-    <span>© 2026 Abhishek LG · Staff UX Designer</span>
+    <span>© 2026 Abhishek LG · Staff Product &amp; UX Designer</span>
     <span>Designed &amp; built end to end.</span>
   </div>
 </footer>
