@@ -1,0 +1,53 @@
+/* Shared case study theme (matches Team and user management). Styling only. */
+.main .panel.case-hero::before{background:#F9F9F9!important;border-bottom-color:#EFEFEF!important}
+.main .panel:not(.case-hero){margin-bottom:128px!important}
+.main .eyebrow-num{display:inline-flex!important;width:auto!important;max-width:none!important;white-space:nowrap;align-items:center;gap:10px;font-size:13px!important;font-weight:600!important;letter-spacing:.12em!important;text-transform:uppercase;color:#626C81!important}
+.main .eyebrow-num::before{content:"";width:6px;height:6px;border-radius:50%;background:#525D6D}
+.main .sec-title{margin:16px 0 0!important;font-family:var(--f-sans)!important;font-size:clamp(32px,3.8vw,44px)!important;font-weight:600!important;line-height:1.1!important;letter-spacing:-.025em!important;color:#1B1A18!important;text-wrap:balance}
+.main .sec-title em{font-family:inherit!important;font-style:normal!important;color:inherit!important}
+.main .appr-intro{margin:18px 0 0!important;font-size:clamp(17px,1.6vw,19px)!important;line-height:1.55!important;color:#4A5163!important;max-width:none!important}
+.main p.headline{font-family:var(--f-sans)!important;font-style:normal!important;font-weight:600!important;letter-spacing:-.015em;color:#2A2E3A!important}
+.main h3,.main h4{font-family:var(--f-sans);color:#2A2E3A}
+.main p,.main li{color:#525866}
+/* surfaces: soft grey, no outlines */
+.main .df-card,.main .conseq-card,.main .ec-card,.main .sl-card,.main .learn,.main .job,.main .hq-box,.main .contrib,.main .rx-tests>li,.main .rx-stats>div,.main .closing,.main .sys,.main .insight,.main .card,.main .finding,.main .notes>*{background:#F4F5F7!important;border:0!important;border-radius:24px!important;box-shadow:none!important}
+.main .closing{background:#F3F2FD!important}
+.main .closing p{font-family:var(--f-sans)!important;font-style:normal!important;font-size:clamp(20px,2.2vw,26px)!important;font-weight:500!important;line-height:1.4!important;color:#2A2E5A!important}
+.main .closing .cap{font-size:13px!important;font-weight:600!important;letter-spacing:.12em!important;text-transform:uppercase;color:#5B5F9A!important}
+/* numbers and icons: grey, pastel only on small marks */
+.main .ln{background:#EDEEF1!important;color:#2A2E3A!important}
+.main .rx-ck{background:#DFF1E8!important;color:#2F6B50!important}
+.main .rx-stats dt{font-family:var(--f-serif)!important;font-style:italic!important;font-weight:400!important;color:#2A2E3A!important}
+.main .rx-stats dd{font-size:16px!important;color:#525866!important}
+.main .pill,.main .tag,.main .hero-tags span{background:#F4F5F7!important;color:#525866!important;border:0!important}
+.main .ru-eyebrow{font-size:13px!important;letter-spacing:.1em!important;color:#8A90A0!important}
+.main .ru-cap{font-size:15px!important;color:#626C81!important}
+@media(max-width:767px){.main .panel:not(.case-hero){margin-bottom:88px!important}}
+/* pre-bind: problem cards, headings, tabs, panels */
+.main .job-notes>li,.main .job-green{background:#F4F5F7!important;border:0!important;box-shadow:none!important;transform:none!important}
+.main .job-notes>li::before,.main .job-notes>li::after,.main .job-green::before,.main .job-green::after{display:none!important}
+.main .conseq-link,.main .job-t{font-family:var(--f-sans)!important;font-style:normal!important;font-weight:600!important;letter-spacing:-.01em;color:#2A2E3A!important;border:0!important;background:none!important}
+.main .conseq-link::before,.main .conseq-link::after,.main .job-t::before,.main .job-t::after{display:none!important}
+.main .dc-card{background:#F4F5F7!important;border:0!important;box-shadow:none!important}
+.main .pt-tabs{display:flex!important;gap:4px!important;background:#F4F5F7!important;border:0!important;border-radius:999px!important;padding:6px!important}
+.main .pt-tabs button{border:0!important;border-radius:999px!important;background:transparent!important;color:#8A90A0!important;box-shadow:none!important}
+.main .pt-tabs button::before,.main .pt-tabs button::after{display:none!important}
+.main .pt-tabs [aria-selected="true"]{background:#fff!important;color:#2A2E3A!important;box-shadow:0 2px 10px rgba(42,46,58,.08)!important}
+/* enterprise: preview, steps, numbers, quotes */
+.main .work-visual{background:#F4F5F7!important;background-image:none!important}
+.main #platform .n{background:#EDEEF1!important;color:#2A2E3A!important;border:0!important}
+.main #impact .num{font-family:var(--f-serif)!important;font-style:italic!important;font-weight:400!important;color:#2A2E3A!important;letter-spacing:-.02em}
+.main .cq{background:#F4F5F7!important;border:0!important;box-shadow:none!important}
+.main .cq-peach{box-shadow:inset 0 3px 0 #F2C28E!important}.main .cq-lavender{box-shadow:inset 0 3px 0 #C9C5F0!important}.main .cq-sky{box-shadow:inset 0 3px 0 #A9CDE8!important}
+.main .cq blockquote{font-family:var(--f-sans)!important;font-style:normal!important;font-weight:500!important;color:#2A2E3A!important;letter-spacing:-.01em}
+.main .work-card,.main .mini-card{background:#fff!important;background-image:none!important;border-color:#EDEEF1!important}
+.main .work-visual{border-color:transparent!important}
+.main [class*="lc-ph"]{border-bottom-color:#D9DDE4!important}
+.main [class*="lc-ph"]::before,.main [class*="lc-ph"]::after{background-color:#D9DDE4!important}
+/* hero: match Team and user management */
+.case-hero .proj{max-width:20ch!important}
+.cs-win .ru-window{border:0!important;border-radius:0!important;box-shadow:none!important;margin:0!important}
+.cs-win.lob-wrap{padding:0!important;background:#fff!important}.cs-win.lob-wrap>.ru-panel,.cs-win.lob-wrap{--lobbg:#F2F3F5}
+.cs-win.lob-wrap .lob-label{margin:0!important;padding:30px 30px 18px!important;background:#F2F3F5!important;font-family:Inter,system-ui,sans-serif!important;font-size:18px!important;font-weight:600!important;color:#111827!important;letter-spacing:-.01em;border-bottom:0!important}
+.cs-win.lob-wrap .lob-panel{border:0!important;box-shadow:none!important;margin:0!important;border-radius:0!important}
+.cs-win.lob-wrap .lob-panel{background:#F2F3F5!important;padding:0 30px 30px!important}

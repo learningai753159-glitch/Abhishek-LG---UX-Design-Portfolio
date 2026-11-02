@@ -1,0 +1,52 @@
+/* 01 story v2: swimlanes */
+.sx-st{height:420vh}
+.sx-frame{aspect-ratio:1000/600}
+.sx{position:absolute;inset:0;width:100%;height:100%}
+.sx text{font-family:var(--f-sans);fill:#1B1A18}
+.sx .sx-lane{font-size:26px;font-weight:600}
+.sx .sx-ghost{fill:none;stroke:#C9CDD4;stroke-width:2;stroke-dasharray:6 8}
+.sx .sx-route{fill:none;stroke:#1B1A18;stroke-width:2.5;stroke-linejoin:round}
+.sx .sx-card rect{fill:#fff;stroke:#1B1A18;stroke-width:2.2}
+.sx .sx-card text{font-size:20px;font-weight:600}
+.sx .sx-ck{fill:none;stroke:#1B1A18;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;transition:opacity .2s}
+.sx .sx-mini rect{stroke:#1B1A18;stroke-width:1.6}
+.sx .sx-mini path{fill:none;stroke:#9AA1AD;stroke-width:1.6;stroke-linecap:round}
+.sx .sx-badge rect{fill:#1B1A18}.sx .sx-badge text{fill:#FBF9F5;font-size:18px;font-weight:600}
+.sx .sx-mul rect{fill:#fff;stroke:#1B1A18;stroke-width:2}
+.sx .sx-mul text{font-family:var(--f-serif);font-style:italic;font-size:40px}
+.sx .sx-tl{font-size:16px;font-weight:500;fill:#626C81;letter-spacing:.04em}
+.sx .sx-track{stroke:#E6E1D8;stroke-width:8;stroke-linecap:round}
+.sx .sx-fill{stroke:#1B1A18;stroke-width:8;stroke-linecap:round;transition:stroke .3s}
+.sx .sx-fill.hot{stroke:#FF5A52}
+.sx .sx-tv{font-size:20px;font-weight:600}
+.sx-frame[data-beat="3"] .st-dark{clip-path:circle(75% at 50% 50%)}
+.sx-frame[data-beat="3"] .st-q{opacity:1}
+.sx-frame:not([data-beat="3"]) .st-q{opacity:0}
+.sx-frame:not([data-beat="3"]) .st-dark{clip-path:circle(0% at 50% 50%)}
+@media(max-width:1023px){.sx-st{height:400vh}}
+@media(max-width:767px){.sx-st{height:380vh}.sx-frame{aspect-ratio:auto;flex:1 1 auto;min-height:0}.sx .sx-lane{font-size:24px}}
+/* 02 hmw repeat */
+.main .pb-hmw{margin:64px 0 0;text-align:center;font-family:var(--f-serif);font-style:italic;font-size:clamp(24px,3vw,32px);line-height:1.25;color:#1B1A18;text-wrap:balance}
+/* 09 results */
+.main #impact .rx-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;border-top:0;margin-top:40px}
+.main #impact .rx-grid li{display:flex;flex-direction:column;gap:10px;background:#FBF9F5;border:1px solid #E6E1D8;border-radius:16px;padding:24px;border-bottom:1px solid #E6E1D8}
+.main #impact .rx-grid .rx-ck{order:-2;width:36px;height:36px;background:#1B1A18!important;color:#FBF9F5!important}
+.main #impact .rx-pass{order:-1;align-self:flex-start;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#525D6D;background:#F0F4FA;border-radius:999px;padding:4px 10px;margin-top:-46px;margin-left:48px}
+.main #impact .rx-grid h3{margin:4px 0 0;font-size:20px;color:#1B1A18}
+.main #impact .rx-grid p{grid-column:auto;margin:0;font-size:15px;line-height:1.55;color:#626C81}
+.rx-num{margin-top:56px;background:#F0F4FA;border-radius:24px;padding:clamp(28px,5vw,56px)}
+.main .rx-lab2{margin:0 0 20px;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#525D6D}
+.rx-wk{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;font-family:var(--f-serif);font-style:italic;line-height:1}
+.rx-from{font-size:clamp(36px,5vw,64px);color:#9AA1AD;text-decoration:line-through;text-decoration-thickness:2px}
+.rx-to{font-size:clamp(56px,8vw,104px);color:#1B1A18}
+.rx-ar{width:48px;height:16px;fill:none;stroke:#1B1A18;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.main .rx-dd{margin:12px 0 0;font-size:15px;color:#626C81}
+.rx-st2{margin:40px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;border-top:1px solid #DDE3EC;padding-top:28px}
+.rx-st2 div{display:flex;flex-direction:column;gap:6px}
+.rx-st2 dt{font-family:var(--f-serif);font-style:italic;font-size:clamp(44px,5vw,64px);line-height:1;color:#1B1A18}
+.rx-st2 dd{margin:0;font-size:14px;line-height:1.45;color:#626C81}
+#impact .s02.s02-in{margin:24px 0 0}
+#impact .rv{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}#impact .rv.in{opacity:1;transform:none}
+@media(max-width:1023px){.rx-st2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:767px){.main #impact .rx-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){#impact .rv{transform:none!important}.sx .sx-fill{transition:none}}

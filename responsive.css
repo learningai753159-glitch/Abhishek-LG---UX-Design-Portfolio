@@ -1,0 +1,17 @@
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:88px}
+html,body{overflow-x:clip;max-width:100%}
+body{overflow-wrap:break-word}
+img,video,canvas,iframe{max-width:100%}
+video{height:auto}
+img[width][height]{height:auto}
+h1,h2,h3{text-wrap:balance;hyphens:manual}
+p,li,figcaption,blockquote{text-wrap:pretty}
+a[href^="mailto:"]{overflow-wrap:anywhere}
+input,select,textarea{font-size:max(16px,1em)}
+.tb,.pt-tbl-wrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ah-lb-c img{max-height:calc(100dvh - 96px)}
+.sfab{bottom:calc(24px + env(safe-area-inset-bottom,0px))!important;right:calc(16px + env(safe-area-inset-right,0px))!important}
+@media(max-width:767px){html{scroll-padding-top:72px}}
+@media(pointer:coarse){a.btn,button.btn,.btn,.sfab button,.fcopy,.nav-hi,.ftop{min-height:44px}.sfab button{min-width:44px}}
+@media(max-width:480px){.acts{display:flex;flex-direction:column;align-items:stretch}.acts>.btn{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
