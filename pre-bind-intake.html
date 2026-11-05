@@ -1514,6 +1514,298 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
 <style>.nda-strip{display:flex;align-items:center;gap:14px;max-width:var(--maxw,1160px);margin:28px auto 0;padding:16px 22px;background:#FFF8EC;border:1px solid #EBCB94;border-radius:16px;color:#5E4A2A;box-sizing:border-box}.nda-strip svg{width:20px;height:20px;flex:none;color:#8A5A1F}.nda-strip p{margin:0;font-size:15px;line-height:1.5;color:#5E4A2A;text-align:left;max-width:none}.nda-strip b{font-weight:600;color:#3D2E14}@media(max-width:600px){.nda-strip{align-items:flex-start;margin:20px 16px 0}.nda-strip svg{margin-top:2px}}</style>
 <style>.todo{display:none!important}</style>
 <link rel="stylesheet" href="responsive.css">
+<style>
+.cs-meta.m4{display:flex;flex-wrap:nowrap;gap:20px 28px}
+.cs-meta.m4>div{flex:1 1 0;min-width:0}
+.cs-meta.m4 dd{white-space:normal!important;font-size:15px;line-height:1.45}
+.pb-out{list-style:none;margin:clamp(32px,4vw,48px) 0 18px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pb-out li{display:flex;flex-direction:column;gap:4px;padding:14px 18px;border-radius:14px;background:#fff;border:1px solid #ECEDF1}
+.pb-out b{font-size:clamp(20px,2vw,26px);line-height:1.15;font-weight:600;letter-spacing:-.02em;color:#1B1A18}
+.pb-out span{font-size:14px;line-height:1.4;color:#525866}
+@media(max-width:760px){.cs-meta.m4{flex-wrap:wrap}.cs-meta.m4>div{flex:1 1 calc(50% - 28px)}.pb-out{grid-template-columns:1fr}}
+</style>
+<style>
+.pf-k{margin:clamp(24px,3vw,36px) 0 12px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8A90A0}
+.pf-k.a{color:#1f9d63}
+.pf-flow{list-style:none;margin:0;padding:clamp(12px,2vw,20px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;background:#F5F6F8;border-radius:28px}
+.pf-flow.af{background:#EEF7F2}
+.pf-c{background:#fff;border-radius:20px;padding:12px 12px 18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.pf-ic{position:relative;height:104px;margin-bottom:8px;background:#F5F6F8;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#1B1A18}
+.pf-ic svg{height:80px;width:auto;max-width:90%}
+.pf-tag{position:absolute;left:50%;bottom:6px;transform:translateX(-50%);background:#FFF0EF;color:#9A3A35;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600;white-space:nowrap}
+.pf-tag.amb{background:#FBF0DD;color:#8A5A1F}
+
+.pf-t{margin:0 6px;font-size:16px;font-weight:600;line-height:1.3;color:#1B1A18}
+.pf-b{position:absolute;left:8px;top:8px;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:#fff;font-size:11px;font-weight:600;letter-spacing:.06em;color:#8A90A0;display:grid;place-items:center}
+.pf-c{position:relative;padding:10px 10px 14px;gap:0}
+.pf-ic{height:90px;margin-bottom:10px}
+.pf-ic svg{height:70px}
+@media(max-width:900px){.pf-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+<style>
+.pq-lead{margin:14px 0 0;max-width:62ch;font-size:17px;line-height:1.6;color:#525866}
+.pq{margin-top:clamp(24px,3vw,36px);padding:clamp(20px,3vw,32px);background:#F5F6F8;border-radius:24px}
+.pq-q{margin:0;font-size:clamp(20px,2.2vw,28px);line-height:1.3;font-weight:600;letter-spacing:-.02em;color:#1B1A18;text-wrap:balance}
+.pq-sum{margin-top:20px;display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.pq-sum span{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#fff;border-radius:14px;font-size:14px;color:#525866}
+.pq-sum b{font-size:clamp(22px,2.4vw,30px);line-height:1.1;font-weight:600;letter-spacing:-.02em;color:#1B1A18}
+.pq-sum span.bad{background:#FFF0EF}
+.pq-sum span.bad b{color:#C2362F}
+.pq-sum i{align-self:center;font-style:normal;font-size:22px;font-weight:600;color:#8A90A0}
+.pq-a{margin-top:12px;padding:clamp(18px,2.6vw,26px) clamp(20px,3vw,32px);background:#EEF7F2;border-radius:24px}
+.pq-k{margin:0 0 6px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#1f9d63}
+.pq-t{margin:0;font-size:clamp(17px,1.7vw,20px);line-height:1.45;font-weight:500;color:#1B1A18}
+</style>
+<style>
+.pq2{margin-top:clamp(22px,3vw,32px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.pq2-c{padding:clamp(20px,2.6vw,28px);background:#F5F6F8;border-radius:24px}
+.pq2-c.ok{background:#EEF7F2}
+.pq2-c p:not(.pq-k){margin:0 0 10px;font-size:17px;line-height:1.5;color:#1B1A18}
+.pq2-c p:last-child{margin-bottom:0}
+.pq-k.g{color:#8A90A0}
+@media(max-width:760px){.pq2{grid-template-columns:1fr}}
+</style>
+<style>
+.pf-flow.pv{margin-top:clamp(22px,3vw,32px)}
+.pf-c.win{background:#EEF7F2}
+.pf-c.win .pf-ic{background:#fff}
+.pv1{display:flex;flex-direction:column;align-items:center;gap:8px}
+.pv1 .bar{width:96px;height:10px;border-radius:5px;background:#1B1A18}
+.pv1 .ch,.pv2 .ch,.pv4 .lns span{display:inline-flex;align-items:center;gap:3px;padding:4px 9px;border-radius:999px;background:#fff;border:1px solid #DDE0E5;font-size:11px;font-weight:600;color:#3A3F4B;white-space:nowrap}
+.pv1 .ch.on{background:#E3F1FC;border-color:#B9D9F3;color:#0568b3;font-size:12px;padding:5px 12px}
+.pv2{display:flex;flex-wrap:wrap;justify-content:center;gap:5px;max-width:92%}
+.pv2 .ch i{display:inline-block;width:5px;height:5px;border-radius:50%;background:#C9C5F0}
+.pv2 .ch i:first-of-type{margin-left:3px}
+.pv2 .ch.mo{border-style:dashed;color:#8A90A0}
+.pv3{display:grid;grid-template-columns:repeat(10,10px);gap:4px}
+.pv3 i{width:10px;height:10px;border-radius:3px;background:#F6C9C5}
+.pv3 + .pf-tag{bottom:6px}
+.pv4{display:flex;flex-direction:column;align-items:center;gap:6px}
+.pv4 .lns{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;max-width:96%}
+.pv4 .lns span{font-size:10px;padding:3px 7px}
+.pv4 .base{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:12px;background:#1f9d63;color:#fff;font-size:13px;font-weight:600;white-space:nowrap}
+.pv4 .base svg{width:14px;height:14px}
+.pf-flow.pv .pf-ic .pv3{margin-top:-14px}
+</style>
+<style>
+.dp-wrap{margin-top:clamp(28px,3.5vw,44px)}
+.dp{list-style:none;margin:0;padding:clamp(12px,2vw,20px);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;background:#F5F6F8;border-radius:28px}
+.dp-c{margin:0;background:#fff;border-radius:20px;padding:16px 16px 18px;min-width:0}
+.dp-c h3{margin:0 0 10px;font-size:17px;font-weight:600;line-height:1.3;color:#1B1A18}
+.dp-c ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.dp-c ul li{position:relative;margin:0;padding-left:14px;font-size:14.5px;line-height:1.45;color:#525866}
+.dp-c ul li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:#C9CDD4}
+@media(max-width:1100px){.dp{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.dp{grid-template-columns:1fr}}
+</style>
+<style>
+.ovc{background:#F5F6F8;border-radius:32px;padding:clamp(20px,3vw,40px);display:flex;flex-direction:column;gap:clamp(28px,3.5vw,44px)}
+.ovc-h{margin:0 0 14px;font-size:clamp(20px,2vw,26px);line-height:1.2;font-weight:600;letter-spacing:-.02em;color:#1B1A18}
+.ovc .pf-flow,.ovc .dp{background:none;padding:0;border-radius:0}
+.ovc .pf-k{margin:16px 0 8px}
+.ovc .ovc-h + .pf-k{margin-top:0}
+.ovc .pf-flow.pv{margin-top:0}
+.ovc .pf-ic{background:#F5F6F8}
+.ovc .pf-c.win .pf-ic{background:#fff}
+</style>
+<style>
+.main .ph .eyebrow-num{display:flex!important;width:max-content!important;margin-bottom:0!important}
+.main .ph .sec-title{margin:8px 0 0!important}
+.ph .rsx-step{margin-top:clamp(28px,3.5vw,44px)}
+.ph .rsx-step:first-of-type{margin-top:clamp(16px,2vw,24px)}
+.ph .sec-title + .rsx{margin-top:clamp(16px,2vw,24px)}
+.tst-l{margin:12px 0 0;font-size:17px;line-height:1.55;color:#525866}
+.tst-chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.tst-chips a{display:inline-flex;align-items:center;padding:9px 16px;border-radius:999px;background:#EEF7F2;color:#2F5E49;font-size:14px;font-weight:600;text-decoration:none}
+.tst-chips a::after{content:"↓";margin-left:6px}
+.tst-chips a:hover{background:#E1F1E8}
+</style>
+<style>
+.gap4{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.gap4 li{margin:0;padding:16px 18px 18px;border-radius:18px;background:#fff;border:1px solid #E1E4E9}
+.gap4-x{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#D1483F;color:#fff;font-size:11px;font-weight:700}
+.gap4 h4{margin:10px 0 6px;font-size:16px;font-weight:600;line-height:1.3;color:#1B1A18}
+.gap4 p{margin:0;font-size:14.5px;line-height:1.5;color:#525866}
+.sk .sk-n,.sk-chip .sk-n{color:#fff!important}
+@media(max-width:1000px){.gap4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.gap4{grid-template-columns:1fr}}
+</style>
+<style>
+.psk{margin-top:16px;display:grid;grid-template-columns:minmax(220px,300px) minmax(0,1fr);gap:clamp(18px,3vw,36px);align-items:center;padding:clamp(18px,2.6vw,28px);background:#fff;background-image:linear-gradient(rgba(60,90,80,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(60,90,80,.06) 1px,transparent 1px);background-size:18px 18px;border:2px solid #1B1A18;border-radius:18px 8px 16px 7px/8px 16px 7px 18px}
+.psk-art{position:relative}
+.psk-art svg{display:block;width:100%;height:auto}
+.psk-ann{position:absolute;margin:0;font-family:var(--font-hand,"Architects Daughter",cursive);font-size:17px;line-height:1.1;color:#c2412d}
+.psk-ann.a1{left:0;top:2px;max-width:110px;transform:rotate(-4deg)}
+.psk-ann.a2{right:0;bottom:6px;transform:rotate(3deg)}
+.psk-nm{margin:0;font-family:var(--font-hand,"Architects Daughter",cursive);font-size:30px;line-height:1.1;color:#1B1A18}
+.psk-nm span{margin-left:8px;font-size:18px;color:#626C81}
+.psk-job{margin:8px 0 0;font-size:16px;line-height:1.5;color:#3A3F4B}
+.psk-cols{margin-top:18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.psk-k{margin:0 0 6px;font-family:var(--font-hand,"Architects Daughter",cursive);font-size:19px;color:#1B1A18;text-decoration:underline;text-decoration-color:#c2412d;text-decoration-thickness:2px;text-underline-offset:4px}
+.psk-cols ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.psk-cols li{position:relative;padding-left:14px;font-size:14.5px;line-height:1.45;color:#3A3F4B}
+.psk-cols li::before{content:"";position:absolute;left:2px;top:.6em;width:5px;height:5px;border-radius:50%;background:#C9CDD4}
+.psk-note{margin:16px 0 0;font-size:13px;color:#8A90A0}
+@media(max-width:860px){.psk{grid-template-columns:1fr}.psk-art{max-width:300px;margin:0 auto}.psk-cols{grid-template-columns:1fr}}
+</style>
+<style>
+.sk-b{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:4px}
+.sk-b li{position:relative;padding-left:14px;font-size:14.5px;line-height:1.45;color:#525866}
+.sk-b li::before{content:"";position:absolute;left:2px;top:.6em;width:5px;height:5px;border-radius:50%;background:#C9CDD4}
+</style>
+<style>
+.dfc{margin-top:clamp(16px,2vw,24px);padding:clamp(18px,2.8vw,36px);background:#F5F6F8;border-radius:32px}
+.dfc + .dfc{margin-top:16px}
+.ph .dfc > .rsx-step:first-child{margin-top:0}
+</style>
+<style>
+@media(min-width:901px){#ideate .iax-row{grid-template-columns:repeat(3,minmax(0,1fr))}#ideate .iax-row::after{left:16.666%;right:16.666%}}
+</style>
+<style>
+#ideate #strategy.dcx{margin:clamp(28px,3.5vw,44px) 0 0!important;padding:clamp(32px,5vw,64px) clamp(20px,4vw,56px);border-radius:32px}
+#ideate #strategy .dcx-wide{grid-template-columns:1fr!important}
+#ideate #strategy .dcx-end{margin-top:clamp(28px,4vw,48px)!important;font-size:clamp(22px,2.6vw,32px)}
+</style>
+<style>
+.tg2{margin-top:clamp(18px,2.4vw,28px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.tg2-c{padding:clamp(18px,2.6vw,28px);border-radius:24px;background:#fff;border:1px solid #E1E4E9;display:flex;flex-direction:column}
+.tg2-c.gap{background:#FFF6F5;border-color:#F6D9D5}
+.tg2-c.fix{background:#F1F8F4;border-color:#CFE8DA}
+.tg2-k{margin:0;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#525866}
+.tg2-k span{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;color:#fff;font-size:11px;letter-spacing:0}
+.gap .tg2-k span{background:#D1483F}.fix .tg2-k span{background:#1f9d63}
+.tg2-c h3{margin:12px 0 10px;font-size:clamp(18px,1.8vw,22px);line-height:1.3;font-weight:600;color:#1B1A18}
+.tg2-c ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.tg2-c li{position:relative;padding-left:14px;font-size:15px;line-height:1.45;color:#3A3F4B}
+.tg2-c li::before{content:"";position:absolute;left:2px;top:.6em;width:5px;height:5px;border-radius:50%;background:#B8BDC7}
+.tg2-mock{margin-top:auto;padding-top:18px;display:flex;flex-direction:column;gap:6px}
+.tg2-mock .r{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;background:#fff;border:1px solid #E6E7EB;font-size:13.5px}
+.tg2-mock .r span{color:#8A90A0;min-width:72px}
+.tg2-mock .r b{font-weight:600;color:#1B1A18}
+.tg2-mock .r em{margin-left:auto;font-style:normal;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px}
+.tg2-mock .hunt{border-style:dashed;border-color:#E5A39C}
+.tg2-mock .hunt em{background:#FDECEA;color:#9A3A35}
+.tg2-mock .hit{border-color:#c9822a;background:#FFF8EC}
+.tg2-mock .hit em{background:#FBF0DD;color:#8A5A1F}
+.tst-l.s{margin-top:clamp(22px,3vw,32px);font-size:15px}
+@media(max-width:820px){.tg2{grid-template-columns:1fr}}
+</style>
+<style>
+#sketches .sk2-wide{grid-column:1/-1}
+.tst-wl{margin-top:clamp(28px,3.5vw,40px)!important}
+</style>
+<style>
+.sk3-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.sk3-top .sk-tabs{margin:0}
+.sk3-tr{display:grid;grid-template-columns:64px 1.1fr 1.3fr .9fr;align-items:center;gap:10px;padding:7px 4px;border-bottom:1.4px dashed rgba(27,26,24,.35);font-size:17px}
+.sk3-th{font-size:15px;color:#626C81;border-bottom:1.8px solid var(--ink,#1B1A18)}
+.sk3-tr .sk2-dot{margin-right:6px;vertical-align:middle}
+.sk2-dot.o{background:#e9a23b}
+.sk3-tr .sk-chip{justify-self:start;font-size:15px;padding:1px 9px}
+.sk3-st{justify-self:start;font-size:13px;padding:1px 7px;border:1.4px solid var(--ink,#1B1A18);border-radius:4px;color:#8A90A0}
+.sk3-st.on{background:#dff1e6;color:#1B1A18}
+.sk3-new{display:flex;flex-direction:column;gap:9px}
+.sk3-cr{display:grid;grid-template-columns:1.2fr 1fr .9fr;gap:6px;font-size:16px}
+.sk3-ch{font-size:14px;color:#626C81}
+.sk3-cr .sk2-f{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sk3-add{font-size:16px;color:#626C81;text-decoration:underline dashed}
+.sk3-new .sk2-btn{align-self:flex-start}
+</style>
+<style>
+.rc{margin-top:clamp(18px,2.4vw,28px);border:1.5px solid #1B1A18;border-radius:28px;background:#fff;overflow:hidden}
+.rc-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px clamp(18px,2.6vw,28px);background:#EEF7F2;border-bottom:1px solid #D6EBDF}
+.rc-title{margin:0;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#2F5E49}
+.rc-score{margin:0;font-size:15px;color:#3A3F4B}
+.rc-score b{margin-right:4px;font-size:22px;font-weight:700;color:#1f9d63}
+.rc-body{display:block}
+.rc-goals{list-style:none;margin:0;padding:0}
+.rc-goals li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:16px;padding:18px clamp(18px,2.6vw,28px);border-bottom:1px solid #ECEDF1}
+.rc-goals li:last-child{border-bottom:0}
+.rc-n{font-size:13px;font-weight:600;letter-spacing:.08em;color:#8A90A0}
+.rc-g h3{margin:0;font-size:17px;font-weight:600;line-height:1.3;color:#1B1A18}
+.rc-g p{margin:4px 0 0;font-size:14.5px;line-height:1.45;color:#525866}
+.rc-ok{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;background:#E6F6EE;color:#1f7a4f;font-size:13px;font-weight:600;white-space:nowrap}
+.rc-ok svg{width:13px;height:13px}
+.rc-nums{padding:18px clamp(18px,2.6vw,28px) 22px;background:#F5F6F8;border-top:1px solid #ECEDF1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.rc-k{grid-column:1/-1;margin:0;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8A90A0}
+.rc-m{display:flex;flex-direction:column;gap:2px}
+.rc-m b{font-size:clamp(22px,2.2vw,28px);line-height:1.1;font-weight:600;letter-spacing:-.02em;color:#1B1A18}
+.rc-m span{font-size:14px;color:#3A3F4B}
+.rc-m em{font-style:normal;font-size:12.5px;color:#8A90A0}
+@media(max-width:960px){.rc-nums{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.rc-nums{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.rc-goals li{grid-template-columns:minmax(0,1fr) auto}.rc-n{display:none}}
+</style>
+<style>
+.nts{list-style:none;margin:clamp(24px,3vw,36px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,22px)}
+.nt{position:relative;margin:0;padding:26px 18px 20px;border-radius:4px 4px 14px 4px;box-shadow:0 14px 24px -16px rgba(30,30,20,.45);transition:transform .25s ease}
+.nt:hover{transform:rotate(0) translateY(-4px)!important}
+.nt1{background:#FFF3B0;transform:rotate(-1.6deg)}
+.nt2{background:#DDEEFF;transform:rotate(1.2deg)}
+.nt3{background:#E1F5E7;transform:rotate(-.8deg)}
+.nt4{background:#FFE2DF;transform:rotate(1.6deg)}
+.nt-tape{position:absolute;top:-10px;left:50%;width:64px;height:20px;transform:translateX(-50%) rotate(-3deg);background:rgba(255,255,255,.65);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.nt-h{margin:0 0 8px;font-family:var(--font-hand,'Caveat',cursive);font-size:26px;line-height:1.05;color:#1B1A18}
+.nt p:not(.nt-h){margin:0;font-size:15px;line-height:1.5;color:#3A3F4B}
+.nt-end{margin-top:clamp(28px,4vw,48px);padding:clamp(20px,3vw,32px);background:#fff;background-image:linear-gradient(rgba(60,90,80,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(60,90,80,.06) 1px,transparent 1px);background-size:18px 18px;border:2px solid #1B1A18;border-radius:18px 8px 16px 7px/8px 16px 7px 18px}
+.nt-q{margin:0;font-family:var(--font-hand,'Caveat',cursive);font-size:clamp(24px,2.8vw,34px);line-height:1.25;color:#1B1A18;text-wrap:balance}
+.nt-sig{margin:14px 0 0;text-align:right;font-family:var(--font-hand,'Caveat',cursive);font-size:26px;color:#c2412d}
+@media(max-width:1000px){.nts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.nts{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.nt{transition:none}}
+</style>
+<style>
+.ov2{gap:clamp(26px,3.2vw,40px)!important}
+.ov2 .ovc-h{margin-bottom:14px}
+.ov2-ba{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:stretch;gap:14px}
+.ov2-col{position:relative;padding:18px 20px;border-radius:20px;background:#fff;border:1px solid #E6E7EB}
+.ov2-col.af{background:#F1F8F4;border-color:#CFE8DA}
+.ov2-k{margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8A90A0}
+.af .ov2-k{color:#1f9d63}
+.ov2-col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.ov2-col li{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:#1B1A18}
+.bf li{color:#525866}
+.ov2-i{flex:none;width:44px;height:36px;border-radius:10px;background:#F5F6F8;display:grid;place-items:center;color:#1B1A18}
+.af .ov2-i{background:#fff}
+.ov2-i svg{width:34px;height:auto}
+.ov2-tag{position:absolute;top:16px;right:18px;padding:3px 10px;border-radius:999px;background:#FFF0EF;color:#9A3A35;font-size:12px;font-weight:600}
+.ov2-ar{align-self:center;width:40px;height:40px;border-radius:50%;background:#1B1A18;color:#fff;display:grid;place-items:center}
+.ov2-ar svg{width:18px;height:18px}
+.ov2-story{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.ov2-story li{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:#fff;border:1px solid #E1E4E9;font-size:15.5px;font-weight:500;color:#1B1A18}
+.ov2-story li:not(:last-child)::after{content:"→";margin-left:6px;margin-right:-4px;color:#8A90A0;font-weight:400}
+.ov2-story li.bad{background:#FFF6F5;border-color:#F6D9D5}
+.ov2-story li.bad em{font-style:normal;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;background:#FDE2DF;color:#9A3A35}
+.ov2-story li.ok{background:#1f9d63;border-color:#1f9d63;color:#fff;font-weight:600}
+.ov2-story li.ok svg{width:15px;height:15px}
+.ov2-proc{display:flex;flex-wrap:wrap;gap:10px;counter-reset:pr}
+.ov2-proc a{counter-increment:pr;display:inline-flex;align-items:center;gap:8px;padding:10px 16px 10px 10px;border-radius:999px;background:#fff;border:1px solid #E1E4E9;font-size:15.5px;font-weight:600;color:#1B1A18;text-decoration:none;transition:border-color .2s,transform .2s}
+.ov2-proc a::before{content:counter(pr);display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#F5F6F8;font-size:12px;color:#525866}
+.ov2-proc a::after{content:"↓";color:#8A90A0;font-weight:400}
+.ov2-proc a:hover{border-color:#1B1A18;transform:translateY(-1px)}
+@media(max-width:820px){.ov2-ba{grid-template-columns:1fr}.ov2-ar{justify-self:center;transform:rotate(90deg)}}
+</style>
+<style>
+#ideate #strategy .dcx-h{font-size:clamp(26px,3vw,40px)!important;margin-bottom:0!important}
+.ly{margin-top:clamp(18px,2.4vw,26px);background:#fff;border-radius:24px;overflow:hidden}
+.ly-r{display:grid;grid-template-columns:minmax(200px,240px) minmax(0,1fr);align-items:center;gap:18px;padding:16px clamp(16px,2.4vw,26px);border-bottom:1px solid #ECEDF1}
+.ly-r:last-child{border-bottom:0}
+.ly-l{display:flex;align-items:center;gap:12px}
+.ly-i{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center}
+.ly-i.a{background:#ECEBFC}.ly-i.b{background:#FDE7EF}.ly-i.c{background:#E3F2EA}
+.ly-i svg{width:18px;height:18px}
+.ly-n{margin:0;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8A90A0}
+.ly-d{margin:2px 0 0;font-size:16px;font-weight:600;color:#1B1A18}
+.ly-v{min-width:0}
+.ly-v .dc-strip,.ly-v .dcx-tags,.ly-v .dcx-tg{margin:0!important}
+.ly-v .dcx-tg{background:#F5F6F8}
+#strategy .ly-v .dc-strip>li,#strategy .ly-v .dc-strip>li.dc-clr span{font-size:13px;padding:6px 11px}
+#strategy .ly-v .dc-strip>li+li,#strategy .ly-v .dc-strip.on>li.dc-clr{margin-left:20px}
+#strategy .ly-v .dc-strip>li+li::before{left:-15px}
+#strategy .ly-v .dc-strip>li.dc-clr{padding:0}
+.ly-end{margin:clamp(16px,2vw,22px) 0 0;font-size:clamp(17px,1.6vw,20px);font-weight:600;color:#1B1A18}
+@media(max-width:820px){.ly-r{grid-template-columns:1fr;gap:12px}}
+</style>
 </head>
 <body>
 <a class="skip" href="#top">Skip to content</a>
@@ -1531,11 +1823,11 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
     <!-- HERO -->
     <section class="panel case-hero" data-screen-label="Hero">
       
-            <h1 class="proj">One workflow for every <span class="cs-mark"><em class="hl">line of business</em><svg class="cs-draw" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 30 4, 62 14, 90 7 S 114 6, 117 9" vector-effect="non-scaling-stroke"></path></svg></span></h1>
-      <p class="subline">The submission workflow was built only for Marine. As Aviation, Construction and PV&amp;T came on board, I redesigned it as one base that any line of business or client can configure.</p>
-      <dl class="cs-meta"><div><dt>My scope</dt><dd>Shared workflow, intake, guidelines, workbench, quote and bind</dd></div><div><dt>Lines of business</dt><dd>Marine, Aviation, Construction and PV&amp;T</dd></div></dl>
+            <h1 class="proj">One workflow for every <span class="cs-mark"><em class="hl">type of insurance</em><svg class="cs-draw" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 30 4, 62 14, 90 7 S 114 6, 117 9" vector-effect="non-scaling-stroke"></path></svg></span></h1>
+      <p class="subline">The platform was built for marine insurance only. When aviation, construction and political violence cover came on board, each one would have needed its own tool. So I redesigned the journey, from the first request to the agreed policy, as one shared base that any type of insurance and any client can set up their own way.</p>
+      <dl class="cs-meta m4"><div class="todo"><dt>Timeline</dt><dd>[FILL]</dd></div><div><dt>What I designed</dt><dd>The full journey, from a broker's request to an agreed policy</dd></div><div><dt>Types of insurance</dt><dd>Marine, aviation, construction, political violence and terrorism</dd></div></dl>
       <div class="lob-wrap cs-win"><div class="cs-win-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-        <p class="lob-label">Same base. Configured per line.</p>
+        <p class="lob-label">Same base, set up for each line</p>
         <div class="ru-panel lob-panel" aria-hidden="true">
           <div class="lob-card">
             <div class="lob-top"><span class="lob-brand"><span class="lg">RL</span>RiskLane</span><span class="lob-tag">Marine</span></div>
@@ -1557,105 +1849,125 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
           </div>
         </div>
         </div>
-      <p class="ru-cap">Interface recreated with sample data. Product name and colours changed for confidentiality.</p><div class="nda-strip" role="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><p><b>This work is under NDA.</b> I can't show the real screens, product names, client data or details. The process, decisions and impact are real. The screens are recreated with a different theme, product name and sample data.</p></div>
+      <div class="nda-strip" role="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><p><b>Under NDA.</b> The screens are recreated with sample data, a different name and colours. The process, decisions and impact are real.</p></div>
     </section>
 
     <!-- 01 THE PROBLEM -->
-    <section class="panel reveal" id="problem" data-screen-label="01 Where it started">
-      <span class="eyebrow-num">01 · Where it started</span>
-      <h2 class="sec-title">A Marine tool, about to serve every line.</h2>
-      <ol class="wsx">
-<li class="wsx-c"><div class="wsx-il" aria-hidden="true"><div class="wsx-plat"><b>Underwriting platform</b><div class="wsx-pills"><span class="on">Marine</span></div></div></div><p class="wsx-n">01</p><p class="wsx-t">We had an underwriting platform built for Marine.</p></li>
-<li class="wsx-c"><div class="wsx-il" aria-hidden="true"><div class="wsx-miss">Pre-bind submissions<s></s></div><div class="wsx-who"><span class="wsx-o"></span>Few underwriters</div></div><p class="wsx-n">02</p><p class="wsx-t">It had a pre-bind submission module. Few underwriters used it, so it rarely got updates.</p></li>
-<li class="wsx-c"><div class="wsx-il" aria-hidden="true"><div class="wsx-pills"><span class="on">Marine</span></div><span class="wsx-ar"></span><div class="wsx-stack"><span>Aviation</span><span>Construction</span><span>Property</span><span class="more">More lines</span></div></div><p class="wsx-n">03</p><p class="wsx-t">The business planned to grow into more lines of business. Aviation came first.</p></li>
-<li class="wsx-c"><div class="wsx-il" aria-hidden="true"><div class="wsx-prods"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="wsx-ar"></span><div class="wsx-who"><span class="wsx-o pk"></span>A new product per line</div></div><p class="wsx-n">04</p><p class="wsx-t">Without a shared base, 10 lines could mean designing 10 separate products.</p></li>
-</ol>
-      <p class="wsx-end">We had a submission flow. <span>But it only fit Marine.</span></p>
+    <!-- OVERVIEW: platform, problem, process -->
+    <section class="panel reveal" id="overview" data-screen-label="Overview">
+      <div class="ovc ov2">
+        <div class="ov2-b">
+          <h2 class="ovc-h">What the platform does</h2>
+          <div class="ov2-ba">
+            <div class="ov2-col bf"><p class="ov2-k">Before</p><ul><li><span class="ov2-i"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="26" y="20" width="68" height="48" rx="5" fill="#FFE7C2"/><path d="M26 25l34 24 34-24"/></svg></span>A broker emails a request</li><li><span class="ov2-i"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="30" y="12" width="40" height="52" rx="3" fill="#FFFFFF"/><rect x="40" y="19" width="40" height="52" rx="3" fill="#FFFFFF"/><rect x="50" y="26" width="40" height="52" rx="3" fill="#ECEBFC"/><path d="M58 40h24M58 48h24M58 56h16"/></svg></span>Many documents attached</li><li><span class="ov2-i"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="26" y="14" width="44" height="60" rx="3" fill="#FFFFFF"/><path d="M34 28h28M34 36h28M34 44h20"/><circle cx="76" cy="52" r="14" fill="#E3F1FC"/><path d="M86 62l12 12"/></svg></span>Underwriter reads each one</li><li><span class="ov2-i"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="36" y="16" width="44" height="62" rx="4" fill="#FFFFFF"/><rect x="48" y="11" width="20" height="10" rx="3" fill="#ECEBFC"/><path d="M44 34h6v6h-6zM44 48h6v6h-6zM44 62h6v6h-6z" stroke-width="1.5"/><path d="M56 37h16M56 51h12M56 65h14"/><circle cx="90" cy="22" r="10" fill="#FFFFFF"/><path d="M90 16v6l4 3"/></svg></span>Gaps checked by hand</li></ul><span class="ov2-tag">Slow</span></div>
+            <span class="ov2-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <div class="ov2-col af"><p class="ov2-k">With the platform</p><ul><li><span class="ov2-i"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="34" y="10" width="52" height="70" rx="5" fill="#FFFFFF"/><path d="M34 15a5 5 0 0 1 5-5h42a5 5 0 0 1 5 5v9H34z" fill="#E3F2EA"/><path d="M42 36h36M42 46h30M42 56h36M42 66h22"/></svg></span>All in one submission</li><li><span class="ov2-i"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="30" y="10" width="60" height="70" rx="5" fill="#FFFFFF"/><path d="M38 22h44M38 32h36"/><rect x="36" y="42" width="48" height="13" rx="3" fill="#FBF0DD" stroke="#c9822a"/><path d="M38 66h40"/></svg></span>Missing data shown</li><li><span class="ov2-i"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M46 78V14"/><path d="M46 16h32l-7 10 7 10H46" fill="#FBECEB" stroke="#d1483f"/></svg></span>Critical points flagged</li><li><span class="ov2-i"><svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="56" cy="26" r="10" fill="#ECEBFC"/><path d="M38 78c0-18 8-28 18-28s18 10 18 28"/><circle cx="84" cy="56" r="11" fill="#E6F6EE"/><path d="M79 56l3 3 6-6" stroke="#1f9d63"/></svg></span>Underwriter decides</li></ul></div>
+          </div>
+        </div>
+        <div class="ov2-b">
+          <h2 class="ovc-h">The problem</h2>
+          <ol class="ov2-story"><li>Built for marine</li><li>New lines, many clients</li><li class="bad">A product for each? <em>Won't scale</em></li><li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>One platform for all</li></ol>
+        </div>
+        <div class="ov2-b">
+          <h2 class="ovc-h">Design process</h2>
+          <ol class="dp"><li class="dp-c"><h3>Empathise</h3><ul><li>Studied the marine flow</li><li>Spoke to underwriters, clients and our team</li></ul></li><li class="dp-c"><h3>Define</h3><ul><li>Grouped findings on a whiteboard</li><li>Two personas: underwriter and fit-check team</li></ul></li><li class="dp-c"><h3>Ideate</h3><ul><li>Separate flows, or one shared base?</li><li>Chose one base with three layers of settings</li></ul></li><li class="dp-c"><h3>Prototype</h3><ul><li>Sketches, wireframes, then a clickable prototype</li><li>Reviewed with product, experts and developers</li></ul></li><li class="dp-c"><h3>Test</h3><ul><li>Live sessions with clients</li><li>Three patterns became platform standards</li></ul></li></ol>
+        </div>
+      </div>
     </section>
 
     <!-- 02 HOW WE MIGHT SOLVE IT -->
-    <section class="panel reveal" id="approach" data-screen-label="02 How we might solve it">
-      <span class="eyebrow-num">02 · How we might solve it</span>
-      <h2 class="sec-title">Learn how each line works today, then design.</h2>
-      <p class="rsx-intro">We already had some Aviation and Construction customers. My first job as the designer was to meet them, learn how they worked, and compare that with our Marine flow. That gave us the high-level picture of what we needed.</p>
-      <div class="rsx-step"><span class="rsx-num">01</span><div><p class="rsx-lbl">Research</p><h3 class="rsx-h">Talk to everyone involved, in order</h3></div></div>
-      <ol class="rsx">
+    <section class="panel reveal ph" id="approach" data-screen-label="01 Empathise">
+      <span class="eyebrow-num">01 · Empathise</span>
+      <h2 class="sec-title">Talk to everyone involved, in order</h2>
+            <ol class="rsx">
 <li class="rsx-c c1"><div class="rsx-top"><span class="rsx-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 3.5 8.5 12 13l8.5-4.5z"></path><path d="m3.5 12.5 8.5 4.5 8.5-4.5"></path></svg></span><span class="rsx-tag">First</span></div><p class="rsx-who">Existing Marine flow</p><h4 class="rsx-t">What we already had</h4><ul class="rsx-l"><li>We tested the Marine flow ourselves</li><li>Went through every step, end to end</li><li>Few underwriters used it, so it was a base, not the ideal</li></ul></li>
 <li class="rsx-ar" aria-hidden="true"></li>
 <li class="rsx-c c2"><div class="rsx-top"><span class="rsx-i" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"></circle><path d="M3.5 19a5.5 5.5 0 0 1 11 0"></path><circle cx="17" cy="9" r="2.4"></circle><path d="M16 14.2a4.5 4.5 0 0 1 5 4.8"></path></svg></span><span class="rsx-tag">Then</span></div><p class="rsx-who">New customers</p><h4 class="rsx-t">How they work today</h4><ul class="rsx-l"><li>How they handled submissions day to day</li><li>The other platforms they used for this work</li><li>Data and steps that Marine did not have</li></ul></li>
 <li class="rsx-ar" aria-hidden="true"></li>
 <li class="rsx-c c3"><div class="rsx-top"><span class="rsx-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18h6"></path><path d="M10 21h4"></path><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.2 1 2.1h5c0-.9.4-1.7 1-2.1A6 6 0 0 0 12 3z"></path></svg></span><span class="rsx-tag">Last</span></div><p class="rsx-who">Internal team</p><h4 class="rsx-t">What it means for the platform</h4><ul class="rsx-l"><li>What every line has in common</li><li>What changes from line to line</li><li>What the business needs from the module</li></ul></li>
 </ol>
-      <div class="rsx-step"><span class="rsx-num">02</span><div><p class="rsx-lbl">Findings</p><h3 class="rsx-h">What we identified</h3></div></div>
+      </section>
+
+    <section class="panel reveal ph" id="define" data-screen-label="02 Define">
+      <span class="eyebrow-num">02 · Define</span>
+      <h2 class="sec-title">What we found, and who it is for</h2>
+      <div class="dfc">
+      <div class="rsx-step"><div><h3 class="rsx-h">What we identified</h3></div></div>
       <p class="fnx-part fnx-wb">From the whiteboard</p>
       <div class="wbx"><figure class="wbx-c"><img src="assets/prebind/whiteboard-1.jpeg" alt="Whiteboard notes on the submission problem and the aim to cut checking time by half" loading="lazy" /></figure><figure class="wbx-c"><img src="assets/prebind/whiteboard-2.jpeg" alt="Full whiteboard with the problem, the Aviation split flow and the user journey" loading="lazy" /></figure><figure class="wbx-c"><img src="assets/prebind/whiteboard-3.jpeg" alt="Whiteboard user journey from submission to policy issue" loading="lazy" /></figure><figure class="wbx-c"><img src="assets/prebind/whiteboard-4.jpeg" alt="Whiteboard Aviation clearance and underwriter flows next to Marine and Construction" loading="lazy" /></figure></div>
       <p class="fnx-part">What was missing in the platform</p>
-      <ul class="fdx">
-<li class="fdx-c"><span class="fdx-x" aria-hidden="true"></span><h4>Line-specific needs</h4><p>Aviation and Construction customers had requirements our Marine system did not cover. Fields were built around vessels. Aircraft and building projects had nowhere to go.</p></li>
-<li class="fdx-c"><span class="fdx-x" aria-hidden="true"></span><h4>Way of working</h4><p>New customers still worked by hand in Excel and other tools, each one for a different job.</p></li>
-<li class="fdx-c"><span class="fdx-x" aria-hidden="true"></span><h4>Clearance step</h4><p>Aviation had a clearance team that filled in missing data before underwriters quoted. Our flow had no place for it.</p></li>
-<li class="fdx-c"><span class="fdx-x" aria-hidden="true"></span><h4>Missing data view</h4><p>Nothing in the submission showed underwriters what was missing.</p></li>
-<li class="fdx-c"><span class="fdx-x" aria-hidden="true"></span><h4>Key data</h4><p>Underwriters searched by hand for the data that mattered before they could quote.</p></li>
-<li class="fdx-c"><span class="fdx-x" aria-hidden="true"></span><h4>Shared base</h4><p>The flow was built around Marine. Each new line would have needed a new design.</p></li>
-</ul>
-      <p class="fnx-part fnx-wb">What every line shared, and what differed</p>
-      <div class="tbx"><div class="pt-tbl-wrap"><table class="pt-tbl"><thead><tr><th></th><th scope="col">Feature</th><th scope="col">Marine</th><th scope="col">Aviation</th><th scope="col">Construction</th></tr></thead><tbody><tr class="pt-shared"><th class="pt-grp" rowspan="4" scope="rowgroup">Shared</th><th scope="row">Submission from multiple files</th><td><span class="pt-ck">✓</span></td><td><span class="pt-ck">✓</span></td><td><span class="pt-ck">✓</span></td></tr><tr class="pt-shared"><th scope="row">Check for missing data</th><td><span class="pt-ck">✓</span></td><td><span class="pt-ck">✓</span></td><td><span class="pt-ck">✓</span></td></tr><tr class="pt-shared"><th scope="row">Quote and bind</th><td><span class="pt-ck">✓</span></td><td><span class="pt-ck">✓</span></td><td><span class="pt-ck">✓</span></td></tr><tr class="pt-shared"><th scope="row">Notes and attachments</th><td><span class="pt-ck">✓</span></td><td><span class="pt-ck">✓</span></td><td><span class="pt-ck">✓</span></td></tr><tr class="pt-conf"><th class="pt-grp" rowspan="2" scope="rowgroup">Configured</th><th scope="row">Line-specific fields</th><td>Vessels</td><td>Aircraft</td><td>Projects</td></tr><tr class="pt-conf"><th scope="row">Separate clearance team</th><td></td><td>Some clients</td><td></td></tr></tbody></table></div></div>
-      <div class="fdx-split">
-<div class="fdx-h l"><div class="fdx-orbs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><p class="fdx-lb">For new customers</p><h4>A flow built for someone else</h4><p>Aviation and Construction teams would have had to fit their work into a flow made for Marine.</p></div>
-<span class="fdx-sw" aria-hidden="true">⇄</span>
-<div class="fdx-h r"><div class="fdx-chips" aria-hidden="true"><span>Check every field</span><span>Find key data</span><span>Spot what is missing</span></div><p class="fdx-lb">For underwriters</p><h4>Manual checks, even in one place</h4><p>The platform saved the time spent moving between documents. Checking each field and finding key data still took time before every quote. The aim was to cut that checking time by half.</p></div>
-</div>
-      <p class="fnx-part fnx-p2" id="usability">Usability issues</p>
-      <p class="rsx-intro">We also reviewed the Marine screens ourselves. Three problems stood out. On one line they were annoying. Across every line, they would be everywhere.</p>
+      <ul class="gap4"><li><span class="gap4-x" aria-hidden="true">✕</span><h4>Line-specific needs</h4><p>Aviation and construction customers needed things our marine system did not cover.</p></li><li><span class="gap4-x" aria-hidden="true">✕</span><h4>Way of working</h4><p>New customers still worked by hand in Excel and other tools.</p></li><li><span class="gap4-x" aria-hidden="true">✕</span><h4>Different roles</h4><p>Some aviation clients split the work between a clearance team and underwriters. Others did not.</p></li><li><span class="gap4-x" aria-hidden="true">✕</span><h4>Missing data view</h4><p>Nothing in a submission showed underwriters what was missing.</p></li></ul>
+      </div>
+      <div class="dfc">
+      <div class="rsx-step" id="usability"><div><h3 class="rsx-h">Usability review</h3></div></div>
+      <p class="rsx-intro">We reviewed the marine screens ourselves. Three issues stood out.</p>
         <div class="sk-grid">
-<figure class="sk-card"><div class="sk"><div class="sk-bar"><span class="sk-chip on">Line ▾<b class="sk-n">1</b></span><span class="sk-chip">Status ▾</span><span class="sk-chip">Broker ▾</span><span class="sk-chip">Date ▾</span></div><div class="sk-dd"><span><i class="sk-cb x"></i>Marine</span><span><i class="sk-cb x"></i>Aviation<b class="sk-n">2</b></span><span><i class="sk-cb"></i>Construction</span><span class="sk-btn">Apply<b class="sk-n">3</b></span></div><p class="sk-ann sk-a1">then again for Status, Broker, Date...</p><svg class="sk-arw sk-r1" viewBox="0 0 100 60" aria-hidden="true"><path d="M88 56 C 96 30, 80 8, 40 6 M40 6 l8 -5 M40 6 l7 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><figcaption><span class="sk-t">Too many clicks to filter</span><span class="sk-d">Each filter had its own chip. Users opened, selected and applied one, then did it all again for the next.</span></figcaption></figure>
-<figure class="sk-card"><div class="sk"><div class="sk-tabs"><span class="on">Details</span><span class="sk-ring">Notes</span><span class="sk-ring">Attachments</span><span>Updates</span></div><div class="sk-body"><i></i><i></i><i class="s"></i><i></i><i class="s"></i></div><p class="sk-ann sk-a2">leave the page to check a note</p><p class="sk-ann sk-a3">come back, find your place again</p><svg class="sk-arw sk-r2" viewBox="0 0 100 60" aria-hidden="true"><path d="M10 56 C 20 30, 40 16, 62 6 M62 6 l-9 0 M62 6 l-4 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><figcaption><span class="sk-t">Leaving the page to check a note</span><span class="sk-d">Notes, attachments and updates sat in separate tabs. To check one while reviewing, users had to leave the submission and come back.</span></figcaption></figure>
-<figure class="sk-card"><div class="sk sk-pages"><div class="sk-pg"><span class="sk-lbl">Page A</span><div class="sk-hd"><span class="sk-crumb">Home / Submissions</span><span class="sk-srch">Search</span><span class="sk-vw"><i></i><i></i></span></div></div><div class="sk-pg"><span class="sk-lbl">Page B</span><div class="sk-hd"><span class="sk-vw"><i></i><i></i></span><span class="sk-tb">Tab 1</span><span class="sk-tb">Tab 2</span><span class="sk-srch sk-q">Search<b class="sk-n">?</b></span></div><span class="sk-crumb sk-low">Home / Policy<b class="sk-n">?</b></span></div><p class="sk-ann sk-a4">different spot on every page</p></div><figcaption><span class="sk-t">Controls that kept moving</span><span class="sk-d">Breadcrumbs, search and view switch sat in a different place on each page, and got pushed around when tabs were added.</span></figcaption></figure>
+<figure class="sk-card"><div class="sk"><div class="sk-bar"><span class="sk-chip on">Line ▾<b class="sk-n">1</b></span><span class="sk-chip">Status ▾</span><span class="sk-chip">Broker ▾</span><span class="sk-chip">Date ▾</span></div><div class="sk-dd"><span><i class="sk-cb x"></i>Marine</span><span><i class="sk-cb x"></i>Aviation<b class="sk-n">2</b></span><span><i class="sk-cb"></i>Construction</span><span class="sk-btn">Apply<b class="sk-n">3</b></span></div><p class="sk-ann sk-a1">then again for Status, Broker, Date...</p><svg class="sk-arw sk-r1" viewBox="0 0 100 60" aria-hidden="true"><path d="M88 56 C 96 30, 80 8, 40 6 M40 6 l8 -5 M40 6 l7 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><figcaption><span class="sk-t">Too many clicks to filter</span><ul class="sk-b"><li>Each filter opened and applied on its own</li><li>Repeated for every filter</li></ul></figcaption></figure>
+<figure class="sk-card"><div class="sk"><div class="sk-tabs"><span class="on">Details</span><span class="sk-ring">Notes</span><span class="sk-ring">Attachments</span><span>Updates</span></div><div class="sk-body"><i></i><i></i><i class="s"></i><i></i><i class="s"></i></div><p class="sk-ann sk-a2">leave the page to check a note</p><p class="sk-ann sk-a3">come back, find your place again</p><svg class="sk-arw sk-r2" viewBox="0 0 100 60" aria-hidden="true"><path d="M10 56 C 20 30, 40 16, 62 6 M62 6 l-9 0 M62 6 l-4 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><figcaption><span class="sk-t">Leaving the page to check a note</span><ul class="sk-b"><li>Notes and files in separate tabs</li><li>Had to leave the submission to check one</li></ul></figcaption></figure>
+<figure class="sk-card"><div class="sk sk-pages"><div class="sk-pg"><span class="sk-lbl">Page A</span><div class="sk-hd"><span class="sk-crumb">Home / Submissions</span><span class="sk-srch">Search</span><span class="sk-vw"><i></i><i></i></span></div></div><div class="sk-pg"><span class="sk-lbl">Page B</span><div class="sk-hd"><span class="sk-vw"><i></i><i></i></span><span class="sk-tb">Tab 1</span><span class="sk-tb">Tab 2</span><span class="sk-srch sk-q">Search<b class="sk-n">?</b></span></div><span class="sk-crumb sk-low">Home / Policy<b class="sk-n">?</b></span></div><p class="sk-ann sk-a4">different spot on every page</p></div><figcaption><span class="sk-t">Controls that kept moving</span><ul class="sk-b"><li>Search, page path and view switch moved around</li><li>Different place on every page</li></ul></figcaption></figure>
 </div>
-      <div class="rsx-step"><span class="rsx-num">03</span><div><p class="rsx-lbl">Personas</p><h3 class="rsx-h">Who it is for</h3></div></div>
-      <p class="rsx-intro">The research pointed to two main users. Underwriters decide on the risk and price it. In some lines, a clearance team checks the submission before it reaches them.</p>
-      <div class="pz" id="pz" style="margin-top:24px">
-<div class="pz-tabs" role="tablist" aria-label="Personas"><button type="button" role="tab" id="pz-t0" aria-controls="pz-s0" aria-selected="true"><span>Underwriter</span><i class="pz-bar"></i></button><button type="button" role="tab" id="pz-t1" aria-controls="pz-s1" aria-selected="false"><span>Clearance team member</span><i class="pz-bar"></i></button></div>
-<div class="pz-stage">
-<article class="pz-s u on" id="pz-s0" role="tabpanel" aria-labelledby="pz-t0">
-<div class="pz-id"><div class="pz-av" aria-hidden="true"><i class="hair"></i><i class="head"></i><i class="body"></i></div><p class="pz-nm">James, 41</p><p class="pz-role">Underwriter</p><div class="pz-lines"><span>Marine</span><span>Aviation</span><span>Construction</span></div><p class="pz-job">Reviews each submission, decides on the risk, then quotes and binds. Binding means confirming the cover.</p></div>
-<div class="pz-cols"><div class="pz-col"><p class="pz-k">How they work today</p><ul><li>Has every document in one place</li><li>Still checks each field by hand</li><li>Searches for key data before quoting</li></ul></div><div class="pz-col"><p class="pz-k">What they need</p><ul><li>See what is missing at a glance</li><li>Find key data without searching</li><li>Check notes without leaving the page</li></ul></div><div class="pz-col pz-pain"><p class="pz-k">What gets in the way</p><ul><li>Too many clicks to filter</li><li>Switching tabs to check a note</li><li>Controls that move between pages</li></ul></div></div>
-</article>
-<article class="pz-s c" id="pz-s1" role="tabpanel" aria-labelledby="pz-t1" aria-hidden="true">
-<div class="pz-id"><div class="pz-av" aria-hidden="true"><i class="hair"></i><i class="head"></i><i class="body"></i></div><p class="pz-nm">Aisha, 29</p><p class="pz-role">Clearance team member</p><div class="pz-lines"><span>Aviation</span></div><p class="pz-job">Checks each new submission first and fills in missing data before it goes to an underwriter.</p></div>
-<div class="pz-cols"><div class="pz-col"><p class="pz-k">How they work today</p><ul><li>Works by hand in Excel and other tools</li><li>Uses a different tool for each job</li><li>Has no step of their own in our flow</li></ul></div><div class="pz-col"><p class="pz-k">What they need</p><ul><li>A clear clearance step in the flow</li><li>A view of what is missing</li><li>A simple hand-off to underwriting</li></ul></div><div class="pz-col pz-pain"><p class="pz-k">What gets in the way</p><ul><li>No place for their work in the system</li><li>Data spread across separate tools</li></ul></div></div>
-</article>
-</div>
-<p class="pz-note">Built from our research. Names and ages are illustrative.</p>
-</div>
-      <div class="rsx-step"><span class="rsx-num">04</span><div><p class="rsx-lbl">User journey</p><h3 class="rsx-h">One journey, from first email to post-bind</h3></div></div>
-      <p class="rsx-intro">With the client needs and the gaps in Marine clear, I mapped the full underwriter journey on the whiteboard. This sketch became the base for the flowchart.</p>
+      </div>
+      <div class="dfc">
+      <div class="rsx-step"><div><h3 class="rsx-h">Persona</h3></div></div>
+      <div class="psk">
+        <div class="psk-art"><svg viewBox="0 0 260 240" fill="none" stroke="#1B1A18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M128 34c17-2 29 11 28 28c-1 18-13 29-29 28c-16-1-27-13-26-29c1-15 11-26 27-27z" fill="#F3E3D3"/>
+<path d="M103 52c4-14 17-22 33-19c11 2 19 9 21 18c-9-6-19-8-30-6c-9 2-17 4-24 7z" fill="#3A3F4B"/>
+<path d="M112 63c3-2 8-2 11 0M134 63c3-2 8-2 11 0M123 64h11" stroke-width="1.8"/>
+<circle cx="117" cy="65" r="7" stroke-width="1.8"/><circle cx="140" cy="65" r="7" stroke-width="1.8"/>
+<path d="M121 79c5 3 11 3 15 0" stroke-width="1.8"/>
+<path d="M118 90l-2 10M138 90l2 10"/>
+<path d="M70 168c2-36 22-62 58-63c36 1 57 27 60 63" fill="#DCE8F7"/>
+<path d="M118 106l10 14l10-14" stroke-width="1.8"/>
+<path d="M40 170h182" stroke-width="2.6"/>
+<path d="M78 168l8-40h86l-4 40" fill="#FFFFFF"/>
+<path d="M126 148c3-2 6-2 8 0" stroke-width="1.6"/>
+<path d="M200 168v-20h18v20" fill="#FFE7C2"/><path d="M218 152c7 0 7 10 0 10" stroke-width="1.8"/>
+<path d="M44 168l4-22h24l2 22M48 156h24M47 162h26" stroke-width="1.6" fill="#FFFFFF"/>
+<path d="M200 140c2-4 4-4 6 0M206 140c2-4 4-4 6 0" stroke-width="1.4"/>
+</svg><p class="psk-ann a1">needs the full picture, fast</p><p class="psk-ann a2">too many docs</p></div>
+        <div class="psk-tx">
+          <p class="psk-nm">James, 41 <span>Underwriter</span></p>
+          <p class="psk-job">Reviews each submission, decides on the risk, then quotes and binds.</p>
+          <div class="psk-cols">
+            <div><p class="psk-k">Today</p><ul><li>Has every document in one place</li><li>Still checks each field by hand</li><li>Searches for key data before quoting</li></ul></div>
+            <div><p class="psk-k">Needs</p><ul><li>See what is missing at a glance</li><li>Find key data without searching</li><li>Check notes without leaving the page</li></ul></div>
+            <div><p class="psk-k">Gets in the way</p><ul><li>Too many clicks to filter</li><li>Switching tabs to check a note</li><li>Controls that move between pages</li></ul></div>
+          </div>
+          <p class="psk-note">Built from our research. Name and age are illustrative.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="panel reveal ph" id="ideate" data-screen-label="03 Ideate">
+      <span class="eyebrow-num">03 · Ideate</span>
+      <h2 class="sec-title">One journey, organised for everyone</h2>
       <div class="jnx">
 <div class="jnx-img pw-row pw-one"><figure class="pw-card has-img"><div class="pw-photo"><img src="assets/prebind/user-journey.jpeg" alt="Whiteboard sketch of the underwriter user journey from broker email to post-bind workflow" loading="lazy" /></div></figure></div>
-<ol class="jnx-steps"><li><span class="jnx-n">01</span><b>Submission</b><span>Submissions came in two ways. Brokers sent emails with several files, or underwriters created one in the platform.</span></li><li><span class="jnx-n">02</span><b>Clearance review</b><span>For Aviation, a clearance team checked each submission first. Missing fields were filled and key data was highlighted.</span></li><li><span class="jnx-n">03</span><b>Underwriter review</b><span>In the workbench, underwriters validated the data, ran checks, read the documents and decided to quote or reject.</span></li><li><span class="jnx-n">04</span><b>Quote and bind</b><span>An approved submission moved to quote, then bind, then the post-bind workflow. Post-bind existed only for Marine at the time.</span></li></ol>
-<div class="jnx-gl"><span class="jnx-tag">Runs in the background</span><p><b>Guidelines</b> were not a step in the journey. Teams set them up in a separate part of the platform. When a submission arrived, the system checked it against every guideline and highlighted any match. Clearance teams and underwriters saw those highlights at each review.</p></div>
+<ol class="jnx-steps"><li><span class="jnx-n">01</span><b>Submission</b><span>A broker's email and files become one submission.</span></li><li><span class="jnx-n">02</span><b>Clearance review</b><span>For some clients, a clearance team checks the data and fills the gaps.</span></li><li><span class="jnx-n">03</span><b>Underwriter review</b><span>When it is ready, the status changes and it moves to the underwriter workbench, a space just for underwriters.</span></li><li><span class="jnx-n">04</span><b>Quote and bind</b><span>The underwriter decides, quotes and agrees the policy.</span></li></ol>
 </div>
-      <div class="rsx-step"><span class="rsx-num">05</span><div><p class="rsx-lbl">Information architecture</p><h3 class="rsx-h">Where everything lives</h3></div></div>
-      <p class="rsx-intro">From the journey, I grouped the platform into four areas. The shared parts stay the same for every line. Only the line-specific parts change.</p>
-      <div class="iax">
-<div class="iax-root">Pre-bind platform</div>
-<div class="iax-row">
-<div class="iax-col "><p class="iax-h">Submission tracker</p><ul><li>All submissions in one list</li><li>One filter panel for line, status, broker and date</li></ul></div>
-<div class="iax-col opt"><p class="iax-h">Clearance review</p><ul><li>Fill in missing data</li><li>Highlight key data</li><li>Pass to underwriting</li></ul></div>
-<div class="iax-col "><p class="iax-h">Underwriter workbench</p><ul><li>Rater, policy and loss tabs</li><li>Line-specific tab: vessel, aircraft or project</li><li>Notes, attachments and updates in a side panel</li><li>Quote and bind</li></ul></div>
-<div class="iax-col "><p class="iax-h">Guidelines</p><ul><li>Set up rules for each line</li><li>Matches show at every review</li></ul></div>
-</div>
-<div class="iax-key"><span><i class="s"></i>Shared by every line</span><span><i class="o"></i>Only for clients with a clearance team</span></div>
-<p class="todo">TO ADD: confirm this structure, or share your own information architecture diagram.</p>
-</div>
-      <div class="rsx-step" id="sketches"><span class="rsx-num">06</span><div><p class="rsx-lbl">Low-fi wireframes</p><h3 class="rsx-h">From sketches to reviewed mockups</h3></div></div>
-      <p class="rsx-intro">I sketched on paper first, turned the sketches into low-fi wireframes, then reviewed quick mockups with clients, the internal team and developers.</p>
+      <div class="reveal dcx" id="strategy">
+      <div class="dcx-in">
+      <span class="dcx-pill">The idea</span>
+      <h2 class="dcx-h">One base, configured for every line</h2>
+      <div class="ly"><div class="ly-r"><div class="ly-l"><span class="ly-i a"><svg viewBox="0 0 24 24"><path d="M12 4 3.5 8.5 12 13l8.5-4.5z"></path><path d="m3.5 12.5 8.5 4.5 8.5-4.5"></path></svg></span><div><p class="ly-n">Layer 1 · Base</p><p class="ly-d">Same for everyone</p></div></div><div class="ly-v"><ol class="dc-strip dcx-strip" id="dcStrip"><li>Submission</li><li class="dc-clr" aria-hidden="true"><span>Clearance review</span></li><li>Underwriter review</li><li>Quote</li><li>Bind</li></ol></div></div><div class="ly-r"><div class="ly-l"><span class="ly-i b"><svg viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z"></path><circle cx="7.5" cy="8.5" r="1.5"></circle></svg></span><div><p class="ly-n">Layer 2 · Type of insurance</p><p class="ly-d">Fields change per line</p></div></div><div class="ly-v"><div class="dcx-tags"><span><i class="a"></i>Marine<em>Vessels</em></span><span><i class="b"></i>Aviation<em>Aircraft</em></span><span><i class="c"></i>Construction<em>Projects</em></span></div></div></div><div class="ly-r"><div class="ly-l"><span class="ly-i c"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="5"></rect><circle cx="16" cy="12" r="2.5"></circle></svg></span><div><p class="ly-n">Layer 3 · Client</p><p class="ly-d">Steps switch on or off</p></div></div><div class="ly-v"><div class="dcx-tg"><button type="button" class="dc-sw" id="dcSw" role="switch" aria-checked="false" aria-controls="dcStrip"><span class="dc-knob"></span></button><label for="dcSw">Clearance team</label><span class="dc-state" id="dcState">Off</span><span class="dcx-try">Try it</span></div></div></div></div>
+      <p class="ly-end">Marine, Aviation, Construction and PV&amp;T all run on this base today.</p>
+      </div>
+    </div>
+    </section>
+
+    
+
+    <section class="panel reveal ph" id="sketches" data-screen-label="04 Prototype">
+      <span class="eyebrow-num">04 · Prototype</span>
+      <h2 class="sec-title">From paper sketches to reviewed wireframes</h2>
+      <p class="rsx-intro">I sketched on paper first, turned the sketches into rough wireframes (simple screen layouts), then reviewed quick mockups with clients, the internal team and developers.</p>
       <div class="lfx">
 <div class="pw-row pw-one"><figure class="pw-card"><div class="pw-photo"><img src="assets/pb-paper-sketches.jpeg" alt="Paper sketches of the new screens: underwriter workbench, sidebar panels, breadcrumbs and guideline creation"></div></figure></div>
-        <p class="pw-label sk2-lab">Low-fi wireframes</p>
+        <p class="pw-label sk2-lab">Rough wireframes</p>
         <div class="sk-grid sk2-grid">
-<figure class="sk-card sk2-wide"><div class="sk sk2-wb"><div class="sk2-list"><i class="on"></i><i></i><i></i><i></i></div><div class="sk2-main"><span class="sk2-h">Meridian Airways</span><div class="sk-tabs"><span class="on">Rater</span><span>Policy</span><span>Aircraft</span><span>Loss</span></div><div class="sk2-tbl"><i></i><i></i><i></i><i></i></div><span class="sk2-btn">Quote</span></div><div class="sk2-side"><span class="sk2-h">Guidelines</span><span class="sk2-alert">! 6 matches</span><span class="sk2-g"><i class="r"></i>Fleet age</span><span class="sk2-g"><i class="g"></i>Coverage</span><span class="sk2-g"><i class="o"></i>Route</span></div></div><figcaption><span class="sk-t">Underwriter workbench</span></figcaption></figure>
-<figure class="sk-card"><div class="sk sk2-rule"><span class="sk2-h">New guideline</span><div class="sk2-row"><span class="sk2-f">Year built</span><span class="sk2-f sm">&lt;</span><span class="sk2-f sm">2010</span></div><div class="sk2-row"><span>then flag as</span><span class="sk2-f"><i class="sk2-dot g"></i>Risk appetite ▾</span></div><div class="sk2-row"><span>for</span><span class="sk-chip">Aviation</span></div><span class="sk2-btn">Save rule</span></div><figcaption><span class="sk-t">Guideline rule</span></figcaption></figure>
+<figure class="sk-card sk2-wide"><div class="sk sk2-wb"><div class="sk2-list"><i class="on"></i><i></i><i></i><i></i></div><div class="sk2-main"><span class="sk2-h">Meridian Airways</span><div class="sk-tabs"><span class="on">Rater</span><span>Policy</span><span>Aircraft</span><span>Loss</span></div><div class="sk2-tbl"><i></i><i></i><i></i><i></i></div><span class="sk2-btn">Quote</span></div><div class="sk2-side"><span class="sk2-h">Side panel</span><span class="sk2-g">Details</span><span class="sk2-note">Notes</span><span class="sk2-g">Attachments</span><span class="sk2-g">Updates</span></div></div><figcaption><span class="sk-t">Underwriter workbench</span></figcaption></figure>
 <figure class="sk-card"><div class="sk"><span class="sk-chip on sk2-fb">Filters ▾</span><div class="sk2-flt"><div class="sk2-cats"><span class="on">Line</span><span>Status</span><span>Broker</span><span>Date</span></div><div class="sk2-opts"><span><i class="sk-cb x"></i>Marine</span><span><i class="sk-cb x"></i>Aviation</span><span><i class="sk-cb"></i>Construction</span><span class="sk2-btn">Apply all</span></div></div></div><figcaption><span class="sk-t">One filter panel</span></figcaption></figure>
 <figure class="sk-card"><div class="sk sk2-sb"><div class="sk2-main"><span class="sk2-h">Submission</span><div class="sk-body"><i></i><i></i><i class="s"></i><i></i><i class="s"></i><i></i></div></div><div class="sk2-rail"><span class="on">Notes</span><span class="sk2-note">Broker asked for renewal date</span><span class="sk2-note">Hull survey.pdf</span><span>Attachments</span><span>Updates</span></div></div><figcaption><span class="sk-t">Notes in a side panel</span></figcaption></figure>
 <figure class="sk-card"><div class="sk sk-pages"><div class="sk-pg sk2-fix"><div class="sk-hd"><span class="sk-crumb">Home / Submissions</span><span class="sk2-r"><span class="sk-srch">Search</span><span class="sk-vw"><i></i><i></i></span></span></div><div class="sk2-tabrow"><span class="sk-tb">Tab 1</span><span class="sk-tb">Tab 2</span><span class="sk-tb">Tab 3</span></div></div><div class="sk-pg sk2-fix"><div class="sk-hd"><span class="sk-crumb">Home / Policy</span><span class="sk2-r"><span class="sk-srch">Search</span><span class="sk-vw"><i></i><i></i></span></span></div><div class="sk2-tabrow"><span class="sk-tb">Tab 1</span></div></div></div><figcaption><span class="sk-t">Page controls in one place</span></figcaption></figure>
@@ -1664,38 +1976,47 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
     </section>
 
     <!-- 03 THE DECISION -->
-    <section class="reveal dcx" id="strategy" data-screen-label="03 The Decision">
-      <div class="dcx-in">
-      <span class="dcx-pill">03 · The decision</span>
-      <h2 class="dcx-h">One base, configured for every line</h2>
-      <p class="dcx-intro">We built the shared journey once. The differences became settings on top.</p>
-      <ol class="dcx-cards">
-<li class="dcx-c a"><span class="dcx-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 3.5 8.5 12 13l8.5-4.5z"></path><path d="m3.5 12.5 8.5 4.5 8.5-4.5"></path></svg></span><p class="dcx-n">Layer 1</p><h3>Base</h3><p>The journey and screen layouts are the same for everyone.</p></li>
-<li class="dcx-c b"><span class="dcx-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z"></path><circle cx="7.5" cy="8.5" r="1.5"></circle></svg></span><p class="dcx-n">Layer 2</p><h3>Line of business</h3><p>Fields and labels change per line.</p></li>
-<li class="dcx-c c"><span class="dcx-i" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="5"></rect><circle cx="16" cy="12" r="2.5"></circle></svg></span><p class="dcx-n">Layer 3</p><h3>Client</h3><p>Steps switch on or off per client.</p></li>
-</ol>
-      <div class="dcx-wide">
-<div class="dcx-txt"><p class="dcx-k no">What we ruled out</p><h3>A separate flow for each line</h3><p>The fastest way to launch Aviation. The slowest way to launch everything after it.</p><p class="dcx-k yes">What we chose</p><h3>One shared base, configured on top</h3><p>More thinking up front. After that, each new line or client is a setup job, not a project.</p></div>
-<div class="dcx-vis">
-<p class="dcx-vl">Base</p><ol class="dc-strip dcx-strip" id="dcStrip"><li>Submission</li><li class="dc-clr" aria-hidden="true"><span>Clearance review</span></li><li>Underwriter review</li><li>Quote</li><li>Bind</li></ol>
-<p class="dcx-vl">Line of business</p><div class="dcx-tags"><span><i class="a"></i>Marine<em>Vessels</em></span><span><i class="b"></i>Aviation<em>Aircraft</em></span><span><i class="c"></i>Construction<em>Projects</em></span></div>
-<p class="dcx-vl">Client</p><div class="dcx-tg"><button type="button" class="dc-sw" id="dcSw" role="switch" aria-checked="false" aria-controls="dcStrip"><span class="dc-knob"></span></button><label for="dcSw">Clearance team</label><span class="dc-state" id="dcState">Off</span><span class="dcx-try">Try it</span></div>
-</div>
-</div>
-      <p class="dcx-end">Marine, Aviation, Construction, Property and PV&amp;T all run on this base today.</p>
-      </div>
-    </section>
+    
 
             <!-- 05 THE SOLUTION -->
+    <section class="panel reveal ph" id="test" data-screen-label="05 Test">
+      <span class="eyebrow-num">05 · Test</span>
+      <h2 class="sec-title">Testing showed one big gap</h2>
+      <p class="tst-l">We tested the first designs with clients in live sessions and watched how they worked.</p>
+      <div class="tg2">
+        <div class="tg2-c gap">
+          <p class="tg2-k"><span>✕</span>The gap</p>
+          <h3>Critical factors were still checked by hand</h3>
+          <ul><li>Missing data was flagged, critical factors were not</li><li>Underwriters still hunted for them one by one</li><li>For aviation, that could be the year an aircraft was built</li></ul>
+          <div class="tg2-mock" aria-hidden="true"><div class="r"><span>Insured</span><b>Meridian Airways</b></div><div class="r"><span>Aircraft</span><b>14</b></div><div class="r hunt"><span>Year built</span><b>?</b><em>check every document</em></div></div>
+        </div>
+        <div class="tg2-c fix">
+          <p class="tg2-k"><span>✓</span>The answer: guidelines</p>
+          <h3>Rules that check every submission for you</h3>
+          <ul><li>Each client sets its own rules, like "flag any aircraft built before 2010"</li><li>Every new submission is checked against them automatically</li><li>Matches are highlighted, so the critical factors are the first thing underwriters see</li></ul>
+          <div class="tg2-mock" aria-hidden="true"><div class="r"><span>Insured</span><b>Meridian Airways</b></div><div class="r"><span>Aircraft</span><b>14</b></div><div class="r hit"><span>Year built</span><b>2006</b><em>Matches a guideline</em></div></div>
+        </div>
+      </div>
+      <p class="pw-label sk2-lab tst-wl">Rough wireframes: guidelines</p>
+      <div class="sk-grid sk2-grid">
+<figure class="sk-card sk2-wide"><div class="sk sk3-book"><div class="sk3-top"><span class="sk2-h">Guidelines</span><div class="sk-tabs"><span class="on">Active</span><span>Archived</span></div></div><div class="sk3-tr sk3-th"><span>Status</span><span>Name</span><span>Rule</span><span>Line</span></div><div class="sk3-tr"><span class="sk3-st on">LIVE</span><span>Fleet age</span><span><i class="sk2-dot r"></i>Restriction</span><span class="sk-chip">Aviation</span></div><div class="sk3-tr"><span class="sk3-st on">LIVE</span><span>Coverage</span><span><i class="sk2-dot g"></i>Risk appetite</span><span class="sk-chip">Aviation</span></div><div class="sk3-tr"><span class="sk3-st ">OFF</span><span>Route</span><span><i class="sk2-dot o"></i>Advisory</span><span class="sk-chip">Aviation</span></div><div class="sk3-tr"><span class="sk3-st on">LIVE</span><span>TIV limit</span><span><i class="sk2-dot g"></i>Risk appetite</span><span class="sk-chip">Marine</span></div></div><figcaption><span class="sk-t">Rule book</span></figcaption></figure>
+<figure class="sk-card"><div class="sk sk3-new"><span class="sk2-h">Create guideline</span><div class="sk3-cr sk3-ch"><span>Criteria</span><span>Operator</span><span>Value</span></div><div class="sk3-cr"><span class="sk2-f">Fleet age</span><span class="sk2-f">More than</span><span class="sk2-f">2010</span></div><div class="sk3-cr"><span class="sk2-f">Aircraft type</span><span class="sk2-f">Equals</span><span class="sk2-f">Commercial</span></div><span class="sk3-add">+ Add more</span><span class="sk2-btn">Create guideline</span></div><figcaption><span class="sk-t">Create guideline</span></figcaption></figure>
+</div>
+      <div class="sk-grid sk2-grid">
+<figure class="sk-card sk2-wide"><div class="sk sk2-wb"><div class="sk2-list"><i class="on"></i><i></i><i></i><i></i></div><div class="sk2-main"><span class="sk2-h">Meridian Airways</span><div class="sk-tabs"><span class="on">Rater</span><span>Policy</span><span>Aircraft</span><span>Loss</span></div><div class="sk2-tbl"><i></i><i></i><i></i><i></i></div><span class="sk2-btn">Quote</span></div><div class="sk2-side"><span class="sk2-h">Guidelines</span><span class="sk2-alert">! 6 matches</span><span class="sk2-g"><i class="r"></i>Fleet age</span><span class="sk2-g"><i class="g"></i>Coverage</span><span class="sk2-g"><i class="o"></i>Route</span></div></div><figcaption><span class="sk-t">Underwriter workbench</span></figcaption></figure>
+<figure class="sk-card"><div class="sk sk2-rule"><span class="sk2-h">New guideline</span><div class="sk2-row"><span class="sk2-f">Year built</span><span class="sk2-f sm">&lt;</span><span class="sk2-f sm">2010</span></div><div class="sk2-row"><span>then flag as</span><span class="sk2-f"><i class="sk2-dot g"></i>Risk appetite ▾</span></div><div class="sk2-row"><span>for</span><span class="sk-chip">Aviation</span></div><span class="sk2-btn">Save rule</span></div><figcaption><span class="sk-t">Guideline rule</span></figcaption></figure>
+</div>
+    </section>
+
     <section class="panel reveal" id="solution" data-screen-label="04 The Solution">
-      <span class="eyebrow-num">04 · The design</span>
-      <h2 class="sec-title">The shared journey, screen by screen</h2><p class="rsx-intro">Shown in the order a submission moves, from intake and clearance to the underwriter’s desk.</p>
+      <span class="eyebrow-num">06 · The design</span>
+      <h2 class="sec-title">The shared journey, screen by screen</h2>
       <div class="dz">
 
         <div class="dz-phase"><div class="dzp"><span class="dzp-n">Phase 1</span><span class="dzp-t">Submission and clearance</span><span class="dzp-o">Optional per client</span></div>
             
             <div class="dz-s">
-              <div class="rsx-step dz-step"><span class="rsx-num">01</span><div><p class="rsx-lbl">Submission creation</p><h3 class="rsx-h">Every file becomes one submission</h3></div></div><p class="dz-lead">Submissions arrive by email or are created by the underwriter.</p>
+              <div class="rsx-step dz-step"><span class="rsx-num">01</span><div><p class="rsx-lbl">Submission creation</p><h3 class="rsx-h">Many files, one submission</h3></div></div>
               
               <div class="ru-stack">
                 <div>
@@ -1721,32 +2042,14 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div class="ru-panel" style="min-height:320px;display:flex;align-items:center;justify-content:center;padding:28px;" aria-hidden="true">
-                    <div class="ru-modal">
-                      <h4>Create submission</h4>
-                      <p class="sub">Supports PDF, Excel, CSV, and email formats.</p>
-                      <div class="ru-upzone">
-                        <div class="ru-upcloud"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 13v8M8 17l4-4 4 4"></path><path d="M20 16.5A4.5 4.5 0 0 0 17 8.2 6 6 0 0 0 5.2 10 4 4 0 0 0 6 18"></path></svg></div>
-                        <div class="big">Drop files or <a>click to browse</a></div>
-                        <div class="small">Up to 5 files, max 30 MB each.</div>
-                      </div>
-                      <div class="ru-chips">
-                        <div class="ru-chip"><span class="ru-doc" style="border:none;background:none;box-shadow:none;padding:0;color:var(--muted)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg></span><span class="fn">Fleet_Schedule.pdf</span><span class="st ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"></path></svg>Extracted</span></div>
-                        <div class="ru-chip"><span class="ru-doc" style="border:none;background:none;box-shadow:none;padding:0;color:var(--muted)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg></span><span class="fn">Loss_History.pdf</span><span class="st busy"><span class="ru-spin"></span>Processing</span></div>
-                        <div class="ru-chip"><span class="ru-doc" style="border:none;background:none;box-shadow:none;padding:0;color:var(--muted)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg></span><span class="fn">Coverage.pdf</span><span class="st fail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"></path></svg>Failed</span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="ru-cap">Each file shows its own status, so one failed file never blocks the rest.</p>
-                </div>
+                
               </div>
             </div>
             <div class="dz-s">
-              <div class="rsx-step dz-step"><span class="rsx-num">02</span><div><p class="rsx-lbl">Clearance review <span class="dzp-o">Optional per client</span></p><h3 class="rsx-h">Checking the data before underwriting</h3></div></div><p class="dz-lead">For clients with a clearance team, this is where the data gets checked.</p>
+              <div class="rsx-step dz-step"><span class="rsx-num">02</span><div><p class="rsx-lbl">Clearance review <span class="dzp-o">Optional per client</span></p><h3 class="rsx-h">Missing data, flagged</h3></div></div>
               
               
-              <div class="dz-why"><span>Why</span>underwriters should spend their time judging risk, not chasing data.</div>
+              
               <div class="ru-2col">
                 <div>
                   <p class="ru-eyebrow">Clearance form</p>
@@ -1765,7 +2068,7 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
                       </div>
                     </div>
                   </div>
-                  <p class="ru-cap">Missing fields are marked right where they need filling.</p>
+                  
                 </div>
                 <div>
                   <p class="ru-eyebrow">Guidelines panel</p>
@@ -1776,15 +2079,15 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
                     <div class="ru-gblock"><div class="top"><span class="ru-sq sq-g"></span>Risk appetite<span class="cat">· Coverage threshold</span></div><div class="miss">Missing: <b>Total insured value</b></div></div>
                     <div class="ru-gblock"><div class="top"><span class="ru-sq sq-o"></span>Advisory<span class="cat">· Route restriction</span></div><div class="miss">Missing: <b>Operating territory</b></div></div>
                   </div>
-                  <p class="ru-cap">Missing fields linked to a guideline also appear in the side panel, so critical gaps are never buried in the form.</p>
+                  
                 </div>
               </div>
             </div>
             <div class="dz-s">
-              <div class="rsx-step dz-step"><span class="rsx-num">03</span><div><p class="rsx-lbl">Guidelines</p><h3 class="rsx-h">A rule book that checks every submission</h3></div></div><p class="dz-lead">I designed guidelines from scratch, as a separate part of the platform.</p>
+              <div class="rsx-step dz-step"><span class="rsx-num">03</span><div><p class="rsx-lbl">Guidelines</p><h3 class="rsx-h">A rule book for every submission</h3></div></div>
               
               
-              <ol class="how-list dz-list"><li>Set a rule, like "flag any aircraft built before 2010".</li><li>Live rules run on every incoming submission, in every line of business.</li><li>Matches show as three dots on each submission card: Risk appetite, Advisory and Restriction. Coloured means a match. Grey means none.</li></ol>
+              
               <div class="ru-stack">
                 <div>
                   <p class="ru-eyebrow">Rule book</p>
@@ -1805,7 +2108,7 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
                       </tbody>
                     </table>
                   </div>
-                  <p class="ru-cap">Each rule can be switched on, off or archived without being lost.</p>
+                  
                 </div>
                 <div>
                   <p class="ru-eyebrow">Rule builder</p>
@@ -1824,7 +2127,7 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
                       <div style="display:flex;justify-content:flex-end;margin-top:22px;"><span class="ru-btn-dark">Create guideline</span></div>
                     </div>
                   </div>
-                  <p class="ru-cap">Every rule uses the same three parts, criteria, operator and value, so one builder works for any line of business.</p>
+                  
                 </div>
                 <div>
                   <p class="ru-eyebrow">Submission cards</p>
@@ -1835,7 +2138,7 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
                     <div class="ru-ragcard"><div class="nm">Atlantic Shippers</div><div class="dr">19 Aug 2025 → 19 Aug 2026</div><div class="dots"><i class="ru-x"></i><i class="ru-x"></i><i class="ru-x"></i></div><div class="lab">No guidelines matched</div></div>
                   </div>
                   </div>
-                  <p class="ru-cap">One look at the dots replaces reading the whole submission.</p>
+                  
                 </div>
               </div>
             </div>
@@ -1850,7 +2153,7 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
         <div class="dz-phase"><div class="dzp"><span class="dzp-n">Phase 2</span><span class="dzp-t">Underwriter workbench</span></div>
             
             <div class="dz-s">
-              <div class="rsx-step dz-step"><span class="rsx-num">04</span><div><p class="rsx-lbl">The workbench</p><h3 class="rsx-h">Everything about a risk, on one screen</h3></div></div><p class="dz-lead">Data from every document sits in one place.</p>
+              <div class="rsx-step dz-step"><span class="rsx-num">04</span><div><p class="rsx-lbl">The workbench</p><h3 class="rsx-h">Everything on one screen</h3></div></div>
               
               
               <div class="ru-panel" style="min-height:460px;" aria-hidden="true">
@@ -1886,13 +2189,13 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
                   </div>
                 </div>
               </div>
-              <p class="ru-cap">Inbox, submission and risk summary side by side, so the underwriter can move between submissions without losing their place.</p>
+              
             </div>
             <div class="dz-s">
-              <div class="rsx-step dz-step"><span class="rsx-num">05</span><div><p class="rsx-lbl">Guideline matching</p><h3 class="rsx-h">Risk signals before raw data</h3></div></div><p class="dz-lead">Every guideline match appears in the side panel as soon as the underwriter opens a submission.</p>
+              <div class="rsx-step dz-step"><span class="rsx-num">05</span><div><p class="rsx-lbl">Guideline matching</p><h3 class="rsx-h">Risk signals first</h3></div></div>
               
               
-              <div class="dz-why"><span>Why</span>it made risk signals visible without crowding the main screen.</div>
+              
               <div class="ru-2col">
                 <div>
                   <p class="ru-eyebrow">Side panel · guideline matches</p>
@@ -1904,7 +2207,7 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
                     <div class="ru-gblock"><div class="top"><span class="ru-sq sq-o"></span>Advisory<span class="cat">· Route restriction</span></div><table class="ru-ct"><thead><tr><th>Criteria</th><th>Rule value</th><th>Sub. value</th></tr></thead><tbody><tr><td>Criteria 1</td><td>20</td><td class="bad">30</td></tr></tbody></table></div>
                     <div style="display:flex;justify-content:flex-end;margin-top:14px;"><span class="ru-btn-dark">See analytics</span></div>
                   </div>
-                  <p class="ru-cap">Each match shows the rule value next to the submission's value, so the underwriter sees exactly why it was flagged.</p>
+                  
                 </div>
                 <div>
                   <p class="ru-eyebrow">Submission overview</p>
@@ -1925,24 +2228,11 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
                       </div>
                     </div>
                   </div>
-                  <p class="ru-cap">Schedule, missing data and guideline health in one view.</p>
+                  
                 </div>
               </div>
             </div>
-            <div class="dz-s">
-              <div class="rsx-step dz-step"><span class="rsx-num">06</span><div><p class="rsx-lbl">Quote and bind</p><h3 class="rsx-h">Review, quote and bind in one place</h3></div></div><p class="dz-lead">The underwriter builds quotes, checks policy details and binds, all in the same workspace.</p>
-              
-              
-              <div class="ru-panel" style="min-height:380px;padding:26px;" aria-hidden="true">
-                <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap;"><span class="ru-h" style="font-size:18px;">Atlantic Shippers Ltd.</span><span class="ru-status"><span class="d"></span>UW REVIEW</span></div>
-                <div class="ru-h" style="font-size:15px;color:#3a403b;margin-bottom:6px;">Quote versions (4)</div>
-                <div class="ru-qtabs"><span class="ru-qtab on">Quote 1 · $1,000,000</span><span class="ru-qtab">Quote 2 · $850,000</span><span class="ru-qtab">Quote 3 · $1,200,000</span><span class="ru-qtab">Quote 4 · $975,000</span></div>
-                <div class="ru-tabs" style="margin-bottom:0;"><span class="on">Rater</span><span>Policy Info</span><span>Aircraft Info</span><span>Loss Info</span></div>
-                <div class="ru-summary-bar"><div><div class="k">Issuing Company</div><div class="v">Global Insurance Corp</div></div><div><div class="k">Total limit</div><div class="v">$50,000,000</div></div><div><div class="k">UW Premium</div><div class="v">$30,000</div></div></div>
-                <div style="display:flex;justify-content:flex-end;margin-top:18px;"><span class="ru-btn-dark">Generate proposal</span></div>
-              </div>
-              <p class="ru-cap">Quote versions sit side by side, so the underwriter can compare options before sending a proposal.</p>
-            </div>
+            
           </div>
 
       </div>
@@ -1950,19 +2240,19 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
 
     <!-- 06 MY DESIGN CONTRIBUTIONS -->
     <section class="reveal ctx" id="contributions" data-screen-label="05 Patterns"><div class="dcx-in">
-      <span class="dcx-pill ctx-pill">05 · My contribution</span>
+      <span class="dcx-pill ctx-pill">07 · My contribution</span>
       <h2 class="dcx-h">Three small fixes, now used across every line</h2>
-      <p class="dcx-intro">The usability problems from the Marine review, each solved once and reused everywhere.</p>
+      <p class="dcx-intro">Fixes from the usability review, solved once and reused everywhere.</p>
       <div class="ptn-list">
         <div class="ctx-item"><div class="rsx-step pt-step"><span class="rsx-num">01</span><div><p class="rsx-lbl">Pattern</p><h3 class="rsx-h">Right side panel</h3></div></div><div class="ctx-pair"><div class="ctx-l">
             
             <div class="ptx">
-              <div class="ptx-c p"><span class="lbl"><i></i>Problem</span><p>Notes, attachments, guidelines and audit logs each had their own tab. Every switch felt like leaving the page, and broke the underwriter's flow.</p></div>
-              <div class="ptx-c d"><span class="lbl"><i></i>Decision</span><p>One side panel that stays open next to the work and holds all of them. The separate tabs were removed.</p></div>
-              <div class="ptx-c o"><span class="lbl"><i></i>Outcome</span><p>Used in every section of the platform, across all 5 lines of business. It was still the core pattern when I left.</p></div>
+              <div class="ptx-c p"><span class="lbl"><i></i>Problem</span><p>Notes, files and history each had their own tab.</p></div>
+              <div class="ptx-c d"><span class="lbl"><i></i>Decision</span><p>One side panel that stays open next to the work.</p></div>
+              <div class="ptx-c o"><span class="lbl"><i></i>Outcome</span><p>Used across the platform. Still the core pattern when I left.</p></div>
             </div>
           </div><div class="ctx-r">
-            <p class="body-copy" style="margin:0 0 20px;">An icon strip switches the panel between views like Summary, Notes, Attachments and Updates. Two are shown below.</p>
+            
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
               <div>
                 <p class="ru-eyebrow" style="text-transform:none;">Summary</p>
@@ -1992,18 +2282,18 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
                 </div>
               </div>
             </div>
-            <p class="ru-cap">From the first sketch to a platform standard. <a href="#sketches">See the first sketch ↑</a></p>
+            
             <div style="display:flex;flex-direction:column;align-items:center;gap:11px;margin-top:18px;">
               <div style="display:flex;gap:20px;align-items:center;"><span style="width:22px;height:22px;color:#9aa0ac;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg></span><span style="width:22px;height:22px;color:#9aa0ac;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span><span style="width:22px;height:22px;color:#9aa0ac;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path></svg></span><span style="width:22px;height:22px;color:#9aa0ac;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22V4h13l-2 4 2 4H6"></path></svg></span><span style="width:22px;height:22px;color:#0568b3;background:#e3f1fc;border-radius:7px;padding:4px;width:30px;height:30px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6.2"></path><path d="M16 3l5 5-9 9H7v-5z"></path></svg></span><span style="width:22px;height:22px;color:#9aa0ac;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></span></div>
-              <div style="font-size:13px;color:#6b7280;font-weight:500;">The icon strip switches between views.</div>
+              
             </div>
           </div></div></div>
         <div class="ctx-item"><div class="rsx-step pt-step"><span class="rsx-num">02</span><div><p class="rsx-lbl">Pattern</p><h3 class="rsx-h">Options bar</h3></div></div><div class="ctx-pair"><div class="ctx-l">
             
             <div class="ptx">
-              <div class="ptx-c p"><span class="lbl"><i></i>Problem</span><p>Breadcrumbs, layout switch, search and filters sat in a different place on every page.</p></div>
-              <div class="ptx-c d"><span class="lbl"><i></i>Decision</span><p>One options bar, just below the tabs, holding every page-level control. Same place on every screen.</p></div>
-              <div class="ptx-c o"><span class="lbl"><i></i>Outcome</span><p>Standard across every feature and line of business. Less visual noise, and controls are always where users expect them.</p></div>
+              <div class="ptx-c p"><span class="lbl"><i></i>Problem</span><p>Page controls moved around on every page.</p></div>
+              <div class="ptx-c d"><span class="lbl"><i></i>Decision</span><p>One bar below the tabs for all page controls.</p></div>
+              <div class="ptx-c o"><span class="lbl"><i></i>Outcome</span><p>Same place on every screen, for every type of insurance.</p></div>
             </div>
           </div><div class="ctx-r">
             <div class="ru-panel" style="min-height:200px;" aria-hidden="true">
@@ -2022,14 +2312,14 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
                 <div class="ru-colhead"><span style="width:9px;height:9px;border-radius:50%;background:#2c332e;flex:0 0 auto;"></span>INBOX<span class="ct">(4)</span></div><div class="ru-colhead"><span style="width:9px;height:9px;border-radius:50%;background:#e0218a;flex:0 0 auto;"></span>UW REVIEW<span class="ct">(3)</span></div><div class="ru-colhead"><span style="width:9px;height:9px;border-radius:50%;background:#2f78d6;flex:0 0 auto;"></span>QUOTED<span class="ct">(2)</span></div><div class="ru-colhead"><span style="width:9px;height:9px;border-radius:50%;background:#2f9e63;flex:0 0 auto;"></span>BOUND<span class="ct">(3)</span></div>
               </div>
             </div>
-            <p class="ru-cap">From the first sketch to a platform standard. <a href="#sketches">See the first sketch ↑</a></p>
+            
           </div></div></div>
         <div class="ctx-item"><div class="rsx-step pt-step"><span class="rsx-num">03</span><div><p class="rsx-lbl">Pattern</p><h3 class="rsx-h">Unified filters</h3></div></div><div class="ctx-pair"><div class="ctx-l">
             
             <div class="ptx">
-              <div class="ptx-c p"><span class="lbl"><i></i>Problem</span><p>10 filters, each opened and applied on its own. Using 4 filters took at least 8 interactions.</p></div>
-              <div class="ptx-c d"><span class="lbl"><i></i>Decision</span><p>One filter panel. All filters on the left, applied filters as removable tags on the right. Select everything, apply once.</p></div>
-              <div class="ptx-c o"><span class="lbl"><i></i>Outcome</span><p>From 8 or more interactions down to 2. Applied filters stay visible without reopening anything. Used across every line of business.</p></div>
+              <div class="ptx-c p"><span class="lbl"><i></i>Problem</span><p>Using 4 filters took 8 or more clicks.</p></div>
+              <div class="ptx-c d"><span class="lbl"><i></i>Decision</span><p>One panel. Pick everything, apply once.</p></div>
+              <div class="ptx-c o"><span class="lbl"><i></i>Outcome</span><p>Down to 2 clicks. Applied filters stay visible.</p></div>
             </div>
           </div><div class="ctx-r">
             <div class="ru-panel" style="min-height:380px;display:flex;align-items:center;justify-content:center;padding:26px;" aria-hidden="true">
@@ -2056,27 +2346,28 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
                 </div>
               </div>
             </div>
-            <p class="ru-cap">The problem is in <a href="#usability">usability issues ↑</a>. The first sketch is in <a href="#sketches">wireframes ↑</a></p>
+            
           </div></div></div>
       </div>
         </div></section>
 
     <!-- 07 RESULTS -->
-    <section class="panel reveal rz" id="impact" data-screen-label="06 Results">
-      <div class="s-head"><p class="s-lbl">06 · Results</p><h2 class="s-h">Did it meet the 4 goals?</h2><p class="s-sub">Before designing, I set 4 goals for the new workflow. Here is how it did.</p></div>
-      <div class="rz-top">
-        <div class="rz-hero rv"><p class="rz-k">Designing a new line of business</p><div class="rz-big"><span class="rz-from">A rebuild</span><svg class="rx-ar" viewBox="0 0 48 16" aria-hidden="true"><path d="M2 8H42"></path><path d="M35 2L43 8L35 14"></path></svg><span class="rz-to">2 weeks</span></div><p class="rz-note">Under 2 weeks, estimate</p></div>
-        <div class="rz-bn rv"><p class="rz-k">Checking a note</p><div class="wd"><div class="wd-c wd-b"><p class="wd-l">Before</p><ol><li>Open the notes tab</li><li>Read the note</li><li>Go back</li><li>Find your place</li></ol><p class="wd-f">4 steps</p></div><div class="wd-c wd-n"><p class="wd-l">Now</p><ol><li>Side panel</li><li class="ok">Done</li></ol><p class="wd-f">1 step</p></div></div></div>
+    <section class="panel reveal rz" id="impact" data-screen-label="08 Results">
+      <div class="s-head"><p class="s-lbl">08 · Results</p><h2 class="s-h">Did it meet the 4 goals?</h2></div>
+      <div class="rc">
+        <div class="rc-top"><p class="rc-title">Report card</p><p class="rc-score"><b>4/4</b> goals met</p></div>
+        <div class="rc-body">
+          <ol class="rc-goals"><li><span class="rc-n">01</span><div class="rc-g"><h3>New lines, no redesign</h3><p>Construction and PV&amp;T were added on the same base through settings.</p></div><span class="rc-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Passed</span></li><li><span class="rc-n">02</span><div class="rc-g"><h3>Many clients per line</h3><p>Steps like clearance switch on or off for each client.</p></div><span class="rc-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Passed</span></li><li><span class="rc-n">03</span><div class="rc-g"><h3>One experience everywhere</h3><p>The same journey and patterns on every line.</p></div><span class="rc-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Passed</span></li><li><span class="rc-n">04</span><div class="rc-g"><h3>Lower build cost</h3><p>New lines reuse the base screens. Developers set up, not rebuild.</p></div><span class="rc-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Passed</span></li></ol>
+          <div class="rc-nums"><p class="rc-k">By the numbers</p><div class="rc-m"><b>Under 2 weeks</b><span>to design a new type of insurance</span><em>was a rebuild · estimate</em></div><div class="rc-m"><b>2 clicks</b><span>to filter</span><em>was 8 or more</em></div><div class="rc-m"><b>1 step</b><span>to check a note</span><em>was 4</em></div><div class="rc-m"><b>2 to 3 days</b><span>for a client demo change</span><em>estimate</em></div><div class="rc-m"><b>4</b><span>types of insurance on one base</span></div></div>
+        </div>
       </div>
-      <dl class="rz-st"><div class="rv"><dt>5</dt><dd>lines of business on one base</dd></div><div class="rv"><dt>2</dt><dd>interactions to filter, down from 8 or more</dd></div><div class="rv"><dt>3</dt><dd>patterns reused across every line</dd></div><div class="rv"><dt>2 to 3</dt><dd>days for a client demo change (estimate)</dd></div></dl>
-      <ol class="rz-t"><li class="rv"><div class="rz-th"><span class="rz-n">01</span><span class="rz-pass"><span class="rz-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>Passed</span></div><h3>New lines, no redesign</h3><p>Construction, Property and PV&amp;T were added on the same base, through configuration, with zero full redesigns.</p></li><li class="rv"><div class="rz-th"><span class="rz-n">02</span><span class="rz-pass"><span class="rz-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>Passed</span></div><h3>Many clients per line</h3><p>Clients switch steps like clearance on or off on the same base. A client change is a configuration update, not new design work.</p></li><li class="rv"><div class="rz-th"><span class="rz-n">03</span><span class="rz-pass"><span class="rz-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>Passed</span></div><h3>One experience everywhere</h3><p>The same journey and the same three patterns in all 5 lines. A client on several lines learns the product once.</p></li><li class="rv"><div class="rz-th"><span class="rz-n">04</span><span class="rz-pass"><span class="rz-ck" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>Passed</span></div><h3>Lower build cost</h3><p>New lines reused the base screens and the shared component library. Engineering configured new lines instead of building new products.</p></li></ol>
     </section>
 
     <!-- 08 LEARNINGS -->
-    <section class="panel reveal lz" id="learnings" data-screen-label="07 What I learned">
-      <div class="s-head"><p class="s-lbl">07 · What I learned</p><h2 class="s-h">What I would take to the next platform</h2></div>
-      <ol class="lz-l"><li><span class="lz-n">01</span><div><h3>The biggest decision came from listening</h3><p>The clearance stage was not in any brief. It came from Aviation clients describing how their teams really worked.</p></div></li><li><span class="lz-n">02</span><div><h3>Differences are settings, not separate products</h3><p>Each time a line worked differently, I asked if it could be a setting on the base. Clearance became a switch, not a second product.</p></div></li><li><span class="lz-n">03</span><div><h3>Small fixes multiply at platform scale</h3><p>A filter that takes 8 clicks is a small annoyance on one line. Fixing it once in the base fixed it for every line.</p></div></li><li><span class="lz-n">04</span><div><h3>Measure from day one</h3><p>We aimed to cut checking time by half but never set up a way to track it. Next time, I would agree how to measure success before launch.</p></div></li></ol>
-      <div class="lz-note"><p class="lz-k">In one line</p><p class="lz-q">Marine had a working flow built for one line. I left a base that five lines of business and their clients run on, where adding a new line is a setup job, not a rebuild.</p></div>
+    <section class="panel reveal lz" id="learnings" data-screen-label="09 What I learned">
+      <div class="s-head"><p class="s-lbl">09 · What I learned</p><h2 class="s-h">Notes I'm taking to the next platform</h2></div>
+      <ol class="nts"><li class="nt nt1"><span class="nt-tape" aria-hidden="true"></span><p class="nt-h">Listen first</p><p>The clearance step was not in any brief. It came from aviation clients telling us how they really worked.</p></li><li class="nt nt2"><span class="nt-tape" aria-hidden="true"></span><p class="nt-h">Make differences settings</p><p>When a line worked differently, I asked if it could be a setting. Clearance became a switch, not a second product.</p></li><li class="nt nt3"><span class="nt-tape" aria-hidden="true"></span><p class="nt-h">Fix once, fix everywhere</p><p>An 8-click filter is a small annoyance on one line. Fixed in the base, it was fixed for every line.</p></li><li class="nt nt4"><span class="nt-tape" aria-hidden="true"></span><p class="nt-h">Measure from day one</p><p>We aimed to halve checking time but never tracked it. Next time, I would agree how to measure before launch.</p></li></ol>
+      <div class="nt-end"><p class="nt-q">Marine had a flow built for one line. I left a base that four types of insurance run on, where a new line is a setup job, not a rebuild.</p><p class="nt-sig">Abhishek</p></div>
     </section>
 
   </main>
