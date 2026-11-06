@@ -415,6 +415,130 @@
 <link rel="stylesheet" href="responsive.css">
 <style>.vmo{position:fixed;inset:0;z-index:1000;background:rgba(12,11,10,.92);display:none;align-items:center;justify-content:center;padding:calc(56px + env(safe-area-inset-top,0px)) 16px calc(24px + env(safe-area-inset-bottom,0px))}.vmo.open{display:flex}.vmo-f{width:min(1200px,100%,calc((100dvh - 120px) * 16 / 9));aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden}.vmo-f iframe{width:100%;height:100%;border:0;display:block}.vmo-x{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:16px;min-width:44px;min-height:44px;padding:0 18px;border-radius:999px;border:0;background:#fff;color:#1E1E1E;font:inherit;font-size:15px;font-weight:600;cursor:pointer}#heroFilm .win{cursor:pointer}</style>
 <style>.hero .f35 .f35-th{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}.hero .f35 .win::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(20,18,16,.55),rgba(20,18,16,0) 38%);pointer-events:none}.hero .f35 .win::after{display:none}.hero .f35 .play{position:absolute;right:16px;bottom:12px;left:auto;top:auto;margin:0;z-index:2;width:44px;height:44px;padding:0;background:transparent!important;box-shadow:none!important;border:0;color:#fff;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 2px 6px rgba(0,0,0,.55));animation:f35pulse 1.6s ease-in-out infinite}.hero .f35 .play svg{width:26px;height:26px}.hero .f35 .play::before{display:none}@keyframes f35pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}.hero .f35 .win{cursor:pointer}@media(prefers-reduced-motion:reduce){.hero .f35 .play{animation:none}}.hero .f35 .win:hover .play{transform:scale(1.06)}.hero .f35 .tag{z-index:2;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5)}.hero .f35{background:var(--ink)}</style>
+<style id="mob-tab">
+/* ===== Mobile + tablet only. Desktop (>1024px) is untouched. ===== */
+.bp-dup,.ai-dots,.wr2-more,.mm-foot{display:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(max-width:1024px){
+  .pfy-flow{display:none!important}
+  .iris{height:160vh;height:160svh}
+}
+@media(min-width:768px) and (max-width:1024px){
+  .hero h1{font-size:52px!important;line-height:1.08!important}
+  .h2,.pfy-h,.foot h2,.ab-tx .h2,.ah3-head .h2{font-size:38px!important;line-height:1.12!important}
+  .cv-name,.aic h3,.wr2-ft{font-size:24px!important}
+  .f35-wrap{max-width:620px;margin-left:auto!important;margin-right:auto!important}
+  .cv-grid{gap:20px}
+}
+@media(max-width:767px){
+  /* type scale */
+  .hero h1{font-size:34px!important;line-height:1.1!important;letter-spacing:-.025em!important}
+  .h2,.pfy-h,.foot h2,.ab-tx .h2,.ah3-head .h2,.iris-t h2{font-size:28px!important;line-height:1.15!important;letter-spacing:-.02em!important}
+  .cv-name,.aic h3,.wr2-ft,.hc-i h3{font-size:20px!important;line-height:1.25!important}
+  .hero-sub,.lead,.pfy-p,.wr2-in,.ab-p,.ah3-sub,.iris-t p,.cv-h,.ai-d,.wr2-fs,.hc-i p{font-size:15px!important;line-height:1.55!important}
+  .lbl,.built-l,.wr2-k{font-size:11px!important;letter-spacing:.14em!important}
+  /* buttons */
+  .btn,.pfy-btn,.ab-btn,.fcopy{min-height:44px!important;height:auto!important;padding:10px 20px!important;font-size:15px!important}
+  /* nav: hamburger */
+  .mb-ic{display:grid!important;place-items:center;width:42px;height:42px;min-height:42px;padding:0!important;border-radius:50%;background:#F1EEE8;color:#3A3732;transition:background .2s}
+  .mb-ic:active{background:#E7E2D9}
+  .mb-ic .hb{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+  .mb-ic .hb path:nth-child(2){stroke:#E5534B}
+  .mmenu .mb-ic .hb path{stroke:currentColor!important}
+  /* menu */
+  .mmenu{padding:0 20px 28px!important}
+  .mmenu ul{margin-top:12px!important;counter-reset:mm}
+  .mmenu ul li{counter-increment:mm;opacity:0;transform:translateY(14px)}
+  .mmenu.open ul li{animation:mmIn .45s cubic-bezier(.2,.8,.2,1) forwards}
+  .mmenu.open ul li:nth-child(2){animation-delay:.05s}.mmenu.open ul li:nth-child(3){animation-delay:.1s}.mmenu.open ul li:nth-child(4){animation-delay:.15s}.mmenu.open ul li:nth-child(5){animation-delay:.2s}
+  @keyframes mmIn{to{opacity:1;transform:none}}
+  .mmenu ul a{display:flex!important;align-items:center;gap:14px;font-size:28px!important;padding:16px 0!important}
+  .mmenu ul a::before{content:counter(mm,decimal-leading-zero);font-size:12px;font-weight:600;letter-spacing:.08em;color:#E5534B;min-width:20px}
+  .mmenu ul a::after{content:"→";margin-left:auto;font-size:20px;font-weight:400;color:#9A958C}
+  .mmenu .mm-cv a{justify-content:center;margin-top:20px;border:0!important;border-radius:999px;background:#1B1A18;color:#fff!important;font-size:16px!important;padding:14px 20px!important}
+  .mmenu .mm-cv a::before,.mmenu .mm-cv a::after{display:none}
+  .mm-foot{display:flex;flex-direction:column;gap:6px;margin-top:auto;padding-top:24px;border-top:1px solid rgba(0,0,0,.08)}
+  .mm-foot p{margin:0;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#9A958C}
+  .mm-foot a{font-size:15px;color:#1B1A18;text-decoration:none}
+  /* hero */
+  .hero{min-height:0!important;padding-bottom:24px!important}
+  .hero .wrap{padding-left:24px!important;padding-right:24px!important;max-width:100%!important;width:auto!important;box-sizing:border-box}
+  .hero h1{white-space:normal!important;text-wrap:balance}
+  .hero h1 .h1-br{display:none}
+  .hero-sub{max-width:34ch;margin-left:auto!important;margin-right:auto!important}
+  .built{overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+  .built-p{display:flex!important;flex-wrap:nowrap!important;justify-content:flex-start!important;width:max-content;gap:8px!important;animation:bpRun 18s linear infinite}
+  .built-p li{flex:none;font-size:13px!important;padding:6px 14px!important;white-space:nowrap}
+  .bp-dup{display:list-item;display:block}
+  @keyframes bpRun{to{transform:translateX(calc(-50% - 4px))}}
+  .f35-wrap{width:86%!important;max-width:86%!important;margin-left:auto!important;margin-right:auto!important}
+  /* case studies: centred */
+  #work .wk-lbl{justify-content:center;text-align:center;flex-wrap:wrap}
+  #work .wk-lbl i{display:none}
+  .pfy{padding:24px 20px!important}
+  .pfy-top,.pfy-side{text-align:center;align-items:center}
+  .pfy-btn{margin-left:auto;margin-right:auto}
+  .pfy-f{display:none!important}
+  .pfy-stage{margin-top:20px!important;min-height:0!important;padding:0!important}
+  .stx-t{font-size:20px!important}
+  .cv-grid{padding:0 8px}
+  .cv-media{height:180px!important;min-height:0!important;overflow:hidden}
+  .cv-body{text-align:center;padding:20px 18px 24px!important;align-items:center}
+  .cv-link{justify-content:center;font-size:15px!important}
+  /* section heads centred */
+  #ai .wrap>.rv:first-child,.wr2-head,.ah3-head,.vx-head{text-align:center}
+  #ai .wrap>.rv:first-child .lbl,.wr2-head .lbl,.ah3-head .lbl,.vx-head .lbl{justify-content:center}
+  :root{--gap:72px!important}
+  #ai .lead,.wr2-in,.ah3-sub{margin-left:auto!important;margin-right:auto!important}
+  /* AI carousel */
+  #ai .ai{display:flex!important;grid-template-columns:none!important;gap:14px!important;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 calc(var(--pad,16px)*-1);padding:4px var(--pad,16px) 0;scroll-padding:0 var(--pad,16px)}
+  #ai .ai::-webkit-scrollbar{display:none}
+  #ai .aic{flex:0 0 84%;scroll-snap-align:center;text-align:center}
+  #ai .aic .card{min-height:0}
+  .ai-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
+  .ai-dots button{width:8px;height:8px;padding:0;border:0;border-radius:999px;background:#D6D2CA;transition:width .3s,background .3s;cursor:pointer}
+  .ai-dots button.on{width:22px;background:#E5534B}
+  /* writing: collapsible list */
+  .wr2-ser.closed .wr2-list{display:none}
+  .wr2-more{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:12px;min-height:44px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:transparent;color:#F2EFE9;font:600 14px var(--sans);cursor:pointer}
+  .wr2-more i{font-style:normal;transition:transform .3s}
+  .wr2-ser:not(.closed) .wr2-more i{transform:rotate(180deg)}
+  .wr2-list{animation:wrIn .35s ease}
+  @keyframes wrIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  /* about: static 3 + text + 3 */
+  .ab{height:auto!important;padding:56px 0 24px}
+  .ab-pin{position:relative!important;height:auto!important;min-height:0!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:0 24px;align-items:center}
+  .ab-cards{display:contents}
+  .ab-c{position:relative!important;left:auto!important;top:auto!important;width:100%!important;opacity:1!important;transform:rotate(calc(var(--r0)*1deg))!important}
+  .ab-c:nth-child(3){order:1}.ab-c:nth-child(1){order:2;transform:translateY(-10px) scale(1.08)!important;z-index:5}.ab-c:nth-child(5){order:3}
+  .ab-tx{order:4;grid-column:1/-1;max-width:none!important;opacity:1!important;transform:none!important;pointer-events:auto!important;padding:20px 0}
+  .ab-c:nth-child(6){order:5}.ab-c:nth-child(2){order:6;transform:translateY(10px) rotate(-3deg)!important}.ab-c:nth-child(4){order:7}
+  .ab-c:nth-child(n+7){display:none!important}
+  /* recommendations */
+  .vx-stage{padding:28px 20px 24px!important}
+  .vx-q blockquote{font-size:17px!important;line-height:1.5!important}
+  .vx-mark{font-size:72px!important;top:-10px!important}
+  .vx-av{width:44px!important;height:44px!important}
+  /* lights down: less empty scroll */
+  .iris{height:125vh;height:125svh}
+  /* art gallery: two swipeable rows */
+  .amz{display:flex!important;flex-direction:column;gap:10px;height:auto!important;-webkit-mask:none!important;mask:none!important}
+  .amz-c{overflow-x:auto!important;padding-top:0!important;scrollbar-width:none;scroll-snap-type:x proximity}
+  .amz-c::-webkit-scrollbar{display:none}
+  .amz-c.c3{display:none!important}
+  .amz-r{flex-direction:row!important;animation:none!important;gap:10px!important;width:max-content}
+  .amz-c.c1 .amz-f:nth-child(n+6),.amz-c.c2 .amz-f:nth-child(n+5){display:none}
+  .amz-f{flex:none;width:132px;height:170px;scroll-snap-align:start}
+  .amz-f img{width:100%!important;height:100%!important;object-fit:cover}
+  .hc-track{align-items:flex-start!important;overflow-y:hidden;transition:height .4s ease}
+  .hc .pst>*:nth-child(n+5){display:none}
+  .hc-c .hc-m:has(.amz){height:auto!important}
+  .ah3-ch-h{text-align:center}.ah3-ch-h .ah3-k{justify-content:center}.ah3-ch-h p{margin-left:auto;margin-right:auto}
+  /* footer */
+  .foot .acts{gap:10px!important}
+}
+@media(max-width:767px) and (prefers-reduced-motion:reduce){.built-p{animation:none}.mmenu ul li{opacity:1;transform:none;animation:none!important}}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -422,17 +546,17 @@
 <a class="brand" href="index.html">Abhishek LG</a>
 <ul><li><a href="#work">Work</a></li><li><a href="#writing">Writing</a></li><li><a href="#about">About</a></li></ul>
 <div class="nav-r"><a class="nav-hi" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Say hello</a><a class="btn btn-o btn-hd" href="assets/Abhishek_LG_CV.pdf" download="Abhishek_LG_CV.pdf">Download CV</a></div>
-<button class="menu-btn" type="button" aria-expanded="false" aria-controls="mmenu">Menu</button>
+<button class="menu-btn mb-ic" type="button" aria-expanded="false" aria-controls="mmenu" aria-label="Open menu"><svg class="hb" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"/><path d="M8 12h12"/><path d="M4 17h16"/></svg><span class="sr">Menu</span></button>
 </div></header>
-<div class="mmenu" id="mmenu" role="dialog" aria-modal="true" aria-label="Menu"><div class="top"><a class="brand" href="index.html">Abhishek LG</a><button class="menu-btn" type="button" data-close style="display:block">Close</button></div>
-<ul><li><a href="#work">Work</a></li><li><a href="#writing">Writing</a></li><li><a href="#about">About</a></li><li><a href="#contact">Say hello</a></li><li><a href="assets/Abhishek_LG_CV.pdf" download="Abhishek_LG_CV.pdf">Resume</a></li><li></li></ul></div>
+<div class="mmenu" id="mmenu" role="dialog" aria-modal="true" aria-label="Menu"><div class="top"><a class="brand" href="index.html">Abhishek LG</a><button class="menu-btn mb-ic" type="button" data-close style="display:grid" aria-label="Close menu"><svg class="hb" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></svg></button></div>
+<ul><li><a href="#work">Work</a></li><li><a href="#writing">Writing</a></li><li><a href="#about">About</a></li><li><a href="#contact">Say hello</a></li><li class="mm-cv"><a href="assets/Abhishek_LG_CV.pdf" download="Abhishek_LG_CV.pdf">Resume</a></li></ul><div class="mm-foot"><p>Say hello</p><a href="mailto:abhisheklokesh.uiux159@gmail.com">abhisheklokesh.uiux159@gmail.com</a><a href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
 
 <main id="main">
 <section class="hero" data-screen-label="Hero"><div class="wrap">
 <p class="lbl rv"><span class="dot" aria-hidden="true"></span>Product Architect</p>
 <h1 class="rv" style="--dl:.08s">I design complex products<br class="h1-br"> people <span class="mark"><em class="a">rely on</em><svg class="draw" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 30 4, 62 14, 90 7 S 114 6, 117 9" vector-effect="non-scaling-stroke"></path></svg></span></h1>
 <p class="hero-sub rv" style="--dl:.16s">Hi, I'm Abhishek, a Senior Product Designer with 7 years of taking products end to end, from the first plan to the final build.</p>
-<div class="built rv" style="--dl:.24s"><p class="built-l">Built for</p><ul class="built-p"><li>Insurtech</li><li>E-commerce</li><li>AI agents</li><li>India &amp; UK markets</li></ul></div>
+<div class="built rv" style="--dl:.24s"><p class="built-l">Built for</p><ul class="built-p"><li>Insurtech</li><li>E-commerce</li><li>AI agents</li><li>India &amp; UK markets</li><li class="bp-dup" aria-hidden="true">Insurtech</li><li class="bp-dup" aria-hidden="true">E-commerce</li><li class="bp-dup" aria-hidden="true">AI agents</li><li class="bp-dup" aria-hidden="true">India &amp; UK markets</li></ul></div>
 <div class="f35-wrap rv" style="--dl:.32s"><div class="f35" id="heroFilm"><div class="strip t"></div><div class="win"><img class="f35-th" src="assets/intro-thumbnail.jpg" alt="Illustrated portrait of Abhishek LG" width="1920" height="1080" fetchpriority="high"><button class="play" type="button" aria-label="Play Me in a minute"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"></path></svg></button><span class="tag">Me in a minute</span><div class="still"><image-slot id="heroFilm-still" placeholder="Film still" shape="rect"></image-slot></div><div class="vid"><video playsinline controls preload="none"></video><p><b class="vt">Me in a minute</b></p><button class="x" type="button">Close</button></div></div><div class="strip b"><span class="code">AL · 07 · FRAME 01</span><span class="code r">35MM</span></div></div><p class="cap"><svg class="draw" viewBox="0 0 44 38" aria-hidden="true"><path d="M40 34 C 26 30, 12 22, 8 5"></path><path d="M2 12 L 8 3 L 15 10"></path></svg>A 60-second hello →</p></div>
 </div></section>
 
@@ -443,7 +567,6 @@
 <h3 class="pfy-h" id="pfx-h">One AI-native workspace for specialty insurance <em>underwriters</em></h3>
 <div class="pfy-side"><p class="pfy-p">Underwriters decide which risks to insure and at what price. They were working from emails, PDFs and spreadsheets. We designed the platform they now work in, from the first broker email to the bound policy.</p><button class="pfy-btn pf-open" type="button" aria-haspopup="dialog">See the platform overview <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"></rect><path d="M4 9h16"></path></svg></button></div>
 </div>
-<ol class="pfy-flow" aria-label="How a submission moves"><li><span class="d">1</span><span class="t">Broker email</span></li><li><span class="d">2</span><span class="t">Submission</span></li><li><span class="d">3</span><span class="t">Clearance</span></li><li><span class="d">4</span><span class="t">Underwriter review</span></li><li><span class="d">5</span><span class="t">Quote and bind</span></li></ol>
 <div class="pfy-stage">
 <button class="pfy-shot pf-open" type="button" aria-haspopup="dialog" aria-label="See the platform overview"><span class="pfy-bar"><i></i><i></i><i></i></span><img src="assets/screenshot-uw-submissions.png" alt="" loading="lazy"></button>
 <div class="pfy-f f1"><b>4</b><span>launched lines<br>Marine, Aviation, Construction, PV&amp;T</span></div>
@@ -453,7 +576,7 @@
 <div class="stx rv" id="stx"><span class="stx-line" aria-hidden="true"></span><p class="stx-pill"><span>Inside the platform</span><b class="stx-t">2 problems I designed for</b></p><span class="stx-line" aria-hidden="true"></span></div>
 <div class="cv-fork" aria-hidden="true"><span></span></div>
 <div class="cv-grid"><a class="cv cv-1 rv" href="pre-bind-intake.html" style="--dl:0s"><span class="cv-node" aria-hidden="true"></span><div class="cv-media"><div class="bframe"><div class="bar"><i></i><i></i><i></i></div><img src="assets/screenshot-uw-submissions.png" alt="Underwriter review workbench" loading="lazy"></div></div>
-<div class="cv-body"><h3 class="cv-name">Pre-bind workflow</h3><p class="cv-h">One workflow for every line of business, from intake to quote and bind.</p><span class="cv-link">Read case study <span class="cv-ar" aria-hidden="true">→</span></span></div></a><a class="cv cv-2 rv" href="team-management.html" style="--dl:0.08s"><span class="cv-node" aria-hidden="true"></span><div class="cv-media cv-add"><div class="bframe"><div class="bar"><i></i><i></i><i></i></div><div class="ru-panel" style="min-height:440px;display:flex;align-items:center;justify-content:center;padding:24px;" aria-hidden="true">
+<div class="cv-body"><h3 class="cv-name">One flow for all insurance</h3><p class="cv-h">From the first request to the agreed policy.</p><span class="cv-link">Read case study <span class="cv-ar" aria-hidden="true">→</span></span></div></a><a class="cv cv-2 rv" href="team-management.html" style="--dl:0.08s"><span class="cv-node" aria-hidden="true"></span><div class="cv-media cv-add"><div class="bframe"><div class="bar"><i></i><i></i><i></i></div><div class="ru-panel" style="min-height:440px;display:flex;align-items:center;justify-content:center;padding:24px;" aria-hidden="true">
             <div class="ru-modal" style="max-width:none;">
               <h4>Add user</h4>
               <p class="sub">Create and assign a user in one step.</p>
@@ -600,5 +723,29 @@ if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es
 <script>document.addEventListener("click",function(e){var c=e.target.closest&&e.target.closest(".ah3-fl-c[data-href]");if(!c)return;if(e.target.closest("a"))return;e.preventDefault();e.stopImmediatePropagation();window.open(c.dataset.href,"_blank","noopener")},true);</script>
 <div class="vmo" id="vmo" role="dialog" aria-modal="true" aria-label="Me in a minute"><button class="vmo-x" type="button">Close</button><div class="vmo-f"></div></div>
 <script>(function(){var m=document.getElementById("vmo"),f=m.querySelector(".vmo-f"),x=m.querySelector(".vmo-x"),film=document.getElementById("heroFilm"),last;var SRC="https://player.vimeo.com/video/1242427253?autoplay=1&title=0&byline=0&portrait=0&dnt=1";function open(){last=document.activeElement;f.innerHTML='<iframe src="'+SRC+'" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Me in a minute"></iframe>';m.classList.add("open");document.body.style.overflow="hidden";x.focus()}function close(){m.classList.remove("open");f.innerHTML="";document.body.style.overflow="";if(last)last.focus()}film.addEventListener("click",function(e){if(!e.target.closest(".win"))return;e.preventDefault();e.stopImmediatePropagation();open()},true);x.addEventListener("click",close);m.addEventListener("click",function(e){if(e.target===m)close()});addEventListener("keydown",function(e){if(e.key==="Escape"&&m.classList.contains("open"))close()})})();</script>
+<script>
+(function(){var mq=matchMedia('(max-width:767px)');
+/* AI carousel dots + gentle autoplay */
+var box=document.querySelector('#ai .ai');if(box){var cards=[].slice.call(box.querySelectorAll('.aic')),d=document.createElement('div');d.className='ai-dots';d.setAttribute('role','tablist');
+cards.forEach(function(c,i){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Show card '+(i+1));b.addEventListener('click',function(){go(i,true)});d.appendChild(b)});box.after(d);
+var dots=d.children,cur=0,t,held=false,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function mark(i){cur=i;[].forEach.call(dots,function(b,j){b.classList.toggle('on',j===i)})}
+function go(i,user){var c=cards[i];box.scrollTo({left:c.offsetLeft-(box.clientWidth-c.offsetWidth)/2,behavior:rm?'auto':'smooth'});mark(i);if(user)rest()}
+function rest(){held=true;clearTimeout(t);t=setTimeout(function(){held=false},6000)}
+box.addEventListener('scroll',function(){var mid=box.scrollLeft+box.clientWidth/2,b=0,bd=1e9;cards.forEach(function(c,i){var dd=Math.abs(c.offsetLeft+c.offsetWidth/2-mid);if(dd<bd){bd=dd;b=i}});mark(b)},{passive:true});
+['touchstart','pointerdown'].forEach(function(e){box.addEventListener(e,rest,{passive:true})});
+var vis=false;if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting},{threshold:.5}).observe(box);
+mark(0);if(!rm)setInterval(function(){if(mq.matches&&vis&&!held&&!document.hidden)go((cur+1)%cards.length)},4000);}
+/* Writing: collapsible series on mobile */
+var ser=document.querySelector('.wr2-ser');if(ser){var n=ser.querySelectorAll('.wr2-list li').length,btn=document.createElement('button');btn.type='button';btn.className='wr2-more';
+function lab(){var c=ser.classList.contains('closed');btn.innerHTML=(c?'View all '+n+' articles':'Show less')+' <i aria-hidden="true">⌄</i>';btn.setAttribute('aria-expanded',!c)}
+ser.classList.add('closed');lab();ser.appendChild(btn);btn.addEventListener('click',function(){ser.classList.toggle('closed');lab();if(ser.classList.contains('closed'))ser.scrollIntoView({block:'nearest',behavior:'smooth'})});}
+})();
+</script>
+<script>
+(function(){var mq=matchMedia('(max-width:767px)'),T=document.getElementById('hcT');if(!T)return;
+function fit(){if(!mq.matches){T.style.height='';return}var a=T.querySelector('.hc-c.on')||T.querySelector('.hc-c');if(a)T.style.height=(a.offsetHeight+32)+'px'}
+new MutationObserver(fit).observe(T,{subtree:true,attributes:true,attributeFilter:['class']});addEventListener('resize',fit);addEventListener('load',fit);mq.addEventListener&&mq.addEventListener('change',fit);fit();setTimeout(fit,800)})();
+</script>
 </body>
 </html>
