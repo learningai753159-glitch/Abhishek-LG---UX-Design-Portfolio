@@ -1807,6 +1807,7 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
 @media(max-width:820px){.ly-r{grid-template-columns:1fr;gap:12px}}
 </style>
 <style id="pbs-css">.pbs{margin:16px 0 0;border-radius:18px;overflow:hidden;background:#fff;border:1px solid #E6E8EC;box-shadow:0 1px 2px rgba(16,24,40,.04),0 24px 60px -28px rgba(16,24,40,.35)}.pbs img{display:block;width:100%;height:auto}@media(max-width:767px){.pbs{border-radius:12px}}</style>
+<style>.pbs.pbs-in{margin-top:8px}</style>
 </head>
 <body>
 <a class="skip" href="#top">Skip to content</a>
@@ -2036,42 +2037,12 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
               <div class="ru-stack">
                 <div>
                   <p class="ru-eyebrow">Rule book</p>
-                  <div class="ru-panel" style="min-height:340px;padding:22px;" aria-hidden="true">
-                    <div style="display:flex;align-items:center;gap:18px;margin-bottom:16px;">
-                      <span class="ru-h" style="font-size:18px;">Guidelines</span>
-                      <span style="font-weight:700;color:#0568b3;border-bottom:2.5px solid #0568b3;padding-bottom:5px;font-size:13px;">Active (10)</span>
-                      <span style="color:#6b7280;font-size:13px;">Archived (4)</span>
-                    </div>
-                    <table class="ru-tbl">
-                      <thead><tr><th>Status</th><th>Name</th><th>Rule</th><th>Line of business</th><th>Criteria</th></tr></thead>
-                      <tbody>
-                        <tr class="sel"><td><span class="ru-status-cell"><span class="ru-live">LIVE</span><span class="ru-tog"></span></span></td><td>Fleet age restriction</td><td>Restriction</td><td>Aviation</td><td>Criteria A, Criteria B, Criteria C</td></tr>
-                        <tr class=""><td><span class="ru-status-cell"><span class="ru-live">LIVE</span><span class="ru-tog"></span></span></td><td>Coverage threshold</td><td>Risk appetite</td><td>Aviation</td><td>Criteria A, Criteria B, Criteria C</td></tr>
-                        <tr class="off"><td><span class="ru-status-cell"><span class="ru-offb">OFF</span><span class="ru-tog off"></span></span></td><td>Route restriction</td><td>Advisory</td><td>Aviation</td><td>Criteria A, Criteria B</td></tr>
-                        <tr class=""><td><span class="ru-status-cell"><span class="ru-live">LIVE</span><span class="ru-tog"></span></span></td><td>TIV limit</td><td>Risk appetite</td><td>Marine</td><td>Criteria A, Criteria B, Criteria C</td></tr>
-                        <tr class="off"><td><span class="ru-status-cell"><span class="ru-offb">OFF</span><span class="ru-tog off"></span></span></td><td>Loss ratio cap</td><td>Advisory</td><td>Marine</td><td>Criteria A, Criteria B +2 more</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
+                  <figure class="pbs pbs-in"><img src="assets/platform-guidelines-table.jpg" alt="Guidelines list: every rule with its status, line of business, criteria and matches" loading="lazy" decoding="async" width="3840" height="2160"></figure>
                   
                 </div>
                 <div>
                   <p class="ru-eyebrow">Rule builder</p>
-                  <div class="ru-panel" style="min-height:340px;display:flex;align-items:center;justify-content:center;padding:24px;" aria-hidden="true">
-                    <div class="ru-modal" style="max-width:600px;">
-                      <h4>Create guideline</h4>
-                      <p class="sub">Add criteria</p>
-                      <div class="ru-steps"><span class="st done"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width:11px;height:11px"><path d="M20 6L9 17l-5-5"></path></svg></span>Primary details</span><span class="ln"></span><span class="st active"><span class="d"></span>Add criteria</span></div>
-                      <div class="ru-cgrid">
-                        <span class="hd">Criteria</span><span class="hd">Operator</span><span class="hd">Value</span>
-                        <span class="ru-sel">Fleet age<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"></path></svg></span><span class="ru-sel">More than<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"></path></svg></span><span class="ru-sel">2010<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"></path></svg></span>
-                        <span class="ru-sel">Aircraft type<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"></path></svg></span><span class="ru-sel">Equals to<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"></path></svg></span><span class="ru-sel">Commercial<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"></path></svg></span>
-                        <span class="ru-sel">Loss ratio<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"></path></svg></span><span class="ru-sel">Between<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"></path></svg></span><span class="ru-sel">60% to 80%<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"></path></svg></span>
-                      </div>
-                      <div class="ru-addmore">+ Add more</div>
-                      <div style="display:flex;justify-content:flex-end;margin-top:22px;"><span class="ru-btn-dark">Create guideline</span></div>
-                    </div>
-                  </div>
+                  <figure class="pbs pbs-in"><img src="assets/platform-guideline-builder.jpg" alt="Create guideline: adding the criteria that trigger a rule" loading="lazy" decoding="async" width="3840" height="2160"></figure>
                   
                 </div>
                 <div>
