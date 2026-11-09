@@ -539,6 +539,37 @@
 }
 @media(max-width:767px) and (prefers-reduced-motion:reduce){.built-p{animation:none}.mmenu ul li{opacity:1;transform:none;animation:none!important}}
 </style>
+<style id="am-certs-css">
+.am-ed2{margin:18px 0 0;padding-top:16px;border-top:1px solid #E1DED5}
+.am-ed2+.am-ed2{margin-top:14px}
+.am-edk{margin:0 0 6px;display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8A90A0}
+.am-edk span{display:inline-grid;place-items:center;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:#1B1A18;color:#fff;font-size:10px;letter-spacing:0}
+.am-edv{margin:0;font-size:14px;line-height:1.45;color:#3A3F4B}
+.am-certs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.am-cert{width:100%;display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid #E1DED5;border-radius:14px;background:#FAFAF7;text-align:left;cursor:pointer;font:inherit;color:inherit;transition:border-color .2s,transform .2s,box-shadow .2s}
+.am-cert:hover,.am-cert:focus-visible{border-color:#1B1A18;box-shadow:0 6px 16px -10px rgba(0,0,0,.35);transform:translateY(-1px);outline:none}
+.am-cert-i{flex:none;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:#FDE7E4;color:#C2412D}
+.am-cert-i svg{width:18px;height:18px}
+.am-cert-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.am-cert-t b{font-size:13.5px;font-weight:600;line-height:1.3;color:#1B1A18}
+.am-cert-t span{font-size:12.5px;color:#626C81}
+.am-cert-v{flex:none;font-size:12px;font-weight:600;color:#C2412D}
+.am-cert-v::after{content:" ↗"}
+.am-lb{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:24px;background:rgba(20,19,17,.72);backdrop-filter:blur(4px);animation:amLbIn .25s ease}
+.am-lb[hidden]{display:none}
+@keyframes amLbIn{from{opacity:0}to{opacity:1}}
+.am-lb-card{position:relative;width:min(880px,100%);max-height:100%;display:flex;flex-direction:column;background:#FAFAF7;border-radius:24px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.6);animation:amLbUp .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes amLbUp{from{transform:translateY(16px) scale(.98)}to{transform:none}}
+.am-lb-img{min-height:0;flex:1;display:grid;place-items:center;background:#EDEAE2;padding:16px}
+.am-lb-img img{max-width:100%;max-height:70vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 24px -12px rgba(0,0,0,.35)}
+.am-lb-img img[hidden]{display:none}
+.am-lb-miss{margin:0;padding:80px 20px;font-size:14px;color:#8A90A0}
+.am-lb-cap{display:flex;flex-direction:column;gap:2px;padding:16px 20px}
+.am-lb-cap b{font-size:17px;font-weight:600;color:#1B1A18}
+.am-lb-cap span{font-size:14px;color:#626C81}
+.am-lb-x{position:absolute;top:12px;right:12px;width:36px;height:36px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:#1B1A18;font-size:14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+@media(max-width:767px){.am-lb{padding:12px}.am-lb-img img{max-height:60vh}}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -693,7 +724,7 @@ if(location.hash==='#about')addEventListener('load',function(){go(false)})})();<
 <figure class="am-pol"><img loading="lazy" decoding="async" src="assets/abhishek-illustrated.png" alt="Illustrated portrait of Abhishek LG" style="aspect-ratio:1/1"><figcaption>Bengaluru, India</figcaption></figure>
 <p class="am-name">Abhishek LG</p><p class="am-role">Product Architect</p>
 <p class="am-open"><span></span>Open to product and UX design roles, remote or Bengaluru</p>
-<dl class="am-ed"><div><dt>Education</dt><dd>MBA, East West College of Management, 2016</dd></div><div><dt>Programme</dt><dd>Generative AI Mastermind, Outskill, 2026</dd></div></dl>
+<div class="am-ed2"><p class="am-edk">Education</p><p class="am-edv">MBA, East West College of Management, 2016</p></div><div class="am-ed2"><p class="am-edk">Certificates <span>3</span></p><ul class="am-certs"><li><button type="button" class="am-cert" data-cert-src="assets/certs/outskill-genai-mastermind-2026.jpg" data-cert-name="Generative AI Mastermind" data-cert-meta="Outskill · 2026"><span class="am-cert-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 8h10M7 11h6"/><circle cx="16" cy="14.5" r="2.5"/><path d="M14.6 16.6 14 21l2-1 2 1-.6-4.4"/></svg></span><span class="am-cert-t"><b>Generative AI Mastermind</b><span>Outskill · 2026</span></span><span class="am-cert-v">View</span></button></li><li><button type="button" class="am-cert" data-cert-src="assets/certs/uxgorilla-ux-immersion-2022.jpg" data-cert-name="UX Immersion" data-cert-meta="UX Gorilla · 2022"><span class="am-cert-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 8h10M7 11h6"/><circle cx="16" cy="14.5" r="2.5"/><path d="M14.6 16.6 14 21l2-1 2 1-.6-4.4"/></svg></span><span class="am-cert-t"><b>UX Immersion</b><span>UX Gorilla · 2022</span></span><span class="am-cert-v">View</span></button></li><li><button type="button" class="am-cert" data-cert-src="assets/certs/aspiregate-ui-ux-2019.jpg" data-cert-name="UI UX Designing" data-cert-meta="Aspire Gate, Bengaluru · 2019"><span class="am-cert-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 8h10M7 11h6"/><circle cx="16" cy="14.5" r="2.5"/><path d="M14.6 16.6 14 21l2-1 2 1-.6-4.4"/></svg></span><span class="am-cert-t"><b>UI UX Designing</b><span>Aspire Gate, Bengaluru · 2019</span></span><span class="am-cert-v">View</span></button></li></ul></div>
 <div class="am-acts"><a class="am-cta" href="assets/Abhishek_LG_CV.pdf" download="Abhishek_LG_CV.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download CV</a><button class="am-b" type="button" data-am-copy="abhisheklokesh.uiux159@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span>Copy email</span></button><a class="am-b" href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener">LinkedIn</a></div>
 </aside>
 <div class="am-main">
@@ -708,6 +739,7 @@ if(location.hash==='#about')addEventListener('load',function(){go(false)})})();<
 <div class="am-how"><div><h3>Design</h3><ul><li>Research</li><li>User flows</li><li>Interaction design</li><li>UX audits</li></ul></div><div><h3>Systems</h3><ul><li>Design systems</li><li>How design teams work</li><li>Team processes</li></ul></div><div><h3>Tools</h3><ul><li>Figma</li><li>FigJam</li><li>Notion</li></ul></div><div><h3>AI tools</h3><ul><li>Figma Make</li><li>Google AI Studio</li><li>Claude Design</li><li>Lovable</li></ul></div></div>
 </div>
 </div>
+<div class="am-lb" id="amLb" hidden role="dialog" aria-modal="true" aria-labelledby="amLbName"><div class="am-lb-card"><button class="am-lb-x" type="button" aria-label="Close certificate">✕</button><div class="am-lb-img"><img id="amLbImg" alt=""><p class="am-lb-miss" hidden>Certificate image coming soon</p></div><div class="am-lb-cap"><b id="amLbName"></b><span id="amLbMeta"></span></div></div></div>
 </dialog>
 <script>(function(){var d=document.getElementById('aboutModal');if(!d)return;var last;function op(){last=document.activeElement;if(d.showModal)d.showModal();else d.setAttribute('open','');document.documentElement.style.overflow='hidden';d.querySelector('.am-main').scrollTop=0}function cl(){d.close?d.close():d.removeAttribute('open')}
 d.addEventListener('close',function(){document.documentElement.style.overflow='';if(last&&last.focus)last.focus()});
@@ -746,6 +778,17 @@ ser.classList.add('closed');lab();ser.appendChild(btn);btn.addEventListener('cli
 (function(){var mq=matchMedia('(max-width:767px)'),T=document.getElementById('hcT');if(!T)return;
 function fit(){if(!mq.matches){T.style.height='';return}var a=T.querySelector('.hc-c.on')||T.querySelector('.hc-c');if(a)T.style.height=(a.offsetHeight+32)+'px'}
 new MutationObserver(fit).observe(T,{subtree:true,attributes:true,attributeFilter:['class']});addEventListener('resize',fit);addEventListener('load',fit);mq.addEventListener&&mq.addEventListener('change',fit);fit();setTimeout(fit,800)})();
+</script>
+<script>
+(function(){var d=document.getElementById('aboutModal'),lb=document.getElementById('amLb');if(!d||!lb)return;
+var img=document.getElementById('amLbImg'),miss=lb.querySelector('.am-lb-miss'),nm=document.getElementById('amLbName'),mt=document.getElementById('amLbMeta'),x=lb.querySelector('.am-lb-x'),last=null;
+function open(b){last=b;nm.textContent=b.dataset.certName;mt.textContent=b.dataset.certMeta;miss.hidden=true;img.hidden=false;img.alt='Certificate: '+b.dataset.certName;img.onerror=function(){img.hidden=true;miss.hidden=false};img.src=b.dataset.certSrc;lb.hidden=false;x.focus()}
+function close(){lb.hidden=true;img.removeAttribute('src');if(last)last.focus()}
+d.querySelectorAll('.am-cert').forEach(function(b){b.addEventListener('click',function(){open(b)})});
+x.addEventListener('click',close);lb.addEventListener('click',function(e){if(e.target===lb)close()});
+d.addEventListener('cancel',function(e){if(!lb.hidden){e.preventDefault();close()}});
+d.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden){e.preventDefault();e.stopPropagation();close()}},true);
+})();
 </script>
 </body>
 </html>
