@@ -1149,6 +1149,7 @@
 .main .lz .nt p{color:#3A3F4B!important}.main .lz .nt .nt-h{color:#1B1A18!important}
 </style>
 <style id="tms-css">.tms{margin:8px 0 0;border-radius:18px;overflow:hidden;background:#fff;border:1px solid #E6E8EC;box-shadow:0 1px 2px rgba(16,24,40,.04),0 24px 60px -28px rgba(16,24,40,.35)}.tms img{display:block;width:100%;height:auto}@media(max-width:767px){.tms{border-radius:12px}}</style>
+<style>.tms.tm-del{max-width:620px;margin-left:auto;margin-right:auto;border:0;box-shadow:none;background:transparent;border-radius:24px}</style>
 </head>
 <body>
 <a class="skip" href="#top">Skip to content</a>
@@ -1333,29 +1334,7 @@
       <p class="mc-sub">Handing over work while deleting a user</p>
       <div class="mc-grid">
         <div class="mc-rows"><div class="mc-r mc-p"><p class="mc-k">Problem</p><p class="mc-t">An admin couldn't delete a user until someone moved their work by hand, somewhere else. It was a slow dead end with many steps.</p></div><div class="mc-r mc-d"><p class="mc-k">Decision</p><p class="mc-t">I brought the handover inside the delete flow. The system shows the person's open requests and asks the admin to reassign each one before deleting.</p></div><div class="mc-r mc-o"><p class="mc-k">Outcome</p><p class="mc-t">One guided flow handles both tasks, reassign and delete, without leaving the page.</p></div></div>
-        <div class="mc-mock"><p class="ru-eyebrow">Delete confirmation · inline reassignment</p>
-            <div class="ru-panel" style="min-height:420px;display:flex;align-items:center;justify-content:center;padding:28px;" aria-hidden="true">
-              <div class="ru-modal" style="max-width:560px;">
-                <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;">
-                  <span class="ru-warnico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg></span>
-                  <div><h4 style="margin:0 0 4px;">Delete user · Daniel Cho</h4><p class="sub" style="margin:0;">This user has <b style="color:#b23b30;">3 active submissions.</b> Reassign before deleting.</p></div>
-                </div>
-                <div class="ru-rsrow">
-                  <div><div class="sn">SUB-20431 · Northern Freight</div><div class="sm">UW Review · $1.0M</div></div>
-                  <div class="ru-sel" style="min-width:175px;flex:0 0 auto;">Reassign to<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></div>
-                </div>
-                <div class="ru-rsrow">
-                  <div><div class="sn">SUB-20425 · Coastal Lines</div><div class="sm">Quoted · $850K</div></div>
-                  <div class="ru-sel" style="min-width:175px;flex:0 0 auto;"><span style="display:inline-flex;align-items:center;gap:7px;"><span class="ru-av a2" style="width:18px;height:18px;font-size:8px;">AM</span>Alex Morgan</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></div>
-                </div>
-                <div class="ru-rsrow">
-                  <div><div class="sn">SUB-20419 · Summit Cargo</div><div class="sm">UW Review · $1.2M</div></div>
-                  <div class="ru-sel" style="min-width:175px;flex:0 0 auto;">Reassign to<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></div>
-                </div>
-                <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:22px;"><span class="ru-btn-out">Cancel</span><span class="ru-btn-red">Reassign &amp; Delete</span></div>
-              </div>
-            </div>
-            <p class="ru-cap">Reassignment lives inside the delete flow, so one action completes both tasks.</p></div>
+        <div class="mc-mock"><p class="ru-eyebrow">Delete user · hand over open work</p><figure class="tms tm-del"><img src="assets/tm-c-delete.jpg" alt="Delete Jenna Moore: hand over each of 3 open submissions to a teammate, then delete" loading="lazy" decoding="async" width="1668" height="1388"></figure><p class="ru-cap">The handover lives inside the delete flow, so one action completes both tasks.</p></div>
       </div>
       </div>
     </section>
