@@ -758,15 +758,15 @@
 @media(max-width:900px){#writing .wr2-box{grid-template-columns:1fr}#writing .wr2-ser:not(.closed) .wr2-list{grid-template-columns:1fr}}
 @media(max-width:560px){#writing .wr2-feat{grid-template-columns:96px minmax(0,1fr);column-gap:14px;padding:12px}#writing .wr2-fs{display:none}#writing .wr2-ft{font-size:18px!important}#writing .wr2-ser{padding:18px}#writing .wr2-more{align-self:stretch}}
 /* writing: strip of scrolling cards */
-.wr3{margin-top:var(--gap);padding:44px 0 48px;background:#F4F2ED}
-.wr3-h{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
-.wr3-t{margin:8px 0 0;font-size:clamp(22px,2.2vw,28px);font-weight:600;letter-spacing:-.02em;line-height:1.2;color:var(--ink)}
-.wr3-s{margin:6px 0 0;font-size:15px;line-height:1.5;color:var(--ink-2);max-width:560px}
+.wr3{margin-top:var(--gap);padding:36px 0 40px;background:#F4F2ED}
+.wr3-h{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:24px}
+.wr3-t{margin:0;font-size:clamp(22px,2.2vw,28px);font-weight:600;letter-spacing:-.02em;line-height:1.2;color:var(--ink)}
+.wr3-s{grid-column:1/-1;margin:4px 0 0;font-size:15px;line-height:1.5;color:var(--ink-2)}
 .wr3-nav{display:flex;gap:8px;flex:none}
 .wr3-b{width:44px;height:44px;border-radius:50%;border:1px solid rgba(27,26,24,.14);background:#fff;color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s}
 .wr3-b:hover{background:var(--ink);color:#fff}
 .wr3-b svg{width:18px;height:18px;display:block}
-.wr3-rail{margin-top:24px}
+.wr3-rail{margin-top:20px}
 .wr3-track{list-style:none;margin:0;padding:4px max(16px,calc((100vw - 1136px)/2)) 12px;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 max(16px,calc((100vw - 1136px)/2));scrollbar-width:none;scroll-behavior:smooth}
 .wr3-track::-webkit-scrollbar{display:none}
 .wr3-c{flex:0 0 260px;scroll-snap-align:start}
@@ -776,7 +776,7 @@
 .wr3-im img{display:block;width:100%;height:100%;object-fit:cover}
 .wr3-k{margin:12px 6px 0;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
 .wr3-ti{margin:6px 6px 0;font-size:15.5px;font-weight:500;line-height:1.35}
-@media(max-width:767px){.wr3{padding:36px 0 40px}.wr3-h{display:block;text-align:left}.wr3-nav{display:none}.wr3-c{flex-basis:76%}.wr3-t{font-size:22px!important}}
+@media(max-width:767px){.wr3{padding:36px 0 40px}.wr3-h{text-align:left}.wr3-nav{display:none}.wr3-c{flex-basis:76%}.wr3-t{font-size:22px!important}}
 </style>
 </head>
 <body>
@@ -841,7 +841,7 @@
 </div></section>
 
 <section class="wr3" id="writing" data-screen-label="Writing">
-<div class="wrap wr3-h rv"><div><p class="lbl">Writing</p><h2 class="wr3-t">How I <em class="a">think</em> about UX</h2><p class="wr3-s">Short reads, including a 10-part series on Nielsen's rules told through everyday Indian moments.</p></div><div class="wr3-nav"><button type="button" class="wr3-b" data-d="-1" aria-label="Previous article"><span style="display:inline-block;transform:scaleX(-1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button><button type="button" class="wr3-b" data-d="1" aria-label="Next article"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div></div>
+<div class="wrap wr3-h rv"><h2 class="wr3-t">How I <em class="a">think</em> about UX</h2><div class="wr3-nav"><button type="button" class="wr3-b" data-d="-1" aria-label="Previous article"><span style="display:inline-block;transform:scaleX(-1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button><button type="button" class="wr3-b" data-d="1" aria-label="Next article"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div><p class="wr3-s">Short reads, including a 10-part series on Nielsen's rules told through everyday Indian moments.</p></div>
 <div class="wr3-rail" aria-label="Articles"><ol class="wr3-track" id="wr3T"><li class="wr3-c"><a href="ux-not-screens.html"><span class="wr3-im"><img src="assets/slots/art-ux-not-screens-cover.webp" alt="" loading="lazy" decoding="async"></span><span class="wr3-k">Start here · 5 min read</span><span class="wr3-ti">UX is not just screens</span></a></li><li class="wr3-c"><a href="h1-visibility.html"><span class="wr3-im"><img src="assets/slots/art-h1-visibility-cover.webp" alt="" loading="lazy" decoding="async"></span><span class="wr3-k">Heuristic 01 · 7 min read</span><span class="wr3-ti">A good product works. A great product talks</span></a></li><li class="wr3-c"><a href="h2-real-world.html"><span class="wr3-im"><img src="assets/slots/art-h2-real-world-cover.webp" alt="" loading="lazy" decoding="async"></span><span class="wr3-k">Heuristic 02 · 4 min read</span><span class="wr3-ti">Design is not about teaching. It's about feeling at home</span></a></li><li class="wr3-c"><a href="h3-control-freedom.html"><span class="wr3-im"><img src="assets/slots/art-h3-control-freedom-cover.webp" alt="" loading="lazy" decoding="async"></span><span class="wr3-k">Heuristic 03 · 4 min read</span><span class="wr3-ti">Your users need a brake pedal</span></a></li><li class="wr3-c"><a href="h4-consistency.html"><span class="wr3-im"><img src="assets/slots/art-h4-consistency-cover.webp" alt="" loading="lazy" decoding="async"></span><span class="wr3-k">Heuristic 04 · 5 min read</span><span class="wr3-ti">Same dosa, every time</span></a></li><li class="wr3-c"><a href="h5-error-prevention.html"><span class="wr3-im"><img src="assets/slots/art-h5-error-prevention-cover.webp" alt="" loading="lazy" decoding="async"></span><span class="wr3-k">Heuristic 05 · 5 min read</span><span class="wr3-ti">The best error is the one that never happens</span></a></li><li class="wr3-c"><a href="h6-recognition.html"><span class="wr3-im"><img src="assets/slots/art-h6-recognition-cover.webp" alt="" loading="lazy" decoding="async"></span><span class="wr3-k">Heuristic 06 · 4 min read</span><span class="wr3-ti">You don't forget. You just need the right cue</span></a></li><li class="wr3-c"><a href="h7-flexibility.html"><span class="wr3-im"><img src="assets/slots/art-h7-flexibility-cover.webp" alt="" loading="lazy" decoding="async"></span><span class="wr3-k">Heuristic 07 · 4 min read</span><span class="wr3-ti">Every user has a rhythm. Design should honour it</span></a></li><li class="wr3-c"><a href="h8-minimal-design.html"><span class="wr3-im"><img src="assets/slots/art-h8-minimal-design-cover.webp" alt="" loading="lazy" decoding="async"></span><span class="wr3-k">Heuristic 08 · 4 min read</span><span class="wr3-ti">They came for the chocolate cake. Don't distract them</span></a></li><li class="wr3-c"><a href="h9-error-recovery.html"><span class="wr3-im"><img src="assets/slots/art-h9-error-recovery-cover.webp" alt="" loading="lazy" decoding="async"></span><span class="wr3-k">Heuristic 09 · 4 min read</span><span class="wr3-ti">Errors are inevitable. Confusion is not</span></a></li><li class="wr3-c"><a href="h10-help-docs.html"><span class="wr3-im"><img src="assets/slots/art-h10-help-docs-cover.webp" alt="" loading="lazy" decoding="async"></span><span class="wr3-k">Heuristic 10 · 4 min read</span><span class="wr3-ti">Great UX is being there when it's not easy</span></a></li></ol></div>
 </section>
 
