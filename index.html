@@ -809,70 +809,6 @@ em.a,.c1 .c1-h em,.c2 .c1-h em{color:inherit!important}
 .f-av{background:rgba(242,239,233,.08)!important;color:rgba(242,239,233,.85)!important}
 .hp-dot{background:currentColor!important;box-shadow:0 0 0 4px rgba(127,127,127,.18)!important}
 </style>
-<style id="align-css">
-/* type */
-:root{--mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace}
-.lbl{font-family:var(--mono)!important;font-weight:500!important;letter-spacing:.14em!important}
-.h2,.sx-t,.pfy-h,.ab-tx .h2,.ah3-head .h2,.wr3-t{font-weight:700!important;letter-spacing:-.045em!important}
-/* section header pattern */
-.sx-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px 64px;align-items:start;padding-bottom:36px;border-bottom:1px solid #E7E7E7;margin-bottom:clamp(40px,5vw,72px);text-align:left}
-.sx-t{margin:0;font-size:clamp(40px,5.4vw,76px);line-height:.98;color:var(--ink)}
-.sx-r p{margin:6px 0 0;font-size:clamp(16px,1.4vw,19px);line-height:1.5;color:var(--ink-2)}
-.sx-pill{display:inline-flex;align-items:center;gap:8px;margin-top:18px;min-height:44px;padding:0 18px;border-radius:12px;background:#EFEFEF;color:var(--ink);font-size:14.5px;font-weight:500;text-decoration:none;transition:background .2s}
-.sx-pill:hover{background:#E4E4E4}.sx-pill svg{width:15px;height:15px}
-#recs .rec-link{display:none}
-#work .pfy{margin-top:0}
-/* case study cards */
-#work .cv{border:1px solid #E7E7E7!important;border-radius:20px!important;box-shadow:none}
-#work .cv:hover{box-shadow:0 24px 50px -32px rgba(27,26,24,.35)}
-#work .cv-media{border-radius:19px 19px 0 0!important;background:#F4F4F4!important}
-.cv-k{margin:0;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-#work .cv-body{gap:10px!important}
-#work .cv-name{font-weight:700;letter-spacing:-.03em}
-#work .cv-out{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-top:8px}
-#work .cv-role{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-#work .cv-link{margin-top:14px;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:12px;background:#1E1E1E;color:#fff!important;font-size:14.5px;font-weight:500}
-/* AI cards: light bordered cards */
-#ai .aic{border:1px solid #E7E7E7;border-radius:20px;padding:12px 12px 24px;background:#fff;transition:box-shadow .3s}
-#ai .aic:hover{box-shadow:0 24px 50px -32px rgba(27,26,24,.35)}
-#ai .aic .card{border-radius:12px!important;background:#F4F4F4!important;height:260px}
-#ai .aic .notch{display:none}
-#ai .aic .st{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;border-radius:8px;background:#fff;padding:5px 10px}
-#ai .aic h3{margin:20px 8px 0;font-size:24px;font-weight:700;letter-spacing:-.03em}
-#ai .aic p{margin-left:8px;margin-right:8px}
-#ai .ai{margin-top:0;gap:20px}
-/* recommendations: paper note */
-#recs .vx-stage{margin-top:0;background:#F4F1EA;border-radius:6px;box-shadow:0 1px 0 rgba(0,0,0,.04),0 30px 50px -36px rgba(27,26,24,.45);transform:rotate(-.4deg)}
-#recs .vx-q blockquote{font-size:clamp(20px,2vw,28px);font-weight:500}
-#recs .vx-q figcaption small,#recs .vx-q figcaption span small{font-family:var(--mono);letter-spacing:.08em}
-#recs .vx-mark{opacity:.08}
-/* writing */
-.wr3-k{font-family:var(--mono)!important;font-weight:500!important}
-.wr3-c a{border-radius:14px!important;box-shadow:none!important}
-.wr3-c a:hover{box-shadow:0 20px 40px -28px rgba(27,26,24,.4)!important}
-/* contact panel */
-.dark .foot.fx,.foot.fx{background:#fff;color:var(--ink);text-align:left;padding:clamp(72px,9vw,120px) 0 32px}
-.fx-panel{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:center;background:#F4F4F4;border-radius:28px;padding:clamp(28px,4vw,56px)}
-.fx-k{margin:0;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
-.foot.fx h2{margin:14px 0 0;max-width:none;font-size:clamp(28px,3vw,40px);line-height:1.1;letter-spacing:-.035em;font-weight:700;color:var(--ink)}
-.fx-hire{margin:10px 0 0;font-size:16px;color:var(--ink-2)}
-.fx-mail{margin-top:28px;display:flex;align-items:center;flex-wrap:wrap;gap:14px}
-.fx-mail>a{font-size:clamp(20px,2vw,26px);font-weight:600;letter-spacing:-.02em;color:var(--ink);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:6px}
-.foot.fx .fcopy{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border-radius:10px;border:1px solid #DADADA;background:#fff;color:var(--ink);font-size:14px;font-weight:500;cursor:pointer}
-.foot.fx .fcopy svg{width:15px;height:15px}
-.fx-r{display:flex;flex-direction:column}
-.fx-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 4px;border-bottom:1px solid #E2E2E2;text-decoration:none;color:var(--ink)}
-.fx-row:last-child{border-bottom:0}
-.fx-row b{color:var(--ink);display:flex;align-items:center;gap:10px;font-size:17px;font-weight:600;letter-spacing:-.01em}
-.fx-row small{display:block;margin-top:3px;font-size:14px;color:var(--ink-2)}
-.fx-row svg{width:18px;height:18px;flex:none;color:var(--ink-2);transition:transform .2s}
-a.fx-row:hover svg{transform:translate(2px,-2px);color:var(--ink)}
-.fx-dot{width:8px;height:8px;border-radius:50%;background:#1E1E1E;box-shadow:0 0 0 4px rgba(30,30,30,.12)}
-.foot.fx .fine{align-items:center;border-top:0;color:var(--ink-2);margin-top:28px;padding-top:0}
-.foot.fx .fine a{color:var(--ink-2)}
-@media(max-width:900px){.sx-head{grid-template-columns:1fr;gap:12px;padding-bottom:28px}.fx-panel{grid-template-columns:1fr;gap:24px}}
-@media(max-width:767px){.sx-head{text-align:left}.sx-t{font-size:38px!important}#ai .aic .card{height:220px}.fx-mail>a{font-size:15.5px;overflow-wrap:anywhere}.fx-panel{padding:24px 20px}}
-</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -898,7 +834,7 @@ a.fx-row:hover svg{transform:translate(2px,-2px);color:var(--ink)}
 </div></section>
 
 <section class="sec" id="work" data-screen-label="Selected work"><div class="wrap">
-<div class="sx-head rv"><h2 class="sx-t">Case studies</h2><div class="sx-r"><p>1 platform, 2 problems I designed for.</p></div></div>
+<div class="rv"><p class="lbl wk-lbl"><span>Case studies</span><i aria-hidden="true"></i>1 platform, 2 problems I designed for</p></div>
 <article class="pfy rv" aria-labelledby="pfx-h">
 <div class="pfy-top">
 <h3 class="pfy-h" id="pfx-h">One AI-native workspace for specialty insurance <em>underwriters</em></h3>
@@ -913,12 +849,12 @@ a.fx-row:hover svg{transform:translate(2px,-2px);color:var(--ink)}
 <div class="stx rv" id="stx"><span class="stx-line" aria-hidden="true"></span><p class="stx-pill"><span>Inside the platform</span><b class="stx-t">2 problems I designed for</b></p><span class="stx-line" aria-hidden="true"></span></div>
 <div class="cv-fork" aria-hidden="true"><span></span></div>
 <div class="cv-grid"><a class="cv cv-1 rv" href="pre-bind-intake.html" style="--dl:0s"><span class="cv-node" aria-hidden="true"></span><div class="cv-media"><div class="bframe"><div class="bar"><i></i><i></i><i></i></div><img src="assets/card-workbench.jpg" alt="Underwriter workbench" loading="lazy"></div></div>
-<div class="cv-body"><p class="cv-k">Case study 01</p><h3 class="cv-name">One flow for all insurance</h3><p class="cv-h">From the first request to the agreed policy.</p><p class="cv-out">4 lines on one base · filters from 8+ clicks to 2</p><p class="cv-role">Role: Lead designer</p><span class="cv-link">Read case study <span class="cv-ar" aria-hidden="true">→</span></span></div></a><a class="cv cv-2 rv" href="team-management.html" style="--dl:0.08s"><span class="cv-node" aria-hidden="true"></span><div class="cv-media"><div class="bframe"><div class="bar"><i></i><i></i><i></i></div><img src="assets/card-users.jpg" alt="Team and user management: users table" loading="lazy"></div></div>
-<div class="cv-body"><p class="cv-k">Case study 02</p><h3 class="cv-name">Team and user management</h3><p class="cv-h">Every client now runs the platform their own way.</p><p class="cv-out">Clients self-serve users, roles and teams</p><p class="cv-role">Role: Lead designer</p><span class="cv-link">Read case study <span class="cv-ar" aria-hidden="true">→</span></span></div></a></div>
+<div class="cv-body"><h3 class="cv-name">One flow for all insurance</h3><p class="cv-h">From the first request to the agreed policy.</p><p class="cv-out">4 lines on one base · filters from 8+ clicks to 2</p><p class="cv-role">Role: Lead designer</p><span class="cv-link">Read case study <span class="cv-ar" aria-hidden="true">→</span></span></div></a><a class="cv cv-2 rv" href="team-management.html" style="--dl:0.08s"><span class="cv-node" aria-hidden="true"></span><div class="cv-media"><div class="bframe"><div class="bar"><i></i><i></i><i></i></div><img src="assets/card-users.jpg" alt="Team and user management: users table" loading="lazy"></div></div>
+<div class="cv-body"><h3 class="cv-name">Team and user management</h3><p class="cv-h">Every client now runs the platform their own way.</p><p class="cv-out">Clients self-serve users, roles and teams</p><p class="cv-role">Role: Lead designer</p><span class="cv-link">Read case study <span class="cv-ar" aria-hidden="true">→</span></span></div></a></div>
 </div></section>
 
 <section class="sec recs vx" id="recs" data-screen-label="Recommendations"><div class="wrap">
-<div class="sx-head rv"><h2 class="sx-t">What it's like working with me</h2><div class="sx-r"><p>From the recommendations on my LinkedIn, quoted as they wrote them.</p><a class="sx-pill" href="https://www.linkedin.com/in/abhishek-lg-162800219/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener">Read them on LinkedIn <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div></div>
+<div class="rv vx-head"><p class="lbl">Recommendations</p><h2 class="h2">What it's like working <em class="a">with me</em></h2></div>
 <div class="vx-stage rv" aria-roledescription="carousel" aria-label="Recommendations">
 <span class="vx-mark" aria-hidden="true">"</span>
 <div class="vx-quotes"><figure class="vx-q on" id="vxq0" aria-hidden="false"><blockquote>"Abhishek was the lead UI/UX designer in my team, driving forward industry-leading, AI-first product capabilities sold into globally recognised organisations. His communication skills and professional approach to collaboration were fantastic, successfully <mark>bridging the gap between engineering teams based in India, and product and commercial teams in London</mark>."</blockquote><figcaption><img src="assets/rec-whitlam.png" alt="" width="56" height="56" loading="lazy"><span><b>James Whitlam</b><small>Founder at Vancap</small></span></figcaption></figure><figure class="vx-q" id="vxq1" aria-hidden="true"><blockquote>"He took a technical product built for underwriters and <mark>made it clear and easy to use</mark>, which mattered a great deal to a young company selling into the insurance market."</blockquote><figcaption><img src="assets/rec-rendell.png" alt="" width="56" height="56" loading="lazy"><span><b>James Rendell</b><small>Chief Executive Officer, BirdsEyeView</small></span></figcaption></figure><figure class="vx-q" id="vxq2" aria-hidden="true"><blockquote>"Abhishek possesses <mark>a rare combination of exceptional design skills and a deep, holistic knowledge</mark> of our entire product suite. He has been an outstanding partner in our product development, and I recommend him to any team or organisation lucky enough to have him next."</blockquote><figcaption><img src="assets/rec-farah.png" alt="" width="56" height="56" loading="lazy"><span><b>Farah Bukhari</b><small>Staff Product Owner</small></span></figcaption></figure><figure class="vx-q" id="vxq3" aria-hidden="true"><blockquote>"He is a highly skilled UI/UX designer, a thoughtful design leader and an excellent collaborator. Abhishek introduced <mark>processes and standards that brought greater consistency</mark> to the team's approach and output."</blockquote><figcaption><img src="assets/rec-steve.png" alt="" width="56" height="56" loading="lazy"><span><b>Steve O'Reilly</b><small>Product Executive</small></span></figcaption></figure><figure class="vx-q" id="vxq4" aria-hidden="true"><blockquote>"His <mark>initiative and end-to-end vision</mark> is what sets him apart. Even when requirements were ambiguous, he independently defined the problems, navigated edge cases across the entire user journey to delivered seamless user flows."</blockquote><figcaption><img src="assets/rec-kunal.png" alt="" width="56" height="56" loading="lazy"><span><b>Kunal Bhardwaj</b><small>Product Consultant, Product Manager, CSPO</small></span></figcaption></figure></div>
@@ -928,7 +864,7 @@ a.fx-row:hover svg{transform:translate(2px,-2px);color:var(--ink)}
 </div></section>
 
 <section class="sec" id="ai" data-screen-label="AI x Design"><div class="wrap">
-<div class="sx-head rv"><h2 class="sx-t">How I design with AI</h2><div class="sx-r"><p>AI speeds up the sorting and the building. The research, the decisions and the final call stay mine.</p></div></div>
+<div class="rv"><p class="lbl">AI × Design</p><h2 class="h2">How I design <em class="a">with</em> AI</h2><p class="lead">AI speeds up the sorting and the building. The research, the decisions and the final call stay mine.</p></div>
 <div class="ai">
 <a class="aic rv" href="nutbite.html" style="--dl:0s"><div class="card" style="background:var(--blush);--tint:var(--blush)"><span class="st">Shipped</span><img src="assets/nutbite-dashboard.webp" alt="NutBite store dashboard" loading="lazy"><span class="notch" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span></div><h3>NutBite</h3><p class="ai-d">A store app for a family cashew business in Kumta, built for a storekeeper new to computers. In daily use.</p></a>
 <a class="aic rv" href="ai-audit.html" style="--dl:0.08s"><div class="card" style="background:var(--lav);--tint:var(--lav)"><span class="st">AI-assisted audit</span><img src="assets/ai-audit-diagram.webp" alt="AI-assisted UX audit diagram" loading="lazy"><span class="notch" aria-hidden="true"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></span></span></div><h3>AI-assisted UX audit</h3><p class="ai-d">IRCTC audit: AI did the sorting, I made the calls.</p></a>
@@ -957,20 +893,16 @@ a.fx-row:hover svg{transform:translate(2px,-2px);color:var(--ink)}
 </div>
 </section>
 <div class="ah-lb" id="ahLb" hidden><div class="ah-lb-in" role="dialog" aria-modal="true" aria-label="Preview"><button class="ah-x" type="button" aria-label="Close">✕</button><div class="ah-lb-c" id="ahLbC"></div></div></div>
-
-</div>
-<footer class="foot fx" id="contact" data-screen-label="Footer"><div class="wrap">
-<div class="fx-panel rv">
-<div class="fx-l"><p class="fx-k">Let's talk</p><h2>Let's build something clear.</h2><p class="fx-hire">Hiring a Senior Product Designer in Bengaluru? I can join immediately.</p>
-<div class="fx-mail"><a href="mailto:abhisheklokesh.uiux159@gmail.com">abhisheklokesh.uiux159@gmail.com</a><button class="fcopy fcopy-w" type="button" data-fcopy="abhisheklokesh.uiux159@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span aria-live="polite">Copy email</span></button></div></div>
-<div class="fx-r">
-<a class="fx-row" href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener"><span><b>LinkedIn</b><small>Profile and recommendations</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
-<a class="fx-row" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf"><span><b>Download CV</b><small>My experience, at a glance</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-<div class="fx-row fx-av"><span><b><i class="fx-dot" aria-hidden="true"></i>Available to join immediately</b><small>Bengaluru (onsite / hybrid) or remote</small></span></div>
-</div></div>
+<footer class="foot" id="contact" data-screen-label="Footer"><div class="wrap">
+<h2 class="rv">Let's build something <em class="a">clear</em></h2>
+<p class="f-hire rv">Hiring a Senior Product Designer in Bengaluru? I can join immediately.</p>
+<p class="hp-av f-av rv"><span class="hp-dot" aria-hidden="true"></span>Available to join immediately · Bengaluru (onsite / hybrid) or remote</p>
+<div class="acts rv"><a class="btn btn-li" href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:18px;height:18px;flex:none"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75ZM9.5 9.75h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.95c0-1.18-.02-2.7-1.65-2.7-1.65 0-1.9 1.29-1.9 2.62V21h-4V9.75Z"/></svg>LinkedIn</a><a class="btn btn-cv" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Download CV</a></div>
+<div class="fmail rv"><a href="mailto:abhisheklokesh.uiux159@gmail.com">abhisheklokesh.uiux159@gmail.com</a><button class="fcopy fcopy-w" type="button" data-fcopy="abhisheklokesh.uiux159@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span aria-live="polite">Copy email</span></button></div>
 <div class="fine"><span>© Abhishek LG, 2026</span><a class="ftop" href="#top">Back to top ↑</a></div>
 <script>(function(){var b=document.querySelector("[data-fcopy]");if(!b)return;b.addEventListener("click",function(){if(navigator.clipboard)navigator.clipboard.writeText(b.dataset.fcopy);var s=b.querySelector("span");s.textContent="Copied";setTimeout(function(){s.textContent="Copy email"},1600)})})();</script>
 </div></footer>
+</div>
 </main>
 <div class="toast" id="toast" role="status"></div>
 <script src="home.js"></script>
