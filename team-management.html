@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Team and user management · Abhishek LG, Product Architect</title>
+<title>Team and user management · Abhishek LG, Senior Product Designer</title>
 <meta name="description" content="Team and user management case study by Abhishek LG.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Team and user management · Abhishek LG, Product Architect">
+<meta property="og:title" content="Team and user management · Abhishek LG, Senior Product Designer">
 <meta property="og:description" content="Team and user management case study by Abhishek LG.">
 <meta property="og:image" content="https://abhishek-lg-ux-design-portfolio.vercel.app/assets/thumb-team-mgmt.png">
 <meta property="og:url" content="https://abhishek-lg-ux-design-portfolio.vercel.app/team-management.html">
@@ -114,7 +114,7 @@
   .nav-brand{display:flex;align-items:center;gap:11px;}
   .nav-avatar{
     width:34px;height:34px;border-radius:50%;flex:0 0 auto;
-    background:#15543b url('assets/abhishek-avatar.jpg') center/cover no-repeat;
+    background:#15543b url('assets/abhishek-avatar.webp') center/cover no-repeat;
     display:flex;align-items:center;justify-content:center;
     color:#dff0e6;font-family:var(--font-display);font-weight:600;font-size:13px;
     border:2px solid rgba(255,255,255,.5);
@@ -1158,6 +1158,15 @@
 #roles .ru-cap,#users .ru-cap,#teams .ru-cap{margin:16px auto 0!important;max-width:62ch;text-align:center}
 @media(max-width:767px){#roles .ru-eyebrow,#users .ru-eyebrow,#teams .ru-eyebrow{margin-top:36px!important}}
 </style>
+<style id="india-css">
+.my-role{margin-top:22px!important}
+.my-role dd{white-space:normal!important;line-height:1.45}
+.imp-strip{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:12px}
+.imp-strip li{flex:1 1 220px;padding:16px 18px;border-radius:14px;background:#F4F6FB;border:1px solid #E6E9F2}
+.imp-strip b{display:block;font-size:22px;font-weight:600;letter-spacing:-.02em;color:#1B1F2A;line-height:1.2}
+.imp-strip span{display:block;margin-top:4px;font-size:14px;color:#525D6D;line-height:1.4}
+.rc-est{margin:14px 0 0;font-size:13.5px;line-height:1.5;color:#6B7280}
+</style>
 </head>
 <body>
 <a class="skip" href="#top">Skip to content</a>
@@ -1175,6 +1184,8 @@
       <h1 class="proj">Letting each client run the platform <span class="cs-mark"><em class="hl">themselves</em><svg class="cs-draw" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 30 4, 62 14, 90 7 S 114 6, 117 9" vector-effect="non-scaling-stroke"></path></svg></span></h1>
       <p class="subline">Every new user, role or permission change used to go through our support team and could take a week. I designed a self-serve space where each client’s admin sets up users, roles and teams on their own, in minutes.</p>
       <dl class="cs-meta"><div><dt>My scope</dt><dd>Users, roles and teams</dd></div><div><dt>Timeline</dt><dd>About 3 months, in 3 phases</dd></div></dl>
+      <dl class="cs-meta my-role"><div><dt>I owned</dt><dd>Users, roles, teams, the delete-with-reassignment flow, edge cases</dd></div><div><dt>Shared with the team</dt><dd>Research, testing</dd></div></dl>
+      <ul class="imp-strip"><li><b>1 module</b><span>for all lines</span></li><li><b>2 starter roles</b><span>so day one is never blocked</span></li></ul>
 
       <div class="cs-win"><div class="cs-win-bar" aria-hidden="true"><i></i><i></i><i></i></div><div class="ru-panel" style="min-height:400px;padding:30px;" aria-hidden="true">
         <div class="ru-pageheader">
@@ -1325,13 +1336,13 @@
     <!-- 06 THE DESIGN · USERS -->
     <section class="panel reveal" id="users" data-screen-label="07 The Design · Users">
       <div class="stp-h dz-h"><span class="stp-big" aria-hidden="true">02</span><div class="stp-tx"><p class="stp-l">Users</p><h3 class="stp-t">Add, manage and check every user, without us</h3></div></div>
-<p class="ru-eyebrow" style="margin-top:26px;">Screen 3 · Add user</p><figure class="tms"><img src="assets/tm-add-user.jpg" alt="Add user: account, location, role and team in one step, with a preview of what they can do" loading="lazy" decoding="async" width="3840" height="2160"></figure><p class="ru-cap">Region and country are captured here, which later lets teams and submissions be filtered by location.</p><p class="ru-eyebrow" style="margin-top:26px;">Screen 4 · User profile</p><figure class="tms"><img src="assets/tm-user-profile.jpg" alt="User profile with account details, recent activity and permissions from their role" loading="lazy" decoding="async" width="3840" height="2202"></figure><p class="ru-cap">Every user's access can be checked by the client admin, without asking our team.</p>
+<p class="ru-eyebrow" style="margin-top:26px;">Screen 3 · Add user</p><figure class="tms"><img src="assets/tm-add-user.webp" alt="Add user: account, location, role and team in one step, with a preview of what they can do" loading="lazy" decoding="async" width="3840" height="2160"></figure><p class="ru-cap">Region and country are captured here, which later lets teams and submissions be filtered by location.</p><p class="ru-eyebrow" style="margin-top:26px;">Screen 4 · User profile</p><figure class="tms"><img src="assets/tm-user-profile.webp" alt="User profile with account details, recent activity and permissions from their role" loading="lazy" decoding="async" width="3840" height="2202"></figure><p class="ru-cap">Every user's access can be checked by the client admin, without asking our team.</p>
 </section>
 
     <!-- 06 THE DESIGN · TEAMS -->
     <section class="panel reveal" id="teams" data-screen-label="07 The Design · Teams">
       <div class="stp-h dz-h"><span class="stp-big" aria-hidden="true">03</span><div class="stp-tx"><p class="stp-l">Teams</p><h3 class="stp-t">Teams built around how each client works</h3></div></div>
-<p class="ru-eyebrow" style="margin-top:26px;">Screen 5 · Create team · team details</p><figure class="tms"><img src="assets/tm-create-team-1.jpg" alt="Create team, step 1: name, region, country, manager and classes of business" loading="lazy" decoding="async" width="3840" height="2160"></figure><p class="ru-cap">Teams can follow any split the client uses, such as region or branch, and matching submissions route straight to them.</p><p class="ru-eyebrow" style="margin-top:26px;">Screen 6 · Create team · add members</p><figure class="tms"><img src="assets/tm-create-team-2.jpg" alt="Create team, step 2: pick members, with a warning when someone moves from another team" loading="lazy" decoding="async" width="3840" height="2160"></figure><p class="ru-cap">Moving someone from another team is flagged before it happens.</p><p class="ru-eyebrow" style="margin-top:26px;">Screen 7 · Team page</p><figure class="tms"><img src="assets/tm-team-page.jpg" alt="Team page: members, workload and the submissions assigned to this team" loading="lazy" decoding="async" width="3840" height="2160"></figure><p class="ru-cap">Each team only sees its own work, with no noise from other regions.</p>
+<p class="ru-eyebrow" style="margin-top:26px;">Screen 5 · Create team · team details</p><figure class="tms"><img src="assets/tm-create-team-1.jpg" alt="Create team, step 1: name, region, country, manager and classes of business" loading="lazy" decoding="async" width="3840" height="2160"></figure><p class="ru-cap">Teams can follow any split the client uses, such as region or branch, and matching submissions route straight to them.</p><p class="ru-eyebrow" style="margin-top:26px;">Screen 6 · Create team · add members</p><figure class="tms"><img src="assets/tm-create-team-2.webp" alt="Create team, step 2: pick members, with a warning when someone moves from another team" loading="lazy" decoding="async" width="3840" height="2160"></figure><p class="ru-cap">Moving someone from another team is flagged before it happens.</p><p class="ru-eyebrow" style="margin-top:26px;">Screen 7 · Team page</p><figure class="tms"><img src="assets/tm-team-page.webp" alt="Team page: members, workload and the submissions assigned to this team" loading="lazy" decoding="async" width="3840" height="2160"></figure><p class="ru-cap">Each team only sees its own work, with no noise from other regions.</p>
 </section>
 
     <!-- 07 MY CONTRIBUTION -->
