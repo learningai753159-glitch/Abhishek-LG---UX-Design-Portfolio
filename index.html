@@ -778,6 +778,32 @@
 .wr3-ti{margin:6px 6px 0;font-size:15.5px;font-weight:500;line-height:1.35}
 @media(max-width:900px){.wr3-g{grid-template-columns:1fr;gap:20px;padding-left:0}.wr3-side{padding:0 16px}.wr3-side{text-align:center}.wr3-nav{display:none}.wr3-rail{-webkit-mask-image:none;mask-image:none}.wr3-track{padding-left:16px;padding-right:16px}.wr3-c{flex-basis:72%}.wr3-t{font-size:22px!important}}
 </style>
+<style id="bw-css">
+.bw{padding:0!important;background:#0E0D0C;overflow:hidden}
+.bw-stage{position:relative;height:720px;--x:62%;--y:40%;--rad:260px;cursor:default}
+.bw-art{position:absolute;inset:0}
+.bw-a{position:absolute;left:var(--l);top:calc(var(--t) + 40px);width:var(--w);transform:rotate(var(--r));border-radius:6px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.8);background:#1b1a18;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.bw-a img{display:block;width:100%;height:auto}
+.bw-a:hover{transform:rotate(0deg) scale(1.06);z-index:5}
+.bw-dim{position:absolute;inset:0;z-index:3;pointer-events:none;background:rgba(14,13,12,.9);-webkit-mask-image:radial-gradient(circle var(--rad) at var(--x) var(--y),transparent 0,rgba(0,0,0,.25) 45%,#000 100%);mask-image:radial-gradient(circle var(--rad) at var(--x) var(--y),transparent 0,rgba(0,0,0,.25) 45%,#000 100%)}
+.bw-glow{position:absolute;inset:0;z-index:4;pointer-events:none;background:radial-gradient(circle calc(var(--rad) * .9) at var(--x) var(--y),rgba(255,214,160,.10),transparent 70%);mix-blend-mode:screen}
+.bw-tx{position:absolute;z-index:6;left:clamp(16px,4vw,64px);bottom:72px;width:min(460px,34vw)}
+.bw-h{margin:14px 0 0;font-size:clamp(28px,2.6vw,38px);line-height:1.15;font-weight:600;letter-spacing:-.025em;color:#F2EFE9}
+.bw-s{margin:14px 0 0;font-size:16px;line-height:1.5;color:rgba(242,239,233,.62)}
+.bw-l{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.bw-l a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(255,255,255,.2);color:#F2EFE9;text-decoration:none;font-size:14.5px;font-weight:600;background:rgba(14,13,12,.6);backdrop-filter:blur(6px);transition:background .2s,border-color .2s}
+.bw-l a:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4)}
+@media(prefers-reduced-motion:reduce){.bw-dim{background:rgba(14,13,12,.45);-webkit-mask-image:none;mask-image:none}.bw-glow{display:none}}
+@media(max-width:900px){
+.bw-stage{height:auto;padding:56px 16px 48px;--rad:180px}
+.bw-art{position:relative;inset:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 12px;align-items:start}
+.bw-a{position:relative;left:auto;top:auto;width:auto}
+.bw-a:nth-child(n+10){display:none}
+.bw-tx{position:relative;left:auto;bottom:auto;width:auto;margin-top:36px}
+.bw-h{font-size:26px}
+.bw-l a{flex:1 1 auto;justify-content:center}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -851,11 +877,17 @@
 </section>
 
 <div class="dark">
-<section class="dsec ah ah3 byx-s" id="after-hours" data-screen-label="Beyond UX">
-<div class="wrap byx">
-<div class="byx-tx rv"><p class="lbl">Beyond UX</p><h2 class="h2">Outside work, I make <em class="a">art with AI</em>.</h2><p class="ah3-sub">AI artworks, AI videos, storyboards and poster designs.</p>
-<div class="byx-l"><a href="https://www.behance.net/learningai3" target="_blank" rel="noopener">See the artwork on Behance ↗</a><a href="https://www.instagram.com/dreamverse_of_abhi/" target="_blank" rel="noopener">Instagram ↗</a></div></div>
-<ul class="byx-g rv" style="--dl:.08s"><li><a href="https://www.behance.net/learningai3" target="_blank" rel="noopener"><img src="assets/brand/t01.jpg" alt="Tridevi series cover: Saraswati, Lakshmi, Durga" loading="lazy" decoding="async"><span>Tridevi, AI art</span></a></li><li><a href="https://www.instagram.com/dreamverse_of_abhi/" target="_blank" rel="noopener"><img src="assets/navadurga/01-shailaputri.jpeg" alt="Navratri poster: Shailaputri" loading="lazy" decoding="async"><span>Navratri posters</span></a></li><li><a href="https://www.behance.net/learningai3" target="_blank" rel="noopener"><img src="assets/art/ai-art-05.jpeg" alt="Storyboard frame: Vishwamitra walks with Rama and Lakshmana" loading="lazy" decoding="async"><span>Ramayana storyboard</span></a></li></ul>
+<section class="dsec bw" id="after-hours" data-screen-label="Beyond UX">
+<div class="bw-stage" id="bwStage">
+<div class="bw-art"><a class="bw-a" href="https://www.behance.net/learningai3" target="_blank" rel="noopener" style="--l:4vw;--t:40px;--w:12vw;--r:-4deg"><img src="assets/art/wall/t01.webp" alt="Tridevi series cover" loading="lazy" decoding="async"></a><a class="bw-a" href="https://www.behance.net/learningai3" target="_blank" rel="noopener" style="--l:19vw;--t:70px;--w:17vw;--r:3deg"><img src="assets/art/wall/ai-art-15.webp" alt="Saraswati with her veena" loading="lazy" decoding="async"></a><a class="bw-a" href="https://www.behance.net/learningai3" target="_blank" rel="noopener" style="--l:39vw;--t:30px;--w:11vw;--r:-2deg"><img src="assets/art/wall/ai-art-25.webp" alt="Ganesha dancing among the planets" loading="lazy" decoding="async"></a><a class="bw-a" href="https://www.behance.net/learningai3" target="_blank" rel="noopener" style="--l:53vw;--t:90px;--w:12vw;--r:4deg"><img src="assets/art/wall/01-shailaputri.webp" alt="Navratri poster: Shailaputri" loading="lazy" decoding="async"></a><a class="bw-a" href="https://www.behance.net/learningai3" target="_blank" rel="noopener" style="--l:69vw;--t:40px;--w:16vw;--r:-3deg"><img src="assets/art/wall/ai-art-18.webp" alt="A Bharatanatyam dancer before Nataraja" loading="lazy" decoding="async"></a><a class="bw-a" href="https://www.behance.net/learningai3" target="_blank" rel="noopener" style="--l:87vw;--t:70px;--w:10vw;--r:5deg"><img src="assets/art/wall/ai-art-26.webp" alt="Parvati in the mountains with a lion" loading="lazy" decoding="async"></a><a class="bw-a" href="https://www.behance.net/learningai3" target="_blank" rel="noopener" style="--l:40vw;--t:330px;--w:11vw;--r:3deg"><img src="assets/art/wall/ai-art-05.webp" alt="Ramayana storyboard: Vishwamitra with Rama and Lakshmana" loading="lazy" decoding="async"></a><a class="bw-a" href="https://www.behance.net/learningai3" target="_blank" rel="noopener" style="--l:54vw;--t:370px;--w:15vw;--r:-4deg"><img src="assets/art/wall/ai-art-24.webp" alt="A temple town at dusk" loading="lazy" decoding="async"></a><a class="bw-a" href="https://www.behance.net/learningai3" target="_blank" rel="noopener" style="--l:71vw;--t:300px;--w:11vw;--r:2deg"><img src="assets/art/wall/07-kalaratri.webp" alt="Navratri poster: Kalaratri" loading="lazy" decoding="async"></a><a class="bw-a" href="https://www.behance.net/learningai3" target="_blank" rel="noopener" style="--l:86vw;--t:340px;--w:10vw;--r:-3deg"><img src="assets/art/wall/ai-art-27.webp" alt="Lakshmi on a lotus" loading="lazy" decoding="async"></a></div>
+<div class="bw-dim" aria-hidden="true"></div>
+<div class="bw-glow" aria-hidden="true"></div>
+<div class="bw-tx">
+<p class="lbl">Beyond UX</p>
+<h2 class="bw-h">Outside work, I <em class="a">make art with AI</em>.</h2>
+<p class="bw-s">AI artworks, AI videos, storyboards and poster designs.</p>
+<div class="bw-l"><a href="https://www.behance.net/learningai3" target="_blank" rel="noopener">See the artwork on Behance ↗</a><a href="https://www.instagram.com/dreamverse_of_abhi/" target="_blank" rel="noopener">Instagram ↗</a></div>
+</div>
 </div>
 </section>
 <div class="ah-lb" id="ahLb" hidden><div class="ah-lb-in" role="dialog" aria-modal="true" aria-label="Preview"><button class="ah-x" type="button" aria-label="Close">✕</button><div class="ah-lb-c" id="ahLbC"></div></div></div>
@@ -1027,5 +1059,13 @@ function rest(){hold=true;clearTimeout(timer);timer=setTimeout(function(){hold=f
 ['mouseleave','focusout','touchend'].forEach(function(e){t.addEventListener(e,rest,{passive:true})});
 if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting},{threshold:.3}).observe(t);else vis=true;
 if(!rm)setInterval(function(){if(vis&&!hold&&!document.hidden)go(1)},3000);})();</script>
+<script>(function(){var st=document.getElementById('bwStage');if(!st||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var tx=.62,ty=.4,cx=tx,cy=ty,last=0,raf=0,vis=false,t0=performance.now();
+function rect(){return st.getBoundingClientRect()}
+st.addEventListener('pointermove',function(e){var r=rect();tx=(e.clientX-r.left)/r.width;ty=(e.clientY-r.top)/r.height;last=performance.now()},{passive:true});
+function loop(now){raf=requestAnimationFrame(loop);if(!vis)return;if(now-last>2200){var k=(now-t0)/1000;tx=.5+.32*Math.sin(k*.45);ty=.45+.28*Math.sin(k*.7+1)}
+cx+=(tx-cx)*.08;cy+=(ty-cy)*.08;st.style.setProperty('--x',(cx*100).toFixed(2)+'%');st.style.setProperty('--y',(cy*100).toFixed(2)+'%')}
+if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting},{threshold:.1}).observe(st);else vis=true;
+raf=requestAnimationFrame(loop)})();</script>
 </body>
 </html>
