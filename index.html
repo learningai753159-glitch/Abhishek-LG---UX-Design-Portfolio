@@ -736,6 +736,27 @@
 .byx-g span{display:block;margin-top:10px;font-size:13px}
 @media(max-width:900px){.byx{grid-template-columns:1fr}}
 @media(max-width:767px){.hp-proof b{font-size:20px}.hp-av{font-size:13px;padding:8px 14px}.hp-cta .btn{flex:1 1 140px}.byx-g{gap:10px}.byx-g span{font-size:12px}.byx-l a{flex:1 1 auto;justify-content:center}.wr2-more{align-self:stretch}}
+/* writing: compact */
+#writing .wr2-box{margin-top:32px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;padding:14px;border-radius:28px;align-items:stretch}
+#writing .wr2-feat{display:grid;grid-template-columns:clamp(120px,14vw,170px) minmax(0,1fr);grid-template-rows:auto auto 1fr auto;column-gap:20px;row-gap:6px;padding:16px;border-radius:20px;align-items:start}
+#writing .wr2-img{grid-row:1/5;grid-column:1;flex:none;aspect-ratio:1/1;min-height:0;height:auto;margin:0;border-radius:14px}
+#writing .wr2-k{padding:0}
+#writing .wr2-feat .wr2-k,#writing .wr2-ft,#writing .wr2-fs,#writing .wr2-go{grid-column:2;padding:0}
+#writing .wr2-ft{font-size:clamp(20px,1.8vw,24px)!important;line-height:1.2!important}
+#writing .wr2-fs{font-size:15px!important;line-height:1.5!important}
+#writing .wr2-go{padding-top:6px;font-size:14px}
+#writing .wr2-ser{background:#262522;border-radius:20px;padding:22px 24px;justify-content:center}
+#writing .wr2-sh{padding:0;border:0}
+#writing .wr2-sd{margin-top:10px;font-size:clamp(17px,1.5vw,20px)}
+#writing .wr2-more{margin-top:16px;align-self:flex-start;width:auto}
+#writing .wr2-ser:not(.closed){grid-column:1/-1}
+#writing .wr2-box:has(.wr2-ser:not(.closed)) .wr2-feat{grid-column:1/-1}
+#writing .wr2-box:has(.wr2-ser:not(.closed)) .wr2-img{width:clamp(120px,14vw,170px)}
+#writing .wr2-ser:not(.closed) .wr2-sd{display:block}
+#writing .wr2-ser:not(.closed) .wr2-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;margin-top:14px;order:3}
+#writing .wr2-ser:not(.closed) .wr2-more{order:4}
+@media(max-width:900px){#writing .wr2-box{grid-template-columns:1fr}#writing .wr2-ser:not(.closed) .wr2-list{grid-template-columns:1fr}}
+@media(max-width:560px){#writing .wr2-feat{grid-template-columns:96px minmax(0,1fr);column-gap:14px;padding:12px}#writing .wr2-fs{display:none}#writing .wr2-ft{font-size:18px!important}#writing .wr2-ser{padding:18px}#writing .wr2-more{align-self:stretch}}
 </style>
 </head>
 <body>
