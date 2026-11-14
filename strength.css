@@ -1,0 +1,38 @@
+/* Case study strength blocks: impact strip, trade-off card, judgement card, home proof strip */
+.cs-impact{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.cs-impact li{background:#FAFAFA;border:1px solid #ECEAE8;border-radius:16px;padding:18px 20px}
+.cs-impact b{display:block;font:600 clamp(28px,3.2vw,38px)/1.05 'Instrument Sans',system-ui,sans-serif;letter-spacing:-.02em;color:#1E1E1E}
+.cs-impact span{display:block;margin-top:6px;font:400 14px/1.4 'Instrument Sans',system-ui,sans-serif;color:#77736F}
+
+.tradeoff{margin:48px auto 0;max-width:980px;background:#fff;border:1px solid #ECEAE8;border-radius:20px;padding:28px 30px;font-family:'Instrument Sans',system-ui,sans-serif;color:#1E1E1E;text-align:left}
+.tradeoff .to-k{display:inline-flex;align-items:center;gap:8px;font:600 12px/1 'Instrument Sans',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FF5A52}
+.tradeoff .to-k:before{content:"";width:8px;height:8px;border-radius:50%;background:#FF5A52;box-shadow:0 0 0 4px rgba(255,90,82,.16)}
+.tradeoff h3{margin:12px 0 0;font:600 clamp(22px,2.4vw,28px)/1.2 'Instrument Sans',system-ui,sans-serif;letter-spacing:-.01em;color:#1E1E1E}
+.tradeoff .to-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
+.tradeoff .to-c{border-radius:14px;padding:16px 18px;background:#FAFAFA}
+.tradeoff .to-c.cost{background:#FFF0EF}
+.tradeoff .to-c.fix{background:#EEF6F0}
+.tradeoff .to-c p.to-l{margin:0;font:600 12px/1 'Instrument Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#77736F}
+.tradeoff .to-c ul{margin:10px 0 0;padding-left:18px}
+.tradeoff .to-c li{font:400 15px/1.5 'Instrument Sans',system-ui,sans-serif;color:#1E1E1E;margin-top:6px}
+.tradeoff .to-c p.to-t{margin:10px 0 0;font:400 15px/1.5 'Instrument Sans',system-ui,sans-serif;color:#1E1E1E}
+
+.judg{margin:40px 0 0;background:#fff;border:1px solid #ECEAE8;border-radius:20px;padding:28px 30px;font-family:'Instrument Sans',system-ui,sans-serif;color:#1E1E1E}
+.judg .to-k{display:inline-flex;align-items:center;gap:8px;font:600 12px/1 'Instrument Sans',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FF5A52}
+.judg h3{margin:12px 0 0;font:600 clamp(22px,2.4vw,28px)/1.2 'Instrument Sans',system-ui,sans-serif;color:#1E1E1E}
+.judg>p{margin:10px 0 0;font:400 16px/1.55 'Instrument Sans',system-ui,sans-serif;color:#77736F;max-width:720px}
+.judg ol{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.judg li{background:#FAFAFA;border-radius:14px;padding:16px 18px}
+.judg li b{display:block;font:600 16px/1.35 'Instrument Sans',system-ui,sans-serif;color:#1E1E1E}
+.judg li span{display:block;margin-top:6px;font:400 14px/1.5 'Instrument Sans',system-ui,sans-serif;color:#77736F}
+
+.proof{list-style:none;margin:28px auto 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px}
+.proof li{font:400 15px/1.4 'Instrument Sans',system-ui,sans-serif;color:#77736F}
+.proof b{font-weight:600;color:#1E1E1E;margin-right:6px}
+
+@media(max-width:760px){
+  .cs-impact,.tradeoff .to-g,.judg ol{grid-template-columns:1fr}
+  .tradeoff,.judg{padding:22px 20px}
+  .proof{gap:8px 18px}
+  .proof li{font-size:14px}
+}
