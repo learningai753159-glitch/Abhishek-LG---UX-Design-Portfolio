@@ -798,16 +798,18 @@
 </style>
 <style id="foot-css">.foot h2{white-space:nowrap;font-size:clamp(32px,6.4vw,100px)!important;line-height:1!important;max-width:none!important}</style>
 <style id="path-css">
-.am-y{font-size:22px!important;line-height:1.05}
-.am-y small{display:block;margin-top:4px;font-family:var(--sans,system-ui);font-style:normal;font-size:12px;letter-spacing:.02em;color:#8A8F99}
-.am-path li.sw .am-y small{color:#C2362F;opacity:.75}
-.am-d{display:block;margin-top:3px;font-size:13px;color:#8A8F99}
-.am-path li.sw .am-d{margin-top:6px}
-.am-sk2{margin-top:8px!important}
-.am-fl{list-style:none;margin:0;padding:0}
-.am-fl li{padding:16px 18px;border:1px solid #E6E7EB;border-radius:14px;background:#fff}
-.am-fl b{display:block;font-size:17px;font-weight:600;color:#1B1A18}
-.am-fl p{margin:6px 0 0;font-size:15.5px;line-height:1.55;color:#525866}
+.am-path::before{left:6px!important;top:10px;bottom:10px}
+.am-path li{grid-template-columns:minmax(0,1fr)!important;gap:0!important;padding-left:32px!important;padding-bottom:22px!important}
+.am-path li::after{left:0!important;top:5px!important}
+.am-row{display:flex;align-items:baseline;justify-content:space-between;gap:6px 16px;flex-wrap:wrap}
+.am-row b{flex:0 1 auto}
+.am-d{flex:none;font-size:13px;color:#8A8F99;white-space:nowrap}
+.am-path li.sw .am-d{color:#C2362F}
+.am-sk2{margin-top:4px!important}
+.am-fl{list-style:none;margin:0 0 8px;padding:0}
+.am-fl li{padding:0}
+.am-fl b{font-size:18px;font-weight:600;color:#1B1A18}
+.am-fl p{margin:6px 0 0;font-size:16px;line-height:1.55;color:#525866}
 </style>
 </head>
 <body>
@@ -928,7 +930,7 @@ if(location.hash==='#about')addEventListener('load',function(){go(false)})})();<
 <aside class="am-side">
 <figure class="am-pol"><img loading="lazy" decoding="async" src="assets/abhishek-illustrated.webp" alt="Illustrated portrait of Abhishek LG" style="aspect-ratio:1/1"><figcaption>Bengaluru, India</figcaption></figure>
 <p class="am-name">Abhishek LG</p><p class="am-role">Senior Product Designer</p>
-<p class="am-open"><span></span>Open to Senior / Lead Product Designer roles · Bengaluru or remote · Can join immediately</p>
+<p class="am-open"><span></span>Open to Senior / Lead Product Designer roles in Bengaluru · Can join immediately</p>
 <div class="am-ed2"><p class="am-edk">Education</p><p class="am-edv">MBA, East West College of Management, 2016</p></div><div class="am-ed2"><p class="am-edk am-edk-row">Certificates<button type="button" class="am-cert-all">View certificates</button></p><ul class="am-certs"><li><button type="button" class="am-cert" data-cert-src="assets/certs/outskill-genai-mastermind-2026.jpg" data-cert-name="Generative AI Mastermind" data-cert-meta="Outskill · 2026"><span class="am-cert-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 8h10M7 11h6"/><circle cx="16" cy="14.5" r="2.5"/><path d="M14.6 16.6 14 21l2-1 2 1-.6-4.4"/></svg></span><span class="am-cert-t"><b>Generative AI Mastermind</b><span>Outskill · 2026</span></span><span class="am-cert-v">View</span></button></li><li><button type="button" class="am-cert" data-cert-src="assets/certs/uxgorilla-ux-immersion-2022.jpg" data-cert-name="UX Immersion" data-cert-meta="UX Gorilla · 2022"><span class="am-cert-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 8h10M7 11h6"/><circle cx="16" cy="14.5" r="2.5"/><path d="M14.6 16.6 14 21l2-1 2 1-.6-4.4"/></svg></span><span class="am-cert-t"><b>UX Immersion</b><span>UX Gorilla · 2022</span></span><span class="am-cert-v">View</span></button></li><li><button type="button" class="am-cert" data-cert-src="assets/certs/aspiregate-ui-ux-2019.jpg" data-cert-name="UI UX Designing" data-cert-meta="Aspire Gate, Bengaluru · 2019"><span class="am-cert-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 8h10M7 11h6"/><circle cx="16" cy="14.5" r="2.5"/><path d="M14.6 16.6 14 21l2-1 2 1-.6-4.4"/></svg></span><span class="am-cert-t"><b>UI UX Designing</b><span>Aspire Gate, Bengaluru · 2019</span></span><span class="am-cert-v">View</span></button></li></ul></div>
 <div class="am-acts"><a class="am-cta" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download CV</a><button class="am-b" type="button" data-am-copy="abhisheklokesh.uiux159@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span>Copy email</span></button><a class="am-b" href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener">LinkedIn</a></div>
 </aside>
@@ -937,9 +939,9 @@ if(location.hash==='#about')addEventListener('load',function(){go(false)})})();<
 <h2 class="am-h" id="amTitle">I start with research and end with products people can actually use</h2>
 <p class="am-in">I've spent 7 years designing for insurance technology, e-commerce and AI agent products. Most of my work is complex business software that people use all day. I care about the small details that let them get on with their job.</p>
 <p class="am-sk">The path so far</p>
-<ol class="am-path"><li class="" style="--i:4"><span class="am-y">2023<small>to 2026</small></span><div><b>Staff UX Designer, Concirrus</b><span class="am-d">Jul 2023 to Sep 2026</span><p>I grew the design team from one to four. We designed AI-enabled tools for underwriters, the people who decide what to insure and at what price, across four types of insurance, including marine, aviation and construction.</p></div></li><li class="" style="--i:3"><span class="am-y">2020<small>to 2023</small></span><div><b>UX Designer, CoreValue Technologies</b><span class="am-d">Oct 2020 to Jun 2023</span><p>I owned design for four live products at once, across connected devices (IoT), insurance, e-commerce and web, with clients in India, the UK and the US.</p></div></li><li class="" style="--i:2"><span class="am-y">2019<small>to 2020</small></span><div><b>UI Designer, StoreKing</b><span class="am-d">May 2019 to Oct 2020</span><p>My first design role. Designed low-bandwidth, offline-first shopping screens for rural retailers on web and mobile.</p></div></li><li class="sw" style="--i:1"><span class="am-y">2018<small>to 2019</small></span><div><b>The switch</b><span class="am-d">Nov 2018 to May 2019</span><p>I trained in UX design at Aspire Gate, Bengaluru, and took on freelance projects to move into design full time.</p></div></li><li class="" style="--i:0"><span class="am-y">2017<small>to 2018</small></span><div><b>Talent Acquisition Executive, TalentXO (formerly CrewKarma)</b><span class="am-d">Sep 2017 to Nov 2018</span><p>I started in hiring, not design. It taught me to listen closely and keep many people moving in one direction.</p></div></li></ol>
+<ol class="am-path"><li class="" style="--i:4"><div><div class="am-row"><b>Staff UX Designer, Concirrus</b><span class="am-d">Jul 2023 to Sep 2026</span></div><p>I grew the design team from one to four. We designed AI-enabled tools for underwriters, the people who decide what to insure and at what price, across four types of insurance, including marine, aviation and construction.</p></div></li><li class="" style="--i:3"><div><div class="am-row"><b>UX Designer, CoreValue Technologies</b><span class="am-d">Oct 2020 to Jun 2023</span></div><p>I owned design for four live products at once, across connected devices (IoT), insurance, e-commerce and web, with clients in India, the UK and the US.</p></div></li><li class="" style="--i:2"><div><div class="am-row"><b>UI Designer, StoreKing</b><span class="am-d">May 2019 to Oct 2020</span></div><p>My first design role. Designed low-bandwidth, offline-first shopping screens for rural retailers on web and mobile.</p></div></li><li class="sw" style="--i:1"><div><div class="am-row"><b>The switch</b><span class="am-d">Nov 2018 to May 2019</span></div><p>I trained in UX design at Aspire Gate, Bengaluru, and took on freelance projects to move into design full time.</p></div></li><li class="" style="--i:0"><div><div class="am-row"><b>Talent Acquisition Executive, TalentXO</b><span class="am-d">Sep 2017 to Nov 2018</span></div><p>TalentXO was formerly CrewKarma. I started in hiring, not design. It taught me to listen closely and keep many people moving in one direction.</p></div></li></ol>
 <p class="am-sk am-sk2">Freelance projects</p>
-<ul class="am-fl"><li><div><b>NutBite</b><span class="am-d">Jul to Sep 2026</span><p>I designed and built NutBite, an app that helps a family-run cashew business record sales and track stock.</p></div></li></ul>
+<ul class="am-fl"><li><div><div class="am-row"><b>NutBite (freelance)</b><span class="am-d">Jul to Sep 2026</span></div><p>I designed and built NutBite, an app that helps a family-run cashew business record sales and track stock.</p></div></li></ul>
 <p class="am-sk">What my work at Concirrus changed</p>
 <div class="am-nums"><p><b>92%</b>less time to give a quote</p><p><b>2.5×</b>more insurance requests handled each day</p><p><b>4</b>types of insurance on one shared workflow</p><p><b>1 → 4</b>designers, as the team grew</p></div>
 <p class="am-sk">How I work</p>
