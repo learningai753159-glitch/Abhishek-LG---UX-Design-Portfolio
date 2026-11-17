@@ -258,63 +258,45 @@ a{color:inherit}
 @media(max-width:860px){.pr{grid-template-columns:1fr}.pr-im{order:-1}}
 #about.sc{padding-top:clamp(88px,11vw,140px)}
 
-/* problems: compact cards + smooth dark transition */
-body{transition:background-color .7s ease}
-body.dz{background:#111}
-.pn{margin-top:0;padding:clamp(88px,11vw,140px) 0 0;background:transparent;color:var(--ink);transition:color .7s ease}
-.pn .h2,.pn .ey{transition:color .7s ease}
+/* problems: soft grey band with white cards */
+.pn{margin-top:clamp(56px,7vw,96px);padding:clamp(96px,11vw,140px) 0 clamp(96px,11vw,140px);background:linear-gradient(180deg,#fff 0,#F4F4F2 140px,#F4F4F2 calc(100% - 140px),#fff 100%)}
+.pc3s{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pc3{display:flex;flex-direction:column;border-radius:26px;overflow:hidden;background:#fff;text-decoration:none;color:var(--ink);box-shadow:0 1px 0 rgba(0,0,0,.04),0 20px 40px -32px rgba(0,0,0,.25);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.pc3:hover{transform:translateY(-4px);box-shadow:0 1px 0 rgba(0,0,0,.04),0 34px 60px -36px rgba(0,0,0,.35)}
+.pc3-tx{padding:28px 28px 24px;display:flex;flex-direction:column;flex:1}
+.pc3-k{margin:0;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;color:var(--mu)}
+.pc3-k span{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.pc3-k em{font-style:normal;padding:6px 10px;border-radius:999px;background:#F2F2F0;color:#55524C;font-size:12px}
+.pc3 h3{margin:22px 0 0;font:600 26px/1.15 var(--f);letter-spacing:-.025em}
+.pc3-q{margin:16px 0 0;font-size:16px;line-height:1.55;color:var(--ink2)}
+.pc3-q span{display:block;margin-bottom:8px;font:500 11.5px/1 var(--f);letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.pc3-go{margin-top:auto;padding-top:22px;display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--f)}
+.pc3-go svg{width:16px;height:16px;transition:transform .25s}
+.pc3:hover .pc3-go svg{transform:translateX(4px)}
+.pc3-ph{margin:0 28px;height:190px;border-radius:16px 16px 0 0;background:#F6F6F4;border:1.5px dashed #DCDCD8;border-bottom:0;display:grid;place-items:center}
+.pc3-ph span{font-size:13px;color:#A3A3A0;letter-spacing:.04em}
+@media(max-width:900px){.pc3s{grid-template-columns:1fr}}
+#about.sc{padding-top:clamp(40px,5vw,72px)}
+/* light band: undo leftover dark rules */
+.pn{color:var(--ink)}
 .pn .h2{color:var(--ink)}
-body.dz .pn .h2{color:#fff}
-body.dz .pn .ey{color:#8E8E8E}
-.lk-w{transition:color .7s,border-color .7s}
-body.dz .lk-w{color:#fff;border-color:rgba(255,255,255,.35)}
-.pc2s{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.pc2{display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:#1A1A1A;border:1px solid rgba(255,255,255,.06);text-decoration:none;color:#fff;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
-.pc2:hover{transform:translateY(-4px);box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
-.pc2-im{margin:0;aspect-ratio:16/10;overflow:hidden;background:#222}
-.pc2-im img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
-.pc2:hover .pc2-im img{transform:scale(1.04)}
-.pc2:nth-child(2) .pc2-im{background:#F4F6FB}
-.pc2:nth-child(2) .pc2-im img{object-fit:contain}
-.pc2-tx{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
-.pc2-k{margin:0;display:flex;gap:10px;font-size:13px;color:#9A9A9A}
-.pc2-k span{color:#fff;font-variant-numeric:tabular-nums}
-.pc2 h3{margin:10px 0 0;font:600 22px/1.2 var(--f);letter-spacing:-.02em}
-.pc2-q{margin:14px 0 0;font-size:15.5px;line-height:1.55;color:#C4C4C4}
-.pc2-q span{display:block;margin-bottom:6px;font:500 11.5px/1 var(--f);letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
-.pc2-go{margin-top:auto;padding-top:20px;display:inline-flex;align-items:center;gap:8px;font:600 14.5px/1 var(--f)}
-.pc2-go svg{width:15px;height:15px;transition:transform .25s}
-.pc2:hover .pc2-go svg{transform:translateX(4px)}
-@media(max-width:900px){.pc2s{grid-template-columns:1fr}}
-/* nav follows the dark zone */
-.nv{transition:background .7s,box-shadow .25s}
-body.dz .nv.on{background:rgba(17,17,17,.85);box-shadow:0 1px 0 rgba(255,255,255,.08)}
-body.dz .nv-b,body.dz .nv-l a{color:#EDEDED}
-body.dz .nv .bt-d{background:#fff;color:#111}
-.nv-b,.nv-l a{transition:color .7s}
-main>section,main>.ct{transition:opacity .7s ease}
-body.dz main>section:not(#side){opacity:.12}
-body.dz .ct{opacity:.12}
+.pn .ey{color:var(--mu)}
+.pn .lk-w{color:var(--ink)}
+body,body.dz{background:#fff}
 
-body{background:#111}
+body{background:#F5F5F3}
 .pj-h{padding:140px 0 48px}
-.pj-h .h2{color:#fff}
-.pj-h .ey{color:#8E8E8E}
-.pj-h .hd-p{color:#A9A9A9}
 .pj-b{padding-bottom:120px}
-.nv.on{background:rgba(17,17,17,.85);box-shadow:0 1px 0 rgba(255,255,255,.08)}
-.nv-b,.nv-l a{color:#EDEDED}
-.nv .bt-d{background:#fff;color:#111}
-.ft-b{border-color:rgba(255,255,255,.1);color:#8E8E8E}
+.nv.on{background:rgba(245,245,243,.88)}
 </style>
 </head>
 <body id="top">
-<header class="nv" id="nav"><div class="nv-in"><a class="nv-b" href="index.html">Abhishek LG</a><nav class="nv-l" aria-label="Main"><a href="index.html#work">Work</a><a href="index.html#about">About</a><a href="index.html#writing">Writing</a><a href="index.html#contact">Contact</a></nav><a class="bt bt-d bt-s" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Resume</a></div></header>
+<header class="nv" id="nav"><div class="nv-in"><a class="nv-b" href="index-platform-v2.html">Abhishek LG</a><nav class="nv-l" aria-label="Main"><a href="index-platform-v2.html#work">Work</a><a href="index-platform-v2.html#about">About</a><a href="index-platform-v2.html#writing">Writing</a><a href="index-platform-v2.html#contact">Contact</a></nav><a class="bt bt-d bt-s" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Resume</a></div></header>
 <main id="main">
 <section class="w pj-h"><p class="ey">Beyond the platform</p><h1 class="h2">Problems I noticed</h1></section>
-<section class="w pj-b"><div class="pc2s"><a class="pc2" href="nutbite.html"><figure class="pc2-im"><img src="assets/nutbite-dashboard.webp" alt="NutBite store dashboard" loading="lazy"></figure><div class="pc2-tx"><p class="pc2-k"><span>01</span>Shipped, in daily use</p><h3>NutBite</h3><p class="pc2-q"><span>The problem</span>Every sale was written in a notebook, photographed and sent on WhatsApp.</p><span class="pc2-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a><a class="pc2" href="ai-audit.html"><figure class="pc2-im"><img src="assets/ai-audit-diagram.webp" alt="AI-assisted UX audit diagram" loading="lazy"></figure><div class="pc2-tx"><p class="pc2-k"><span>02</span>IRCTC</p><h3>AI-assisted UX audit</h3><p class="pc2-q"><span>The problem</span>A manual audit took me about a week, and most of that time went on sorting.</p><span class="pc2-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a><a class="pc2" href="spendly.html"><figure class="pc2-im"><img src="assets/spendly-screens.webp" alt="Spendly app screens" loading="lazy"></figure><div class="pc2-tx"><p class="pc2-k"><span>03</span>25 users, 12 to 16 daily</p><h3>Spendly</h3><p class="pc2-q"><span>The problem</span>Open laptop. Open Excel. Enter, label, calculate. Missed entries. Forgot amounts.</p><span class="pc2-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a></div></section>
+<section class="w pj-b"><div class="pc3s"><a class="pc3" href="nutbite.html"><div class="pc3-tx"><p class="pc3-k"><span>01</span><em>Shipped, in daily use</em></p><h3>NutBite</h3><p class="pc3-q"><span>The problem</span>Every sale was written in a notebook, photographed and sent on WhatsApp.</p><span class="pc3-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="pc3-ph" aria-hidden="true"><span>Image</span></div></a><a class="pc3" href="ai-audit.html"><div class="pc3-tx"><p class="pc3-k"><span>02</span><em>IRCTC</em></p><h3>AI-assisted UX audit</h3><p class="pc3-q"><span>The problem</span>A manual audit took me about a week, and most of that time went on sorting.</p><span class="pc3-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="pc3-ph" aria-hidden="true"><span>Image</span></div></a><a class="pc3" href="spendly.html"><div class="pc3-tx"><p class="pc3-k"><span>03</span><em>25 users, 12 to 16 daily</em></p><h3>Spendly</h3><p class="pc3-q"><span>The problem</span>Open laptop. Open Excel. Enter, label, calculate. Missed entries. Forgot amounts.</p><span class="pc3-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="pc3-ph" aria-hidden="true"><span>Image</span></div></a></div></section>
 </main>
-<footer class="ft" style="margin-top:0"><div class="w ft-b"><a href="index.html">← Back to home</a><span>© Abhishek LG, 2026</span></div></footer>
+<footer class="ft" style="margin-top:0"><div class="w ft-b"><a href="index-platform-v2.html">← Back to home</a><span>© Abhishek LG, 2026</span></div></footer>
 <script>(function(){var n=document.getElementById('nav');function s(){n.classList.toggle('on',scrollY>8)}addEventListener('scroll',s,{passive:true});s()})();</script>
 </body>
 </html>
