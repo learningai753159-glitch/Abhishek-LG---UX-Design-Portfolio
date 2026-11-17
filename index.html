@@ -267,6 +267,44 @@ a{color:inherit}
 @media(max-width:860px){.pr{grid-template-columns:1fr}.pr-im{order:-1}}
 #about.sc{padding-top:clamp(88px,11vw,140px)}
 
+/* problems: compact cards + smooth dark transition */
+body{transition:background-color .7s ease}
+body.dz{background:#111}
+.pn{margin-top:0;padding:clamp(88px,11vw,140px) 0 0;background:transparent;color:var(--ink);transition:color .7s ease}
+.pn .h2,.pn .ey{transition:color .7s ease}
+.pn .h2{color:var(--ink)}
+body.dz .pn .h2{color:#fff}
+body.dz .pn .ey{color:#8E8E8E}
+.lk-w{transition:color .7s,border-color .7s}
+body.dz .lk-w{color:#fff;border-color:rgba(255,255,255,.35)}
+.pc2s{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pc2{display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:#1A1A1A;border:1px solid rgba(255,255,255,.06);text-decoration:none;color:#fff;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.pc2:hover{transform:translateY(-4px);box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.pc2-im{margin:0;aspect-ratio:16/10;overflow:hidden;background:#222}
+.pc2-im img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.pc2:hover .pc2-im img{transform:scale(1.04)}
+.pc2:nth-child(2) .pc2-im{background:#F4F6FB}
+.pc2:nth-child(2) .pc2-im img{object-fit:contain}
+.pc2-tx{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.pc2-k{margin:0;display:flex;gap:10px;font-size:13px;color:#9A9A9A}
+.pc2-k span{color:#fff;font-variant-numeric:tabular-nums}
+.pc2 h3{margin:10px 0 0;font:600 22px/1.2 var(--f);letter-spacing:-.02em}
+.pc2-q{margin:14px 0 0;font-size:15.5px;line-height:1.55;color:#C4C4C4}
+.pc2-q span{display:block;margin-bottom:6px;font:500 11.5px/1 var(--f);letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.pc2-go{margin-top:auto;padding-top:20px;display:inline-flex;align-items:center;gap:8px;font:600 14.5px/1 var(--f)}
+.pc2-go svg{width:15px;height:15px;transition:transform .25s}
+.pc2:hover .pc2-go svg{transform:translateX(4px)}
+@media(max-width:900px){.pc2s{grid-template-columns:1fr}}
+/* nav follows the dark zone */
+.nv{transition:background .7s,box-shadow .25s}
+body.dz .nv.on{background:rgba(17,17,17,.85);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+body.dz .nv-b,body.dz .nv-l a{color:#EDEDED}
+body.dz .nv .bt-d{background:#fff;color:#111}
+.nv-b,.nv-l a{transition:color .7s}
+main>section,main>.ct{transition:opacity .7s ease}
+body.dz main>section:not(#side){opacity:.12}
+body.dz .ct{opacity:.12}
+
 </style>
 </head>
 <body id="top">
@@ -314,8 +352,8 @@ a{color:inherit}
 </div>
 </div></div></section>
 <section class="pn" id="side" data-screen-label="Problems I noticed"><div class="w">
-<div class="hd rv"><p class="ey">Beyond the platform</p><h2 class="h2">Problems I noticed</h2></div>
-<div class="prs"><a class="pr rv" href="nutbite.html"><div class="pr-tx"><p class="pr-k"><span>01</span>NutBite<em>Shipped, in daily use</em></p><p class="pr-q"><span class="pr-l">The problem</span>Every sale was written in a notebook, photographed and sent on WhatsApp.</p><p class="pr-d"><span class="pr-l">What I did</span>I designed and built an app that records each sale, updates stock automatically, and gives the owners a live view of their store.</p><span class="pr-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><figure class="pr-im"><img src="assets/nutbite-dashboard.webp" alt="NutBite store dashboard" loading="lazy"></figure></a><a class="pr rv" href="ai-audit.html"><div class="pr-tx"><p class="pr-k"><span>02</span>AI-assisted UX audit<em>IRCTC</em></p><p class="pr-q"><span class="pr-l">The problem</span>A manual audit took me about a week, and most of that time went on sorting.</p><p class="pr-d"><span class="pr-l">What I did</span>I set up AI to do the slow sorting, so I could spend my time on the findings and the redesign.</p><span class="pr-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><figure class="pr-im"><img src="assets/ai-audit-diagram.webp" alt="AI-assisted UX audit diagram" loading="lazy"></figure></a><a class="pr rv" href="spendly.html"><div class="pr-tx"><p class="pr-k"><span>03</span>Spendly<em>25 users, 12 to 16 daily</em></p><p class="pr-q"><span class="pr-l">The problem</span>Open laptop. Open Excel. Enter, label, calculate. Missed entries. Forgot amounts.</p><p class="pr-d"><span class="pr-l">What I did</span>I replaced budget tracking with one honest question about each spend, and built and shipped it on my own.</p><span class="pr-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><figure class="pr-im"><img src="assets/spendly-screens.webp" alt="Spendly app screens" loading="lazy"></figure></a></div>
+<div class="hd hd-r rv"><div><p class="ey">Beyond the platform</p><h2 class="h2">Problems I noticed</h2></div><a class="lk lk-w" href="projects.html">View all<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<div class="pc2s"><a class="pc2 rv" href="nutbite.html"><figure class="pc2-im"><img src="assets/nutbite-dashboard.webp" alt="NutBite store dashboard" loading="lazy"></figure><div class="pc2-tx"><p class="pc2-k"><span>01</span>Shipped, in daily use</p><h3>NutBite</h3><p class="pc2-q"><span>The problem</span>Every sale was written in a notebook, photographed and sent on WhatsApp.</p><span class="pc2-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a><a class="pc2 rv" href="ai-audit.html"><figure class="pc2-im"><img src="assets/ai-audit-diagram.webp" alt="AI-assisted UX audit diagram" loading="lazy"></figure><div class="pc2-tx"><p class="pc2-k"><span>02</span>IRCTC</p><h3>AI-assisted UX audit</h3><p class="pc2-q"><span>The problem</span>A manual audit took me about a week, and most of that time went on sorting.</p><span class="pc2-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a><a class="pc2 rv" href="spendly.html"><figure class="pc2-im"><img src="assets/spendly-screens.webp" alt="Spendly app screens" loading="lazy"></figure><div class="pc2-tx"><p class="pc2-k"><span>03</span>25 users, 12 to 16 daily</p><h3>Spendly</h3><p class="pc2-q"><span>The problem</span>Open laptop. Open Excel. Enter, label, calculate. Missed entries. Forgot amounts.</p><span class="pc2-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a></div>
 </div></section>
 <section class="sc" id="about" data-screen-label="About"><div class="w ab">
 <div class="ab-l rv"><p class="ey">About</p><h2 class="h2">To me, a good product feels like nothing got in your way</h2><p class="hd-p">From underwriting tools for insurance teams in the UK to a simple store app for a family business in Karnataka. Different users, same goal: make the hard part feel easy.</p></div>
@@ -342,6 +380,7 @@ var nav=document.getElementById('nav');function sc(){nav.classList.toggle('on',s
 var els=[].slice.call(document.querySelectorAll('.rv'));
 if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(e){e.classList.add('in')})}
 else{var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});els.forEach(function(e){io.observe(e)});setTimeout(function(){els.forEach(function(e){if(e.getBoundingClientRect().top<innerHeight)e.classList.add('in')})},60)}
+var pn=document.getElementById('side');if(pn&&'IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(x){document.body.classList.toggle('dz',x.isIntersecting)})},{rootMargin:'-40% 0px -40% 0px'}).observe(pn)}
 var wm=document.getElementById('wlMore'),wl=document.getElementById('wl');if(wm)wm.addEventListener('click',function(){var o=wl.classList.toggle('all');wm.setAttribute('aria-expanded',o);wm.textContent=o?'Show fewer':'See all articles'});
 document.querySelectorAll('[data-copy]').forEach(function(b){var s=b.querySelector('span');b.addEventListener('click',function(){if(navigator.clipboard)navigator.clipboard.writeText(b.dataset.copy);s.textContent='Copied';setTimeout(function(){s.textContent='Copy email'},1600)})});
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href="#top"]');if(!a)return;e.preventDefault();scrollTo({top:0,behavior:'smooth'})});
