@@ -14,232 +14,157 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://abhishek-lg-ux-design-portfolio.vercel.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F6F6F3;--sf:#FFFFFF;--ink:#17181C;--ink2:#3B3E46;--mu:#6A6E78;--ln:#E3E3DE;--ac:#2D5BE3;--acs:#EAF0FE;--cr:#FBF4E3;--cr2:#F3E7C8;
---f:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--sr:'Instrument Serif',Georgia,serif;--mo:'IBM Plex Mono',ui-monospace,Menlo,monospace}
+:root{--ink:#111111;--ink2:#3A3A3A;--mu:#6E6E6E;--ln:#EAEAEA;--sf:#F6F6F6;--f:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--f);-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);font:400 16px/1.6 var(--f);-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 a{color:inherit}
 .skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:8px 12px;border-radius:8px;z-index:99}.skip:focus{left:8px}
-:focus-visible{outline:2px solid var(--ac);outline-offset:3px;border-radius:6px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:6px}
 .w{width:min(1160px,calc(100% - 40px));margin:0 auto}
-em{font-family:var(--sr);font-style:italic;font-weight:400;letter-spacing:0}
 
-/* reveal */
-.rv{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 
-/* buttons */
-.bt{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 20px;border-radius:999px;font:500 15px/1 var(--f);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,transform .2s,color .2s;white-space:nowrap}
-.bt svg{width:16px;height:16px;flex:none}
+.bt{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;font:500 15px/1 var(--f);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,transform .2s;white-space:nowrap}
 .bt-d{background:var(--ink);color:#fff}.bt-d:hover{background:#000;transform:translateY(-1px)}
-.bt-o{border-color:#CFCFC9;background:transparent;color:var(--ink)}.bt-o:hover{border-color:var(--ink)}
-.bt-l{height:40px;padding:0 16px;background:#EBEBE6;color:var(--ink);font-size:14px}.bt-l:hover{background:#E1E1DB}
-.bt-s{height:38px;padding:0 15px;font-size:14px}
-.bt-w{background:#fff;color:var(--ac);font-weight:600}.bt-w:hover{transform:translateY(-1px)}
-.bt-g{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}.bt-g:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.bt-o{background:#fff;color:var(--ink);border-color:#D6D6D6}.bt-o:hover{border-color:var(--ink)}
+.bt-s{height:38px;padding:0 16px;font-size:14px}
+.lk{display:inline-flex;align-items:center;gap:8px;padding:0 0 3px;border:0;border-bottom:1px solid #CFCFCF;background:none;font:500 15px/1.3 var(--f);color:var(--ink);text-decoration:none;cursor:pointer;transition:border-color .2s}
+.lk:hover{border-color:var(--ink)}
+.lk svg{width:15px;height:15px}
 
 /* nav */
-.nv{position:sticky;top:0;z-index:50;transition:background .25s,box-shadow .25s}
-.nv.on{background:rgba(246,246,243,.86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);box-shadow:0 1px 0 var(--ln)}
+.nv{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .25s,box-shadow .25s}
+.nv.on{background:rgba(255,255,255,.88);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);box-shadow:0 1px 0 var(--ln)}
 .nv-in{width:min(1160px,calc(100% - 40px));margin:0 auto;height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.nv-b{font:600 17px/1 var(--f);text-decoration:none;letter-spacing:-.01em}
-.nv-l{display:flex;gap:6px}
-.nv-l a{padding:8px 12px;border-radius:999px;font:500 14.5px/1 var(--f);color:var(--ink2);text-decoration:none}
-.nv-l a:hover{background:#EBEBE6;color:var(--ink)}
+.nv-b{font:600 16.5px/1 var(--f);text-decoration:none;letter-spacing:-.01em}
+.nv-l{display:flex;gap:4px}
+.nv-l a{padding:8px 13px;border-radius:999px;font:500 14.5px/1 var(--f);color:var(--mu);text-decoration:none;transition:color .2s,background .2s}
+.nv-l a:hover{color:var(--ink);background:var(--sf)}
 @media(max-width:720px){.nv-l{display:none}}
 
-/* eyebrow + headings */
-.ey{margin:0 0 14px;display:flex;align-items:center;gap:10px;font:500 12px/1 var(--mo);letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
-.ey::before{content:"";width:18px;height:1px;background:currentColor}
-.h2{margin:0;font:600 clamp(34px,4.6vw,58px)/1.02 var(--f);letter-spacing:-.035em}
-.h2 em{font-size:1.08em}
-.h2-s{font-size:clamp(28px,3.4vw,44px);line-height:1.1}
-.hd{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px 56px;align-items:end;padding-bottom:clamp(24px,3vw,36px);border-bottom:1px solid var(--ln)}
-.hd-p{margin:0 0 14px;font-size:clamp(16px,1.35vw,18px);line-height:1.6;color:var(--mu)}
-.hd-p:last-child{margin-bottom:0}
-@media(max-width:820px){.hd{grid-template-columns:1fr;align-items:start}}
-
-/* sections */
-.sc{padding:clamp(72px,10vw,128px) 0}
-.sc-t{background:#EFEFEB}
-
-/* hero */
-.hm{position:relative;padding:clamp(40px,7vw,96px) 0 clamp(56px,8vw,104px);overflow:hidden}
-.hm::before{content:"";position:absolute;inset:-40px 0 0;z-index:-1;background-image:radial-gradient(rgba(23,24,28,.12) 1px,transparent 1.3px);background-size:22px 22px;-webkit-mask-image:linear-gradient(to bottom,#000 30%,transparent 95%);mask-image:linear-gradient(to bottom,#000 30%,transparent 95%)}
-.hm-g{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center}
-.hm-st{margin:0 0 26px;display:inline-flex;align-items:center;gap:9px;padding:7px 14px 7px 11px;border-radius:999px;background:var(--sf);border:1px solid var(--ln);font:500 13.5px/1.2 var(--f);color:var(--ink2)}
-.dt{width:8px;height:8px;border-radius:50%;background:#2FA36B;box-shadow:0 0 0 4px rgba(47,163,107,.15);flex:none}
-.hm-who{margin:0;display:flex;flex-wrap:wrap;gap:4px 10px;font:500 12.5px/1.4 var(--mo);letter-spacing:.12em;text-transform:uppercase;color:var(--mu)}
-.hm-who span{color:var(--ac)}
-.hm-h{margin:18px 0 0;font:600 clamp(42px,6.2vw,84px)/1.0 var(--f);letter-spacing:-.04em}
+/* hero: full screen */
+.hm{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:96px 0 0;overflow:hidden}
+.hm::before{content:"";position:absolute;inset:0;z-index:-1;background-image:radial-gradient(#D9D9D9 1px,transparent 1.2px);background-size:24px 24px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 45%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 45%,#000 20%,transparent 75%)}
+.hm-c{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.hm-k{margin:0;font:500 13px/1 var(--f);letter-spacing:.16em;text-transform:uppercase;color:var(--mu)}
+.hm-h{margin:26px 0 0;font:600 clamp(46px,8.4vw,120px)/.98 var(--f);letter-spacing:-.045em;max-width:12ch}
 .hm-m{position:relative;display:inline-block;white-space:nowrap}
-.hm-m em{font-size:1.1em;color:var(--ac)}
-.hm-u{position:absolute;left:0;right:0;bottom:-.08em;width:100%;height:.22em;overflow:visible}
-.hm-u path{fill:none;stroke:var(--ac);stroke-width:3;stroke-linecap:round;stroke-dasharray:160;stroke-dashoffset:160;transition:stroke-dashoffset 1.1s .5s ease}
+.hm-u{position:absolute;left:-1%;right:-1%;bottom:-.24em;width:102%;height:.2em;overflow:visible}
+.hm-u path{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-dasharray:160;stroke-dashoffset:160;transition:stroke-dashoffset 1.2s .6s ease}
 .hm-h.in .hm-u path{stroke-dashoffset:0}
-.hm-s{margin:24px 0 0;max-width:36ch;font-size:clamp(17px,1.5vw,20px);line-height:1.55;color:var(--mu)}
-.hm-cta{margin-top:32px;display:flex;flex-wrap:wrap;gap:10px}
-.hm-bf{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
-.hm-bf>span{font:500 11.5px/1 var(--mo);letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
-.hm-bf ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
-.hm-bf li{padding:6px 11px;border-radius:999px;background:var(--sf);border:1px solid var(--ln);font:500 13px/1.2 var(--f);color:var(--ink2)}
-.hm-vis{position:relative;justify-self:end;width:100%;max-width:420px}
-.hm-vis::before{content:"";position:absolute;inset:8% -6% -6% 10%;border-radius:32px;background:var(--acs);transform:rotate(3deg)}
-.hm-pt{position:relative;margin:0;border-radius:28px;overflow:hidden;background:var(--cr);border:1px solid var(--ln);box-shadow:0 30px 60px -36px rgba(23,24,28,.35);aspect-ratio:1/1}
-.hm-pt img{width:100%;height:100%;object-fit:cover}
-.hm-cap{position:absolute;left:18px;bottom:18px;margin:0;display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.92);font:500 12px/1 var(--mo);letter-spacing:.06em;color:var(--ink2)}
-@media(max-width:880px){.hm-g{grid-template-columns:1fr}.hm-vis{justify-self:start;max-width:280px;margin-top:8px}.hm-h{font-size:clamp(40px,11vw,60px)}.hm-m{white-space:normal}}
+.hm-s{margin:34px auto 0;max-width:42ch;font-size:clamp(17px,1.6vw,21px);line-height:1.55;color:var(--mu)}
+.hm-cta{margin-top:36px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.hm-b{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;padding:0 0 28px;font:500 13.5px/1 var(--f);color:var(--mu)}
+.hm-st{display:inline-flex;align-items:center;gap:9px}
+.dt{width:7px;height:7px;border-radius:50%;background:#22A06B;box-shadow:0 0 0 4px rgba(34,160,107,.14)}
+.hm-loc{justify-self:end}
+.hm-sc{display:flex;flex-direction:column;align-items:center;gap:10px;text-decoration:none;color:var(--mu);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.hm-sc i{position:relative;width:1px;height:44px;background:#E2E2E2;overflow:hidden}
+.hm-sc i::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--ink);animation:sc 2s cubic-bezier(.6,0,.4,1) infinite}
+@keyframes sc{to{top:100%}}
+@media(prefers-reduced-motion:reduce){.hm-sc i::after{animation:none;top:0}}
+@media(max-width:640px){.hm-h{font-size:clamp(42px,13vw,64px)}.hm-m{white-space:normal}.hm-b{grid-template-columns:1fr 1fr}.hm-sc{display:none}}
 
-/* platform facts */
-.pf{margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--ln)}
-.pf div{padding:18px 20px 18px 0}
-.pf div+div{padding-left:20px;border-left:1px solid var(--ln)}
-.pf dt{font:500 11.5px/1 var(--mo);letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
-.pf dd{margin:8px 0 0;font-size:15px;line-height:1.45;color:var(--ink2)}
-@media(max-width:820px){.pf{grid-template-columns:1fr 1fr}.pf div:nth-child(3){padding-left:0;border-left:0}.pf div:nth-child(n+3){border-top:1px solid var(--ln)}}
+/* section head */
+.sc{padding:clamp(88px,11vw,140px) 0 0}
+.ey{margin:0 0 14px;font:500 13px/1 var(--f);letter-spacing:.16em;text-transform:uppercase;color:var(--mu)}
+.h2{margin:0;font:600 clamp(32px,4.2vw,52px)/1.06 var(--f);letter-spacing:-.035em;max-width:20ch}
+.hd{margin-bottom:clamp(32px,4vw,48px)}
+.hd-p{margin:14px 0 0;max-width:56ch;font-size:clamp(16px,1.3vw,18px);line-height:1.6;color:var(--mu)}
+.hd-r{display:flex;justify-content:space-between;align-items:flex-end;gap:16px 32px;flex-wrap:wrap}
 
-/* case cards */
-.cs{margin-top:clamp(28px,3.4vw,40px);display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.cc{position:relative;display:flex;flex-direction:column;border-radius:28px;overflow:hidden;text-decoration:none;color:var(--ink);border:1px solid var(--ln);background:var(--sf);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
-.cc:hover{transform:translateY(-4px);box-shadow:0 28px 50px -34px rgba(23,24,28,.4)}
-.cc-tx{padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;flex:1}
-.cc-n{margin:0;display:flex;align-items:center;gap:12px;font:500 12.5px/1 var(--mo);letter-spacing:.12em;text-transform:uppercase;color:var(--mu)}
-.cc-n span::before{content:"";display:inline-block;width:18px;height:1px;background:currentColor;margin-right:12px;vertical-align:middle}
-.cc-tg{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
-.cc-tg li{padding:5px 9px;border:1px solid currentColor;border-radius:6px;font:500 11px/1 var(--mo);letter-spacing:.1em;text-transform:uppercase;opacity:.75}
-.cc h3{margin:22px 0 0;font:600 clamp(26px,2.7vw,36px)/1.08 var(--f);letter-spacing:-.03em;max-width:18ch}
-.cc-p{margin:12px 0 0;font-size:16px;line-height:1.55;color:var(--mu);max-width:46ch}
-.cc-st{margin-top:24px;display:flex;flex-wrap:wrap;gap:28px}
-.cc-st b{display:block;font:600 clamp(30px,3vw,40px)/1 var(--f);letter-spacing:-.03em}
-.cc-st span{display:block;margin-top:6px;font-size:14px;color:inherit;opacity:.75}
-.cc-st em{display:block;margin-top:4px;font:500 10.5px/1 var(--mo);letter-spacing:.12em;text-transform:uppercase;opacity:.55}
+/* case studies */
+.cs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cc{display:flex;flex-direction:column;border:1px solid var(--ln);border-radius:24px;overflow:hidden;background:#fff;text-decoration:none;color:var(--ink);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.cc:hover{transform:translateY(-4px);border-color:#DDD;box-shadow:0 30px 60px -40px rgba(0,0,0,.35)}
+.cc-tx{padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;flex:1}
+.cc-n{margin:0;display:flex;gap:12px;font:500 13px/1 var(--f);letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
+.cc-n span{color:var(--ink)}
+.cc h3{margin:20px 0 0;font:600 clamp(26px,2.6vw,34px)/1.1 var(--f);letter-spacing:-.03em;max-width:18ch}
+.cc-p{margin:10px 0 0;font-size:16.5px;color:var(--mu)}
+.cc-st{margin:26px 0 0;display:flex;align-items:baseline;gap:10px;font-size:15px;color:var(--mu)}
+.cc-st b{font:600 40px/1 var(--f);letter-spacing:-.03em;color:var(--ink)}
 .cc-go{margin-top:auto;padding-top:28px;display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--f)}
 .cc-go svg{width:16px;height:16px;transition:transform .25s}
 .cc:hover .cc-go svg{transform:translateX(4px)}
-.cc-im{margin:0;padding:0 clamp(24px,3vw,40px);}
-.cc-im img{width:100%;border-radius:14px 14px 0 0;box-shadow:0 -1px 0 rgba(0,0,0,.04),0 20px 40px -24px rgba(0,0,0,.4)}
-/* 01 featured dark */
-.cc-1{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);background:var(--ink);color:#fff;border-color:var(--ink)}
-.cc-1 .cc-n,.cc-1 .cc-p{color:#A9ADB7}
-.cc-1 .cc-im{padding:40px 0 0 0;align-self:end}
-.cc-1 .cc-im img{border-radius:14px 0 0 0}
-.cc-1 .cc-st b{color:#fff}
-.cc-1 .cc-go{color:#fff}
-/* 02 blue tint */
-.cc-2{background:var(--acs);border-color:#D9E2FB}
-.cc-2 .cc-n,.cc-2 .cc-tg li{color:#3550A8}
-.cc-map{position:relative;margin:0 clamp(24px,3vw,40px);height:190px;border-radius:14px 14px 0 0;background:#fff;border:1px solid #D9E2FB;border-bottom:0;display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;padding:14px 14px 0}
-.cc-map .z{border:1.5px dashed #9FB3EC;border-radius:16px 26px 12px 22px}
-.cc-map .z1{grid-row:1/3}.cc-map .z2{background:rgba(45,91,227,.12);border-style:solid;border-color:var(--ac)}.cc-map .z4{grid-column:2/4}
+.cc-im,.cc-map{margin:0 clamp(26px,3vw,40px);background:var(--sf);border-radius:16px 16px 0 0;padding:18px 18px 0;height:260px;overflow:hidden}
+.cc-im img{width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:10px 10px 0 0;box-shadow:0 10px 30px -18px rgba(0,0,0,.35)}
+.cc-1{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+.cc-1 .cc-im{margin:0;height:auto;min-height:380px;border-radius:0;padding:36px 0 0 36px;align-self:stretch}
+.cc-1 .cc-im img{border-radius:12px 0 0 0;height:100%}
+.cc-map{position:relative;display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;padding:18px 18px 0}
+.cc-map .z{border:1.5px dashed #C9C9C9;border-radius:16px 26px 12px 22px;background:#fff}
+.cc-map .z1{grid-row:1/3}.cc-map .z2{border-style:solid;border-color:var(--ink)}.cc-map .z4{grid-column:2/4}
 .cc-map .v{position:absolute;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:12px solid var(--ink)}
-.cc-map .v1{left:20%;top:38%}.cc-map .v2{left:52%;top:26%;border-bottom-color:var(--ac)}.cc-map .v3{left:70%;top:66%}.cc-map .v4{left:34%;top:72%;border-bottom-color:#E0533D}
-.cc-crumb{position:absolute;left:14px;bottom:12px;padding:6px 10px;border-radius:999px;background:var(--ink);color:#fff;font:500 11px/1 var(--mo);letter-spacing:.06em}
-/* 03 cream */
-.cc-3{background:var(--cr);border-color:var(--cr2)}
-.cc-3 .cc-n,.cc-3 .cc-tg li{color:#8A6A1F}
-@media(max-width:880px){.cs{grid-template-columns:1fr}.cc-1{grid-template-columns:1fr}.cc-1 .cc-im{padding:0 0 0 24px}}
+.cc-map .v1{left:20%;top:38%}.cc-map .v2{left:52%;top:28%}.cc-map .v3{left:70%;top:68%}.cc-map .v4{left:34%;top:74%;border-bottom-color:#9A9A9A}
+@media(max-width:880px){.cs{grid-template-columns:1fr}.cc-1{grid-template-columns:1fr}.cc-1 .cc-im{min-height:0;height:260px;margin:0 26px;padding:18px 18px 0;border-radius:16px 16px 0 0}.cc-1 .cc-im img{border-radius:10px 10px 0 0}}
 
 /* recommendations */
-.rqs{margin-top:clamp(32px,4vw,48px);display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
-.rq{grid-column:span 2;margin:0;padding:26px 26px 22px;background:#FFFDF8;border:1px solid #ECE6D6;border-radius:6px;box-shadow:0 18px 30px -24px rgba(60,50,20,.45);transform:rotate(var(--r));display:flex;flex-direction:column;transition:transform .3s}
+.rqs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+.rq{grid-column:span 2;margin:0;padding:26px 26px 22px;background:#FFFDF8;border:1px solid #EFEAE0;border-radius:6px;box-shadow:0 18px 30px -24px rgba(60,50,20,.4);transform:rotate(var(--r));display:flex;flex-direction:column;transition:transform .3s}
 .rq.in{transform:rotate(var(--r))}
 .rq:hover{transform:rotate(0) translateY(-3px)}
 .rq:nth-child(4){grid-column:2/span 2}
 .rq blockquote{margin:0;font-size:15.5px;line-height:1.62;color:var(--ink2)}
-.rq mark{background:linear-gradient(transparent 62%,rgba(45,91,227,.18) 0);color:var(--ink)}
-.rq figcaption{margin-top:auto;padding-top:20px;display:flex;align-items:center;gap:12px;border-top:1px dashed #E2DBC8;margin-top:22px}
-.rq img{width:40px;height:40px;border-radius:50%;object-fit:cover;filter:grayscale(.2)}
-.rq b{display:block;font:500 13.5px/1.2 var(--mo)}
-.rq small{display:block;margin-top:3px;font:400 12px/1.35 var(--mo);color:var(--mu)}
+.rq mark{background:linear-gradient(transparent 62%,rgba(0,0,0,.08) 0);color:var(--ink)}
+.rq figcaption{margin-top:22px;padding-top:18px;display:flex;align-items:center;gap:12px;border-top:1px dashed #E5DFD1}
+.rq img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.rq b{display:block;font:600 14px/1.25 var(--f)}
+.rq small{display:block;margin-top:3px;font-size:12.5px;line-height:1.35;color:var(--mu)}
 @media(max-width:980px){.rqs{grid-template-columns:1fr 1fr}.rq,.rq:nth-child(4){grid-column:auto}}
-@media(max-width:620px){.rqs{grid-template-columns:1fr}.rq{transform:none}.rq.in{transform:none}}
+@media(max-width:620px){.rqs{grid-template-columns:1fr}.rq,.rq.in{transform:none}}
 
-/* problems I noticed */
-.pj{margin-top:clamp(32px,4vw,48px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.pc{display:flex;flex-direction:column;padding:14px 14px 26px;border-radius:24px;background:var(--sf);border:1px solid var(--ln);text-decoration:none;color:var(--ink);transition:transform .3s,box-shadow .3s}
-.pc:hover{transform:translateY(-4px);box-shadow:0 24px 44px -32px rgba(23,24,28,.4)}
-.pc-im{margin:0;aspect-ratio:16/10;border-radius:14px;overflow:hidden;display:grid;place-items:center}
+/* problems */
+.pj{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pc{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto 1fr;align-items:start;gap:14px;padding:12px 12px 22px;border:1px solid var(--ln);border-radius:20px;text-decoration:none;color:var(--ink);transition:transform .3s,box-shadow .3s}
+.pc:hover{transform:translateY(-4px);box-shadow:0 26px 50px -38px rgba(0,0,0,.4)}
+.pc-im{grid-column:1/-1;margin:0 0 6px;aspect-ratio:16/10;border-radius:12px;overflow:hidden;background:var(--sf)}
 .pc-im img{width:100%;height:100%;object-fit:cover}
-.t-a{background:#F7EDE6}.t-b{background:var(--acs)}.t-c{background:var(--cr)}
-.pc-k{margin:20px 12px 0;font:500 11.5px/1.4 var(--mo);letter-spacing:.12em;text-transform:uppercase;color:var(--mu)}
-.pc-k span{margin:0 8px;color:var(--ac)}
-.pc h3{margin:10px 12px 0;font:600 24px/1.15 var(--f);letter-spacing:-.025em}
-.pc-p{margin:8px 12px 0;font-size:15.5px;line-height:1.55;color:var(--mu)}
-.pc-go{margin:auto 12px 0;padding-top:20px;display:inline-flex;align-items:center;gap:8px;font:600 14.5px/1 var(--f)}
-.pc-go svg{width:15px;height:15px;transition:transform .25s}
-.pc:hover .pc-go svg,.wf:hover .pc-go svg{transform:translateX(4px)}
+.pc-t{padding:0 8px}
+.pc h3{margin:0;font:600 21px/1.2 var(--f);letter-spacing:-.02em}
+.pc p{margin:6px 0 0;font-size:15px;line-height:1.5;color:var(--mu)}
+.pc>svg{align-self:end;width:18px;height:18px;margin:0 10px 4px 0;transition:transform .25s}
+.pc:hover>svg{transform:translateX(4px)}
 @media(max-width:900px){.pj{grid-template-columns:1fr}}
 
 /* about */
-.ab{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr);gap:clamp(28px,5vw,72px);align-items:center}
-.ab-ph{margin:0;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:var(--cr);transform:rotate(-1.5deg);box-shadow:0 30px 60px -40px rgba(23,24,28,.5)}
-.ab-ph img{width:100%;height:100%;object-fit:cover}
-.ab-tx .hd-p{margin-top:18px}
-.ab-f{margin:26px 0 0;display:grid;grid-template-columns:1fr 1.4fr;gap:20px;padding-top:22px;border-top:1px solid var(--ln)}
-.ab-f dt{font:500 11.5px/1 var(--mo);letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
-.ab-f dd{margin:8px 0 0;font-size:14.5px;line-height:1.5;color:var(--ink2)}
-.ab-f dd a{display:block;text-decoration:none;border-bottom:1px solid transparent;width:fit-content}
-.ab-f dd a:hover{border-color:currentColor}
-.pt{margin-top:clamp(56px,7vw,88px)}
-.pt-h{margin:0 0 8px;font:600 clamp(26px,2.8vw,34px)/1.1 var(--f);letter-spacing:-.03em}
-.pt ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
-.pt li{display:grid;grid-template-columns:1.1fr 1fr 1.9fr auto;gap:8px 28px;align-items:center;padding:20px 4px;border-bottom:1px solid var(--ln)}
-.pt-c{font:600 18px/1.3 var(--f);letter-spacing:-.01em}
-.pt-r{font-size:15px;color:var(--ink2)}
-.pt-t{grid-column:3;grid-row:1;font-size:14.5px;line-height:1.5;color:var(--mu)}
-.pt-d{grid-column:4;grid-row:1;justify-self:end;padding:6px 10px;border-radius:999px;background:#EBEBE6;font:500 12px/1 var(--mo);color:var(--ink2);white-space:nowrap}
-.pt li:first-child .pt-d{background:var(--acs);color:#3550A8}
-.pt-fl{margin:18px 0 0;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-size:14.5px;color:var(--mu)}
-.pt-fl span{font:500 11.5px/1 var(--mo);letter-spacing:.14em;text-transform:uppercase}
-.pt-fl b{color:var(--ink);font-weight:600}
-.pt-fl em{font:500 12px/1 var(--mo);font-style:normal;color:var(--ink2);padding:6px 10px;border-radius:999px;background:#EBEBE6}
-@media(max-width:860px){.ab{grid-template-columns:1fr}.ab-ph{max-width:260px}.ab-f{grid-template-columns:1fr}.pt li{grid-template-columns:1fr auto;gap:6px 16px}.pt-c{grid-column:1}.pt-r{grid-column:1}.pt-t{grid-column:1/-1;grid-row:auto}.pt-d{grid-column:2;grid-row:1}}
+.ab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:start}
+.pt{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.pt li{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:18px 0;border-bottom:1px solid var(--ln)}
+.pt b{font:600 17px/1.3 var(--f)}
+.pt span{grid-column:1;font-size:15px;color:var(--mu)}
+.pt em{grid-column:2;grid-row:1/3;align-self:center;font-style:normal;font-size:14px;color:var(--mu);white-space:nowrap}
+@media(max-width:860px){.ab{grid-template-columns:1fr}}
 
 /* writing */
-.wr{margin-top:clamp(32px,4vw,48px);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr);gap:clamp(20px,3vw,40px);align-items:start}
-.wf{display:flex;flex-direction:column;padding:14px 14px 26px;border-radius:24px;background:var(--sf);border:1px solid var(--ln);text-decoration:none;color:var(--ink);position:sticky;top:90px}
-.wf figure{margin:0;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--cr)}
-.wf figure img{width:100%;height:100%;object-fit:cover}
-.wf h3{margin:10px 12px 0;font:600 26px/1.15 var(--f);letter-spacing:-.025em}
 .wl{list-style:none;margin:0;padding:0;border-top:1px solid var(--ln)}
-.wl a{display:grid;grid-template-columns:40px minmax(0,1fr) 18px;gap:14px;align-items:center;padding:16px 6px;border-bottom:1px solid var(--ln);text-decoration:none;transition:background .2s,padding .2s}
-.wl a:hover{background:#E6E6E1;padding-left:12px}
-.wl-n{font:500 12.5px/1 var(--mo);color:var(--ac)}
-.wl b{display:block;font:500 16.5px/1.35 var(--f);letter-spacing:-.01em}
-.wl small{display:block;margin-top:3px;font-size:13.5px;color:var(--mu)}
-.wl svg{width:16px;height:16px;color:var(--mu)}
-@media(max-width:860px){.wr{grid-template-columns:1fr}.wf{position:static}}
+.wl a{display:grid;grid-template-columns:44px minmax(0,1fr) 18px;gap:12px;align-items:center;padding:22px 4px;border-bottom:1px solid var(--ln);text-decoration:none;transition:padding .25s}
+.wl a:hover{padding-left:12px}
+.wl-n{font-size:14px;color:var(--mu);font-variant-numeric:tabular-nums}
+.wl b{font:500 clamp(17px,1.7vw,21px)/1.35 var(--f);letter-spacing:-.015em}
+.wl svg{width:17px;height:17px;color:var(--mu);transition:transform .25s,color .25s}
+.wl a:hover svg{transform:translateX(4px);color:var(--ink)}
+.wl-x{display:none}
+.wl.all .wl-x{display:block}
+.wl-more{margin-top:24px}
 
 /* contact */
-.ct-w{padding:clamp(72px,10vw,120px) 0 0}
-.ct{position:relative;overflow:hidden;padding:clamp(32px,5vw,64px);border-radius:32px;background:var(--ac);color:#fff}
-.ct::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:1px solid rgba(255,255,255,.18);box-shadow:0 0 0 70px rgba(255,255,255,.04),0 0 0 140px rgba(255,255,255,.03);pointer-events:none}
-.ct .ey{color:#C9D6FF}
-.ct-h{margin:0;font:600 clamp(40px,6vw,76px)/1 var(--f);letter-spacing:-.04em}
-.ct-h em{font-size:1.08em}
-.ct-p{margin:16px 0 0;font-size:clamp(17px,1.5vw,20px);color:#DCE5FF}
-.ct-b{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px;position:relative;z-index:1}
-.ct-f{margin:clamp(36px,5vw,56px) 0 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.22);display:grid;grid-template-columns:1.4fr 1.2fr .8fr;gap:24px}
-.ct-f dt{font:500 11.5px/1 var(--mo);letter-spacing:.14em;text-transform:uppercase;color:#C9D6FF}
-.ct-f dd{margin:8px 0 0;font-size:15px;line-height:1.5}
-@media(max-width:760px){.ct-f{grid-template-columns:1fr}.bt-w{white-space:normal;height:auto;min-height:46px;padding:12px 18px}}
-
-/* footer */
-.ft{padding:clamp(48px,7vw,80px) 0 28px}
-.ft-n{margin:0;font:600 clamp(64px,14vw,190px)/.9 var(--f);letter-spacing:-.05em;color:var(--ink)}
-.ft-n em{color:var(--ac);font-size:1.06em}
-.ft-b{margin-top:28px;padding-top:18px;border-top:1px solid var(--ln);display:flex;justify-content:space-between;gap:16px;font-size:14px;color:var(--mu)}
+.ct{padding:clamp(110px,13vw,170px) 0 0;text-align:center}
+.ct-h{margin:0;font:600 clamp(44px,7vw,96px)/1 var(--f);letter-spacing:-.045em}
+.ct .hd-p{margin:18px auto 0}
+.ct-b{margin-top:34px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+@media(max-width:560px){.ct-b .bt-d{white-space:normal;height:auto;min-height:48px;padding:12px 20px}}
+.ft{margin-top:clamp(90px,11vw,140px)}
+.ft-b{display:flex;justify-content:space-between;gap:16px;padding:22px 0 28px;border-top:1px solid var(--ln);font-size:14px;color:var(--mu)}
 .ft-b a{text-decoration:none}.ft-b a:hover{color:var(--ink)}
-
-.cc-2 .cc-map,.cc-3 .cc-im img{height:250px}
-.cc-3 .cc-im img{object-fit:cover;object-position:top left}
-.cc-2 .cc-go,.cc-3 .cc-go{padding-bottom:28px}
-.pt-r:empty{display:none}
+.cc-map .z{display:flex;align-items:flex-end;padding:10px 12px;font:500 12px/1 var(--f);color:#9A9A9A}
+.cc-map .z2{color:var(--ink)}
 
 </style>
 </head>
@@ -248,84 +173,78 @@ em{font-family:var(--sr);font-style:italic;font-weight:400;letter-spacing:0}
 <header class="nv" id="nav"><div class="nv-in">
 <a class="nv-b" href="index.html">Abhishek LG</a>
 <nav class="nv-l" aria-label="Main"><a href="#work">Work</a><a href="#about">About</a><a href="#writing">Writing</a><a href="#contact">Contact</a></nav>
-<a class="bt bt-d bt-s" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Resume</a>
+<a class="bt bt-d bt-s" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Resume</a>
 </div></header>
 <main id="main">
-<section class="hm" data-screen-label="Hero"><div class="w hm-g">
-<div class="hm-tx">
-<p class="hm-st rv"><span class="dt" aria-hidden="true"></span>Open to Senior / Lead Product Designer roles</p>
-<p class="hm-who rv">Abhishek LG<span aria-hidden="true">·</span>Senior Product Designer, Bengaluru</p>
-<h1 class="hm-h rv">Making complex work <span class="hm-m"><em>feel simple</em><svg class="hm-u" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 30 4, 62 14, 90 7 S 114 6, 117 9" vector-effect="non-scaling-stroke"/></svg></span></h1>
+<section class="hm" data-screen-label="Hero">
+<div class="w hm-c">
+<p class="hm-k rv">Senior Product Designer</p>
+<h1 class="hm-h rv">Making complex work <span class="hm-m">feel simple<svg class="hm-u" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 30 4, 62 14, 90 7 S 114 6, 117 9" vector-effect="non-scaling-stroke"/></svg></span></h1>
 <p class="hm-s rv">7 years designing enterprise and e-commerce products, from the first plan to the final screen.</p>
-<div class="hm-cta rv"><a class="bt bt-d" href="#work">See my work<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="bt bt-o" href="#contact">Say hello</a></div>
-<div class="hm-bf rv"><span>Built for</span><ul><li>Insurtech</li><li>E-commerce</li><li>AI agents</li><li>India &amp; UK markets</li></ul></div>
+<div class="hm-cta rv"><a class="bt bt-d" href="#work">See my work</a><a class="bt bt-o" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Download CV</a></div>
 </div>
-<div class="hm-vis rv"><figure class="hm-pt"><img src="assets/abhishek-illustrated.webp" alt="Illustrated portrait of Abhishek LG" fetchpriority="high"></figure><p class="hm-cap"><span class="dt" aria-hidden="true"></span>Bengaluru, India</p></div>
-</div></section>
+<div class="w hm-b">
+<span class="hm-st"><span class="dt" aria-hidden="true"></span>Open to Senior / Lead roles</span>
+<a class="hm-sc" href="#work" aria-label="Scroll to work"><span>Scroll</span><i aria-hidden="true"></i></a>
+<span class="hm-loc">Bengaluru, India</span>
+</div>
+</section>
 <section class="sc" id="work" data-screen-label="Selected work"><div class="w">
-<div class="hd rv"><div><p class="ey">Selected work</p><h2 class="h2">One platform, three <em>problems</em>.</h2></div><p class="hd-p">Underwriters decide which risks to insure and at what price. They were working from emails, PDFs and spreadsheets. We designed the platform they now work in, from the first broker email to the bound policy.</p></div>
-<dl class="pf rv"><div><dt>Product</dt><dd>Concirrus, an AI-native specialty insurance platform</dd></div><div><dt>Role</dt><dd>Staff UX Designer, lead designer</dd></div><div><dt>Lines</dt><dd>Marine, Aviation, Construction, PV&amp;T</dd></div><div><dt>Team</dt><dd>Joined as the sole designer, grew it to 4</dd></div></dl>
+<div class="hd rv"><p class="ey">Selected work</p><h2 class="h2">One platform, three problems</h2><p class="hd-p">Concirrus, an AI-native platform for specialty insurance underwriters. I was the lead designer.</p></div>
 <div class="cs">
 <a class="cc cc-1 rv" href="pre-bind-intake.html">
-<div class="cc-tx"><p class="cc-n">01<span>Before bind</span></p><ul class="cc-tg"><li>AI intake</li><li>4 lines, one base</li></ul><h3>One flow for all insurance</h3><p class="cc-p">From the first request to the agreed policy.</p>
-<div class="cc-st"><div><b>92%</b><span>less time to give a quote</span><em>Company-reported</em></div><div><b>8+ → 2</b><span>clicks to filter</span></div></div>
+<div class="cc-tx"><p class="cc-n"><span>01</span>Before bind</p><h3>One flow for all insurance</h3><p class="cc-p">From the first request to the agreed policy.</p>
+<p class="cc-st"><b>92%</b>less time to give a quote</p>
 <span class="cc-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
 <figure class="cc-im"><img src="assets/card-workbench.jpg" alt="Underwriter workbench screen" loading="lazy"></figure>
 </a>
 <a class="cc cc-2 rv" href="accumulation.html">
-<div class="cc-tx"><p class="cc-n">02<span>After bind</span></p><ul class="cc-tg"><li>Portfolio map</li><li>Alerts</li><li>Timeline</li></ul><h3>Keeping underwriters ahead of their portfolio</h3><p class="cc-p">Once a policy is bound, the risk keeps moving. A portfolio view they can drill into, with alerts, a daily timeline and news.</p>
+<div class="cc-tx"><p class="cc-n"><span>02</span>After bind</p><h3>Keeping underwriters ahead of their portfolio</h3><p class="cc-p">See the whole book, and what changed today.</p>
 <span class="cc-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-<div class="cc-map" aria-hidden="true"><span class="z z1"></span><span class="z z2"></span><span class="z z3"></span><span class="z z4"></span><i class="v v1"></i><i class="v v2"></i><i class="v v3"></i><i class="v v4"></i><span class="cc-crumb">Country › Port › Port zone</span></div>
+<div class="cc-map" aria-hidden="true"><span class="z z1">Country</span><span class="z z2">Port zone</span><span class="z z3">Port</span><span class="z z4">Port</span><i class="v v1"></i><i class="v v2"></i><i class="v v3"></i><i class="v v4"></i></div>
 </a>
 <a class="cc cc-3 rv" href="team-management.html">
-<div class="cc-tx"><p class="cc-n">03<span>Admin</span></p><ul class="cc-tg"><li>Users</li><li>Roles</li><li>Teams</li></ul><h3>Team and user management</h3><p class="cc-p">Every client now runs the platform their own way. Clients self-serve users, roles and teams.</p>
+<div class="cc-tx"><p class="cc-n"><span>03</span>Admin</p><h3>Team and user management</h3><p class="cc-p">Every client runs the platform their own way.</p>
 <span class="cc-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
 <figure class="cc-im"><img src="assets/card-users.jpg" alt="Team and user management screen" loading="lazy"></figure>
 </a>
 </div>
 </div></section>
-<section class="sc sc-t" id="recs" data-screen-label="Recommendations"><div class="w">
-<div class="hd rv"><div><p class="ey">Recommendations</p><h2 class="h2">What colleagues <em>say</em>.</h2></div><div><p class="hd-p">From the recommendations on my LinkedIn, quoted as they wrote them.</p><a class="bt bt-l" href="https://www.linkedin.com/in/abhishek-lg-162800219/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener">Read them on LinkedIn<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div></div>
+<section class="sc" id="recs" data-screen-label="Recommendations"><div class="w">
+<div class="hd hd-r rv"><div><p class="ey">Recommendations</p><h2 class="h2">What colleagues say</h2></div><a class="lk" href="https://www.linkedin.com/in/abhishek-lg-162800219/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener">Read on LinkedIn<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
 <div class="rqs"><figure class="rq rv" style="--r:-1.2deg"><blockquote>"Abhishek was the lead UI/UX designer in my team, driving forward industry-leading, AI-first product capabilities sold into globally recognised organisations. His communication skills and professional approach to collaboration were fantastic, successfully <mark>bridging the gap between engineering teams based in India, and product and commercial teams in London</mark>."</blockquote><figcaption><img src="assets/rec-whitlam.png" alt="" width="40" height="40" loading="lazy"><span><b>James Whitlam</b><small>Founder at Vancap</small></span></figcaption></figure><figure class="rq rv" style="--r:.9deg"><blockquote>"He took a technical product built for underwriters and <mark>made it clear and easy to use</mark>, which mattered a great deal to a young company selling into the insurance market."</blockquote><figcaption><img src="assets/rec-rendell.png" alt="" width="40" height="40" loading="lazy"><span><b>James Rendell</b><small>Chief Executive Officer, BirdsEyeView</small></span></figcaption></figure><figure class="rq rv" style="--r:-.6deg"><blockquote>"Abhishek possesses <mark>a rare combination of exceptional design skills and a deep, holistic knowledge</mark> of our entire product suite. He has been an outstanding partner in our product development, and I recommend him to any team or organisation lucky enough to have him next."</blockquote><figcaption><img src="assets/rec-farah.png" alt="" width="40" height="40" loading="lazy"><span><b>Farah Bukhari</b><small>Staff Product Owner</small></span></figcaption></figure><figure class="rq rv" style="--r:1.1deg"><blockquote>"He is a highly skilled UI/UX designer, a thoughtful design leader and an excellent collaborator. Abhishek introduced <mark>processes and standards that brought greater consistency</mark> to the team's approach and output."</blockquote><figcaption><img src="assets/rec-steve.png" alt="" width="40" height="40" loading="lazy"><span><b>Steve O'Reilly</b><small>Product Executive</small></span></figcaption></figure><figure class="rq rv" style="--r:-.9deg"><blockquote>"His <mark>initiative and end-to-end vision</mark> is what sets him apart. Even when requirements were ambiguous, he independently defined the problems, navigated edge cases across the entire user journey to delivered seamless user flows."</blockquote><figcaption><img src="assets/rec-kunal.png" alt="" width="40" height="40" loading="lazy"><span><b>Kunal Bhardwaj</b><small>Product Consultant, Product Manager, CSPO</small></span></figcaption></figure></div>
 </div></section>
 <section class="sc" id="side" data-screen-label="Problems I noticed"><div class="w">
-<div class="hd rv"><div><p class="ey">Beyond the platform</p><h2 class="h2">Problems I <em>noticed</em>.</h2></div><p class="hd-p">Smaller projects, each starting from a problem I saw. AI speeds up the sorting and the building. The research, the decisions and the final call stay mine.</p></div>
+<div class="hd rv"><p class="ey">Beyond the platform</p><h2 class="h2">Problems I noticed</h2></div>
 <div class="pj">
-<a class="pc rv" href="nutbite.html"><figure class="pc-im t-a"><img src="assets/nutbite-dashboard.webp" alt="NutBite store dashboard" loading="lazy"></figure><p class="pc-k">Shipped<span>·</span>In daily use</p><h3>NutBite</h3><p class="pc-p">A store app for a family cashew business in Kumta, built for a storekeeper new to computers.</p><span class="pc-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-<a class="pc rv" href="ai-audit.html"><figure class="pc-im t-b"><img src="assets/ai-audit-diagram.webp" alt="AI-assisted UX audit diagram" loading="lazy"></figure><p class="pc-k">UX audit<span>·</span>IRCTC</p><h3>AI-assisted UX audit</h3><p class="pc-p">IRCTC audit: AI did the sorting, I made the calls.</p><span class="pc-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-<a class="pc rv" href="spendly.html"><figure class="pc-im t-c"><img src="assets/spendly-screens.webp" alt="Spendly app screens" loading="lazy"></figure><p class="pc-k">Experiment<span>·</span>25 users, 12 to 16 daily</p><h3>Spendly</h3><p class="pc-p">Product, design and code, all by me. After many trials, this app showed me how far AI can take my design work.</p><span class="pc-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="pc rv" href="nutbite.html"><figure class="pc-im"><img src="assets/nutbite-dashboard.webp" alt="NutBite store dashboard" loading="lazy"></figure><div class="pc-t"><h3>NutBite</h3><p>A store app for a family cashew business.</p></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a class="pc rv" href="ai-audit.html"><figure class="pc-im"><img src="assets/ai-audit-diagram.webp" alt="AI-assisted UX audit diagram" loading="lazy"></figure><div class="pc-t"><h3>AI-assisted UX audit</h3><p>IRCTC audit: AI did the sorting, I made the calls.</p></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a class="pc rv" href="spendly.html"><figure class="pc-im"><img src="assets/spendly-screens.webp" alt="Spendly app screens" loading="lazy"></figure><div class="pc-t"><h3>Spendly</h3><p>Product, design and code, all by me.</p></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div>
 </div></section>
-<section class="sc" id="about" data-screen-label="About"><div class="w">
-<div class="ab rv">
-<figure class="ab-ph"><img src="assets/abhishek-profile.webp" alt="Abhishek LG" loading="lazy"></figure>
-<div class="ab-tx"><p class="ey">About</p><h2 class="h2 h2-s">To me, a good product feels like nothing got in your <em>way</em>.</h2><p class="hd-p">That's what I've been designing for 7 years, from underwriting tools for insurance teams in the UK to a simple store app for a family business in Karnataka. Different users, same goal: make the hard part feel easy.</p>
-<dl class="ab-f"><div><dt>Education</dt><dd>MBA, East West College of Management, 2016</dd></div><div><dt>Certificates</dt><dd><a href="assets/certs/outskill-genai-mastermind-2026.jpg" target="_blank" rel="noopener">Generative AI Mastermind, Outskill, 2026</a><a href="assets/certs/uxgorilla-ux-immersion-2022.jpg" target="_blank" rel="noopener">UX Immersion, UX Gorilla, 2022</a><a href="assets/certs/aspiregate-ui-ux-2019.jpg" target="_blank" rel="noopener">UI UX Designing, Aspire Gate, 2019</a></dd></div></dl></div>
-</div>
-<div class="pt"><h3 class="pt-h rv">The path <em>so far</em></h3><ol><li class="rv"><b class="pt-c">NutBite</b><span class="pt-r"></span><span class="pt-d">Jul to Sep 2026</span><span class="pt-t">I designed and built an app that helps a family-run cashew business record sales and track stock.</span></li><li class="rv"><b class="pt-c">Concirrus</b><span class="pt-r">Staff UX Designer</span><span class="pt-d">Jul 2023 to Sep 2026</span><span class="pt-t">I grew the design team from one to four. We designed AI-enabled tools for underwriters across four types of insurance.</span></li><li class="rv"><b class="pt-c">CoreValue Technologies</b><span class="pt-r">UX Designer</span><span class="pt-d">Oct 2020 to Jun 2023</span><span class="pt-t">I owned design for four live products at once, across connected devices (IoT), insurance, e-commerce and web.</span></li><li class="rv"><b class="pt-c">StoreKing</b><span class="pt-r">UI Designer</span><span class="pt-d">May 2019 to Oct 2020</span><span class="pt-t">My first design role. Low-bandwidth, offline-first shopping screens for rural retailers.</span></li><li class="rv"><b class="pt-c">The switch</b><span class="pt-r"></span><span class="pt-d">Nov 2018 to May 2019</span><span class="pt-t">Getting UX design training at Aspire Gate, Bengaluru.</span></li><li class="rv"><b class="pt-c">TalentXO</b><span class="pt-r">Talent Acquisition Executive</span><span class="pt-d">Sep 2017 to Nov 2018</span><span class="pt-t"></span></li></ol>
-</div>
+<section class="sc" id="about" data-screen-label="About"><div class="w ab">
+<div class="ab-l rv"><p class="ey">About</p><h2 class="h2">To me, a good product feels like nothing got in your way</h2><p class="hd-p">From underwriting tools for insurance teams in the UK to a simple store app for a family business in Karnataka. Different users, same goal: make the hard part feel easy.</p></div>
+<ol class="pt rv"><li><b>Concirrus</b><span>Staff UX Designer</span><em>Jul 2023 to Sep 2026</em></li><li><b>CoreValue Technologies</b><span>UX Designer</span><em>Oct 2020 to Jun 2023</em></li><li><b>StoreKing</b><span>UI Designer</span><em>May 2019 to Oct 2020</em></li><li><b>Aspire Gate</b><span>UX design training</span><em>Nov 2018 to May 2019</em></li><li><b>TalentXO</b><span>Talent Acquisition Executive</span><em>Sep 2017 to Nov 2018</em></li></ol>
 </div></section>
-<section class="sc sc-t" id="writing" data-screen-label="Writing"><div class="w">
-<div class="hd rv"><div><p class="ey">Writing</p><h2 class="h2">How I think about <em>UX</em>.</h2></div><p class="hd-p">Short reads, including a 10-part series on Nielsen's rules told through everyday Indian moments.</p></div>
-<div class="wr">
-<a class="wf rv" href="ux-not-screens.html"><figure><img src="assets/slots/w-cover-1.webp" alt="" loading="lazy"></figure><p class="pc-k">Start here<span>·</span>5 min read</p><h3>UX is not just screens</h3><span class="pc-go">Read article<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-<ol class="wl rv"><li><a href="h1-visibility.html"><span class="wl-n">01</span><span class="wl-t"><b>A good product works. A great product talks</b><small>Visibility of System Status · 7 min read</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li><a href="h2-real-world.html"><span class="wl-n">02</span><span class="wl-t"><b>Design is not about teaching. It's about feeling at home</b><small>Match Between System and the Real World · 4 min read</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li><a href="h3-control-freedom.html"><span class="wl-n">03</span><span class="wl-t"><b>Your users need a brake pedal</b><small>User Control and Freedom · 4 min read</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li><a href="h4-consistency.html"><span class="wl-n">04</span><span class="wl-t"><b>Same dosa, every time</b><small>Consistency and Standards · 5 min read</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li><a href="h5-error-prevention.html"><span class="wl-n">05</span><span class="wl-t"><b>The best error is the one that never happens</b><small>Error Prevention · 5 min read</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li><a href="h6-recognition.html"><span class="wl-n">06</span><span class="wl-t"><b>You don't forget. You just need the right cue</b><small>Recognition Rather Than Recall · 4 min read</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li><a href="h7-flexibility.html"><span class="wl-n">07</span><span class="wl-t"><b>Every user has a rhythm. Design should honour it</b><small>Flexibility and Efficiency of Use · 4 min read</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li><a href="h8-minimal-design.html"><span class="wl-n">08</span><span class="wl-t"><b>They came for the chocolate cake. Don't distract them</b><small>Aesthetic and Minimalist Design · 4 min read</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li><a href="h9-error-recovery.html"><span class="wl-n">09</span><span class="wl-t"><b>Errors are inevitable. Confusion is not</b><small>Help Users Recognise, Diagnose, and Recover from Errors · 4 min read</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li><a href="h10-help-docs.html"><span class="wl-n">10</span><span class="wl-t"><b>Great UX is being there when it's not easy</b><small>Help and Documentation · 4 min read</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li></ol>
-</div>
+<section class="sc" id="writing" data-screen-label="Writing"><div class="w">
+<div class="hd hd-r rv"><div><p class="ey">Writing</p><h2 class="h2">How I think about UX</h2></div><a class="lk" href="ux-not-screens.html">Start here: UX is not just screens<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<ol class="wl rv" id="wl"><li><a href="h1-visibility.html"><span class="wl-n">01</span><b>A good product works. A great product talks</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li><a href="h2-real-world.html"><span class="wl-n">02</span><b>Design is not about teaching. It's about feeling at home</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li><a href="h3-control-freedom.html"><span class="wl-n">03</span><b>Your users need a brake pedal</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li><a href="h4-consistency.html"><span class="wl-n">04</span><b>Same dosa, every time</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li class="wl-x"><a href="h5-error-prevention.html"><span class="wl-n">05</span><b>The best error is the one that never happens</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li class="wl-x"><a href="h6-recognition.html"><span class="wl-n">06</span><b>You don't forget. You just need the right cue</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li class="wl-x"><a href="h7-flexibility.html"><span class="wl-n">07</span><b>Every user has a rhythm. Design should honour it</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li class="wl-x"><a href="h8-minimal-design.html"><span class="wl-n">08</span><b>They came for the chocolate cake. Don't distract them</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li class="wl-x"><a href="h9-error-recovery.html"><span class="wl-n">09</span><b>Errors are inevitable. Confusion is not</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li class="wl-x"><a href="h10-help-docs.html"><span class="wl-n">10</span><b>Great UX is being there when it's not easy</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li></ol>
+<button class="lk wl-more" type="button" id="wlMore" aria-expanded="false">See all articles</button>
 </div></section>
-<section class="ct-w" id="contact" data-screen-label="Contact"><div class="w">
-<div class="ct rv">
-<p class="ey">Contact</p><h2 class="ct-h">Let's work <em>together</em>.</h2><p class="ct-p">Reach out to me. I'm always happy to talk.</p>
-<div class="ct-b"><a class="bt bt-w" href="mailto:abhisheklokesh.uiux159@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>abhisheklokesh.uiux159@gmail.com</a><button class="bt bt-g" type="button" data-copy="abhisheklokesh.uiux159@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span>Copy email</span></button><a class="bt bt-g" href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg>LinkedIn</a><a class="bt bt-g" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download CV</a></div>
-<dl class="ct-f"><div><dt>Now</dt><dd>Open to Senior / Lead Product Designer roles in Bengaluru · Can join immediately</dd></div><div><dt>Before</dt><dd>Concirrus · CoreValue Technologies · StoreKing</dd></div><div><dt>Based in</dt><dd>Bengaluru, India</dd></div></dl>
+<section class="ct" id="contact" data-screen-label="Contact"><div class="w">
+<h2 class="ct-h rv">Let's work together</h2>
+<p class="hd-p rv">Reach out to me. I'm always happy to talk.</p>
+<div class="ct-b rv"><a class="bt bt-d" href="mailto:abhisheklokesh.uiux159@gmail.com">abhisheklokesh.uiux159@gmail.com</a><button class="bt bt-o" type="button" data-copy="abhisheklokesh.uiux159@gmail.com"><span>Copy email</span></button><a class="bt bt-o" href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener">LinkedIn</a><a class="bt bt-o" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Download CV</a></div>
 </div>
-</div></section>
-<footer class="ft"><div class="w"><p class="ft-n" aria-hidden="true">Abhishek <em>LG</em></p><div class="ft-b"><span>© Abhishek LG, 2026</span><a href="#top">Back to top ↑</a></div></div></footer>
+<footer class="ft"><div class="w ft-b"><span>© Abhishek LG, 2026</span><a href="#top">Back to top ↑</a></div></footer>
+</section>
 </main>
 <script>(function(){
 var nav=document.getElementById('nav');function sc(){nav.classList.toggle('on',scrollY>8)}addEventListener('scroll',sc,{passive:true});sc();
 var els=[].slice.call(document.querySelectorAll('.rv'));
 if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(e){e.classList.add('in')})}
 else{var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});els.forEach(function(e){io.observe(e)});setTimeout(function(){els.forEach(function(e){if(e.getBoundingClientRect().top<innerHeight)e.classList.add('in')})},60)}
+var wm=document.getElementById('wlMore'),wl=document.getElementById('wl');if(wm)wm.addEventListener('click',function(){var o=wl.classList.toggle('all');wm.setAttribute('aria-expanded',o);wm.textContent=o?'Show fewer':'See all articles'});
 document.querySelectorAll('[data-copy]').forEach(function(b){var s=b.querySelector('span');b.addEventListener('click',function(){if(navigator.clipboard)navigator.clipboard.writeText(b.dataset.copy);s.textContent='Copied';setTimeout(function(){s.textContent='Copy email'},1600)})});
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href="#top"]');if(!a)return;e.preventDefault();scrollTo({top:0,behavior:'smooth'})});
 })();</script>
