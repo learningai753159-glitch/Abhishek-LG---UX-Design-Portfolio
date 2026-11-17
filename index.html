@@ -242,6 +242,31 @@ a{color:inherit}
 .cc-2 .cc-map .z{background:#F7F9FF}
 .cs{gap:20px}
 
+/* problems I noticed: dark band */
+.pn{margin-top:clamp(88px,11vw,140px);padding:clamp(80px,10vw,128px) 0 clamp(56px,7vw,88px);background:#111;color:#fff}
+.pn .ey{color:#8E8E8E}
+.pn .h2{color:#fff}
+.prs{border-top:1px solid rgba(255,255,255,.14)}
+.pr{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,80px);align-items:center;padding:clamp(40px,5vw,64px) 0;border-bottom:1px solid rgba(255,255,255,.14);text-decoration:none;color:#fff}
+.pr:last-child{border-bottom:0}
+.pr-k{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;font:600 15px/1 var(--f);color:#fff}
+.pr-k span{font-weight:500;color:#8E8E8E;font-variant-numeric:tabular-nums}
+.pr-k em{font-style:normal;font-weight:500;font-size:12.5px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.08);color:#C9C9C9}
+.pr-l{display:block;margin-bottom:10px;font:500 12px/1 var(--f);letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.pr-q{margin:28px 0 0;font:600 clamp(24px,2.6vw,34px)/1.22 var(--f);letter-spacing:-.025em;color:#fff;max-width:24ch}
+.pr-d .pr-l{color:#8E8E8E}
+.pr-d{margin:26px 0 0;font-size:16.5px;line-height:1.6;color:#B5B5B5;max-width:46ch}
+.pr-go{margin-top:28px;display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--f);color:#fff;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:4px}
+.pr-go svg{width:16px;height:16px;transition:transform .25s}
+.pr:hover .pr-go svg{transform:translateX(4px)}
+.pr-im{margin:0;border-radius:20px;overflow:hidden;background:#1C1C1C;aspect-ratio:16/11;box-shadow:0 30px 60px -30px rgba(0,0,0,.8);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.pr-im img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.pr:hover .pr-im img{transform:scale(1.04)}
+.pr:nth-child(2) .pr-im{background:#F4F6FB}
+.pr:nth-child(2) .pr-im img{object-fit:contain}
+@media(max-width:860px){.pr{grid-template-columns:1fr}.pr-im{order:-1}}
+#about.sc{padding-top:clamp(88px,11vw,140px)}
+
 </style>
 </head>
 <body id="top">
@@ -288,13 +313,9 @@ a{color:inherit}
 </a>
 </div>
 </div></div></section>
-<section class="sc" id="side" data-screen-label="Problems I noticed"><div class="w">
+<section class="pn" id="side" data-screen-label="Problems I noticed"><div class="w">
 <div class="hd rv"><p class="ey">Beyond the platform</p><h2 class="h2">Problems I noticed</h2></div>
-<div class="pj">
-<a class="pc rv" href="nutbite.html"><figure class="pc-im"><img src="assets/nutbite-dashboard.webp" alt="NutBite store dashboard" loading="lazy"></figure><div class="pc-t"><h3>NutBite</h3><p>A store app for a family cashew business.</p></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-<a class="pc rv" href="ai-audit.html"><figure class="pc-im"><img src="assets/ai-audit-diagram.webp" alt="AI-assisted UX audit diagram" loading="lazy"></figure><div class="pc-t"><h3>AI-assisted UX audit</h3><p>IRCTC audit: AI did the sorting, I made the calls.</p></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-<a class="pc rv" href="spendly.html"><figure class="pc-im"><img src="assets/spendly-screens.webp" alt="Spendly app screens" loading="lazy"></figure><div class="pc-t"><h3>Spendly</h3><p>Product, design and code, all by me.</p></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-</div>
+<div class="prs"><a class="pr rv" href="nutbite.html"><div class="pr-tx"><p class="pr-k"><span>01</span>NutBite<em>Shipped, in daily use</em></p><p class="pr-q"><span class="pr-l">The problem</span>Every sale was written in a notebook, photographed and sent on WhatsApp.</p><p class="pr-d"><span class="pr-l">What I did</span>I designed and built an app that records each sale, updates stock automatically, and gives the owners a live view of their store.</p><span class="pr-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><figure class="pr-im"><img src="assets/nutbite-dashboard.webp" alt="NutBite store dashboard" loading="lazy"></figure></a><a class="pr rv" href="ai-audit.html"><div class="pr-tx"><p class="pr-k"><span>02</span>AI-assisted UX audit<em>IRCTC</em></p><p class="pr-q"><span class="pr-l">The problem</span>A manual audit took me about a week, and most of that time went on sorting.</p><p class="pr-d"><span class="pr-l">What I did</span>I set up AI to do the slow sorting, so I could spend my time on the findings and the redesign.</p><span class="pr-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><figure class="pr-im"><img src="assets/ai-audit-diagram.webp" alt="AI-assisted UX audit diagram" loading="lazy"></figure></a><a class="pr rv" href="spendly.html"><div class="pr-tx"><p class="pr-k"><span>03</span>Spendly<em>25 users, 12 to 16 daily</em></p><p class="pr-q"><span class="pr-l">The problem</span>Open laptop. Open Excel. Enter, label, calculate. Missed entries. Forgot amounts.</p><p class="pr-d"><span class="pr-l">What I did</span>I replaced budget tracking with one honest question about each spend, and built and shipped it on my own.</p><span class="pr-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><figure class="pr-im"><img src="assets/spendly-screens.webp" alt="Spendly app screens" loading="lazy"></figure></a></div>
 </div></section>
 <section class="sc" id="about" data-screen-label="About"><div class="w ab">
 <div class="ab-l rv"><p class="ey">About</p><h2 class="h2">To me, a good product feels like nothing got in your way</h2><p class="hd-p">From underwriting tools for insurance teams in the UK to a simple store app for a family business in Karnataka. Different users, same goal: make the hard part feel easy.</p></div>
