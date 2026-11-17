@@ -23,7 +23,7 @@ function film(el,src){var w=el.querySelector('.win'),vd=w.querySelector('.vid'),
 el.loadSrc=function(s){vd.classList.remove('has-v');if(!s)return;v.onerror=function(){vd.classList.remove('has-v')};v.oncanplay=function(){vd.classList.add('has-v');v.play().catch(function(){})};v.src=s;v.load()};
 el.querySelector('.play').addEventListener('click',function(){el.classList.add('is-playing');if(src&&!v.src)el.loadSrc(src);else if(v.src)v.play().catch(function(){});w.querySelector('.x').focus()});
 w.querySelector('.x').addEventListener('click',function(){v.pause();el.classList.remove('is-playing');el.querySelector('.play').focus()});return el}
-var hero=film(document.getElementById('heroFilm'),'assets/me-in-a-minute.mp4');
+var hf=document.getElementById('heroFilm');if(hf)film(hf,'assets/me-in-a-minute.mp4');
 /* writing row */
 var wr=document.getElementById('wrow'),wn=document.querySelectorAll('.w-nav');
 function wUpd(){wn[0].disabled=wr.scrollLeft<4;wn[1].disabled=wr.scrollLeft+wr.clientWidth>=wr.scrollWidth-4}

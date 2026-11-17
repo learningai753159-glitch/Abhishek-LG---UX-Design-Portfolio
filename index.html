@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://abhishek-lg-ux-design-portfolio.vercel.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&amp;family=Instrument+Serif:ital@1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Instrument+Serif:ital@1&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="realistic-ui.css">
 <link rel="stylesheet" href="home.css">
 <script>document.documentElement.classList.add('js');</script>
@@ -815,6 +815,26 @@
 .am-fl p{margin:6px 0 0;font-size:16px;line-height:1.55;color:#525866}
 </style>
 <style id="mini-css">.cv-mini{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:16px;padding:16px 20px;border:1px solid #E7E7E7;border-radius:14px;color:var(--ink);text-decoration:none;font-size:15.5px;font-weight:600;transition:border-color .2s,background .2s}.cv-mini:hover{border-color:var(--ink);background:#FAFAF8}</style>
+<style id="hx-css">
+.hx{position:relative;min-height:calc(100svh - 72px);display:flex;align-items:center;justify-content:center;padding:clamp(56px,9vh,110px) 20px clamp(48px,7vh,80px);text-align:center;overflow:hidden}
+.hx::before{content:"";position:absolute;inset:0;z-index:-1;background-image:radial-gradient(rgba(20,20,20,.16) 1px,transparent 1.3px);background-size:22px 22px;-webkit-mask-image:radial-gradient(ellipse 75% 70% at 50% 45%,#000 30%,transparent 100%);mask-image:radial-gradient(ellipse 75% 70% at 50% 45%,#000 30%,transparent 100%)}
+.hx-in{width:100%;max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
+.hx-hi{margin:0;font:500 clamp(18px,1.8vw,24px)/1.2 'Instrument Sans',system-ui,sans-serif;color:#6B6B6B;letter-spacing:-.01em}
+.hx-name{margin:clamp(6px,1vw,14px) 0 0;font:700 clamp(64px,13.2vw,224px)/.86 'Instrument Sans',system-ui,sans-serif;letter-spacing:-.055em;color:#141414;white-space:nowrap}
+.hx-role{margin:clamp(18px,2.2vw,30px) 0 0;display:flex;align-items:center;gap:14px;font:500 clamp(11.5px,1vw,13px)/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.18em;text-transform:uppercase;color:#3A3A3A}
+.hx-sep{width:5px;height:5px;border-radius:50%;background:#E0533D}
+.hx-say{margin-top:clamp(36px,5vw,64px)}
+.hx-t{margin:0;font:500 clamp(20px,2vw,27px)/1.35 'Instrument Sans',system-ui,sans-serif;color:#141414;letter-spacing:-.01em}
+.hx-s{margin:6px 0 0;font:400 clamp(17px,1.7vw,23px)/1.45 'Instrument Sans',system-ui,sans-serif;color:#77736C;letter-spacing:-.005em}
+.hx-built{list-style:none;margin:clamp(28px,3.6vw,44px) 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.hx-built li{padding:7px 14px;border:1px solid #E3E1DC;border-radius:999px;background:rgba(255,255,255,.75);font:500 11.5px/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:#55524C}
+.hx-down{margin-top:clamp(32px,4.4vw,56px);display:inline-flex;align-items:center;gap:8px;font:500 15px/1 'Instrument Sans',system-ui,sans-serif;color:#141414;text-decoration:none;padding:12px 18px;border-radius:999px;transition:background .2s}
+.hx-down:hover{background:rgba(20,20,20,.06)}
+.hx-down svg{width:16px;height:16px;animation:hxb 2.2s ease-in-out infinite}
+@keyframes hxb{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+@media(prefers-reduced-motion:reduce){.hx-down svg{animation:none}}
+@media(max-width:640px){.hx{min-height:calc(100svh - 64px);padding-top:48px}.hx-name{font-size:clamp(52px,17.5vw,96px);white-space:normal;line-height:.9}.hx-name span{display:inline-block}.hx-role{flex-direction:column;gap:10px;letter-spacing:.14em}.hx-sep{display:none}.hx-s{font-size:17px}}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -828,12 +848,13 @@
 <ul><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#writing">Writing</a></li><li><a href="#contact">Say hello</a></li><li class="mm-cv"><a href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Resume</a></li></ul><div class="mm-foot"><p>Say hello</p><a href="mailto:abhisheklokesh.uiux159@gmail.com">abhisheklokesh.uiux159@gmail.com</a><a href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
 
 <main id="main">
-<section class="hero" data-screen-label="Hero"><div class="wrap">
-<p class="lbl rv"><span class="dot" aria-hidden="true"></span>Senior Product Designer · Bengaluru</p>
-<h1 class="rv" style="--dl:.08s">Making complex work<br class="h1-br"> <span class="mark"><em class="a">feel simple</em><svg class="draw" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 30 4, 62 14, 90 7 S 114 6, 117 9" vector-effect="non-scaling-stroke"></path></svg></span></h1>
-<p class="hero-sub rv" style="--dl:.16s">7 years designing enterprise and e-commerce products, from the first plan to the final screen.</p>
-<div class="built rv" style="--dl:.24s"><p class="built-l">Built for</p><ul class="built-p"><li>Insurtech</li><li>E-commerce</li><li>AI agents</li><li>India &amp; UK markets</li><li class="bp-dup" aria-hidden="true">Insurtech</li><li class="bp-dup" aria-hidden="true">E-commerce</li><li class="bp-dup" aria-hidden="true">AI agents</li><li class="bp-dup" aria-hidden="true">India &amp; UK markets</li></ul></div>
-<div class="f35-wrap rv" style="--dl:.32s"><div class="f35" id="heroFilm"><div class="strip t"></div><div class="win"><img class="f35-th" src="assets/intro-thumbnail.jpg" alt="Illustrated portrait of Abhishek LG" width="1920" height="1080" fetchpriority="high"><button class="play" type="button" aria-label="Play Me in a minute"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"></path></svg></button><span class="tag">Me in a minute</span><div class="still"><image-slot id="heroFilm-still" placeholder="Film still" shape="rect"></image-slot></div><div class="vid"><video playsinline controls preload="none"></video><p><b class="vt">Me in a minute</b></p><button class="x" type="button">Close</button></div></div><div class="strip b"><span class="code">AL · 07 · FRAME 01</span><span class="code r">35MM</span></div></div><p class="cap"><svg class="draw" viewBox="0 0 44 38" aria-hidden="true"><path d="M40 34 C 26 30, 12 22, 8 5"></path><path d="M2 12 L 8 3 L 15 10"></path></svg>A 60-second hello →</p></div>
+<section class="hx" data-screen-label="Hero"><div class="hx-in">
+<p class="hx-hi rv">Hi, I'm</p>
+<h1 class="hx-name rv" style="--dl:.06s" aria-label="Abhishek LG"><span aria-hidden="true">Abhishek</span> <span aria-hidden="true">LG</span></h1>
+<p class="hx-role rv" style="--dl:.14s"><span>Senior Product Designer</span><span class="hx-sep" aria-hidden="true"></span><span>Bengaluru</span></p>
+<div class="hx-say rv" style="--dl:.22s"><p class="hx-t">Making complex work feel simple.</p><p class="hx-s">7 years designing enterprise and e-commerce products, from the first plan to the final screen.</p></div>
+<ul class="hx-built rv" style="--dl:.3s" aria-label="Built for"><li>Insurtech</li><li>E-commerce</li><li>AI agents</li><li>India &amp; UK markets</li></ul>
+<a class="hx-down rv" style="--dl:.38s" href="#work">See my work<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
 </div></section>
 
 <section class="sec" id="work" data-screen-label="Selected work"><div class="wrap">
@@ -968,8 +989,6 @@ st.addEventListener('mouseenter',function(){st.classList.add('paused');clearTime
 if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis)go(i);else clearTimeout(tm)},{threshold:.4}).observe(st);else{vis=true;arm()}})();</script>
 <script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href="#top"]');if(!a)return;e.preventDefault();window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})});</script>
 <script>document.addEventListener("click",function(e){var c=e.target.closest&&e.target.closest(".ah3-fl-c[data-href]");if(!c)return;if(e.target.closest("a"))return;e.preventDefault();e.stopImmediatePropagation();window.open(c.dataset.href,"_blank","noopener")},true);</script>
-<div class="vmo" id="vmo" role="dialog" aria-modal="true" aria-label="Me in a minute"><button class="vmo-x" type="button">Close</button><div class="vmo-f"></div></div>
-<script>(function(){var m=document.getElementById("vmo"),f=m.querySelector(".vmo-f"),x=m.querySelector(".vmo-x"),film=document.getElementById("heroFilm"),last;var SRC="https://player.vimeo.com/video/1242427253?autoplay=1&title=0&byline=0&portrait=0&dnt=1";function open(){last=document.activeElement;f.innerHTML='<iframe src="'+SRC+'" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Me in a minute"></iframe>';m.classList.add("open");document.body.style.overflow="hidden";x.focus()}function close(){m.classList.remove("open");f.innerHTML="";document.body.style.overflow="";if(last)last.focus()}film.addEventListener("click",function(e){if(!e.target.closest(".win"))return;e.preventDefault();e.stopImmediatePropagation();open()},true);x.addEventListener("click",close);m.addEventListener("click",function(e){if(e.target===m)close()});addEventListener("keydown",function(e){if(e.key==="Escape"&&m.classList.contains("open"))close()})})();</script>
 <script>
 (function(){var mq=matchMedia('(max-width:767px)');
 /* AI carousel dots + gentle autoplay */
