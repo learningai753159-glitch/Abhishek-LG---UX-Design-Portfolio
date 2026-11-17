@@ -526,6 +526,20 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--red)}
 .tq mark{padding:0;border-radius:2px;box-shadow:0 0 0 2px #EDEDED}
 .pc3-ph span{color:var(--mu)}
 @media(max-width:620px){.tb{padding:28px 22px}.tb-a{gap:10px;flex-wrap:nowrap}.ta{font-size:12px}.tb-q{min-height:420px}}
+/* ===== white + soft grey panels, red only in the hand-drawn lines ===== */
+:root{--panel:#F4F4F5;--dot:#E3E3E6}
+.box{position:relative;background-color:var(--panel);background-image:radial-gradient(var(--dot) 1px,transparent 1.2px);background-size:22px 22px;border-radius:36px;padding:clamp(28px,4.5vw,64px)}
+.box .cc,.box .cc-1,.box .cc-2,.box .cc-3{background:#fff;border:1px solid var(--ln);box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.box .cc:hover{border-color:var(--ink)}
+.box .cc-2 .cc-map{background:#fff}
+.abw-p{background-color:var(--panel)}
+.abw-fade{background:linear-gradient(180deg,rgba(244,244,245,0) 0,rgba(244,244,245,.85) 45%,#F4F4F5 70%)}
+.tb{position:relative;background-color:var(--panel);background-image:radial-gradient(var(--dot) 1px,transparent 1.2px);background-size:22px 22px;border:0;border-radius:36px}
+.tq mark{background:#fff;box-shadow:0 0 0 2px #fff}
+.ta.on img{box-shadow:0 0 0 2px var(--panel),0 0 0 4px var(--ink)}
+.tb-a{border-top-color:#E1E1E4}
+a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--ink);font-weight:600}
+.pc3-ph{background:var(--panel);border-color:#DADADE}
 
 </style>
 </head>
