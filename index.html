@@ -15,6 +15,7 @@
 <link rel="canonical" href="https://abhishek-lg-ux-design-portfolio.vercel.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:200 800;font-display:swap;src:url(assets/fonts/bricolage-grotesque-latin-opsz-normal.woff2) format('woff2-variations'),url(assets/fonts/bricolage-grotesque-latin-opsz-normal.woff2) format('woff2')}
 @font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/instrument-sans-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/instrument-sans-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'Instrument Sans';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/instrument-sans-latin-ext-500-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
@@ -217,6 +218,15 @@ a{color:inherit}
 
 .rq blockquote{font-style:italic}
 
+/* display name */
+.hm-n{font-family:'Bricolage Grotesque','Instrument Sans',system-ui,sans-serif;font-weight:760;font-variation-settings:'opsz' 96;font-size:clamp(60px,11.5vw,168px);line-height:.92;letter-spacing:-.03em;color:var(--ink);margin-top:30px}
+.hm-n .hn-w{display:inline-block;white-space:nowrap}
+.hm-n .ch{display:inline-block;opacity:0;transform:translateY(.32em) rotate(4deg);transform-origin:50% 100%;animation:chIn .9s cubic-bezier(.2,.75,.2,1) forwards;animation-delay:calc(.15s + var(--i) * .045s)}
+.hm-n .hn-dot{color:var(--red);margin-left:.02em}
+@keyframes chIn{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.hm-n .ch{animation:none;opacity:1;transform:none}}
+@media(max-width:640px){.hm-n{font-size:clamp(54px,17vw,90px)}}
+
 </style>
 </head>
 <body id="top">
@@ -230,7 +240,7 @@ a{color:inherit}
 <section class="hm" data-screen-label="Hero">
 <div class="w hm-c">
 <p class="hm-op rv"><span class="dt" aria-hidden="true"></span>Open to work · Senior / Lead Product Designer roles</p>
-<h1 class="hm-n rv">Abhishek LG</h1>
+<h1 class="hm-n" aria-label="Abhishek LG"><span aria-hidden="true"><span class="hn-w"><span class="ch" style="--i:0">A</span><span class="ch" style="--i:1">b</span><span class="ch" style="--i:2">h</span><span class="ch" style="--i:3">i</span><span class="ch" style="--i:4">s</span><span class="ch" style="--i:5">h</span><span class="ch" style="--i:6">e</span><span class="ch" style="--i:7">k</span></span> <span class="hn-w"><span class="ch" style="--i:8">L</span><span class="ch" style="--i:9">G</span></span><span class="ch hn-dot" style="--i:10">.</span></span></h1>
 <p class="hm-k rv">Senior Product Designer</p>
 <p class="hm-t rv">Making complex work <span class="hm-m">feel simple<svg class="hm-u" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 30 4, 62 14, 90 7 S 114 6, 117 9" vector-effect="non-scaling-stroke"/></svg></span></p>
 <p class="hm-s rv">7 years designing enterprise and e-commerce products, from the first plan to the final screen.</p>
