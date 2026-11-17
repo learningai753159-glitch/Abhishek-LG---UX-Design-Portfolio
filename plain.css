@@ -1,5 +1,5 @@
 /* No italics, no display serif: one sans font across the site */
-:root,html:root{--f-serif:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--serif:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif}
+:root,html:root{--font-hand:'Instrument Sans',system-ui,sans-serif;--hand:'Instrument Sans',system-ui,sans-serif;--f-hand:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--f-serif:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--serif:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif}
 *,*::before,*::after{font-style:normal!important}
 #customers .cx-q.c1 blockquote,
 .c1 .c1-m b,
@@ -49,3 +49,35 @@
 :is(.num,.kpis .n,.metric-card .num),
 em.s,
 p.headline{font-family:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif!important;letter-spacing:-.02em}
+
+/* handwriting fonts read as italics: use the site font */
+#approach .sk,#approach .sk *,#approach .sk-t,
+.conseq-link,
+.dc-try,
+.dcx-try,
+.ec-pr p,
+.h4-nb figcaption,
+.h6-nb figcaption,
+.hand,
+.main #solution .dz-why,
+.me-pol figcaption,
+.nt-h,
+.nt-q,
+.nt-sig,
+.opt-note .hand,
+.proc-close .cline,
+.psk-ann,
+.psk-k,
+.psk-nm,
+.pt-n6 li.aim,
+.pt-note,
+.pw-label,
+.rv-bl,
+.sign,
+.sk,
+.sk-ann,
+.sk-t,
+.slot .sk2-note,
+.slot .slot-in,
+.slot-btn,
+.slot-k{font-family:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif!important;letter-spacing:0}
