@@ -991,3 +991,16 @@ html body .main .cs-meta>div,html body .main .rs-meta>div{border-left-color:var(
 .mn-wrap .cx-toc a.on::before{background:#FF5A52}
 @media(max-width:900px){.mn-tl{gap:12px}}
 .mn-h{max-width:28ch;font-size:clamp(28px,3.2vw,42px)}
+
+/* ===== minimal sections: bolder hierarchy, full width ===== */
+.mn-wrap.cx{width:min(1320px,calc(100% - 40px));grid-template-columns:200px minmax(0,1fr);gap:clamp(32px,4vw,64px)}
+.mn-wrap .cx-main{max-width:none}
+.mn-h{max-width:none;font-size:clamp(28px,3vw,40px);font-weight:650;line-height:1.12;letter-spacing:-.035em;text-wrap:balance}
+.mn-p{max-width:80ch}
+.mn-card h3{font-weight:600}
+.mn-list h3,.mn-tl h3{font-weight:600}
+.mn-st b{font-weight:650}
+.mn-big{font-weight:600}
+.mn-end{max-width:none}
+.mn-cols p{font-weight:450}
+@media(max-width:900px){.mn-wrap.cx{grid-template-columns:minmax(0,1fr);gap:24px}}
