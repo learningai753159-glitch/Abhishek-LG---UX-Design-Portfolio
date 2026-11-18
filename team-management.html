@@ -1173,10 +1173,9 @@
 </head>
 <body>
 <a class="skip" href="#top">Skip to content</a>
-<header class="nv" id="top"><div class="nv-in">
-<a class="nv-b" href="index.html">Abhishek LG</a>
-<nav class="nv-l" aria-label="Main"><a href="index.html#work">Work</a><a href="index.html#about">About</a><a href="index.html#writing">Writing</a><a href="index.html#contact">Contact</a></nav>
-<a class="bt bt-d bt-s" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Resume</a>
+<header class="nav cs-nav" id="top"><div class="cs-nav-in">
+<div class="cs-nav-l"><a class="brand" href="index.html">Abhishek LG</a><span class="cs-ch">Chapter 02 · Team and user management</span></div>
+<a class="cs-back" href="index.html#work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>Back to home</a>
 </div></header>
 
 <!-- ============ NAV ============ -->
@@ -1464,8 +1463,7 @@ window.addEventListener('scroll',tick,{passive:true});window.addEventListener('r
 <script>(function(){var e=document.querySelectorAll('#start .rv');if(!('IntersectionObserver' in window)){e.forEach(function(n){n.classList.add('in')});return}var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.2});e.forEach(function(n){io.observe(n)})})();</script>
 
 <script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href="#top"]');if(!a)return;e.preventDefault();window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})});</script>
-<script>(function(){var n=document.getElementById('top');function s(){if(n)n.classList.toggle('on',scrollY>8)}addEventListener('scroll',s,{passive:true});s();
-var c=document.getElementById('contact');if(c){if('IntersectionObserver' in window){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){c.classList.add('in');o.disconnect()}},{threshold:.25});o.observe(c)}else c.classList.add('in')}
+<script>(function(){var c=document.getElementById('contact');if(c){if('IntersectionObserver' in window){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){c.classList.add('in');o.disconnect()}},{threshold:.25});o.observe(c)}else c.classList.add('in')}
 document.querySelectorAll('.ct [data-copy]').forEach(function(b){b.addEventListener('click',function(ev){ev.stopPropagation();var t=b.getAttribute('data-copy'),sp=b.querySelector('span');function d(){if(sp){var o=sp.textContent;sp.textContent='Copied';setTimeout(function(){sp.textContent=o},1600)}}if(navigator.clipboard)navigator.clipboard.writeText(t).then(d,d);else d()},true)})})();</script>
 </body>
 </html>

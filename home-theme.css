@@ -59,7 +59,6 @@
 html body{background:#fff;color:var(--ink);font-family:var(--f)}
 html body .main .case-shell,html body .main .main{background:transparent}
 /* the homepage nav is fixed: keep content clear of it */
-html body .main .case-shell{padding-top:68px!important}
 .nv{font-family:var(--f)}
 .nv .nv-l a{color:var(--ink)}
 .nv,.nv.on{background:#fff;box-shadow:none;border-bottom:1px solid transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
@@ -140,6 +139,10 @@ html body .main .r.hunt,html body .main .ctx2-miss,html body .main .ptx-c.o,html
 html body .main .r.hit,html body .main .mc-r.mc-o,html body .main .ptx-c.o{border-color:var(--ink)!important}
 html body .main .ptx-c.o,html body .main .mc-r.mc-o{background:#fff!important}
 html body .main .ia-n{background:#F2F2F2!important;color:var(--ink)!important}
-html body .case-shell{padding-top:68px!important}
 @media(max-width:760px){html body .main .case-hero{padding-top:40px!important}}
 html body .main .cs-meta>div,html body .main .rs-meta>div{border-left-color:var(--ln)!important}
+
+/* case-study header: brand | chapter, back to home (standard across case studies) */
+.cs-nav,.cs-nav .brand,.cs-nav .cs-ch,.cs-nav .cs-back{font-family:var(--f)!important}
+.cs-nav .brand,.cs-nav .cs-back{color:var(--ink)!important}
+.cs-nav .cs-ch{color:var(--mu)!important}

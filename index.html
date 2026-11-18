@@ -541,6 +541,11 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--red)}
 a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--ink);font-weight:600}
 .pc3-ph{background:var(--panel);border-color:#DADADE}
 
+/* nav: brand at the far left, actions at the far right, links centred */
+.nv-in{width:auto;max-width:none;margin:0;padding:0 clamp(20px,4.4vw,64px);display:grid;grid-template-columns:1fr auto 1fr}
+.nv-in>.bt{justify-self:end}
+@media(max-width:720px){.nv-in{display:flex;justify-content:space-between}}
+
 </style>
 </head>
 <body id="top">
