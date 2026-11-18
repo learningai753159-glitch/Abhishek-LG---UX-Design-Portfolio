@@ -693,3 +693,44 @@ html body .main .cs-meta>div,html body .main .rs-meta>div{border-left-color:var(
 .lv-lead{max-width:56ch}
 .lv-bt{display:block}
 .lv-blue .lv-meta{margin-top:12px;text-align:left}
+
+/* ===== 01 The product: editorial structure, sample palette and fonts ===== */
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/inter-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/inter-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/inter-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/inter-latin-700-normal.woff2) format('woff2')}
+#product.ov{--in:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;--srf:'Instrument Serif',Georgia,serif;--bl:#0B5BD3;--dk:#1F1F1F;--cr:#FDEFC4;--gr:#F3F4F6;--ln2:#E5E7EB;font-family:var(--in)}
+#product.ov *{font-family:inherit}
+#product.ov .ser{font-family:var(--srf)!important;font-style:italic!important;font-weight:400;letter-spacing:-.01em;font-size:1.08em}
+#product .ov-ey{margin:0 0 14px;display:flex;align-items:center;gap:10px;font:400 13px/1 var(--mono)!important;letter-spacing:.14em;text-transform:uppercase;color:#6B7280}
+#product .ov-ey::before{content:"";width:22px;height:1px;background:#9CA3AF}
+#product .ov-h{font-family:var(--in);font-weight:700;letter-spacing:-.04em;color:#111}
+#product .ov-lead{color:#4B5563}
+/* three points: coloured top bars */
+#product .ov-pts>div{border-top:3px solid var(--dk);padding-top:16px}
+#product .ov-pts>div:nth-child(2){border-top-color:#F2C94C}
+#product .ov-pts>div:nth-child(3){border-top-color:var(--bl)}
+#product .ov-pts h3{font-family:var(--in);font-weight:600;letter-spacing:-.015em}
+#product .ov-pts p{color:#4B5563}
+/* main card: dark stat + grey diagram panel */
+#product .ov-card{background:var(--gr);border:1px solid var(--ln2);border-radius:26px;padding:0;overflow:hidden}
+#product .ov-top{background:var(--dk);color:#fff;padding:clamp(22px,3vw,36px);border-bottom:0}
+#product .ov-big b{font-family:var(--in);font-weight:700;letter-spacing:-.05em;color:#fff}
+#product .ov-big span{color:rgba(255,255,255,.78)}
+#product .ov-sum{border-left-color:rgba(255,255,255,.18)}
+#product .ov-sh{color:#fff;font-family:var(--in);font-weight:600}
+#product .ov-sum p:not(.ov-sh){color:rgba(255,255,255,.72)}
+#product .ov-dia{margin:0;padding:clamp(22px,3vw,36px)}
+#product .ov-k{font:500 11.5px/1 var(--mono)!important;letter-spacing:.12em;color:#6B7280}
+#product .ov-mail,#product .ov-sub{border-color:var(--ln2);box-shadow:0 8px 24px rgba(17,24,39,.06)}
+#product .ov-ic{background:#E8F0FD;color:var(--bl)}
+#product .ov-att span{font-family:var(--mono)!important;background:#F3F4F6;color:#4B5563}
+#product .ov-mid svg{stroke:var(--bl)}
+#product .ov-n{background:var(--bl);font-family:var(--mono)!important}
+#product .ov-nl,#product .ov-step{color:var(--bl)}
+#product .ov-miss{background:var(--cr)}
+#product .ov-miss b{background:var(--dk)}
+#product .ov-after{color:#4B5563}
+/* table of contents accent for this page */
+.cx-toc a.on{color:#0B5BD3}
+.cx-toc a.on::before{background:#0B5BD3}
