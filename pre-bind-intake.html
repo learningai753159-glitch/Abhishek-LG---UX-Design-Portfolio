@@ -1844,6 +1844,55 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
 <div class="cs-nav-l"><a class="brand" href="index.html">Abhishek LG</a><span class="cs-ch">Chapter 01 · One flow for all insurance</span></div>
 <a class="cs-back" href="index.html#work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>Back to home</a>
 </div></header>
+<div class="cx" id="cx-new">
+<aside class="cx-toc" aria-label="Table of contents">
+<p class="cx-toc-k">Table of contents</p>
+<nav>
+<p class="cx-toc-g">The intro</p>
+<a href="#product" class="on">The product</a>
+</nav>
+</aside>
+<div class="cx-main">
+
+<section class="cx-s" id="product" data-toc="product">
+<p class="cx-ey">01 · The product</p>
+<h2 class="cx-h">Every insurance decision used to start with a pile of emails</h2>
+
+<div class="cx-two">
+<div class="cx-card">
+<p class="cx-k">Who used it</p>
+<p class="cx-p">Underwriters in marine insurance. They decide which risks to insure, and at what price.</p>
+</div>
+<div class="cx-card">
+<p class="cx-k">Their day before the platform</p>
+<p class="cx-p">The details came in emails, PDFs and Excel sheets. Underwriters had to collect everything, read every page, find what was missing and spot the risks. Only then could they decide whether to quote. After that, they still had to keep watch on the risk.</p>
+</div>
+</div>
+
+<div class="cx-flow">
+<p class="cx-k">What the platform did</p>
+<p class="cx-grp">Before the policy</p>
+<ol class="cx-steps">
+<li><span class="cx-n">1</span><div><b>An email comes in</b><span>The broker sends one email with all the documents: PDFs, Excel sheets and more.</span></div></li>
+<li><span class="cx-n">2</span><div><b>AI creates a submission</b><span>AI turns the email into one clean record, called a submission.</span></div></li>
+<li><span class="cx-n">3</span><div><b>Everything in one place</b><span>The underwriter sees every detail, like the vessel schedule and the list of vessels, next to the attached documents. Missing fields are flagged.</span></div></li>
+<li><span class="cx-n">4</span><div><b>The underwriter decides</b><span>They fill the gaps, read the submission and decide whether to quote.</span></div></li>
+<li><span class="cx-n">5</span><div><b>The quote becomes a policy</b><span>Once the quote is accepted, it becomes a live policy.</span></div></li>
+</ol>
+<p class="cx-grp">After the policy</p>
+<ol class="cx-steps" start="6">
+<li><span class="cx-n">6</span><div><b>The risk is tracked</b><span>Where each vessel is moving, whether it enters a risk zone like a war zone, regular updates, and renewals.</span></div></li>
+</ol>
+</div>
+
+<p class="cx-line">AI does the slow sorting. <b>The underwriter always makes the call.</b></p>
+<p class="cx-note">Several marine insurers ran their work on it.</p>
+</section>
+
+</div>
+</div>
+<div class="cx-old" aria-hidden="true"><span>Old version below</span></div>
+
 
 <!-- ============ NAV ============ -->
 <div class="case-shell" style="padding-top:0;">
@@ -2281,6 +2330,7 @@ L.querySelector('.x').addEventListener('click',close);L.querySelector('.pv').add
 L.addEventListener('click',function(e){if(e.target===L)close()});
 document.addEventListener('keydown',function(e){if(!L.classList.contains('on'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1);});})();</script>
 <script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href="#top"]');if(!a)return;e.preventDefault();window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})});</script>
+<script>(function(){var l=[].slice.call(document.querySelectorAll('.cx-toc a'));if(!l.length||!('IntersectionObserver' in window))return;var m={};l.forEach(function(a){m[a.getAttribute('href').slice(1)]=a});var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){l.forEach(function(a){a.classList.remove('on')});var a=m[e.target.id];if(a){a.classList.add('on');if(a.scrollIntoView&&innerWidth<900)a.parentNode.scrollLeft=a.offsetLeft-20}}})},{rootMargin:'-30% 0px -60% 0px'});document.querySelectorAll('.cx-s').forEach(function(s){o.observe(s)})})();</script>
 <script>(function(){var c=document.getElementById('contact');if(c){if('IntersectionObserver' in window){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){c.classList.add('in');o.disconnect()}},{threshold:.25});o.observe(c)}else c.classList.add('in')}
 document.querySelectorAll('.ct [data-copy]').forEach(function(b){b.addEventListener('click',function(ev){ev.stopPropagation();var t=b.getAttribute('data-copy'),sp=b.querySelector('span');function d(){if(sp){var o=sp.textContent;sp.textContent='Copied';setTimeout(function(){sp.textContent=o},1600)}}if(navigator.clipboard)navigator.clipboard.writeText(t).then(d,d);else d()},true)})})();</script>
 </body>
