@@ -891,3 +891,21 @@ html body .main .cs-meta>div,html body .main .rs-meta>div{border-left-color:var(
 .sl-biz h3{color:#fff!important}
 .sl-biz p:not(.sl-k){color:rgba(255,255,255,.75)!important}
 @media(max-width:900px){.sl-cols{grid-template-columns:1fr 1fr}.sl-sub{margin-left:0;width:100%}.sl-pts{grid-template-columns:1fr}}
+
+/* ===== Design process ===== */
+#process.ov{font-family:'Inter',system-ui,sans-serif}
+#process.ov *{font-family:inherit}
+#process .ov-ey{margin:0 0 14px;display:flex;align-items:center;gap:10px;font-family:'Inter',system-ui,sans-serif!important;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8A8A8A}
+#process .ov-ey::before{content:"";width:22px;height:1px;background:#C8C8C8}
+#process .ov-h{font-weight:700;letter-spacing:-.04em;color:#111}
+.dq-row{list-style:none;margin:clamp(28px,3.6vw,40px) 0 0;padding:clamp(16px,2vw,22px);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;border-radius:24px;background:#F5F5F5;border:1px solid #EAEAEA;position:relative}
+.dq-s{position:relative;padding:18px 18px 20px;border-radius:16px;background:#fff;border:1px solid #EAEAEA}
+.dq-n{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#111;color:#fff;font-size:12px;font-weight:600}
+.dq-s h3{margin:14px 0 0;font-size:17px;font-weight:600;letter-spacing:-.015em;color:#111}
+.dq-s ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.dq-s ul li{position:relative;padding-left:14px;font-size:14px;line-height:1.5;color:#6B6B6B}
+.dq-s ul li::before{content:"";position:absolute;left:0;top:.6em;width:5px;height:5px;border-radius:50%;background:#BDBDBD}
+.dq-s:not(:last-child)::after{content:"";position:absolute;top:33px;right:-11px;width:12px;height:1.5px;background:#111;z-index:1}
+@media(max-width:1100px){.dq-row{grid-template-columns:repeat(3,minmax(0,1fr))}.dq-s::after{display:none}}
+@media(max-width:900px){.dq-row{grid-template-columns:1fr}}
+@media(max-width:900px){.cx{grid-template-columns:minmax(0,1fr)}.cx-toc{min-width:0;max-width:100vw}}
