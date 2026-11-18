@@ -14,7 +14,7 @@
 .sx .sx-badge rect{fill:#1B1A18}.sx .sx-badge text{fill:#FBF9F5;font-size:18px;font-weight:600}
 .sx .sx-mul rect{fill:#fff;stroke:#1B1A18;stroke-width:2}
 .sx .sx-mul text{font-family:var(--f-serif);font-style:italic;font-size:40px}
-.sx .sx-tl{font-size:16px;font-weight:500;fill:#626C81;letter-spacing:.04em}
+.sx .sx-tl{font-size:16px;font-weight:500;fill:#6B6B6B;letter-spacing:.04em}
 .sx .sx-track{stroke:#E6E1D8;stroke-width:8;stroke-linecap:round}
 .sx .sx-fill{stroke:#1B1A18;stroke-width:8;stroke-linecap:round;transition:stroke .3s}
 .sx .sx-fill.hot{stroke:#FF5A52}
@@ -33,18 +33,18 @@
 .main #impact .rx-grid .rx-ck{order:-2;width:36px;height:36px;background:#1B1A18!important;color:#FBF9F5!important}
 .main #impact .rx-pass{order:-1;align-self:flex-start;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#525D6D;background:#F0F4FA;border-radius:999px;padding:4px 10px;margin-top:-46px;margin-left:48px}
 .main #impact .rx-grid h3{margin:4px 0 0;font-size:20px;color:#1B1A18}
-.main #impact .rx-grid p{grid-column:auto;margin:0;font-size:15px;line-height:1.55;color:#626C81}
+.main #impact .rx-grid p{grid-column:auto;margin:0;font-size:15px;line-height:1.55;color:#6B6B6B}
 .rx-num{margin-top:56px;background:#F0F4FA;border-radius:24px;padding:clamp(28px,5vw,56px)}
 .main .rx-lab2{margin:0 0 20px;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#525D6D}
 .rx-wk{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;font-family:var(--f-serif);font-style:italic;line-height:1}
 .rx-from{font-size:clamp(36px,5vw,64px);color:#9AA1AD;text-decoration:line-through;text-decoration-thickness:2px}
 .rx-to{font-size:clamp(56px,8vw,104px);color:#1B1A18}
 .rx-ar{width:48px;height:16px;fill:none;stroke:#1B1A18;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.main .rx-dd{margin:12px 0 0;font-size:15px;color:#626C81}
+.main .rx-dd{margin:12px 0 0;font-size:15px;color:#6B6B6B}
 .rx-st2{margin:40px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;border-top:1px solid #DDE3EC;padding-top:28px}
 .rx-st2 div{display:flex;flex-direction:column;gap:6px}
 .rx-st2 dt{font-family:var(--f-serif);font-style:italic;font-size:clamp(44px,5vw,64px);line-height:1;color:#1B1A18}
-.rx-st2 dd{margin:0;font-size:14px;line-height:1.45;color:#626C81}
+.rx-st2 dd{margin:0;font-size:14px;line-height:1.45;color:#6B6B6B}
 #impact .s02.s02-in{margin:24px 0 0}
 #impact .rv{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}#impact .rv.in{opacity:1;transform:none}
 @media(max-width:1023px){.rx-st2{grid-template-columns:repeat(2,minmax(0,1fr))}}

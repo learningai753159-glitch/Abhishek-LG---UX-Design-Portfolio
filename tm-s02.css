@@ -1,14 +1,14 @@
 /* Section 02: the answer */
 .s02{padding:160px 0}
-.s02-sub{margin:16px 0 0;font-size:17px;line-height:1.6;color:#626C81}
+.s02-sub{margin:16px 0 0;font-size:17px;line-height:1.6;color:#6B6B6B}
 .s02 .bn{margin-top:48px;background:#FBF9F5;border:1px solid #E6E1D8;border-radius:16px;padding:32px}
 .bn-row{display:grid;grid-template-columns:96px minmax(0,1fr);align-items:center;gap:24px;padding:24px 0}
 .bn-row+.bn-row{border-top:1px solid #E6E1D8}
 .bn-row:first-child{padding-top:0}.bn-row:last-child{padding-bottom:0}
-.bn-l{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#626C81}
+.bn-l{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#6B6B6B}
 .bn-now .bn-l{color:#1B1A18}
 .bn-flow{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
-.nd{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid #C9CDD4;background:#fff;color:#626C81;font-size:15px;font-weight:500;white-space:nowrap}
+.nd{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid #C9CDD4;background:#fff;color:#6B6B6B;font-size:15px;font-weight:500;white-space:nowrap}
 .nd.on{border-color:#1B1A18;color:#1B1A18}
 .ck{width:16px;height:16px;fill:none;stroke:#1B1A18;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .ar{width:56px;height:14px;flex:none;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
