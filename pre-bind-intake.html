@@ -1877,7 +1877,7 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
 <li>Then they email the broker back, and wait.</li>
 </ul>
 </div>
-<div class="vs-ar" aria-hidden="true"><svg class="vs-arr" viewBox="0 0 100 24" preserveAspectRatio="none"><path class="vs-ln" d="M2 13 C 26 7, 48 18, 72 11 S 90 10, 96 12" vector-effect="non-scaling-stroke"/><path class="vs-hd" d="M86 5 L97 12 L87 19" vector-effect="non-scaling-stroke"/></svg><span class="vs-ai">AI</span></div>
+<div class="vs-ar" aria-hidden="true"><svg class="vs-arr" viewBox="0 0 120 24" preserveAspectRatio="none"><path class="vs-ln" d="M0 13 C 28 7, 52 18, 80 11 S 108 10, 119 12" vector-effect="non-scaling-stroke"/><path class="vs-hd" d="M109 5 L119.5 12 L109 19" vector-effect="non-scaling-stroke"/></svg><span class="vs-ai">AI</span></div>
 <div class="vs-col vs-after">
 <p class="vs-k">With the platform</p>
 <div class="nb-sub" role="img" aria-label="One submission: vessel schedule, list of vessels and documents in one place, with missing fields flagged">
@@ -1887,7 +1887,7 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
 <p class="nb-row"><span>Documents attached</span><svg class="nb-ck" viewBox="0 0 20 20"><path pathLength="1" d="M3 11 L8 16 L17 4"/></svg></p>
 <p class="nb-row nb-miss"><span>Missing fields flagged</span><svg class="nb-ring" viewBox="0 0 140 44" preserveAspectRatio="none"><path pathLength="1" d="M10 24 C 8 8, 120 2, 132 18 C 140 32, 40 42, 14 34 C 4 30, 10 14, 30 10"/></svg></p>
 </div>
-<h3 class="vs-h">One email in. One submission out.</h3>
+<h3 class="vs-h"><span class="vs-l">One email in.</span> <span class="vs-l">One submission out.</span></h3>
 <ul class="nb-ul nb-ul-ok">
 <li>The broker sends everything in one email.</li>
 <li>AI turns it into one submission: what is there, what is missing, what matters most.</li>
@@ -1900,7 +1900,7 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
 <p class="nb-big"><b><span class="nb-cnt" data-to="92">92</span>%<svg class="nb-u nb-u2" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 30 4, 62 14, 90 7 S 114 6, 117 9" vector-effect="non-scaling-stroke"/></svg></b><span>less time to give a quote</span></p>
 </div>
 <div class="nb-jr">
-<div class="nb-br" aria-hidden="true"><span class="nb-band b1">Before the policy</span><span class="nb-band b2">After</span><svg class="nb-brs" viewBox="0 0 600 14" preserveAspectRatio="none"><path class="br1" d="M2 13 C 2 6, 4 5, 12 5 L 482 5.5 C 490 5, 492 6, 492 13" vector-effect="non-scaling-stroke"/><path class="br2" d="M512 13 C 512 6, 514 5, 522 5 L 588 5.5 C 596 5, 598 6, 598 13" vector-effect="non-scaling-stroke"/></svg></div>
+<div class="nb-br" aria-hidden="true"><div class="nb-bk k1"><span class="nb-band b1">Before the policy</span></div><div class="nb-bk k2"><span class="nb-band b2">After</span></div></div>
 <svg class="nb-line" viewBox="0 0 1000 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 10 C 90 4, 160 16, 250 9 S 420 4, 500 11 S 680 16, 750 9 S 900 5, 998 10" vector-effect="non-scaling-stroke"/></svg>
 <ol>
 <li><b>1</b><span>Email comes in</span></li>
@@ -2354,7 +2354,7 @@ L.querySelector('.x').addEventListener('click',close);L.querySelector('.pv').add
 L.addEventListener('click',function(e){if(e.target===L)close()});
 document.addEventListener('keydown',function(e){if(!L.classList.contains('on'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1);});})();</script>
 <script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href="#top"]');if(!a)return;e.preventDefault();window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})});</script>
-<script>(function(){var p=document.getElementById('product');if(!p||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.documentElement.classList.add('nb-anim');var t=p.querySelectorAll('.nb-mk,.nb-pile,.vs-ar,.nb-sub,.nb-big,.nb-jr');var o=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;o.unobserve(el);var d=el.classList.contains('vs-ar')?350:el.classList.contains('nb-sub')?700:0;setTimeout(function(){el.classList.add('in');var c=el.querySelector('.nb-cnt');if(c){var to=+c.dataset.to,s=performance.now();(function f(n){var k=Math.min(1,(n-s)/550);c.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(s)}},d)})},{threshold:.35});t.forEach(function(x){o.observe(x)})})();</script>
+<script>(function(){var p=document.getElementById('product');if(!p||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.documentElement.classList.add('nb-anim');var t=p.querySelectorAll('.nb-mk,.nb-pile,.vs-ar,.nb-big,.nb-jr');var o=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;o.unobserve(el);var d=el.classList.contains('vs-ar')?350:0;setTimeout(function(){el.classList.add('in');if(el.classList.contains('vs-ar')){var af=p.querySelector('.vs-after'),sb=p.querySelector('.nb-sub');setTimeout(function(){af&&af.classList.add('in')},650);setTimeout(function(){sb&&sb.classList.add('in')},950)}var c=el.querySelector('.nb-cnt');if(c){var to=+c.dataset.to,s=performance.now();(function f(n){var k=Math.min(1,(n-s)/550);c.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(s)}},d)})},{threshold:.35});t.forEach(function(x){o.observe(x)})})();</script>
 <script>(function(){var l=[].slice.call(document.querySelectorAll('.cx-toc a'));if(!l.length||!('IntersectionObserver' in window))return;var m={};l.forEach(function(a){m[a.getAttribute('href').slice(1)]=a});var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){l.forEach(function(a){a.classList.remove('on')});var a=m[e.target.id];if(a){a.classList.add('on');if(a.scrollIntoView&&innerWidth<900)a.parentNode.scrollLeft=a.offsetLeft-20}}})},{rootMargin:'-30% 0px -60% 0px'});document.querySelectorAll('.cx-s').forEach(function(s){o.observe(s)})})();</script>
 <script>(function(){var c=document.getElementById('contact');if(c){if('IntersectionObserver' in window){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){c.classList.add('in');o.disconnect()}},{threshold:.25});o.observe(c)}else c.classList.add('in')}
 document.querySelectorAll('.ct [data-copy]').forEach(function(b){b.addEventListener('click',function(ev){ev.stopPropagation();var t=b.getAttribute('data-copy'),sp=b.querySelector('span');function d(){if(sp){var o=sp.textContent;sp.textContent='Copied';setTimeout(function(){sp.textContent=o},1600)}}if(navigator.clipboard)navigator.clipboard.writeText(t).then(d,d);else d()},true)})})();</script>
