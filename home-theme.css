@@ -1337,3 +1337,10 @@ background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;p
 .c3-steps{border-top:0!important}
 .c3-steps li{padding-top:4px!important}
 @media(max-width:600px){.c3-steps li{border-bottom:0!important;padding:8px 0!important}}
+/* design process */
+.c3-dp{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.c3-dp li{display:flex;flex-direction:column;gap:14px;padding:22px 20px 24px;background:#fff;border:1px solid var(--ln);border-radius:20px}
+.c3-dp .c3-num{font-size:clamp(48px,5vw,72px)}
+.c3-dp b{font-size:clamp(18px,1.6vw,22px);font-weight:700;letter-spacing:-.02em}
+@media(max-width:960px){.c3-dp{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.c3-dp{grid-template-columns:1fr 1fr}.c3-dp li:last-child{grid-column:1/-1}}
