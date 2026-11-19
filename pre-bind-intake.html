@@ -1937,6 +1937,16 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
 </div>
 </div>
 
+<script>(function(){var nav=document.querySelector('.c3-nav');if(!nav)return;
+var links=[].slice.call(nav.querySelectorAll('a[href^="#"]')),secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+function top(){var h=0,hd=document.querySelector('.cs-nav,header.cs-nav,.cs-top,nav.cs-nav');if(hd){var r=hd.getBoundingClientRect();if(getComputedStyle(hd).position!='static')h=r.bottom}
+if(matchMedia('(max-width:960px)').matches)h+=nav.offsetHeight;return Math.max(h,0)+24}
+function set(i){links.forEach(function(a,j){a.classList.toggle('on',j===i)});var a=links[i];if(a&&a.scrollIntoView&&matchMedia('(max-width:960px)').matches){nav.scrollTo({left:a.offsetLeft-12,behavior:'smooth'})}}
+var lock=0;
+links.forEach(function(a,i){a.addEventListener('click',function(e){var t=secs[i];if(!t)return;e.preventDefault();e.stopPropagation();set(i);lock=Date.now()+900;
+var y=t.getBoundingClientRect().top+scrollY-top();scrollTo({top:y,behavior:'smooth'});history.replaceState(null,'',a.getAttribute('href'))},true)});
+function spy(){if(Date.now()<lock)return;var line=Math.max(top()+80,innerHeight*.4),cur=0;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<=line)cur=i});set(cur)}
+addEventListener('scroll',spy,{passive:true});addEventListener('resize',spy);spy();})();</script>
 <div class="c3-park c3-w" aria-hidden="true"><span>Moved down · to rework</span></div>
 
 <section class="c3-s c3-w" id="c3-impact">
