@@ -605,6 +605,118 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--red);font-weight:500}
 .arc-s{font-size:14px;color:var(--ink2)}
 .arc-card i{position:absolute;right:20px;top:50%;transform:translateY(-50%);font-style:normal;color:var(--ink2)}
 
+/* ===== case study theme on the homepage (19 Nov): off-white, blue accent, Inter, serif italic words, mono labels ===== */
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/inter-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/inter-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/inter-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/inter-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Source Serif 4';font-style:italic;font-weight:500;font-display:swap;src:url(assets/fonts/source-serif-4-latin-500-italic.woff2) format('woff2')}
+@font-face{font-family:'Source Serif 4';font-style:italic;font-weight:600;font-display:swap;src:url(assets/fonts/source-serif-4-latin-600-italic.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/jetbrains-mono-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/jetbrains-mono-latin-500-normal.woff2) format('woff2')}
+:root{--bg:#F7F8FA;--ink:#1F1F1F;--ink2:#4A4D55;--mu:#6B6F78;--ln:#E3E5E9;--sf:#fff;--chip:#F0F1F3;--blue:#0B57D0;--blue2:#0842A0;--tint:#EAF1FD;--sand:#FFE8A6;--red:#0B57D0;--panel:#EEF0F3;--dot:#DCE0E6;--warm:#EEF0F3;--sh:0 10px 30px rgba(31,31,31,.06);
+--f:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--srf:'Source Serif 4',Georgia,serif}
+html,body{background:var(--bg)}
+body{color:var(--ink);font-family:var(--f)}
+:focus-visible{outline-color:var(--blue)}
+.it{font-family:var(--srf)!important;font-style:italic!important;font-weight:500!important;letter-spacing:-.01em}
+
+/* type: Inter bold headings, like the case studies */
+.hm-n,.np-h{font-family:var(--f)!important;font-weight:700;font-variation-settings:normal;letter-spacing:-.05em}
+.h2,.ct-h{font-family:var(--f);font-weight:700;letter-spacing:-.04em}
+.cc h3,.pc3 h3,.wf-i b,.tq b{font-family:var(--f);font-weight:600}
+.hm-t{font-weight:500;color:var(--ink)}
+
+/* serif italic accent words with a soft sand highlight, no coral squiggle */
+.hm-m{color:var(--ink);font-family:var(--srf)!important;font-style:italic!important;font-weight:500;letter-spacing:-.01em;padding:0 .08em;background:linear-gradient(transparent 58%,var(--sand) 58%,var(--sand) 94%,transparent 94%)}
+.hm-m .hm-u{display:none}
+.ct-h .hm-m{padding:0 .06em}
+
+/* mono labels with a short rule, like the case study eyebrows */
+.ey,.hm-k,.np-sub,.abq-bar p{font-family:var(--mono)!important;font-weight:500;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.ey{display:flex;align-items:center;gap:12px}
+.ey::before{content:"";width:22px;height:1px;background:currentColor;flex:none}
+.hm-k{display:inline-flex;align-items:center;gap:12px}
+.hm-k::before,.hm-k::after{content:"";width:22px;height:1px;background:currentColor}
+.cc-n,.pc3-k,.wf-n,.wf-k,.wf-m,.tq small,.arc-k,.hm-loc,.hm-sc,.cc-st{font-family:var(--mono)!important;letter-spacing:.1em}
+.cc-n span,.cc-1 .cc-n span,.cc-2 .cc-n span,.cc-3 .cc-n span{color:var(--blue)}
+.pc3-k span{color:var(--blue)}
+.cc-st{letter-spacing:.04em;font-size:13px}
+.cc-st b{font-family:var(--f)!important;letter-spacing:-.04em;font-weight:700}
+
+/* buttons and links: blue primary, white outline */
+.bt-d{background:var(--blue);color:#fff;box-shadow:0 8px 20px -10px rgba(11,87,208,.6)}
+.bt-d:hover{background:var(--blue2)}
+.bt-o{background:#fff;color:var(--ink);border-color:var(--ln)}
+.bt-o:hover{border-color:var(--blue);color:var(--blue)}
+.lk{color:var(--blue);border-bottom-color:rgba(11,87,208,.3)}
+.lk:hover{border-bottom-color:var(--blue)}
+.cc-go,.pc3-go{color:var(--blue)}
+
+/* nav: same places as now, brand left, links centred, Resume right */
+.nv,.nv.on{background:rgba(247,248,250,.88);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px)}
+.nv.on{border-bottom-color:var(--ln)}
+.nv-b{font-weight:700;letter-spacing:-.02em}
+.nv-l a{color:var(--ink2)}
+.nv-l a:hover{color:var(--ink);background:var(--chip)}
+.nv-in>.bt{box-shadow:none}
+
+/* hero */
+.hm::before{background-image:radial-gradient(#E1E4EA 1px,transparent 1.2px)}
+.hm-op{background:#fff;border:1px solid var(--ln);color:var(--ink);font-family:var(--mono);font-size:12.5px;letter-spacing:.06em}
+.dt{background:#1E8E3E;box-shadow:0 0 0 4px rgba(30,142,62,.14)}
+.hm-s{color:var(--ink2)}
+
+/* work: cool grey dotted panel, white cards, quiet backdrops */
+.box{background-color:var(--panel);background-image:radial-gradient(var(--dot) 1px,transparent 1.2px)}
+.box .cc,.box .cc-1,.box .cc-2,.box .cc-3{background:#fff;border-color:var(--ln)}
+.box .cc:hover{border-color:var(--blue)}
+.box .cc-1 .cc-im{background:var(--tint)}
+.box .cc-2 .cc-im,.box .cc-3 .cc-im{background:var(--chip)}
+.cc-p,.cc-1 .cc-p{color:var(--ink2)}
+.cc-bar{border-bottom-color:var(--ln)}
+.cc-bar i{background:#D9DCE2}
+.cc-map .z2,.cc-2 .cc-map .z2{border-color:var(--blue);color:var(--blue)}
+.cc-map .v{border-bottom-color:var(--ink)}
+.arc-card{border-color:#C9CDD5}
+.arc-card:hover{border-color:var(--blue);background:#fff}
+.arc-card:hover i{color:var(--blue)}
+
+/* problems: white cards on the off-white page */
+.pn{background:transparent}
+.pc3,.pc3:nth-child(1),.pc3:nth-child(2),.pc3:nth-child(3){background:#fff;border:1px solid var(--ln)}
+.pc3:hover{border-color:var(--blue);box-shadow:var(--sh)}
+.pc3-k em{background:var(--chip);color:var(--ink2);font-style:normal}
+.pc3-q{color:var(--ink2)}
+.pc3-q span{font-family:var(--mono);letter-spacing:.12em;color:var(--mu)}
+.pc3-ph.pc3-img{background:var(--chip);box-shadow:none;border:1px solid var(--ln)}
+
+/* about */
+.abw-p{background-color:var(--panel)}
+.abw-fade{background:linear-gradient(180deg,rgba(238,240,243,0) 0,rgba(238,240,243,.85) 45%,#EEF0F3 70%)}
+.abw-tx p{color:var(--ink2)}
+.abm{background:var(--bg)}
+.pt{border-top-color:var(--ink)}
+.pt li{border-bottom-color:var(--ln)}
+
+/* testimonials: white card, sand highlight, blue ring */
+.tb{background:#fff;background-image:none;border:1px solid var(--ln)}
+.tq mark{background:linear-gradient(transparent 60%,var(--sand) 60%);box-shadow:none;padding:0;border-radius:0}
+.tb-a{border-top-color:var(--ln)}
+.ta.on{color:var(--ink)}
+.ta.on img{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--blue)}
+
+/* writing */
+.np-rule{border-color:var(--ink)}
+.wf-r,.wf-i,.wf-r:first-child{border-color:var(--ln)}
+.wf-i:hover b{text-decoration-color:var(--blue)}
+a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--blue);font-weight:500}
+
+/* contact + footer */
+.ct .hd-p{color:var(--ink2)}
+.ft-b{color:var(--mu);border-top-color:var(--ln)}
+.ft-b a:hover{color:var(--blue)}
+
 </style>
 </head>
 <body id="top">
@@ -631,7 +743,7 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--red);font-weight:500}
 </div>
 </section>
 <section class="sc" id="work" data-screen-label="Selected work"><div class="w"><div class="box">
-<div class="hd rv"><p class="ey">Selected work</p><h2 class="h2">One platform, three problems</h2><p class="hd-p">Concirrus, an AI-native platform for specialty insurance underwriters. I was the lead designer.</p></div>
+<div class="hd rv"><p class="ey">Selected work</p><h2 class="h2">One platform, three <span class="it">problems</span></h2><p class="hd-p">Concirrus, an AI-native platform for specialty insurance underwriters. I was the lead designer.</p></div>
 <div class="cs">
 <a class="cc cc-1 rv" href="pre-bind-intake.html">
 <div class="cc-tx"><p class="cc-n"><span>01</span>Before bind</p><h3>One flow for all insurance</h3><p class="cc-p">From the first request to the agreed policy.</p>
@@ -652,22 +764,22 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--red);font-weight:500}
 </div>
 </div><a class="arc-card" href="archive.html"><span class="arc-k">Archive</span><b>Archived versions</b><span class="arc-s">Older versions of each case study, while I finish the new ones.</span><i aria-hidden="true">→</i></a></div></section>
 <section class="pn" id="side" data-screen-label="Problems I noticed"><div class="w">
-<div class="hd hd-r rv"><div><p class="ey">Beyond the platform</p><h2 class="h2">Problems I noticed</h2></div><a class="lk lk-w" href="projects.html">View all<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<div class="hd hd-r rv"><div><p class="ey">Beyond the platform</p><h2 class="h2">Problems I <span class="it">noticed</span></h2></div><a class="lk lk-w" href="projects.html">View all<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
 <div class="pc3s"><a class="pc3 rv" href="nutbite.html"><div class="pc3-tx"><p class="pc3-k"><span>01</span><em>Shipped, in daily use</em></p><h3>NutBite</h3><p class="pc3-q"><span>The problem</span>Every sale was written in a notebook, photographed and sent on WhatsApp.</p><span class="pc3-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="pc3-ph pc3-img"><img src="assets/nutbite-dashboard.webp" alt="NutBite store dashboard" loading="lazy"></div></a><a class="pc3 rv" href="ai-audit.html"><div class="pc3-tx"><p class="pc3-k"><span>02</span><em>IRCTC</em></p><h3>AI-assisted UX audit</h3><p class="pc3-q"><span>The problem</span>A manual audit took me about a week, and most of that time went on sorting.</p><span class="pc3-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="pc3-ph pc3-img"><img src="assets/ai-audit-diagram.webp" alt="AI-assisted UX audit diagram" loading="lazy"></div></a><a class="pc3 rv" href="spendly.html"><div class="pc3-tx"><p class="pc3-k"><span>03</span><em>25 users, 12 to 16 daily</em></p><h3>Spendly</h3><p class="pc3-q"><span>The problem</span>Open laptop. Open Excel. Enter, label, calculate. Missed entries. Forgot amounts.</p><span class="pc3-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="pc3-ph pc3-img"><img src="assets/spendly-screens.webp" alt="Spendly app screens" loading="lazy"></div></a></div>
 </div></section>
 <section class="sc abq" id="about" data-screen-label="About"><div class="w">
 <div class="abq-bar rv"><p>About</p><p>Bengaluru, India</p></div>
 <div class="abw">
-<div class="abw-tx rv"><h2 class="h2">To me, a good product feels like nothing got in your way</h2><p>From underwriting tools for insurance teams in the UK to a simple store app for a family business in Karnataka. Different users, same goal: make the hard part feel easy.</p><button class="bt bt-d abq-more" type="button" id="abOpen" aria-haspopup="dialog">More about me<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+<div class="abw-tx rv"><h2 class="h2">To me, a good product feels like nothing got in <span class="it">your way</span></h2><p>From underwriting tools for insurance teams in the UK to a simple store app for a family business in Karnataka. Different users, same goal: make the hard part feel easy.</p><button class="bt bt-d abq-more" type="button" id="abOpen" aria-haspopup="dialog">More about me<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
 <div class="abw-p rv"><div class="abw-wall"><div class="awc awc-0"><div class="awt"><figure class="aw "><img src="assets/about-1.webp" alt="Abhishek working on a laptop in a cafe" loading="lazy" decoding="async"></figure><figure class="aw "><img src="assets/about-7.jpg" alt="Abhishek in front of snowy mountains" loading="lazy" decoding="async"></figure><figure class="aw "><img src="assets/about-5.jpg" alt="Abhishek reviewing work on a laptop with a colleague" loading="lazy" decoding="async"></figure><figure class="aw "><img src="assets/about-1.webp" alt="" loading="lazy" decoding="async"></figure><figure class="aw "><img src="assets/about-7.jpg" alt="" loading="lazy" decoding="async"></figure><figure class="aw "><img src="assets/about-5.jpg" alt="" loading="lazy" decoding="async"></figure></div></div><div class="awc awc-1"><div class="awt"><figure class="aw "><img src="assets/about-team-2026.jpg" alt="Abhishek with his team in a meeting room" loading="lazy" decoding="async"></figure><figure class="aw "><img src="assets/about-6.webp" alt="Abhishek near Big Ben in London" loading="lazy" decoding="async"></figure><figure class="aw "><img src="assets/about-swing.webp" alt="Abhishek and two friends on a flower swing" loading="lazy" decoding="async"></figure><figure class="aw "><img src="assets/about-team-2026.jpg" alt="" loading="lazy" decoding="async"></figure><figure class="aw "><img src="assets/about-6.webp" alt="" loading="lazy" decoding="async"></figure><figure class="aw "><img src="assets/about-swing.webp" alt="" loading="lazy" decoding="async"></figure></div></div><div class="awc awc-2"><div class="awt"><figure class="aw "><img src="assets/about-9.webp" alt="Abhishek against a painted brick wall" loading="lazy" decoding="async"></figure><figure class="aw z"><img src="assets/about-4.jpg" alt="Abhishek with a group in a large office atrium" loading="lazy" decoding="async"></figure><figure class="aw "><img src="assets/about-8.webp" alt="Abhishek by Tower Bridge in London" loading="lazy" decoding="async"></figure><figure class="aw "><img src="assets/about-9.webp" alt="" loading="lazy" decoding="async"></figure><figure class="aw z"><img src="assets/about-4.jpg" alt="" loading="lazy" decoding="async"></figure><figure class="aw "><img src="assets/about-8.webp" alt="" loading="lazy" decoding="async"></figure></div></div></div><span class="abw-fade" aria-hidden="true"></span><img class="abw-me" src="assets/abhishek-cutout.webp" alt="Abhishek LG" decoding="async"></div>
 </div></div></section>
 <dialog class="abm" id="abm" aria-labelledby="abmT"><div class="abm-in"><button class="abm-x" type="button" id="abClose" aria-label="Close">&times;</button><p class="ey">About</p><h3 id="abmT">Abhishek LG</h3><p class="ey abm-k">Experience</p><ol class="pt pt-c"><li><b>Concirrus</b><span>Staff UX Designer</span><em>Jul 2023 to Sep 2026</em></li><li><b>CoreValue Technologies</b><span>UX Designer</span><em>Oct 2020 to Jun 2023</em></li><li><b>StoreKing</b><span>UI Designer</span><em>May 2019 to Oct 2020</em></li><li><b>Aspire Gate</b><span>UX design training</span><em>Nov 2018 to May 2019</em></li><li><b>TalentXO</b><span>Talent Acquisition Executive</span><em>Sep 2017 to Nov 2018</em></li></ol></div></dialog>
 <section class="sc" id="recs" data-screen-label="Testimonials"><div class="w">
-<div class="hd hd-r rv"><div><p class="ey">Testimonials</p><h2 class="h2">What people say</h2></div><a class="lk" href="https://www.linkedin.com/in/abhishek-lg-162800219/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener">Read on LinkedIn<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+<div class="hd hd-r rv"><div><p class="ey">Testimonials</p><h2 class="h2">What people <span class="it">say</span></h2></div><a class="lk" href="https://www.linkedin.com/in/abhishek-lg-162800219/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener">Read on LinkedIn<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
 <div class="tb rv" id="tb"><div class="tb-q" id="tbq"><figure class="tq on" id="tq0" role="tabpanel" aria-labelledby="ta0"><blockquote>"Abhishek was the lead UI/UX designer in my team, driving forward industry-leading, AI-first product capabilities sold into globally recognised organisations. His communication skills and professional approach to collaboration were fantastic, successfully <mark>bridging the gap between engineering teams based in India, and product and commercial teams in London</mark>."</blockquote><figcaption><img src="assets/rec-whitlam.png" alt="" width="48" height="48" loading="lazy"><span><b>James Whitlam</b><small>Founder at Vancap</small></span></figcaption></figure><figure class="tq" id="tq1" role="tabpanel" aria-labelledby="ta1" hidden><blockquote>"He took a technical product built for underwriters and <mark>made it clear and easy to use</mark>, which mattered a great deal to a young company selling into the insurance market."</blockquote><figcaption><img src="assets/rec-rendell.png" alt="" width="48" height="48" loading="lazy"><span><b>James Rendell</b><small>Chief Executive Officer, BirdsEyeView</small></span></figcaption></figure><figure class="tq" id="tq2" role="tabpanel" aria-labelledby="ta2" hidden><blockquote>"Abhishek possesses <mark>a rare combination of exceptional design skills and a deep, holistic knowledge</mark> of our entire product suite. He has been an outstanding partner in our product development, and I recommend him to any team or organisation lucky enough to have him next."</blockquote><figcaption><img src="assets/rec-farah.png" alt="" width="48" height="48" loading="lazy"><span><b>Farah Bukhari</b><small>Staff Product Owner</small></span></figcaption></figure><figure class="tq" id="tq3" role="tabpanel" aria-labelledby="ta3" hidden><blockquote>"He is a highly skilled UI/UX designer, a thoughtful design leader and an excellent collaborator. Abhishek introduced <mark>processes and standards that brought greater consistency</mark> to the team's approach and output."</blockquote><figcaption><img src="assets/rec-steve.png" alt="" width="48" height="48" loading="lazy"><span><b>Steve O'Reilly</b><small>Product Executive</small></span></figcaption></figure><figure class="tq" id="tq4" role="tabpanel" aria-labelledby="ta4" hidden><blockquote>"His <mark>initiative and end-to-end vision</mark> is what sets him apart. Even when requirements were ambiguous, he independently defined the problems, navigated edge cases across the entire user journey to delivered seamless user flows."</blockquote><figcaption><img src="assets/rec-kunal.png" alt="" width="48" height="48" loading="lazy"><span><b>Kunal Bhardwaj</b><small>Product Consultant, Product Manager, CSPO</small></span></figcaption></figure></div><div class="tb-a" role="tablist" aria-label="Choose a testimonial"><button type="button" class="ta on" id="ta0" role="tab" aria-selected="true" aria-controls="tq0" tabindex="0"><img src="assets/rec-whitlam.png" alt="" width="48" height="48" loading="lazy"><span>James W.</span></button><button type="button" class="ta" id="ta1" role="tab" aria-selected="false" aria-controls="tq1" tabindex="-1"><img src="assets/rec-rendell.png" alt="" width="48" height="48" loading="lazy"><span>James R.</span></button><button type="button" class="ta" id="ta2" role="tab" aria-selected="false" aria-controls="tq2" tabindex="-1"><img src="assets/rec-farah.png" alt="" width="48" height="48" loading="lazy"><span>Farah</span></button><button type="button" class="ta" id="ta3" role="tab" aria-selected="false" aria-controls="tq3" tabindex="-1"><img src="assets/rec-steve.png" alt="" width="48" height="48" loading="lazy"><span>Steve</span></button><button type="button" class="ta" id="ta4" role="tab" aria-selected="false" aria-controls="tq4" tabindex="-1"><img src="assets/rec-kunal.png" alt="" width="48" height="48" loading="lazy"><span>Kunal</span></button></div></div>
 </div></section>
 <section class="sc" id="writing" data-screen-label="Writing"><div class="w">
-<div class="np rv"><h2 class="np-h">How I think about UX</h2><div class="np-rule" aria-hidden="true"></div><p class="np-sub">11 articles on UX</p></div>
+<div class="np rv"><h2 class="np-h">How I think <span class="it">about UX</span></h2><div class="np-rule" aria-hidden="true"></div><p class="np-sub">11 articles on UX</p></div>
 </div>
 <div class="wf rv" aria-label="Articles in the series"><div class="wf-r"><div class="wf-t"><a class="wf-i" href="ux-not-screens.html"><span class="wf-n"></span><span class="wf-k">Start here</span><b>UX is not just screens</b><span class="wf-m">5 min read</span></a><a class="wf-i" href="h1-visibility.html"><span class="wf-n">01</span><span class="wf-k">Visibility of System Status</span><b>A good product works. A great product talks</b><span class="wf-m">7 min read</span></a><a class="wf-i" href="h2-real-world.html"><span class="wf-n">02</span><span class="wf-k">Match Between System and the Real World</span><b>Design is not about teaching. It's about feeling at home</b><span class="wf-m">4 min read</span></a><a class="wf-i" href="h3-control-freedom.html"><span class="wf-n">03</span><span class="wf-k">User Control and Freedom</span><b>Your users need a brake pedal</b><span class="wf-m">4 min read</span></a><a class="wf-i" href="h4-consistency.html"><span class="wf-n">04</span><span class="wf-k">Consistency and Standards</span><b>Same dosa, every time</b><span class="wf-m">5 min read</span></a><a class="wf-i" href="h5-error-prevention.html"><span class="wf-n">05</span><span class="wf-k">Error Prevention</span><b>The best error is the one that never happens</b><span class="wf-m">5 min read</span></a><a class="wf-i" href="ux-not-screens.html" tabindex="-1" aria-hidden="true"><span class="wf-n"></span><span class="wf-k">Start here</span><b>UX is not just screens</b><span class="wf-m">5 min read</span></a><a class="wf-i" href="h1-visibility.html" tabindex="-1" aria-hidden="true"><span class="wf-n">01</span><span class="wf-k">Visibility of System Status</span><b>A good product works. A great product talks</b><span class="wf-m">7 min read</span></a><a class="wf-i" href="h2-real-world.html" tabindex="-1" aria-hidden="true"><span class="wf-n">02</span><span class="wf-k">Match Between System and the Real World</span><b>Design is not about teaching. It's about feeling at home</b><span class="wf-m">4 min read</span></a><a class="wf-i" href="h3-control-freedom.html" tabindex="-1" aria-hidden="true"><span class="wf-n">03</span><span class="wf-k">User Control and Freedom</span><b>Your users need a brake pedal</b><span class="wf-m">4 min read</span></a><a class="wf-i" href="h4-consistency.html" tabindex="-1" aria-hidden="true"><span class="wf-n">04</span><span class="wf-k">Consistency and Standards</span><b>Same dosa, every time</b><span class="wf-m">5 min read</span></a><a class="wf-i" href="h5-error-prevention.html" tabindex="-1" aria-hidden="true"><span class="wf-n">05</span><span class="wf-k">Error Prevention</span><b>The best error is the one that never happens</b><span class="wf-m">5 min read</span></a></div></div><div class="wf-r wf-r2"><div class="wf-t"><a class="wf-i" href="h6-recognition.html"><span class="wf-n">06</span><span class="wf-k">Recognition Rather Than Recall</span><b>You don't forget. You just need the right cue</b><span class="wf-m">4 min read</span></a><a class="wf-i" href="h7-flexibility.html"><span class="wf-n">07</span><span class="wf-k">Flexibility and Efficiency of Use</span><b>Every user has a rhythm. Design should honour it</b><span class="wf-m">4 min read</span></a><a class="wf-i" href="h8-minimal-design.html"><span class="wf-n">08</span><span class="wf-k">Aesthetic and Minimalist Design</span><b>They came for the chocolate cake. Don't distract them</b><span class="wf-m">4 min read</span></a><a class="wf-i" href="h9-error-recovery.html"><span class="wf-n">09</span><span class="wf-k">Help Users Recognise, Diagnose, and Recover from Errors</span><b>Errors are inevitable. Confusion is not</b><span class="wf-m">4 min read</span></a><a class="wf-i" href="h10-help-docs.html"><span class="wf-n">10</span><span class="wf-k">Help and Documentation</span><b>Great UX is being there when it's not easy</b><span class="wf-m">4 min read</span></a><a class="wf-i" href="h6-recognition.html" tabindex="-1" aria-hidden="true"><span class="wf-n">06</span><span class="wf-k">Recognition Rather Than Recall</span><b>You don't forget. You just need the right cue</b><span class="wf-m">4 min read</span></a><a class="wf-i" href="h7-flexibility.html" tabindex="-1" aria-hidden="true"><span class="wf-n">07</span><span class="wf-k">Flexibility and Efficiency of Use</span><b>Every user has a rhythm. Design should honour it</b><span class="wf-m">4 min read</span></a><a class="wf-i" href="h8-minimal-design.html" tabindex="-1" aria-hidden="true"><span class="wf-n">08</span><span class="wf-k">Aesthetic and Minimalist Design</span><b>They came for the chocolate cake. Don't distract them</b><span class="wf-m">4 min read</span></a><a class="wf-i" href="h9-error-recovery.html" tabindex="-1" aria-hidden="true"><span class="wf-n">09</span><span class="wf-k">Help Users Recognise, Diagnose, and Recover from Errors</span><b>Errors are inevitable. Confusion is not</b><span class="wf-m">4 min read</span></a><a class="wf-i" href="h10-help-docs.html" tabindex="-1" aria-hidden="true"><span class="wf-n">10</span><span class="wf-k">Help and Documentation</span><b>Great UX is being there when it's not easy</b><span class="wf-m">4 min read</span></a></div></div></div>
 </section>
