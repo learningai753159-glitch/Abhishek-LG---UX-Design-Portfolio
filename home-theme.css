@@ -2025,3 +2025,12 @@ background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;p
 .pbc .pb-res3>div b{color:var(--ink)}
 @media(max-width:960px){.pbc .pb-own,.pbc .pb-res3{grid-template-columns:1fr 1fr!important}.pbc .pb-res3>div:last-child{grid-column:1/-1}.pbc .pb-c3,.pbc .pb-chips{grid-template-columns:1fr}.pbc .pb-goals ol,.pbc .pb-nums{grid-template-columns:1fr 1fr}.pbc .pb-test{grid-template-columns:1fr}}
 @media(max-width:600px){.pbc .pb-test .c3-chk,.pbc .pb-goals ol{grid-template-columns:1fr}.pbc .pb-pin{width:22px;height:22px;font-size:11px}}
+.pb-hw{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.pb-hw a{position:relative;display:flex;flex-direction:column;gap:6px;height:100%;padding:16px 16px 18px;background:#fff;border:1px solid var(--ln);border-radius:16px;color:var(--ink);text-decoration:none;transition:border-color .2s,transform .2s}
+.pb-hw a:hover{border-color:var(--blue);transform:translateY(-2px)}
+.pb-hw .c3-num{font-size:40px;color:var(--blue)!important}
+.pb-hw b{font-size:17px;font-weight:700;letter-spacing:-.015em}
+.pb-hw em{font-style:normal!important;font-size:14px;line-height:1.45;color:var(--ink2)}
+.pb-hw i{position:absolute;right:14px;top:16px;font-style:normal!important;color:var(--mu)}
+@media(max-width:960px){.pb-hw{grid-template-columns:1fr 1fr}.pb-hw li:last-child{grid-column:1/-1}}
+@media(max-width:520px){.pb-hw{grid-template-columns:1fr}}
