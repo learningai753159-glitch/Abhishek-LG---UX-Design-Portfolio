@@ -1869,6 +1869,7 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
 <a href="#c3-process"><span>03</span>Design process</a>
 <a href="#c3-research"><span>04</span>Research</a>
 <a href="#c3-define"><span>05</span>Define</a>
+<a href="#c3-ideate"><span>06</span>Ideate</a>
 </nav>
 <div class="c3-main">
 
@@ -2010,6 +2011,43 @@ footer.cs-foot .cs-mail>span{display:inline;white-space:nowrap;width:auto;max-wi
 <ol><li><span class="c3-num it">01</span><b>New lines, no redesign</b><p>Add a line through set-up, not new screens.</p></li><li><span class="c3-num it">02</span><b>Many clients per line</b><p>Each client works its own way.</p></li><li><span class="c3-num it">03</span><b>One experience everywhere</b><p>Same journey and patterns on every line.</p></li><li><span class="c3-num it">04</span><b>Lower build cost</b><p>Developers set up, not rebuild.</p></li></ol>
 </div>
 </section>
+
+<section class="c3-sec c3-tight c3-next" id="c3-ideate">
+<p class="c3-ey">06 · Ideate</p>
+<h2 class="c3-h2">One base. <i class="it">Set up for everyone.</i></h2>
+<p class="c3-intro c3-full">The goals pointed to one answer: build the journey once, and let each line and each client set it up their own way.</p>
+
+<div class="c3-opts">
+<div class="c3-opt"><span class="c3-ox" aria-hidden="true">×</span><div><p class="c3-m">Option A</p><b>A separate flow for each line</b><p>New screens for every line and client. Slow to build, hard to keep the same.</p></div></div>
+<div class="c3-opt c3-pick"><span class="c3-ox" aria-hidden="true">✓</span><div><p class="c3-m">Option B · chosen</p><b>One shared base</b><p>Build once. Set up per line and per client.</p></div></div>
+</div>
+
+<div class="c3-try" id="c3Try">
+<div class="c3-tryc">
+<p class="c3-m c3-tryl">Try it</p>
+<div class="c3-seg" role="group" aria-label="Type of insurance"><button type="button" class="on" data-l="m">Marine</button><button type="button" data-l="a">Aviation</button><button type="button" data-l="c">Construction</button></div>
+<label class="c3-sw"><input type="checkbox" id="c3Clr"><span class="c3-swt" aria-hidden="true"></span>Clearance team</label>
+</div>
+<div class="c3-lay">
+<div class="c3-ly c3-ly3"><p class="c3-m">Layer 3 · Client</p><b>Steps switch on or off</b><span class="c3-lv" id="c3L3">Clearance off</span></div>
+<div class="c3-ly c3-ly2"><p class="c3-m">Layer 2 · Type of insurance</p><b>Fields change per line</b><span class="c3-lv" id="c3L2">Vessels</span></div>
+<div class="c3-ly c3-ly1"><p class="c3-m">Layer 1 · Base</p><b>Same for everyone</b><span class="c3-lv">Shared journey</span></div>
+</div>
+<div class="c3-jr"><p class="c3-m">The journey</p>
+<ol class="c3-jsteps" id="c3J"><li>Submission</li><li class="c3-jc">Clearance review</li><li>Underwriter review</li><li>Quote</li><li>Bind</li></ol>
+<p class="c3-jn" id="c3Jn">One underwriter does it all, on the submission page.</p>
+</div>
+</div>
+
+<div class="c3-trade">
+<div><p class="c3-m c3-tdl">What it cost</p><ul><li>Every screen had to work for all four lines, so each decision took longer.</li><li>Needs unique to one line had to wait until they fit the base.</li></ul></div>
+<div><p class="c3-m c3-tdl c3-tdg">How I handled it</p><ul><li>If a line worked differently, I made it a setting. Clearance became a switch, not a second product.</li><li>Only what every line shared went into the base.</li></ul></div>
+</div>
+</section>
+<script>(function(){var t=document.getElementById('c3Try');if(!t)return;var F={m:'Vessels',a:'Aircraft',c:'Projects'},c=document.getElementById('c3Clr'),j=document.getElementById('c3J'),jn=document.getElementById('c3Jn'),l2=document.getElementById('c3L2'),l3=document.getElementById('c3L3');
+t.querySelectorAll('.c3-seg button').forEach(function(b){b.addEventListener('click',function(){t.querySelectorAll('.c3-seg button').forEach(function(x){x.classList.toggle('on',x===b)});l2.textContent=F[b.dataset.l];l2.classList.remove('pop');void l2.offsetWidth;l2.classList.add('pop')})});
+function sw(){var on=c.checked;j.classList.toggle('on',on);l3.textContent=on?'Clearance on':'Clearance off';l3.classList.toggle('lit',on);jn.textContent=on?'Clearance fills the gaps, then hands over to the underwriter workbench.':'One underwriter does it all, on the submission page.'}
+c.addEventListener('change',sw);sw();})();</script>
 
 </div>
 </div>
