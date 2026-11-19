@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta name="robots" content="noindex">
+
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Archive · AI-assisted UX audit of IRCTC · Abhishek LG, Senior Product Designer</title>
+<meta name="description" content="A usability audit and redesign of IRCTC, India's national railway booking app, with AI-assisted research.">
+<meta property="og:type" content="article"><meta property="og:title" content="AI-assisted UX audit of IRCTC · Abhishek LG, Senior Product Designer"><meta property="og:description" content="A usability audit and redesign of IRCTC, India's national railway booking app, with AI-assisted research."><meta property="og:image" content="https://abhishek-lg-ux-design-portfolio.vercel.app/assets/ai-audit-diagram-og.jpg"><meta property="og:url" content="https://abhishek-lg-ux-design-portfolio.vercel.app/ai-audit.html"><meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="notebook.css">
+<script src="notebook.js"></script>
+<link rel="stylesheet" href="case-nb-base.css">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case-v2.css">
+<link rel="stylesheet" href="case-v3-skin.css">
+<link rel="stylesheet" href="case-nb.css">
+<link rel="stylesheet" href="case-nb-extra.css">
+<style>.todo{display:none!important}</style>
+<link rel="stylesheet" href="responsive.css">
+<link rel="stylesheet" href="strength.css">
+<link rel="stylesheet" href="plain.css">
+<link rel="stylesheet" href="home-theme.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav cs-nav" id="top"><div class="cs-nav-in">
+<div class="cs-nav-l"><a class="brand" href="index.html">Abhishek LG</a><span class="cs-ch">AI-assisted UX audit</span></div>
+<a class="cs-back" href="index.html#work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>Back to home</a>
+</div></header>
+<div class="arc-ban c3-w"><span class="c3-m">Archived version</span><b>AI-assisted UX audit · old versions</b><a href="ai-audit.html">View the current case study →</a><a href="archive.html">All archives</a></div>
+<div class="c3" id="cs2p">
+
+<header class="c3-hero c3-w">
+<p class="c3-ey">Self-initiated · AI-assisted UX audit</p>
+<div class="c3-split">
+<h1 class="c3-h1">AI did the sorting. <i class="it">I made the calls.</i></h1>
+<p class="c3-lead">A UX audit of IRCTC, India's railway booking app. I set up AI to do the slow sorting, so I could spend my time on the findings and the redesign.</p>
+</div>
+<ul class="c3-tags"><li>Self-initiated</li><li>AI-assisted</li><li>UX research</li></ul>
+<dl class="c3-meta"><div><dt>Product</dt><dd>IRCTC, Indian Railways booking app</dd></div><div><dt>Scope</dt><dd>8 screens, 6 rule sets</dd></div><div><dt>Output</dt><dd>RailGo redesign</dd></div></dl>
+</header>
+
+<div class="c3-body c3-w">
+<nav class="c3-nav" aria-label="On this page">
+<p class="c3-m c3-navt">On this page</p>
+<a href="#c3-problem" class="on"><span>01</span>The problem</a>
+<a href="#c3-solution"><span>02</span>The solution</a>
+<a href="#c3-process"><span>03</span>Design process</a>
+<a href="#c3-system"><span>04</span>The audit system</a>
+<a href="#c3-findings"><span>05</span>Key findings</a>
+<a href="#c3-journey"><span>06</span>Journey and competitors</a>
+<a href="#c3-redesign"><span>07</span>The redesign</a>
+<a href="#c3-results"><span>08</span>Results</a>
+</nav>
+<div class="c3-main">
+
+<section class="c3-sec c3-tight" id="c3-problem">
+<p class="c3-ey">01 · The problem</p>
+<h2 class="c3-h2">Audits are slow. <i class="it">Mostly sorting.</i></h2>
+<p class="c3-intro c3-full">A UX audit checks an app against basic usability rules. Done by hand, most of the time goes on low-level work, not on the findings.</p>
+<div class="c3-stat c3-dark"><b>1 week</b><div><p class="c3-st1">for one manual audit, mostly spent sorting.</p><p class="c3-st2">Sorting problems, tagging each one and ranking how serious it is, by hand. The real thinking got whatever time was left.</p></div></div>
+<div class="c3-sub">
+<p class="c3-m c3-chalt">Why IRCTC</p>
+<h3 class="c3-h3">The only way to book. <i class="it">Nowhere else to go.</i></h3>
+<ol class="c3-tl3"><li><span class="c3-m">Scale</span><b>Millions of bookings a day</b><p>The only official way to book Indian Railways tickets online.</p></li><li><span class="c3-m">Stakes</span><b>Miss a booking, miss travel</b><p>No alternative, no competition.</p></li><li><span class="c3-m">Opportunity</span><b>Every finding matters more</b><p>When users have nowhere else to go, getting the UX right is a responsibility.</p></li></ol>
+</div>
+
+</section>
+
+<section class="c3-sec c3-tight c3-next" id="c3-solution">
+<p class="c3-ey">02 · The solution</p>
+<h2 class="c3-h2">AI sorts. <i class="it">I make the calls.</i></h2>
+<p class="c3-intro c3-full">I set up AI to do the slow sorting, so I could spend my time on the findings and the redesign.</p>
+<figure class="c3-dshot c3-dw c3-shot1"><button type="button" class="c3-zoom" aria-label="View larger: AI audit system"><span class="c3-bar"><i></i><i></i><i></i></span><img width="2400" height="1198" src="assets/ai-audit-diagram.webp" alt="AI audit system diagram" loading="lazy"><span class="c3-zi" aria-hidden="true">⤢</span></button><figcaption><span class="c3-m">System</span><b>The AI audit system</b><span>Prompts per rule set, AI sorting, then my review and redesign.</span></figcaption></figure><div class="c3-trade"><div><p class="c3-m c3-tdl c3-tdb">What AI did</p><ul><li>Checked every screen against all 6 rule sets at once</li><li>Grouped problems by how serious they were</li><li>Drew maps of how people feel at each step</li><li>Spotted gaps against competitor apps quickly</li></ul></div><div><p class="c3-m c3-tdl c3-tdg">What I did</p><ul><li>Wrote and tuned the prompts</li><li>Checked AI's output against how people really use the app</li><li>Found the 3 whole-app problems AI missed</li><li>Made every design decision</li></ul></div></div>
+</section>
+
+<section class="c3-sec c3-tight c3-next" id="c3-process">
+<p class="c3-ey">03 · Design process</p>
+<h2 class="c3-h2">How I got <i class="it">there.</i></h2>
+<ol class="c3-dp"><li><span class="c3-num it">01</span><b>Write prompts</b></li><li><span class="c3-num it">02</span><b>AI sorting</b></li><li><span class="c3-num it">03</span><b>Make sense of it</b></li><li><span class="c3-num it">04</span><b>Journey and competitors</b></li><li><span class="c3-num it">05</span><b>Redesign</b></li></ol>
+</section>
+
+<section class="c3-sec c3-tight c3-next" id="c3-system">
+<p class="c3-ey">04 · The audit system</p>
+<h2 class="c3-h2">Six rule sets. <i class="it">Eight screens. Hours.</i></h2>
+<p class="c3-intro c3-full">I wrote a set of prompts for each of six well-known usability rule sets. AI grouped the problems it found. I shaped them into the findings.</p>
+<ol class="c3-rs c3-rs3"><li><span class="c3-m">01</span><b>Nielsen's 10 Heuristics</b><p>The main check. Every problem matched against 10 basic usability rules.</p></li><li><span class="c3-m">02</span><b>Fitts's Law</b><p>Things you tap often should be big and easy to reach.</p></li><li><span class="c3-m">03</span><b>Cognitive Load Theory</b><p>Flagged screens that asked too much of people at once.</p></li><li><span class="c3-m">04</span><b>Jakob's Law</b><p>Flagged anything that broke common mobile patterns.</p></li><li><span class="c3-m">05</span><b>Visual Hierarchy</b><p>Flagged screens where everything fought for attention.</p></li><li><span class="c3-m">06</span><b>WCAG 2.1</b><p>Contrast, tap target sizes and readable text, across the whole flow.</p></li></ol><div class="c3-sub">
+<p class="c3-m c3-chalt">Severity scale</p>
+<div class="c3-fd"><div class="c3-fdc c3-fdw"><p class="c3-m">Critical</p><b>Blocks the task</b><p>Transaction blocks or search failures.</p></div><div class="c3-fdc c3-fdmj"><p class="c3-m">Major</p><b>Slows people down</b><p>Confusing navigation, too much to think about.</p></div><div class="c3-fdc "><p class="c3-m">Minor</p><b>Small friction</b><p>Visual hierarchy and label clarity.</p></div></div>
+</div>
+
+</section>
+
+<section class="c3-sec c3-tight c3-next" id="c3-findings">
+<p class="c3-ey">05 · Key findings</p>
+<h2 class="c3-h2">All 8 screens <i class="it">broke a rule.</i></h2>
+<p class="c3-intro c3-full">Five findings that hurt the booking most. Click any screen to see it larger.</p>
+<div class="c3-phones c3-ph5"><figure class="c3-phone"><button type="button" class="c3-zoom" aria-label="View larger: Login button looks like the app icon"><img width="618" height="1375" src="findings/f01-signin.jpeg" alt="Login button looks like the app icon" loading="lazy"></button><figcaption><span class="c3-m">01</span><b>Login button looks like the app icon<em class="c3-badge c3-bc">Critical</em></b><span>The round red login button matches the app icon, so the main button looks like decoration.</span></figcaption></figure><figure class="c3-phone"><button type="button" class="c3-zoom" aria-label="View larger: An ad competes with password recovery"><img width="618" height="1375" src="findings/f02-forgot.jpeg" alt="An ad competes with password recovery" loading="lazy"></button><figcaption><span class="c3-m">02</span><b>An ad competes with password recovery<em class="c3-badge c3-bc">Critical</em></b><span>A "SIGN UP" ad sits above "Next" when the user is already locked out.</span></figcaption></figure><figure class="c3-phone"><button type="button" class="c3-zoom" aria-label="View larger: 3 taps to reach the main task"><img width="618" height="1375" src="findings/f03-1-home.jpeg" alt="3 taps to reach the main task" loading="lazy"></button><figcaption><span class="c3-m">03</span><b>3 taps to reach the main task<em class="c3-badge c3-bm">Major</em></b><span>Home → Train → Book Ticket → Search. The main task is buried.</span></figcaption></figure><figure class="c3-phone"><button type="button" class="c3-zoom" aria-label="View larger: An ad covers the fare and booking button"><img width="618" height="1375" src="findings/f04-traindetails.jpeg" alt="An ad covers the fare and booking button" loading="lazy"></button><figcaption><span class="c3-m">04</span><b>An ad covers the fare and booking button<em class="c3-badge c3-bm">Major</em></b><span>Users scroll past a bank ad to see what they will pay.</span></figcaption></figure><figure class="c3-phone"><button type="button" class="c3-zoom" aria-label="View larger: A full-screen ad in the passenger form"><img width="618" height="1375" src="findings/f05-passenger.jpeg" alt="A full-screen ad in the passenger form" loading="lazy"></button><figcaption><span class="c3-m">05</span><b>A full-screen ad in the passenger form<em class="c3-badge c3-bm">Major</em></b><span>It interrupts the most important form in the booking.</span></figcaption></figure></div><div class="c3-key c3-dark"><p class="c3-m c3-keyt">What AI missed, and I found</p><div class="c3-keyg"><div><p class="c3-keyh">Three problems only show across the whole flow.</p><p class="c3-keyp">AI checked each screen on its own. I walked the whole booking end to end.</p></div><ol class="c3-keyf c3-keyf3"><li><span class="c3-m">01</span>No progress indicator in a 5-screen flow</li><li><span class="c3-m">02</span>No type hierarchy</li><li><span class="c3-m">03</span>One orange that means everything</li></ol></div></div>
+</section>
+
+<section class="c3-sec c3-tight c3-next" id="c3-journey">
+<p class="c3-ey">06 · Journey and competitors</p>
+<h2 class="c3-h2">It fails at the moments <i class="it">that matter most.</i></h2>
+<p class="c3-intro c3-full">How people feel at each step of booking, mapped across the five stages.</p>
+<ul class="c3-emo"><li><span class="c3-m">Stage 01 · Launch</span><b>Anxious</b>The dated look makes people distrust the app.</li><li><span class="c3-m">Stage 02 · Login</span><b>Frustrated</b>A hidden login button, other apps and an ad.</li><li><span class="c3-m">Stage 03 · Finding booking</span><b>Impatient</b>Icons that look alike, at least 3 taps.</li><li><span class="c3-m">Stage 04 · Train details</span><b>Angry</b>An ad covers the two most important things.</li><li><span class="c3-m">Stage 05 · Passenger form</span><b>Exhausted</b>A full-screen ad at the most important moment.</li></ul><p class="c3-ask">The app is failing <i class="it">people who have already said yes.</i></p><div class="c3-sub">
+<p class="c3-m c3-chalt">Competitor analysis</p>
+<h3 class="c3-h3">What the market <i class="it">figured out.</i></h3>
+<p class="c3-p c3-full">MakeMyTrip and Cleartrip are leading Indian travel booking apps.</p>
+<div class="c3-tblw"><table class="c3-tbl"><thead><tr><th></th><th>IRCTC</th><th>MakeMyTrip</th><th>Cleartrip</th></tr></thead><tbody><tr><td>Primary action</td><td class="c3-bad">3 taps</td><td>Home screen</td><td>Home screen</td></tr><tr><td>Progress indicator</td><td class="c3-bad">None</td><td>Throughout</td><td>Throughout</td></tr><tr><td>Ad placement</td><td class="c3-bad">In flows</td><td>Passive only</td><td>Minimal</td></tr><tr><td>Visual hierarchy</td><td class="c3-bad">None</td><td>Clear system</td><td>Clean</td></tr><tr><td>UPI prominence</td><td class="c3-bad">Secondary</td><td>Primary</td><td>Primary</td></tr></tbody></table></div><p class="c3-est">Ads belong in passive browsing. Never inside login, booking or payment.</p>
+</div>
+
+</section>
+
+<section class="c3-sec c3-tight c3-next" id="c3-redesign">
+<p class="c3-ey">07 · The redesign</p>
+<h2 class="c3-h2">Every finding <i class="it">became a decision.</i></h2>
+<p class="c3-intro c3-full">RailGo, my redesign. I planned every screen before prompting. AI generated them, and I refined them.</p>
+<div class="c3-goals"><div class="c3-goh"><p class="c3-m">Four principles</p><p class="c3-gq">Every finding led to one.</p></div><ol><li><span class="c3-num it">01</span><b>Search first</b><p>The main task on the home screen.</p></li><li><span class="c3-num it">02</span><b>Zero ads in task flow</b><p>Never inside login, booking or payment.</p></li><li><span class="c3-num it">03</span><b>Show progress</b><p>A 5-step flow needs a 5-step indicator.</p></li><li><span class="c3-num it">04</span><b>Colour with meaning</b><p>Actions, status and decoration each look different.</p></li></ol></div><div class="c3-sub">
+<p class="c3-m c3-chalt">Before and after · 01</p>
+<h3 class="c3-h3">Login</h3>
+<div class="c3-ba2 c3-ba2p"><div><p class="c3-m c3-bal">Before</p><div class="c3-bimg"><img width="618" height="1375" src="findings/f01-signin.jpeg" alt="Login before" loading="lazy"></div><p class="c3-bt2">The login button looks like an icon, other apps are promoted, and an ad sits at the bottom.</p></div><div><p class="c3-m c3-bal c3-bag">After · RailGo</p><div class="c3-bimg"><img width="494" height="1071" src="findings/after-login.png" alt="Login after" loading="lazy"></div><p class="c3-bt2">Phone number and a one-time code. One clear button. No ads. Done in under 10 seconds.</p></div></div>
+</div>
+<div class="c3-sub">
+<p class="c3-m c3-chalt">Before and after · 02</p>
+<h3 class="c3-h3">Home</h3>
+<div class="c3-ba2 c3-ba2p"><div><p class="c3-m c3-bal">Before</p><div class="c3-bimg"><img width="618" height="1375" src="findings/f03b-trainsearch.jpeg" alt="Home before" loading="lazy"></div><p class="c3-bt2">Reached after 3 taps. Station codes only, and an ad below the search button.</p></div><div><p class="c3-m c3-bal c3-bag">After · RailGo</p><div class="c3-bimg"><img width="494" height="1071" src="findings/after-home.png" alt="Home after" loading="lazy"></div><p class="c3-bt2">Search on home, full station names, recent journeys. 0 taps to start. No ads.</p></div></div>
+</div>
+<div class="c3-sub">
+<p class="c3-m c3-chalt">Before and after · 03</p>
+<h3 class="c3-h3">Train details and class</h3>
+<div class="c3-ba2 c3-ba2p"><div><p class="c3-m c3-bal">Before</p><div class="c3-bimg"><img width="618" height="1375" src="findings/f04-traindetails.jpeg" alt="Train details and class before" loading="lazy"></div><p class="c3-bt2">Short codes for class names, manual refresh, and an ad over the fare.</p></div><div><p class="c3-m c3-bal c3-bag">After · RailGo</p><div class="c3-bimg"><img width="494" height="1071" src="findings/after-class.png" alt="Train details and class after" loading="lazy"></div><p class="c3-bt2">A progress indicator, described classes with photos, and the fare fully visible.</p></div></div>
+</div>
+<div class="c3-sub">
+<p class="c3-m c3-chalt">Prototype walkthrough</p>
+<div class="c3-vid"><div class="c3-vidin"><iframe src="https://player.vimeo.com/video/1200772618?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="RailGo, prototype walkthrough" loading="lazy"></iframe></div></div>
+</div>
+
+</section>
+
+<section class="c3-sec c3-tight c3-next" id="c3-results">
+<p class="c3-ey">08 · Results</p>
+<h2 class="c3-h2">A week of work. <i class="it">Done in a day.</i></h2>
+<p class="c3-intro c3-full">What this system delivered.</p>
+<div class="c3-nums c3-n4"><div class="c3-nb1 c3-dark"><b>1 day</b><p>for the audit with AI, was 1 week by hand, including my review</p></div><div><b>8</b><p>screens checked in one pass</p></div><div><b>6</b><p>rule sets applied at once</p></div><div><b>3</b><p>whole-app problems found beyond single screens</p></div></div><p class="c3-ask">The prompt sets can be reused on any product. <i class="it">Making sense of the findings is still a human job.</i></p>
+</section>
+
+</div>
+</div>
+<script>(function(){var nav=document.querySelector('.c3-nav');if(!nav)return;
+var links=[].slice.call(nav.querySelectorAll('a[href^="#"]')),secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+function top(){var h=0,hd=document.querySelector('.cs-nav,header.cs-nav,.cs-top,nav.cs-nav');if(hd){var r=hd.getBoundingClientRect();if(getComputedStyle(hd).position!='static')h=r.bottom}
+if(matchMedia('(max-width:960px)').matches)h+=nav.offsetHeight;return Math.max(h,0)+24}
+function set(i){links.forEach(function(a,j){a.classList.toggle('on',j===i)});var a=links[i];if(a&&a.scrollIntoView&&matchMedia('(max-width:960px)').matches){nav.scrollTo({left:a.offsetLeft-12,behavior:'smooth'})}}
+var lock=0;
+links.forEach(function(a,i){a.addEventListener('click',function(e){var t=secs[i];if(!t)return;e.preventDefault();e.stopPropagation();set(i);lock=Date.now()+900;
+var y=t.getBoundingClientRect().top+scrollY-top();scrollTo({top:y,behavior:'smooth'});history.replaceState(null,'',a.getAttribute('href'))},true)});
+function spy(){if(Date.now()<lock)return;var line=Math.max(top()+80,innerHeight*.4),cur=0;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<=line)cur=i});set(cur)}
+addEventListener('scroll',spy,{passive:true});addEventListener('resize',spy);spy();})();</script>
+
+
+</div>
+<div class="cx-old" aria-hidden="true"><span>Old version below</span></div>
+<div class="c3-lb" id="c3Lb" role="dialog" aria-modal="true" aria-label="Screen preview" hidden><button type="button" class="c3-lbx" aria-label="Close">Close ×</button><img alt=""></div>
+<script>(function(){var lb=document.getElementById('c3Lb');if(!lb)return;var im=lb.querySelector('img'),x=lb.querySelector('.c3-lbx'),last;
+function op(b){var i=b.querySelector('img');last=b;im.src=i.src;im.alt=i.alt;lb.hidden=false;document.documentElement.style.overflow='hidden';x.focus()}
+function cl(){lb.hidden=true;document.documentElement.style.overflow='';if(last)last.focus({preventScroll:true})}
+document.querySelectorAll('.c3-zoom').forEach(function(b){b.addEventListener('click',function(){op(b)})});
+x.addEventListener('click',cl);lb.addEventListener('click',function(e){if(e.target===lb)cl()});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)cl()});})();</script>
+
+<main id="main">
+<header class="cs-hero wrap h4" data-screen-label="Hero">
+<h1 class="rv">AI did the sorting. I <span class="cs-mark"><em class="hl h4-em">made the calls</em><svg class="cs-draw" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 30 4, 62 14, 90 7 S 114 6, 117 9" vector-effect="non-scaling-stroke"></path></svg></span>: a UX audit of IRCTC</h1>
+<p class="h4-sub rv">A UX audit means checking an app against basic usability rules. I set up AI to do the slow sorting, so I could spend my time on the findings and the redesign. India's railway booking app, IRCTC, was the test case.</p>
+<dl class="cs-meta h4-meta rv"><div><dt>Type</dt><dd>Self-initiated learning project</dd></div><div><dt>Role</dt><dd>UX research, with AI</dd></div><div><dt>Product</dt><dd>IRCTC, Indian Railways booking app</dd></div><div><dt>Scope</dt><dd>8 screens, 6 frameworks</dd></div><div><dt>Output</dt><dd>RailGo redesign</dd></div></dl>
+<div class="h6 rv"><div class="h6-win"><div class="h6-bar"><i></i><i></i><i></i><span>AI audit system</span></div><div class="h6-in"><img src="assets/ai-audit-diagram.webp" alt="AI-assisted UX audit diagram: screens pass through AI and six frameworks into findings"></div></div><figure class="h6-nb"><img src="findings/f01-signin.jpeg" alt="The original IRCTC sign in screen"><figcaption>Before</figcaption></figure></div>
+</header>
+<div class="cs-body">
+<div>
+<section class="stage nbw" id="problem" data-stage="The problem" data-no="01" data-screen-label="01 The problem">
+<div class="nx">
+<div class="nxs nxs2 rv"><div class="nxs-tx"><p class="nx-lbl">Why IRCTC</p><p class="nxs-t">The only official way to book Indian Railways tickets online.</p><ol class="nxs-ch"><li><span>01</span><p>The scale: millions of bookings every day. No alternative. No competition.</p></li><li><span>02</span><p>The stakes: missing a booking means missing travel.</p></li><li><span>03</span><p>The opportunity: every finding matters more when users have nowhere else to go.</p></li></ol></div><figure class="nxs-ph"><img loading="lazy" decoding="async" src="findings/f03-1-home.jpeg" alt="IRCTC Rail Connect home screen"><figcaption>IRCTC Rail Connect, home screen</figcaption></figure></div>
+<div class="sty rv">
+<div class="sty-hd"><p class="sty-k">Step 01 · The problem with UX audits</p><h2 class="sty-h">A manual audit took me about a week, and most of that time went on sorting</h2></div>
+<ol class="sty-l">
+<li class="sty-b wide bad"><span class="sty-dot" aria-hidden="true"></span><div class="sty-tx"><h3>The old way</h3><p>Senior designers spend most of an audit on low-level work: sorting problems, tagging each one, and ranking how serious it is by hand. The real thinking gets whatever time is left.</p></div></li>
+<li class="sty-b end"><span class="sty-dot" aria-hidden="true"></span><div class="sty-trust"><p class="tk">A different way</p><h3>That is the system I built</h3><p>AI does the fast sorting. The designer focuses on making sense of the findings, and on the design.</p></div></li>
+</ol>
+</div>
+<blockquote class="nx-q rv"><p>I didn't pick IRCTC because it was broken. I picked it because when millions of people have no alternative, <span>getting the UX right</span> is a responsibility.</p></blockquote>
+</div>
+</section>
+<section class="stage nbw" id="system" data-stage="The AI audit system" data-no="02" data-screen-label="02 The AI audit system">
+<div class="nx">
+<div class="sty rv">
+<div class="sty-hd"><p class="sty-k">Step 02 · The AI audit system</p><h2 class="sty-h">6 sets of usability rules, 8 screens, sorted in hours</h2><p class="sty-in">I wrote a set of prompts for each of six well-known usability rule sets (frameworks). AI grouped the problems it found. I shaped them into the findings.</p></div>
+<p class="gk">The six frameworks</p>
+<ol class="gc c3 tint"><li><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/></svg></span><h4>Nielsen's 10 Heuristics</h4><p>The main check. Every problem was matched against Nielsen's 10 basic usability rules.</p></li><li><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></span><h4>Fitts's Law</h4><p>Things you tap often should be big and easy to reach. Flagged when the most-used action took the most effort.</p></li><li><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><h4>Cognitive Load Theory</h4><p>People can only hold so much in their head at once. Flagged screens that asked too much of them.</p></li><li><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M13 8l4 4-4 4"/></svg></span><h4>Jakob's Law</h4><p>People expect an app to work like the other apps they use. Flagged anything that broke common mobile patterns.</p></li><li><span class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></span><h4>Visual Hierarchy</h4><p>The most important thing should stand out first. Flagged screens where everything fought for attention.</p></li><li><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M5 9h14M12 9v5M9 21l3-7 3 7"/></svg></span><h4>WCAG 2.1</h4><p>Accessibility rules. Checked contrast, tap target sizes and how easy the text was to read, across the whole flow.</p></li></ol>
+<p class="gk">Severity scale</p>
+<div class="gc c3"><div><span class="sev cr">Critical</span><p>Transaction blocks / search failures.</p></div><div><span class="sev mj">Major</span><p>Confusing navigation / too much to think about.</p></div><div><span class="sev mn">Minor</span><p>Visual hierarchy / label clarity.</p></div></div>
+</div>
+</div>
+</section>
+<section class="stage nbw" id="findings" data-stage="Key findings" data-no="03" data-screen-label="03 Key findings">
+<div class="nx">
+<div class="sty rv">
+<div class="sty-hd"><p class="sty-k">Step 03 · Key findings</p><h2 class="sty-h">All 8 screens broke at least one usability rule</h2></div>
+<div class="fd" style="margin-top:40px">
+<article><div class="fd-h"><span class="fd-n">Finding 01</span><span class="sev cr">Critical</span></div><h4>Login button looks like the app icon</h4><p>The round red login button matches the app icon, so the main button looks like decoration.</p><div class="fd-img"><img loading="lazy" decoding="async" src="findings/f01-signin.jpeg" alt="IRCTC Sign In screen. Circular red LOGIN button blends into the app icon"></div></article>
+<article><div class="fd-h"><span class="fd-n">Finding 02</span><span class="sev cr">Critical</span></div><h4>An ad competes with password recovery</h4><p>A "SIGN UP" ad banner sits above the "Next" button during password recovery. Two buttons fight for attention when the user is already locked out.</p><div class="fd-img"><img loading="lazy" decoding="async" src="findings/f02-forgot.jpeg" alt="Forgot Account Details screen. IDFC First Bank ad banner sits directly above the Next button"></div></article>
+<article class="w"><div class="fd-h"><span class="fd-n">Finding 03</span><span class="sev mj">Major</span></div><h4>3 taps to reach the main task</h4><p>Home → Train → Book Ticket → Search. The main task is buried on India's most-used transport app.</p><div class="fd-img"><img loading="lazy" decoding="async" src="findings/f03-1-home.jpeg" alt="IRCTC Rail Connect home screen"><img loading="lazy" decoding="async" src="findings/f03-2-train.jpeg" alt="Train menu screen"><img loading="lazy" decoding="async" src="findings/f03-3-search.jpeg" alt="Train search screen"></div><p class="fd-cap">Home → Train → Search, 3 taps</p></article>
+<article><div class="fd-h"><span class="fd-n">Finding 04</span><span class="sev mj">Major</span></div><h4>An ad covers the fare and the booking button</h4><p>An SBI ad sits between class and availability and the booking button. Users scroll past a bank ad to see what they will pay.</p><div class="fd-img"><img loading="lazy" decoding="async" src="findings/f04-traindetails.jpeg" alt="Train details screen. Large SBI ad covers the fare and the Passenger Details button"></div></article>
+<article><div class="fd-h"><span class="fd-n">Finding 05</span><span class="sev mj">Major</span></div><h4>A full-screen ad in the middle of the passenger form</h4><p>A furniture ad interrupts the most important form in the booking. UPI (India's instant payment system) is shown as a secondary option.</p><div class="fd-img"><img loading="lazy" decoding="async" src="findings/f05-passenger.jpeg" alt="Passenger Details screen, full Pepperfry furniture ad interrupts the form"></div></article>
+</div>
+<p class="gk">Problems across the whole app</p>
+<ul class="sty-pr c3"><li><b>No progress indicator</b><span>A 5-screen flow with no sign of how many steps are left. This breaks the first usability rule (H1) across the whole booking flow.</span></li><li><b>Typography without hierarchy</b><span>Titles, labels, body text and buttons all look almost the same weight. When everything is important, nothing is.</span></li><li><b>Colour carries no meaning</b><span>Orange is used on top bars, buttons, status badges and headers at the same time. One colour that means everything ends up meaning nothing.</span></li></ul>
+</div>
+</div>
+</section>
+<section class="stage nbw" id="journey" data-stage="Customer journey map" data-no="04" data-screen-label="04 Customer journey map">
+<div class="nx">
+<div class="sty rv">
+<div class="sty-hd"><p class="sty-k">Step 04 · Customer journey map</p><h2 class="sty-h">It fails at the moments that matter most</h2></div>
+<ol class="jm" style="margin-top:40px"><li><span class="k">Stage 01</span><b>Anxious</b><span class="m"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><p>Launch. The dated look makes people distrust the app before they tap anything.</p></li><li><span class="k">Stage 02</span><b>Frustrated</b><span class="m"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><p>Login. A hidden login button, a grid of other IRCTC apps, and an ad at the worst moment.</p></li><li><span class="k">Stage 03</span><b>Impatient</b><span class="m"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><p>Finding booking. Icons that look alike, at least 3 taps, and no shortcut to the main task.</p></li><li><span class="k">Stage 04</span><b>Angry</b><span class="m"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><p>Train details. An ad covers the two most important things on the screen.</p></li><li><span class="k">Stage 05</span><b>Exhausted</b><span class="m"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><p>Passenger form. A full-screen ad at the most important moment of filling in details.</p></li></ol>
+</div>
+<blockquote class="nx-q rv"><p>IRCTC's worst problems hit people at exactly the moments they have decided to book. The app is failing <span>people who have already said yes.</span></p></blockquote>
+</div>
+</section>
+<section class="stage nbw" id="competitor" data-stage="Competitor analysis" data-no="05" data-screen-label="05 Competitor analysis">
+<div class="nx">
+<div class="sty rv">
+<div class="sty-hd"><p class="sty-k">Step 05 · Competitor analysis</p><h2 class="sty-h">What the market figured out that IRCTC hasn't</h2><p class="sty-in">MakeMyTrip and Cleartrip are leading Indian travel booking apps.</p></div>
+<div class="tb" style="margin-top:40px"><table><thead><tr><th></th><th class="hi">IRCTC</th><th>MakeMyTrip</th><th>Cleartrip</th></tr></thead><tbody>
+<tr><td class="rl">Primary action</td><td class="hi">3 taps</td><td>Home screen</td><td>Home screen</td></tr>
+<tr><td class="rl">Progress indicator</td><td class="hi">None</td><td>Throughout</td><td>Throughout</td></tr>
+<tr><td class="rl">Ad placement</td><td class="hi">In flows</td><td>Passive only</td><td>Minimal</td></tr>
+<tr><td class="rl">Visual hierarchy</td><td class="hi">None</td><td>Clear system</td><td>Clean</td></tr>
+<tr><td class="rl">UPI prominence</td><td class="hi">Secondary</td><td>Primary</td><td>Primary</td></tr>
+</tbody></table></div>
+<p class="gk">What I took from them</p>
+<div class="gc c3"><div><p class="k">From MakeMyTrip</p><p>Search on the home screen removes the in-between screens. The main task is one tap away.</p></div><div><p class="k">From Cleartrip</p><p>Showing progress makes people less anxious. Users complete more when they know how close they are to done.</p></div><div><p class="k">From both</p><p>Ads belong in passive browsing. Never inside login, booking, or payment.</p></div></div>
+</div>
+</div>
+</section>
+<section class="stage nbw" id="workflow" data-stage="AI orchestration workflow" data-no="06" data-screen-label="06 AI orchestration workflow">
+<div class="nx">
+<div class="sty rv">
+<div class="sty-hd"><p class="sty-k">Step 06 · How AI and I split the work</p><h2 class="sty-h">What UX research with AI looked like in practice</h2></div>
+<div class="hb-flow c4"><div class="hb-st"><span class="hb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2" fill="#fffdf7"/><path d="M7 10l3 2-3 2"/><path d="M12 15h5"/></svg><b>1</b></span><h4>Writing the prompts</h4><p>6 sets of prompts, each built around one usability rule set.</p></div><div class="hb-st"><span class="hb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2" fill="#ECEBFC"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2" fill="#ECEBFC"/></svg><b>2</b></span><h4>AI sorting</h4><p>8 screens sorted in hours, grouped by rule set, seriousness and screen.</p></div><div class="hb-st"><span class="hb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4" fill="#FFE7C2"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg><b>3</b></span><h4>Making sense of it</h4><p>3 problems across the whole app that AI didn't spot. They need product thinking, beyond fixing single screens.</p></div><div class="hb-st"><span class="hb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5" fill="#E3F2EA"/><path d="M10 18h4"/></svg><b>4</b></span><h4>Redesign, led by me</h4><p>I planned every screen before prompting. AI generated the screens, and I refined them. Every decision was mine.</p></div></div>
+<div class="ai2"><div><span class="tag">What AI did</span><ul><li>Checked every screen against all 6 rule sets at once</li><li>Grouped problems by how serious they were</li><li>Drew maps of how people feel at each step</li><li>Spotted gaps against competitor apps quickly</li></ul></div><div class="me"><span class="tag">What I did</span><ul><li>Wrote and tuned the prompts</li><li>Checked AI's output against how people really use the app</li><li>Found the 3 whole-app problems AI missed</li><li>Made every design decision</li></ul></div></div>
+<div class="sty-trust hb-end"><p class="tk">The split</p><h3>AI is great at sorting and summarising. It can't feel what the user feels.</h3></div>
+<div class="judg rv"><p class="to-k">Where my judgement came in</p><h3>What AI missed, and I found</h3><p>AI checked each screen on its own. These 3 problems only show when you walk the whole booking flow, so I found them by going through it end to end.</p><ol><li><b>No progress indicator</b><span>A 5-screen booking flow with no sign of how many steps are left.</span></li><li><b>No type hierarchy</b><span>Titles, labels, body text and buttons all look almost the same.</span></li><li><b>Colour with no meaning</b><span>One orange used for bars, buttons, status and headers, so it signals nothing.</span></li></ol></div>
+</div>
+</div>
+</section>
+<section class="stage nbw" id="redesign" data-stage="Redesign" data-no="07" data-screen-label="07 Redesign">
+<div class="nx">
+<div class="sty rv">
+<div class="sty-hd"><p class="sty-k">Step 07 · Redesign principles and before and after</p><h2 class="sty-h">Every finding led to a principle, and every principle to a design decision</h2></div>
+<ol class="dk c4" style="margin-top:40px"><li><span class="dk-n">01</span><h3>Search first</h3><p class="dk-w">The main task on the home screen, with no screens in between for what 80% of users came to do.</p></li><li><span class="dk-n">02</span><h3>Zero ads in task flow</h3><p class="dk-w">Ads in passive moments only, never inside login, recovery, booking, or payment.</p></li><li><span class="dk-n">03</span><h3>Show progress</h3><p class="dk-w">A 5-step flow needs a 5-step indicator. Users always know where they are.</p></li><li><span class="dk-n">04</span><h3>Colour with meaning</h3><p class="dk-w">One colour can't mean everything. Actions, status and decoration each get their own clear look.</p></li></ol>
+<p class="gk">Before and after</p>
+<div class="bas">
+<article><div class="bas-h"><span class="dz-n">01 · Login</span><b>From a cluttered orange wall to a clean, single-purpose screen</b></div><div class="bas-c"><figure><span class="dz-lab">Before</span><div class="im"><img loading="lazy" decoding="async" src="findings/f01-signin.jpeg" alt="IRCTC Sign In screen. Circular red LOGIN button, More Apps of IRCTC cross-promo grid, and ad banner at the bottom"></div><figcaption>The LOGIN button looks like an icon. A grid promotes 5 other apps. An ad banner sits at the bottom. The simplest screen asks the most of your brain.</figcaption></figure><figure><span class="dz-lab a">After</span><div class="im"><img loading="lazy" decoding="async" src="findings/after-login.png" alt="RailGo redesigned login. RailGo logo, Welcome back heading, a single mobile number field and a Send OTP button, no ads"></div><figcaption>Phone number and a one-time code (OTP). One clear button. No ads, and no promotions for other apps. Done in under 10 seconds.</figcaption></figure></div></article>
+<article><div class="bas-h"><span class="dz-n">02 · Home</span><b>Search on the home screen, so the 3 taps are gone</b></div><div class="bas-c"><figure><span class="dz-lab">Before</span><div class="im"><img loading="lazy" decoding="async" src="findings/f03b-trainsearch.jpeg" alt="IRCTC Train Search screen. STN station codes only, reached after three taps, with an ad below the Search Trains button"></div><figcaption>This is what users reach after 3 taps. Station codes only, a cluttered layout, and an ad below the search button.</figcaption></figure><figure><span class="dz-lab a">After</span><div class="im"><img loading="lazy" decoding="async" src="findings/after-home.png" alt="RailGo redesigned home. Personalised greeting, From and To stations with full names, depart date, travellers and a Search trains button, with recent searches below"></div><figcaption>Search form on home. Full station names. Recent journeys. 0 taps to start booking. Zero ads.</figcaption></figure></div></article>
+<article><div class="bas-h"><span class="dz-n">03 · Train details and class selection</span><b>From abbreviations and manual refresh to described classes with progress steps</b></div><div class="bas-c"><figure><span class="dz-lab">Before</span><div class="im"><img loading="lazy" decoding="async" src="findings/f04-traindetails.jpeg" alt="Train details screen. Abbreviated class names, manual refresh, and a large SBI ad covering the fare and booking button"></div><figcaption>Short codes for class names. You have to refresh by hand. An SBI ad covers the fare and the booking button.</figcaption></figure><figure><span class="dz-lab a">After</span><div class="im"><img loading="lazy" decoding="async" src="findings/after-class.png" alt="RailGo redesigned class selection. Progress steps, train summary, and described class cards with photos and fares, ad removed"></div><figcaption>Progress indicator. Described class names with photos. Ad removed. Fare fully visible.</figcaption></figure></div></article>
+</div>
+<div class="vid"><p>RailGo redesign, prototype walkthrough</p><div class="vf" style="padding:75% 0 0 0"><iframe src="https://player.vimeo.com/video/1200772618?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%" title="RailGo, live demo"></iframe></div></div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+</div>
+</div>
+</section>
+<section class="stage nbw" id="impact" data-stage="Impact" data-no="08" data-screen-label="08 Impact">
+<div class="nx">
+<div class="sty rv">
+<div class="sty-hd"><p class="sty-k">Step 08 · Impact</p><h2 class="sty-h">What this system delivered</h2></div>
+<div class="st4" style="margin-top:40px"><p><b>1 week → 1 day</b>a manual audit vs. with AI, including my review</p><p><b>8</b>Screens checked against 6 rule sets in one pass</p><p><b>6</b>Rule sets applied at once</p><p><b>3</b>Problems found across the whole app, beyond single screens</p></div>
+
+<p class="gk">What I learned</p>
+<ol class="dk c4"><li><span class="dk-n">01</span><h3>AI speeds up the work. Judgement stays with me</h3><p class="dk-w">The prompt sets can be reused on any product. Making sense of the findings is still a human job.</p></li><li><span class="dk-n">02</span><h3>Whole-app problems only show when you zoom out</h3><p class="dk-w">Single-screen problems are easy to fix. Patterns across the app need a designer who sees the whole product.</p></li><li><span class="dk-n">03</span><h3>The costliest failures hit users who said yes</h3><p class="dk-w">Problems at the moment people decide to book are the findings that change product plans, more than screen fixes do.</p></li><li><span class="dk-n">04</span><h3>Doing research faster is a design skill</h3><p class="dk-w">Turning a week into a day without losing depth means setting up the right system. I did it with careful prompt writing.</p></li></ol>
+<div class="sty-trust hb-end"><p class="tk">The value I bring</p><p>A senior designer who can run a full usability audit, set up AI to speed it up, find the bigger patterns, and design the fixes, in the time most teams spend on research alone.</p></div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<section class="ct" id="contact" data-screen-label="Contact"><div class="w">
+<h2 class="ct-h">Let's work <span class="hm-m">together<svg class="hm-u" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 30 4, 62 14, 90 7 S 114 6, 117 9" vector-effect="non-scaling-stroke"/></svg></span></h2>
+<p class="hd-p">Reach out to me. I'm always happy to talk.</p>
+<div class="ct-b"><a class="bt bt-d" href="mailto:abhisheklokesh.uiux159@gmail.com">abhisheklokesh.uiux159@gmail.com</a><button class="bt bt-o" type="button" data-copy="abhisheklokesh.uiux159@gmail.com"><span>Copy email</span></button><a class="bt bt-o" href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener">LinkedIn</a><a class="bt bt-o" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Download CV</a></div>
+</div>
+<footer class="ft"><div class="w ft-b"><span>© Abhishek LG, 2026</span><a href="#top">Back to top ↑</a></div></footer>
+</section>
+<div class="lbx" id="nbLbx" role="dialog" aria-modal="true" aria-label="Image" aria-hidden="true"><img loading="lazy" decoding="async" alt=""><button type="button" class="lbx-x" aria-label="Close">✕</button><button type="button" class="lbx-p" aria-label="Previous image">‹</button><button type="button" class="lbx-n" aria-label="Next image">›</button></div>
+<script>(function(){var c=[].slice.call(document.querySelectorAll('main img')),L=document.getElementById('nbLbx');if(!c.length||!L)return;var im=L.querySelector('img'),i=0,last;
+function show(n){i=(n+c.length)%c.length;im.src=c[i].currentSrc||c[i].src;im.alt=c[i].alt;}
+function open(n){last=document.activeElement;show(n);L.classList.add('on');L.setAttribute('aria-hidden','false');document.documentElement.style.overflow='hidden';L.querySelector('.lbx-x').focus();}
+function close(){L.classList.remove('on');L.setAttribute('aria-hidden','true');document.documentElement.style.overflow='';if(last&&last.focus)last.focus();}
+c.forEach(function(e,k){e.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();open(k)})});
+L.querySelector('.lbx-x').onclick=close;L.querySelector('.lbx-p').onclick=function(){show(i-1)};L.querySelector('.lbx-n').onclick=function(){show(i+1)};
+L.addEventListener('click',function(e){if(e.target===L)close()});
+document.addEventListener('keydown',function(e){if(!L.classList.contains('on'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1)});})();</script>
+<script>(function(){var h=document.querySelector('.h4'),w=h&&h.querySelector('.h6');if(!w)return;function f(){h.style.setProperty('--h4b',(w.offsetTop+w.offsetHeight*.5)+'px')}f();addEventListener('resize',f);addEventListener('load',f)})();</script>
+<script>(function(){var h=document.querySelector('.h4'),w=h&&h.querySelector('.h6');if(!w)return;function f(){h.style.setProperty('--h4b',(w.offsetTop+w.offsetHeight*.5)+'px')}f();addEventListener('resize',f);addEventListener('load',f)})();</script>
+<style>.sfab{position:fixed;right:20px;bottom:24px;z-index:900;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .25s ease,transform .25s ease;}.sfab.on{opacity:1;transform:none;pointer-events:auto;}.sfab button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,60,40,.14);background:rgba(251,248,241,.94);color:#15543b;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px -12px rgba(20,40,30,.45);backdrop-filter:blur(6px);transition:background .2s,color .2s,transform .15s,opacity .2s;}.sfab button:hover{background:#15543b;color:#fff;transform:translateY(-2px);}.sfab button[disabled]{opacity:.35;pointer-events:none;}.sfab svg{width:18px;height:18px;}@media(max-width:560px){.sfab{right:12px;bottom:14px;}.sfab button{width:44px;height:44px;}}@media print{.sfab{display:none;}}</style>
+<div class="sfab" id="sFab" aria-label="Page scroll"><button type="button" data-dir="up" aria-label="Go to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button><button type="button" data-dir="down" aria-label="Go to bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button></div>
+<script>(function(){var f=document.getElementById('sFab');if(!f)return;var up=f.querySelector('[data-dir=up]'),dn=f.querySelector('[data-dir=down]');var rm=matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+function tick(){var y=window.scrollY,H=document.documentElement.scrollHeight,v=window.innerHeight;var long=H>v*1.6;f.classList.toggle('on',long);dn.disabled=y+v>=H-40;up.disabled=y<40;}
+up.addEventListener('click',function(){window.scrollTo({top:0,behavior:rm});});dn.addEventListener('click',function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:rm});});
+window.addEventListener('scroll',tick,{passive:true});window.addEventListener('resize',tick);tick();})();</script>
+<script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href="#top"]');if(!a)return;e.preventDefault();window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})});</script>
+<script>(function(){var p=document.getElementById('product');if(!p||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.documentElement.classList.add('nb-anim');var t=p.querySelectorAll('.nb-mk,.nb-pile,.vs-ar,.nb-big,.nb-jr');var o=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;o.unobserve(el);var d=el.classList.contains('vs-ar')?350:0;setTimeout(function(){el.classList.add('in');if(el.classList.contains('vs-ar')){var af=p.querySelector('.vs-after'),sb=p.querySelector('.nb-sub');setTimeout(function(){af&&af.classList.add('in')},650);setTimeout(function(){sb&&sb.classList.add('in')},950)}var c=el.querySelector('.nb-cnt');if(c){var to=+c.dataset.to,s=performance.now();(function f(n){var k=Math.min(1,(n-s)/550);c.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(s)}},d)})},{threshold:.35});t.forEach(function(x){o.observe(x)})})();</script>
+<script>(function(){var l=[].slice.call(document.querySelectorAll('.cx-toc a'));if(!l.length||!('IntersectionObserver' in window))return;var m={};l.forEach(function(a){m[a.getAttribute('href').slice(1)]=a});var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){l.forEach(function(a){a.classList.remove('on')});var a=m[e.target.id];if(a){a.classList.add('on');if(a.scrollIntoView&&innerWidth<900)a.parentNode.scrollLeft=a.offsetLeft-20}}})},{rootMargin:'-30% 0px -60% 0px'});document.querySelectorAll('.cx-s').forEach(function(s){o.observe(s)})})();</script>
+<script>(function(){var c=document.getElementById('contact');if(c){if('IntersectionObserver' in window){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){c.classList.add('in');o.disconnect()}},{threshold:.25});o.observe(c)}else c.classList.add('in')}
+document.querySelectorAll('.ct [data-copy]').forEach(function(b){b.addEventListener('click',function(ev){ev.stopPropagation();var t=b.getAttribute('data-copy'),sp=b.querySelector('span');function d(){if(sp){var o=sp.textContent;sp.textContent='Copied';setTimeout(function(){sp.textContent=o},1600)}}if(navigator.clipboard)navigator.clipboard.writeText(t).then(d,d);else d()},true)})})();</script>
+</body>
+</html>
