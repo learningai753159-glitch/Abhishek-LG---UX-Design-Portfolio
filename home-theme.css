@@ -2034,3 +2034,9 @@ background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;p
 .pb-hw i{position:absolute;right:14px;top:16px;font-style:normal!important;color:var(--mu)}
 @media(max-width:960px){.pb-hw{grid-template-columns:1fr 1fr}.pb-hw li:last-child{grid-column:1/-1}}
 @media(max-width:520px){.pb-hw{grid-template-columns:1fr}}
+.c3-fd1{grid-template-columns:1fr!important}
+.pb-pn{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.pb-pn .pb-next{margin-top:0}
+.pbc .pb-prev{padding:24px 28px 24px 72px}.pbc .pb-prev i{left:28px;right:auto}
+@media(max-width:700px){.pb-pn{grid-template-columns:1fr}}
+.pbc .pb-res3 b{font-size:clamp(30px,3vw,46px);white-space:nowrap}
