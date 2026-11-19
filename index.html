@@ -582,6 +582,22 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--red);font-weight:500}
 .pc3-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .pc3:hover .pc3-img img{transform:translateY(-4px)}
 
+/* ===== work cards: one window style on pastel backdrops ===== */
+.box .cc .cc-im{margin:0 clamp(26px,3vw,40px);padding:24px 24px 0;height:300px;border-radius:18px 18px 0 0;display:flex;flex-direction:column;overflow:hidden;box-shadow:none}
+.box .cc-1 .cc-im{background:var(--lav)}
+.box .cc-2 .cc-im{background:var(--blush)}
+.box .cc-3 .cc-im{background:var(--sand)}
+.cc-win{flex:1;min-height:0;display:flex;flex-direction:column;background:#fff;border-radius:12px 12px 0 0;overflow:hidden;box-shadow:0 18px 40px -24px rgba(30,30,30,.35);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.cc-bar{flex:none;height:28px;display:flex;align-items:center;gap:6px;padding:0 14px;border-bottom:1px solid #F0EEEB}
+.cc-bar i{width:8px;height:8px;border-radius:50%;background:#E2DFDA}
+.cc-win img{flex:1;min-height:0;width:100%;height:100%;object-fit:cover;object-position:top left;border-radius:0!important;box-shadow:none!important;transform:none!important}
+.cc-3 .cc-win img{flex:none;width:165%;max-width:none;height:auto}
+.cc-win .cc-map,.box .cc-2 .cc-win .cc-map{flex:1;min-height:0;margin:0;height:auto;padding:14px 14px 0;background:#fff;box-shadow:none;border-radius:0;transform:none!important}
+.cc:hover .cc-win{transform:translateY(-4px)}
+.box .cc-1 .cc-im{margin:0;height:auto;min-height:380px;padding:40px 0 0 40px;border-radius:0}
+.cc-1 .cc-win{border-radius:12px 0 0 0}
+@media(max-width:880px){.box .cc-1 .cc-im{margin:0 26px;min-height:0;height:260px;padding:20px 20px 0;border-radius:18px 18px 0 0}.cc-1 .cc-win{border-radius:12px 12px 0 0}.box .cc .cc-im{height:260px;padding:20px 20px 0}}
+
 </style>
 </head>
 <body id="top">
@@ -614,17 +630,17 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--red);font-weight:500}
 <div class="cc-tx"><p class="cc-n"><span>01</span>Before bind</p><h3>One flow for all insurance</h3><p class="cc-p">From the first request to the agreed policy.</p>
 <p class="cc-st"><b>92%</b>less time to give a quote</p>
 <span class="cc-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-<figure class="cc-im"><img src="assets/card-workbench.jpg" alt="Underwriter workbench screen" loading="lazy"></figure>
+<figure class="cc-im"><div class="cc-win"><div class="cc-bar"><i></i><i></i><i></i></div><img src="assets/card-workbench.jpg" alt="Underwriter workbench screen" loading="lazy"></div></figure>
 </a>
 <a class="cc cc-2 rv" href="accumulation.html">
 <div class="cc-tx"><p class="cc-n"><span>02</span>After bind</p><h3>Keeping underwriters ahead of their portfolio</h3><p class="cc-p">See the whole book, and what changed today.</p>
 <span class="cc-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-<div class="cc-map" aria-hidden="true"><span class="z z1">Country</span><span class="z z2">Port zone</span><span class="z z3">Port</span><span class="z z4">Port</span><i class="v v1"></i><i class="v v2"></i><i class="v v3"></i><i class="v v4"></i></div>
+<figure class="cc-im" aria-hidden="true"><div class="cc-win"><div class="cc-bar"><i></i><i></i><i></i></div><div class="cc-map"><span class="z z1">Country</span><span class="z z2">Port zone</span><span class="z z3">Port</span><span class="z z4">Port</span><i class="v v1"></i><i class="v v2"></i><i class="v v3"></i><i class="v v4"></i></div></div></figure>
 </a>
 <a class="cc cc-3 rv" href="team-management.html">
 <div class="cc-tx"><p class="cc-n"><span>03</span>Admin</p><h3>Team and user management</h3><p class="cc-p">Every client runs the platform their own way.</p>
 <span class="cc-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-<figure class="cc-im"><img src="assets/card-users.jpg" alt="Team and user management screen" loading="lazy"></figure>
+<figure class="cc-im"><div class="cc-win"><div class="cc-bar"><i></i><i></i><i></i></div><img src="assets/card-users.jpg" alt="Team and user management screen" loading="lazy"></div></figure>
 </a>
 </div>
 </div></div></section>
