@@ -1221,3 +1221,5 @@ background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;p
 .c3 h1,.c3 h2,.c3 h3,.c3 .c3-h1,.c3 .c3-h2,.c3 .c3-h3{color:var(--ink)!important;font-family:'Inter',system-ui,sans-serif}
 .c3 .c3-dark h3,.c3 .c3-dark b{color:#fff!important}
 .c3{padding-top:clamp(64px,8vw,112px)}
+.c3-park{display:flex;align-items:center;gap:16px;margin-top:clamp(72px,9vw,128px);font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
+.c3-park::before,.c3-park::after{content:"";flex:1;border-top:1.5px dashed #C9CCD2}
