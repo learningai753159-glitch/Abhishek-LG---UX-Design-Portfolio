@@ -1567,3 +1567,13 @@ background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;p
 .c3-paper img{height:clamp(260px,32vw,440px)!important}
 .c3-nums>div:not(.c3-nb1) b{font-size:clamp(26px,2.4vw,36px);white-space:nowrap}
 @media(max-width:600px){.c3-dshot:not(.c3-dw) .c3-zoom img{height:220px!important}}
+/* design: all full width */
+.c3-dgrid{grid-template-columns:1fr!important;gap:20px}
+.c3-dshot .c3-zoom img{height:auto!important;object-fit:contain!important}
+/* standard patterns: fully visible */
+.c3-std ul{grid-template-columns:1fr!important;gap:16px}
+.c3-std li{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:center;background:rgba(255,255,255,.06)}
+.c3-std img{height:auto!important;max-height:none!important;object-fit:contain!important;object-position:center!important;padding:10px;background:#fff}
+.c3-std li b{padding:20px 24px;font-size:20px;letter-spacing:-.02em}
+.c3-std li b span{display:block;margin-top:6px;font-size:15px;font-weight:400;color:#BFC3CA;letter-spacing:0}
+@media(max-width:700px){.c3-std li{grid-template-columns:1fr}}
