@@ -1535,3 +1535,10 @@ background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;p
 .c3-cq3{background:#EDEBFB}
 .c3-cq2 blockquote,.c3-cq3 blockquote{font-size:clamp(17px,1.6vw,21px)!important}
 @media(max-width:800px){.c3-cqs{grid-template-columns:1fr}.c3-cq1{grid-row:auto}}
+
+/* restored rules still used */
+.c3-dark .c3-m{color:#BFC3CA}
+.c3-bar{display:flex;gap:6px;padding:12px 14px;border-bottom:1px solid var(--ln)}
+.c3-bar i{width:8px;height:8px;border-radius:50%;background:#DADDE2}
+.c3-pill{white-space:nowrap;font:500 13px/1 'JetBrains Mono',monospace;padding:9px 14px;border-radius:999px;background:#E9EBEE;color:var(--ink)}
+.c3-dark{background:var(--dk);border-color:var(--dk);color:#fff}
