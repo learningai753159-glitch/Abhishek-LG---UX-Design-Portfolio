@@ -1373,9 +1373,7 @@ background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;p
 .c3 .c3-skg .sk-t{font-size:17px;font-weight:700;color:var(--ink)}
 @media(max-width:960px){.c3-rs{grid-template-columns:1fr 1fr}.c3-fd{grid-template-columns:1fr}.c3-keyg{grid-template-columns:1fr}}
 @media(max-width:600px){.c3-rs{grid-template-columns:1fr}.c3-keyf{grid-template-columns:1fr}.c3-keyf li+li::before{content:"↓";left:50%;top:-6px}}
-.c3 .c3-skg .sk-ann{color:var(--blue)!important}
-.c3 .c3-skg .sk-n{background:var(--blue)!important;color:#fff!important}
-.c3 .c3-skg .sk-ring{border-color:var(--blue)!important;box-shadow:none!important}
-.c3 .c3-skg .sk-arw{color:var(--blue)!important}
-.c3 .c3-skg .sk-chip.on,.c3 .c3-skg .sk-tabs .on{background:#E8F0FE!important}
-.c3 .c3-skg .sk-ring{outline-color:var(--blue)!important;border-color:var(--blue)!important}.c3 .c3-skg .sk-ring::before,.c3 .c3-skg .sk-ring::after{border-color:var(--blue)!important;outline-color:var(--blue)!important}
+/* still slow: red warning card */
+.c3-fdw{background:#FDECEC!important;border:1.5px solid #D93025!important}
+.c3-fdw .c3-m{color:#D93025!important}
+.c3-fdw b{color:#A3231B!important}
