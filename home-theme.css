@@ -1577,3 +1577,14 @@ background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;p
 .c3-std li b{padding:20px 24px;font-size:20px;letter-spacing:-.02em}
 .c3-std li b span{display:block;margin-top:6px;font-size:15px;font-weight:400;color:#BFC3CA;letter-spacing:0}
 @media(max-width:700px){.c3-std li{grid-template-columns:1fr}}
+/* three customer quotes */
+.c3-cuh{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.c3-src-l{font-size:14px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.c3-src-l:hover{color:var(--blue)}
+.c3-cqs{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:auto auto;gap:12px;margin-top:14px}
+.c3-cqs .c3-cq{margin:0;padding:clamp(20px,2.6vw,32px);border-radius:24px;display:flex;flex-direction:column;justify-content:space-between}
+.c3-cq1{grid-row:span 2;background:#FCE8EF}
+.c3-cq2{background:#E3F4E8}
+.c3-cq3{background:#EDEBFB}
+.c3-cq2 blockquote,.c3-cq3 blockquote{font-size:clamp(17px,1.6vw,21px)!important}
+@media(max-width:800px){.c3-cqs{grid-template-columns:1fr}.c3-cq1{grid-row:auto}}
