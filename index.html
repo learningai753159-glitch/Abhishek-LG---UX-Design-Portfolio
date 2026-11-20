@@ -786,6 +786,47 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--blue);font-weight:500}
 @media(max-width:1180px){.hf-1{top:16%}.hf-4{top:60%}}
 @media(max-width:1040px){.hf{display:none}}
 
+/* ===== hero orbit (20 Nov v2): soft blue sky, slow rings, notes on the ring ===== */
+.hm{background:radial-gradient(120% 75% at 50% 0%,#DCE7FB 0%,#E9F0FC 38%,#F2F5FB 66%,var(--bg) 100%)}
+.hm::before{display:none}
+.hm::after{top:47%;background:radial-gradient(closest-side,rgba(255,255,255,.75),rgba(255,255,255,0) 70%)}
+.hq{position:absolute;inset:0;z-index:0;pointer-events:none;--mx:0;--my:0;--sp:0;--cy:47%;--R:40vw}
+.hq-rings{position:absolute;left:50%;top:var(--cy);width:calc(var(--R)*2);height:calc(var(--R)*2);overflow:visible;transform:translate(-50%,-50%) translate(calc(var(--mx)*-6px),calc(var(--my)*-6px)) scale(calc(1 + var(--sp)*.15));transition:transform .8s cubic-bezier(.2,.7,.2,1);opacity:calc(1 - var(--sp)*.9)}
+.hq-r{transform-origin:400px 400px}
+.hq-r circle{fill:none;stroke:rgba(11,87,208,.16);stroke-width:1;vector-effect:non-scaling-stroke}
+.hq-r1 circle{stroke:rgba(11,87,208,.10)}
+.hq-dash{stroke-dasharray:3 7}
+.hq-r circle.hq-sat{fill:var(--blue);stroke:none;filter:drop-shadow(0 0 6px rgba(11,87,208,.6))}
+.hq-r2{animation:hqSpin 80s linear infinite}
+.hq-r3{animation:hqSpin 140s linear infinite reverse}
+.hq-r4{animation:hqSpin 46s linear infinite}
+.hq-r1{animation:hqSpin 200s linear infinite}
+@keyframes hqSpin{to{transform:rotate(360deg)}}
+.hq-r circle:not(.hq-sat){stroke-dasharray:3600;stroke-dashoffset:3600;transition:stroke-dashoffset 2.4s cubic-bezier(.2,.7,.2,1)}
+.hq-dash{stroke-dasharray:3 7!important;stroke-dashoffset:0!important;opacity:0;transition:opacity 2s 1s}
+.hq-on .hq-r circle:not(.hq-sat){stroke-dashoffset:0}
+.hq-on .hq-dash{opacity:1}
+.hq-rays{position:absolute;left:50%;top:var(--cy);width:0;height:0}
+.hq-rays i{position:absolute;left:0;top:0;width:58vw;height:1px;transform-origin:0 0;transform:rotate(var(--r));background:linear-gradient(90deg,rgba(11,87,208,0) 18%,rgba(11,87,208,.13) 55%,rgba(11,87,208,0));animation:hqRay 7s ease-in-out infinite;animation-delay:var(--dl)}
+@keyframes hqRay{0%,100%{opacity:.25}50%{opacity:1}}
+.hq-sp i{position:absolute;width:3px;height:3px;border-radius:50%;background:rgba(11,87,208,.45);animation:hqTw var(--t) ease-in-out infinite;animation-delay:var(--dl)}
+@keyframes hqTw{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:.9;transform:scale(1.15)}}
+.hq-i{position:absolute;left:calc(50% + var(--x) * var(--R));top:calc(var(--cy) + var(--y) * var(--R));transform:translateY(calc(var(--sp) * var(--k) * -18px));opacity:calc(1 - var(--sp)*1.5)}
+.hq-p{transform:translate(-50%,-50%) translate(calc(var(--mx)*var(--k)*1px),calc(var(--my)*var(--k)*1px));transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.hq .hf-c{opacity:0;animation:hqIn 1s cubic-bezier(.2,.7,.2,1) forwards,hfF 7s ease-in-out infinite;animation-delay:calc(1.4s + var(--d,0s)),calc(2.4s + var(--d,0s))}
+@keyframes hqIn{from{opacity:0;transform:scale(.85) translateY(10px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.hq-1 .hf-c{--d:0s}.hq-4 .hf-c{--d:.12s;animation-duration:1s,8s}.hq-2 .hf-c{--d:.24s;animation-duration:1s,9s}.hq-5 .hf-c{--d:.36s;animation-duration:1s,7.5s}.hq-3 .hf-c{--d:.48s;animation-duration:1s,8.5s}.hq-6 .hf-c{--d:.6s;animation-duration:1s,9.5s}
+.hq .hf-card,.hq .hf-chip,.hq .hf-flow{background:rgba(255,255,255,.78);border-color:rgba(11,87,208,.14);box-shadow:0 20px 44px -26px rgba(11,87,208,.45),0 2px 6px -2px rgba(31,31,31,.06)}
+.hq .hf-flow span{font-size:12px;padding:5px 8px}
+.hq .hf-card{min-width:0}
+.hq-i:nth-child(n){pointer-events:none}
+@media(max-width:1280px){.hq{--R:41vw}.hq .hf-flow span{font-size:11px;padding:4px 7px}}
+@media(max-width:1100px){.hq-i{display:none}.hq{--R:46vw}}
+@media(max-width:700px){.hq{--R:60vw;--cy:38%}.hq-rays i{width:90vw}}
+@media(prefers-reduced-motion:reduce){.hq-r,.hq-rays i,.hq-sp i{animation:none}.hq .hf-c{animation:none;opacity:1}.hq-r circle:not(.hq-sat){stroke-dashoffset:0;transition:none}.hq-dash{opacity:1}}
+.nv:not(.on):not(.ap-nav){background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.hq .hf-card b+.hf-l{white-space:nowrap}
+
 </style>
 </head>
 <body id="top">
@@ -797,14 +838,12 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--blue);font-weight:500}
 </div></header>
 <main id="main">
 <section class="hm" data-screen-label="Hero">
-<div class="hf" aria-hidden="true">
-<div class="hf-i hf-1" style="--s:.55"><div class="hf-c hf-card"><span class="hf-l">Grew a design team</span><b>1 → 4</b></div></div>
-<div class="hf-i hf-2" style="--s:.9"><div class="hf-c hf-chip"><i class="hf-dot"></i>Sit with the problem first</div></div>
-<div class="hf-i hf-3" style="--s:.7"><div class="hf-c hf-flow"><span>Problem</span><em>→</em><span>Requirement</span><em>→</em><span>Design</span><em>→</em><span>Ship</span></div></div>
-<div class="hf-i hf-4" style="--s:.45"><div class="hf-c hf-card"><b>92%</b><span class="hf-l">less time to give a quote</span></div></div>
-<div class="hf-i hf-5" style="--s:.8"><div class="hf-c hf-chip"><span class="hf-sw"><i></i><i></i><i></i></span>Design systems</div></div>
-<div class="hf-i hf-6" style="--s:.6"><div class="hf-c hf-card hf-sm"><span class="hf-l">Zero to one</span><span class="hf-t">Products built from nothing to live</span></div></div>
-</div>
+<div class="hq" aria-hidden="true"><svg class="hq-rings" viewBox="0 0 800 800" aria-hidden="true">
+<g class="hq-r hq-r1"><circle cx="400" cy="400" r="232"/></g>
+<g class="hq-r hq-r2"><circle cx="400" cy="400" r="399"/><circle class="hq-sat" cx="400" cy="1" r="3.2"/></g>
+<g class="hq-r hq-r3"><circle cx="400" cy="400" r="560" class="hq-dash"/><circle class="hq-sat" cx="400" cy="-160" r="2.6"/></g>
+<g class="hq-r hq-r4"><circle class="hq-sat" cx="632" cy="400" r="2.4"/></g>
+</svg><div class="hq-rays"><i style="--r:-62deg;--dl:0s"></i><i style="--r:-28deg;--dl:1.5s"></i><i style="--r:18deg;--dl:0.8s"></i><i style="--r:48deg;--dl:2.2s"></i><i style="--r:122deg;--dl:1.1s"></i><i style="--r:158deg;--dl:2.8s"></i></div><div class="hq-sp"><i style="left:33.4%;top:19.3%;--t:4.8s;--dl:0.3s"></i><i style="left:53.4%;top:38.2%;--t:2.7s;--dl:2.0s"></i><i style="left:6.5%;top:44.2%;--t:2.7s;--dl:0.4s"></i><i style="left:42.9%;top:78.8%;--t:2.9s;--dl:0.9s"></i><i style="left:62.0%;top:89.4%;--t:4.5s;--dl:1.6s"></i><i style="left:94.8%;top:10.1%;--t:5.5s;--dl:1.2s"></i><i style="left:16.6%;top:16.4%;--t:3.6s;--dl:3.3s"></i><i style="left:20.0%;top:57.2%;--t:4.7s;--dl:1.5s"></i><i style="left:54.5%;top:11.5%;--t:2.7s;--dl:0.8s"></i><i style="left:67.0%;top:43.6%;--t:3.6s;--dl:2.3s"></i><i style="left:45.6%;top:32.4%;--t:5.3s;--dl:2.8s"></i><i style="left:25.9%;top:56.5%;--t:4.3s;--dl:3.5s"></i><i style="left:71.6%;top:31.3%;--t:5.9s;--dl:0.5s"></i><i style="left:42.3%;top:72.6%;--t:3.0s;--dl:2.0s"></i><i style="left:6.7%;top:64.8%;--t:5.2s;--dl:2.3s"></i><i style="left:85.3%;top:33.6%;--t:4.9s;--dl:2.4s"></i><i style="left:57.5%;top:46.1%;--t:5.4s;--dl:3.8s"></i><i style="left:47.6%;top:64.4%;--t:2.7s;--dl:2.8s"></i><i style="left:63.8%;top:93.4%;--t:5.4s;--dl:1.1s"></i><i style="left:39.3%;top:64.8%;--t:2.6s;--dl:1.8s"></i><i style="left:18.8%;top:16.3%;--t:2.7s;--dl:3.1s"></i><i style="left:15.2%;top:27.8%;--t:3.9s;--dl:3.5s"></i><i style="left:10.6%;top:45.5%;--t:4.4s;--dl:3.5s"></i><i style="left:80.0%;top:82.0%;--t:3.5s;--dl:1.7s"></i><i style="left:36.7%;top:83.8%;--t:5.9s;--dl:0.6s"></i><i style="left:19.6%;top:26.4%;--t:3.3s;--dl:1.9s"></i></div><div class="hq-i hq-1" style="--x:-0.906;--y:-0.423;--k:10"><div class="hq-p"><div class="hf-c hf-card"><span class="hf-l">Grew a design team</span><b>1 → 4</b></div></div></div><div class="hq-i hq-2" style="--x:-1.000;--y:0.000;--k:14"><div class="hq-p"><div class="hf-c hf-chip"><span class="hf-sw"><i></i><i></i><i></i></span>Design systems</div></div></div><div class="hq-i hq-3" style="--x:-0.906;--y:0.423;--k:8"><div class="hq-p"><div class="hf-c hf-flow"><span>Problem</span><em>→</em><span>Requirement</span><em>→</em><span>Design</span><em>→</em><span>Ship</span></div></div></div><div class="hq-i hq-4" style="--x:0.906;--y:-0.423;--k:12"><div class="hq-p"><div class="hf-c hf-chip"><i class="hf-dot"></i>Sit with the problem first</div></div></div><div class="hq-i hq-5" style="--x:1.000;--y:0.000;--k:9"><div class="hq-p"><div class="hf-c hf-card"><b>92%</b><span class="hf-l">less time to give a quote</span></div></div></div><div class="hq-i hq-6" style="--x:0.906;--y:0.423;--k:13"><div class="hq-p"><div class="hf-c hf-card hf-sm"><span class="hf-l">Zero to one</span><span class="hf-t">Products built from nothing to live</span></div></div></div></div>
 <div class="w hm-c">
 <p class="hm-k rv">Senior Product Designer</p>
 <h1 class="hm-n" aria-label="Abhishek LG"><span aria-hidden="true"><span class="hn-w"><span class="ch" style="--i:0">A</span><span class="ch" style="--i:1">b</span><span class="ch" style="--i:2">h</span><span class="ch" style="--i:3">i</span><span class="ch" style="--i:4">s</span><span class="ch" style="--i:5">h</span><span class="ch" style="--i:6">e</span><span class="ch" style="--i:7">k</span></span> <span class="hn-w"><span class="ch" style="--i:8">L</span><span class="ch" style="--i:9">G</span></span></span></h1>
@@ -819,7 +858,7 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--blue);font-weight:500}
 <span></span>
 </div>
 </section>
-<script>(function(){var h=document.querySelector('.hm');if(!h||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var n=h.querySelector('.hm-n'),it=[].slice.call(h.querySelectorAll('.hf-i')),tk=false;function f(){tk=false;var p=Math.min(1,Math.max(0,scrollY/(innerHeight*.9)));if(n){n.style.transform='scale('+(1-p*.14)+')';n.style.opacity=1-p*.55}it.forEach(function(e){var k=parseFloat(e.style.getPropertyValue('--s'))||.6;e.style.transform='translate3d(0,'+(-p*260*k)+'px,0)';e.style.opacity=1-p*1.4})}addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(f)}},{passive:true});f()})();</script>
+<script>(function(){var h=document.querySelector('.hm');if(!h)return;var q=h.querySelector('.hq');requestAnimationFrame(function(){h.classList.add('hq-on')});if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;var n=h.querySelector('.hm-n'),it=[].slice.call(h.querySelectorAll('.hq-i')),tk=false;function f(){tk=false;var p=Math.min(1,Math.max(0,scrollY/(innerHeight*.9)));if(n){n.style.transform='scale('+(1-p*.12)+')';n.style.opacity=1-p*.5}if(q){q.style.setProperty('--sp',p)}}addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(f)}},{passive:true});f();if(matchMedia('(hover: hover)').matches){h.addEventListener('mousemove',function(e){var r=h.getBoundingClientRect();q.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5)*2);q.style.setProperty('--my',((e.clientY-r.top)/r.height-.5)*2)});h.addEventListener('mouseleave',function(){q.style.setProperty('--mx',0);q.style.setProperty('--my',0)})}})();</script>
 <section class="sc" id="work" data-screen-label="Selected work"><div class="w"><div class="box">
 <div class="hd rv"><p class="ey">Selected work</p><h2 class="h2">One platform, three <span class="it">problems</span></h2><p class="hd-p">Concirrus, an AI-native platform for specialty insurance underwriters. I was the lead designer.</p></div>
 <div class="cs">

@@ -777,6 +777,47 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--blue);font-weight:500}
 @media(max-width:1180px){.hf-1{top:16%}.hf-4{top:60%}}
 @media(max-width:1040px){.hf{display:none}}
 
+/* ===== hero orbit (20 Nov v2): soft blue sky, slow rings, notes on the ring ===== */
+.hm{background:radial-gradient(120% 75% at 50% 0%,#DCE7FB 0%,#E9F0FC 38%,#F2F5FB 66%,var(--bg) 100%)}
+.hm::before{display:none}
+.hm::after{top:47%;background:radial-gradient(closest-side,rgba(255,255,255,.75),rgba(255,255,255,0) 70%)}
+.hq{position:absolute;inset:0;z-index:0;pointer-events:none;--mx:0;--my:0;--sp:0;--cy:47%;--R:40vw}
+.hq-rings{position:absolute;left:50%;top:var(--cy);width:calc(var(--R)*2);height:calc(var(--R)*2);overflow:visible;transform:translate(-50%,-50%) translate(calc(var(--mx)*-6px),calc(var(--my)*-6px)) scale(calc(1 + var(--sp)*.15));transition:transform .8s cubic-bezier(.2,.7,.2,1);opacity:calc(1 - var(--sp)*.9)}
+.hq-r{transform-origin:400px 400px}
+.hq-r circle{fill:none;stroke:rgba(11,87,208,.16);stroke-width:1;vector-effect:non-scaling-stroke}
+.hq-r1 circle{stroke:rgba(11,87,208,.10)}
+.hq-dash{stroke-dasharray:3 7}
+.hq-r circle.hq-sat{fill:var(--blue);stroke:none;filter:drop-shadow(0 0 6px rgba(11,87,208,.6))}
+.hq-r2{animation:hqSpin 80s linear infinite}
+.hq-r3{animation:hqSpin 140s linear infinite reverse}
+.hq-r4{animation:hqSpin 46s linear infinite}
+.hq-r1{animation:hqSpin 200s linear infinite}
+@keyframes hqSpin{to{transform:rotate(360deg)}}
+.hq-r circle:not(.hq-sat){stroke-dasharray:3600;stroke-dashoffset:3600;transition:stroke-dashoffset 2.4s cubic-bezier(.2,.7,.2,1)}
+.hq-dash{stroke-dasharray:3 7!important;stroke-dashoffset:0!important;opacity:0;transition:opacity 2s 1s}
+.hq-on .hq-r circle:not(.hq-sat){stroke-dashoffset:0}
+.hq-on .hq-dash{opacity:1}
+.hq-rays{position:absolute;left:50%;top:var(--cy);width:0;height:0}
+.hq-rays i{position:absolute;left:0;top:0;width:58vw;height:1px;transform-origin:0 0;transform:rotate(var(--r));background:linear-gradient(90deg,rgba(11,87,208,0) 18%,rgba(11,87,208,.13) 55%,rgba(11,87,208,0));animation:hqRay 7s ease-in-out infinite;animation-delay:var(--dl)}
+@keyframes hqRay{0%,100%{opacity:.25}50%{opacity:1}}
+.hq-sp i{position:absolute;width:3px;height:3px;border-radius:50%;background:rgba(11,87,208,.45);animation:hqTw var(--t) ease-in-out infinite;animation-delay:var(--dl)}
+@keyframes hqTw{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:.9;transform:scale(1.15)}}
+.hq-i{position:absolute;left:calc(50% + var(--x) * var(--R));top:calc(var(--cy) + var(--y) * var(--R));transform:translateY(calc(var(--sp) * var(--k) * -18px));opacity:calc(1 - var(--sp)*1.5)}
+.hq-p{transform:translate(-50%,-50%) translate(calc(var(--mx)*var(--k)*1px),calc(var(--my)*var(--k)*1px));transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.hq .hf-c{opacity:0;animation:hqIn 1s cubic-bezier(.2,.7,.2,1) forwards,hfF 7s ease-in-out infinite;animation-delay:calc(1.4s + var(--d,0s)),calc(2.4s + var(--d,0s))}
+@keyframes hqIn{from{opacity:0;transform:scale(.85) translateY(10px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.hq-1 .hf-c{--d:0s}.hq-4 .hf-c{--d:.12s;animation-duration:1s,8s}.hq-2 .hf-c{--d:.24s;animation-duration:1s,9s}.hq-5 .hf-c{--d:.36s;animation-duration:1s,7.5s}.hq-3 .hf-c{--d:.48s;animation-duration:1s,8.5s}.hq-6 .hf-c{--d:.6s;animation-duration:1s,9.5s}
+.hq .hf-card,.hq .hf-chip,.hq .hf-flow{background:rgba(255,255,255,.78);border-color:rgba(11,87,208,.14);box-shadow:0 20px 44px -26px rgba(11,87,208,.45),0 2px 6px -2px rgba(31,31,31,.06)}
+.hq .hf-flow span{font-size:12px;padding:5px 8px}
+.hq .hf-card{min-width:0}
+.hq-i:nth-child(n){pointer-events:none}
+@media(max-width:1280px){.hq{--R:41vw}.hq .hf-flow span{font-size:11px;padding:4px 7px}}
+@media(max-width:1100px){.hq-i{display:none}.hq{--R:46vw}}
+@media(max-width:700px){.hq{--R:60vw;--cy:38%}.hq-rays i{width:90vw}}
+@media(prefers-reduced-motion:reduce){.hq-r,.hq-rays i,.hq-sp i{animation:none}.hq .hf-c{animation:none;opacity:1}.hq-r circle:not(.hq-sat){stroke-dashoffset:0;transition:none}.hq-dash{opacity:1}}
+.nv:not(.on):not(.ap-nav){background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.hq .hf-card b+.hf-l{white-space:nowrap}
+
 /* About page: same case study theme, compact sections */
 .nv-l a[aria-current="page"]{color:var(--ink);background:var(--chip)}
 .ap-hero{padding:clamp(96px,10vw,128px) 0 0}
