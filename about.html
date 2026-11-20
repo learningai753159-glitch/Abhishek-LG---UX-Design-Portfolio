@@ -799,26 +799,93 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--blue);font-weight:500}
 @media(max-width:600px){.ap-nav-in{padding:0 16px;height:64px}.ap-ch{padding-left:14px;letter-spacing:.14em}.ap-nav-l{gap:14px}.ap-nav .nv-b{font-size:16px}}
 .ap-nav,.ap-nav.on{background:rgba(255,255,255,.92)}
 
+/* ===== About v2: selling points first ===== */
+.ab2-hero{padding:clamp(104px,11vw,140px) 0 0}
+.ab2-hg{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(28px,4vw,64px);align-items:stretch}
+.ab2-who{display:flex;align-items:center;gap:14px;margin-bottom:clamp(28px,3vw,40px)}
+.ab2-who img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:1px solid var(--ln);background:var(--panel)}
+.ab2-who b{display:block;font:600 16px/1.2 var(--f)}
+.ab2-who span{display:block;margin-top:4px;font:500 12px/1.3 var(--mono);letter-spacing:.06em;color:var(--mu)}
+.ab2-h1{margin:0;font:700 clamp(38px,5vw,72px)/1.02 var(--f);letter-spacing:-.045em;text-wrap:balance}
+.ab2-lead{margin:clamp(18px,2vw,24px) 0 0;max-width:52ch;font-size:clamp(16px,1.35vw,19px);line-height:1.6;color:var(--ink2)}
+.ab2-cta{margin-top:clamp(24px,2.6vw,32px);display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.ab2-open{display:inline-flex;align-items:center;gap:8px;margin-left:6px;font:500 12.5px/1 var(--mono);letter-spacing:.06em;color:var(--ink2)}
+.ab2-proof{background:#1E1E1E;color:#fff;border-radius:24px;padding:clamp(24px,2.6vw,36px);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.ab2-pk{margin:0;font:500 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#8AB4F8}
+.ab2-pn{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.12);border-radius:14px;overflow:hidden}
+.ab2-proof .ap-n{background:#1E1E1E;border:0;border-radius:0;padding:18px 16px 16px 0}
+.ab2-proof .ap-n:nth-child(even){padding-left:18px}
+.ab2-proof .ap-n:nth-child(n+3){padding-top:18px}
+.ab2-proof .ap-n b{color:#fff;font-size:clamp(30px,3vw,42px)}
+.ab2-proof .ap-n span{color:#BFC3CA;font-size:14px}
+
+.ab2-s{padding-top:clamp(72px,8vw,112px)}
+.ab2-hd{margin-bottom:clamp(22px,2.6vw,32px)}
+.ab2-sub{margin:12px 0 0;max-width:34ch;font-size:15.5px;line-height:1.55;color:var(--ink2)}
+.ab2-bring{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ab2-b{background:#fff;border:1px solid var(--ln);border-radius:18px;padding:22px 20px 24px;transition:border-color .2s}
+.ab2-b:hover{border-color:var(--blue)}
+.ab2-b span{font:500 12px/1 var(--mono);letter-spacing:.12em;color:var(--blue)}
+.ab2-b h3{margin:16px 0 0;font:600 19px/1.25 var(--f);letter-spacing:-.02em}
+.ab2-b p{margin:10px 0 0;font-size:14.5px;line-height:1.55;color:var(--ink2)}
+
+.ab2-two{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(24px,4vw,64px);align-items:start}
+.ab2-sticky{position:sticky;top:100px}
+
+.ab2-kit{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(24px,4vw,56px);align-items:start}
+.ab2-how{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ab2-how .ap-hw{padding:18px}
+.ab2-ed{background:#fff;border:1px solid var(--ln);border-radius:16px;padding:18px 20px;margin-bottom:12px}
+.ab2-ed b{display:block;margin-top:12px;font:600 17px/1.3 var(--f)}
+.ab2-ed span{display:block;margin-top:4px;font-size:14px;color:var(--ink2)}
+.ab2-cs{display:flex;flex-direction:column;gap:8px}
+.ab2-cs .ap-c{padding:14px 18px}
+
+.ab2-life .ap-strip{margin-top:0}
+.ab2-life .ap-p{width:clamp(130px,13vw,190px)}
+
+@media(max-width:1000px){.ab2-bring{grid-template-columns:1fr 1fr}.ab2-kit{grid-template-columns:1fr}}
+@media(max-width:860px){.ab2-hg,.ab2-two{grid-template-columns:1fr}.ab2-sticky{position:static}}
+@media(max-width:480px){.ab2-bring,.ab2-how{grid-template-columns:1fr}.ab2-open{margin:6px 0 0;width:100%}}
+.ab2-hg{align-items:center}
+.ab2-proof{justify-content:flex-start;gap:20px}
+.ab2-lines{margin:0;display:flex;flex-wrap:wrap;gap:6px}
+.ab2-lines span{padding:6px 10px;border:1px solid rgba(255,255,255,.22);border-radius:999px;font:500 11.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#E3E5E9}
+
 </style>
 </head>
 <body id="top">
 <a class="skip" href="#main">Skip to content</a>
 <header class="nv ap-nav" id="nav"><div class="ap-nav-in"><div class="ap-nav-l"><a class="nv-b" href="index.html">Abhishek LG</a><span class="ap-ch">About</span></div><a class="ap-bk" href="index.html#about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>Back to home</a></div></header>
 <main id="main">
-<section class="ap-hero"><div class="w">
-<div class="ap-split">
-<div class="ap-tx rv"><p class="ey">About · Abhishek LG</p>
-<h1 class="ap-h1">I start with research and end with products people <span class="it">can actually use</span></h1>
-<p class="ap-lead">I've spent 7 years designing for insurance technology, e-commerce and AI agent products. Most of my work is complex business software that people use all day. I care about the small details that let them get on with their job.</p></div>
-<figure class="ap-me rv"><img src="assets/abhishek-profile.webp" alt="Abhishek LG" decoding="async"></figure>
+<section class="ab2-hero"><div class="w ab2-hg">
+<div class="ab2-id rv">
+<div class="ab2-who"><img src="assets/abhishek-profile.webp" alt="Abhishek LG" width="56" height="56" decoding="async"><div><b>Abhishek LG</b><span>Senior Product Designer · Bengaluru</span></div></div>
+<p class="ey">About</p>
+<h1 class="ab2-h1">I design complex business software that people use <span class="it">all day.</span></h1>
+<p class="ab2-lead">7 years across insurance technology, e-commerce and AI agent products. I start with research and end with products people can actually use.</p>
+<div class="ab2-cta"><a class="bt bt-d" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Download CV</a><a class="bt bt-o" href="index.html#work">See my work</a><span class="ab2-open"><span class="dt" aria-hidden="true"></span>Open to work</span></div>
 </div>
-<dl class="ap-meta rv"><div><dt>Role</dt><dd>Senior Product Designer</dd></div><div><dt>Based in</dt><dd>Bengaluru, India</dd></div><div><dt>Education</dt><dd>MBA, East West College of Management, 2016</dd></div><div><dt>Now</dt><dd><span class="dt" aria-hidden="true"></span> Open to work</dd></div></dl>
+<aside class="ab2-proof rv" aria-label="What my work at Concirrus changed"><p class="ab2-pk">What my work at Concirrus changed</p><div class="ab2-pn"><div class="ap-n"><b>92%</b><span>less time to give a quote</span></div><div class="ap-n"><b>2.5×</b><span>more insurance requests handled each day</span></div><div class="ap-n"><b>4</b><span>types of insurance on one shared workflow</span></div><div class="ap-n"><b>1 → 4</b><span>designers, as the team grew</span></div></div><p class="ab2-lines"><span>Marine</span><span>Aviation</span><span>Construction</span><span>PV&amp;T</span></p></aside>
 </div></section>
-<div class="ap-strip rv" aria-label="Photos"><div class="ap-tr"><figure class="ap-p"><img src="assets/about-1.webp" alt="Abhishek working on a laptop in a cafe" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-7.jpg" alt="Abhishek in front of snowy mountains" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-5.jpg" alt="Abhishek reviewing work on a laptop with a colleague" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-team-2026.jpg" alt="Abhishek with his team in a meeting room" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-6.webp" alt="Abhishek near Big Ben in London" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-swing.webp" alt="Abhishek and two friends on a flower swing" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-9.webp" alt="Abhishek against a painted brick wall" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-4.jpg" alt="Abhishek with a group in a large office atrium" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-8.webp" alt="Abhishek by Tower Bridge in London" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-1.webp" alt="" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-7.jpg" alt="" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-5.jpg" alt="" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-team-2026.jpg" alt="" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-6.webp" alt="" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-swing.webp" alt="" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-9.webp" alt="" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-4.jpg" alt="" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-8.webp" alt="" loading="lazy" decoding="async"></figure></div></div>
-<section class="ap-s" id="path"><div class="w"><p class="ey">Experience</p><h2 class="h2">The path <span class="it">so far</span></h2><ol class="ap-path rv"><li class=""><span class="ap-d">Jul 2023 to Sep 2026</span><div><b>Staff UX Designer, Concirrus</b><p>I grew the design team from one to four. We designed AI-enabled tools for underwriters, the people who decide what to insure and at what price, across four types of insurance, including marine, aviation and construction.</p></div></li><li class=""><span class="ap-d">Oct 2020 to Jun 2023</span><div><b>UX Designer, CoreValue Technologies</b><p>I owned design for four live products at once, across connected devices (IoT), insurance, e-commerce and web, with clients in India, the UK and the US.</p></div></li><li class=""><span class="ap-d">May 2019 to Oct 2020</span><div><b>UI Designer, StoreKing</b><p>My first design role. Designed low-bandwidth, offline-first shopping screens for rural retailers on web and mobile.</p></div></li><li class="ap-sw"><span class="ap-d">Nov 2018 to May 2019</span><div><b>The switch</b><p>Getting UX design training at Aspire Gate, Bengaluru.</p></div></li><li class=""><span class="ap-d">Sep 2017 to Nov 2018</span><div><b>Talent Acquisition Executive, TalentXO</b></div></li></ol><p class="ap-l ap-fl">Freelance projects</p><ol class="ap-path rv"><li class=""><span class="ap-d">Jul to Sep 2026</span><div><b>NutBite</b><p>I designed and built NutBite, an app that helps a family-run cashew business record sales and track stock.</p></div></li></ol></div></section>
-<section class="ap-s" id="results"><div class="w"><p class="ey">Results</p><h2 class="h2">What my work at Concirrus <span class="it">changed</span></h2><div class="ap-nums rv"><div class="ap-n"><b>92%</b><span>less time to give a quote</span></div><div class="ap-n"><b>2.5×</b><span>more insurance requests handled each day</span></div><div class="ap-n"><b>4</b><span>types of insurance on one shared workflow</span></div><div class="ap-n"><b>1 → 4</b><span>designers, as the team grew</span></div></div></div></section>
-<section class="ap-s" id="how"><div class="w"><p class="ey">Skills</p><h2 class="h2">How I <span class="it">work</span></h2><div class="ap-how rv"><div class="ap-hw"><p class="ap-l">Design</p><ul><li>Research</li><li>User flows</li><li>Interaction design</li><li>UX audits</li></ul></div><div class="ap-hw"><p class="ap-l">Systems</p><ul><li>Design systems</li><li>How design teams work</li><li>Team processes</li></ul></div><div class="ap-hw"><p class="ap-l">Tools</p><ul><li>Figma</li><li>FigJam</li><li>Notion</li></ul></div><div class="ap-hw"><p class="ap-l">AI tools</p><ul><li>Figma Make</li><li>Google AI Studio</li><li>Claude Design</li><li>Lovable</li></ul></div></div></div></section>
-<section class="ap-s" id="certs"><div class="w"><p class="ey">Learning</p><h2 class="h2">Certificates</h2><div class="ap-cs rv"><a class="ap-c" href="assets/certs/outskill-genai-mastermind-2026.jpg" target="_blank" rel="noopener"><span><b>Generative AI Mastermind</b><small>Outskill · 2026</small></span><em>View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></em></a><a class="ap-c" href="assets/certs/uxgorilla-ux-immersion-2022.jpg" target="_blank" rel="noopener"><span><b>UX Immersion</b><small>UX Gorilla · 2022</small></span><em>View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></em></a><a class="ap-c" href="assets/certs/aspiregate-ui-ux-2019.jpg" target="_blank" rel="noopener"><span><b>UI UX Designing</b><small>Aspire Gate, Bengaluru · 2019</small></span><em>View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></em></a></div></div></section>
+
+<section class="ab2-s" id="bring"><div class="w">
+<div class="ab2-hd rv"><p class="ey">What I bring</p><h2 class="h2">Four strengths, <span class="it">in short</span></h2></div>
+<div class="ab2-bring rv"><div class="ab2-b"><span>01</span><h3>Complex software, made simple</h3><p>Most of my work is complex business software that people use all day. I care about the small details that let them get on with their job.</p></div><div class="ab2-b"><span>02</span><h3>Research to real product</h3><p>I start with research and end with products people can actually use: user flows, interaction design and UX audits.</p></div><div class="ab2-b"><span>03</span><h3>Teams and systems</h3><p>At Concirrus I grew the design team from one to four, and built the base every new line of insurance used.</p></div><div class="ab2-b"><span>04</span><h3>Design that ships</h3><p>I owned design for four live products at once at CoreValue, and designed and built NutBite for a family-run business.</p></div></div>
+</div></section>
+
+<section class="ab2-s" id="path"><div class="w ab2-two">
+<div class="ab2-hd ab2-sticky rv"><p class="ey">Experience</p><h2 class="h2">The path <span class="it">so far</span></h2><p class="ab2-sub">Senior UX Designer at Concirrus, promoted to Staff in 2025.</p></div>
+<div class="rv"><ol class="ap-path"><li class=""><span class="ap-d">Jul 2023 to Sep 2026</span><div><b>Staff UX Designer, Concirrus</b><p>I grew the design team from one to four. We designed AI-enabled tools for underwriters, the people who decide what to insure and at what price, across four types of insurance, including marine, aviation and construction.</p></div></li><li class=""><span class="ap-d">Oct 2020 to Jun 2023</span><div><b>UX Designer, CoreValue Technologies</b><p>I owned design for four live products at once, across connected devices (IoT), insurance, e-commerce and web, with clients in India, the UK and the US.</p></div></li><li class=""><span class="ap-d">May 2019 to Oct 2020</span><div><b>UI Designer, StoreKing</b><p>My first design role. Designed low-bandwidth, offline-first shopping screens for rural retailers on web and mobile.</p></div></li><li class="ap-sw"><span class="ap-d">Nov 2018 to May 2019</span><div><b>The switch</b><p>Getting UX design training at Aspire Gate, Bengaluru.</p></div></li><li class=""><span class="ap-d">Sep 2017 to Nov 2018</span><div><b>Talent Acquisition Executive, TalentXO</b></div></li></ol><p class="ap-l ap-fl">Freelance projects</p><ol class="ap-path"><li class=""><span class="ap-d">Jul to Sep 2026</span><div><b>NutBite</b><p>I designed and built NutBite, an app that helps a family-run cashew business record sales and track stock.</p></div></li></ol></div>
+</div></section>
+
+<section class="ab2-s" id="kit"><div class="w ab2-kit">
+<div class="rv"><p class="ey">Toolkit</p><div class="ab2-how"><div class="ap-hw"><p class="ap-l">Design</p><ul><li>Research</li><li>User flows</li><li>Interaction design</li><li>UX audits</li></ul></div><div class="ap-hw"><p class="ap-l">Systems</p><ul><li>Design systems</li><li>How design teams work</li><li>Team processes</li></ul></div><div class="ap-hw"><p class="ap-l">Tools</p><ul><li>Figma</li><li>FigJam</li><li>Notion</li></ul></div><div class="ap-hw"><p class="ap-l">AI tools</p><ul><li>Figma Make</li><li>Google AI Studio</li><li>Claude Design</li><li>Lovable</li></ul></div></div></div>
+<div class="rv"><p class="ey">Learning</p><div class="ab2-ed"><p class="ap-l">Education</p><b>MBA</b><span>East West College of Management, 2016</span></div><div class="ab2-cs"><a class="ap-c" href="assets/certs/outskill-genai-mastermind-2026.jpg" target="_blank" rel="noopener"><span><b>Generative AI Mastermind</b><small>Outskill · 2026</small></span><em>View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></em></a><a class="ap-c" href="assets/certs/uxgorilla-ux-immersion-2022.jpg" target="_blank" rel="noopener"><span><b>UX Immersion</b><small>UX Gorilla · 2022</small></span><em>View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></em></a><a class="ap-c" href="assets/certs/aspiregate-ui-ux-2019.jpg" target="_blank" rel="noopener"><span><b>UI UX Designing</b><small>Aspire Gate, Bengaluru · 2019</small></span><em>View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></em></a></div></div>
+</div></section>
+
+<section class="ab2-s ab2-life" id="life"><div class="w"><div class="ab2-hd rv"><p class="ey">Away from the desk</p></div></div>
+<div class="ap-strip rv" aria-label="Photos"><div class="ap-tr"><figure class="ap-p"><img src="assets/about-1.webp" alt="Abhishek working on a laptop in a cafe" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-7.jpg" alt="Abhishek in front of snowy mountains" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-5.jpg" alt="Abhishek reviewing work on a laptop with a colleague" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-team-2026.jpg" alt="Abhishek with his team in a meeting room" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-6.webp" alt="Abhishek near Big Ben in London" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-swing.webp" alt="Abhishek and two friends on a flower swing" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-9.webp" alt="Abhishek against a painted brick wall" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-4.jpg" alt="Abhishek with a group in a large office atrium" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-8.webp" alt="Abhishek by Tower Bridge in London" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-1.webp" alt="" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-7.jpg" alt="" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-5.jpg" alt="" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-team-2026.jpg" alt="" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-6.webp" alt="" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-swing.webp" alt="" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-9.webp" alt="" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-4.jpg" alt="" loading="lazy" decoding="async"></figure><figure class="ap-p"><img src="assets/about-8.webp" alt="" loading="lazy" decoding="async"></figure></div></div></section>
 <section class="ct" id="contact" data-screen-label="Contact"><div class="w">
 <h2 class="ct-h rv">Let's work <span class="hm-m">together<svg class="hm-u" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 30 4, 62 14, 90 7 S 114 6, 117 9" vector-effect="non-scaling-stroke"/></svg></span></h2>
 <p class="hd-p rv">Reach out to me. I'm always happy to talk.</p>
