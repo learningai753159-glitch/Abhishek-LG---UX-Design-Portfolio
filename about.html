@@ -985,6 +985,26 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--blue);font-weight:500}
 .ab5-r{grid-template-columns:36px 1fr;align-items:start}.ab5-i{padding-top:8px}.ab5-x,.ab5-d{grid-column:2}.ab5-d{justify-self:start}.ab5-x:empty{display:none}}
 .ab5-co b .it{display:inline;margin:0;font-size:inherit;line-height:inherit;letter-spacing:-.01em;text-transform:none;color:var(--ink)}
 
+/* ===== Freelance v6: feature panel, store print over the app ===== */
+.ab6{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,5vw,80px);align-items:center}
+.ab6-nm{margin-top:clamp(24px,3vw,36px);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.ab6-nm b{font:700 clamp(40px,4.6vw,64px)/1 var(--f);letter-spacing:-.045em}
+.ab6-nm span{padding:8px 12px;border-radius:999px;background:#fff;font:500 12px/1 var(--mono);letter-spacing:.04em;color:var(--ink2)}
+.ab6-p{margin:16px 0 26px;max-width:40ch;font-size:clamp(16px,1.35vw,18px);line-height:1.6;color:var(--ink2)}
+.ab6 .bt svg{width:16px;height:16px;transition:transform .25s}
+.ab6 .bt:hover svg{transform:translateX(4px)}
+.ab6-vis{position:relative;display:block;padding:0 0 clamp(40px,5vw,64px) clamp(40px,6vw,96px)}
+.ab6-win{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(31,31,31,.45);transform:rotate(1.2deg);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.ab6-win .cc-bar{height:30px;display:flex;align-items:center;gap:6px;padding:0 14px;border-bottom:1px solid var(--ln)}
+.ab6-win .cc-bar i{width:8px;height:8px;border-radius:50%;background:#D9DCE2}
+.ab6-win img{width:100%;display:block}
+.ab6-print{position:absolute;left:0;bottom:0;width:clamp(140px,15vw,210px);margin:0;padding:8px 8px 26px;background:#fff;border-radius:4px;box-shadow:0 22px 40px -20px rgba(31,31,31,.5),0 0 0 1px var(--ln);transform:rotate(-6deg);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.ab6-print img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
+.ab6-vis:hover .ab6-win{transform:rotate(0)}
+.ab6-vis:hover .ab6-print{transform:rotate(-2deg) translateY(-6px)}
+@media(max-width:860px){.ab6{grid-template-columns:1fr}.ab6-vis{order:-1;padding-left:48px}}
+@media(max-width:480px){.ab6-vis{padding:0 0 36px 32px}.ab6-print{width:120px;padding:6px 6px 18px}}
+
 </style>
 </head>
 <body id="top">
@@ -1016,9 +1036,17 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--blue);font-weight:500}
 <ol class="ab5-rows rv"><li class="ab5-r"><span class="ab5-i">01</span><div class="ab5-co"><b>Concirrus</b><span>Staff UX Designer</span></div><p class="ab5-x">I grew the design team from one to four. We designed AI-enabled tools for underwriters, the people who decide what to insure and at what price, across four types of insurance, including marine, aviation and construction.</p><span class="ab5-d">Jul 2023 to Sep 2026</span></li><li class="ab5-r"><span class="ab5-i">02</span><div class="ab5-co"><b>CoreValue Technologies</b><span>UX Designer</span></div><p class="ab5-x">I owned design for four live products at once, across connected devices (IoT), insurance, e-commerce and web, with clients in India, the UK and the US.</p><span class="ab5-d">Oct 2020 to Jun 2023</span></li><li class="ab5-r"><span class="ab5-i">03</span><div class="ab5-co"><b>StoreKing</b><span>UI Designer</span></div><p class="ab5-x">My first design role. Designed low-bandwidth, offline-first shopping screens for rural retailers on web and mobile.</p><span class="ab5-d">May 2019 to Oct 2020</span></li><li class="ab5-r ab5-sw"><span class="ab5-i">04</span><div class="ab5-co"><b><span class="it">The switch</span></b><span>Aspire Gate, Bengaluru</span></div><p class="ab5-x">Getting UX design training at Aspire Gate, Bengaluru.</p><span class="ab5-d">Nov 2018 to May 2019</span></li><li class="ab5-r"><span class="ab5-i">05</span><div class="ab5-co"><b>TalentXO</b><span>Talent Acquisition Executive</span></div><p class="ab5-x"></p><span class="ab5-d">Sep 2017 to Nov 2018</span></li></ol>
 </div></section>
 
-<section class="ab2-s ab4-band ab4-sand" id="freelance"><div class="w">
-<div class="ab2-hd rv"><p class="ey">Freelance</p><h2 class="h2">On my <span class="it">own</span></h2></div>
-<a class="ab3-fl rv" href="nutbite.html"><div><p class="ab3-flk"><b>NutBite</b><span>Jul to Sep 2026</span></p><p>I designed and built NutBite, an app that helps a family-run cashew business record sales and track stock.</p></div><span class="ab3-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<section class="ab2-s ab4-band ab4-sand" id="freelance"><div class="w ab6">
+<div class="ab6-tx rv">
+<p class="ey">Freelance</p><h2 class="h2">On my <span class="it">own</span></h2>
+<div class="ab6-nm"><b>NutBite</b><span>Jul to Sep 2026</span></div>
+<p class="ab6-p">I designed and built NutBite, an app that helps a family-run cashew business record sales and track stock.</p>
+<a class="bt bt-d" href="nutbite.html">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+<a class="ab6-vis rv" href="nutbite.html" tabindex="-1" aria-hidden="true">
+<div class="ab6-win"><div class="cc-bar"><i></i><i></i><i></i></div><img src="assets/nutbite-scr-dashboard.png" alt="" loading="lazy" decoding="async"></div>
+<figure class="ab6-print"><img src="assets/nutbite-store.jpg" alt="" loading="lazy" decoding="async"></figure>
+</a>
 </div></section>
 
 <section class="ab2-s ab4-band" id="kit"><div class="w ab2-kit">
