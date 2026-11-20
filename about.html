@@ -1346,6 +1346,17 @@ div.ab5-x{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 @media(max-width:600px){.hw-steps{grid-template-columns:1fr}}
 .hw-tools{gap:12px 6px;flex-wrap:nowrap}.hw-tools li{width:auto;flex:1 1 0;min-width:0;font-size:11px}
 @media(max-width:600px){.hw-tools{flex-wrap:wrap}.hw-tools li{flex:0 0 64px}}
+/* six steps in the same look as the AI section */
+.hw-6{grid-template-columns:repeat(3,minmax(0,1fr))}
+.hw-6 .hw-s{min-height:0;padding:20px 22px 22px}
+.hw-6 .hw-do{font-size:18px}
+.hw-xl{margin:clamp(22px,2.6vw,30px) 0 12px}
+.hw-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.hw-x{padding:16px 20px 18px}
+.hw-x .hw-do{margin-top:10px;font-size:15.5px}
+#how .ab9-top{margin-bottom:clamp(24px,2.8vw,36px)}
+@media(max-width:1000px){.hw-6{grid-template-columns:1fr 1fr}.hw-3{grid-template-columns:1fr}}
+@media(max-width:600px){.hw-6{grid-template-columns:1fr}}
 
 </style>
 </head>
@@ -1368,8 +1379,8 @@ div.ab5-x{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 
 <section class="ab9-p ab9-dark" id="how"><div class="w">
 <div class="ab9-top rv"><h2 class="ab9-h2">I start before the <span class="it">requirement.</span></h2><p class="ab9-sub">I sit with the problem first, then design all the way to the live product.</p></div>
-<ol class="ab9-steps"><li class="rv" style="--d:0"><span class="ab9-n">01</span><b>Sit with the problem</b><p>With clients and business teams, from day one.</p></li><li class="rv" style="--d:1"><span class="ab9-n">02</span><b>Find the pain points</b><p>What's slowing people down.</p></li><li class="rv" style="--d:2"><span class="ab9-n">03</span><b>Shape the requirement</b><p>Turn pain points into clear needs.</p></li><li class="rv" style="--d:3"><span class="ab9-n">04</span><b>Propose the solution</b><p>Ideas and options, not only screens.</p></li><li class="rv" style="--d:4"><span class="ab9-n">05</span><b>Design end to end</b><p>Research, user flows, final screens.</p></li><li class="rv" style="--d:5"><span class="ab9-n">06</span><b>Ship and improve</b><p>Work with developers, then keep making it better.</p></li></ol>
-<div class="ab9-also rv"><div class="ab9-a"><b>Zero to one</b><span>Products built from nothing to live.</span></div><div class="ab9-a"><b>Design systems</b><span>I create and grow design systems.</span></div><div class="ab9-a"><b>Teaching</b><span>I've trained people to design.</span></div></div>
+<ol class="hw-steps hw-6"><li class="hw-s rv" style="--d:0"><p class="hw-n"><span>01</span>Sit with the problem</p><p class="hw-do">With clients and business teams, from day one.</p></li><li class="hw-s rv" style="--d:1"><p class="hw-n"><span>02</span>Find the pain points</p><p class="hw-do">What's slowing people down.</p></li><li class="hw-s rv" style="--d:2"><p class="hw-n"><span>03</span>Shape the requirement</p><p class="hw-do">Turn pain points into clear needs.</p></li><li class="hw-s rv" style="--d:3"><p class="hw-n"><span>04</span>Propose the solution</p><p class="hw-do">Ideas and options, not only screens.</p></li><li class="hw-s rv" style="--d:4"><p class="hw-n"><span>05</span>Design end to end</p><p class="hw-do">Research, user flows, final screens.</p></li><li class="hw-s rv" style="--d:5"><p class="hw-n"><span>06</span>Ship and improve</p><p class="hw-do">Work with developers, then keep making it better.</p></li></ol>
+<p class="lc-k hw-xl rv">What I also bring</p><div class="hw-3 rv"><div class="hw-s hw-x"><p class="hw-n">Zero to one</p><p class="hw-do">Products built from nothing to live.</p></div><div class="hw-s hw-x"><p class="hw-n">Design systems</p><p class="hw-do">I create and grow design systems.</p></div><div class="hw-s hw-x"><p class="hw-n">Teaching</p><p class="hw-do">I've trained people to design.</p></div></div>
 </div></section>
 
 <section class="ab9-p ab9-white" id="path"><div class="w">
