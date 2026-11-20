@@ -976,6 +976,18 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--blue);font-weight:500}
 @font-face{font-family:'Caveat';src:url(assets/fonts/caveat-latin-600-normal.woff2) format('woff2');font-weight:600;font-display:swap}
 .dk{overflow-x:clip}
 @media(max-width:860px){.dk-p{left:0}}
+/* deck v2: calmer, same-size frames, only two behind, part of testimonials */
+.dk{margin-top:clamp(36px,4vw,52px);padding-top:clamp(28px,3vw,40px);border-top:1px solid var(--ln)}
+.dk-h{font:700 clamp(20px,1.8vw,24px)/1.2 var(--f);letter-spacing:-.025em;margin-bottom:clamp(14px,1.6vw,20px)}
+.dk-g{grid-template-columns:minmax(0,.95fr) minmax(0,1fr);gap:clamp(36px,6vw,96px)}
+.dk-st{height:clamp(280px,26vw,340px)}
+.dk-p{left:0;top:16%;width:min(440px,86%);padding:8px;border-radius:10px}
+.dk-p img{width:100%;height:clamp(200px,19vw,250px);max-width:none;object-fit:cover;object-position:50% 0;background:#F1F3F7;border-radius:6px}
+.dk-p:not(.front) img{filter:saturate(.6)}
+.dk-q blockquote{font-size:clamp(18px,1.55vw,22px);line-height:1.5;max-width:34ch}
+.dk-q figcaption{margin-top:16px;font-size:clamp(22px,1.8vw,26px)}
+@media(max-width:860px){.dk-p{width:88%}.dk-p img{height:clamp(180px,48vw,230px)}}
+@media(max-width:860px){.dk-g{grid-template-columns:1fr;gap:20px}.dk-st{height:clamp(240px,62vw,300px)}.dk-q blockquote{max-width:none}}
 
 body{background:#F5F5F3}
 .pj-h{padding:140px 0 48px}
