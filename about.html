@@ -1256,6 +1256,44 @@ div.ab5-x{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 @media(min-width:901px){.ab9-rows .ab5-r{grid-template-columns:44px minmax(0,1.05fr) minmax(0,1.6fr) 190px}}
 .ab5-co span:empty{display:none}
 
+/* ===== Education and certificates: bento ===== */
+#learn.ab9-p,#tools.ab9-p{padding-top:clamp(56px,6vw,88px);padding-bottom:0}
+.lc-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:minmax(0,auto);gap:14px}
+.lc-ed,.lc-c,.tl-g{background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.95);border-radius:22px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 22px 50px -36px rgba(11,87,208,.5)}
+.lc-ed{grid-column:span 4;position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:330px;padding:26px;overflow:hidden;background:linear-gradient(160deg,rgba(255,255,255,.85),rgba(234,241,253,.75))}
+.lc-cap{position:absolute;top:24px;left:24px;width:44px;height:44px;color:var(--blue)}
+.lc-k{margin:0;font:500 11.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
+.lc-ed b{display:block;margin-top:12px;font:700 clamp(54px,5.6vw,80px)/.9 var(--f);letter-spacing:-.05em;color:var(--ink)}
+.lc-ed span{display:block;margin-top:12px;font-size:16px;line-height:1.4;font-weight:500;color:var(--ink)}
+.lc-ed em{position:absolute;right:-6px;top:6px;font:700 clamp(70px,8vw,120px)/1 var(--f);font-style:normal!important;letter-spacing:-.06em;color:rgba(11,87,208,.07)}
+.lc-c{display:flex;flex-direction:column;padding:12px;text-decoration:none;color:var(--ink);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.lc-c:hover{transform:translateY(-4px);box-shadow:0 30px 60px -34px rgba(11,87,208,.6)}
+.lc-a{grid-column:span 8}.lc-b{grid-column:span 7}.lc-c.lc-c{}.lc-grid .lc-c:nth-child(4){grid-column:span 5}
+.lc-fr{position:relative;flex:1;display:grid;place-items:center;min-height:230px;border-radius:14px;overflow:hidden;background:#E9EEF7}
+.lc-fr img{max-width:100%;max-height:300px;width:auto;height:auto;object-fit:contain;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.lc-a .lc-fr img{width:100%;max-height:none}
+.lc-b .lc-fr{background:#2B3138}.lc-grid .lc-c:nth-child(4) .lc-fr{background:#2B3138}
+.lc-b .lc-fr img{max-height:290px}
+.lc-c:hover .lc-fr img{transform:scale(1.03)}
+.lc-cp{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 8px 4px}
+.lc-cp b{display:block;font:600 16.5px/1.3 var(--f)}
+.lc-cp small{display:block;margin-top:4px;font:500 12px/1.4 var(--mono);letter-spacing:.04em;color:var(--mu)}
+.lc-cp em{flex:none;display:inline-flex;align-items:center;gap:6px;font-style:normal!important;font-size:14px;font-weight:600;color:var(--blue)}
+.lc-cp em svg{width:14px;height:14px}
+/* tools */
+.tl-grid{display:grid;grid-template-columns:3fr 1.25fr 5fr;gap:14px}
+.tl-g{padding:22px 22px 24px}
+.tl-g .ab9-tools{margin-top:20px;grid-template-columns:repeat(var(--n,3),minmax(0,1fr))}
+.tl-1 .ab9-tools{--n:1}.tl-5 .ab9-tools{--n:5}
+@media(max-width:1000px){.lc-ed,.lc-a,.lc-b,.lc-grid .lc-c:nth-child(4){grid-column:span 6}.lc-ed{min-height:260px}.tl-grid{grid-template-columns:1fr 1fr}.tl-5{grid-column:1/-1}}
+@media(max-width:640px){.lc-grid{grid-template-columns:1fr}.lc-ed,.lc-a,.lc-b,.lc-grid .lc-c:nth-child(4){grid-column:auto}.tl-grid{grid-template-columns:1fr}.tl-5 .ab9-tools{--n:3}.lc-fr{min-height:180px}}
+.lc-fr{flex:none;height:250px;min-height:0}
+.lc-fr img,.lc-a .lc-fr img,.lc-b .lc-fr img{width:auto;max-width:92%;max-height:222px;border-radius:4px;box-shadow:0 14px 28px -16px rgba(0,0,0,.45)}
+.lc-a .lc-fr{background:#E9EEF7}
+.lc-ed{min-height:0}
+@media(max-width:640px){.lc-fr{height:200px}.lc-fr img,.lc-a .lc-fr img,.lc-b .lc-fr img{max-height:178px}}
+.lc-b .lc-fr,.lc-grid .lc-c:nth-child(4) .lc-fr,.lc-fr{background:#E6ECF7}
+
 </style>
 </head>
 <body id="top">
@@ -1291,10 +1329,17 @@ div.ab5-x{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 <ol class="ab5-rows ab9-rows"><li style="--d:0" class="rv ab5-r"><span class="ab5-i">01</span><div class="ab5-co"><b>NutBite</b><span>Product architect</span></div><div class="ab5-x"><p class="ab5-xp">I designed and built NutBite, an app that helps a family-run cashew business record sales and track stock.</p></div><span class="ab5-d">Jul to Sep 2026</span></li></ol>
 </div></section>
 
-<section class="ab9-p ab9-white" id="kit"><div class="w ab9-kit">
-<div class="rv"><h3 class="ab9-h3">Tools I use</h3><ul class="ab9-tools"><li><span class="ab9-ic" style="--c:#0B57D0" aria-hidden="true">Fi</span><span>Figma</span></li><li><span class="ab9-ic" style="--c:#1E1E1E" aria-hidden="true">Fj</span><span>FigJam</span></li><li><span class="ab9-ic" style="--c:#4A4D55" aria-hidden="true">Xd</span><span>Adobe XD</span></li><li><span class="ab9-ic" style="--c:#1F1F1F" aria-hidden="true">N</span><span>Notion</span></li><li><span class="ab9-ic" style="--c:#0B57D0" aria-hidden="true">Fm</span><span>Figma Make</span></li><li><span class="ab9-ic" style="--c:#4A4D55" aria-hidden="true">AI</span><span>Google AI Studio</span></li><li><span class="ab9-ic" style="--c:#1E1E1E" aria-hidden="true">Cd</span><span>Claude Design</span></li><li><span class="ab9-ic" style="--c:#0B57D0" aria-hidden="true">Lv</span><span>Lovable</span></li><li><span class="ab9-ic" style="--c:#4A4D55" aria-hidden="true">MCP</span><span>Claude MCP for Figma</span></li></ul></div>
-<div class="rv" style="--d:1"><h3 class="ab9-h3">Education</h3><div class="ab9-ed"><b>MBA</b><span>East West College of Management · 2016</span></div></div>
-<div class="rv" style="--d:2"><h3 class="ab9-h3">Courses</h3><div class="ab2-cs"><a class="ap-c" href="assets/certs/outskill-genai-mastermind-2026.jpg" target="_blank" rel="noopener"><span><b>Generative AI Mastermind</b><small>Outskill · 2026</small></span><em>View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></em></a><a class="ap-c" href="assets/certs/uxgorilla-ux-immersion-2022.jpg" target="_blank" rel="noopener"><span><b>UX Immersion</b><small>UX Gorilla · 2022</small></span><em>View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></em></a><a class="ap-c" href="assets/certs/aspiregate-ui-ux-2019.jpg" target="_blank" rel="noopener"><span><b>UI UX Designing</b><small>Aspire Gate, Bengaluru · 2019</small></span><em>View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></em></a></div></div>
+<section class="ab9-p" id="learn"><div class="w">
+<div class="ab9-top rv"><h2 class="ab9-h2">Education and certificates</h2></div>
+<div class="lc-grid">
+<div class="lc-ed rv"><svg class="lc-cap" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 18 24 9l20 9-20 9z"/><path d="M12 22v9c0 3 5.4 6 12 6s12-3 12-6v-9"/><path d="M44 18v11"/></svg><p class="lc-k">Education</p><b>MBA</b><span>East West College of Management</span><em>2016</em></div>
+<a class="lc-c lc-a rv" style="--d:1" href="assets/certs/outskill-genai-mastermind-2026.jpg" target="_blank" rel="noopener"><span class="lc-fr"><img src="assets/certs/outskill-genai-mastermind-2026.jpg" alt="Generative AI Mastermind certificate" loading="lazy" decoding="async"></span><span class="lc-cp"><span><b>Generative AI Mastermind</b><small>Outskill · 2026</small></span><em>View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></em></span></a><a class="lc-c lc-b rv" style="--d:2" href="assets/certs/uxgorilla-ux-immersion-2022.jpg" target="_blank" rel="noopener"><span class="lc-fr"><img src="assets/certs/uxgorilla-ux-immersion-2022.jpg" alt="UX Immersion certificate" loading="lazy" decoding="async"></span><span class="lc-cp"><span><b>UX Immersion</b><small>UX Gorilla · 2022</small></span><em>View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></em></span></a><a class="lc-c lc-c rv" style="--d:3" href="assets/certs/aspiregate-ui-ux-2019.jpg" target="_blank" rel="noopener"><span class="lc-fr"><img src="assets/certs/aspiregate-ui-ux-2019.jpg" alt="UI UX Designing certificate" loading="lazy" decoding="async"></span><span class="lc-cp"><span><b>UI UX Designing</b><small>Aspire Gate, Bengaluru · 2019</small></span><em>View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></em></span></a>
+</div>
+</div></section>
+
+<section class="ab9-p" id="tools"><div class="w">
+<div class="ab9-top rv"><h2 class="ab9-h2">Tools I use</h2></div>
+<div class="tl-grid"><div class="tl-g tl-3 rv" style="--d:0"><p class="lc-k">Design</p><ul class="ab9-tools"><li><span class="ab9-ic" style="--c:#0B57D0" aria-hidden="true">Fi</span><span>Figma</span></li><li><span class="ab9-ic" style="--c:#1E1E1E" aria-hidden="true">Fj</span><span>FigJam</span></li><li><span class="ab9-ic" style="--c:#4A4D55" aria-hidden="true">Xd</span><span>Adobe XD</span></li></ul></div><div class="tl-g tl-1 rv" style="--d:1"><p class="lc-k">Documentation</p><ul class="ab9-tools"><li><span class="ab9-ic" style="--c:#1F1F1F" aria-hidden="true">N</span><span>Notion</span></li></ul></div><div class="tl-g tl-5 rv" style="--d:2"><p class="lc-k">AI tools</p><ul class="ab9-tools"><li><span class="ab9-ic" style="--c:#0B57D0" aria-hidden="true">Fm</span><span>Figma Make</span></li><li><span class="ab9-ic" style="--c:#4A4D55" aria-hidden="true">AI</span><span>Google AI Studio</span></li><li><span class="ab9-ic" style="--c:#1E1E1E" aria-hidden="true">Cd</span><span>Claude Design</span></li><li><span class="ab9-ic" style="--c:#0B57D0" aria-hidden="true">Lv</span><span>Lovable</span></li><li><span class="ab9-ic" style="--c:#4A4D55" aria-hidden="true">MCP</span><span>Claude MCP for Figma</span></li></ul></div></div>
 </div></section>
 
 <section class="ab9-p ab9-bg" id="photos" aria-label="Photos"><div class="w"><div class="ab9-ph"><figure class="rv ab9-f ab9-fw"><img src="assets/team-london.jpg" alt="The platform team together in the office" loading="lazy" decoding="async"></figure><figure class="rv ab9-f ab9-ft2"><img src="assets/about-4.jpg" alt="The team inside the Lloyd's building, London" loading="lazy" decoding="async"></figure><figure class="rv ab9-f"><img src="assets/about-team-2026.jpg" alt="Abhishek with his team in the office" loading="lazy" decoding="async"></figure><figure class="rv ab9-f"><img src="assets/about-5.jpg" alt="Abhishek at a desk with a colleague" loading="lazy" decoding="async"></figure><figure class="rv ab9-f"><img src="assets/slots/me-team-1.webp" alt="Abhishek with team mates on a trip" loading="lazy" decoding="async"></figure><figure class="rv ab9-f"><img src="assets/about-swing.webp" alt="Abhishek with team mates at Destination Devonshire" loading="lazy" decoding="async"></figure></div></div></section>
