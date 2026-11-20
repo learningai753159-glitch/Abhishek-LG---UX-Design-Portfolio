@@ -989,6 +989,25 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--blue);font-weight:500}
 @media(max-width:860px){.dk-p{width:88%}.dk-p img{height:clamp(180px,48vw,230px)}}
 @media(max-width:860px){.dk-g{grid-template-columns:1fr;gap:20px}.dk-st{height:clamp(240px,62vw,300px)}.dk-q blockquote{max-width:none}}
 
+/* 20 Nov: hide hero notes (saved), plain screen cards, quiet text links, email with copy */
+.hq-i{display:none}
+.box .cc-1 .cc-im,.box .cc-3 .cc-im{background:#fff}
+.cc-plain{border:0!important;background:none!important;box-shadow:none!important;padding:0!important}
+.cc-plain img{display:block;width:100%;border-radius:14px;box-shadow:0 22px 44px -22px rgba(31,31,31,.35),0 2px 8px rgba(31,31,31,.06)}
+.lk,.lk:hover{border-bottom:0!important;padding-bottom:0;color:var(--blue)}
+.lk svg,.ap-c em svg,.lc-cp em svg{width:0!important;opacity:0;margin-left:-6px;transition:width .2s,opacity .2s,margin .2s}
+.lk:hover svg,.ap-c:hover em svg,.lc-c:hover .lc-cp em svg{width:14px!important;opacity:1;margin-left:0}
+.em{display:inline-flex;align-items:center;gap:4px;padding:4px 4px 4px 20px;border-radius:999px;background:var(--blue);box-shadow:0 8px 20px -10px rgba(11,87,208,.6)}
+.em-a{color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:8px 6px 8px 0}
+.em-a:hover{text-decoration:underline;text-underline-offset:3px}
+.em-c{border:0;border-radius:999px;padding:9px 14px;background:rgba(255,255,255,.18);color:#fff;font:600 13px/1 var(--f);cursor:pointer;transition:background .2s}
+.em-c:hover{background:rgba(255,255,255,.3)}
+@media(max-width:420px){.em-a{font-size:13px}}
+.pn .lk-w,.lk-w{color:var(--blue)!important}
+.box .cc-1 .cc-im,.box .cc-3 .cc-im{padding:clamp(18px,2vw,28px)!important;border-radius:0!important;background:#fff!important}
+.cc-im .cc-plain{border-radius:14px!important;overflow:hidden;box-shadow:0 22px 44px -22px rgba(31,31,31,.38),0 2px 8px rgba(31,31,31,.06)!important;transform:none!important}
+.cc-plain img{border-radius:0!important;box-shadow:none!important}
+
 body{background:#F5F5F3}
 .pj-h{padding:140px 0 48px}
 .pj-b{padding-bottom:120px}
@@ -996,7 +1015,7 @@ body{background:#F5F5F3}
 </style>
 </head>
 <body id="top">
-<header class="nv" id="nav"><div class="nv-in"><a class="nv-b" href="index.html">Abhishek LG</a><nav class="nv-l" aria-label="Main"><a href="index.html#work">Work</a><a href="index.html#about">About</a><a href="index.html#writing">Writing</a><a href="index.html#contact">Contact</a></nav><a class="bt bt-d bt-s" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Resume</a></div></header>
+<header class="nv" id="nav"><div class="nv-in"><a class="nv-b" href="index.html">Abhishek LG</a><nav class="nv-l" aria-label="Main"><a href="index.html#work">Work</a><a href="index.html#about">About</a><a href="index.html#writing">Writing</a></nav><a class="bt bt-d bt-s" href="#contact">Get in touch</a></div></header>
 <main id="main">
 <section class="w pj-h"><p class="ey">Beyond the platform</p><h1 class="h2">Problems I noticed</h1></section>
 <section class="w pj-b"><div class="pc3s"><a class="pc3" href="nutbite.html"><div class="pc3-tx"><p class="pc3-k"><span>01</span><em>Shipped, in daily use</em></p><h3>NutBite</h3><p class="pc3-q"><span>The problem</span>Every sale was written in a notebook, photographed and sent on WhatsApp.</p><span class="pc3-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="pc3-ph pc3-img"><img src="assets/nutbite-dashboard.webp" alt="NutBite store dashboard" loading="lazy"></div></a><a class="pc3" href="ai-audit.html"><div class="pc3-tx"><p class="pc3-k"><span>02</span><em>IRCTC</em></p><h3>AI-assisted UX audit</h3><p class="pc3-q"><span>The problem</span>A manual audit took me about a week, and most of that time went on sorting.</p><span class="pc3-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="pc3-ph pc3-img"><img src="assets/ai-audit-diagram.webp" alt="AI-assisted UX audit diagram" loading="lazy"></div></a><a class="pc3" href="spendly.html"><div class="pc3-tx"><p class="pc3-k"><span>03</span><em>25 users, 12 to 16 daily</em></p><h3>Spendly</h3><p class="pc3-q"><span>The problem</span>Open laptop. Open Excel. Enter, label, calculate. Missed entries. Forgot amounts.</p><span class="pc3-go">Read case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="pc3-ph pc3-img"><img src="assets/spendly-screens.webp" alt="Spendly app screens" loading="lazy"></div></a></div></section>
