@@ -61,6 +61,27 @@
 .hm-m svg,.hm-m svg path{color:var(--red);stroke:var(--red)}
 .bt-d{background:var(--ink)}
 .bt-d:hover{background:#000}
+:root{--bg:#F7F8FA;--ink:#1F1F1F;--ink2:#4A4D55;--mu:#6B6F78;--ln:#E3E5E9;--sf:#fff;--chip:#F0F1F3;--blue:#0B57D0;--blue2:#0842A0;--tint:#EAF1FD;--sand:#FFE8A6;--red:#0B57D0;--panel:#EEF0F3;--dot:#DCE0E6;--warm:#EEF0F3;--sh:0 10px 30px rgba(31,31,31,.06);
+--f:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--srf:'Source Serif 4',Georgia,serif}
+.ct-h{font-family:var(--f);font-weight:700;letter-spacing:-.04em}
+.hm-m{color:var(--ink);font-family:var(--srf)!important;font-style:italic!important;font-weight:500;letter-spacing:-.01em;padding:0 .08em;background:linear-gradient(transparent 58%,var(--sand) 58%,var(--sand) 94%,transparent 94%)}
+.hm-m .hm-u{display:none}
+.ct-h .hm-m{padding:0 .06em}
+.bt-d{background:var(--blue);color:#fff;box-shadow:0 8px 20px -10px rgba(11,87,208,.6)}
+.bt-d:hover{background:var(--blue2)}
+.bt-o{background:#fff;color:var(--ink);border-color:var(--ln)}
+.bt-o:hover{border-color:var(--blue);color:var(--blue)}
+.lk{color:var(--blue);border-bottom-color:rgba(11,87,208,.3)}
+.lk:hover{border-bottom-color:var(--blue)}
+.nv,.nv.on{background:rgba(247,248,250,.88);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px)}
+.nv.on{border-bottom-color:var(--ln)}
+.nv-b{font-weight:700;letter-spacing:-.02em}
+.nv-l a{color:var(--ink2)}
+.nv-l a:hover{color:var(--ink);background:var(--chip)}
+.nv-in>.bt{box-shadow:none}
+.ct .hd-p{color:var(--ink2)}
+.ft-b{color:var(--mu);border-top-color:var(--ln)}
+.ft-b a:hover{color:var(--blue)}
 
 /* ===== case study palette: white, soft grey panels, black text, red only in hand-drawn lines ===== */
 :root{--ink:#111111;--ink2:#6B6B6B;--mu:#757575;--ln:#EAEAEA;--panel:#F4F4F5;--dot:#E3E3E6;--red:#E5484D;--f:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif}
@@ -2135,3 +2156,7 @@ background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;p
 @media(max-width:960px){.ab-ba{grid-template-columns:1fr 1fr!important}.ab-vrow6{grid-template-columns:repeat(3,minmax(0,1fr))!important}.ab-tiles{grid-template-columns:1fr 1fr}.ab-map{grid-template-columns:1fr}.ab-leg{position:static;margin:8px}.ab-three,.ab-mods{grid-template-columns:1fr 1fr}.ab-base{grid-template-columns:1fr}.ab-base span{justify-self:start}}
 @media(max-width:600px){.ab-ba,.ab-tiles,.ab-three,.ab-mods,.ab-two,.ab-vrow3{grid-template-columns:1fr!important}.ab-vrow6{grid-template-columns:1fr 1fr!important}}
 .ab-tiles>div.c3-dark{background:var(--dk);border-color:var(--dk)}.ab-tiles>div.c3-dark b{color:#fff!important}.ab-tiles>div.c3-dark .c3-m{color:var(--dl)!important}
+
+/* clean: no dash lines before labels (20 Nov) */
+.c3-ey::before,.lv-ey::before,.ov-ey::before,#product .ov-ey::before,#problem .ov-ey::before,#role .ov-ey::before,#solution .ov-ey::before,#process .ov-ey::before{content:none!important;display:none!important}
+.c3-ey{gap:0}
