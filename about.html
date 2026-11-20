@@ -964,6 +964,27 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--blue);font-weight:500}
 @media(max-width:600px){.ab4-g{grid-template-columns:1fr}.ab4-me{transform:rotate(-1deg)}.ab4-tag{left:-6px}.ab4-arr{display:none}.ab4-note{font-size:28px}}
 @media(max-width:640px){.ab4-dark .ab3-p{background:none}.ab4-dark .ab3-p figcaption{background:none;color:#BFC3CA}.ab4-note{transform:none}}
 
+/* ===== Experience v5: one row per company ===== */
+.ab5-hd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:24px 48px;align-items:end;margin-bottom:clamp(28px,3vw,44px)}
+.ab5-side{margin:0;max-width:40ch;justify-self:end;font-size:clamp(16px,1.3vw,18px);line-height:1.55;color:var(--ink2)}
+.ab5-rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.ab5-r{position:relative;display:grid;grid-template-columns:44px minmax(0,1.05fr) minmax(0,1.6fr) auto;gap:8px clamp(20px,3vw,44px);align-items:center;padding:clamp(20px,2.2vw,28px) clamp(12px,1.6vw,20px);border-bottom:1px solid var(--ln);transition:background .25s}
+.ab5-r::before{content:"";position:absolute;left:0;top:-1px;bottom:-1px;width:3px;background:var(--blue);transform:scaleY(0);transform-origin:top;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.ab5-r:hover{background:var(--bg)}
+.ab5-r:hover::before{transform:scaleY(1)}
+.ab5-i{font:500 12px/1 var(--mono);letter-spacing:.08em;color:var(--mu)}
+.ab5-co b{display:block;font:600 clamp(20px,1.9vw,26px)/1.15 var(--f);letter-spacing:-.025em}
+.ab5-co span{display:block;margin-top:8px;font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.ab5-x{margin:0;max-width:56ch;font-size:15.5px;line-height:1.6;color:var(--ink2)}
+.ab5-d{justify-self:end;white-space:nowrap;padding:8px 12px;border-radius:999px;background:var(--chip);font:500 12px/1 var(--mono);letter-spacing:.04em;color:var(--ink2)}
+.ab5-r:first-child .ab5-d{background:var(--tint);color:var(--blue)}
+.ab5-sw{background:repeating-linear-gradient(135deg,transparent 0 10px,rgba(11,87,208,.035) 10px 20px)}
+.ab5-sw .ab5-co b{font-weight:500}
+.ab5-sw .ab5-d{background:transparent;border:1px dashed #C9CDD5}
+@media(max-width:900px){.ab5-hd{grid-template-columns:1fr}.ab5-side{justify-self:start}
+.ab5-r{grid-template-columns:36px 1fr;align-items:start}.ab5-i{padding-top:8px}.ab5-x,.ab5-d{grid-column:2}.ab5-d{justify-self:start}.ab5-x:empty{display:none}}
+.ab5-co b .it{display:inline;margin:0;font-size:inherit;line-height:inherit;letter-spacing:-.01em;text-transform:none;color:var(--ink)}
+
 </style>
 </head>
 <body id="top">
@@ -990,9 +1011,9 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--blue);font-weight:500}
 <div class="ab3-bring rv"><div class="ab3-b"><p class="ap-l">Zero to one</p><p>Products built from nothing to live.</p></div><div class="ab3-b"><p class="ap-l">Design systems</p><p>I create and grow design systems.</p></div><div class="ab3-b"><p class="ap-l">Teaching</p><p>I've trained people to design.</p></div></div>
 </div></section>
 
-<section class="ab2-s ab4-band ab4-white" id="path"><div class="w ab2-two">
-<div class="ab2-hd ab2-sticky rv"><p class="ey">Experience</p><h2 class="h2">The path <span class="it">so far</span></h2><p class="ab2-sub">Senior UX Designer at Concirrus, promoted to Staff in 2025.</p></div>
-<div class="rv"><ol class="ap-path"><li class=""><span class="ap-d">Jul 2023 to Sep 2026</span><div><b>Staff UX Designer, Concirrus</b><p>I grew the design team from one to four. We designed AI-enabled tools for underwriters, the people who decide what to insure and at what price, across four types of insurance, including marine, aviation and construction.</p></div></li><li class=""><span class="ap-d">Oct 2020 to Jun 2023</span><div><b>UX Designer, CoreValue Technologies</b><p>I owned design for four live products at once, across connected devices (IoT), insurance, e-commerce and web, with clients in India, the UK and the US.</p></div></li><li class=""><span class="ap-d">May 2019 to Oct 2020</span><div><b>UI Designer, StoreKing</b><p>My first design role. Designed low-bandwidth, offline-first shopping screens for rural retailers on web and mobile.</p></div></li><li class="ap-sw"><span class="ap-d">Nov 2018 to May 2019</span><div><b>The switch</b><p>Getting UX design training at Aspire Gate, Bengaluru.</p></div></li><li class=""><span class="ap-d">Sep 2017 to Nov 2018</span><div><b>Talent Acquisition Executive, TalentXO</b></div></li></ol></div>
+<section class="ab2-s ab4-band ab4-white" id="path"><div class="w">
+<div class="ab5-hd rv"><div><p class="ey">Experience</p><h2 class="h2">The path <span class="it">so far</span></h2></div><p class="ab5-side">Senior UX Designer at Concirrus, promoted to Staff in 2025.</p></div>
+<ol class="ab5-rows rv"><li class="ab5-r"><span class="ab5-i">01</span><div class="ab5-co"><b>Concirrus</b><span>Staff UX Designer</span></div><p class="ab5-x">I grew the design team from one to four. We designed AI-enabled tools for underwriters, the people who decide what to insure and at what price, across four types of insurance, including marine, aviation and construction.</p><span class="ab5-d">Jul 2023 to Sep 2026</span></li><li class="ab5-r"><span class="ab5-i">02</span><div class="ab5-co"><b>CoreValue Technologies</b><span>UX Designer</span></div><p class="ab5-x">I owned design for four live products at once, across connected devices (IoT), insurance, e-commerce and web, with clients in India, the UK and the US.</p><span class="ab5-d">Oct 2020 to Jun 2023</span></li><li class="ab5-r"><span class="ab5-i">03</span><div class="ab5-co"><b>StoreKing</b><span>UI Designer</span></div><p class="ab5-x">My first design role. Designed low-bandwidth, offline-first shopping screens for rural retailers on web and mobile.</p><span class="ab5-d">May 2019 to Oct 2020</span></li><li class="ab5-r ab5-sw"><span class="ab5-i">04</span><div class="ab5-co"><b><span class="it">The switch</span></b><span>Aspire Gate, Bengaluru</span></div><p class="ab5-x">Getting UX design training at Aspire Gate, Bengaluru.</p><span class="ab5-d">Nov 2018 to May 2019</span></li><li class="ab5-r"><span class="ab5-i">05</span><div class="ab5-co"><b>TalentXO</b><span>Talent Acquisition Executive</span></div><p class="ab5-x"></p><span class="ab5-d">Sep 2017 to Nov 2018</span></li></ol>
 </div></section>
 
 <section class="ab2-s ab4-band ab4-sand" id="freelance"><div class="w">
