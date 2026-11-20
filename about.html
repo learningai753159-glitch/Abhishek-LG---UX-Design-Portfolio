@@ -1313,6 +1313,40 @@ div.ab5-x{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 @media(max-width:480px){.lc-grid{grid-template-columns:1fr 1fr;gap:10px}.lc-ed{grid-column:1/-1}.lc-cp{flex-direction:column;align-items:flex-start;gap:6px}}
 #learn.ab9-p,#tools.ab9-p{padding-top:clamp(44px,4.5vw,64px)}#learn .ab9-top,#tools .ab9-top{margin-bottom:clamp(18px,2vw,26px)}
 
+/* ===== How I work: my thinking, AI's speed ===== */
+#ai-work.ab9-p{padding-top:clamp(56px,6vw,88px);padding-bottom:0}
+#ai-work .lc-k{margin-bottom:14px}
+.hw-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.hw-s,.hw-pc{background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.95);border-radius:20px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 22px 50px -36px rgba(11,87,208,.5)}
+.hw-s{display:flex;flex-direction:column;padding:20px 20px 18px}
+.hw-n{margin:0;display:flex;align-items:center;gap:10px;font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.hw-n span{color:var(--blue)}
+.hw-do{margin:14px 0 0;font:600 17px/1.35 var(--f);letter-spacing:-.01em;color:var(--ink)}
+.hw-ai{margin:10px 0 0;font-size:14px;line-height:1.5;color:var(--ink2)}
+.hw-ai small{display:block;margin-bottom:3px;font:500 10.5px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mu)}
+.hw-tools{list-style:none;margin:auto 0 0;padding:18px 0 0;display:flex;flex-wrap:wrap;gap:12px 10px;border-top:1px solid rgba(31,31,31,.07);margin-top:18px}
+.hw-tools li{display:flex;flex-direction:column;align-items:center;gap:6px;width:64px;text-align:center;font-size:11.5px;line-height:1.25;color:var(--ink2)}
+.hw-lg{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#fff;border:1px solid var(--ln);font:700 12.5px/1 var(--f);letter-spacing:-.02em;color:var(--ink);overflow:hidden}
+.hw-lg img{width:30px;height:30px;object-fit:contain}
+.hw-lg-s{width:30px;height:30px;border-radius:9px;font-size:10.5px}.hw-lg-s img{width:20px;height:20px}
+.hw-call{margin:clamp(22px,2.6vw,30px) 0 0;text-align:center;font:700 clamp(18px,1.6vw,22px)/1.3 var(--f);letter-spacing:-.02em;color:var(--ink)}
+.hw-proof{margin-top:clamp(22px,2.6vw,30px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.hw-pc{display:flex;flex-direction:column;padding:20px}
+.hw-pt{display:flex;align-items:center;gap:6px}
+.hw-tag{margin-left:auto;padding:6px 10px;border-radius:999px;background:var(--tint);font:500 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.hw-pc h3{margin:16px 0 0;font:600 18px/1.3 var(--f);letter-spacing:-.015em}
+.hw-pc .hw-do{margin-top:10px;font-size:15px;font-weight:600}
+.hw-pc .hw-ai{margin-top:6px}
+.hw-lk{margin-top:auto;padding-top:14px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--blue);text-decoration:none}
+.hw-lk svg{width:14px;height:14px;transition:transform .25s}.hw-lk:hover svg{transform:translateX(3px)}
+.hw-also{margin-top:16px;display:flex;align-items:center;gap:14px}
+.hw-also .lc-k{margin:0}
+.hw-al{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink2)}
+@media(max-width:1000px){.hw-steps{grid-template-columns:1fr 1fr}.hw-proof{grid-template-columns:1fr}}
+@media(max-width:600px){.hw-steps{grid-template-columns:1fr}}
+.hw-tools{gap:12px 6px;flex-wrap:nowrap}.hw-tools li{width:auto;flex:1 1 0;min-width:0;font-size:11px}
+@media(max-width:600px){.hw-tools{flex-wrap:wrap}.hw-tools li{flex:0 0 64px}}
+
 </style>
 </head>
 <body id="top">
@@ -1348,17 +1382,20 @@ div.ab5-x{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 <ol class="ab5-rows ab9-rows"><li style="--d:0" class="rv ab5-r"><span class="ab5-i">01</span><div class="ab5-co"><b>NutBite</b><span>Product architect</span></div><div class="ab5-x"><p class="ab5-xp">I designed and built NutBite, an app that helps a family-run cashew business record sales and track stock.</p></div><span class="ab5-d">Jul to Sep 2026</span></li></ol>
 </div></section>
 
+<section class="ab9-p" id="ai-work"><div class="w">
+<div class="ab9-top rv"><p class="lc-k">How I work</p><h2 class="ab9-h2">My thinking. AI's <span class="it">speed.</span></h2><p class="ab9-sub">I own the problem and every decision. AI helps me move faster.</p></div>
+<ol class="hw-steps"><li class="hw-s rv" style="--d:0"><p class="hw-n"><span>01</span>Understand</p><p class="hw-do">Sit with the problem, the users and the business.</p><p class="hw-ai"><small>Where AI helps</small>Sorting research and notes, shaping my plan.</p><ul class="hw-tools"><li><span class="hw-lg" aria-hidden="true">Cl</span><span>Claude</span></li><li><span class="hw-lg" aria-hidden="true">Fj</span><span>FigJam</span></li><li><span class="hw-lg" aria-hidden="true">N</span><span>Notion</span></li></ul></li><li class="hw-s rv" style="--d:1"><p class="hw-n"><span>02</span>Shape</p><p class="hw-do">Decide the flows, the structure and the solution.</p><p class="hw-ai"><small>Where AI helps</small>Quick prototypes to test my ideas early.</p><ul class="hw-tools"><li><span class="hw-lg" aria-hidden="true">Fj</span><span>FigJam</span></li><li><span class="hw-lg" aria-hidden="true">Fm</span><span>Figma Make</span></li><li><span class="hw-lg" aria-hidden="true">AI</span><span>Google AI Studio</span></li></ul></li><li class="hw-s rv" style="--d:2"><p class="hw-n"><span>03</span>Design</p><p class="hw-do">Design every screen, pattern and design system.</p><p class="hw-ai"><small>Where AI helps</small>Faster screens with Figma AI and Claude via Figma MCP.</p><ul class="hw-tools"><li><span class="hw-lg" aria-hidden="true">Fi</span><span>Figma</span></li><li><span class="hw-lg" aria-hidden="true">FA</span><span>Figma AI</span></li><li><span class="hw-lg" aria-hidden="true">MCP</span><span>Claude + Figma MCP</span></li></ul></li><li class="hw-s rv" style="--d:3"><p class="hw-n"><span>04</span>Ship</p><p class="hw-do">Work with developers until it's live, then improve.</p><p class="hw-ai"><small>Where AI helps</small>Building working products from my designs.</p><ul class="hw-tools"><li><span class="hw-lg" aria-hidden="true">Cd</span><span>Claude Design</span></li><li><span class="hw-lg" aria-hidden="true">Lv</span><span>Lovable</span></li><li><span class="hw-lg" aria-hidden="true">Sb</span><span>Supabase</span></li><li><span class="hw-lg" aria-hidden="true">Ve</span><span>Vercel</span></li></ul></li></ol>
+<p class="hw-call rv">AI never makes the call. I do.</p>
+<div class="hw-proof"><div class="hw-pc rv" style="--d:0"><div class="hw-pt"><span class="hw-lg" aria-hidden="true">AI</span><span class="hw-tag">At Concirrus</span></div><h3>Prototypes that felt like the real product</h3><p class="hw-do">I designed the flows on our own design system.</p><p class="hw-ai">AI Studio made them work. Clients tested them; some went to developers.</p></div><div class="hw-pc rv" style="--d:1"><div class="hw-pt"><span class="hw-lg" aria-hidden="true">Cl</span><span class="hw-tag">You're on it</span></div><h3>This website</h3><p class="hw-do">I designed the structure, the story and every page.</p><p class="hw-ai">Claude Design helped me build and launch it.</p></div><div class="hw-pc rv" style="--d:2"><div class="hw-pt"><span class="hw-lg" aria-hidden="true">Lv</span><span class="hw-lg hw-lg-s" aria-hidden="true">Sb</span><span class="hw-lg hw-lg-s" aria-hidden="true">Ve</span><span class="hw-tag">NutBite</span></div><h3>A live app for a real business</h3><p class="hw-do">I designed NutBite for a family-run cashew business.</p><p class="hw-ai">Built on Lovable, Supabase and Vercel. Used daily.</p><a class="hw-lk" href="nutbite.html">See case study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+<div class="hw-also rv"><span class="lc-k">Also</span><span class="hw-al"><span class="hw-lg hw-lg-s" aria-hidden="true">Xd</span><span>Adobe XD</span></span></div>
+</div></section>
+
 <section class="ab9-p" id="learn"><div class="w">
 <div class="ab9-top rv"><h2 class="ab9-h2">Education and certificates</h2></div>
 <div class="lc-grid">
 <div class="lc-ed rv"><svg class="lc-cap" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 18 24 9l20 9-20 9z"/><path d="M12 22v9c0 3 5.4 6 12 6s12-3 12-6v-9"/><path d="M44 18v11"/></svg><p class="lc-k">Education</p><b>MBA</b><span>East West College of Management</span><em>2016</em></div>
 <a class="lc-c lc-a rv" style="--d:1" href="assets/certs/outskill-genai-mastermind-2026.jpg" target="_blank" rel="noopener"><span class="lc-fr"><img src="assets/certs/outskill-genai-mastermind-2026.jpg" alt="Generative AI Mastermind certificate" loading="lazy" decoding="async"></span><span class="lc-cp"><span><b>Generative AI Mastermind</b><small>Outskill · 2026</small></span><em>View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></em></span></a><a class="lc-c lc-b rv" style="--d:2" href="assets/certs/uxgorilla-ux-immersion-2022.jpg" target="_blank" rel="noopener"><span class="lc-fr"><img src="assets/certs/uxgorilla-ux-immersion-2022.jpg" alt="UX Immersion certificate" loading="lazy" decoding="async"></span><span class="lc-cp"><span><b>UX Immersion</b><small>UX Gorilla · 2022</small></span><em>View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></em></span></a><a class="lc-c lc-c rv" style="--d:3" href="assets/certs/aspiregate-ui-ux-2019.jpg" target="_blank" rel="noopener"><span class="lc-fr"><img src="assets/certs/aspiregate-ui-ux-2019.jpg" alt="UI UX Designing certificate" loading="lazy" decoding="async"></span><span class="lc-cp"><span><b>UI UX Designing</b><small>Aspire Gate, Bengaluru · 2019</small></span><em>View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></em></span></a>
 </div>
-</div></section>
-
-<section class="ab9-p" id="tools"><div class="w">
-<div class="ab9-top rv"><h2 class="ab9-h2">Tools I use</h2></div>
-<div class="tl-grid"><div class="tl-g tl-3 rv" style="--d:0"><p class="lc-k">Design</p><ul class="ab9-tools"><li><span class="ab9-ic" style="--c:#0B57D0" aria-hidden="true">Fi</span><span>Figma</span></li><li><span class="ab9-ic" style="--c:#1E1E1E" aria-hidden="true">Fj</span><span>FigJam</span></li><li><span class="ab9-ic" style="--c:#4A4D55" aria-hidden="true">Xd</span><span>Adobe XD</span></li></ul></div><div class="tl-g tl-1 rv" style="--d:1"><p class="lc-k">Documentation</p><ul class="ab9-tools"><li><span class="ab9-ic" style="--c:#1F1F1F" aria-hidden="true">N</span><span>Notion</span></li></ul></div><div class="tl-g tl-5 rv" style="--d:2"><p class="lc-k">AI tools</p><ul class="ab9-tools"><li><span class="ab9-ic" style="--c:#0B57D0" aria-hidden="true">Fm</span><span>Figma Make</span></li><li><span class="ab9-ic" style="--c:#4A4D55" aria-hidden="true">AI</span><span>Google AI Studio</span></li><li><span class="ab9-ic" style="--c:#1E1E1E" aria-hidden="true">Cd</span><span>Claude Design</span></li><li><span class="ab9-ic" style="--c:#0B57D0" aria-hidden="true">Lv</span><span>Lovable</span></li><li><span class="ab9-ic" style="--c:#4A4D55" aria-hidden="true">MCP</span><span>Claude MCP for Figma</span></li></ul></div></div>
 </div></section>
 
 <section class="ab9-p ab9-bg" id="photos" aria-label="Photos"><div class="w"><div class="ab9-ph"><figure class="rv ab9-f ab9-fw"><img src="assets/team-london.jpg" alt="The platform team together in the office" loading="lazy" decoding="async"></figure><figure class="rv ab9-f ab9-ft2"><img src="assets/about-4.jpg" alt="The team inside the Lloyd's building, London" loading="lazy" decoding="async"></figure><figure class="rv ab9-f"><img src="assets/about-team-2026.jpg" alt="Abhishek with his team in the office" loading="lazy" decoding="async"></figure><figure class="rv ab9-f"><img src="assets/about-5.jpg" alt="Abhishek at a desk with a colleague" loading="lazy" decoding="async"></figure><figure class="rv ab9-f"><img src="assets/slots/me-team-1.webp" alt="Abhishek with team mates on a trip" loading="lazy" decoding="async"></figure><figure class="rv ab9-f"><img src="assets/about-swing.webp" alt="Abhishek with team mates at Destination Devonshire" loading="lazy" decoding="async"></figure></div></div></section>
