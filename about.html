@@ -845,6 +845,22 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--blue);font-weight:500}
 .hg-more{margin-top:clamp(24px,3vw,36px);display:flex;justify-content:center}
 .abw-tx .abq-more{display:none}
 @media(max-width:560px){.hg-t{flex-wrap:wrap}.hg-t li{flex:0 0 60px}}
+/* glimpse v3: teaser, step names + tool logos only */
+.hg-steps{position:relative;gap:clamp(20px,3vw,44px)}
+.hg-s{position:relative;padding:18px 18px 20px;background:var(--bg)}
+.hg-s:not(:last-child)::after{content:"→";position:absolute;right:calc(-1 * clamp(20px,3vw,44px) / 2);top:50%;transform:translate(50%,-50%);font-size:18px;color:var(--blue)}
+.hg-t{margin-top:16px;padding:0;border:0;justify-content:flex-start;gap:10px}
+.hg-t li{flex:0 0 auto;position:relative}
+.hg-lg{width:44px;height:44px;border-radius:12px;font-size:12px;transition:transform .2s,border-color .2s}
+.hg-lg img{width:28px;height:28px;object-fit:contain}
+.hg-t li:hover .hg-lg{transform:translateY(-2px);border-color:var(--blue)}
+.hg-tn{position:absolute;left:50%;bottom:calc(100% + 6px);transform:translate(-50%,4px);white-space:nowrap;padding:5px 8px;border-radius:7px;background:#1E1E1E;color:#fff;font-size:11.5px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2}
+.hg-t li:hover .hg-tn{opacity:1;transform:translate(-50%,0)}
+.hg-lkw{margin:8px 0 0;text-align:center}
+.hg-lkw .lk{display:inline-flex;align-items:center;gap:6px;font-weight:600}
+.hg-lkw .lk svg{width:15px;height:15px}
+@media(hover:none),(max-width:900px){.hg-tn{position:static;opacity:1;transform:none;background:none;color:var(--ink2);padding:0;font-size:11px;white-space:normal;text-align:center}.hg-t li{width:60px;display:flex;flex-direction:column;align-items:center;gap:6px}}
+@media(max-width:900px){.hg-steps{grid-template-columns:1fr;gap:12px}.hg-s::after{display:none}.hg-t{flex-wrap:wrap}}
 
 /* About page: same case study theme, compact sections */
 .nv-l a[aria-current="page"]{color:var(--ink);background:var(--chip)}
