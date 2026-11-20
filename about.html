@@ -786,19 +786,26 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--blue);font-weight:500}
 @media(max-width:980px){.ap-nums,.ap-how{grid-template-columns:1fr 1fr}.ap-cs{grid-template-columns:1fr}.ap-meta{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.ap-split{grid-template-columns:1fr}.ap-path li{grid-template-columns:1fr;gap:4px}}
 @media(max-width:480px){.ap-how{grid-template-columns:1fr}.ap-n{padding:16px}.ap-meta{grid-template-columns:1fr}.ap-meta div{padding:12px 0;border-bottom:1px solid var(--ln)}.ap-meta div:last-child{border-bottom:0}}
+/* header: same as the case studies */
+.ap-nav-in{height:72px;padding:0 64px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.ap-nav-l{display:flex;align-items:center;gap:20px;min-width:0}
+.ap-nav .nv-b{font-size:18px;font-weight:600;white-space:nowrap}
+.ap-ch{padding-left:20px;border-left:1px solid var(--ln);font:500 12px/1 var(--f);letter-spacing:.18em;text-transform:uppercase;color:var(--mu);white-space:nowrap}
+.ap-bk{display:inline-flex;align-items:center;gap:8px;font-size:15px;color:var(--ink);text-decoration:none;white-space:nowrap}
+.ap-bk svg{width:16px;height:16px;transition:transform .2s}
+.ap-bk:hover{text-decoration:underline;text-underline-offset:4px}
+.ap-bk:hover svg{transform:translateX(-3px)}
+@media(max-width:900px){.ap-nav-in{padding:0 40px}}
+@media(max-width:600px){.ap-nav-in{padding:0 16px;height:64px}.ap-ch{padding-left:14px;letter-spacing:.14em}.ap-nav-l{gap:14px}.ap-nav .nv-b{font-size:16px}}
+.ap-nav,.ap-nav.on{background:rgba(255,255,255,.92)}
 
 </style>
 </head>
 <body id="top">
 <a class="skip" href="#main">Skip to content</a>
-<header class="nv" id="nav"><div class="nv-in">
-<a class="nv-b" href="index.html">Abhishek LG</a>
-<nav class="nv-l" aria-label="Main"><a href="index.html#work">Work</a><a href="about.html" aria-current="page">About</a><a href="index.html#writing">Writing</a><a href="index.html#contact">Contact</a></nav>
-<a class="bt bt-d bt-s" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Resume</a>
-</div></header>
+<header class="nv ap-nav" id="nav"><div class="ap-nav-in"><div class="ap-nav-l"><a class="nv-b" href="index.html">Abhishek LG</a><span class="ap-ch">About</span></div><a class="ap-bk" href="index.html#about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>Back to home</a></div></header>
 <main id="main">
 <section class="ap-hero"><div class="w">
-<a class="ap-back" href="index.html">← Back to home</a>
 <div class="ap-split">
 <div class="ap-tx rv"><p class="ey">About · Abhishek LG</p>
 <h1 class="ap-h1">I start with research and end with products people <span class="it">can actually use</span></h1>
