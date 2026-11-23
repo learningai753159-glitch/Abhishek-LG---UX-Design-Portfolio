@@ -1007,6 +1007,21 @@ a.wf-i[href="ux-not-screens.html"] .wf-k{color:var(--blue);font-weight:500}
 .box .cc-1 .cc-im,.box .cc-3 .cc-im{padding:clamp(18px,2vw,28px)!important;border-radius:0!important;background:#fff!important}
 .cc-im .cc-plain{border-radius:14px!important;overflow:hidden;box-shadow:0 22px 44px -22px rgba(31,31,31,.38),0 2px 8px rgba(31,31,31,.06)!important;transform:none!important}
 .cc-plain img{border-radius:0!important;box-shadow:none!important}
+/* round 2: platform screens run to the card's right and bottom edges */
+.box .cc-1 .cc-im,.box .cc-3 .cc-im{margin:0!important;background:#fff!important;border-radius:0!important;box-shadow:none!important;overflow:hidden}
+.box .cc-1 .cc-im{padding:clamp(28px,3vw,40px) 0 0 clamp(24px,3vw,40px)!important}
+.box .cc-3 .cc-im{margin-left:clamp(26px,3vw,40px)!important;margin-right:0!important;padding:0!important}
+.box .cc-1 .cc-im .cc-plain,.box .cc-3 .cc-im .cc-plain{height:100%;margin:0!important;border-radius:14px 0 0 0!important;overflow:hidden}
+.box .cc-1 .cc-im .cc-plain img,.box .cc-3 .cc-im .cc-plain img{width:100%;height:100%;object-fit:cover;object-position:left top;border-radius:0!important}
+/* round 2: email pill with room around the text and Copy */
+.em{padding:9px 9px 9px 28px;gap:18px}
+.em-a,.em-a:hover{color:#fff;text-decoration:none;cursor:default;font-weight:600;font-size:15px;padding:6px 0}
+.em-c{padding:12px 20px;font-size:14px}
+@media(max-width:420px){.em{padding:7px 7px 7px 20px;gap:12px}.em-a{font-size:13px}.em-c{padding:10px 14px}}
+/* round 2: team chat screenshot opens full screen */
+.dk-st{cursor:zoom-in}
+.dk-lb{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px);background:rgba(12,16,26,.9);cursor:zoom-out}
+.dk-lb img{display:block;height:min(88vh,1100px);width:auto;max-width:100%;object-fit:contain;border-radius:10px;background:#fff;box-shadow:0 30px 80px -20px rgba(0,0,0,.6)}
 
 /* About page: same case study theme, compact sections */
 .nv-l a[aria-current="page"]{color:var(--ink);background:var(--chip)}
@@ -1628,14 +1643,14 @@ div.ab5-x{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 <body id="top">
 <div class="abg" aria-hidden="true"><svg class="abg-rings" viewBox="0 0 800 800"><g class="hq-r hq-r1"><circle cx="400" cy="400" r="232"/></g><g class="hq-r hq-r2"><circle cx="400" cy="400" r="399"/><circle class="hq-sat" cx="400" cy="1" r="3.2"/></g><g class="hq-r hq-r3"><circle cx="400" cy="400" r="560" class="hq-dash"/><circle class="hq-sat" cx="400" cy="-160" r="2.6"/></g><g class="hq-r hq-r4"><circle class="hq-sat" cx="632" cy="400" r="2.4"/></g></svg><svg class="abg-rings abg-r2" viewBox="0 0 800 800"><g class="hq-r hq-r2"><circle cx="400" cy="400" r="399"/><circle class="hq-sat" cx="400" cy="799" r="3"/></g><g class="hq-r hq-r1"><circle cx="400" cy="400" r="250"/></g></svg><div class="hq-rays abg-rays"><i style="--r:-70deg;--dl:0s"></i><i style="--r:-35deg;--dl:1.7s"></i><i style="--r:-8deg;--dl:0.9s"></i><i style="--r:26deg;--dl:2.4s"></i><i style="--r:140deg;--dl:1.2s"></i><i style="--r:172deg;--dl:3s"></i></div><div class="hq-sp"><i style="left:45.4%;top:55.6%;--t:6.2s;--dl:1.9s"></i><i style="left:50.8%;top:58.2%;--t:3.2s;--dl:2.0s"></i><i style="left:62.5%;top:77.5%;--t:2.9s;--dl:1.2s"></i><i style="left:10.7%;top:79.1%;--t:5.3s;--dl:0.2s"></i><i style="left:96.3%;top:93.7%;--t:5.1s;--dl:2.5s"></i><i style="left:17.1%;top:4.4%;--t:4.6s;--dl:0.2s"></i><i style="left:20.3%;top:25.7%;--t:2.6s;--dl:1.9s"></i><i style="left:44.3%;top:82.2%;--t:4.6s;--dl:2.6s"></i><i style="left:50.0%;top:65.3%;--t:4.3s;--dl:1.1s"></i><i style="left:97.8%;top:96.6%;--t:5.9s;--dl:2.8s"></i><i style="left:32.3%;top:24.6%;--t:3.7s;--dl:0.3s"></i><i style="left:75.6%;top:40.6%;--t:5.9s;--dl:1.5s"></i><i style="left:94.0%;top:82.6%;--t:2.5s;--dl:0.8s"></i><i style="left:89.4%;top:47.2%;--t:6.4s;--dl:1.6s"></i><i style="left:9.0%;top:62.2%;--t:5.6s;--dl:1.1s"></i><i style="left:10.4%;top:34.3%;--t:6.4s;--dl:3.0s"></i><i style="left:13.3%;top:26.2%;--t:2.9s;--dl:0.2s"></i><i style="left:78.5%;top:19.7%;--t:4.7s;--dl:1.8s"></i><i style="left:20.3%;top:71.8%;--t:3.0s;--dl:2.6s"></i><i style="left:13.2%;top:42.6%;--t:3.4s;--dl:1.1s"></i><i style="left:95.2%;top:78.5%;--t:3.7s;--dl:3.5s"></i><i style="left:22.2%;top:40.1%;--t:5.9s;--dl:2.6s"></i><i style="left:11.6%;top:96.0%;--t:3.4s;--dl:1.0s"></i><i style="left:76.2%;top:33.9%;--t:3.7s;--dl:0.3s"></i><i style="left:10.7%;top:57.8%;--t:3.5s;--dl:2.4s"></i><i style="left:37.7%;top:45.6%;--t:6.3s;--dl:1.9s"></i><i style="left:57.2%;top:84.5%;--t:3.2s;--dl:0.6s"></i><i style="left:89.2%;top:79.9%;--t:3.5s;--dl:0.8s"></i><i style="left:73.0%;top:91.4%;--t:3.3s;--dl:3.8s"></i><i style="left:86.7%;top:59.7%;--t:4.2s;--dl:0.4s"></i><i style="left:5.7%;top:93.5%;--t:3.5s;--dl:2.8s"></i><i style="left:26.7%;top:80.4%;--t:4.9s;--dl:1.2s"></i><i style="left:18.8%;top:70.7%;--t:2.8s;--dl:0.9s"></i><i style="left:55.7%;top:83.1%;--t:5.0s;--dl:1.1s"></i></div></div>
 <a class="skip" href="#main">Skip to content</a>
-<header class="nv ap-nav" id="nav"><div class="ap-nav-in"><div class="ap-nav-l"><a class="nv-b" href="index.html">Abhishek LG</a><span class="ap-ch">About</span></div><a class="ap-bk" href="index.html#about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>Back to home</a></div></header>
+<header class="nv ap-nav" id="nav"><div class="ap-nav-in"><div class="ap-nav-l"><a class="nv-b" href="index-platform-v2.html">Abhishek LG</a><span class="ap-ch">About</span></div><a class="ap-bk" href="index-platform-v2.html#about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>Back to home</a></div></header>
 <main id="main" class="ab9">
 <section class="ab4-hero"><div class="w">
 <p class="ab3-k rv">Abhishek LG · Senior Product Designer · Bengaluru</p>
 <h1 class="ab4-h1 rv">I design complex business software that people use <span class="it">all day.</span></h1>
 <div class="ab4-g">
 <div class="ab4-l rv"><p class="ab4-lead">7 years across insurance, e-commerce and AI products.</p>
-<div class="ab2-cta"><a class="bt bt-d" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Download CV</a><a class="bt bt-o" href="index.html#work">See my work</a></div>
+<div class="ab2-cta"><a class="bt bt-d" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Download CV</a><a class="bt bt-o" href="index-platform-v2.html#work">See my work</a></div>
 <span class="ab2-open"><span class="dt" aria-hidden="true"></span>Open to work</span></div>
 <figure class="ab4-me rv"><span class="ab4-tag">Me</span><img src="assets/abhishek-profile.webp" alt="Abhishek LG" decoding="async"></figure>
 <div class="ab4-r rv"><p class="ab4-note">I start with the problem, not the brief.</p><svg class="ab4-arr" viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M112 14c-14-12-34-8-38 6-3 11 10 14 13 5 4-12-14-20-30-14C36 18 22 36 14 58"/><path d="M8 46l6 13 12-7"/></svg></div>
@@ -1681,7 +1696,7 @@ div.ab5-x{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 <section class="ab9-p ab9-dark ab9-end" id="contact"><div class="w">
 <h2 class="ab9-big rv">Let's <span class="it">talk.</span></h2>
 <p class="ab9-sub">Always happy to talk about hard problems and good products.</p>
-<div class="ab9-cta"><span class="em"><a class="em-a" href="mailto:abhisheklokesh.uiux159@gmail.com">abhisheklokesh.uiux159@gmail.com</a><button class="em-c" type="button" data-copy="abhisheklokesh.uiux159@gmail.com" aria-label="Copy email"><span>Copy</span></button></span><a class="bt ab9-o" href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener">LinkedIn</a><a class="bt ab9-o" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Download CV</a></div>
+<div class="ab9-cta"><span class="em"><span class="em-a">abhisheklokesh.uiux159@gmail.com</span><button class="em-c" type="button" data-copy="abhisheklokesh.uiux159@gmail.com" aria-label="Copy email"><span>Copy</span></button></span><a class="bt ab9-o" href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener">LinkedIn</a><a class="bt ab9-o" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Download CV</a></div>
 <div class="ab9-ft"><span>© Abhishek LG, 2026</span><a href="#top">Back to top ↑</a></div>
 </div></section>
 </main>
