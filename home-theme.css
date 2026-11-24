@@ -2187,3 +2187,11 @@ background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;p
 .ct-b{align-items:center}
 @media(max-width:420px){.em{padding:7px 7px 7px 20px;gap:12px}.em-a{font-size:13px}.em-c{padding:10px 14px}}
 #contact .ct-h{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important;font-weight:700!important;font-variation-settings:normal!important;letter-spacing:-.04em!important;line-height:.95!important}
+/* NutBite chapter 06: five decisions in detail */
+.s2-dec{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:12px}
+.s2-dec li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;padding:18px 20px;background:#fff;border:1px solid var(--ln,#E3E5E9);border-radius:14px}
+.s2-dn{font:600 13px/1.7 'JetBrains Mono',monospace;color:var(--blue,#0B57D0)}
+.s2-dec b{display:block;font-size:17px;line-height:1.35;font-weight:600;color:#1F1F1F}
+.s2-tx .s2-dec p{margin:6px 0 0;font-size:15px;line-height:1.55;color:#4A4D55}
+.s2-tx .s2-dec .s2-why{margin-top:12px;padding:10px 14px;border-radius:10px;background:#FFF4E2;color:#1F1F1F}
+.s2-why span{display:block;margin-bottom:4px;font:600 11px/1.2 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#8A5A12}
