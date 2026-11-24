@@ -2171,3 +2171,9 @@ background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;p
 .s2-tx .s2-bk-h{margin:24px 0 0!important;font:500 12px/1.2 'JetBrains Mono',monospace!important;letter-spacing:.14em;text-transform:uppercase;color:var(--mu,#5F6368)}
 .s2-tx .s2-out{font-size:16px}
 .s2-week li span{white-space:nowrap;letter-spacing:0;font-size:10.5px}
+/* NutBite: notebook photo shown whole, in a portrait frame */
+.s2-scrn .s2-phone:has(.s2-scr[data-k="notebook"].on){aspect-ratio:3/4!important;width:auto!important;height:min(640px,calc(100vh - 260px))!important;max-width:100%}
+.s2-scr[data-k="notebook"] img{object-fit:cover;object-position:center}
+/* NutBite: result box in the dark style, label in red */
+.s2-tx .s2-out{background:var(--ink,#1F1F1F);color:#E8EAED}
+.s2-tx .s2-out b{color:#FF6B5E}
