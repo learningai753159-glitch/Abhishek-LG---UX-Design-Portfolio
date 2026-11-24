@@ -2178,3 +2178,12 @@ background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;p
 .s2-tx .s2-out{background:var(--ink,#1F1F1F);color:#E8EAED}
 .s2-tx .s2-out b{color:#FF6B5E}
 #s2-keeper .s2-labs + .s2-q{margin-top:28px}
+
+/* Footer email pill (matches homepage) */
+.em{display:inline-flex;align-items:center;gap:18px;padding:9px 9px 9px 28px;border-radius:999px;background:var(--blue,#0B57D0);box-shadow:0 8px 20px -10px rgba(11,87,208,.6)}
+.em-a,.em-a:hover{color:#fff;text-decoration:none;cursor:default;font-weight:600;font-size:15px;padding:6px 0}
+.em-c{border:0;border-radius:999px;padding:12px 20px;background:rgba(255,255,255,.18);color:#fff;font:600 14px/1 Inter,system-ui,sans-serif;cursor:pointer;transition:background .2s}
+.em-c:hover{background:rgba(255,255,255,.3)}
+.ct-b{align-items:center}
+@media(max-width:420px){.em{padding:7px 7px 7px 20px;gap:12px}.em-a{font-size:13px}.em-c{padding:10px 14px}}
+#contact .ct-h{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important;font-weight:700!important;font-variation-settings:normal!important;letter-spacing:-.04em!important;line-height:.95!important}

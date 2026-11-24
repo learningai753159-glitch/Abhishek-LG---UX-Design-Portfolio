@@ -17,6 +17,27 @@
 <script src="image-slot.js"></script>
 <link rel="stylesheet" href="responsive.css">
 <link rel="stylesheet" href="plain.css">
+<style id="home-footer">
+#contact.ct{padding:clamp(110px,12vw,168px) 0 0;text-align:center;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#1F1F1F;background:#F7F8FA}
+#contact .w{max-width:1160px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+#contact .ct-h{margin:0;font:700 clamp(52px,9vw,130px)/.95 Inter,system-ui,sans-serif!important;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important;letter-spacing:-.04em;color:#1F1F1F}
+#contact .hm-m{display:inline-block;padding:0 .06em;font-family:"Source Serif 4",Georgia,serif!important;font-style:italic!important;font-weight:400!important;letter-spacing:-.01em;background:linear-gradient(transparent 58%,#FFE8A6 58%,#FFE8A6 94%,transparent 94%)}
+#contact .hd-p{margin:18px auto 0;max-width:636px;font-size:18px;line-height:1.6;color:#4A4D55}
+#contact .ct-b{margin-top:34px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px}
+#contact .bt{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border-radius:999px;font:500 15px/1 Inter,system-ui,sans-serif;text-decoration:none;transition:border-color .2s,background .2s}
+#contact .bt-o{background:#fff;color:#1F1F1F;border:1px solid #E3E5E9}
+#contact .bt-o:hover{border-color:#1F1F1F}
+#contact .em{display:inline-flex;align-items:center;gap:18px;padding:9px 9px 9px 28px;border-radius:999px;background:#0B57D0;box-shadow:0 8px 20px -10px rgba(11,87,208,.6)}
+#contact .em-a{color:#fff;font-weight:600;font-size:15px;padding:6px 0}
+#contact .em-c{border:0;border-radius:999px;padding:12px 20px;background:rgba(255,255,255,.18);color:#fff;font:600 14px/1 Inter,system-ui,sans-serif;cursor:pointer;transition:background .2s}
+#contact .em-c:hover{background:rgba(255,255,255,.3)}
+#contact .ft{margin-top:140px}
+#contact .ft-b{display:flex;justify-content:space-between;gap:16px;padding:22px 0 28px;border-top:1px solid #E3E5E9;font-size:14px;color:#6B6F78}
+#contact .ft-b a{color:#6B6F78;text-decoration:none}
+#contact .ft-b a:hover{color:#1F1F1F}
+@media(max-width:420px){#contact .em{padding:7px 7px 7px 20px;gap:12px}#contact .em-a{font-size:13px}#contact .em-c{padding:10px 14px}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="ar-prog" aria-hidden="true"></div>
@@ -42,16 +63,13 @@
 <div class="ar-end"></div>
 </article>
 </main>
-<footer class="foot cs-foot" id="contact" data-screen-label="Contact">
-<div class="cs-foot-card">
-<div class="cs-foot-top">
-<div class="cs-foot-l"><h2 class="cs-foot-h">Let's <span class="cs-mark"><em class="hl">connect</em><svg class="cs-draw" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 30 4, 62 14, 90 7 S 114 6, 117 9" vector-effect="non-scaling-stroke"></path></svg></span></h2><p class="cs-foot-sub">Always open to thoughtful conversations and new opportunities.</p>
-<div class="cs-foot-btns"><a class="cs-btn li" href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"></path></svg>LinkedIn</a><a class="cs-btn cv" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M12 12v6M9 15l3 3 3-3"></path></svg>Download CV</a></div></div>
-<div class="cs-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg><span>abhisheklokesh.uiux159@gmail.com</span><button class="cs-copy" type="button" data-copy="abhisheklokesh.uiux159@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V5a1 1 0 0 1 1-1h10"></path></svg><span>Copy email</span></button></div>
+<section class="ct" id="contact" data-screen-label="Contact"><div class="w">
+<h2 class="ct-h">Let's work <span class="hm-m">together</span></h2>
+<p class="hd-p">Reach out to me. I'm always happy to talk.</p>
+<div class="ct-b"><span class="em"><span class="em-a">abhisheklokesh.uiux159@gmail.com</span><button class="em-c" type="button" data-copy="abhisheklokesh.uiux159@gmail.com" aria-label="Copy email"><span>Copy</span></button></span><a class="bt bt-o" href="https://www.linkedin.com/in/abhishek-lg-162800219/" target="_blank" rel="noopener">LinkedIn</a><a class="bt bt-o" href="assets/Abhishek_LG_CV.pdf?v=2" download="Abhishek_LG_CV.pdf">Download CV</a></div>
 </div>
-<div class="cs-foot-base"><span>© 2026 Abhishek LG</span><a href="#top">Back to top ↑</a></div>
-</div>
-</footer>
+<footer class="ft"><div class="w ft-b"><span>© Abhishek LG, 2026</span><a href="#top">Back to top ↑</a></div></footer>
+</section>
 <script>(function(){var b=document.querySelector('.ar-prog'),a=document.querySelector('.ar');function u(){var r=a.getBoundingClientRect(),p=Math.min(1,Math.max(0,-r.top/(r.height-innerHeight)));b.style.width=(p*100)+'%'}addEventListener('scroll',u,{passive:true});u();var c=document.querySelector('[data-copylink]');if(c){var h=c.innerHTML;c.addEventListener('click',function(){if(navigator.clipboard)navigator.clipboard.writeText(location.href);c.classList.add('ok');c.textContent='Copied';setTimeout(function(){c.classList.remove('ok');c.innerHTML=h},1500)})}})();</script>
 <style>.sfab{position:fixed;right:20px;bottom:24px;z-index:900;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .25s ease,transform .25s ease;}.sfab.on{opacity:1;transform:none;pointer-events:auto;}.sfab button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,60,40,.14);background:rgba(251,248,241,.94);color:#15543b;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px -12px rgba(20,40,30,.45);backdrop-filter:blur(6px);transition:background .2s,color .2s,transform .15s,opacity .2s;}.sfab button:hover{background:#15543b;color:#fff;transform:translateY(-2px);}.sfab button[disabled]{opacity:.35;pointer-events:none;}.sfab svg{width:18px;height:18px;}@media(max-width:560px){.sfab{right:12px;bottom:14px;}.sfab button{width:44px;height:44px;}}@media print{.sfab{display:none;}}</style>
 <div class="sfab" id="sFab" aria-label="Page scroll"><button type="button" data-dir="up" aria-label="Go to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button><button type="button" data-dir="down" aria-label="Go to bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></button></div>
@@ -60,5 +78,6 @@ function tick(){var y=window.scrollY,H=document.documentElement.scrollHeight,v=w
 up.addEventListener('click',function(){window.scrollTo({top:0,behavior:rm});});dn.addEventListener('click',function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:rm});});
 window.addEventListener('scroll',tick,{passive:true});window.addEventListener('resize',tick);tick();})();</script>
 <script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href="#top"]');if(!a)return;e.preventDefault();window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})});</script>
+<script>addEventListener("load",function(){document.querySelectorAll("#contact [data-copy]").forEach(function(b){var c=b.cloneNode(true);b.parentNode.replaceChild(c,b);b=c;var s=b.querySelector("span"),o=s.textContent;b.addEventListener("click",function(){if(navigator.clipboard)navigator.clipboard.writeText(b.dataset.copy);s.textContent="Copied";setTimeout(function(){s.textContent=o},1600)})});});</script>
 </body>
 </html>
