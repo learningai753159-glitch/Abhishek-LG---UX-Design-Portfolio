@@ -2177,3 +2177,4 @@ background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;p
 /* NutBite: result box in the dark style, label in red */
 .s2-tx .s2-out{background:var(--ink,#1F1F1F);color:#E8EAED}
 .s2-tx .s2-out b{color:#FF6B5E}
+#s2-keeper .s2-labs + .s2-q{margin-top:28px}
