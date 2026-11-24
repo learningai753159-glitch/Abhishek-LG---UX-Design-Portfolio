@@ -2256,3 +2256,54 @@ background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;p
 .s2-gp-ar{width:2px;height:22px;margin:4px auto 8px;background:repeating-linear-gradient(180deg,#9AA0A6 0 5px,transparent 5px 9px)}
 .s2-gp-ar::after{right:-5px;top:auto;bottom:-6px;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid #9AA0A6;border-bottom:0}
 }
+/* ===== NutBite idea + decisions, in the site theme (white cards, blue line, sand mark) ===== */
+#s2-more,#s2-rules{--cb:#D5E0F5;--csh:0 12px 32px -22px rgba(11,87,208,.35);--bl:#0B57D0;--tn:#EAF1FD;--sd:#FFE8A6;--ik:#1F1F1F;--ik2:#4A4D55;--mu:#6B6F78;--hl:#E3E5E9}
+/* asked vs gave: one card, two halves */
+#s2-more .s2-ag{margin-top:30px;grid-template-columns:minmax(0,1fr) 72px minmax(0,1.7fr);background:#fff;border:1px solid var(--cb);border-radius:22px;box-shadow:var(--csh);overflow:hidden}
+#s2-more .s2-ag-a,#s2-more .s2-ag-g{background:none;border:0;border-radius:0;color:var(--ik);padding:30px 32px 32px;overflow:visible}
+#s2-more .s2-ag-k,#s2-more .s2-ag-a .s2-ag-k{color:var(--mu)}
+#s2-more .s2-ag-n{position:static;display:block;margin-top:14px;font:700 clamp(56px,6vw,80px)/1 Inter,system-ui,sans-serif;letter-spacing:-.05em;color:var(--ik)}
+#s2-more .s2-ag-g .s2-ag-n{color:var(--bl)}
+#s2-more .s2-ag ul{margin-top:22px}
+#s2-more .s2-ag li{padding:10px 16px;font-weight:500;border:1px solid var(--hl);background:#fff;color:var(--ik)}
+#s2-more .s2-ag-a li{background:#F4F6F9}
+#s2-more .s2-ag-g li{background:var(--tn);border-color:transparent;color:var(--bl)}
+#s2-more .s2-ag-g li.s{background:#F4F6F9;border-color:var(--hl);color:var(--ik)}
+#s2-more .s2-ag-ar{align-self:stretch;width:1px;height:auto;margin:0 auto;background:var(--hl)}
+#s2-more .s2-ag-ar::after{content:"→";position:absolute;left:50%;top:50%;right:auto;bottom:auto;transform:translate(-50%,-50%);width:44px;height:44px;border:1px solid var(--cb);border-radius:50%;background:#fff;display:grid;place-items:center;font:500 18px/1 Inter,system-ui,sans-serif;color:var(--bl)}
+/* gaps to features: one card, hairline rows */
+#s2-more .s2-gp-k{margin-top:48px;color:var(--mu)}
+#s2-more .s2-gp{counter-reset:g;margin-top:14px;gap:0;background:#fff;border:1px solid var(--cb);border-radius:22px;box-shadow:var(--csh);overflow:hidden}
+#s2-more .s2-gp li{counter-increment:g;grid-template-columns:minmax(0,1.3fr) 88px minmax(0,1fr);align-items:center;padding:24px 32px;border-top:1px solid var(--hl)}
+#s2-more .s2-gp li:first-child{border-top:0}
+#s2-more .s2-gp-x,#s2-more .s2-gp-v{background:none;border:0;border-radius:0;padding:0}
+#s2-more .s2-gp-x i{display:none}
+#s2-more .s2-gp-x::before,#s2-more .s2-gp-v::before{display:block;margin-bottom:8px;font:500 11px/1.2 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
+#s2-more .s2-gp-x::before{content:"Gap " counter(g,decimal-leading-zero)}
+#s2-more .s2-gp-v{display:block}
+#s2-more .s2-gp-v::before{content:"Became";color:var(--bl)}
+#s2-more .s2-gp-x b{font-size:18px;color:var(--ik)}
+#s2-more .s2-gp-x span{color:var(--ik2)}
+#s2-more .s2-gp-v i{position:static;transform:none;display:inline-grid;vertical-align:-5px;margin-right:10px;width:22px;height:22px;background:var(--bl);font-size:11px}
+#s2-more .s2-gp-v b{display:inline;font-size:18px;color:var(--ik);background:linear-gradient(transparent 60%,var(--sd) 60%,var(--sd) 94%,transparent 94%);padding:0 .08em}
+#s2-more .s2-gp-ar{height:1px;margin:0 16px;background:var(--cb)}
+#s2-more .s2-gp-ar::after{right:-1px;top:-5px;border-left:8px solid var(--bl);border-top:5.5px solid transparent;border-bottom:5.5px solid transparent;border-right:0}
+#s2-more .s2-gp-f{color:var(--mu)}
+/* decisions: five white cards, 3 then 2 */
+.s2-dk{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.s2-dk li{grid-column:span 2;display:flex;flex-direction:column;padding:28px 30px 30px;background:#fff;border:1px solid var(--cb);border-radius:22px;box-shadow:var(--csh)}
+.s2-dk li:nth-child(n+4){grid-column:span 3}
+.s2-dk-n{font:500 13px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--bl)}
+.s2-dk b{margin-top:16px;font-size:clamp(19px,1.6vw,22px);line-height:1.25;font-weight:600;letter-spacing:-.02em;color:var(--ik)}
+.s2-tx .s2-dk p{margin:10px 0 0;font-size:15.5px;line-height:1.6;color:var(--ik2)}
+.s2-tx .s2-dk .s2-dk-y{margin-top:auto;padding-top:20px;border-top:1px solid var(--hl);font:italic 400 18px/1.45 'Source Serif 4',Georgia,serif;color:var(--ik)}
+.s2-dk p:not(.s2-dk-y){margin-bottom:20px}
+.s2-dk-y span{display:block;margin-bottom:6px;font:500 11px/1.2 'JetBrains Mono',monospace;font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--bl)}
+@media(max-width:960px){
+#s2-more .s2-ag{grid-template-columns:1fr}
+#s2-more .s2-ag-ar{width:auto;height:1px;margin:0 32px}
+#s2-more .s2-ag-ar::after{content:"↓"}
+#s2-more .s2-gp li{grid-template-columns:1fr;gap:14px;padding:22px 22px}
+#s2-more .s2-gp-ar{display:none}
+.s2-dk{grid-template-columns:1fr}.s2-dk li,.s2-dk li:nth-child(n+4){grid-column:auto}
+}
